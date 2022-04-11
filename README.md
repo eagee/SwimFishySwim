@@ -1,7 +1,7 @@
 SwimFishySwim
 =============
 
-Swim Fishy Swim is a now defunct Wii Homebrew project (back when everything was 4:3 and Unity3d was only on Macs). The project compiles to a rom capable of running in an SD card on the wii the XYZ toolchain.
+Swim Fishy Swim is a now defunct Wii Homebrew project (back when everything was 4:3 and Unity3d was only on Macs). The project compiles to a rom capable of running in an SD card on the wii using the [WiiBrew](https://wiibrew.org/wiki/Main_Page) toolchain.
 
 
 
