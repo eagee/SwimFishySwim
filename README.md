@@ -9,10 +9,10 @@ Footage of the actual (admittedly rather odd but fun) gameplay can be found here
 [![Swim fishy swim screenshot](https://img.youtube.com/vi/giIlyl0D9iA/0.jpg)](https://youtu.be/giIlyl0D9iA)
 
 
-Below was once a media wiki document that served as the general design doc for the game. It was hacked somewhere in 2014 and I was only able to restore this version from internet archives:
-
 SFS Games Design Document (GDD)
 ===============================
+Below was once a media wiki document that served as the general design doc for the game. It was hacked somewhere in 2014 and I was only able to restore this version from internet archives:
+
 
 ### From Sfswiki
 
