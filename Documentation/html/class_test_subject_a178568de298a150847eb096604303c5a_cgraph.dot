@@ -1,0 +1,10 @@
+digraph "TestSubject::removeObserver"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="TestSubject::removeObserver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This is the test subject object used to test the observer pattern"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Subject::removeObserver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_subject.html#a4cecb738e1b6e7b60ad527dd05fe85df",tooltip=" "];
+}

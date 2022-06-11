@@ -1,0 +1,53 @@
+\hypertarget{_projectile_bomb_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Projectile\+Bomb.h}
+\mbox{\hyperlink{_projectile_bomb_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00001}00001 \textcolor{comment}{// ProjectileBomb.h}}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00002}00002 \textcolor{comment}{// Defines implementation of IProjectileWeapon to shoot a star with varying behaviors}}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef BULLET\_PROJECTILE\_H}}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00005}00005 \textcolor{preprocessor}{\#define BULLET\_PROJECTILE\_H}}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_projectile_weapon_8h}{IProjectileWeapon.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_tiled_maps_8h}{TiledMaps.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00010}\mbox{\hyperlink{class_projectile_bomb}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_projectile_bomb}{ProjectileBomb}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_projectile_weapon}{IProjectileWeapon}}}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00012}00012 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00016}00016         \mbox{\hyperlink{class_projectile_bomb_abc9ef7b453cd49bc61f672eb92e3471e}{ProjectileBomb}}(\mbox{\hyperlink{class_i_model}{IModel}} *model, \mbox{\hyperlink{class_i_audio}{IAudio}} *upgradeSound, \mbox{\hyperlink{class_i_audio}{IAudio}} *downGradeSound, \mbox{\hyperlink{class_i_audio}{IAudio}} *shootingSound);}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00017}00017         }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00021}00021         \mbox{\hyperlink{class_projectile_bomb_a732ec7e1ded48763c534d776956000fd}{\string~ProjectileBomb}}();}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00026}00026         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_i_model}{IModel}}* \mbox{\hyperlink{class_projectile_bomb_a63cd54045110e43721eec7a07bb98694}{getProjectileModel}}();}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00031}00031         \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{class_projectile_bomb_a7590cd6cce56be4dc5236b9a4bd68673}{getProjectileName}}();}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00032}00032         }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00036}00036         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_projectile_bomb_acd05c50a3eb0d64fb52825fda92e7b8b}{setWeaponExperience}}(\textcolor{keywordtype}{int} experiencePoints);}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00041}00041         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_projectile_bomb_a794578ff163cc372b452aed174f221cf}{getWeaponExperience}}();}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00046}00046         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_projectile_bomb_a1b76c02faaea1f828072400b3b35429d}{getMaxWeaponExperience}}();}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00051}00051         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_projectile_bomb_a799e67155a991c5a2004fa99aedfba2f}{modifyWeaponExperienceBy}}(\textcolor{keywordtype}{int} experiencePoints);}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00056}00056         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_projectile_bomb_a872a8d388e623fe32470a88b5002b6c5}{getWeaponLevelNumber}}();}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00061}00061         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_projectile_bomb_a6ed7dadbf6966eb9095841eb828e6013}{getPercentWeaponExperience}}();}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00066}00066         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_projectile_bomb_a977560150de62669059bad8f4c9da19d}{handleSpriteCollisions}}(\mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo, \mbox{\hyperlink{class_i_sprite}{ISprite}} \&sprite, \mbox{\hyperlink{class_i_audio}{IAudio}} *soundToPlay, \textcolor{keywordtype}{float} projectileDamage);}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00072}00072         \textcolor{keyword}{virtual} \mbox{\hyperlink{_projectile_weapon_info_8h_acb768b84d74e972690a4b15d0daee6a9}{PROJECTILE\_LEVEL\_STATE}} \mbox{\hyperlink{class_projectile_bomb_abe918117ccf34398301a02d1c4377e2e}{updateWeaponAndProjectiles}}(\mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo);}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00077}00077         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_projectile_bomb_a782addbc641ae0fc7163129febc7e8b3}{renderProjectiles}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00085}00085         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_projectile_bomb_a3addc9f1de66ed36d2d765bf14733718}{handleTriggerState}}(\mbox{\hyperlink{_projectile_weapon_info_8h_a37ab2c5940fbf02ed4a60f9727e22f70}{PROJECTILE\_TRIGGER\_STATE}} state, \mbox{\hyperlink{class_i_sprite}{ISprite}} *triggeredBySprite, Vector \&spriteOffset);}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00086}00086     }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00088}00088 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00089}00089     \mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} myWeaponInfo;}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00090}00090     \textcolor{keywordtype}{int} myCurrentEffectIndex;}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00091}00091     \textcolor{keywordtype}{int} myCurrentMaxEffects;}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00092}00092 \};}
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_projectile_bomb_8h_source_l00094}00094 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

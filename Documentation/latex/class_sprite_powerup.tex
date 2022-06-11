@@ -1,0 +1,1061 @@
+\hypertarget{class_sprite_powerup}{}\doxysection{Sprite\+Powerup Class Reference}
+\label{class_sprite_powerup}\index{SpritePowerup@{SpritePowerup}}
+
+
+Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ... /summary\texorpdfstring{$>$}{>}  
+
+
+
+
+{\ttfamily \#include $<$Sprite\+Powerup.\+h$>$}
+
+
+
+Inheritance diagram for Sprite\+Powerup\+:
+% FIG 0
+
+
+Collaboration diagram for Sprite\+Powerup\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sprite_powerup_a4708f818df15fde48a03bba991ae521d}{Sprite\+Powerup}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for Player Sprite object. /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_sprite_powerup_a43f3938f5b8dd5d07db0f3b3a1916483}{$\sim$\+Sprite\+Powerup}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a4a4ee0852b37e2fac93d98d1a68d71f6}{set\+ID}} (int ID)
+\item 
+virtual int \mbox{\hyperlink{class_sprite_powerup_ab34451b62b520539ee2665c44b3eab7d}{get\+ID}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_sprite_powerup_a4017f916b32dca5e2d306bf36b037ba8}{is\+Dead}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a117e42754f375bda4ebd72d233dd2f46}{assign\+Model}} (\mbox{\hyperlink{class_i_model}{IModel}} $\ast$model)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_aa5b6a6c9980d3d64fe31825356596fa2}{assign\+Weapon}} (\mbox{\hyperlink{class_i_projectile_weapon}{IProjectile\+Weapon}} $\ast$weapon)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a53ec0aa9b65533113298845de8cdc58f}{lock\+On\+Target}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&target)
+\item 
+virtual bool \mbox{\hyperlink{class_sprite_powerup_ada2d58bb8e95b756fca6f5009a98a3c0}{check\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_ac789945b1a0990271bc0ca3c342c0c9b}{handle\+Collision}} (\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}} type, float collision\+Force)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_ae31b08e2177d31b2c3911e35afb344e5}{handle\+Jump}} (float jump\+Force)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a64f158a81d7617777975a5afdc960986}{set\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_ab0b52d1f5176621d660f271bc9d1ad78}{unset\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a392616c14141773698da6b808c28d065}{translate\+Sprite}} (Vector sprite\+Location)
+\item 
+virtual Vector \mbox{\hyperlink{class_sprite_powerup_a4e3e5795029538a98d4a6ff03743d34a}{update\+Location\+By\+Velocity}} ()
+\item 
+virtual Vector \mbox{\hyperlink{class_sprite_powerup_a97b1039ecc2f1fb8852b8914ba4e97c5}{get\+Location}} ()
+\item 
+\mbox{\hyperlink{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}{Bounding\+Triangle}} \mbox{\hyperlink{class_sprite_powerup_a212462837c2d69eddc3d0a3f27c34bc8}{get\+Bounding\+Triangle}} ()
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}{Bounding\+Circle}} \mbox{\hyperlink{class_sprite_powerup_a5cf1b9d44d40a7d174a109f864d24488}{get\+Bounding\+Circle}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_ab41ae10bd8881e9875ab1028346ae645}{set\+Bounding\+Triangle\+Size}} (float size)
+\item 
+\mbox{\hyperlink{_sprite_info_8h_af09622c9d9505474ece2da58841f3ab2}{Bounding\+Box}} \mbox{\hyperlink{class_sprite_powerup_ad9044197424e423e06a818c626ff5cc3}{get\+Bounding\+Box}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_af26500fa1cf1c51a25a54fd228308215}{set\+Location}} (Vector location)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a56daf85eb8d45bdff5032fe2ce1428f1}{set\+Offset}} (Vector offset)
+\item 
+Vector \mbox{\hyperlink{class_sprite_powerup_ac4b86f4d8371c567e79ebb3900c0fc3f}{get\+Offset}} ()
+\item 
+virtual float \mbox{\hyperlink{class_sprite_powerup_a1359b117eead58a9f693f77fe87ee51c}{sprite\+Width}} ()
+\item 
+virtual float \mbox{\hyperlink{class_sprite_powerup_a943795bf6782af98792db99bf712ce45}{sprite\+Height}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_ace8f8322cb2a6efead42fa0253720eae}{set\+Velocities}} (float max\+Normal\+Velocity, float drag\+Velocity, float acceleration\+Velocity)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_ae35ec54c413230cd9ae6e5bb9dd396b6}{increase\+Acceleration}} ()
+\item 
+void \mbox{\hyperlink{class_sprite_powerup_a7a1b712edf62b41219eab4c0dc127786}{set\+Control\+Magnitude}} (float control\+Magnitude)
+\item 
+void \mbox{\hyperlink{class_sprite_powerup_a8070efe9869b37352b2b20abc91f7504}{set\+Angle}} (float angle)
+\item 
+virtual float \mbox{\hyperlink{class_sprite_powerup_a15e6aea8d1d25d7b579f19ad15f0f9e0}{get\+Angle}} ()
+\item 
+virtual float \mbox{\hyperlink{class_sprite_powerup_a62c2660a6eb1d8bb5080fccf98e5cd74}{get\+Control\+Angle}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_af6eda6fdcff9052038ca0a7007bf1c21}{render\+Sprite}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a22b0c6dcf5b6d20477635c0a809f1306}{render\+Health\+Bar}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\+\_\+\+TYPE}} \mbox{\hyperlink{class_sprite_powerup_a169f2d4d81bb4de34422cf0d37f1ed72}{sprite\+Type}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a214106b274f9c06bc4fe18cbf240a13f}{set\+Animation}} (\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} animation)
+\item 
+virtual \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} \mbox{\hyperlink{class_sprite_powerup_a8165ae7ad581ded22d7de7daa2e6ac5a}{get\+Current\+Animation}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_aa6aea588ba92e6a04f98ef339a62295d}{set\+Health}} (float health)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_aba2f7c8d95862b53b9ce347c9a2bfa71}{modify\+Health\+By}} (float health\+Modifier)
+\item 
+virtual float \mbox{\hyperlink{class_sprite_powerup_afacbf5add120c8254473598938d8f5de}{get\+Health}} ()
+\item 
+virtual float \mbox{\hyperlink{class_sprite_powerup_aa27f5f47b043187a956467ad6de5e69d}{get\+Max\+Health}} ()
+\item 
+virtual int \mbox{\hyperlink{class_sprite_powerup_af2afa56f6ae023674f65eaf73b74224c}{get\+Point\+Value}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a32e225e8e33083f375225c2c0759ee57}{set\+Point\+Value}} (int value)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a508fd8b3313800862a8ffabe2d6299fc}{set\+Level}} (int level)
+\item 
+virtual int \mbox{\hyperlink{class_sprite_powerup_a4f453334fef61c4b06d3f977db69969b}{get\+Level}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a91f00d9d5cfc2e7a88969de3044f2d8b}{set\+Power\+Up\+Type}} (\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}} power\+Up\+Type)
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}} \mbox{\hyperlink{class_sprite_powerup_aec0b31957ddb8c5ce25e9c3e5100a63b}{get\+Power\+Up\+Type}} ()
+\item 
+virtual float \mbox{\hyperlink{class_sprite_powerup_a1e9708e992fc4d005ffb1aa64fe7025b}{get\+Water\+Level}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a5aa5c44f55ed9a2221822f95aa9a5783}{set\+Water\+Level}} (float water\+Level)
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a7ad1e645c79ce954054c16eb999ca507}{set\+Jump}} (\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}} jump\+State)
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}} \mbox{\hyperlink{class_sprite_powerup_ab2e13024799ebfe13c22fe76ed43d006}{get\+Jump}} ()
+\item 
+virtual float \mbox{\hyperlink{class_sprite_powerup_ae02c4eab87e751da4b34ba641217f441}{get\+Speed}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_ad50a791dd8aee52566e1137b7297f035}{set\+Attack\+Type}} (\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}} type)
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}} \mbox{\hyperlink{class_sprite_powerup_ab1aa50e0f3ef703f5a9e0c425087a224}{get\+Attack\+Type}} ()
+\item 
+virtual void \mbox{\hyperlink{class_sprite_powerup_a473294c9d2399a24571960ab8b88acba}{modify\+Rotation\+By}} (float value)
+\item 
+virtual bool \mbox{\hyperlink{class_sprite_powerup_ac5144549c530b8854106b14118008b31}{has\+Periodic\+Timer\+Expired}} ()
+\item 
+virtual Vector \mbox{\hyperlink{class_sprite_powerup_ad5a738895340c6e26456e3a1f2393d89}{get\+Velocity}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8h_source_l00014}{14}} of file \mbox{\hyperlink{_sprite_powerup_8h_source}{Sprite\+Powerup.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sprite_powerup_a4708f818df15fde48a03bba991ae521d}\label{class_sprite_powerup_a4708f818df15fde48a03bba991ae521d}} 
+\index{SpritePowerup@{SpritePowerup}!SpritePowerup@{SpritePowerup}}
+\index{SpritePowerup@{SpritePowerup}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{SpritePowerup()}{SpritePowerup()}}
+{\footnotesize\ttfamily Sprite\+Powerup\+::\+Sprite\+Powerup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for Player Sprite object. /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Destructor for \mbox{\hyperlink{class_sprite_baddie}{Sprite\+Baddie}} objects -\/ should handle all the cleanup ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_sprite_powerup_a43f3938f5b8dd5d07db0f3b3a1916483}\label{class_sprite_powerup_a43f3938f5b8dd5d07db0f3b3a1916483}} 
+\index{SpritePowerup@{SpritePowerup}!````~SpritePowerup@{$\sim$SpritePowerup}}
+\index{````~SpritePowerup@{$\sim$SpritePowerup}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{$\sim$SpritePowerup()}{~SpritePowerup()}}
+{\footnotesize\ttfamily Sprite\+Powerup\+::$\sim$\+Sprite\+Powerup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets an ID value used to reference the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sprite_powerup_a117e42754f375bda4ebd72d233dd2f46}\label{class_sprite_powerup_a117e42754f375bda4ebd72d233dd2f46}} 
+\index{SpritePowerup@{SpritePowerup}!assignModel@{assignModel}}
+\index{assignModel@{assignModel}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{assignModel()}{assignModel()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::assign\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_model}{IModel}} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Assigns a projectile weapon to the sprite that can be triggered by the sprite... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Checks the direction of a sprite and returns true/false if the sprite is facing that direction... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_ae6796972cb4c434a5d1c8ca640ceb458}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_sprite_powerup_aa5b6a6c9980d3d64fe31825356596fa2}\label{class_sprite_powerup_aa5b6a6c9980d3d64fe31825356596fa2}} 
+\index{SpritePowerup@{SpritePowerup}!assignWeapon@{assignWeapon}}
+\index{assignWeapon@{assignWeapon}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{assignWeapon()}{assignWeapon()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::assign\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_projectile_weapon}{IProjectile\+Weapon}} $\ast$}]{weapon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Causes the sprite to change it\textquotesingle{}s current angle to face the specified target... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a8040c09bcbd67f12f96634c367e7d7ae}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00553}{553}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ada2d58bb8e95b756fca6f5009a98a3c0}\label{class_sprite_powerup_ada2d58bb8e95b756fca6f5009a98a3c0}} 
+\index{SpritePowerup@{SpritePowerup}!checkDirection@{checkDirection}}
+\index{checkDirection@{checkDirection}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{checkDirection()}{checkDirection()}}
+{\footnotesize\ttfamily bool Sprite\+Powerup\+::check\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Modifies velocity based upon direction to handle a wall style collision.. /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Sets the direction of a sprite, this can be in addition to non-\/opposing direction /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_a0c9d4275dc2f5bfe186700de13950595}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_sprite_powerup_a15e6aea8d1d25d7b579f19ad15f0f9e0}\label{class_sprite_powerup_a15e6aea8d1d25d7b579f19ad15f0f9e0}} 
+\index{SpritePowerup@{SpritePowerup}!getAngle@{getAngle}}
+\index{getAngle@{getAngle}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getAngle()}{getAngle()}}
+{\footnotesize\ttfamily float Sprite\+Powerup\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the angle assigned with set\+Angle (which is modified by 90 degrees b4 returning with get\+Angle) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a44ab48c7a0ca24cf44b5aeb7c84ba597}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00291}{291}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ab1aa50e0f3ef703f5a9e0c425087a224}\label{class_sprite_powerup_ab1aa50e0f3ef703f5a9e0c425087a224}} 
+\index{SpritePowerup@{SpritePowerup}!getAttackType@{getAttackType}}
+\index{getAttackType@{getAttackType}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getAttackType()}{getAttackType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}} Sprite\+Powerup\+::get\+Attack\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Updates the rotation value a sprite uses (may not be implemented for all objects) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a9a7373d42e299bb50efc7a4a368b2167}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00538}{538}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ad9044197424e423e06a818c626ff5cc3}\label{class_sprite_powerup_ad9044197424e423e06a818c626ff5cc3}} 
+\index{SpritePowerup@{SpritePowerup}!getBoundingBox@{getBoundingBox}}
+\index{getBoundingBox@{getBoundingBox}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getBoundingBox()}{getBoundingBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_af09622c9d9505474ece2da58841f3ab2}{Bounding\+Box}} Sprite\+Powerup\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Defines the current x/y/z location of the top left corner of the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Defines the current x/y/z location of the top left corner of the sprite but doesn\textquotesingle{}t change velocity like translate does ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_adf07d87015405a56c565efc59d10a937}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00197}{197}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_sprite_powerup_a5cf1b9d44d40a7d174a109f864d24488}\label{class_sprite_powerup_a5cf1b9d44d40a7d174a109f864d24488}} 
+\index{SpritePowerup@{SpritePowerup}!getBoundingCircle@{getBoundingCircle}}
+\index{getBoundingCircle@{getBoundingCircle}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getBoundingCircle()}{getBoundingCircle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}{Bounding\+Circle}} Sprite\+Powerup\+::get\+Bounding\+Circle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the distance of all three corners of the bounding triangle (e.\+g. how far away from the center of the sprite each point is) /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_a7e17733b67d4a58268114d3de3f7c874}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00181}{181}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_sprite_powerup_a212462837c2d69eddc3d0a3f27c34bc8}\label{class_sprite_powerup_a212462837c2d69eddc3d0a3f27c34bc8}} 
+\index{SpritePowerup@{SpritePowerup}!getBoundingTriangle@{getBoundingTriangle}}
+\index{getBoundingTriangle@{getBoundingTriangle}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getBoundingTriangle()}{getBoundingTriangle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}{Bounding\+Triangle}} Sprite\+Powerup\+::get\+Bounding\+Triangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} The points of the bounding circle are set from the center of the model by the bounding triangle size. There are The circle will be offset from the angle of the sprite and contain eight points \mbox{[}0\mbox{]} -\/ \mbox{[}7\mbox{]}. Element \mbox{[}0\mbox{]} will represent degree 0 based on the current angle of the fish. Elements \mbox{[}1\mbox{]} to \mbox{[}7\mbox{]} will represent 45 degree increments from element \mbox{[}0\mbox{]} (e.\+g. 0, 45, 90, 135, 180, 225, 270, 315). The value stored in each element will be vertex coordinates at the specified bounding size / angle away from the center of the sprite... /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_ad02479bdf3ae8da1e43dd39a95b96940}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_sprite_powerup_a62c2660a6eb1d8bb5080fccf98e5cd74}\label{class_sprite_powerup_a62c2660a6eb1d8bb5080fccf98e5cd74}} 
+\index{SpritePowerup@{SpritePowerup}!getControlAngle@{getControlAngle}}
+\index{getControlAngle@{getControlAngle}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getControlAngle()}{getControlAngle()}}
+{\footnotesize\ttfamily float Sprite\+Powerup\+::get\+Control\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the sprite using an \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a8b6a25e97be982249fab6d8bf5c9e3f7}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00299}{299}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a8165ae7ad581ded22d7de7daa2e6ac5a}\label{class_sprite_powerup_a8165ae7ad581ded22d7de7daa2e6ac5a}} 
+\index{SpritePowerup@{SpritePowerup}!getCurrentAnimation@{getCurrentAnimation}}
+\index{getCurrentAnimation@{getCurrentAnimation}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getCurrentAnimation()}{getCurrentAnimation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} Sprite\+Powerup\+::get\+Current\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets teh value recording the amount of health a sprite has... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a6e1e6556de6db54749ad3926c0c1720b}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00378}{378}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_afacbf5add120c8254473598938d8f5de}\label{class_sprite_powerup_afacbf5add120c8254473598938d8f5de}} 
+\index{SpritePowerup@{SpritePowerup}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily float Sprite\+Powerup\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the total health that the sprite could contain /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a09dd7e151892b1314f5cf5f4699a7865}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00405}{405}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ab34451b62b520539ee2665c44b3eab7d}\label{class_sprite_powerup_ab34451b62b520539ee2665c44b3eab7d}} 
+\index{SpritePowerup@{SpritePowerup}!getID@{getID}}
+\index{getID@{getID}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily int Sprite\+Powerup\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} \mbox{[}the sprite is dead\mbox{]} returns true, else false /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Returns the Z point that specifies the target z for normal behavior (e.\+g. after a jump, we want to land at the water level) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_aeb1558c92ad0bc6473f85f5a794ae352}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00481}{481}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ab2e13024799ebfe13c22fe76ed43d006}\label{class_sprite_powerup_ab2e13024799ebfe13c22fe76ed43d006}} 
+\index{SpritePowerup@{SpritePowerup}!getJump@{getJump}}
+\index{getJump@{getJump}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getJump()}{getJump()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}} Sprite\+Powerup\+::get\+Jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the length of the speed vector to indicate the speed of the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a9b7523b584b652b79ad68ec07201362e}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00514}{514}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a4f453334fef61c4b06d3f977db69969b}\label{class_sprite_powerup_a4f453334fef61c4b06d3f977db69969b}} 
+\index{SpritePowerup@{SpritePowerup}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily int Sprite\+Powerup\+::get\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the type of power up contained in a dying sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a9b71685283bec8089adccce3a1fbb221}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00449}{449}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a97b1039ecc2f1fb8852b8914ba4e97c5}\label{class_sprite_powerup_a97b1039ecc2f1fb8852b8914ba4e97c5}} 
+\index{SpritePowerup@{SpritePowerup}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily Vector Sprite\+Powerup\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns three sets of x/y/z coordinates indicating a bounding triangle for a sprite implementation... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a04e5809c871ecfe7caeab6d6886e2bbd}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_aa27f5f47b043187a956467ad6de5e69d}\label{class_sprite_powerup_aa27f5f47b043187a956467ad6de5e69d}} 
+\index{SpritePowerup@{SpritePowerup}!getMaxHealth@{getMaxHealth}}
+\index{getMaxHealth@{getMaxHealth}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getMaxHealth()}{getMaxHealth()}}
+{\footnotesize\ttfamily float Sprite\+Powerup\+::get\+Max\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets teh value recording the amount of health a sprite has... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a486bf5973dcb1d76f8c017af40fc8468}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00413}{413}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ac4b86f4d8371c567e79ebb3900c0fc3f}\label{class_sprite_powerup_ac4b86f4d8371c567e79ebb3900c0fc3f}} 
+\index{SpritePowerup@{SpritePowerup}!getOffset@{getOffset}}
+\index{getOffset@{getOffset}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getOffset()}{getOffset()}}
+{\footnotesize\ttfamily Vector Sprite\+Powerup\+::get\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Defines the width of the sprite including scaling if it applies /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_aa2d94c367130a4696991c59efed7681c}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00233}{233}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_af2afa56f6ae023674f65eaf73b74224c}\label{class_sprite_powerup_af2afa56f6ae023674f65eaf73b74224c}} 
+\index{SpritePowerup@{SpritePowerup}!getPointValue@{getPointValue}}
+\index{getPointValue@{getPointValue}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getPointValue()}{getPointValue()}}
+{\footnotesize\ttfamily int Sprite\+Powerup\+::get\+Point\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the value of the sprite in points if it is destroyed /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a9821c90304790a5e8162c57d37b3ddfa}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00421}{421}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_aec0b31957ddb8c5ce25e9c3e5100a63b}\label{class_sprite_powerup_aec0b31957ddb8c5ce25e9c3e5100a63b}} 
+\index{SpritePowerup@{SpritePowerup}!getPowerUpType@{getPowerUpType}}
+\index{getPowerUpType@{getPowerUpType}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getPowerUpType()}{getPowerUpType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}} Sprite\+Powerup\+::get\+Power\+Up\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the Z point that specifies the target z for normal behavior (e.\+g. after a jump, we want to land at the water level) /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Sets an ID value used to reference the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a5b7c62c32d3eadc4b4fbcd4520fc0801}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00465}{465}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ae02c4eab87e751da4b34ba641217f441}\label{class_sprite_powerup_ae02c4eab87e751da4b34ba641217f441}} 
+\index{SpritePowerup@{SpritePowerup}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily float Sprite\+Powerup\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets what types of attack the sprite is capable of /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a1a7b5c520250a76629a97a8276051db1}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00522}{522}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ad5a738895340c6e26456e3a1f2393d89}\label{class_sprite_powerup_ad5a738895340c6e26456e3a1f2393d89}} 
+\index{SpritePowerup@{SpritePowerup}!getVelocity@{getVelocity}}
+\index{getVelocity@{getVelocity}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
+{\footnotesize\ttfamily Vector Sprite\+Powerup\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_sprite_a26e0ab6ad8370d69503d6641145a14b5}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00575}{575}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a1e9708e992fc4d005ffb1aa64fe7025b}\label{class_sprite_powerup_a1e9708e992fc4d005ffb1aa64fe7025b}} 
+\index{SpritePowerup@{SpritePowerup}!getWaterLevel@{getWaterLevel}}
+\index{getWaterLevel@{getWaterLevel}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{getWaterLevel()}{getWaterLevel()}}
+{\footnotesize\ttfamily float Sprite\+Powerup\+::get\+Water\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the z of a water level as necessary... /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_afd39c00bbd79fc13234885c8941ea798}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00490}{490}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ac789945b1a0990271bc0ca3c342c0c9b}\label{class_sprite_powerup_ac789945b1a0990271bc0ca3c342c0c9b}} 
+\index{SpritePowerup@{SpritePowerup}!handleCollision@{handleCollision}}
+\index{handleCollision@{handleCollision}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{handleCollision()}{handleCollision()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::handle\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}}}]{type,  }\item[{float}]{collision\+Force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Modifies Z Velocity to create a jumping animation /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_adbc200578ecf303656c4743db0044ca7}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_sprite_powerup_ae31b08e2177d31b2c3911e35afb344e5}\label{class_sprite_powerup_ae31b08e2177d31b2c3911e35afb344e5}} 
+\index{SpritePowerup@{SpritePowerup}!handleJump@{handleJump}}
+\index{handleJump@{handleJump}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{handleJump()}{handleJump()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::handle\+Jump (\begin{DoxyParamCaption}\item[{float}]{jump\+Force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the direction of a sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Handles Velocity /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a23b4623bf7bb374b961ff9ce5ea07605}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ac5144549c530b8854106b14118008b31}\label{class_sprite_powerup_ac5144549c530b8854106b14118008b31}} 
+\index{SpritePowerup@{SpritePowerup}!hasPeriodicTimerExpired@{hasPeriodicTimerExpired}}
+\index{hasPeriodicTimerExpired@{hasPeriodicTimerExpired}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{hasPeriodicTimerExpired()}{hasPeriodicTimerExpired()}}
+{\footnotesize\ttfamily bool Sprite\+Powerup\+::has\+Periodic\+Timer\+Expired (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current velocity of the sprite (e.\+g. The X,Y,Z Momentum of the object) /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_a7ac783a7e9180e85f608b2263aee9e2a}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00567}{567}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_sprite_powerup_ae35ec54c413230cd9ae6e5bb9dd396b6}\label{class_sprite_powerup_ae35ec54c413230cd9ae6e5bb9dd396b6}} 
+\index{SpritePowerup@{SpritePowerup}!increaseAcceleration@{increaseAcceleration}}
+\index{increaseAcceleration@{increaseAcceleration}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{increaseAcceleration()}{increaseAcceleration()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::increase\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Control magnitude can affect the maximum speed of the sprite. This can be used with analog joysticks or maybe adjusted if a sprite is damaged in some way (e.\+g. can only move at .75 of it\textquotesingle{}s maximum velocity) another example might be traveling through a stick substance can reduce it\textquotesingle{}s control magnitude /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Unsets the direction of a sprite /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_a8604067bfc4764e4215c8e472390984d}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{class_sprite_powerup_a4017f916b32dca5e2d306bf36b037ba8}\label{class_sprite_powerup_a4017f916b32dca5e2d306bf36b037ba8}} 
+\index{SpritePowerup@{SpritePowerup}!isDead@{isDead}}
+\index{isDead@{isDead}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{isDead()}{isDead()}}
+{\footnotesize\ttfamily bool Sprite\+Powerup\+::is\+Dead (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Assigns an \mbox{\hyperlink{class_i_model}{IModel}} instances to a sprite /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+\mbox{[}the sprite is dead\mbox{]} returns true, else false /summary\texorpdfstring{$>$}{>} ~\newline
+ summary\texorpdfstring{$>$}{>} Assigns an \mbox{\hyperlink{class_i_model}{IModel}} instances to a sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_aa0304d035a3be60fbfc0b558638a8711}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a53ec0aa9b65533113298845de8cdc58f}\label{class_sprite_powerup_a53ec0aa9b65533113298845de8cdc58f}} 
+\index{SpritePowerup@{SpritePowerup}!lockOnTarget@{lockOnTarget}}
+\index{lockOnTarget@{lockOnTarget}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{lockOnTarget()}{lockOnTarget()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::lock\+On\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Checks the direction of a sprite and returns true/false if the sprite is facing that direction... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Returns true when a periodic timer or condition has expired. Condition will be reset once true is returned once. /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_af28642b8e04393d225f83821a9875308}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00560}{560}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_aba2f7c8d95862b53b9ce347c9a2bfa71}\label{class_sprite_powerup_aba2f7c8d95862b53b9ce347c9a2bfa71}} 
+\index{SpritePowerup@{SpritePowerup}!modifyHealthBy@{modifyHealthBy}}
+\index{modifyHealthBy@{modifyHealthBy}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{modifyHealthBy()}{modifyHealthBy()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::modify\+Health\+By (\begin{DoxyParamCaption}\item[{float}]{health\+Modifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the number of health points left in the sprite... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a445add3488623db74f1764652993c0dc}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00396}{396}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a473294c9d2399a24571960ab8b88acba}\label{class_sprite_powerup_a473294c9d2399a24571960ab8b88acba}} 
+\index{SpritePowerup@{SpritePowerup}!modifyRotationBy@{modifyRotationBy}}
+\index{modifyRotationBy@{modifyRotationBy}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{modifyRotationBy()}{modifyRotationBy()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::modify\+Rotation\+By (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns true when a periodic timer or condition has expired. Condition will be reset once true is returned once. /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Assigns a projectile weapon to the sprite that can be triggered by the sprite... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a9c6365557c749751ad1dcc6abc32cf20}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00546}{546}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a22b0c6dcf5b6d20477635c0a809f1306}\label{class_sprite_powerup_a22b0c6dcf5b6d20477635c0a809f1306}} 
+\index{SpritePowerup@{SpritePowerup}!renderHealthBar@{renderHealthBar}}
+\index{renderHealthBar@{renderHealthBar}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{renderHealthBar()}{renderHealthBar()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::render\+Health\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} IDentifies the behavior associated with an instantiated sprite implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a069d8b5214d9cf4137f129f41b2fd005}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00354}{354}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{class_sprite_powerup_af6eda6fdcff9052038ca0a7007bf1c21}\label{class_sprite_powerup_af6eda6fdcff9052038ca0a7007bf1c21}} 
+\index{SpritePowerup@{SpritePowerup}!renderSprite@{renderSprite}}
+\index{renderSprite@{renderSprite}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{renderSprite()}{renderSprite()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::render\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the sprite health bar using an \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_aee11967e900aaa36ea99368c907a7a6f}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00309}{309}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{class_sprite_powerup_a8070efe9869b37352b2b20abc91f7504}\label{class_sprite_powerup_a8070efe9869b37352b2b20abc91f7504}} 
+\index{SpritePowerup@{SpritePowerup}!setAngle@{setAngle}}
+\index{setAngle@{setAngle}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setAngle()}{setAngle()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Angle (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the angle at which our velocity will modify sprite movement... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a898c383dffb69ea7a874caf7db0bd102}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00281}{281}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{class_sprite_powerup_a214106b274f9c06bc4fe18cbf240a13f}\label{class_sprite_powerup_a214106b274f9c06bc4fe18cbf240a13f}} 
+\index{SpritePowerup@{SpritePowerup}!setAnimation@{setAnimation}}
+\index{setAnimation@{setAnimation}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setAnimation()}{setAnimation()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}}}]{animation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the state/animation property of the model ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_ac3c80c8b172445a5009ce33859878989}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00370}{370}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ad50a791dd8aee52566e1137b7297f035}\label{class_sprite_powerup_ad50a791dd8aee52566e1137b7297f035}} 
+\index{SpritePowerup@{SpritePowerup}!setAttackType@{setAttackType}}
+\index{setAttackType@{setAttackType}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setAttackType()}{setAttackType()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Attack\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets what types of attack the sprite is capable of /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a7ee83ab65401133b1ab1eb4c7d71d417}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00530}{530}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ab41ae10bd8881e9875ab1028346ae645}\label{class_sprite_powerup_ab41ae10bd8881e9875ab1028346ae645}} 
+\index{SpritePowerup@{SpritePowerup}!setBoundingTriangleSize@{setBoundingTriangleSize}}
+\index{setBoundingTriangleSize@{setBoundingTriangleSize}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setBoundingTriangleSize()}{setBoundingTriangleSize()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Bounding\+Triangle\+Size (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns four floats top, bottom, left, and right, which can be used for simple sprite collision calculations... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a07c06f0a35dc5137e911c90272d079cb}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00189}{189}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a7a1b712edf62b41219eab4c0dc127786}\label{class_sprite_powerup_a7a1b712edf62b41219eab4c0dc127786}} 
+\index{SpritePowerup@{SpritePowerup}!setControlMagnitude@{setControlMagnitude}}
+\index{setControlMagnitude@{setControlMagnitude}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setControlMagnitude()}{setControlMagnitude()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Control\+Magnitude (\begin{DoxyParamCaption}\item[{float}]{control\+Magnitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the angle at which our velocity will modify sprite movement... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_abe910800a8f6fec6aada8b348abd703b}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00272}{272}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{class_sprite_powerup_a64f158a81d7617777975a5afdc960986}\label{class_sprite_powerup_a64f158a81d7617777975a5afdc960986}} 
+\index{SpritePowerup@{SpritePowerup}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Un\+Sets the direction of a sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Increases the speed vector length by the acceleration velocity specified /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_a619d68c2f620557aa1234da2e574c299}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{class_sprite_powerup_aa6aea588ba92e6a04f98ef339a62295d}\label{class_sprite_powerup_aa6aea588ba92e6a04f98ef339a62295d}} 
+\index{SpritePowerup@{SpritePowerup}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Health (\begin{DoxyParamCaption}\item[{float}]{health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} adjusts the health of the sprite by the specified value /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a2878e9b4ef301f51b3980d90e913dc8e}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00386}{386}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a4a4ee0852b37e2fac93d98d1a68d71f6}\label{class_sprite_powerup_a4a4ee0852b37e2fac93d98d1a68d71f6}} 
+\index{SpritePowerup@{SpritePowerup}!setID@{setID}}
+\index{setID@{setID}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setID()}{setID()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+ID (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets an ID value used to reference the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a1f16a3f8d86dff3cb09901e507ba7e97}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00473}{473}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a7ad1e645c79ce954054c16eb999ca507}\label{class_sprite_powerup_a7ad1e645c79ce954054c16eb999ca507}} 
+\index{SpritePowerup@{SpritePowerup}!setJump@{setJump}}
+\index{setJump@{setJump}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setJump()}{setJump()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}}}]{jump\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the JUMP\+\_\+\+STATE of the sprite object /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a52c634029577f209b8b331a526da3db5}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00506}{506}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a508fd8b3313800862a8ffabe2d6299fc}\label{class_sprite_powerup_a508fd8b3313800862a8ffabe2d6299fc}} 
+\index{SpritePowerup@{SpritePowerup}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setLevel()}{setLevel()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the level number for the sprite which can be used to determine sprite behavior /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_ae285405b152c6eecfb81018a02a0025c}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00441}{441}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_af26500fa1cf1c51a25a54fd228308215}\label{class_sprite_powerup_af26500fa1cf1c51a25a54fd228308215}} 
+\index{SpritePowerup@{SpritePowerup}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Location (\begin{DoxyParamCaption}\item[{Vector}]{location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Only used in non player sprites, this sets an offset location for the sprite... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a87fefd7346890ff768669c66a38db22e}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00212}{212}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 16
+\mbox{\Hypertarget{class_sprite_powerup_a56daf85eb8d45bdff5032fe2ce1428f1}\label{class_sprite_powerup_a56daf85eb8d45bdff5032fe2ce1428f1}} 
+\index{SpritePowerup@{SpritePowerup}!setOffset@{setOffset}}
+\index{setOffset@{setOffset}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setOffset()}{setOffset()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Offset (\begin{DoxyParamCaption}\item[{Vector}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the offset location being applied to the sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_ae50aaeda5334c3173fe9fc7ce40cf092}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00225}{225}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a32e225e8e33083f375225c2c0759ee57}\label{class_sprite_powerup_a32e225e8e33083f375225c2c0759ee57}} 
+\index{SpritePowerup@{SpritePowerup}!setPointValue@{setPointValue}}
+\index{setPointValue@{setPointValue}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setPointValue()}{setPointValue()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Point\+Value (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets a level number for the sprite which can be used to determine sprite behavior /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_ad59077967cb00b7d7fc66540c34c4a76}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00433}{433}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a91f00d9d5cfc2e7a88969de3044f2d8b}\label{class_sprite_powerup_a91f00d9d5cfc2e7a88969de3044f2d8b}} 
+\index{SpritePowerup@{SpritePowerup}!setPowerUpType@{setPowerUpType}}
+\index{setPowerUpType@{setPowerUpType}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setPowerUpType()}{setPowerUpType()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Power\+Up\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}}}]{power\+Up\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the type of power up contained in a dying sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a95cc65a2ae762eb17386203a25121359}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00457}{457}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_ace8f8322cb2a6efead42fa0253720eae}\label{class_sprite_powerup_ace8f8322cb2a6efead42fa0253720eae}} 
+\index{SpritePowerup@{SpritePowerup}!setVelocities@{setVelocities}}
+\index{setVelocities@{setVelocities}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setVelocities()}{setVelocities()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Velocities (\begin{DoxyParamCaption}\item[{float}]{max\+Normal\+Velocity,  }\item[{float}]{drag\+Velocity,  }\item[{float}]{acceleration\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Increases the speed vector length by the acceleration velocity specified /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Control magnitude can affect the maximum speed of the sprite. This can be used with analog joysticks or maybe adjusted if a sprite is damaged in some way (e.\+g. can only move at .75 of it\textquotesingle{}s maximum velocity) another example might be traveling through a stick substance can reduce it\textquotesingle{}s control magnitude /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a6654c5e990a537984c0da5bd2305cd23}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00262}{262}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{class_sprite_powerup_a5aa5c44f55ed9a2221822f95aa9a5783}\label{class_sprite_powerup_a5aa5c44f55ed9a2221822f95aa9a5783}} 
+\index{SpritePowerup@{SpritePowerup}!setWaterLevel@{setWaterLevel}}
+\index{setWaterLevel@{setWaterLevel}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{setWaterLevel()}{setWaterLevel()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::set\+Water\+Level (\begin{DoxyParamCaption}\item[{float}]{water\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Indicates to the sprite object if it is ready for a jump \+:) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a8b13af37066583a800fc531c28eeae7a}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00498}{498}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a943795bf6782af98792db99bf712ce45}\label{class_sprite_powerup_a943795bf6782af98792db99bf712ce45}} 
+\index{SpritePowerup@{SpritePowerup}!spriteHeight@{spriteHeight}}
+\index{spriteHeight@{spriteHeight}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{spriteHeight()}{spriteHeight()}}
+{\footnotesize\ttfamily float Sprite\+Powerup\+::sprite\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the speeds at which the sprite travels based on direction... max\+Normal\+Velocity is the maximum normal speed the sprite can go max\+Burst\+Velocity is the maximum burst speed the sprite can go (burst is a special speed increase) drag\+Velocity is how much speed is reduced when the sprite isn\textquotesingle{}t moving in a direction (until speed is 0) ~\newline
+ /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Sets the speeds at which the sprite travels based on direction... max\+Normal\+Velocity is the maximum normal speed the sprite can go max\+Burst\+Velocity is the maximum burst speed the sprite can go (burst is a special speed increase) drag\+Velocity is how much speed is reduced when the sprite isn\textquotesingle{}t moving in a direction (until speed is 0) modify\+Velocity\+By is how much speed is increased when the sprite is moving in a direction (until speed is maximumvelocity) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a33b6f37c824c9682dd3bc39248ace4e8}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a169f2d4d81bb4de34422cf0d37f1ed72}\label{class_sprite_powerup_a169f2d4d81bb4de34422cf0d37f1ed72}} 
+\index{SpritePowerup@{SpritePowerup}!spriteType@{spriteType}}
+\index{spriteType@{spriteType}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{spriteType()}{spriteType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\+\_\+\+TYPE}} Sprite\+Powerup\+::sprite\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the animation property of the 3d model ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_a950ef030265205693eb1bf64d716de9a}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00362}{362}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a1359b117eead58a9f693f77fe87ee51c}\label{class_sprite_powerup_a1359b117eead58a9f693f77fe87ee51c}} 
+\index{SpritePowerup@{SpritePowerup}!spriteWidth@{spriteWidth}}
+\index{spriteWidth@{spriteWidth}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{spriteWidth()}{spriteWidth()}}
+{\footnotesize\ttfamily float Sprite\+Powerup\+::sprite\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Defines the width of the sprite including scaling if it applies /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_afbb2a42fcb82e5ced198668cbdf76129}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00242}{242}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+\mbox{\Hypertarget{class_sprite_powerup_a392616c14141773698da6b808c28d065}\label{class_sprite_powerup_a392616c14141773698da6b808c28d065}} 
+\index{SpritePowerup@{SpritePowerup}!translateSprite@{translateSprite}}
+\index{translateSprite@{translateSprite}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{translateSprite()}{translateSprite()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::translate\+Sprite (\begin{DoxyParamCaption}\item[{Vector}]{sprite\+Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Update the current location of the sprite by velocity and returns any affect that may have on the map... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Modifies velocity based upon direction to handle a wall style collision.. /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_a412d333cb4e2861cd006f6acb94437ad}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{class_sprite_powerup_ab0b52d1f5176621d660f271bc9d1ad78}\label{class_sprite_powerup_ab0b52d1f5176621d660f271bc9d1ad78}} 
+\index{SpritePowerup@{SpritePowerup}!unsetDirection@{unsetDirection}}
+\index{unsetDirection@{unsetDirection}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{unsetDirection()}{unsetDirection()}}
+{\footnotesize\ttfamily void Sprite\+Powerup\+::unset\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Translates the location of a sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Translates the sprite to a new location and resets it\textquotesingle{}s velocity vector to 0.\+0f for the x, y, and z values. /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_sprite_a04378a9ef84c5e46c712bfb495b7d736}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{class_sprite_powerup_a4e3e5795029538a98d4a6ff03743d34a}\label{class_sprite_powerup_a4e3e5795029538a98d4a6ff03743d34a}} 
+\index{SpritePowerup@{SpritePowerup}!updateLocationByVelocity@{updateLocationByVelocity}}
+\index{updateLocationByVelocity@{updateLocationByVelocity}!SpritePowerup@{SpritePowerup}}
+\doxysubsubsection{\texorpdfstring{updateLocationByVelocity()}{updateLocationByVelocity()}}
+{\footnotesize\ttfamily Vector Sprite\+Powerup\+::update\+Location\+By\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the current x/y/z location of the top left corner of the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Defines the current x/y/z location of the top left corner of the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_sprite_ab33f3f04defb2a994c48237e6629a084}{ISprite}}.
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_powerup_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{_sprite_powerup_8cpp_source}{Sprite\+Powerup.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 20
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_sprite_powerup_8h}{Sprite\+Powerup.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_sprite_powerup_8cpp}{Sprite\+Powerup.\+cpp}}\end{DoxyCompactItemize}

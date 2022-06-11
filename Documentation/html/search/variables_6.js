@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['g_0',['g',['../structtag_gl_color.html#a44be580f6ae446b7525a2a71923e5c26',1,'tagGlColor::g()'],['../structtag_color.html#a5e84e5aea076e6f65416a008759b8700',1,'tagColor::g()'],['../struct_p_n_g_u_c_o_l_o_r.html#acd73e6a8f605dd180562110249c9cef1',1,'PNGUCOLOR::g()']]],
+  ['gcurrentdrawbuffer_1',['gCurrentDrawBuffer',['../_gx_graphics_8cpp.html#afe17d5f3281d2cbf18302e63ba52b2d8',1,'GxGraphics.cpp']]],
+  ['gformattedstring_2',['gFormattedString',['../_tracing_8cpp.html#a039941a0f39027c7274b9f273cdb77c3',1,'Tracing.cpp']]],
+  ['gframebuffers_3',['gFrameBuffers',['../_gx_graphics_8cpp.html#aebc15f2c1e0845dfc044c7ab129170a9',1,'GxGraphics.cpp']]],
+  ['gframesequencenumber_4',['gFrameSequenceNumber',['../_gx_graphics_8cpp.html#ae7f1bb958d2ef666021dc02a2df22782',1,'GxGraphics.cpp']]],
+  ['glastframetime_5',['gLastFrameTime',['../globals_8h.html#a0a009b59c547a584041b42624ff45d34',1,'gLastFrameTime():&#160;GxGraphics.cpp'],['../_gx_graphics_8cpp.html#a0a009b59c547a584041b42624ff45d34',1,'gLastFrameTime():&#160;GxGraphics.cpp']]],
+  ['glcommanddataoffset_6',['glCommandDataOffset',['../structmd2_header_data.html#a8097351800c9788ab9ca5a5ab41b4505',1,'md2HeaderData']]],
+  ['gmemoryavailable_7',['gMemoryAvailable',['../_simple_wii_heap_8cpp.html#a383377f4c634b63d5e311f03097616f5',1,'SimpleWiiHeap.cpp']]],
+  ['gmethoddata_8',['gMethodData',['../_profiler_8cpp.html#aec1c38ab6bae34f7fc4f35cdc63e25fb',1,'Profiler.cpp']]],
+  ['gmethoditerator_9',['gMethodIterator',['../_profiler_8cpp.html#af39fefd9e711a78f3b12e9db2e8df9db',1,'Profiler.cpp']]],
+  ['graphicheight_10',['graphicHeight',['../structtag_tilemap_size.html#a5266b2d9779f66c83afcf0833a3799f4',1,'tagTilemapSize']]],
+  ['graphics_11',['Graphics',['../structtag_level_info.html#a8d6e38c5fb9812e8fba5264b0465728a',1,'tagLevelInfo']]],
+  ['graphicwidth_12',['graphicWidth',['../structtag_tilemap_size.html#a3457a7d76cd7098372b7dc8804806a0d',1,'tagTilemapSize']]],
+  ['greatpickle_13',['GreatPickle',['../structtag_level_info.html#a39d2e37132a33c6e77599da4240f956b',1,'tagLevelInfo']]],
+  ['gtextdisplay_14',['gTextDisplay',['../main_8cpp.html#a2b23bd133a8b13b32aef97c1ce9fb4e5',1,'main.cpp']]],
+  ['gthisframetime_15',['gThisFrameTime',['../globals_8h.html#acd42c29e8b71c351eab33d038aa1aa82',1,'gThisFrameTime():&#160;GxGraphics.cpp'],['../_gx_graphics_8cpp.html#acd42c29e8b71c351eab33d038aa1aa82',1,'gThisFrameTime():&#160;GxGraphics.cpp']]],
+  ['gtimescale_16',['gTimeScale',['../globals_8cpp.html#a073429ea11c010aebf656df58cd7aebb',1,'gTimeScale():&#160;globals.cpp'],['../globals_8h.html#a073429ea11c010aebf656df58cd7aebb',1,'gTimeScale():&#160;globals.cpp'],['../_gx_graphics_8cpp.html#a073429ea11c010aebf656df58cd7aebb',1,'gTimeScale():&#160;GxGraphics.cpp']]],
+  ['gtracefilehandle_17',['gTraceFileHandle',['../_tracing_8cpp.html#ab4eed4adcc95225a744e540209e1b1b8',1,'Tracing.cpp']]],
+  ['gxframebuffer_18',['GxFrameBuffer',['../structtag_frame_buffer.html#a4be92b073aaac6cf7df7b5bc277209f4',1,'tagFrameBuffer']]]
+];

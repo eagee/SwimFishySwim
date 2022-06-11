@@ -1,0 +1,41 @@
+digraph "ProjectileBomb::handleSpriteCollisions"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ProjectileBomb::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ISprite::getCurrentAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a6e1e6556de6db54749ad3926c0c1720b",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ISprite::handleJump",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a23b4623bf7bb374b961ff9ce5ea07605",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="LevelMethodsCheckCollisionSet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a5319580ed95da1ff1d0e4312ea879c66",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ISprite::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#adf07d87015405a56c565efc59d10a937",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ISprite::getBoundingTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#ad02479bdf3ae8da1e43dd39a95b96940",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ISprite::getLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a04e5809c871ecfe7caeab6d6886e2bbd",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="LevelMethodsHandleSparkEffects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a46dc78dd9e8134cfff0ce3efa6f96efc",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ParticleEffect::addParticles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_particle_effect.html#a807a1af756635bd62afd7b5ad190d29c",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ISprite::getAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a44ab48c7a0ca24cf44b5aeb7c84ba597",tooltip=" "];
+  Node9 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ISprite::getWaterLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#afd39c00bbd79fc13234885c8941ea798",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ISprite::modifyHealthBy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a445add3488623db74f1764652993c0dc",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="IAudio::playOnce",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_audio.html#ab7b06473770e6eb5f1d65e63f0853862",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ProjectileMethodsHandleIf\lSpriteDead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_projectile_methods_8cpp.html#af817abcbc31e6f47b31ded1fc69052bc",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="ISprite::getHealth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a09dd7e151892b1314f5cf5f4699a7865",tooltip=" "];
+  Node14 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="ISprite::setHealth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a2878e9b4ef301f51b3980d90e913dc8e",tooltip=" "];
+  Node14 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="ISprite::setPowerUpType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a95cc65a2ae762eb17386203a25121359",tooltip=" "];
+}

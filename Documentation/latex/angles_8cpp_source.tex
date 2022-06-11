@@ -1,0 +1,211 @@
+\hypertarget{angles_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/angles.cpp}
+\mbox{\hyperlink{angles_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00001}00001 \textcolor{comment}{// angles.c}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00002}00002 \textcolor{comment}{// Provides concrete routines to modify float angle values}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00010}\mbox{\hyperlink{angles_8cpp_a7f7e2685ab71efefb9d176543e4fa599}{00010}} \textcolor{keywordtype}{void} \mbox{\hyperlink{angles_8cpp_a7f7e2685ab71efefb9d176543e4fa599}{adjustAngleRotation}}(\textcolor{keywordtype}{float} \&currentAngle, \textcolor{keyword}{const} \textcolor{keywordtype}{float} targetAngle, \textcolor{keywordtype}{float} rotationSpeed)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00011}00011 \{   }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00012}00012     \textcolor{keywordtype}{float} difference = currentAngle -\/ targetAngle;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00013}00013     \textcolor{keywordtype}{float} velocity = (rotationSpeed * \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}});}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00014}00014     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00015}00015     \textcolor{comment}{// If currentAngle minus targetAngle > 0 then velocity is 1 else velocity is -\/1}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00016}00016     \textcolor{keywordflow}{if}(difference < 0)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00017}00017     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00018}00018         velocity = -\/velocity;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00019}00019     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00020}00020     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00021}00021     \textcolor{comment}{// If the player wants to rotate more than the speed at which we rotate...}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00022}00022     \textcolor{keywordflow}{if}(abs(difference) > abs(velocity))}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00023}00023     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00024}00024         \textcolor{comment}{// If absolute of currentAngle minus targetAngle is < 180 then we reverse our velocity  }}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00025}00025         \textcolor{keywordflow}{if}(abs(difference) < 180) }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00026}00026         \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00027}00027             velocity = -\/velocity;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00028}00028         \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00029}00029     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00030}00030         \textcolor{comment}{// Add velocity to current angle}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00031}00031         currentAngle += velocity;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00032}00032     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00033}00033         \textcolor{comment}{// Adjust to see if we need to roll from 360-\/>0 or 0-\/>360}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00034}00034         \textcolor{keywordflow}{if}(currentAngle < 0)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00035}00035         \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00036}00036             currentAngle = 360;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00037}00037         \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00038}00038         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(currentAngle > 360)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00039}00039         \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00040}00040             currentAngle -\/= 360;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00048}\mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{00048}} \textcolor{keywordtype}{float} \mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{modifyAngleByDegrees}}(\textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} modifier)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00050}00050     angle += modifier;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00051}00051     \textcolor{comment}{// Adjust to see if we need to roll from 360-\/>0 or 0-\/>360}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00052}00052     \textcolor{keywordflow}{if}(angle < 0)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00054}00054         angle = 360;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00056}00056     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(angle > 360)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00057}00057     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00058}00058         angle -\/= 360;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00060}00060     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00061}00061     \textcolor{keywordflow}{return} angle;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00062}00062 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00067}\mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{00067}} \textcolor{keywordtype}{float} \mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{getRadiansForAngle}}(\textcolor{keywordtype}{float} angle)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00068}00068 \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00069}00069     \textcolor{keywordflow}{return} (angle * (\mbox{\hyperlink{angles_8h_a598a3330b3c21701223ee0ca14316eca}{PI}} / 180));}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00070}00070 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00075}00075 \textcolor{comment}{//static float getDegreesForAngle(float angle)}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00076}00076 \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00077}00077 \textcolor{comment}{//  return (angle * (180 / PI));}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00078}00078 \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00083}\mbox{\hyperlink{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}{00083}} Vector \mbox{\hyperlink{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}{modifyVectorByAngle}}(Vector location, \textcolor{keywordtype}{float} distanceLength, \textcolor{keywordtype}{float} angleInDegrees)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00084}00084 \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00085}00085     Vector returnValue;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00086}00086     \textcolor{keywordtype}{float} angleInRadians= \mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{getRadiansForAngle}}(angleInDegrees);}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00087}00087     returnValue.x = location.x + (distanceLength * cos(angleInRadians));}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00088}00088     returnValue.y = location.y + (distanceLength * sin(angleInRadians));}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00089}00089     returnValue.z = location.z;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00090}00090     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00091}00091     \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00092}00092 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00097}\mbox{\hyperlink{angles_8cpp_a01eca5c9e7450e3198c46569b7e1a3a6}{00097}} Vector \mbox{\hyperlink{angles_8cpp_a01eca5c9e7450e3198c46569b7e1a3a6}{rotateVectorByAngle}}(Vector location, \textcolor{keywordtype}{float} angleInDegrees)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00098}00098 \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00099}00099     Vector returnValue;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00100}00100     \textcolor{keywordtype}{float} angleInRadians= \mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{getRadiansForAngle}}(angleInDegrees);}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00101}00101     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00102}00102     returnValue.x = cos(angleInRadians) * location.x -\/ sin(angleInRadians) * location.y;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00103}00103     returnValue.y = sin(angleInRadians) * location.x + cos(angleInRadians) * location.y;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00104}00104     returnValue.z = location.z;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00105}00105     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00106}00106     \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00107}00107 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00112}\mbox{\hyperlink{angles_8cpp_a51569664e82f97f4fa306050a9622fb9}{00112}} \textcolor{keywordtype}{float} \mbox{\hyperlink{angles_8cpp_a51569664e82f97f4fa306050a9622fb9}{getAngleBetweenTwoVectors}}(Vector v1, Vector v2)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00113}00113 \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00114}00114     \textcolor{keywordtype}{float} returnValue = 0.0f;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00115}00115     \textcolor{keywordtype}{float} dot = 0.0f;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00116}00116     \textcolor{comment}{// Do we need to normalize the vectors?}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00117}00117     \textcolor{comment}{//fastVectorNormalize(\&v1);}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00118}00118     \textcolor{comment}{//fastVectorNormalize(\&v2);}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00120}00120     dot = \mbox{\hyperlink{fast_vectors_8cpp_a5a9214db3d2f582049cd4aafdeeb881d}{fastVectorDotProduct}}(\&v1, \&v2);}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00122}00122     \textcolor{comment}{// Force the dot product of the two input vectors to }}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00123}00123     \textcolor{comment}{// fall within the domain for inverse cosine, which }}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00124}00124     \textcolor{comment}{// is -\/1 <= x <= 1. This will prevent runtime }}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00125}00125     \textcolor{comment}{// "{}domain error"{} math exceptions.}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00126}00126     \textcolor{keywordflow}{if}(dot < -\/1.0f)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00127}00127     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00128}00128         dot = -\/1.0f;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00129}00129     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00130}00130     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(dot > 1.0f)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00131}00131     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00132}00132         dot = 1.0f;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00133}00133     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00134}00134     \textcolor{keywordtype}{float} pie = (\mbox{\hyperlink{angles_8h_a598a3330b3c21701223ee0ca14316eca}{PI}} * 2.0f);}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00135}00135     \textcolor{keywordtype}{float} angle = acos(dot);}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00137}00137     returnValue = (pie -\/ angle);}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00138}00138     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00139}00139     \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00140}00140 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00145}\mbox{\hyperlink{angles_8cpp_a30d6878d81e316089e36122cc281edc3}{00145}} \textcolor{keywordtype}{float} \mbox{\hyperlink{angles_8cpp_a30d6878d81e316089e36122cc281edc3}{getAngleBetweenTwoPoints}}(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00146}00146 \{   }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00147}00147     \textcolor{keywordtype}{float} returnValue = 0.0f;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00148}00148     \textcolor{keywordflow}{if}((x1 != x2) \&\& (y1 != y2))}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00149}00149     \{       }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00150}00150         \textcolor{comment}{// Get the angle in radians and convert to degrees, then correct for discontinuity (since arctan can return a negative)}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00151}00151         returnValue = (float)atan2((y2 -\/ y1), (x2 -\/ x1)) * 180.0f / \mbox{\hyperlink{angles_8h_a598a3330b3c21701223ee0ca14316eca}{PI}};       }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00152}00152         returnValue = (float)(returnValue > 0.0 ? returnValue : (360.0 + returnValue)); }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00153}00153     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00154}00154     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00155}00155     \textcolor{keywordflow}{return} returnValue; }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00156}00156 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00163}\mbox{\hyperlink{angles_8cpp_a69c5e5d3ac492beffad6a93013a859fa}{00163}} \textcolor{keywordtype}{float} \mbox{\hyperlink{angles_8cpp_a69c5e5d3ac492beffad6a93013a859fa}{adjustInputAngleByCameraAngle}}(\textcolor{keywordtype}{float} inputAngle, \textcolor{keywordtype}{float} cameraAngle)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00164}00164 \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00165}00165     \textcolor{keywordtype}{float} difference = fmod(fabs(180.0f -\/ cameraAngle), 360.0f);}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00166}00166     \textcolor{keywordflow}{if} (difference > 180)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00167}00167     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00168}00168         difference = 360 -\/ difference;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00169}00169     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00171}00171     \textcolor{keywordflow}{if}(cameraAngle < 180.0f)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00172}00172     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00173}00173         }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00174}00174         inputAngle -\/= difference;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00175}00175     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00176}00176     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00177}00177     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00178}00178     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00179}00179         inputAngle += difference;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00180}00180     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00181}00181     }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00182}00182     \textcolor{comment}{// Adjust to see if we need to roll from 360-\/>0 or 0-\/>360}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00183}00183     \textcolor{keywordflow}{if}(inputAngle < 0)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00184}00184     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00185}00185         inputAngle += 360;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00186}00186     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00187}00187     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(inputAngle > 360)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00188}00188     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00189}00189         inputAngle -\/= 360;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00190}00190     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00192}00192     \textcolor{keywordflow}{return} inputAngle;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00193}00193 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00199}\mbox{\hyperlink{angles_8cpp_a06f77c5c09f62b40f212b6e204379385}{00199}} \textcolor{keywordtype}{float} \mbox{\hyperlink{angles_8cpp_a06f77c5c09f62b40f212b6e204379385}{getDistanceBetweenTwoAngles}}(\textcolor{keywordtype}{float} a1, \textcolor{keywordtype}{float} a2)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00200}00200 \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00201}00201     \textcolor{keywordtype}{float} difference = fmod(fabs(a1 -\/ a2), 360.0f);}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00202}00202     \textcolor{keywordflow}{if} (difference > 180)}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00203}00203     \{}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00204}00204         difference = 360 -\/ difference;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00205}00205     \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00206}00206     \textcolor{keywordflow}{return} difference;}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00207}00207 \}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00209}00209     \textcolor{comment}{// If our camera angle ranges from > 270.0f to < 90.0f we get the difference from 0}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00210}00210     \textcolor{comment}{// If our camera angle ranges from >= 90.0f to <= 270.0f we get the difference from 180}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00211}00211     \textcolor{comment}{/*if((cameraAngle > 270.0f) \&\& (cameraAngle <= 360.0f))}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00212}00212 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00213}00213 \textcolor{comment}{        difference = fmod(fabs(0.0f -\/ cameraAngle), 360.0f);}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00214}00214 \textcolor{comment}{        if (difference > 180)}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00215}00215 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00216}00216 \textcolor{comment}{            difference = 360 -\/ difference;}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00217}00217 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00218}00218 \textcolor{comment}{        inputAngle -\/= difference;}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00219}00219 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00220}00220 \textcolor{comment}{    else if((cameraAngle >= 0.0f) \&\& (cameraAngle < 90.0f))}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00221}00221 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00222}00222 \textcolor{comment}{        difference = fmod(fabs(0.0f -\/ cameraAngle), 360.0f);}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00223}00223 \textcolor{comment}{        if (difference > 180)}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00224}00224 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00225}00225 \textcolor{comment}{            difference = 360 -\/ difference;}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00226}00226 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00227}00227 \textcolor{comment}{        inputAngle += difference;       }}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00228}00228 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00229}00229 \textcolor{comment}{    else if((cameraAngle >= 180.0f) \&\& (cameraAngle <= 270.0f))}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00230}00230 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00231}00231 \textcolor{comment}{        difference = fmod(fabs(180.0f -\/ cameraAngle), 360.0f);      }}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00232}00232 \textcolor{comment}{        inputAngle += difference;}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00233}00233 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00234}00234 \textcolor{comment}{    else if((cameraAngle >= 90.0f) \&\& (cameraAngle < 180.0f))}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00235}00235 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00236}00236 \textcolor{comment}{        difference = fmod(fabs(180.0f -\/ cameraAngle), 360.0f);              }}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00237}00237 \textcolor{comment}{        inputAngle -\/= difference;}}
+\DoxyCodeLine{\Hypertarget{angles_8cpp_source_l00238}00238 \textcolor{comment}{    \}*/}}
+
+\end{DoxyCode}

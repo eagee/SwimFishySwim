@@ -1,0 +1,18 @@
+digraph "ProjectileMethodsUpdateProjectiles"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ProjectileMethodsUpdateProjectiles",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ProjectileBomb::updateWeapon\lAndProjectiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_bomb.html#abe918117ccf34398301a02d1c4377e2e",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ProjectileMine::updateWeapon\lAndProjectiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_mine.html#a8890ec139ad76c16e80dfd0e6c23147f",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ProjectileShot::updateWeapon\lAndProjectiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_shot.html#aa26b0edf058f7d229a92cec484f5fffb",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ProjectileSpit::updateWeapon\lAndProjectiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_spit.html#a88a7fe74873e33627c3fbb452e781a3f",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ProjectileToss::updateWeapon\lAndProjectiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_toss.html#abc84b6f74ed9182c5eeb77bff5e36fac",tooltip=" "];
+}

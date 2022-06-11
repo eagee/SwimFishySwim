@@ -1,0 +1,24 @@
+digraph "tagGameMenuInfo"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{tagGameMenuInfo\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +ButtonList" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{map\< int, tagGameButton \>\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +LabelList" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{vector\< tagGameLabel \>\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +BackgroundTexture\n+ButtonTexture\n+FocusedButtonTexture" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{unsigned int\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +backgroundQuad" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{tagQuad\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtag_quad.html",tooltip="Defines what constitutes the definition of a Quad"];
+  Node6 -> Node5 [color="grey25",fontsize="10",style="solid",label=" +texIndexX\n+texIndexY" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{int\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node5 [color="grey25",fontsize="10",style="solid",label=" +normals\n+verticies" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{Vector\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node5 [color="grey25",fontsize="10",style="solid",label=" +texture_S\n+texture_T" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{float\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node9 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +CurrentButtonState" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node9 [label="{MENU_BUTTON_STATE\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +ClickedButtonID" ,arrowhead="odiamond",fontname="Helvetica"];
+}

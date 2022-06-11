@@ -1,0 +1,110 @@
+\hypertarget{class_i_particle_effect}{}\doxysection{IParticle\+Effect Class Reference}
+\label{class_i_particle_effect}\index{IParticleEffect@{IParticleEffect}}
+
+
+{\ttfamily \#include $<$IParticle\+Effect.\+h$>$}
+
+
+
+Inheritance diagram for IParticle\+Effect\+:
+% FIG 0
+
+
+Collaboration diagram for IParticle\+Effect\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_particle_effect_a0202a1c0d9370d898f1a5f3c1675cbe3}{IParticle\+Effect}} ()
+\item 
+virtual \mbox{\hyperlink{class_i_particle_effect_a23f0bd9fc8dc61106ac5c32b98594a46}{$\sim$\+IParticle\+Effect}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_particle_effect_a04d72eed41c6dc785f3d1311273cda27}{assign\+Texture}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_particle_effect_a7ca5d8d7e8447d0e3636b7d89828b3f1}{add\+Particles}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite, Vector offset, int number)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_particle_effect_ab254831f7f275adbe307c1e8b564c96b}{update\+Particles}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_particle_effect_a19283a5ed5b2ccf92de05ae48787ae59}{render\+Particles}} (Vector offset, \mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_i_particle_effect_8h_source_l00037}{37}} of file \mbox{\hyperlink{_i_particle_effect_8h_source}{IParticle\+Effect.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_particle_effect_a0202a1c0d9370d898f1a5f3c1675cbe3}\label{class_i_particle_effect_a0202a1c0d9370d898f1a5f3c1675cbe3}} 
+\index{IParticleEffect@{IParticleEffect}!IParticleEffect@{IParticleEffect}}
+\index{IParticleEffect@{IParticleEffect}!IParticleEffect@{IParticleEffect}}
+\doxysubsubsection{\texorpdfstring{IParticleEffect()}{IParticleEffect()}}
+{\footnotesize\ttfamily IParticle\+Effect\+::\+IParticle\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_i_particle_effect_8h_source_l00040}{40}} of file \mbox{\hyperlink{_i_particle_effect_8h_source}{IParticle\+Effect.\+h}}.
+
+\mbox{\Hypertarget{class_i_particle_effect_a23f0bd9fc8dc61106ac5c32b98594a46}\label{class_i_particle_effect_a23f0bd9fc8dc61106ac5c32b98594a46}} 
+\index{IParticleEffect@{IParticleEffect}!````~IParticleEffect@{$\sim$IParticleEffect}}
+\index{````~IParticleEffect@{$\sim$IParticleEffect}!IParticleEffect@{IParticleEffect}}
+\doxysubsubsection{\texorpdfstring{$\sim$IParticleEffect()}{~IParticleEffect()}}
+{\footnotesize\ttfamily virtual IParticle\+Effect\+::$\sim$\+IParticle\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Assigns an \mbox{\hyperlink{class_i_model}{IModel}} instances to a sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_particle_effect_8h_source_l00042}{42}} of file \mbox{\hyperlink{_i_particle_effect_8h_source}{IParticle\+Effect.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_particle_effect_a7ca5d8d7e8447d0e3636b7d89828b3f1}\label{class_i_particle_effect_a7ca5d8d7e8447d0e3636b7d89828b3f1}} 
+\index{IParticleEffect@{IParticleEffect}!addParticles@{addParticles}}
+\index{addParticles@{addParticles}!IParticleEffect@{IParticleEffect}}
+\doxysubsubsection{\texorpdfstring{addParticles()}{addParticles()}}
+{\footnotesize\ttfamily virtual void IParticle\+Effect\+::add\+Particles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite,  }\item[{Vector}]{offset,  }\item[{int}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Updates all active particles /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_particle_effect_a807a1af756635bd62afd7b5ad190d29c}{Particle\+Effect}}.
+
+\mbox{\Hypertarget{class_i_particle_effect_a04d72eed41c6dc785f3d1311273cda27}\label{class_i_particle_effect_a04d72eed41c6dc785f3d1311273cda27}} 
+\index{IParticleEffect@{IParticleEffect}!assignTexture@{assignTexture}}
+\index{assignTexture@{assignTexture}!IParticleEffect@{IParticleEffect}}
+\doxysubsubsection{\texorpdfstring{assignTexture()}{assignTexture()}}
+{\footnotesize\ttfamily virtual void IParticle\+Effect\+::assign\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds a particle (if there are particles to spare) to the list of active particles otherwise, particle is not activated /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_particle_effect_a6025ff08a59501edf8bbe593b3465162}{Particle\+Effect}}.
+
+\mbox{\Hypertarget{class_i_particle_effect_a19283a5ed5b2ccf92de05ae48787ae59}\label{class_i_particle_effect_a19283a5ed5b2ccf92de05ae48787ae59}} 
+\index{IParticleEffect@{IParticleEffect}!renderParticles@{renderParticles}}
+\index{renderParticles@{renderParticles}!IParticleEffect@{IParticleEffect}}
+\doxysubsubsection{\texorpdfstring{renderParticles()}{renderParticles()}}
+{\footnotesize\ttfamily virtual void IParticle\+Effect\+::render\+Particles (\begin{DoxyParamCaption}\item[{Vector}]{offset,  }\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_particle_effect_ad6b509aa2eda2df339ef95f565292992}{Particle\+Effect}}.
+
+\mbox{\Hypertarget{class_i_particle_effect_ab254831f7f275adbe307c1e8b564c96b}\label{class_i_particle_effect_ab254831f7f275adbe307c1e8b564c96b}} 
+\index{IParticleEffect@{IParticleEffect}!updateParticles@{updateParticles}}
+\index{updateParticles@{updateParticles}!IParticleEffect@{IParticleEffect}}
+\doxysubsubsection{\texorpdfstring{updateParticles()}{updateParticles()}}
+{\footnotesize\ttfamily virtual void IParticle\+Effect\+::update\+Particles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders all active particles using \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation, and offset by the specified vector (e.\+g. for tilemap position) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_particle_effect_adf3193f669cf16d878702bb8cba3090b}{Particle\+Effect}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_i_particle_effect_8h}{IParticle\+Effect.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,108 @@
+\hypertarget{_profiler_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Profiler.cpp}
+\mbox{\hyperlink{_profiler_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00001}00001 \textcolor{comment}{// Profiler.cpp}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00002}00002 \textcolor{comment}{// Provides methods to perform simple profiling operations on a method by method basis and output that information to the trace log...}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WII}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <ogcsys.h>}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <ogc/lwp\_watchdog.h>}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <ogcsys.h>}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <ogc/lwp\_watchdog.h>}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WIN}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include <Windows.h>}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{assert_8h}{assert.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00020}00020 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_profiler_8h}{Profiler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00022}00022 \textcolor{comment}{// Used to store the profiling information...}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00023}\mbox{\hyperlink{structtag_method_profile}{00023}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_method_profile}{tagMethodProfile}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00024}00024 \{   }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00025}\mbox{\hyperlink{structtag_method_profile_a57f4b203c9f6230038e540263b33f2f9}{00025}}     std::string \mbox{\hyperlink{structtag_method_profile_a57f4b203c9f6230038e540263b33f2f9}{MethodName}};}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00026}\mbox{\hyperlink{structtag_method_profile_a90cac5e3e17c210b16890e2b283395ed}{00026}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_method_profile_a90cac5e3e17c210b16890e2b283395ed}{StartedAtMs}};   }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00027}\mbox{\hyperlink{structtag_method_profile_a11478ad27f250d22704a23945c4e8b3e}{00027}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_method_profile_a11478ad27f250d22704a23945c4e8b3e}{TotalMsElapsed}};}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00028}\mbox{\hyperlink{_profiler_8cpp_a3499b125f247cb56e36afbc0d21f479d}{00028}} \} \mbox{\hyperlink{_profiler_8cpp_a3499b125f247cb56e36afbc0d21f479d}{MethodProfile}};}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00030}\mbox{\hyperlink{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}{00030}} \textcolor{keyword}{typedef} std::map<std::string, MethodProfile> \mbox{\hyperlink{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}{MethodData}};}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00031}\mbox{\hyperlink{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}{00031}} \textcolor{keyword}{typedef} MethodData::iterator \mbox{\hyperlink{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}{MethodDataIterator}};}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00033}\mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{00033}} \mbox{\hyperlink{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}{MethodData}} \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}};}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00034}\mbox{\hyperlink{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}{00034}} \mbox{\hyperlink{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}{MethodDataIterator}} \mbox{\hyperlink{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}{gMethodIterator}};}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00039}\mbox{\hyperlink{_profiler_8cpp_abdc024add1c98743eb6be93ee3177d8d}{00039}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_profiler_8cpp_abdc024add1c98743eb6be93ee3177d8d}{profileStart}}(std::string methodName)}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00040}00040 \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00041}00041     \mbox{\hyperlink{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}{gMethodIterator}} = \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}.find(methodName);}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00042}00042     }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00043}00043     \textcolor{comment}{// If we found the method already, then update the starting time...}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00044}00044     \textcolor{comment}{// otherwise add a new element into the map based on the method name...}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00045}00045     \textcolor{keywordflow}{if}(\mbox{\hyperlink{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}{gMethodIterator}} != \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}.end())}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00046}00046     \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00047}00047         ASSERT(\mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName].StartedAtMs == 0);}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00048}00048 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WII}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00049}00049         \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName].StartedAtMs = (gettime() / TB\_TIMER\_CLOCK);}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00050}00050 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00051}00051 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WIN      }}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00052}00052         \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName].StartedAtMs = (float)GetTickCount();}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00053}00053 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00055}00055     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00056}00056     \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00057}00057         \mbox{\hyperlink{structtag_method_profile}{MethodProfile}} newMethod;}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00058}00058         newMethod.\mbox{\hyperlink{structtag_method_profile_a57f4b203c9f6230038e540263b33f2f9}{MethodName}} = methodName;}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00060}00060 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WII}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00061}00061         newMethod.\mbox{\hyperlink{structtag_method_profile_a90cac5e3e17c210b16890e2b283395ed}{StartedAtMs}} = (gettime() / TB\_TIMER\_CLOCK);}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00062}00062 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00063}00063 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WIN      }}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00064}00064         \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName].StartedAtMs = (float)GetTickCount();}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00065}00065 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00066}00066         newMethod.\mbox{\hyperlink{structtag_method_profile_a11478ad27f250d22704a23945c4e8b3e}{TotalMsElapsed}} = 0;     }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00067}00067         \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName] = newMethod;}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00069}00069 \}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00074}\mbox{\hyperlink{_profiler_8cpp_a57be468575124d3e2b72fdc7e405b806}{00074}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_profiler_8cpp_a57be468575124d3e2b72fdc7e405b806}{profileStop}}(std::string methodName)}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00075}00075 \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00076}00076     \mbox{\hyperlink{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}{gMethodIterator}} = \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}.find(methodName);}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00078}00078     \textcolor{comment}{// If we found the method already, then update the starting time...}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00079}00079     \textcolor{comment}{// otherwise add a new element into the map based on the method name...}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00080}00080     \textcolor{keywordflow}{if} (\mbox{\hyperlink{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}{gMethodIterator}} != \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}.end())}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00081}00081     \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00082}00082 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WII}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00083}00083         \textcolor{keywordtype}{float} elapsedThisRun = ((gettime() / TB\_TIMER\_CLOCK) -\/ \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName].StartedAtMs);}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00084}00084 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00085}00085 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WIN      }}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00086}00086         \textcolor{keywordtype}{float} elapsedThisRun = GetTickCount() -\/ \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName].StartedAtMs;}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00087}00087 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00088}00088         \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName].TotalMsElapsed += elapsedThisRun;}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00089}00089         \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{gMethodData}}[methodName].StartedAtMs = 0;}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00090}00090     \}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00091}00091 \}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00096}\mbox{\hyperlink{_profiler_8cpp_af6f4d8d9d59f722dbabada97519b0d52}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_profiler_8cpp_af6f4d8d9d59f722dbabada97519b0d52}{outputProfilingInformation}}()}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00097}00097 \{}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00098}00098     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00099}00099 \textcolor{comment}{    // Printout all of our profiling details!}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00100}00100 \textcolor{comment}{    MethodDataIterator methodIterator = gMethodData.begin();}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00101}00101 \textcolor{comment}{    printf("{}\(\backslash\)x1b[2;0H"{});}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00102}00102 \textcolor{comment}{    printf("{}Profiling Results (Press A to Exit):\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00103}00103 \textcolor{comment}{    printf("{}MethodName:             TotalTime:\(\backslash\)n\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00104}00104 \textcolor{comment}{    for(u32 idx = 0; idx < gMethodData.size(); idx++)}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00105}00105 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00106}00106 \textcolor{comment}{        printf("{}\%s              \%f\(\backslash\)n"{}, methodIterator-\/>second.MethodName.c\_str(), methodIterator-\/>second.TotalMsElapsed);}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00107}00107 \textcolor{comment}{        methodIterator++;}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00108}00108 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00109}00109 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00110}00110     \textcolor{comment}{// Print out memory usage info :D}}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00111}00111     \mbox{\hyperlink{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}{MemTrack::TrackListMemoryUsage}}();}
+\DoxyCodeLine{\Hypertarget{_profiler_8cpp_source_l00112}00112 \}}
+
+\end{DoxyCode}

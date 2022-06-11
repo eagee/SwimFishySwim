@@ -1,0 +1,198 @@
+\hypertarget{namespace_mem_track}{}\doxysection{Mem\+Track Namespace Reference}
+\label{namespace_mem_track}\index{MemTrack@{MemTrack}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}}
+\item 
+struct \mbox{\hyperlink{struct_mem_track_1_1_mem_digest}{Mem\+Digest}}
+\item 
+class \mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{Mem\+Stamp}}
+\item 
+class \mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}{Track\+Malloc}} (size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}{Track\+Free}} (void $\ast$p)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}{Track\+Stamp}} (void $\ast$p, const \mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{Mem\+Stamp}} \&stamp, char const $\ast$type\+Name)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_ab97b33af33d0255feeecde45606f26e5}{Track\+Dump\+Blocks}} ()
+\item 
+void \mbox{\hyperlink{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}{Track\+List\+Memory\+Usage}} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ \mbox{\hyperlink{namespace_mem_track_a7a33e12ed6d0fd72b70dfc91b81c1ab6}{operator$\ast$}} (const \mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{Mem\+Stamp}} \&stamp, T $\ast$p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a2283199082893e4916679370998529cf}{ALIGNMENT}} = 4
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}{SIZE\+\_\+\+Block\+Header}} = \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\+\_\+\+TO\+\_\+\+ALIGNMENT\+\_\+\+BOUNDARY}}(sizeof(\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}}))
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}{SIZE\+\_\+\+Signature}} = \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\+\_\+\+TO\+\_\+\+ALIGNMENT\+\_\+\+BOUNDARY}}(sizeof(\mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}}))
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}{OFFSET\+\_\+\+Block\+Header}} = 0
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}{OFFSET\+\_\+\+Signature}} = \mbox{\hyperlink{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}{OFFSET\+\_\+\+Block\+Header}} + \mbox{\hyperlink{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}{SIZE\+\_\+\+Block\+Header}}
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{OFFSET\+\_\+\+User\+Chunk}} = \mbox{\hyperlink{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}{OFFSET\+\_\+\+Signature}} + \mbox{\hyperlink{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}{SIZE\+\_\+\+Signature}}
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a1833ed4e31c20e02bc6e238b26b63a5e}{SIZE\+\_\+\+Prolog\+Chunk}} = \mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{OFFSET\+\_\+\+User\+Chunk}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_mem_track_a7a33e12ed6d0fd72b70dfc91b81c1ab6}\label{namespace_mem_track_a7a33e12ed6d0fd72b70dfc91b81c1ab6}} 
+\index{MemTrack@{MemTrack}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$ Mem\+Track\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{Mem\+Stamp}} \&}]{stamp,  }\item[{T $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8h_source_l00064}{64}} of file \mbox{\hyperlink{_mem_track_8h_source}{Mem\+Track.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{namespace_mem_track_ab97b33af33d0255feeecde45606f26e5}\label{namespace_mem_track_ab97b33af33d0255feeecde45606f26e5}} 
+\index{MemTrack@{MemTrack}!TrackDumpBlocks@{TrackDumpBlocks}}
+\index{TrackDumpBlocks@{TrackDumpBlocks}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{TrackDumpBlocks()}{TrackDumpBlocks()}}
+{\footnotesize\ttfamily void Mem\+Track\+::\+Track\+Dump\+Blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00402}{402}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}\label{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}} 
+\index{MemTrack@{MemTrack}!TrackFree@{TrackFree}}
+\index{TrackFree@{TrackFree}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{TrackFree()}{TrackFree()}}
+{\footnotesize\ttfamily void Mem\+Track\+::\+Track\+Free (\begin{DoxyParamCaption}\item[{void $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00356}{356}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}\label{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}} 
+\index{MemTrack@{MemTrack}!TrackListMemoryUsage@{TrackListMemoryUsage}}
+\index{TrackListMemoryUsage@{TrackListMemoryUsage}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{TrackListMemoryUsage()}{TrackListMemoryUsage()}}
+{\footnotesize\ttfamily void Mem\+Track\+::\+Track\+List\+Memory\+Usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00466}{466}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}\label{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}} 
+\index{MemTrack@{MemTrack}!TrackMalloc@{TrackMalloc}}
+\index{TrackMalloc@{TrackMalloc}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{TrackMalloc()}{TrackMalloc()}}
+{\footnotesize\ttfamily void $\ast$ Mem\+Track\+::\+Track\+Malloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00331}{331}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}\label{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}} 
+\index{MemTrack@{MemTrack}!TrackStamp@{TrackStamp}}
+\index{TrackStamp@{TrackStamp}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{TrackStamp()}{TrackStamp()}}
+{\footnotesize\ttfamily void Mem\+Track\+::\+Track\+Stamp (\begin{DoxyParamCaption}\item[{void $\ast$}]{p,  }\item[{const \mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{Mem\+Stamp}} \&}]{stamp,  }\item[{char const $\ast$}]{type\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00385}{385}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_mem_track_a2283199082893e4916679370998529cf}\label{namespace_mem_track_a2283199082893e4916679370998529cf}} 
+\index{MemTrack@{MemTrack}!ALIGNMENT@{ALIGNMENT}}
+\index{ALIGNMENT@{ALIGNMENT}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{ALIGNMENT}{ALIGNMENT}}
+{\footnotesize\ttfamily const size\+\_\+t Mem\+Track\+::\+ALIGNMENT = 4}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00255}{255}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}\label{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}} 
+\index{MemTrack@{MemTrack}!OFFSET\_BlockHeader@{OFFSET\_BlockHeader}}
+\index{OFFSET\_BlockHeader@{OFFSET\_BlockHeader}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{OFFSET\_BlockHeader}{OFFSET\_BlockHeader}}
+{\footnotesize\ttfamily const size\+\_\+t Mem\+Track\+::\+OFFSET\+\_\+\+Block\+Header = 0}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00279}{279}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}\label{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}} 
+\index{MemTrack@{MemTrack}!OFFSET\_Signature@{OFFSET\_Signature}}
+\index{OFFSET\_Signature@{OFFSET\_Signature}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{OFFSET\_Signature}{OFFSET\_Signature}}
+{\footnotesize\ttfamily const size\+\_\+t Mem\+Track\+::\+OFFSET\+\_\+\+Signature = \mbox{\hyperlink{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}{OFFSET\+\_\+\+Block\+Header}} + \mbox{\hyperlink{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}{SIZE\+\_\+\+Block\+Header}}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00280}{280}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}\label{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}} 
+\index{MemTrack@{MemTrack}!OFFSET\_UserChunk@{OFFSET\_UserChunk}}
+\index{OFFSET\_UserChunk@{OFFSET\_UserChunk}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{OFFSET\_UserChunk}{OFFSET\_UserChunk}}
+{\footnotesize\ttfamily const size\+\_\+t Mem\+Track\+::\+OFFSET\+\_\+\+User\+Chunk = \mbox{\hyperlink{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}{OFFSET\+\_\+\+Signature}} + \mbox{\hyperlink{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}{SIZE\+\_\+\+Signature}}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00281}{281}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}\label{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}} 
+\index{MemTrack@{MemTrack}!SIZE\_BlockHeader@{SIZE\_BlockHeader}}
+\index{SIZE\_BlockHeader@{SIZE\_BlockHeader}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{SIZE\_BlockHeader}{SIZE\_BlockHeader}}
+{\footnotesize\ttfamily const size\+\_\+t Mem\+Track\+::\+SIZE\+\_\+\+Block\+Header = \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\+\_\+\+TO\+\_\+\+ALIGNMENT\+\_\+\+BOUNDARY}}(sizeof(\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}}))}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00276}{276}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{namespace_mem_track_a1833ed4e31c20e02bc6e238b26b63a5e}\label{namespace_mem_track_a1833ed4e31c20e02bc6e238b26b63a5e}} 
+\index{MemTrack@{MemTrack}!SIZE\_PrologChunk@{SIZE\_PrologChunk}}
+\index{SIZE\_PrologChunk@{SIZE\_PrologChunk}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{SIZE\_PrologChunk}{SIZE\_PrologChunk}}
+{\footnotesize\ttfamily const size\+\_\+t Mem\+Track\+::\+SIZE\+\_\+\+Prolog\+Chunk = \mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{OFFSET\+\_\+\+User\+Chunk}}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00283}{283}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}\label{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}} 
+\index{MemTrack@{MemTrack}!SIZE\_Signature@{SIZE\_Signature}}
+\index{SIZE\_Signature@{SIZE\_Signature}!MemTrack@{MemTrack}}
+\doxysubsubsection{\texorpdfstring{SIZE\_Signature}{SIZE\_Signature}}
+{\footnotesize\ttfamily const size\+\_\+t Mem\+Track\+::\+SIZE\+\_\+\+Signature = \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\+\_\+\+TO\+\_\+\+ALIGNMENT\+\_\+\+BOUNDARY}}(sizeof(\mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}}))}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00277}{277}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+

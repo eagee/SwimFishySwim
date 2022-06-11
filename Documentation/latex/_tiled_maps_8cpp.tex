@@ -1,0 +1,191 @@
+\hypertarget{_tiled_maps_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Tiled\+Maps.cpp File Reference}
+\label{_tiled_maps_8cpp}\index{C:/TeamSheeps/SwimFishySwim/TiledMaps.cpp@{C:/TeamSheeps/SwimFishySwim/TiledMaps.cpp}}
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tiled\+Maps.\+h\char`\"{}}\newline
+Include dependency graph for Tiled\+Maps.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_tilemap_heuristic}{tag\+Tilemap\+Heuristic}}
+\begin{DoxyCompactList}\small\item\em Defines a set of heuristic data we use for pathfinding in the tilemap /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8cpp_a06ad862a1fe79d1748a7616cd4eaa600}{NUMBER\+\_\+\+OF\+\_\+\+WATER\+\_\+\+TILES}}~1
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8cpp_a15f39358e656f754ff5711017a7ae0bc}{TILE\+\_\+\+MOTION\+\_\+\+Z\+\_\+\+MIN}}~0.\+0f
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8cpp_aa12b930a7668052791e8d135b4b35d21}{TILE\+\_\+\+MOTION\+\_\+\+Z\+\_\+\+MAX}}~0.\+5f
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8cpp_a8b070fb78dee555de0a42461bd62d4e1}{IS\+\_\+\+WITHIN\+\_\+\+MAP\+\_\+\+BOUNDARIES}}(collision\+Point)
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8cpp_af105dda42df6caec26cbd337b93ffeaf}{REDUCE\+\_\+\+HEIGHT\+\_\+\+BY}}~0.\+062f
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8cpp_a3b43eaa215d9c67f51ae30741a871e15}{NUMBER\+\_\+\+OF\+\_\+\+PATHFINDING\+\_\+\+NODES}}~8
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structtag_tilemap_heuristic}{tag\+Tilemap\+Heuristic}} \mbox{\hyperlink{_tiled_maps_8cpp_a82f3e4426788c8a13a619aaaac7fb94c}{Tilemap\+Heuristic}}
+\begin{DoxyCompactList}\small\item\em Defines a set of heuristic data we use for pathfinding in the tilemap /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_tiled_maps_8cpp_a3aa7d3bebbff6035c6d4100e6d7aec26}{init\+Water\+Movment}} (\mbox{\hyperlink{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}{Layer\+Motion}} \&water\+Movement, Vector motion\+Step, float x\+Min, float x\+Max, float y\+Min, float y\+Max, float z\+Min, float z\+Max)
+\item 
+void \mbox{\hyperlink{_tiled_maps_8cpp_a511f75e11f6cc9c49fceb578cae03237}{animate\+Water\+Movement}} (\mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{Tilemap\+Layer}} \&water\+Layer)
+\item 
+void \mbox{\hyperlink{_tiled_maps_8cpp_ab737dbf285c648dfbe7547ed061a7f41}{build\+Tilemap\+Quads}} (\mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{Tilemap\+Size}} map\+Size, \mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{Tilemap\+Layer}} $\ast$layer, \mbox{\hyperlink{_tiled_maps_8h_aab9c495844ddd5ee5318fc1809f1ab1c}{Texture\+Coordinate\+Size}} texture\+Size, \mbox{\hyperlink{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}{Tilemap\+ZValues}} tilemap\+ZData, bool apply\+Height\+Map)
+\item 
+void \mbox{\hyperlink{_tiled_maps_8cpp_aa62ae3f6bfa5848e3f744ab86652188b}{build\+Water\+Quads}} (\mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{Tilemap\+Size}} map\+Size, \mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{Tilemap\+Layer}} $\ast$layer, float wrap\+Size)
+\item 
+void \mbox{\hyperlink{_tiled_maps_8cpp_a26a1f42350a7f5e77122d5ce310098f2}{update\+Map\+Velcoity}} (Vector min\+Boundary, Vector max\+Boundary, Vector velocity\+Per\+Sec, Vector \&coordinates)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_tiled_maps_8cpp_a8b070fb78dee555de0a42461bd62d4e1}\label{_tiled_maps_8cpp_a8b070fb78dee555de0a42461bd62d4e1}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!IS\_WITHIN\_MAP\_BOUNDARIES@{IS\_WITHIN\_MAP\_BOUNDARIES}}
+\index{IS\_WITHIN\_MAP\_BOUNDARIES@{IS\_WITHIN\_MAP\_BOUNDARIES}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{IS\_WITHIN\_MAP\_BOUNDARIES}{IS\_WITHIN\_MAP\_BOUNDARIES}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+WITHIN\+\_\+\+MAP\+\_\+\+BOUNDARIES(\begin{DoxyParamCaption}\item[{}]{collision\+Point }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    (collisionPoint.x >= 0.0f) \(\backslash\)}
+\DoxyCodeLine{    \&\&(collisionPoint.y >= 0.0f) \(\backslash\)}
+\DoxyCodeLine{    \&\&(collisionPoint.x <= (myTilemapSize.tilemapWidth -\/ 1)) \(\backslash\)}
+\DoxyCodeLine{    \&\&(collisionPoint.y <= (myTilemapSize.tilemapHeight -\/ 1))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{_tiled_maps_8cpp_a3b43eaa215d9c67f51ae30741a871e15}\label{_tiled_maps_8cpp_a3b43eaa215d9c67f51ae30741a871e15}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!NUMBER\_OF\_PATHFINDING\_NODES@{NUMBER\_OF\_PATHFINDING\_NODES}}
+\index{NUMBER\_OF\_PATHFINDING\_NODES@{NUMBER\_OF\_PATHFINDING\_NODES}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_PATHFINDING\_NODES}{NUMBER\_OF\_PATHFINDING\_NODES}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+PATHFINDING\+\_\+\+NODES~8}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{_tiled_maps_8cpp_a06ad862a1fe79d1748a7616cd4eaa600}\label{_tiled_maps_8cpp_a06ad862a1fe79d1748a7616cd4eaa600}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!NUMBER\_OF\_WATER\_TILES@{NUMBER\_OF\_WATER\_TILES}}
+\index{NUMBER\_OF\_WATER\_TILES@{NUMBER\_OF\_WATER\_TILES}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_WATER\_TILES}{NUMBER\_OF\_WATER\_TILES}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+WATER\+\_\+\+TILES~1}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{_tiled_maps_8cpp_af105dda42df6caec26cbd337b93ffeaf}\label{_tiled_maps_8cpp_af105dda42df6caec26cbd337b93ffeaf}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!REDUCE\_HEIGHT\_BY@{REDUCE\_HEIGHT\_BY}}
+\index{REDUCE\_HEIGHT\_BY@{REDUCE\_HEIGHT\_BY}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{REDUCE\_HEIGHT\_BY}{REDUCE\_HEIGHT\_BY}}
+{\footnotesize\ttfamily \#define REDUCE\+\_\+\+HEIGHT\+\_\+\+BY~0.\+062f}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{_tiled_maps_8cpp_aa12b930a7668052791e8d135b4b35d21}\label{_tiled_maps_8cpp_aa12b930a7668052791e8d135b4b35d21}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!TILE\_MOTION\_Z\_MAX@{TILE\_MOTION\_Z\_MAX}}
+\index{TILE\_MOTION\_Z\_MAX@{TILE\_MOTION\_Z\_MAX}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{TILE\_MOTION\_Z\_MAX}{TILE\_MOTION\_Z\_MAX}}
+{\footnotesize\ttfamily \#define TILE\+\_\+\+MOTION\+\_\+\+Z\+\_\+\+MAX~0.\+5f}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{_tiled_maps_8cpp_a15f39358e656f754ff5711017a7ae0bc}\label{_tiled_maps_8cpp_a15f39358e656f754ff5711017a7ae0bc}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!TILE\_MOTION\_Z\_MIN@{TILE\_MOTION\_Z\_MIN}}
+\index{TILE\_MOTION\_Z\_MIN@{TILE\_MOTION\_Z\_MIN}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{TILE\_MOTION\_Z\_MIN}{TILE\_MOTION\_Z\_MIN}}
+{\footnotesize\ttfamily \#define TILE\+\_\+\+MOTION\+\_\+\+Z\+\_\+\+MIN~0.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_tiled_maps_8cpp_a82f3e4426788c8a13a619aaaac7fb94c}\label{_tiled_maps_8cpp_a82f3e4426788c8a13a619aaaac7fb94c}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!TilemapHeuristic@{TilemapHeuristic}}
+\index{TilemapHeuristic@{TilemapHeuristic}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{TilemapHeuristic}{TilemapHeuristic}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_tilemap_heuristic}{tag\+Tilemap\+Heuristic}} \mbox{\hyperlink{_tiled_maps_8cpp_a82f3e4426788c8a13a619aaaac7fb94c}{Tilemap\+Heuristic}}}
+
+
+
+Defines a set of heuristic data we use for pathfinding in the tilemap /summary\texorpdfstring{$>$}{>} 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_tiled_maps_8cpp_a511f75e11f6cc9c49fceb578cae03237}\label{_tiled_maps_8cpp_a511f75e11f6cc9c49fceb578cae03237}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!animateWaterMovement@{animateWaterMovement}}
+\index{animateWaterMovement@{animateWaterMovement}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{animateWaterMovement()}{animateWaterMovement()}}
+{\footnotesize\ttfamily void animate\+Water\+Movement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{Tilemap\+Layer}} \&}]{water\+Layer }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Allows a user to specify a texture handle returned from the graphics subsystem /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{_tiled_maps_8cpp_ab737dbf285c648dfbe7547ed061a7f41}\label{_tiled_maps_8cpp_ab737dbf285c648dfbe7547ed061a7f41}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!buildTilemapQuads@{buildTilemapQuads}}
+\index{buildTilemapQuads@{buildTilemapQuads}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{buildTilemapQuads()}{buildTilemapQuads()}}
+{\footnotesize\ttfamily void build\+Tilemap\+Quads (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{Tilemap\+Size}}}]{map\+Size,  }\item[{\mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{Tilemap\+Layer}} $\ast$}]{layer,  }\item[{\mbox{\hyperlink{_tiled_maps_8h_aab9c495844ddd5ee5318fc1809f1ab1c}{Texture\+Coordinate\+Size}}}]{texture\+Size,  }\item[{\mbox{\hyperlink{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}{Tilemap\+ZValues}}}]{tilemap\+ZData,  }\item[{bool}]{apply\+Height\+Map }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} builds a quad map based on the width and height of the tilemap /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00891}{891}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{_tiled_maps_8cpp_aa62ae3f6bfa5848e3f744ab86652188b}\label{_tiled_maps_8cpp_aa62ae3f6bfa5848e3f744ab86652188b}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!buildWaterQuads@{buildWaterQuads}}
+\index{buildWaterQuads@{buildWaterQuads}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{buildWaterQuads()}{buildWaterQuads()}}
+{\footnotesize\ttfamily void build\+Water\+Quads (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{Tilemap\+Size}}}]{map\+Size,  }\item[{\mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{Tilemap\+Layer}} $\ast$}]{layer,  }\item[{float}]{wrap\+Size }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Adds a file/texture combination into the \mbox{\hyperlink{class_i_map}{IMap}} object /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00939}{939}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{_tiled_maps_8cpp_a3aa7d3bebbff6035c6d4100e6d7aec26}\label{_tiled_maps_8cpp_a3aa7d3bebbff6035c6d4100e6d7aec26}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!initWaterMovment@{initWaterMovment}}
+\index{initWaterMovment@{initWaterMovment}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{initWaterMovment()}{initWaterMovment()}}
+{\footnotesize\ttfamily void init\+Water\+Movment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}{Layer\+Motion}} \&}]{water\+Movement,  }\item[{Vector}]{motion\+Step,  }\item[{float}]{x\+Min,  }\item[{float}]{x\+Max,  }\item[{float}]{y\+Min,  }\item[{float}]{y\+Max,  }\item[{float}]{z\+Min,  }\item[{float}]{z\+Max }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_tiled_maps_8cpp_a26a1f42350a7f5e77122d5ce310098f2}\label{_tiled_maps_8cpp_a26a1f42350a7f5e77122d5ce310098f2}} 
+\index{TiledMaps.cpp@{TiledMaps.cpp}!updateMapVelcoity@{updateMapVelcoity}}
+\index{updateMapVelcoity@{updateMapVelcoity}!TiledMaps.cpp@{TiledMaps.cpp}}
+\doxysubsubsection{\texorpdfstring{updateMapVelcoity()}{updateMapVelcoity()}}
+{\footnotesize\ttfamily void update\+Map\+Velcoity (\begin{DoxyParamCaption}\item[{Vector}]{min\+Boundary,  }\item[{Vector}]{max\+Boundary,  }\item[{Vector}]{velocity\+Per\+Sec,  }\item[{Vector \&}]{coordinates }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Is in charge of handling all changes associated with map velocity over a period of time /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01391}{1391}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 3

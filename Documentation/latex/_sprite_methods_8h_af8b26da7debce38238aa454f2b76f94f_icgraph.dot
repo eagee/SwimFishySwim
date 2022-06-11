@@ -1,0 +1,24 @@
+digraph "spriteMethodsTranslateSprite"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="spriteMethodsTranslateSprite",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="SpriteBaddie::translateSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html#aed619ac74243d76672a41c1a6e8dbb7e",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="SpriteBullet::translateSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_bullet.html#a430e04f7aaf1563469de58f497cfa5c5",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="SpriteEffect::translateSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_effect.html#a5d3087ad5b8de4233add2497111aa919",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="SpritePlayer::translateSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_player.html#a49d860cee50099d3a671651e88f5adbf",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="SpritePowerup::translate\lSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_powerup.html#a392616c14141773698da6b808c28d065",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="SpriteScenery::translate\lSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_scenery.html#a9b252b813d7d51661a939c261582b7cd",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="SpriteTarget::translateSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_target.html#a7b023a928d81895a3e4cd1f1f424df8e",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="SpriteTower::translateSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_tower.html#ac0a28df03f65b27d4b134300b0c2e355",tooltip=" "];
+}

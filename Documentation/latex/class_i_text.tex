@@ -1,0 +1,148 @@
+\hypertarget{class_i_text}{}\doxysection{IText Class Reference}
+\label{class_i_text}\index{IText@{IText}}
+
+
+{\ttfamily \#include $<$IText.\+h$>$}
+
+
+
+Inheritance diagram for IText\+:
+% FIG 0
+
+
+Collaboration diagram for IText\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_text_a455cc98e4e77163d6fcdd5856a9b2f08}{IText}} ()
+\begin{DoxyCompactList}\small\item\em Defines the constructor for an \mbox{\hyperlink{class_i_text}{IText}} implementation /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_text_ac4f991a166104351e206886bb93cef98}{$\sim$\+IText}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_text_a56cba572e30bbd5e4fe783163222e3d4}{set\+Text\+Size}} (float width, float height, float spacing)=0
+\item 
+virtual float \mbox{\hyperlink{class_i_text_aa98c4fd494e32864f09ae965f74bb42c}{get\+Text\+Width}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_text_a9d803605b0a9aa3048ef48d5e753292e}{get\+Text\+Height}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_text_a636d25ba2e0352008951ecf6bd2e69f1}{get\+Text\+Spacing}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_text_af5ec65f638a8a5d257e9adcb00b2b51b}{assign\+Texture}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_text_a7a10f049abf954f05089fcb1fa99c2b1}{render\+Text}} (Vector location, const char $\ast$fmt,...)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_i_text_8h_source_l00015}{15}} of file \mbox{\hyperlink{_i_text_8h_source}{IText.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_text_a455cc98e4e77163d6fcdd5856a9b2f08}\label{class_i_text_a455cc98e4e77163d6fcdd5856a9b2f08}} 
+\index{IText@{IText}!IText@{IText}}
+\index{IText@{IText}!IText@{IText}}
+\doxysubsubsection{\texorpdfstring{IText()}{IText()}}
+{\footnotesize\ttfamily IText\+::\+IText (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Defines the constructor for an \mbox{\hyperlink{class_i_text}{IText}} implementation /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Defines the destructor for an \mbox{\hyperlink{class_i_text}{IText}} implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_text_8h_source_l00022}{22}} of file \mbox{\hyperlink{_i_text_8h_source}{IText.\+h}}.
+
+\mbox{\Hypertarget{class_i_text_ac4f991a166104351e206886bb93cef98}\label{class_i_text_ac4f991a166104351e206886bb93cef98}} 
+\index{IText@{IText}!````~IText@{$\sim$IText}}
+\index{````~IText@{$\sim$IText}!IText@{IText}}
+\doxysubsubsection{\texorpdfstring{$\sim$IText()}{~IText()}}
+{\footnotesize\ttfamily virtual IText\+::$\sim$\+IText (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Changes the menuing options so that we can adjust the width, height, and spacing used by the menu... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_text_8h_source_l00027}{27}} of file \mbox{\hyperlink{_i_text_8h_source}{IText.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_text_af5ec65f638a8a5d257e9adcb00b2b51b}\label{class_i_text_af5ec65f638a8a5d257e9adcb00b2b51b}} 
+\index{IText@{IText}!assignTexture@{assignTexture}}
+\index{assignTexture@{assignTexture}!IText@{IText}}
+\doxysubsubsection{\texorpdfstring{assignTexture()}{assignTexture()}}
+{\footnotesize\ttfamily virtual void IText\+::assign\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the formatted text specified at the location specified... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_text_a328a7cc86a7f572c7f3da2ec52691774}{Text}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_i_text_a9d803605b0a9aa3048ef48d5e753292e}\label{class_i_text_a9d803605b0a9aa3048ef48d5e753292e}} 
+\index{IText@{IText}!getTextHeight@{getTextHeight}}
+\index{getTextHeight@{getTextHeight}!IText@{IText}}
+\doxysubsubsection{\texorpdfstring{getTextHeight()}{getTextHeight()}}
+{\footnotesize\ttfamily virtual float IText\+::get\+Text\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current spacing used between each text quad /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_text_accb6d36a049d5f9e9c94f85e24d15e35}{Text}}.
+
+\mbox{\Hypertarget{class_i_text_a636d25ba2e0352008951ecf6bd2e69f1}\label{class_i_text_a636d25ba2e0352008951ecf6bd2e69f1}} 
+\index{IText@{IText}!getTextSpacing@{getTextSpacing}}
+\index{getTextSpacing@{getTextSpacing}!IText@{IText}}
+\doxysubsubsection{\texorpdfstring{getTextSpacing()}{getTextSpacing()}}
+{\footnotesize\ttfamily virtual float IText\+::get\+Text\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Assings a texture to be used with the text object... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_text_a56c6ec671c9e16f8c1414df9ada4d40b}{Text}}.
+
+\mbox{\Hypertarget{class_i_text_aa98c4fd494e32864f09ae965f74bb42c}\label{class_i_text_aa98c4fd494e32864f09ae965f74bb42c}} 
+\index{IText@{IText}!getTextWidth@{getTextWidth}}
+\index{getTextWidth@{getTextWidth}!IText@{IText}}
+\doxysubsubsection{\texorpdfstring{getTextWidth()}{getTextWidth()}}
+{\footnotesize\ttfamily virtual float IText\+::get\+Text\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current text quad height /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_text_a65b77a9f0d957c934978176b453c8611}{Text}}.
+
+\mbox{\Hypertarget{class_i_text_a7a10f049abf954f05089fcb1fa99c2b1}\label{class_i_text_a7a10f049abf954f05089fcb1fa99c2b1}} 
+\index{IText@{IText}!renderText@{renderText}}
+\index{renderText@{renderText}!IText@{IText}}
+\doxysubsubsection{\texorpdfstring{renderText()}{renderText()}}
+{\footnotesize\ttfamily virtual void IText\+::render\+Text (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_text_aabc4172e384eb696f319a399d3fac567}{Text}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_i_text_a56cba572e30bbd5e4fe783163222e3d4}\label{class_i_text_a56cba572e30bbd5e4fe783163222e3d4}} 
+\index{IText@{IText}!setTextSize@{setTextSize}}
+\index{setTextSize@{setTextSize}!IText@{IText}}
+\doxysubsubsection{\texorpdfstring{setTextSize()}{setTextSize()}}
+{\footnotesize\ttfamily virtual void IText\+::set\+Text\+Size (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{float}]{spacing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current text quad width /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_text_a7947d36446d2e8236a9433d8c9eec845}{Text}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_i_text_8h}{IText.\+h}}\end{DoxyCompactItemize}

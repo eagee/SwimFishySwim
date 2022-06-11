@@ -1,0 +1,10 @@
+digraph "InGameMenu::clickButton"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="InGameMenu::clickButton",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="isButtonAvailable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_in_game_menu_8cpp.html#aea69d20566b969eaf1c4d2a4cef593dc",tooltip=" "];
+}

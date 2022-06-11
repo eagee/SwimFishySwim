@@ -1,0 +1,113 @@
+\hypertarget{_text_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Text.cpp File Reference}
+\label{_text_8cpp}\index{C:/TeamSheeps/SwimFishySwim/Text.cpp@{C:/TeamSheeps/SwimFishySwim/Text.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+Include dependency graph for Text.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_text_8cpp_a4a0032f227dfc39607cf0d5368dc1fa4}{MIN\+\_\+\+ASCII\+\_\+\+RANGE}}~0
+\item 
+\#define \mbox{\hyperlink{_text_8cpp_a117938be9699b40713fc3c81c39f2285}{MAX\+\_\+\+ASCII\+\_\+\+RANGE}}~255
+\item 
+\#define \mbox{\hyperlink{_text_8cpp_a47081dc75da2892206f36a5de379fde7}{TEXT\+\_\+\+SPACING}}~0.\+20f
+\item 
+\#define \mbox{\hyperlink{_text_8cpp_a69a5395f9a4eb4c96241aa2fa7131444}{NUMBER\+\_\+\+OF\+\_\+\+CHARACTERS\+\_\+\+IN\+\_\+\+ROW}}~16
+\item 
+\#define \mbox{\hyperlink{_text_8cpp_ac59d65940b5ea8a6a0d45a4a283b3e50}{NUMBER\+\_\+\+OF\+\_\+\+CHARACTERS\+\_\+\+IN\+\_\+\+COLUMN}}~16
+\item 
+\#define \mbox{\hyperlink{_text_8cpp_aac66906b90fe2620a40a69da8d3976ff}{WIDTH\+\_\+\+OF\+\_\+\+EACH\+\_\+\+CHARACTER}}~0.\+0625f
+\item 
+\#define \mbox{\hyperlink{_text_8cpp_a16ad4ad481ea54c44be8d2c1aeae68a5}{HEIGHT\+\_\+\+OF\+\_\+\+EACH\+\_\+\+CHARACTER}}~0.\+0625f
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}} $>$ \mbox{\hyperlink{_text_8cpp_a842592a5bdb2481d5a176de897d6b198}{Text\+Quads}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_text_8cpp_a16ad4ad481ea54c44be8d2c1aeae68a5}\label{_text_8cpp_a16ad4ad481ea54c44be8d2c1aeae68a5}} 
+\index{Text.cpp@{Text.cpp}!HEIGHT\_OF\_EACH\_CHARACTER@{HEIGHT\_OF\_EACH\_CHARACTER}}
+\index{HEIGHT\_OF\_EACH\_CHARACTER@{HEIGHT\_OF\_EACH\_CHARACTER}!Text.cpp@{Text.cpp}}
+\doxysubsubsection{\texorpdfstring{HEIGHT\_OF\_EACH\_CHARACTER}{HEIGHT\_OF\_EACH\_CHARACTER}}
+{\footnotesize\ttfamily \#define HEIGHT\+\_\+\+OF\+\_\+\+EACH\+\_\+\+CHARACTER~0.\+0625f}
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{_text_8cpp_a117938be9699b40713fc3c81c39f2285}\label{_text_8cpp_a117938be9699b40713fc3c81c39f2285}} 
+\index{Text.cpp@{Text.cpp}!MAX\_ASCII\_RANGE@{MAX\_ASCII\_RANGE}}
+\index{MAX\_ASCII\_RANGE@{MAX\_ASCII\_RANGE}!Text.cpp@{Text.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_ASCII\_RANGE}{MAX\_ASCII\_RANGE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ASCII\+\_\+\+RANGE~255}
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{_text_8cpp_a4a0032f227dfc39607cf0d5368dc1fa4}\label{_text_8cpp_a4a0032f227dfc39607cf0d5368dc1fa4}} 
+\index{Text.cpp@{Text.cpp}!MIN\_ASCII\_RANGE@{MIN\_ASCII\_RANGE}}
+\index{MIN\_ASCII\_RANGE@{MIN\_ASCII\_RANGE}!Text.cpp@{Text.cpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_ASCII\_RANGE}{MIN\_ASCII\_RANGE}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+ASCII\+\_\+\+RANGE~0}
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{_text_8cpp_ac59d65940b5ea8a6a0d45a4a283b3e50}\label{_text_8cpp_ac59d65940b5ea8a6a0d45a4a283b3e50}} 
+\index{Text.cpp@{Text.cpp}!NUMBER\_OF\_CHARACTERS\_IN\_COLUMN@{NUMBER\_OF\_CHARACTERS\_IN\_COLUMN}}
+\index{NUMBER\_OF\_CHARACTERS\_IN\_COLUMN@{NUMBER\_OF\_CHARACTERS\_IN\_COLUMN}!Text.cpp@{Text.cpp}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_CHARACTERS\_IN\_COLUMN}{NUMBER\_OF\_CHARACTERS\_IN\_COLUMN}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+CHARACTERS\+\_\+\+IN\+\_\+\+COLUMN~16}
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{_text_8cpp_a69a5395f9a4eb4c96241aa2fa7131444}\label{_text_8cpp_a69a5395f9a4eb4c96241aa2fa7131444}} 
+\index{Text.cpp@{Text.cpp}!NUMBER\_OF\_CHARACTERS\_IN\_ROW@{NUMBER\_OF\_CHARACTERS\_IN\_ROW}}
+\index{NUMBER\_OF\_CHARACTERS\_IN\_ROW@{NUMBER\_OF\_CHARACTERS\_IN\_ROW}!Text.cpp@{Text.cpp}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_CHARACTERS\_IN\_ROW}{NUMBER\_OF\_CHARACTERS\_IN\_ROW}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+CHARACTERS\+\_\+\+IN\+\_\+\+ROW~16}
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{_text_8cpp_a47081dc75da2892206f36a5de379fde7}\label{_text_8cpp_a47081dc75da2892206f36a5de379fde7}} 
+\index{Text.cpp@{Text.cpp}!TEXT\_SPACING@{TEXT\_SPACING}}
+\index{TEXT\_SPACING@{TEXT\_SPACING}!Text.cpp@{Text.cpp}}
+\doxysubsubsection{\texorpdfstring{TEXT\_SPACING}{TEXT\_SPACING}}
+{\footnotesize\ttfamily \#define TEXT\+\_\+\+SPACING~0.\+20f}
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{_text_8cpp_aac66906b90fe2620a40a69da8d3976ff}\label{_text_8cpp_aac66906b90fe2620a40a69da8d3976ff}} 
+\index{Text.cpp@{Text.cpp}!WIDTH\_OF\_EACH\_CHARACTER@{WIDTH\_OF\_EACH\_CHARACTER}}
+\index{WIDTH\_OF\_EACH\_CHARACTER@{WIDTH\_OF\_EACH\_CHARACTER}!Text.cpp@{Text.cpp}}
+\doxysubsubsection{\texorpdfstring{WIDTH\_OF\_EACH\_CHARACTER}{WIDTH\_OF\_EACH\_CHARACTER}}
+{\footnotesize\ttfamily \#define WIDTH\+\_\+\+OF\+\_\+\+EACH\+\_\+\+CHARACTER~0.\+0625f}
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_text_8cpp_a842592a5bdb2481d5a176de897d6b198}\label{_text_8cpp_a842592a5bdb2481d5a176de897d6b198}} 
+\index{Text.cpp@{Text.cpp}!TextQuads@{TextQuads}}
+\index{TextQuads@{TextQuads}!Text.cpp@{Text.cpp}}
+\doxysubsubsection{\texorpdfstring{TextQuads}{TextQuads}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}}$>$ \mbox{\hyperlink{_text_8cpp_a842592a5bdb2481d5a176de897d6b198}{Text\+Quads}}}
+
+summary\texorpdfstring{$>$}{>} Handles the singleton implementation of the \mbox{\hyperlink{class_text}{Text}} object so that it can be used globally... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+

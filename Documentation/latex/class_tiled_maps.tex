@@ -1,0 +1,461 @@
+\hypertarget{class_tiled_maps}{}\doxysection{Tiled\+Maps Class Reference}
+\label{class_tiled_maps}\index{TiledMaps@{TiledMaps}}
+
+
+{\ttfamily \#include $<$Tiled\+Maps.\+h$>$}
+
+
+
+Collaboration diagram for Tiled\+Maps\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tiled_maps_a6c260b7014b9bcdadb9190ff94b61613}{Tiled\+Maps}} ()
+\begin{DoxyCompactList}\small\item\em The destructor implementation for the Md2\+Map object /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tiled_maps_a4bee7c3a63841ef49037238ac8ac6c11}{$\sim$\+Tiled\+Maps}} ()
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_a15fd01be6383b84e82d02564f5dc0b4f}{assign\+Textures}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} tile\+Texture, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} water\+Texture, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} cloud\+Texture, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} water\+Light\+Map, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} water\+Normal\+Map)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_afc500ba2c76cb178ac514a40fa415b1d}{add\+Water\+Normal\+Map}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} water\+Normal\+Map)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_a67478a234f22f66249b90b3c9b4069c1}{clear\+Water\+Normal\+Maps}} ()
+\item 
+Vector \mbox{\hyperlink{class_tiled_maps_a13bf49e8e11525f10538421d86ef944f}{find\+Best\+Vector\+On\+Path}} (Vector current\+Position, Vector destination, float current\+Angle, int number\+Of\+Tiles\+Away, int skip\+Temp\+Collision\+ID)
+\item 
+virtual float \mbox{\hyperlink{class_tiled_maps_aeeb2e293c661ff413fb0e8ee73fce5c1}{find\+Angle\+To\+Destination}} (Vector current\+Position, float current\+Angle, Vector destination, int skip\+Collision\+ID)
+\item 
+virtual \mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{Tilemap\+Size}} \mbox{\hyperlink{class_tiled_maps_aaa0f89c604503b63598a0695f8f4d9f0}{get\+Tilemap\+Size}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_tiled_maps_aee4d854a24b13a170e3a55a94e3bd12d}{load\+Tile\+Map}} (const char $\ast$file\+Name)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_adead5741f235f5f78605ee20600b19d6}{set\+Minimum\+Boundary}} (Vector minimum\+Boundary)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_a104627d37160c3619e9e773ddcbb0b90}{translate\+Map}} (\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} layer, Vector translation)
+\item 
+virtual Vector \mbox{\hyperlink{class_tiled_maps_a9941b1c1c42a1e3fea32e6844f1dd6ad}{get\+Location}} (\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} layer)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_af379459179990bcd8941047d0699c456}{set\+Map\+Velocity}} (\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} layer, Vector units\+Per\+Second)
+\item 
+virtual bool \mbox{\hyperlink{class_tiled_maps_a9faaee6cbb09076cb07fc5751a2ad404}{check\+For\+Collision\+At}} (Vector collision\+Offset, int temp\+Collision\+ID)
+\item 
+virtual bool \mbox{\hyperlink{class_tiled_maps_a9f2337b0dbf531f0c0ac316ae9ae74bc}{check\+For\+Collision\+At}} (Vector collision\+Offset)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_ad40ce10ec6fe6963f0de40f858c1fc44}{set\+Temp\+Collision\+At}} (int collision\+ID, Vector collision\+Offset)
+\item 
+float \mbox{\hyperlink{class_tiled_maps_a57567dc109ceeba897d57525cc1b820a}{get\+ZValue\+At}} (Vector \&location)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_a65561b37df5e72744187cc2c42cdad8f}{remove\+Temp\+Collision}} (int collision\+ID)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_abe8a74cb75d65c85bd8c433e9ca11787}{clear\+Temp\+Collision\+Table}} ()
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_aaff90a3ef7215ed3619885111cab76b6}{generate\+Layer\+Vertex\+Arrays}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} layer)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_a77a3145036168ebfa07ac4d65e3edb7a}{free\+Layer\+Vertex\+Arrays}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} layer)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_a2fbc1884278e96c739d88042f0b594f7}{render\+Layer\+Vertex\+Arrays}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} layer)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_a8d2064dc9f73c356dc9d1ee7a094089f}{animation\+Task}} (\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} layer)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_a313f3b08d304c2d0a4fb6633527dc9c6}{velocity\+Task}} ()
+\item 
+virtual \mbox{\hyperlink{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}{Layer\+Motion}} \mbox{\hyperlink{class_tiled_maps_ace281bb17654f0254b54f0515c41e5f5}{get\+Layer\+Motion}} (\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} layer)
+\item 
+virtual void \mbox{\hyperlink{class_tiled_maps_af1fc781b624caf55f9e5240631ca3d22}{shake\+Map\+For}} (float time\+Units, float magnitude)
+\item 
+virtual \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} \mbox{\hyperlink{class_tiled_maps_a842921ca04906747bee2118cedc2377b}{get\+Current\+Water\+Normal\+Map}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00177}{177}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tiled_maps_a6c260b7014b9bcdadb9190ff94b61613}\label{class_tiled_maps_a6c260b7014b9bcdadb9190ff94b61613}} 
+\index{TiledMaps@{TiledMaps}!TiledMaps@{TiledMaps}}
+\index{TiledMaps@{TiledMaps}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{TiledMaps()}{TiledMaps()}}
+{\footnotesize\ttfamily Tiled\+Maps\+::\+Tiled\+Maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The destructor implementation for the Md2\+Map object /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Constructor for md2 map object, \textquotesingle{}will accept a list of md2 objects to load ... /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} The destructor implementation for the Md2\+Map object /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Destructor for md2 objects -\/ should handle all the cleanup ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_a4bee7c3a63841ef49037238ac8ac6c11}\label{class_tiled_maps_a4bee7c3a63841ef49037238ac8ac6c11}} 
+\index{TiledMaps@{TiledMaps}!````~TiledMaps@{$\sim$TiledMaps}}
+\index{````~TiledMaps@{$\sim$TiledMaps}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{$\sim$TiledMaps()}{~TiledMaps()}}
+{\footnotesize\ttfamily Tiled\+Maps\+::$\sim$\+Tiled\+Maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Allows a user to specify a texture handle returned from the graphics subsystem /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tiled_maps_afc500ba2c76cb178ac514a40fa415b1d}\label{class_tiled_maps_afc500ba2c76cb178ac514a40fa415b1d}} 
+\index{TiledMaps@{TiledMaps}!addWaterNormalMap@{addWaterNormalMap}}
+\index{addWaterNormalMap@{addWaterNormalMap}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{addWaterNormalMap()}{addWaterNormalMap()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::add\+Water\+Normal\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{water\+Normal\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Clears all existing references to water normal maps /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00222}{222}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_a8d2064dc9f73c356dc9d1ee7a094089f}\label{class_tiled_maps_a8d2064dc9f73c356dc9d1ee7a094089f}} 
+\index{TiledMaps@{TiledMaps}!animationTask@{animationTask}}
+\index{animationTask@{animationTask}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{animationTask()}{animationTask()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::animation\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Is in charge of handling all changes associated with map velocity over a period of time /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Updates tilemap velocity if we are within the boundaries of the tilemap. Otherwise, it won\textquotesingle{}t allow it to change... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01365}{1365}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_tiled_maps_a15fd01be6383b84e82d02564f5dc0b4f}\label{class_tiled_maps_a15fd01be6383b84e82d02564f5dc0b4f}} 
+\index{TiledMaps@{TiledMaps}!assignTextures@{assignTextures}}
+\index{assignTextures@{assignTextures}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{assignTextures()}{assignTextures()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::assign\+Textures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{tile\+Texture,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{water\+Texture,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{cloud\+Texture,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{water\+Light\+Map,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{water\+Normal\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds a texture into the list of normal mapped textures used by the system /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_tiled_maps_a9f2337b0dbf531f0c0ac316ae9ae74bc}\label{class_tiled_maps_a9f2337b0dbf531f0c0ac316ae9ae74bc}} 
+\index{TiledMaps@{TiledMaps}!checkForCollisionAt@{checkForCollisionAt}}
+\index{checkForCollisionAt@{checkForCollisionAt}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{checkForCollisionAt()}{checkForCollisionAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Tiled\+Maps\+::check\+For\+Collision\+At (\begin{DoxyParamCaption}\item[{Vector}]{collision\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns true if the specified x,y coordinate is marked on the collision map Overloaded to send -\/1 for temp\+Collision\+ID... /summary\texorpdfstring{$>$}{>} summary\texorpdfstring{$>$}{>} Adds/updates a temporary collision element -\/ which lasts until \mbox{\hyperlink{class_tiled_maps_abe8a74cb75d65c85bd8c433e9ca11787}{clear\+Temp\+Collision\+Table()}}, or remove\+Temp\+Collision is called /summary\texorpdfstring{$>$}{>}
+
+Returns true if the specified x,y coordinate is marked on the collision map Overloaded to send -\/1 for temp\+Collision\+ID... /summary\texorpdfstring{$>$}{>} summary\texorpdfstring{$>$}{>} Returns the z value at the specified location in the tilemap using bilinear interpolation between the tilemap verticies... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01112}{1112}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_tiled_maps_a9faaee6cbb09076cb07fc5751a2ad404}\label{class_tiled_maps_a9faaee6cbb09076cb07fc5751a2ad404}} 
+\index{TiledMaps@{TiledMaps}!checkForCollisionAt@{checkForCollisionAt}}
+\index{checkForCollisionAt@{checkForCollisionAt}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{checkForCollisionAt()}{checkForCollisionAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Tiled\+Maps\+::check\+For\+Collision\+At (\begin{DoxyParamCaption}\item[{Vector}]{collision\+Offset,  }\item[{int}]{temp\+Collision\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Generates Vertex Arrays so that we can speed up rendering ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01166}{1166}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_tiled_maps_abe8a74cb75d65c85bd8c433e9ca11787}\label{class_tiled_maps_abe8a74cb75d65c85bd8c433e9ca11787}} 
+\index{TiledMaps@{TiledMaps}!clearTempCollisionTable@{clearTempCollisionTable}}
+\index{clearTempCollisionTable@{clearTempCollisionTable}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{clearTempCollisionTable()}{clearTempCollisionTable()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::clear\+Temp\+Collision\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Generates a display list to use for the specified map layer... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Sets a time during which the map will randomly shake back and forth... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01459}{1459}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_a67478a234f22f66249b90b3c9b4069c1}\label{class_tiled_maps_a67478a234f22f66249b90b3c9b4069c1}} 
+\index{TiledMaps@{TiledMaps}!clearWaterNormalMaps@{clearWaterNormalMaps}}
+\index{clearWaterNormalMaps@{clearWaterNormalMaps}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{clearWaterNormalMaps()}{clearWaterNormalMaps()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::clear\+Water\+Normal\+Maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Performs some very basic heuristic pathfinding analysis to obtain the next tile on the path that will best lead a sprite to its destination. This can be used with find\+Angle\+To\+Destination to assist a sprite in using a highly modify A$\ast$ alogrithm to find it\textquotesingle{}s way without knowing the full path every iteration... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Local procedure to read out the header from a file handle pointing to a tilemap /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00230}{230}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_aeeb2e293c661ff413fb0e8ee73fce5c1}\label{class_tiled_maps_aeeb2e293c661ff413fb0e8ee73fce5c1}} 
+\index{TiledMaps@{TiledMaps}!findAngleToDestination@{findAngleToDestination}}
+\index{findAngleToDestination@{findAngleToDestination}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{findAngleToDestination()}{findAngleToDestination()}}
+{\footnotesize\ttfamily float Tiled\+Maps\+::find\+Angle\+To\+Destination (\begin{DoxyParamCaption}\item[{Vector}]{current\+Position,  }\item[{float}]{current\+Angle,  }\item[{Vector}]{destination,  }\item[{int}]{skip\+Collision\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the size details of the tilemap /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00775}{775}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_tiled_maps_a13bf49e8e11525f10538421d86ef944f}\label{class_tiled_maps_a13bf49e8e11525f10538421d86ef944f}} 
+\index{TiledMaps@{TiledMaps}!findBestVectorOnPath@{findBestVectorOnPath}}
+\index{findBestVectorOnPath@{findBestVectorOnPath}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{findBestVectorOnPath()}{findBestVectorOnPath()}}
+{\footnotesize\ttfamily Vector Tiled\+Maps\+::find\+Best\+Vector\+On\+Path (\begin{DoxyParamCaption}\item[{Vector}]{current\+Position,  }\item[{Vector}]{destination,  }\item[{float}]{current\+Angle,  }\item[{int}]{number\+Of\+Tiles\+Away,  }\item[{int}]{skip\+Temp\+Collision\+ID }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Performs some very basic heuristic pathfinding analysis to obtain the angle at which a sprite would move to find the shortest path to destinationX and destinationY from x and y on the tilemap. Will currently assert if x or y are an edge tile (Either o, or the respective width / height of the tilemap) Since Swim Fishy Swim doesn\textquotesingle{}t let sprites navigate to those points. It must always start from 1 tile into the map in any direction. /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} builds a quad map based on the width and height of the tilemap /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00824}{824}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_tiled_maps_a77a3145036168ebfa07ac4d65e3edb7a}\label{class_tiled_maps_a77a3145036168ebfa07ac4d65e3edb7a}} 
+\index{TiledMaps@{TiledMaps}!freeLayerVertexArrays@{freeLayerVertexArrays}}
+\index{freeLayerVertexArrays@{freeLayerVertexArrays}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{freeLayerVertexArrays()}{freeLayerVertexArrays()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::free\+Layer\+Vertex\+Arrays (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the display list for the specified map layer /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Will cause the map coordinates to give the appears of shaking /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01267}{1267}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_tiled_maps_aaff90a3ef7215ed3619885111cab76b6}\label{class_tiled_maps_aaff90a3ef7215ed3619885111cab76b6}} 
+\index{TiledMaps@{TiledMaps}!generateLayerVertexArrays@{generateLayerVertexArrays}}
+\index{generateLayerVertexArrays@{generateLayerVertexArrays}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{generateLayerVertexArrays()}{generateLayerVertexArrays()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::generate\+Layer\+Vertex\+Arrays (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Frees memory associated with the vertex arrays /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Generates Vertex Arrays so that we can speed up rendering ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01224}{1224}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{class_tiled_maps_a842921ca04906747bee2118cedc2377b}\label{class_tiled_maps_a842921ca04906747bee2118cedc2377b}} 
+\index{TiledMaps@{TiledMaps}!getCurrentWaterNormalMap@{getCurrentWaterNormalMap}}
+\index{getCurrentWaterNormalMap@{getCurrentWaterNormalMap}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{getCurrentWaterNormalMap()}{getCurrentWaterNormalMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} Tiled\+Maps\+::get\+Current\+Water\+Normal\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01477}{1477}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_ace281bb17654f0254b54f0515c41e5f5}\label{class_tiled_maps_ace281bb17654f0254b54f0515c41e5f5}} 
+\index{TiledMaps@{TiledMaps}!getLayerMotion@{getLayerMotion}}
+\index{getLayerMotion@{getLayerMotion}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{getLayerMotion()}{getLayerMotion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}{Layer\+Motion}} Tiled\+Maps\+::get\+Layer\+Motion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets a time during which the map will randomly shake back and forth... /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Is in charge of handling all changes associated with tile animation over a period of time /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01342}{1342}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_a9941b1c1c42a1e3fea32e6844f1dd6ad}\label{class_tiled_maps_a9941b1c1c42a1e3fea32e6844f1dd6ad}} 
+\index{TiledMaps@{TiledMaps}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily Vector Tiled\+Maps\+::get\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the velocity at which the map will move /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01063}{1063}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{class_tiled_maps_aaa0f89c604503b63598a0695f8f4d9f0}\label{class_tiled_maps_aaa0f89c604503b63598a0695f8f4d9f0}} 
+\index{TiledMaps@{TiledMaps}!getTilemapSize@{getTilemapSize}}
+\index{getTilemapSize@{getTilemapSize}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{getTilemapSize()}{getTilemapSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{Tilemap\+Size}} Tiled\+Maps\+::get\+Tilemap\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds a file/texture combination into the \mbox{\hyperlink{class_i_map}{IMap}} object /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Performs some very basic heuristic pathfinding analysis to obtain the next tile on the path that will best lead a sprite to its destination. This can be used with find\+Angle\+To\+Destination to assist a sprite in using a highly modify A$\ast$ alogrithm to find it\textquotesingle{}s way without knowing the full path every iteration... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00813}{813}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_a57567dc109ceeba897d57525cc1b820a}\label{class_tiled_maps_a57567dc109ceeba897d57525cc1b820a}} 
+\index{TiledMaps@{TiledMaps}!getZValueAt@{getZValueAt}}
+\index{getZValueAt@{getZValueAt}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{getZValueAt()}{getZValueAt()}}
+{\footnotesize\ttfamily float Tiled\+Maps\+::get\+ZValue\+At (\begin{DoxyParamCaption}\item[{Vector \&}]{location }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Removes a temporary collision element by the ID it was created under ... /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Returns true if the specified x,y coordinate is marked on the collision map Set temp\+Collision\+ID is used to prevent use of a particular temp collision ID (e.\+g. Use the Player\+ID so the player doesn\textquotesingle{}t collide with his own spot /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01121}{1121}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{class_tiled_maps_aee4d854a24b13a170e3a55a94e3bd12d}\label{class_tiled_maps_aee4d854a24b13a170e3a55a94e3bd12d}} 
+\index{TiledMaps@{TiledMaps}!loadTileMap@{loadTileMap}}
+\index{loadTileMap@{loadTileMap}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{loadTileMap()}{loadTileMap()}}
+{\footnotesize\ttfamily bool Tiled\+Maps\+::load\+Tile\+Map (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets a starting point vector that the map cannot move beyond. The ending point will be based upon the starting point + width + height of map /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Translates all objects loaded in the map based on an xyz coordinate set /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l00950}{950}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{class_tiled_maps_a65561b37df5e72744187cc2c42cdad8f}\label{class_tiled_maps_a65561b37df5e72744187cc2c42cdad8f}} 
+\index{TiledMaps@{TiledMaps}!removeTempCollision@{removeTempCollision}}
+\index{removeTempCollision@{removeTempCollision}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{removeTempCollision()}{removeTempCollision()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::remove\+Temp\+Collision (\begin{DoxyParamCaption}\item[{int}]{collision\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Clears out any temporary collisions that have been added to the tilemap /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01451}{1451}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_a2fbc1884278e96c739d88042f0b594f7}\label{class_tiled_maps_a2fbc1884278e96c739d88042f0b594f7}} 
+\index{TiledMaps@{TiledMaps}!renderLayerVertexArrays@{renderLayerVertexArrays}}
+\index{renderLayerVertexArrays@{renderLayerVertexArrays}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{renderLayerVertexArrays()}{renderLayerVertexArrays()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::render\+Layer\+Vertex\+Arrays (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Is in charge of handling all changes associated with tile animation over a period of time /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Returns the current motion details for a layer so that they can be applied to objects outside of the tilemap... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01302}{1302}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 16
+\mbox{\Hypertarget{class_tiled_maps_af379459179990bcd8941047d0699c456}\label{class_tiled_maps_af379459179990bcd8941047d0699c456}} 
+\index{TiledMaps@{TiledMaps}!setMapVelocity@{setMapVelocity}}
+\index{setMapVelocity@{setMapVelocity}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{setMapVelocity()}{setMapVelocity()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::set\+Map\+Velocity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}]{layer,  }\item[{Vector}]{units\+Per\+Second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns true if the specified x,y coordinate is marked on the collision map if Moveable is true, it\textquotesingle{}ll check for the moveable collision point too. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01089}{1089}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+\mbox{\Hypertarget{class_tiled_maps_adead5741f235f5f78605ee20600b19d6}\label{class_tiled_maps_adead5741f235f5f78605ee20600b19d6}} 
+\index{TiledMaps@{TiledMaps}!setMinimumBoundary@{setMinimumBoundary}}
+\index{setMinimumBoundary@{setMinimumBoundary}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{setMinimumBoundary()}{setMinimumBoundary()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::set\+Minimum\+Boundary (\begin{DoxyParamCaption}\item[{Vector}]{minimum\+Boundary }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Translates all objects loaded in the map based on an xyz coordinate set /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Gets the xyz vector of the map layer specified defining the upper left hand corner of the layer /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01050}{1050}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{class_tiled_maps_ad40ce10ec6fe6963f0de40f858c1fc44}\label{class_tiled_maps_ad40ce10ec6fe6963f0de40f858c1fc44}} 
+\index{TiledMaps@{TiledMaps}!setTempCollisionAt@{setTempCollisionAt}}
+\index{setTempCollisionAt@{setTempCollisionAt}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{setTempCollisionAt()}{setTempCollisionAt()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::set\+Temp\+Collision\+At (\begin{DoxyParamCaption}\item[{int}]{collision\+ID,  }\item[{Vector}]{collision\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the z value at the specified location in the tilemap using bilinear interpolation between the tilemap verticies... /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Removes a temporary collision element by the ID it was created under ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01431}{1431}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{class_tiled_maps_af1fc781b624caf55f9e5240631ca3d22}\label{class_tiled_maps_af1fc781b624caf55f9e5240631ca3d22}} 
+\index{TiledMaps@{TiledMaps}!shakeMapFor@{shakeMapFor}}
+\index{shakeMapFor@{shakeMapFor}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{shakeMapFor()}{shakeMapFor()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::shake\+Map\+For (\begin{DoxyParamCaption}\item[{float}]{time\+Units,  }\item[{float}]{magnitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the Texture\+ID for the current water normal map (for use with projection and other features) /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Gets the Texture\+Handle for the current water normal map (for use with projection and other features) /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01468}{1468}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{class_tiled_maps_a104627d37160c3619e9e773ddcbb0b90}\label{class_tiled_maps_a104627d37160c3619e9e773ddcbb0b90}} 
+\index{TiledMaps@{TiledMaps}!translateMap@{translateMap}}
+\index{translateMap@{translateMap}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{translateMap()}{translateMap()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::translate\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}]{layer,  }\item[{Vector}]{translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the xyz vector of the map layer specified defining the upper left hand corner of the layer /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Sets a starting point vector that the map cannot move beyond. The ending point will be based upon the starting point + width + height of map /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01018}{1018}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 20
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{class_tiled_maps_a313f3b08d304c2d0a4fb6633527dc9c6}\label{class_tiled_maps_a313f3b08d304c2d0a4fb6633527dc9c6}} 
+\index{TiledMaps@{TiledMaps}!velocityTask@{velocityTask}}
+\index{velocityTask@{velocityTask}!TiledMaps@{TiledMaps}}
+\doxysubsubsection{\texorpdfstring{velocityTask()}{velocityTask()}}
+{\footnotesize\ttfamily void Tiled\+Maps\+::velocity\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current motion details for a layer so that they can be applied to objects outside of the tilemap... /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Add/\+Update a temporary collision element -\/ which lasts until \mbox{\hyperlink{class_tiled_maps_abe8a74cb75d65c85bd8c433e9ca11787}{clear\+Temp\+Collision\+Table()}} is called /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8cpp_source_l01419}{1419}} of file \mbox{\hyperlink{_tiled_maps_8cpp_source}{Tiled\+Maps.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 22
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_tiled_maps_8h}{Tiled\+Maps.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_tiled_maps_8cpp}{Tiled\+Maps.\+cpp}}\end{DoxyCompactItemize}

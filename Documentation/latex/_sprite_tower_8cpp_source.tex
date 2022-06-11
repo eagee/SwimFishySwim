@@ -1,0 +1,351 @@
+\hypertarget{_sprite_tower_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Sprite\+Tower.cpp}
+\mbox{\hyperlink{_sprite_tower_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00001}00001 \textcolor{comment}{// SpriteTower.cpp}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00002}00002 \textcolor{comment}{// Provides an implementation of ISprite interface for non playable sprite characters}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_sprite_8h}{ISprite.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sprite_tower_8h}{SpriteTower.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sprite_methods_8h}{SpriteMethods.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_audio_8h}{IAudio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_level_info_8h}{LevelInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_projectile_weapon_8h}{IProjectileWeapon.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00012}00012 \textcolor{comment}{// Some Const values used for player sprite rotations...}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00017}\mbox{\hyperlink{class_sprite_tower_a6e72ac3846163322bdb73ce01b7e8e74}{00017}} \mbox{\hyperlink{class_sprite_tower_a6e72ac3846163322bdb73ce01b7e8e74}{SpriteTower::SpriteTower}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00019}00019     \mbox{\hyperlink{_sprite_methods_8cpp_a9703dd9e8e7a8c45051c0d6b687824e7}{spirteMethodsInitSpriteInfo}}(\&mySpriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00020}00020     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a7cbcabe023f05d3acf0437aa749f37bc}{Type}} = \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a1d68269cce8b62f65354582ac1f181ca}{TOWER\_SPRITE}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00021}00021     Vector zeroValue = \{0.0f, 0.0f, 0.0f\};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00022}00022     myOffsetValue = zeroValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00024}00024  }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00028}\mbox{\hyperlink{class_sprite_tower_a49a9ccefc86ec23094ab55894240976e}{00028}} \mbox{\hyperlink{class_sprite_tower_a49a9ccefc86ec23094ab55894240976e}{SpriteTower::\string~SpriteTower}}() }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00029}00029 \{   }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00031}00031 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00033}00033 \textcolor{comment}{//<summary>}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00036}\mbox{\hyperlink{class_sprite_tower_ae51bf7580f099facbf8ff29ca7332e37}{00036}} \textcolor{comment}{}\textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_tower_ae51bf7580f099facbf8ff29ca7332e37}{SpriteTower::isDead}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00038}00038     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00039}00039 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00044}\mbox{\hyperlink{class_sprite_tower_a296a0fe901ec95d9f092ca7bf385a225}{00044}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a296a0fe901ec95d9f092ca7bf385a225}{SpriteTower::assignModel}}(\mbox{\hyperlink{class_i_model}{IModel}} *model)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00046}00046     \mbox{\hyperlink{_sprite_methods_8cpp_a0353a1f314bbaac068a68198e616962a}{spriteMethodsAssignModel}}(\&mySpriteInfo, model);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00047}00047 \}   }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00052}\mbox{\hyperlink{class_sprite_tower_ac356674e870506b1088a73fc459ded8a}{00052}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_tower_ac356674e870506b1088a73fc459ded8a}{SpriteTower::checkDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00053}00053 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00054}00054     \textcolor{keywordflow}{return} \mbox{\hyperlink{_sprite_methods_8cpp_a473abee9f84727912dab71aa48bdfe64}{spriteMethodsCheckDirection}}(\&mySpriteInfo, direction);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00060}\mbox{\hyperlink{class_sprite_tower_a5e2540290dcc05dfec271b345a354f82}{00060}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a5e2540290dcc05dfec271b345a354f82}{SpriteTower::setDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00061}00061 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00062}00062     \mbox{\hyperlink{_sprite_methods_8cpp_a4c96beb223e046f6218f0c1f20146363}{spriteMethodsSetDirection}}(\&mySpriteInfo, direction);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00063}00063 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00068}\mbox{\hyperlink{class_sprite_tower_a5a85c3ca1d2627a0c292f7f4cca5af8f}{00068}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a5a85c3ca1d2627a0c292f7f4cca5af8f}{SpriteTower::increaseAcceleration}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00069}00069 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00070}00070     \mbox{\hyperlink{_sprite_methods_8cpp_a5a16bdcb12d4b50018959afac7014568}{spriteMethodsIncreaseAcceleration}}(\&mySpriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00071}00071 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00076}\mbox{\hyperlink{class_sprite_tower_a13b5db8331055a380a29c1b734a310ec}{00076}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a13b5db8331055a380a29c1b734a310ec}{SpriteTower::unsetDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00077}00077 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00078}00078     \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(\&mySpriteInfo, direction);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00079}00079 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00085}\mbox{\hyperlink{class_sprite_tower_ac0a28df03f65b27d4b134300b0c2e355}{00085}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ac0a28df03f65b27d4b134300b0c2e355}{SpriteTower::translateSprite}}(Vector spriteLocation)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00086}00086 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00087}00087     \mbox{\hyperlink{_sprite_methods_8cpp_af8b26da7debce38238aa454f2b76f94f}{spriteMethodsTranslateSprite}}(\&mySpriteInfo, spriteLocation);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00088}00088 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00093}\mbox{\hyperlink{class_sprite_tower_ad3ac4a8d843a960e5a2901bc5ffeb7da}{00093}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad3ac4a8d843a960e5a2901bc5ffeb7da}{SpriteTower::handleCollision}}(\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\_TYPE}} type, \textcolor{keywordtype}{float} collisionForce)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00094}00094 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00095}00095     \textcolor{comment}{// If we're in the water, we want to use the standard collision handler}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00096}00096         \textcolor{keywordflow}{if}(type < \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aada4c363debf20bc4dc65f7f9e3b18ce}{FRONT\_LEFT\_SLIDE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00097}00097         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00098}00098             \mbox{\hyperlink{_sprite_methods_8cpp_a771d26785a516650e09230082cbd1cf3}{spriteMethodsHandleCollision}}(\&mySpriteInfo, type, collisionForce);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00099}00099         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00100}00100         \textcolor{comment}{// If we're stuck up on land then we want to use the sliding collision handler...}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00101}00101         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00102}00102         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00103}00103             \mbox{\hyperlink{_sprite_methods_8cpp_a6bfdc270d6c5c1b5fa1144a98e8f27d8}{spriteMethodsHandleSlideCollision}}(\&mySpriteInfo, type, collisionForce);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00104}00104         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00105}00105 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00110}\mbox{\hyperlink{class_sprite_tower_ae5e3c35b726639e5d2813ee6fb0595b2}{00110}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ae5e3c35b726639e5d2813ee6fb0595b2}{SpriteTower::handleJump}}(\textcolor{keywordtype}{float} jumpForce)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00111}00111 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00112}00112     }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00113}00113 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00118}00118 \textcolor{keywordtype}{void} SpriteTower::processVelocity()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00119}00119 \{           }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00120}00120     \mbox{\hyperlink{_sprite_methods_8cpp_aeeb638f491479788f7fc1973890bf6f5}{spriteMethodsProcessVelocity}}(\&mySpriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00128}\mbox{\hyperlink{class_sprite_tower_a9315e73bdb663f19ea9de13e24259f25}{00128}} Vector \mbox{\hyperlink{class_sprite_tower_a9315e73bdb663f19ea9de13e24259f25}{SpriteTower::updateLocationByVelocity}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00129}00129 \{   }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00130}00130     \textcolor{keywordflow}{return} \mbox{\hyperlink{_sprite_methods_8cpp_a7bd12ba2a61a229814542d103d51d167}{spriteMethodsUpdateLocationByVelocity}}(\&mySpriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00131}00131 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00136}\mbox{\hyperlink{class_sprite_tower_a784bea4f9bd8ebbc86b4808e066a941f}{00136}} Vector \mbox{\hyperlink{class_sprite_tower_a784bea4f9bd8ebbc86b4808e066a941f}{SpriteTower::getLocation}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00137}00137 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00138}00138     Vector location = mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00139}00139     location.x += myOffsetValue.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00140}00140     location.y += myOffsetValue.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00141}00141     location.z += myOffsetValue.z;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00142}00142     \textcolor{keywordflow}{return} location;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00143}00143 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00148}\mbox{\hyperlink{class_sprite_tower_a890001fe9d2a956f523127bec502072d}{00148}} \mbox{\hyperlink{structtag_sprite_bounding_triangle}{BoundingTriangle}} \mbox{\hyperlink{class_sprite_tower_a890001fe9d2a956f523127bec502072d}{SpriteTower::getBoundingTriangle}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00149}00149 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00150}00150     \textcolor{keywordflow}{return} \mbox{\hyperlink{_sprite_methods_8cpp_ad9d10bdfc75a2c1db8d1bc929a0b6db3}{spriteMethodsGetBoundingTriangle}}(\&mySpriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00151}00151 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00160}\mbox{\hyperlink{class_sprite_tower_abaf984f9fc0a9b7d1ce2260f786a1ee9}{00160}} \mbox{\hyperlink{structtag_bounding_circle}{BoundingCircle}} \mbox{\hyperlink{class_sprite_tower_abaf984f9fc0a9b7d1ce2260f786a1ee9}{SpriteTower::getBoundingCircle}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00161}00161 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00162}00162     \textcolor{keywordflow}{return} \mbox{\hyperlink{_sprite_methods_8cpp_ada2450ce26a424a516216fe6592c48d3}{spriteMethodsGetBoundingCircle}}(\&mySpriteInfo, 8);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00163}00163 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00168}\mbox{\hyperlink{class_sprite_tower_a99c92624006da04f8a2e20b3a73a4642}{00168}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a99c92624006da04f8a2e20b3a73a4642}{SpriteTower::setBoundingTriangleSize}}(\textcolor{keywordtype}{float} size)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00169}00169 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00170}00170     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a03913b7e463949651a5dd486650f2c1a}{BoundingTriangleSize}} = size;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00171}00171 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00176}\mbox{\hyperlink{class_sprite_tower_a4850f50e256fc5285a434569a20b8acf}{00176}} \mbox{\hyperlink{structtag_sprite_bounding_box}{BoundingBox}} \mbox{\hyperlink{class_sprite_tower_a4850f50e256fc5285a434569a20b8acf}{SpriteTower::getBoundingBox}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00177}00177 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00178}00178     \mbox{\hyperlink{structtag_sprite_bounding_box}{BoundingBox}} returnValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00179}00179     returnValue.\mbox{\hyperlink{structtag_sprite_bounding_box_ab2fa7a6bce313a83f1313a534cae9ed6}{initialize}}(\mbox{\hyperlink{_sprite_methods_8cpp_ad9d10bdfc75a2c1db8d1bc929a0b6db3}{spriteMethodsGetBoundingTriangle}}(\&mySpriteInfo));}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00180}00180     \textcolor{comment}{/*returnValue.left += myOffsetValue.x;}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00181}00181 \textcolor{comment}{    returnValue.right += myOffsetValue.x;}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00182}00182 \textcolor{comment}{    returnValue.top += myOffsetValue.y;}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00183}00183 \textcolor{comment}{    returnValue.bottom += myOffsetValue.y;*/}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00184}00184     \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00185}00185 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00190}\mbox{\hyperlink{class_sprite_tower_a1ee8b6a8e9370243b0ec9e1e1cb5ce5f}{00190}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a1ee8b6a8e9370243b0ec9e1e1cb5ce5f}{SpriteTower::setLocation}}(Vector location)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00191}00191 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00192}00192     \textcolor{comment}{// If we got the location of this sprite, then we need to adjust the location by our offset...}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00193}00193     location.x -\/= myOffsetValue.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00194}00194     location.y -\/= myOffsetValue.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00195}00195     location.z -\/= myOffsetValue.z;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00196}00196     }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00197}00197     \mbox{\hyperlink{_sprite_methods_8cpp_a3e400e62b2a70fb3ad654841fb405f02}{spriteMethodsSetLocation}}(location, \&mySpriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00198}00198 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00203}\mbox{\hyperlink{class_sprite_tower_a97e111d86efc5ff54a87ac3bb1f26185}{00203}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a97e111d86efc5ff54a87ac3bb1f26185}{SpriteTower::setOffset}}(Vector offset)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00204}00204 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00205}00205     myOffsetValue = offset;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00206}00206 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00211}\mbox{\hyperlink{class_sprite_tower_a0c6a871315d7fd6f90af45d552e8964c}{00211}} Vector \mbox{\hyperlink{class_sprite_tower_a0c6a871315d7fd6f90af45d552e8964c}{SpriteTower::getOffset}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00212}00212 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00213}00213     \textcolor{keywordflow}{return} myOffsetValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00214}00214 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00216}00216     }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00220}\mbox{\hyperlink{class_sprite_tower_ad5d4c10fe6fa934909a6c63684c7d4d9}{00220}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_ad5d4c10fe6fa934909a6c63684c7d4d9}{SpriteTower::spriteWidth}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00221}00221 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00222}00222     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_ad061e704e35f7437da98b51f5ef619e3}{Width}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00223}00223 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00224}00224     }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00228}\mbox{\hyperlink{class_sprite_tower_acbd4e57074ec10b229be1ca3ceb3256d}{00228}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_acbd4e57074ec10b229be1ca3ceb3256d}{SpriteTower::spriteHeight}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00229}00229 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00230}00230     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a925f9f3d697561ee6855e1bd89ad298d}{Height}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00231}00231 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00232}00232     }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00240}\mbox{\hyperlink{class_sprite_tower_a0a94467c0221719d34b09e70da80ee65}{00240}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a0a94467c0221719d34b09e70da80ee65}{SpriteTower::setVelocities}}(\textcolor{keywordtype}{float} maxNormalVelocity, \textcolor{keywordtype}{float} dragVelocity, \textcolor{keywordtype}{float} accelerationVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00241}00241 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00242}00242     \mbox{\hyperlink{_sprite_methods_8cpp_a23cdae259828a109013da3c57a2b669e}{spriteMethodsSetVelocities}}(\&mySpriteInfo, maxNormalVelocity, dragVelocity, accelerationVelocity);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00243}00243 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00250}\mbox{\hyperlink{class_sprite_tower_a9d22402df64dda778adb0d928dd1ff8b}{00250}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a9d22402df64dda778adb0d928dd1ff8b}{SpriteTower::setControlMagnitude}}(\textcolor{keywordtype}{float} controlMagnitude)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00251}00251 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00252}00252     \mbox{\hyperlink{_sprite_methods_8cpp_a9edbed78645deb6d2e2e90dcf6737412}{spriteMethodsSetControlMagnitude}}(\&mySpriteInfo, controlMagnitude);  }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00253}00253 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00254}00254 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00259}\mbox{\hyperlink{class_sprite_tower_a0322ac959aff8d3ac4646cbd1a2f59f6}{00259}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a0322ac959aff8d3ac4646cbd1a2f59f6}{SpriteTower::setAngle}}(\textcolor{keywordtype}{float} angle)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00260}00260 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00261}00261     \mbox{\hyperlink{_sprite_methods_8cpp_a2614b4b9eef76a54c374fae551197335}{spriteMethodsSetAngle}}(\&mySpriteInfo, angle);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00262}00262 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00263}00263 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00267}\mbox{\hyperlink{class_sprite_tower_a4b7e43b9d5d600ad422e087c45a34f43}{00267}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_a4b7e43b9d5d600ad422e087c45a34f43}{SpriteTower::getAngle}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00268}00268 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00269}00269     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00270}00270 \}       }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00275}\mbox{\hyperlink{class_sprite_tower_ae493eb94424db9345ba47b1ad748dc69}{00275}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_ae493eb94424db9345ba47b1ad748dc69}{SpriteTower::getControlAngle}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00276}00276 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00277}00277     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00278}00278 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00279}00279         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00280}00280 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00284}\mbox{\hyperlink{class_sprite_tower_ad70534bf2ac9ce3487c91e0bbc4cf07f}{00284}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad70534bf2ac9ce3487c91e0bbc4cf07f}{SpriteTower::renderSprite}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00285}00285 \{   }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00286}00286     \mbox{\hyperlink{_sprite_methods_8cpp_a115e89f458f763005e03f2042976b4b9}{spriteMethodsProcessAnimation}}(\&mySpriteInfo);  }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00287}00287     \mbox{\hyperlink{_sprite_methods_8cpp_a35ce33b222b696259af008c64d0d1ebe}{spriteMethodsRenderSprite}}(\&mySpriteInfo, graphics, myOffsetValue, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00288}00288     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a92ee862961e0d4f3b95fc21f65cd29a8}{ControlMagnitude}} = 1.0f;   }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00289}00289 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00290}00290 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00294}\mbox{\hyperlink{class_sprite_tower_aeda57e9e4d6bb4a0690c78873eabdcf4}{00294}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_aeda57e9e4d6bb4a0690c78873eabdcf4}{SpriteTower::renderHealthBar}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00295}00295 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00296}00296 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00297}00297     \textcolor{keywordtype}{float} percentage = ((float)mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a2b79162c1cd2dc13a856dbb19d9a0a7e}{spriteWeapon}}-\/>\mbox{\hyperlink{class_i_projectile_weapon_a090990f8634fdd6803055a47980f1b62}{getWeaponExperience}}() / mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a2b79162c1cd2dc13a856dbb19d9a0a7e}{spriteWeapon}}-\/>\mbox{\hyperlink{class_i_projectile_weapon_a20c91ee76619913d97191b6214ef60d9}{getMaxWeaponExperience}}());}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00298}00298     \textcolor{keywordflow}{if}(percentage > 1.7f) percentage = 1.7f;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00299}00299     \mbox{\hyperlink{_sprite_methods_8cpp_ab809974f3a01fee347b7328cac94bfad}{spriteMethodsRenderExperienceBar}}(\&mySpriteInfo, graphics, myOffsetValue, percentage);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00300}00300 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00301}00301 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00305}\mbox{\hyperlink{class_sprite_tower_a4d6082ab79c9ad644c7f1fe276729b91}{00305}} \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\_TYPE}} \mbox{\hyperlink{class_sprite_tower_a4d6082ab79c9ad644c7f1fe276729b91}{SpriteTower::spriteType}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00306}00306 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00307}00307     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a7cbcabe023f05d3acf0437aa749f37bc}{Type}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00308}00308 \}       }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00309}00309 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00313}\mbox{\hyperlink{class_sprite_tower_aebcb3f437a4bc953ef153c2cd29d5fcf}{00313}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_aebcb3f437a4bc953ef153c2cd29d5fcf}{SpriteTower::setAnimation}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} animation)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00314}00314 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00315}00315     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = animation;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00316}00316 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00317}00317 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00321}\mbox{\hyperlink{class_sprite_tower_aa046bc8906871114a57a2701c40a3963}{00321}} \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} \mbox{\hyperlink{class_sprite_tower_aa046bc8906871114a57a2701c40a3963}{SpriteTower::getCurrentAnimation}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00322}00322 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00323}00323     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00324}00324 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00325}00325 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00329}\mbox{\hyperlink{class_sprite_tower_a9cd54287b5558e8ea926679244886649}{00329}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a9cd54287b5558e8ea926679244886649}{SpriteTower::setHealth}}(\textcolor{keywordtype}{float} health)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00330}00330 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00331}00331     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} = health; }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00332}00332     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a1e96353a5d55a8723ed598e321fb9a47}{MaxHealth}} = health;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00333}00333 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00334}00334 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00338}\mbox{\hyperlink{class_sprite_tower_af7b3b31969d8c327d168a590f2cb3eb2}{00338}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_af7b3b31969d8c327d168a590f2cb3eb2}{SpriteTower::modifyHealthBy}}(\textcolor{keywordtype}{float} healthModifier)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00339}00339 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00340}00340     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} += healthModifier;    }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00341}00341     \textcolor{keywordflow}{if}(mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} > mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a1e96353a5d55a8723ed598e321fb9a47}{MaxHealth}}) mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} = mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a1e96353a5d55a8723ed598e321fb9a47}{MaxHealth}};    }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00342}00342 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00343}00343 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00347}\mbox{\hyperlink{class_sprite_tower_adf77ad303f8ab4a7c6b3632442812cb2}{00347}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_adf77ad303f8ab4a7c6b3632442812cb2}{SpriteTower::getHealth}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00348}00348 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00349}00349     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00350}00350 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00351}00351 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00355}\mbox{\hyperlink{class_sprite_tower_ac8be7d141e84e8194f0f52154a1c5e49}{00355}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_ac8be7d141e84e8194f0f52154a1c5e49}{SpriteTower::getMaxHealth}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00356}00356 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00357}00357     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a1e96353a5d55a8723ed598e321fb9a47}{MaxHealth}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00358}00358 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00359}00359 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00364}\mbox{\hyperlink{class_sprite_tower_a036bc8da55e5acd15edfa9edcc39491f}{00364}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_tower_a036bc8da55e5acd15edfa9edcc39491f}{SpriteTower::getPointValue}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00365}00365 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00366}00366     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_acb66487bb2839ec6f82a3be36e2886ef}{SpritePointValue}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00367}00367 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00368}00368 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00372}\mbox{\hyperlink{class_sprite_tower_a95ee8304c777d88e375375ac15bf7294}{00372}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a95ee8304c777d88e375375ac15bf7294}{SpriteTower::setPointValue}}(\textcolor{keywordtype}{int} value)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00373}00373 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00374}00374     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_acb66487bb2839ec6f82a3be36e2886ef}{SpritePointValue}} = value;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00375}00375 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00376}00376 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00380}\mbox{\hyperlink{class_sprite_tower_aee5895d1fa4c31ad5e2a5bdf1b0ed2f3}{00380}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_aee5895d1fa4c31ad5e2a5bdf1b0ed2f3}{SpriteTower::setLevel}}(\textcolor{keywordtype}{int} level)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00381}00381 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00382}00382     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a14878884096f2f627108a647ed5ace88}{SpriteLevel}} = level;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00383}00383 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00384}00384 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00388}\mbox{\hyperlink{class_sprite_tower_ae4173b3461d0bef73ee925bd9f0ff0bc}{00388}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_tower_ae4173b3461d0bef73ee925bd9f0ff0bc}{SpriteTower::getLevel}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00389}00389 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00390}00390     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a14878884096f2f627108a647ed5ace88}{SpriteLevel}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00391}00391 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00392}00392 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00396}\mbox{\hyperlink{class_sprite_tower_ab8dc94d40283d37f532313813c94c25b}{00396}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ab8dc94d40283d37f532313813c94c25b}{SpriteTower::setPowerUpType}}(\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\_POWER\_UP}} powerUpType)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00397}00397 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00398}00398     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a652164ff2530ad3f20a1db18eb3a2c26}{PowerUpType}} = powerUpType;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00399}00399 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00400}00400 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00404}\mbox{\hyperlink{class_sprite_tower_ae747f603a9c06e4b0c3d9a46e041ed44}{00404}} \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\_POWER\_UP}} \mbox{\hyperlink{class_sprite_tower_ae747f603a9c06e4b0c3d9a46e041ed44}{SpriteTower::getPowerUpType}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00405}00405 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00406}00406     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a652164ff2530ad3f20a1db18eb3a2c26}{PowerUpType}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00407}00407 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00408}00408 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00412}\mbox{\hyperlink{class_sprite_tower_ad5eb26cc5fed6b271ab956cf64990855}{00412}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad5eb26cc5fed6b271ab956cf64990855}{SpriteTower::setID}}(\textcolor{keywordtype}{int} ID)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00413}00413 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00414}00414     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a615b8fe63861e07592ea4b548ac95bc0}{SpriteID}} = ID;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00415}00415 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00416}00416 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00420}\mbox{\hyperlink{class_sprite_tower_aaa139cd8d28c1e0c151dc815c1e2398b}{00420}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_tower_aaa139cd8d28c1e0c151dc815c1e2398b}{SpriteTower::getID}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00421}00421 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00422}00422     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a615b8fe63861e07592ea4b548ac95bc0}{SpriteID}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00423}00423 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00424}00424 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00429}\mbox{\hyperlink{class_sprite_tower_af5dd91d6c5f5a7c385345d941389ebdc}{00429}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_af5dd91d6c5f5a7c385345d941389ebdc}{SpriteTower::getWaterLevel}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00430}00430 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00431}00431     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a862cde9c672906c5a26d8fa33d435558}{WaterLevel}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00432}00432 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00433}00433 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00437}\mbox{\hyperlink{class_sprite_tower_a3fc061d9f036bd5a3a2399eadbbf33e0}{00437}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a3fc061d9f036bd5a3a2399eadbbf33e0}{SpriteTower::setWaterLevel}}(\textcolor{keywordtype}{float} waterLevel)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00438}00438 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00439}00439     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a862cde9c672906c5a26d8fa33d435558}{WaterLevel}} = waterLevel;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00440}00440 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00441}00441 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00445}\mbox{\hyperlink{class_sprite_tower_ae43e7797dd4e3ff80e1a4e3ae7d84b09}{00445}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ae43e7797dd4e3ff80e1a4e3ae7d84b09}{SpriteTower::setJump}}(\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\_STATE}} jumpState)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00446}00446 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00447}00447     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = jumpState;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00448}00448 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00449}00449 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00453}\mbox{\hyperlink{class_sprite_tower_ab5b7d595c7b321fe0f03008bb51dc4b7}{00453}} \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\_STATE}} \mbox{\hyperlink{class_sprite_tower_ab5b7d595c7b321fe0f03008bb51dc4b7}{SpriteTower::getJump}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00454}00454 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00455}00455     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00456}00456 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00457}00457 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00461}\mbox{\hyperlink{class_sprite_tower_a5918266ef230dc09b82ab7f40880f6f2}{00461}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_a5918266ef230dc09b82ab7f40880f6f2}{SpriteTower::getSpeed}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00462}00462 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00463}00463     \textcolor{keywordflow}{return} (mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} / mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a6ee5ab6656099b952251f40cf21ff0f0}{UnmodifiedMaxVelocity}});}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00464}00464 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00465}00465 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00469}\mbox{\hyperlink{class_sprite_tower_aa97daebab6e02a73b45b0f5b8a78628c}{00469}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_aa97daebab6e02a73b45b0f5b8a78628c}{SpriteTower::setAttackType}}(\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\_TYPE}} type)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00470}00470 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00471}00471     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_ac776b2834507c99c590254461a1f0ca3}{AttackType}} = type;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00472}00472 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00473}00473 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00477}\mbox{\hyperlink{class_sprite_tower_a3cf0c6b56ea2378a03652f9ef591cb51}{00477}} \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\_TYPE}} \mbox{\hyperlink{class_sprite_tower_a3cf0c6b56ea2378a03652f9ef591cb51}{SpriteTower::getAttackType}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00478}00478 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00479}00479     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_ac776b2834507c99c590254461a1f0ca3}{AttackType}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00480}00480 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00481}00481 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00485}\mbox{\hyperlink{class_sprite_tower_afc48bf15f690a7a81b1884b7fbca8b4b}{00485}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_afc48bf15f690a7a81b1884b7fbca8b4b}{SpriteTower::modifyRotationBy}}(\textcolor{keywordtype}{float} value)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00486}00486 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00487}00487 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00488}00488 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00492}\mbox{\hyperlink{class_sprite_tower_ad7924bad4f5f2aba65fc42ab16e3886e}{00492}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad7924bad4f5f2aba65fc42ab16e3886e}{SpriteTower::assignWeapon}}(\mbox{\hyperlink{class_i_projectile_weapon}{IProjectileWeapon}} *weapon)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00493}00493 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00494}00494     mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a2b79162c1cd2dc13a856dbb19d9a0a7e}{spriteWeapon}} = weapon;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00495}00495 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00496}00496 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00500}\mbox{\hyperlink{class_sprite_tower_ad81f1d7245999348aae4c6c465587327}{00500}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad81f1d7245999348aae4c6c465587327}{SpriteTower::lockOnTarget}}(\mbox{\hyperlink{class_i_sprite}{ISprite}} \&target)}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00501}00501 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00502}00502     \textcolor{keywordtype}{bool} lockedOntoTarget = \mbox{\hyperlink{_sprite_methods_8cpp_a4c291061d24f26554c604d991e1caf99}{spriteMethodsLockOnTarget}}(target, \&mySpriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00503}00503     \textcolor{keywordflow}{if}(lockedOntoTarget == \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00504}00504     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00505}00505         \textcolor{comment}{// Since we have a baddie in view, trigger our weapon. The weapon will handle firing rate based on tower sprite animation...}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00506}00506         ASSERT(mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a2b79162c1cd2dc13a856dbb19d9a0a7e}{spriteWeapon}} != NULL);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00507}00507         Vector spriteOffset = myOffsetValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00508}00508         spriteOffset.z = -\/3.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00509}00509         mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a2b79162c1cd2dc13a856dbb19d9a0a7e}{spriteWeapon}}-\/>\mbox{\hyperlink{class_i_projectile_weapon_afd1e6fbba4e3721639c0ca999be8e8d3}{handleTriggerState}}(\mbox{\hyperlink{_projectile_weapon_info_8h_a37ab2c5940fbf02ed4a60f9727e22f70a06914b55210b39eea9fe2f6662d45ec5}{PROJECTILE\_TRIGGER\_PRESSED}}, \textcolor{keyword}{this}, spriteOffset);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00510}00510         mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a2b79162c1cd2dc13a856dbb19d9a0a7e}{spriteWeapon}}-\/>\mbox{\hyperlink{class_i_projectile_weapon_afd1e6fbba4e3721639c0ca999be8e8d3}{handleTriggerState}}(\mbox{\hyperlink{_projectile_weapon_info_8h_a37ab2c5940fbf02ed4a60f9727e22f70a0686878066e4df57ea83484e9f77ca3f}{PROJECTILE\_TRIGGER\_RELEASED}}, \textcolor{keyword}{this}, spriteOffset);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00511}00511     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00512}00512 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00513}00513 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00517}\mbox{\hyperlink{class_sprite_tower_a8a782b43519717e451315512c6c8ea69}{00517}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_tower_a8a782b43519717e451315512c6c8ea69}{SpriteTower::hasPeriodicTimerExpired}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00518}00518 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00519}00519     \textcolor{keywordflow}{return} \mbox{\hyperlink{_sprite_methods_8cpp_afe69b086977244e7b27fbc2c5635d679}{spriteMethodsHasTimerExpired}}(\&mySpriteInfo, \mbox{\hyperlink{_sprite_info_8h_a8b942cf2e5fe316ee817de8d7028ed03}{DEFAULT\_PERIODIC\_TIMER}});}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00520}00520 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00521}00521 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00525}\mbox{\hyperlink{class_sprite_tower_a2a494079ad0fefb3357c49fd8fd0c57d}{00525}} Vector \mbox{\hyperlink{class_sprite_tower_a2a494079ad0fefb3357c49fd8fd0c57d}{SpriteTower::getVelocity}}()}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00526}00526 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00527}00527     \textcolor{keywordflow}{return} mySpriteInfo.\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00528}00528 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8cpp_source_l00529}00529 }
+
+\end{DoxyCode}

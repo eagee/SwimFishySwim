@@ -1,0 +1,21 @@
+digraph "SpritePowerup::updateLocationByVelocity"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SpritePowerup::updateLocation\lByVelocity",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="spriteMethodsUpdateLocation\lByVelocity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#a7bd12ba2a61a229814542d103d51d167",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="spriteMethodsProcessBullet\lVelocity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#a8b76d4c18de028f8b6b5a7b590f0738e",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="getRadiansForAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$angles_8cpp.html#afd678569a928773e3637374773ada97e",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="spriteMethodsProcessVelocity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#aeeb638f491479788f7fc1973890bf6f5",tooltip=" "];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="spriteMethodsCheckDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#a473abee9f84727912dab71aa48bdfe64",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="spriteMethodsUnsetDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#a78a2d01eb0f24769d841a1f62b1f465d",tooltip=" "];
+}

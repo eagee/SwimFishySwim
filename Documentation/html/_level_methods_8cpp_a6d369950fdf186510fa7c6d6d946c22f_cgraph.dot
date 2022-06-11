@@ -1,0 +1,38 @@
+digraph "LevelMethodsActivatePowerup"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="LevelMethodsActivatePowerup",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Activates an available powerup sprite so that the player can pick up a little extra power :)"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ISprite::getControlAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a8b6a25e97be982249fab6d8bf5c9e3f7",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ISprite::getLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a04e5809c871ecfe7caeab6d6886e2bbd",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="TiledMaps::getLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_tiled_maps.html#a9941b1c1c42a1e3fea32e6844f1dd6ad",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ISprite::getWaterLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#afd39c00bbd79fc13234885c8941ea798",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ISprite::handleJump",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a23b4623bf7bb374b961ff9ce5ea07605",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="LevelMethodsGetAngleDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#af96fb4e7aaa3caa200b62bd498477223",tooltip="Indicates one of six directions an angle is facing ..."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ISprite::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a898c383dffb69ea7a874caf7db0bd102",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="ISprite::setAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#ac3c80c8b172445a5009ce33859878989",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ISprite::setControlMagnitude",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#abe910800a8f6fec6aada8b348abd703b",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="ISprite::setDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a619d68c2f620557aa1234da2e574c299",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ISprite::setHealth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a2878e9b4ef301f51b3980d90e913dc8e",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="ISprite::setLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#ae285405b152c6eecfb81018a02a0025c",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ISprite::setOffset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#ae50aaeda5334c3173fe9fc7ce40cf092",tooltip=" "];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="ISprite::setPointValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#ad59077967cb00b7d7fc66540c34c4a76",tooltip=" "];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="ISprite::translateSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a412d333cb4e2861cd006f6acb94437ad",tooltip=" "];
+}

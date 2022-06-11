@@ -1,0 +1,334 @@
+\hypertarget{class_model_image_sprite}{}\doxysection{Model\+Image\+Sprite Class Reference}
+\label{class_model_image_sprite}\index{ModelImageSprite@{ModelImageSprite}}
+
+
+Defines an interface into any type of model /summary\texorpdfstring{$>$}{>}  
+
+
+
+
+{\ttfamily \#include $<$Model\+Image\+Sprite.\+h$>$}
+
+
+
+Inheritance diagram for Model\+Image\+Sprite\+:
+% FIG 0
+
+
+Collaboration diagram for Model\+Image\+Sprite\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_image_sprite_a591aa3b6a2dbb9dcbeb6660105000388}{Model\+Image\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the Sprite Model \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_image_sprite_a37af22f17253d503de48fa96b2bd201f}{$\sim$\+Model\+Image\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the Sprite Model \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_model_image_sprite_a6bf6b109fef7f94f90afb173079296a9}{load\+From\+File}} (const char $\ast$file\+Name, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{Animation\+Format}} animation\+Format)
+\begin{DoxyCompactList}\small\item\em THE SPRITE MODELS CURRENTLY DO NOT LOAD FILE INFO \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_a4730f9783ce7f0ebd8f1949f83440873}{assign\+Texture}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)
+\begin{DoxyCompactList}\small\item\em Defines which texture in the graphics subsystem this model will use \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_ac073363fcd317038707f1329d496fdfc}{assign\+Bump\+Texture}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} bump\+Texture\+ID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} light\+Texture\+ID)
+\begin{DoxyCompactList}\small\item\em Defines which texture in the graphics subsystem this model will use \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_a0e67dcdb48794d58a4e86207a1a4b103}{translate\+Model}} (Vector translation)
+\begin{DoxyCompactList}\small\item\em Will translate model to vector coordinates \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_a7bebb2b537eba80708d1e757140a4820}{set\+Animation\+Type}} (\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Decides what type of animation to render ... \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_a7fa1aa34c895e00a567f75d43d7a0478}{set\+Animation\+Type}} (\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} type, \mbox{\hyperlink{struct_model_anim_state}{Model\+Anim\+State}} \&model\+Anim)
+\begin{DoxyCompactList}\small\item\em Decides what type of animation to render ... \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_a5a6eca28b5c286ef8fad4321d73e0f96}{set\+Model\+Scale}} (float scale)
+\begin{DoxyCompactList}\small\item\em Some models r big, some models r small, this helps determine which one that is ... \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_a77bcf438e0ec301e5d809594da1e1012}{build\+Vertex\+Arrays}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, bool cull\+Backs)
+\begin{DoxyCompactList}\small\item\em Will build vertex arrays from our Scaled frames for faster rendering ... \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_ac3974843d1583738d700685864a746c7}{free\+Vertex\+Arrays}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)
+\begin{DoxyCompactList}\small\item\em Cleans up our vertex arrays... \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_ada6d595e0fab445b3188731cbe29ae08}{render\+Model}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, \mbox{\hyperlink{struct_model_anim_state}{Model\+Anim\+State}} \&animation, bool interpolate)
+\begin{DoxyCompactList}\small\item\em Can be called after begin scene has been called, it will render the model in the scene, using it\textquotesingle{}s own inernal animation state... \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_a82e43948265452684439670b006ae28f}{render\+Model}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, bool interpolate)
+\begin{DoxyCompactList}\small\item\em Can be called after begin scene has been called, it will render the model in the scene... \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_image_sprite_a398b3da644585a5566a84730726c7897}{handle\+Animation}} (float time, \mbox{\hyperlink{struct_model_anim_state}{Model\+Anim\+State}} \&model\+Anim)
+\begin{DoxyCompactList}\small\item\em Handles all the logic necessary for animating this model ... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines an interface into any type of model /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8h_source_l00013}{13}} of file \mbox{\hyperlink{_model_image_sprite_8h_source}{Model\+Image\+Sprite.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_image_sprite_a591aa3b6a2dbb9dcbeb6660105000388}\label{class_model_image_sprite_a591aa3b6a2dbb9dcbeb6660105000388}} 
+\index{ModelImageSprite@{ModelImageSprite}!ModelImageSprite@{ModelImageSprite}}
+\index{ModelImageSprite@{ModelImageSprite}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{ModelImageSprite()}{ModelImageSprite()}}
+{\footnotesize\ttfamily Model\+Image\+Sprite\+::\+Model\+Image\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the Sprite Model 
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_model_image_sprite_a37af22f17253d503de48fa96b2bd201f}\label{class_model_image_sprite_a37af22f17253d503de48fa96b2bd201f}} 
+\index{ModelImageSprite@{ModelImageSprite}!````~ModelImageSprite@{$\sim$ModelImageSprite}}
+\index{````~ModelImageSprite@{$\sim$ModelImageSprite}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{$\sim$ModelImageSprite()}{~ModelImageSprite()}}
+{\footnotesize\ttfamily Model\+Image\+Sprite\+::$\sim$\+Model\+Image\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the Sprite Model 
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_image_sprite_ac073363fcd317038707f1329d496fdfc}\label{class_model_image_sprite_ac073363fcd317038707f1329d496fdfc}} 
+\index{ModelImageSprite@{ModelImageSprite}!assignBumpTexture@{assignBumpTexture}}
+\index{assignBumpTexture@{assignBumpTexture}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{assignBumpTexture()}{assignBumpTexture()}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::assign\+Bump\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{bump\+Texture\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{light\+Texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Defines which texture in the graphics subsystem this model will use 
+
+~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_model_a7b29e13f6055f6bc94316c776b24e7a5}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+\mbox{\Hypertarget{class_model_image_sprite_a4730f9783ce7f0ebd8f1949f83440873}\label{class_model_image_sprite_a4730f9783ce7f0ebd8f1949f83440873}} 
+\index{ModelImageSprite@{ModelImageSprite}!assignTexture@{assignTexture}}
+\index{assignTexture@{assignTexture}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{assignTexture()}{assignTexture()}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::assign\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Defines which texture in the graphics subsystem this model will use 
+
+~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_model_a8f80f06cae5c6008ad88fdcf1321cb10}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+\mbox{\Hypertarget{class_model_image_sprite_a77bcf438e0ec301e5d809594da1e1012}\label{class_model_image_sprite_a77bcf438e0ec301e5d809594da1e1012}} 
+\index{ModelImageSprite@{ModelImageSprite}!buildVertexArrays@{buildVertexArrays}}
+\index{buildVertexArrays@{buildVertexArrays}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{buildVertexArrays()}{buildVertexArrays()}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::build\+Vertex\+Arrays (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{bool}]{cull\+Backs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Will build vertex arrays from our Scaled frames for faster rendering ... 
+
+~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_model_aade90e0c3797e7f784d99b21a94a99db}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+\mbox{\Hypertarget{class_model_image_sprite_ac3974843d1583738d700685864a746c7}\label{class_model_image_sprite_ac3974843d1583738d700685864a746c7}} 
+\index{ModelImageSprite@{ModelImageSprite}!freeVertexArrays@{freeVertexArrays}}
+\index{freeVertexArrays@{freeVertexArrays}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{freeVertexArrays()}{freeVertexArrays()}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::free\+Vertex\+Arrays (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cleans up our vertex arrays... 
+
+~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_model_ab269c67ff7d0ceae8c81d8a6fcd55673}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+\mbox{\Hypertarget{class_model_image_sprite_a398b3da644585a5566a84730726c7897}\label{class_model_image_sprite_a398b3da644585a5566a84730726c7897}} 
+\index{ModelImageSprite@{ModelImageSprite}!handleAnimation@{handleAnimation}}
+\index{handleAnimation@{handleAnimation}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{handleAnimation()}{handleAnimation()}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::handle\+Animation (\begin{DoxyParamCaption}\item[{float}]{time,  }\item[{\mbox{\hyperlink{struct_model_anim_state}{Model\+Anim\+State}} \&}]{model\+Anim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles all the logic necessary for animating this model ... 
+
+
+
+Implements \mbox{\hyperlink{class_i_model_ab987f81128faba7427d2eb087ce790d1}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+\mbox{\Hypertarget{class_model_image_sprite_a6bf6b109fef7f94f90afb173079296a9}\label{class_model_image_sprite_a6bf6b109fef7f94f90afb173079296a9}} 
+\index{ModelImageSprite@{ModelImageSprite}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily bool Model\+Image\+Sprite\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{\mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{Animation\+Format}}}]{animation\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+THE SPRITE MODELS CURRENTLY DO NOT LOAD FILE INFO 
+
+
+
+Implements \mbox{\hyperlink{class_i_model_a33f5b551deb15455c57b77ce6b8219ab}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+\mbox{\Hypertarget{class_model_image_sprite_a82e43948265452684439670b006ae28f}\label{class_model_image_sprite_a82e43948265452684439670b006ae28f}} 
+\index{ModelImageSprite@{ModelImageSprite}!renderModel@{renderModel}}
+\index{renderModel@{renderModel}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{renderModel()}{renderModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::render\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{bool}]{interpolate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Can be called after begin scene has been called, it will render the model in the scene... 
+
+Can be called after begin scene has been called, it will render the model in the scene, using it\textquotesingle{}s own inernal animation state... 
+
+Implements \mbox{\hyperlink{class_i_model_ab5d9fa825fbc3a1a4057a70b9ce9f2d7}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_model_image_sprite_ada6d595e0fab445b3188731cbe29ae08}\label{class_model_image_sprite_ada6d595e0fab445b3188731cbe29ae08}} 
+\index{ModelImageSprite@{ModelImageSprite}!renderModel@{renderModel}}
+\index{renderModel@{renderModel}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{renderModel()}{renderModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::render\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{\mbox{\hyperlink{struct_model_anim_state}{Model\+Anim\+State}} \&}]{animation,  }\item[{bool}]{interpolate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Can be called after begin scene has been called, it will render the model in the scene, using it\textquotesingle{}s own inernal animation state... 
+
+Can be called after begin scene has been called, it will render the model in the scene... 
+
+Implements \mbox{\hyperlink{class_i_model_a95736b5188fe7e8eb5de22420e76b8a2}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00189}{189}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_model_image_sprite_a7bebb2b537eba80708d1e757140a4820}\label{class_model_image_sprite_a7bebb2b537eba80708d1e757140a4820}} 
+\index{ModelImageSprite@{ModelImageSprite}!setAnimationType@{setAnimationType}}
+\index{setAnimationType@{setAnimationType}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{setAnimationType()}{setAnimationType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::set\+Animation\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Decides what type of animation to render ... 
+
+~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_model_af95a96f345d05c3283940872e6a3fc74}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_model_image_sprite_a7fa1aa34c895e00a567f75d43d7a0478}\label{class_model_image_sprite_a7fa1aa34c895e00a567f75d43d7a0478}} 
+\index{ModelImageSprite@{ModelImageSprite}!setAnimationType@{setAnimationType}}
+\index{setAnimationType@{setAnimationType}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{setAnimationType()}{setAnimationType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::set\+Animation\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}}}]{type,  }\item[{\mbox{\hyperlink{struct_model_anim_state}{Model\+Anim\+State}} \&}]{model\+Anim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Decides what type of animation to render ... 
+
+~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_model_a84b7fd5a25b7b41012ad6d23ba27f1ba}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_model_image_sprite_a5a6eca28b5c286ef8fad4321d73e0f96}\label{class_model_image_sprite_a5a6eca28b5c286ef8fad4321d73e0f96}} 
+\index{ModelImageSprite@{ModelImageSprite}!setModelScale@{setModelScale}}
+\index{setModelScale@{setModelScale}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{setModelScale()}{setModelScale()}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::set\+Model\+Scale (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Some models r big, some models r small, this helps determine which one that is ... 
+
+~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_model_a2b8d98b651482a5165d2689b9b950305}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_model_image_sprite_a0e67dcdb48794d58a4e86207a1a4b103}\label{class_model_image_sprite_a0e67dcdb48794d58a4e86207a1a4b103}} 
+\index{ModelImageSprite@{ModelImageSprite}!translateModel@{translateModel}}
+\index{translateModel@{translateModel}!ModelImageSprite@{ModelImageSprite}}
+\doxysubsubsection{\texorpdfstring{translateModel()}{translateModel()}}
+{\footnotesize\ttfamily void Model\+Image\+Sprite\+::translate\+Model (\begin{DoxyParamCaption}\item[{Vector}]{translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Will translate model to vector coordinates 
+
+
+
+Implements \mbox{\hyperlink{class_i_model_a74b0a19c9700370e4f856ec7a4e0a8d4}{IModel}}.
+
+
+
+Definition at line \mbox{\hyperlink{_model_image_sprite_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{_model_image_sprite_8cpp_source}{Model\+Image\+Sprite.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_model_image_sprite_8h}{Model\+Image\+Sprite.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_model_image_sprite_8cpp}{Model\+Image\+Sprite.\+cpp}}\end{DoxyCompactItemize}

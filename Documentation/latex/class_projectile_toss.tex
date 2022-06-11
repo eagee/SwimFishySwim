@@ -1,0 +1,292 @@
+\hypertarget{class_projectile_toss}{}\doxysection{Projectile\+Toss Class Reference}
+\label{class_projectile_toss}\index{ProjectileToss@{ProjectileToss}}
+
+
+{\ttfamily \#include $<$Projectile\+Toss.\+h$>$}
+
+
+
+Inheritance diagram for Projectile\+Toss\+:
+% FIG 0
+
+
+Collaboration diagram for Projectile\+Toss\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projectile_toss_a8b0051277d8000669bc95f8e7268d2aa}{Projectile\+Toss}} (\mbox{\hyperlink{class_i_model}{IModel}} $\ast$model, \mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$upgrade\+Sound, \mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$down\+Grade\+Sound, \mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$shooting\+Sound)
+\begin{DoxyCompactList}\small\item\em Constructor...duh /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projectile_toss_acf7f395299eba92a87169e23697909b6}{$\sim$\+Projectile\+Toss}} ()
+\item 
+virtual \mbox{\hyperlink{class_i_model}{IModel}} $\ast$ \mbox{\hyperlink{class_projectile_toss_a70c4f9e7af1dd2742e77ac8e0cf7ec78}{get\+Projectile\+Model}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{class_projectile_toss_a877576b15b353dfa675c6711eecf4166}{get\+Projectile\+Name}} ()
+\item 
+virtual void \mbox{\hyperlink{class_projectile_toss_a01edab81a5ffefbc3f98168390d98cf6}{set\+Weapon\+Experience}} (int experience\+Points)
+\item 
+virtual int \mbox{\hyperlink{class_projectile_toss_add34e517dfac65b1ab20871e7a304d6a}{get\+Weapon\+Experience}} ()
+\item 
+virtual float \mbox{\hyperlink{class_projectile_toss_a9757ad19e9902284739587cf5d1ec58d}{get\+Max\+Weapon\+Experience}} ()
+\item 
+virtual void \mbox{\hyperlink{class_projectile_toss_a5a57f3ba505782b2aeba9086ba4db877}{modify\+Weapon\+Experience\+By}} (int experience\+Points)
+\item 
+virtual int \mbox{\hyperlink{class_projectile_toss_a6bd5450a76d9ad2cd9cebbc3a1794dc2}{get\+Weapon\+Level\+Number}} ()
+\item 
+virtual float \mbox{\hyperlink{class_projectile_toss_a4842c7294d589d875d675319a167ca12}{get\+Percent\+Weapon\+Experience}} ()
+\item 
+virtual void \mbox{\hyperlink{class_projectile_toss_ae514ed2467b1d6b7b07b7eb2c09de59a}{handle\+Sprite\+Collisions}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{class_i_sprite}{ISprite}} \&sprite, \mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$sound\+To\+Play, float projectile\+Damage)
+\item 
+virtual \mbox{\hyperlink{_projectile_weapon_info_8h_acb768b84d74e972690a4b15d0daee6a9}{PROJECTILE\+\_\+\+LEVEL\+\_\+\+STATE}} \mbox{\hyperlink{class_projectile_toss_abc84b6f74ed9182c5eeb77bff5e36fac}{update\+Weapon\+And\+Projectiles}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+virtual void \mbox{\hyperlink{class_projectile_toss_a6268d72cb945a7e0dcefcb4f05108306}{render\+Projectiles}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)
+\item 
+virtual bool \mbox{\hyperlink{class_projectile_toss_ad495e9c11c80b2d6a9ab3c83b4cd72b1}{handle\+Trigger\+State}} (\mbox{\hyperlink{_projectile_weapon_info_8h_a37ab2c5940fbf02ed4a60f9727e22f70}{PROJECTILE\+\_\+\+TRIGGER\+\_\+\+STATE}} state, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$triggered\+By\+Sprite, Vector \&sprite\+Offset)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8h_source_l00010}{10}} of file \mbox{\hyperlink{_projectile_toss_8h_source}{Projectile\+Toss.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_projectile_toss_a8b0051277d8000669bc95f8e7268d2aa}\label{class_projectile_toss_a8b0051277d8000669bc95f8e7268d2aa}} 
+\index{ProjectileToss@{ProjectileToss}!ProjectileToss@{ProjectileToss}}
+\index{ProjectileToss@{ProjectileToss}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{ProjectileToss()}{ProjectileToss()}}
+{\footnotesize\ttfamily Projectile\+Toss\+::\+Projectile\+Toss (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_model}{IModel}} $\ast$}]{model,  }\item[{\mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$}]{upgrade\+Sound,  }\item[{\mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$}]{down\+Grade\+Sound,  }\item[{\mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$}]{shooting\+Sound }\end{DoxyParamCaption})}
+
+
+
+Constructor...duh /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Destru... oh come now, you must know this... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_projectile_toss_acf7f395299eba92a87169e23697909b6}\label{class_projectile_toss_acf7f395299eba92a87169e23697909b6}} 
+\index{ProjectileToss@{ProjectileToss}!````~ProjectileToss@{$\sim$ProjectileToss}}
+\index{````~ProjectileToss@{$\sim$ProjectileToss}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{$\sim$ProjectileToss()}{~ProjectileToss()}}
+{\footnotesize\ttfamily Projectile\+Toss\+::$\sim$\+Projectile\+Toss (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Get Projectile Model /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_projectile_toss_a9757ad19e9902284739587cf5d1ec58d}\label{class_projectile_toss_a9757ad19e9902284739587cf5d1ec58d}} 
+\index{ProjectileToss@{ProjectileToss}!getMaxWeaponExperience@{getMaxWeaponExperience}}
+\index{getMaxWeaponExperience@{getMaxWeaponExperience}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{getMaxWeaponExperience()}{getMaxWeaponExperience()}}
+{\footnotesize\ttfamily float Projectile\+Toss\+::get\+Max\+Weapon\+Experience (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the experience level of the weapon /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_a20c91ee76619913d97191b6214ef60d9}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+\mbox{\Hypertarget{class_projectile_toss_a4842c7294d589d875d675319a167ca12}\label{class_projectile_toss_a4842c7294d589d875d675319a167ca12}} 
+\index{ProjectileToss@{ProjectileToss}!getPercentWeaponExperience@{getPercentWeaponExperience}}
+\index{getPercentWeaponExperience@{getPercentWeaponExperience}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{getPercentWeaponExperience()}{getPercentWeaponExperience()}}
+{\footnotesize\ttfamily float Projectile\+Toss\+::get\+Percent\+Weapon\+Experience (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Handles projection collisions with other sprites... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_a239facde8cb4d307d925afb67c52bd29}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+\mbox{\Hypertarget{class_projectile_toss_a70c4f9e7af1dd2742e77ac8e0cf7ec78}\label{class_projectile_toss_a70c4f9e7af1dd2742e77ac8e0cf7ec78}} 
+\index{ProjectileToss@{ProjectileToss}!getProjectileModel@{getProjectileModel}}
+\index{getProjectileModel@{getProjectileModel}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{getProjectileModel()}{getProjectileModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_model}{IModel}} $\ast$ Projectile\+Toss\+::get\+Projectile\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets a string describing the name of the weapon... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_a154bcd7a544f1588bbadc37767c2805f}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+\mbox{\Hypertarget{class_projectile_toss_a877576b15b353dfa675c6711eecf4166}\label{class_projectile_toss_a877576b15b353dfa675c6711eecf4166}} 
+\index{ProjectileToss@{ProjectileToss}!getProjectileName@{getProjectileName}}
+\index{getProjectileName@{getProjectileName}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{getProjectileName()}{getProjectileName()}}
+{\footnotesize\ttfamily std\+::string Projectile\+Toss\+::get\+Projectile\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the experience level of the weapon /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_a74b5f780a268511dcd1a29f078139e78}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+\mbox{\Hypertarget{class_projectile_toss_add34e517dfac65b1ab20871e7a304d6a}\label{class_projectile_toss_add34e517dfac65b1ab20871e7a304d6a}} 
+\index{ProjectileToss@{ProjectileToss}!getWeaponExperience@{getWeaponExperience}}
+\index{getWeaponExperience@{getWeaponExperience}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{getWeaponExperience()}{getWeaponExperience()}}
+{\footnotesize\ttfamily int Projectile\+Toss\+::get\+Weapon\+Experience (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the maximum experience points for the weapon /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_a090990f8634fdd6803055a47980f1b62}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+\mbox{\Hypertarget{class_projectile_toss_a6bd5450a76d9ad2cd9cebbc3a1794dc2}\label{class_projectile_toss_a6bd5450a76d9ad2cd9cebbc3a1794dc2}} 
+\index{ProjectileToss@{ProjectileToss}!getWeaponLevelNumber@{getWeaponLevelNumber}}
+\index{getWeaponLevelNumber@{getWeaponLevelNumber}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{getWeaponLevelNumber()}{getWeaponLevelNumber()}}
+{\footnotesize\ttfamily int Projectile\+Toss\+::get\+Weapon\+Level\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the total percentage of weapon experience (from 0\% to 100\%) /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Gets the percentage of experience gained toward the next level /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_ab162f9d035fee846381018cb07ffbd4a}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+\mbox{\Hypertarget{class_projectile_toss_ae514ed2467b1d6b7b07b7eb2c09de59a}\label{class_projectile_toss_ae514ed2467b1d6b7b07b7eb2c09de59a}} 
+\index{ProjectileToss@{ProjectileToss}!handleSpriteCollisions@{handleSpriteCollisions}}
+\index{handleSpriteCollisions@{handleSpriteCollisions}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{handleSpriteCollisions()}{handleSpriteCollisions()}}
+{\footnotesize\ttfamily void Projectile\+Toss\+::handle\+Sprite\+Collisions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{sprite,  }\item[{\mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$}]{sound\+To\+Play,  }\item[{float}]{projectile\+Damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Updates the weapon and projectile states Returns state of the weapon level in case the update involved a weapon upgrade... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Updates projectiles and handles interaction with elements of level... Returns level state of weapon (e.\+g. if an upgrade or downgrade occurred) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_ab072225d17df79543ee6b77d29a8c07f}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_projectile_toss_ad495e9c11c80b2d6a9ab3c83b4cd72b1}\label{class_projectile_toss_ad495e9c11c80b2d6a9ab3c83b4cd72b1}} 
+\index{ProjectileToss@{ProjectileToss}!handleTriggerState@{handleTriggerState}}
+\index{handleTriggerState@{handleTriggerState}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{handleTriggerState()}{handleTriggerState()}}
+{\footnotesize\ttfamily bool Projectile\+Toss\+::handle\+Trigger\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_a37ab2c5940fbf02ed4a60f9727e22f70}{PROJECTILE\+\_\+\+TRIGGER\+\_\+\+STATE}}}]{state,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{triggered\+By\+Sprite,  }\item[{Vector \&}]{sprite\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+~\newline
+ \begin{DoxyReturn}{Returns}
+Returns true if triggered, otherwise false
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_afd1e6fbba4e3721639c0ca999be8e8d3}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_projectile_toss_a5a57f3ba505782b2aeba9086ba4db877}\label{class_projectile_toss_a5a57f3ba505782b2aeba9086ba4db877}} 
+\index{ProjectileToss@{ProjectileToss}!modifyWeaponExperienceBy@{modifyWeaponExperienceBy}}
+\index{modifyWeaponExperienceBy@{modifyWeaponExperienceBy}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{modifyWeaponExperienceBy()}{modifyWeaponExperienceBy()}}
+{\footnotesize\ttfamily void Projectile\+Toss\+::modify\+Weapon\+Experience\+By (\begin{DoxyParamCaption}\item[{int}]{experience\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the level number of the weapon (based on exp pts) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_ae2e95a118cbaccb195c28b082eea6ab0}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_projectile_toss_a6268d72cb945a7e0dcefcb4f05108306}\label{class_projectile_toss_a6268d72cb945a7e0dcefcb4f05108306}} 
+\index{ProjectileToss@{ProjectileToss}!renderProjectiles@{renderProjectiles}}
+\index{renderProjectiles@{renderProjectiles}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{renderProjectiles()}{renderProjectiles()}}
+{\footnotesize\ttfamily void Projectile\+Toss\+::render\+Projectiles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Handles a change in the trigger state of the weapon... state == pressed/released triggered\+By\+Sprite -\/\texorpdfstring{$>$}{>} The sprite who triggers the projectile to be fired sprite\+Offset -\/\texorpdfstring{$>$}{>} The offset created by the tilemap location for the projectile sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_a43e43b2bf2f17e3cd98492b189d9e358}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_projectile_toss_a01edab81a5ffefbc3f98168390d98cf6}\label{class_projectile_toss_a01edab81a5ffefbc3f98168390d98cf6}} 
+\index{ProjectileToss@{ProjectileToss}!setWeaponExperience@{setWeaponExperience}}
+\index{setWeaponExperience@{setWeaponExperience}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{setWeaponExperience()}{setWeaponExperience()}}
+{\footnotesize\ttfamily void Projectile\+Toss\+::set\+Weapon\+Experience (\begin{DoxyParamCaption}\item[{int}]{experience\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the experience points for the weapon /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_ab775341867070a035b220f9915cc1c6b}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+\mbox{\Hypertarget{class_projectile_toss_abc84b6f74ed9182c5eeb77bff5e36fac}\label{class_projectile_toss_abc84b6f74ed9182c5eeb77bff5e36fac}} 
+\index{ProjectileToss@{ProjectileToss}!updateWeaponAndProjectiles@{updateWeaponAndProjectiles}}
+\index{updateWeaponAndProjectiles@{updateWeaponAndProjectiles}!ProjectileToss@{ProjectileToss}}
+\doxysubsubsection{\texorpdfstring{updateWeaponAndProjectiles()}{updateWeaponAndProjectiles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_projectile_weapon_info_8h_acb768b84d74e972690a4b15d0daee6a9}{PROJECTILE\+\_\+\+LEVEL\+\_\+\+STATE}} Projectile\+Toss\+::update\+Weapon\+And\+Projectiles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the weapon projectiles on the screen ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_projectile_weapon_a330da6176fb742d560ddd58e90a0962c}{IProjectile\+Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_toss_8cpp_source_l00219}{219}} of file \mbox{\hyperlink{_projectile_toss_8cpp_source}{Projectile\+Toss.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_projectile_toss_8h}{Projectile\+Toss.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_projectile_toss_8cpp}{Projectile\+Toss.\+cpp}}\end{DoxyCompactItemize}

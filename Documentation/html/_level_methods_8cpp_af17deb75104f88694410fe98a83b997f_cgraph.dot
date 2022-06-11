@@ -1,0 +1,34 @@
+digraph "LevelMethodsHandleSpriteCollision"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="LevelMethodsHandleSprite\lCollision",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ISprite::getCurrentAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a6e1e6556de6db54749ad3926c0c1720b",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ISprite::getHealth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a09dd7e151892b1314f5cf5f4699a7865",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ISprite::getPointValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a9821c90304790a5e8162c57d37b3ddfa",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="LevelMethodsCheckCollisionSet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a5319580ed95da1ff1d0e4312ea879c66",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ISprite::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#adf07d87015405a56c565efc59d10a937",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ISprite::getBoundingTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#ad02479bdf3ae8da1e43dd39a95b96940",tooltip=" "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="ISprite::getLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a04e5809c871ecfe7caeab6d6886e2bbd",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="LevelMethodsModifyEnergy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#ae2b42fb2944936dcc6a5683cd4ca52a7",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ISprite::modifyHealthBy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a445add3488623db74f1764652993c0dc",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="IAudio::playOnce",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_audio.html#ab7b06473770e6eb5f1d65e63f0853862",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ISprite::setAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#ac3c80c8b172445a5009ce33859878989",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="TiledMaps::shakeMapFor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_tiled_maps.html#af1fc781b624caf55f9e5240631ca3d22",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ISprite::spriteType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a950ef030265205693eb1bf64d716de9a",tooltip=" "];
+}

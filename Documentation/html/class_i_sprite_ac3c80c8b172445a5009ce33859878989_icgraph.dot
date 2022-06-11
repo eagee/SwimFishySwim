@@ -1,0 +1,28 @@
+digraph "ISprite::setAnimation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ISprite::setAnimation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ProjectileBomb::handleTrigger\lState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_bomb.html#a3addc9f1de66ed36d2d765bf14733718",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ProjectileMine::handleTrigger\lState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_mine.html#a32eee35906bfb6ffd5d35b3e887898a1",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ProjectileShot::handleTrigger\lState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_shot.html#ace6f8ab84027154a70dad6c20c751651",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ProjectileSpit::handleTrigger\lState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_spit.html#a48fe743cca411d4a103db469d2b3cca5",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ProjectileToss::handleTrigger\lState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_toss.html#ad495e9c11c80b2d6a9ab3c83b4cd72b1",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="LevelMethodsActivatePowerup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a6d369950fdf186510fa7c6d6d946c22f",tooltip="Activates an available powerup sprite so that the player can pick up a little extra power :)"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="LevelMethodsHandleSprite\lCollision",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#af17deb75104f88694410fe98a83b997f",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="LevelMethodsUpdateActive\lPowerups",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a5d24eae14bebfb100a9135e8112b0d08",tooltip="Updates the power up sprites that have been activated"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="LevelMethodsUpdateBaddies",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a9c2f89b8dc2574620d46faa2ed3ea60d",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="LevelOne::LevelOne",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_level_one.html#ad7c669cd47b48a7064712f786776a2ad",tooltip="Constructor for level one which assigns key components to the LevelInfo struct for later use in runUn..."];
+}

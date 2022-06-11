@@ -1,0 +1,176 @@
+\hypertarget{pngu_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/pngu.h}
+\mbox{\hyperlink{pngu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00001}00001 \textcolor{comment}{/********************************************************************************************}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00002}00002 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00003}00003 \textcolor{comment}{PNGU Version : 0.2a}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00005}00005 \textcolor{comment}{Coder : frontier}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00007}00007 \textcolor{comment}{More info : http://frontier-\/dev.net}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00009}00009 \textcolor{comment}{********************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00010}00010 \textcolor{preprocessor}{\#ifndef \_\_PNGU\_\_}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00011}00011 \textcolor{preprocessor}{\#define \_\_PNGU\_\_}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00013}00013 \textcolor{comment}{// Return codes}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00014}\mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{00014}} \textcolor{preprocessor}{\#define PNGU\_OK                         0}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00015}\mbox{\hyperlink{pngu_8h_a6c251759f731cad6c39ca9a65f6f8b85}{00015}} \textcolor{preprocessor}{\#define PNGU\_ODD\_WIDTH                  1}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00016}\mbox{\hyperlink{pngu_8h_aaa97519abb498ec57970cb2165995e62}{00016}} \textcolor{preprocessor}{\#define PNGU\_ODD\_STRIDE                 2}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00017}\mbox{\hyperlink{pngu_8h_afb465a5841168569bb08c23f0f1b1cdd}{00017}} \textcolor{preprocessor}{\#define PNGU\_INVALID\_WIDTH\_OR\_HEIGHT    3}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00018}\mbox{\hyperlink{pngu_8h_a87d3ae9979131b3d67234755b9a34abe}{00018}} \textcolor{preprocessor}{\#define PNGU\_FILE\_IS\_NOT\_PNG            4}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00019}\mbox{\hyperlink{pngu_8h_abca8b04f6d5dee4dfcf86710dd8a4de7}{00019}} \textcolor{preprocessor}{\#define PNGU\_UNSUPPORTED\_COLOR\_TYPE     5}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00020}\mbox{\hyperlink{pngu_8h_a44df464719d7186f93f37ad72dd04664}{00020}} \textcolor{preprocessor}{\#define PNGU\_NO\_FILE\_SELECTED           6}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00021}\mbox{\hyperlink{pngu_8h_af3832969e5ff0598a6d9c8e20b5f01bd}{00021}} \textcolor{preprocessor}{\#define PNGU\_CANT\_OPEN\_FILE             7}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00022}\mbox{\hyperlink{pngu_8h_a06ee95bac3327c66e6b63b036d9d8daf}{00022}} \textcolor{preprocessor}{\#define PNGU\_CANT\_READ\_FILE             8}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00023}\mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{00023}} \textcolor{preprocessor}{\#define PNGU\_LIB\_ERROR                  9}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00025}00025 \textcolor{comment}{// Color types}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00026}\mbox{\hyperlink{pngu_8h_a474a93e6dcf0674450bf60affa479e46}{00026}} \textcolor{preprocessor}{\#define PNGU\_COLOR\_TYPE\_GRAY            1}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00027}\mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{00027}} \textcolor{preprocessor}{\#define PNGU\_COLOR\_TYPE\_GRAY\_ALPHA      2}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00028}\mbox{\hyperlink{pngu_8h_ae2b218161e5c9e567bf1406db4201f55}{00028}} \textcolor{preprocessor}{\#define PNGU\_COLOR\_TYPE\_PALETTE         3}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00029}\mbox{\hyperlink{pngu_8h_a6ff6f2a0dc030bb90414ce8a6ea1d201}{00029}} \textcolor{preprocessor}{\#define PNGU\_COLOR\_TYPE\_RGB             4}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00030}\mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{00030}} \textcolor{preprocessor}{\#define PNGU\_COLOR\_TYPE\_RGB\_ALPHA       5}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00031}\mbox{\hyperlink{pngu_8h_a50069315f029ce8c6613fbb9ab4d0229}{00031}} \textcolor{preprocessor}{\#define PNGU\_COLOR\_TYPE\_UNKNOWN         6}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00034}00034 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00035}00035     \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00036}00036 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00038}00038 \textcolor{comment}{// Types}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00039}\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{00039}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00040}\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{00040}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00041}\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{00041}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00042}\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{00042}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00044}\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r}{00044}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00046}\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_a9bdd17994681a6bd27483ffa08f07f00}{00046}}     \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} \mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_a9bdd17994681a6bd27483ffa08f07f00}{r}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00047}\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_acd73e6a8f605dd180562110249c9cef1}{00047}}     \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} \mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_acd73e6a8f605dd180562110249c9cef1}{g}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00048}\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_aaa523d5a79e33b2963c200781bac316d}{00048}}     \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} \mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_aaa523d5a79e33b2963c200781bac316d}{b}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00049}00049 \} \mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r}{PNGUCOLOR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00051}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p}{00051}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00052}00052 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00053}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aff2b428ef8cf7f5c4ba5b7a5e7b39bdf}{00053}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aff2b428ef8cf7f5c4ba5b7a5e7b39bdf}{imgWidth}}; \textcolor{comment}{// In pixels}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00054}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a88d8571455583510180948553817b742}{00054}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a88d8571455583510180948553817b742}{imgHeight}}; \textcolor{comment}{// In pixels}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00055}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a816d486d8f85046f646f87cf4af96599}{00055}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a816d486d8f85046f646f87cf4af96599}{imgBitDepth}}; \textcolor{comment}{// In bitx}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00056}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{00056}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}}; \textcolor{comment}{// PNGU\_COLOR\_TYPE\_*}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00057}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a2371695c9ef7ae16aa613fc48d338bbd}{00057}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a2371695c9ef7ae16aa613fc48d338bbd}{validBckgrnd}}; \textcolor{comment}{// Non zero if there is a background color}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00058}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a84ac6a0cde5d05575077d60caa53fe57}{00058}}     \mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r}{PNGUCOLOR}} \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a84ac6a0cde5d05575077d60caa53fe57}{bckgrnd}}; \textcolor{comment}{// Backgroun color}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00059}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{00059}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}}; \textcolor{comment}{// Number of transparent colors}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00060}\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{00060}}     \mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r}{PNGUCOLOR}} *\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}}; \textcolor{comment}{// Transparent colors}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00061}00061 \} \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p}{PNGUPROP}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00063}00063 \textcolor{comment}{// Image context, always initialize with SelectImageFrom* and free with ReleaseImageContext}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00064}00064 \textcolor{keyword}{struct }\mbox{\hyperlink{struct___i_m_g_c_t_x}{\_IMGCTX}};}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00065}\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{00065}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___i_m_g_c_t_x}{\_IMGCTX}} *\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}; }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00068}00068 \textcolor{comment}{/****************************************************************************}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00069}00069 \textcolor{comment}{*                            Pixel conversion                               *}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00070}00070 \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00072}00072 \textcolor{comment}{// Macro to convert RGB8 values to RGB565}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00073}\mbox{\hyperlink{pngu_8h_a196e7a14f5c7c9b0d5a94cc7ef1761b6}{00073}} \textcolor{preprocessor}{\#define PNGU\_RGB8\_TO\_RGB565(r,g,b) ( ((((PNGU\_u16) r) \& 0xF8U) << 8) | ((((PNGU\_u16) g) \& 0xFCU) << 3) | (((PNGU\_u16) b) >> 3) )}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00075}00075 \textcolor{comment}{// Macro to convert RGBA8 values to RGB5A3}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00076}\mbox{\hyperlink{pngu_8h_aadd98cf17d2ff500386e9e59459227ad}{00076}} \textcolor{preprocessor}{\#define PNGU\_RGB8\_TO\_RGB5A3(r,g,b,a)    (PNGU\_u16) (((a \& 0xE0U) == 0xE0U) ? \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00077}00077 \textcolor{preprocessor}{                                        (0x8000U | ((((PNGU\_u16) r) \& 0xF8U) << 7) | ((((PNGU\_u16) g) \& 0xF8U) << 2) | (((PNGU\_u16) b) >> 3)) : \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00078}00078 \textcolor{preprocessor}{                                        (((((PNGU\_u16) a) \& 0xE0U) << 7) | ((((PNGU\_u16) r) \& 0xF0U) << 4) | (((PNGU\_u16) g) \& 0xF0U) | ((((PNGU\_u16) b) \& 0xF0U) >> 4)))}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00080}00080 \textcolor{comment}{// Function to convert two RGB8 values to YCbYCr}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00081}00081 \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{pngu_8h_af6d2697ca6f59f48ea6bc50b0aea0eb7}{PNGU\_RGB8\_TO\_YCbYCr}} (\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} r1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} g1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} b1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} r2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} g2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} b2);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00083}00083 \textcolor{comment}{// Function to convert an YCbYCr to two RGB8 values.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00084}00084 \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8h_ad656f399c1ba77ffc3c803c364f5722f}{PNGU\_YCbYCr\_TO\_RGB8}} (\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} ycbycr, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *r1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *g1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *b1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *r2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *g2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *b2);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00087}00087 \textcolor{comment}{/****************************************************************************}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00088}00088 \textcolor{comment}{*                            Image context handling                         *}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00089}00089 \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00091}00091 \textcolor{comment}{// Selects a PNG file, previosly loaded into a buffer, and creates an image context for subsequent procesing.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00092}00092 \mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} \mbox{\hyperlink{pngu_8h_a8d9ec5ac0361ec447b85e29860744bb8}{PNGU\_SelectImageFromBuffer}} (\textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}});}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00094}00094 \textcolor{comment}{// Selects a PNG file, from any devoptab device, and creates an image context for subsequent procesing.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00095}00095 \mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} \mbox{\hyperlink{pngu_8h_a879590240942198d807720290c728e1f}{PNGU\_SelectImageFromDevice}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}});}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00097}00097 \textcolor{comment}{// Frees resources associated with an image context. Always call this function when you no longer need the IMGCTX.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00098}00098 \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8h_a1d3c1bbde327d7da4c7234f7a4651232}{PNGU\_ReleaseImageContext}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00101}00101 \textcolor{comment}{/****************************************************************************}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00102}00102 \textcolor{comment}{*                            Miscelaneous                                   *}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00103}00103 \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00105}00105 \textcolor{comment}{// Retrieves info from selected PNG file, including image dimensions, color format, background and transparency colors.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00106}00106 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_ad70e86e397bf714f95f8cf1ad2a3628d}{PNGU\_GetImageProperties}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p}{PNGUPROP}} *fileproperties);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00109}00109 \textcolor{comment}{/****************************************************************************}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00110}00110 \textcolor{comment}{*                            Image conversion                               *}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00111}00111 \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00113}00113 \textcolor{comment}{// Expands selected image into an YCbYCr buffer. You need to specify context, image dimensions, }}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00114}00114 \textcolor{comment}{// destination address and stride in pixels (stride = buffer width -\/ image width).}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00115}00115 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_a7c9d230223a28ee6658c1777fd918e0b}{PNGU\_DecodeToYCbYCr}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}}, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stride);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00117}00117 \textcolor{comment}{// Macro for decoding an image inside a buffer at given coordinates.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00118}\mbox{\hyperlink{pngu_8h_a04f355e969ff951a560383eb874201c0}{00118}} \textcolor{preprocessor}{\#define PNGU\_DECODE\_TO\_COORDS\_YCbYCr(ctx,coordX,coordY,imgWidth,imgHeight,bufferWidth,bufferHeight,buffer)  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00119}00119 \textcolor{preprocessor}{                                                                                                            \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00120}00120 \textcolor{preprocessor}{        PNGU\_DecodeToYCbYCr (ctx, imgWidth, imgHeight, ((void *) buffer) + (coordY) * (bufferWidth) * 2 +   \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00121}00121 \textcolor{preprocessor}{                            (coordX) * 2, (bufferWidth) -\/ (imgWidth))}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00123}00123 \textcolor{comment}{// Expands selected image into a linear RGB565 buffer. You need to specify context, image dimensions, }}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00124}00124 \textcolor{comment}{// destination address and stride in pixels (stride = buffer width -\/ image width).}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00125}00125 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_a12cb78b5948101e8bb8382cf75e32c9b}{PNGU\_DecodeToRGB565}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}}, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stride);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00127}00127 \textcolor{comment}{// Macro for decoding an image inside a buffer at given coordinates.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00128}\mbox{\hyperlink{pngu_8h_ae8d44aa2171c5eb7527b7f4d31e745d8}{00128}} \textcolor{preprocessor}{\#define PNGU\_DECODE\_TO\_COORDS\_RGB565(ctx,coordX,coordY,imgWidth,imgHeight,bufferWidth,bufferHeight,buffer)  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00129}00129 \textcolor{preprocessor}{                                                                                                            \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00130}00130 \textcolor{preprocessor}{        PNGU\_DecodeToRGB565 (ctx, imgWidth, imgHeight, ((void *) buffer) + (coordY) * (bufferWidth) * 2 +   \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00131}00131 \textcolor{preprocessor}{                            (coordX) * 2, (bufferWidth) -\/ (imgWidth))}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00133}00133 \textcolor{comment}{// Expands selected image into a linear RGBA8 buffer. You need to specify context, image dimensions, }}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00134}00134 \textcolor{comment}{// destination address, stride in pixels and default alpha value, which is used if the source image }}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00135}00135 \textcolor{comment}{// doesn't have an alpha channel.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00136}00136 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_a20a3577c489233cffab341008136d265}{PNGU\_DecodeToRGBA8}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}}, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stride, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} default\_alpha);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00138}00138 \textcolor{comment}{// Macro for decoding an image inside a buffer at given coordinates.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00139}\mbox{\hyperlink{pngu_8h_a21ccca92f5abec10fdf9a3439f56bf2c}{00139}} \textcolor{preprocessor}{\#define PNGU\_DECODE\_TO\_COORDS\_RGBA8(ctx,coordX,coordY,imgWidth,imgHeight,default\_alpha,bufferWidth,bufferHeight,buffer) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00140}00140 \textcolor{preprocessor}{                                                                                                            \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00141}00141 \textcolor{preprocessor}{        PNGU\_DecodeToRGBA8 (ctx, imgWidth, imgHeight, ((void *) buffer) + (coordY) * (bufferWidth) * 2 +    \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00142}00142 \textcolor{preprocessor}{                            (coordX) * 2, (bufferWidth) -\/ (imgWidth), default\_alpha)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00144}00144 \textcolor{comment}{// Expands selected image into a 4x4 tiled RGB565 buffer. You need to specify context, image dimensions}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00145}00145 \textcolor{comment}{// and destination address.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00146}00146 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_ad1eacbbb449f3bfef1afeafb3f70b3bd}{PNGU\_DecodeTo4x4RGB565}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}});}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00148}00148 \textcolor{comment}{// Expands selected image into a 4x4 tiled RGB5A3 buffer. You need to specify context, image dimensions,}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00149}00149 \textcolor{comment}{// destination address and default alpha value, which is used if the source image doesn't have an alpha channel.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00150}00150 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_a52df1b9aa4d2a806b2c34ca8fcd3865f}{PNGU\_DecodeTo4x4RGB5A3}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}}, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} default\_alpha);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00152}00152 \textcolor{comment}{// Expands selected image into a 4x4 tiled RGBA8 buffer. You need to specify context, image dimensions,}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00153}00153 \textcolor{comment}{// destination address and default alpha value, which is used if the source image doesn't have an alpha channel.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00154}00154 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_a23c5c1c50cc3a7dcb9a020f12855b70d}{PNGU\_DecodeTo4x4RGBA8}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}}, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} default\_alpha);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00156}00156 \textcolor{comment}{// Encodes an YCbYCr image in PNG format and stores it in the selected device or memory buffer. You need to }}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00157}00157 \textcolor{comment}{// specify context, image dimensions, destination address and stride in pixels (stride = buffer width -\/ image width).}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00158}00158 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8h_a4a7f91e558b5a0da015d3c0dc8d3e180}{PNGU\_EncodeFromYCbYCr}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}}, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stride);}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00160}00160 \textcolor{comment}{// Macro for encoding an image stored into an YCbYCr buffer at given coordinates.}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00161}\mbox{\hyperlink{pngu_8h_a03ed02b09017aad1b18ee0af6cf11019}{00161}} \textcolor{preprocessor}{\#define PNGU\_ENCODE\_TO\_COORDS\_YCbYCr(ctx,coordX,coordY,imgWidth,imgHeight,bufferWidth,bufferHeight,buffer)  \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00162}00162 \textcolor{preprocessor}{                                                                                                            \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00163}00163 \textcolor{preprocessor}{        PNGU\_EncodeFromYCbYCr (ctx, imgWidth, imgHeight, ((void *) buffer) + (coordY) * (bufferWidth) * 2 + \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00164}00164 \textcolor{preprocessor}{                            (coordX) * 2, (bufferWidth) -\/ (imgWidth))}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00166}00166 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00167}00167     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00168}00168 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00170}00170 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pngu_8h_source_l00171}00171 }
+
+\end{DoxyCode}

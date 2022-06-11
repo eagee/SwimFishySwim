@@ -1,0 +1,284 @@
+\hypertarget{_tiled_maps_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Tiled\+Maps.h}
+\mbox{\hyperlink{_tiled_maps_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00001}00001 \textcolor{comment}{// TiledMaps.h}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00002}00002 \textcolor{comment}{// Implementation of IMap interface that uses tilemaps from the TiledMap (tmx) xml format}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00003}00003 \textcolor{comment}{// The specifications for the tilemap format are included at the bottom of this file!}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00004}00004 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00005}00005 \textcolor{preprocessor}{\#ifndef TILED\_MAP\_H}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00006}00006 \textcolor{preprocessor}{\#define TILED\_MAP\_H}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <malloc.h>}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00016}00016 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_graphics_8h}{IGraphics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_node_waypoints_8h}{INodeWaypoints.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00019}\mbox{\hyperlink{_tiled_maps_8h_ac5c2ce76b8250ab7b6be50c2e7a0ee57}{00019}} \textcolor{preprocessor}{\#define TILEMAP\_ANIMATIONS\_PER\_SECOND     15}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00020}\mbox{\hyperlink{_tiled_maps_8h_a75d504cb36a2e68068c451e18481cd9d}{00020}} \textcolor{preprocessor}{\#define TILEMAP\_TILE\_SIZE                 32}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00021}\mbox{\hyperlink{_tiled_maps_8h_a62546ac0cca73eefde6a4e315692b8cb}{00021}} \textcolor{preprocessor}{\#define TILE\_QUAD\_WIDTH 1.0f}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00022}\mbox{\hyperlink{_tiled_maps_8h_ac1402328a0b1a689fe767a9511c8f689}{00022}} \textcolor{preprocessor}{\#define TILE\_QUAD\_HEIGHT 1.0f}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00024}00024 \textcolor{comment}{// Defines a type of collision that can be modified every frame}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00025}\mbox{\hyperlink{_tiled_maps_8h_acd8c4220fc0290c79c07f548dbe0c696}{00025}} \textcolor{keyword}{typedef} std::map<int, int> \mbox{\hyperlink{_tiled_maps_8h_acd8c4220fc0290c79c07f548dbe0c696}{TempCollisionTable}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00026}\mbox{\hyperlink{_tiled_maps_8h_afaf9a63a1f2ad8dddea6b21d8f939054}{00026}} \textcolor{keyword}{typedef} TempCollisionTable::iterator \mbox{\hyperlink{_tiled_maps_8h_afaf9a63a1f2ad8dddea6b21d8f939054}{TempCollisionIterator}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00031}\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{00031}} \textcolor{keyword}{enum} \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00032}00032 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00033}\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}{00033}}     \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}{TILEMAP\_LAYER\_A}}      = 0,}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00034}\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a816f4eaa2baca44879d1830ee14727a8}{00034}}     \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a816f4eaa2baca44879d1830ee14727a8}{TILEMAP\_LAYER\_B}}      = 1,}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00035}\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a968e1f9ab07ab91cf5c4ab59b6fb873a}{00035}}     \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a968e1f9ab07ab91cf5c4ab59b6fb873a}{TILEMAP\_LAYER\_C}}      = 2,}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00036}\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}{00036}}     \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}{TILEMAP\_LAYER\_D}}      = 3,}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00037}00037     \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a59cfc7c6231c802131996b2851529f43}{TILEMAP\_COLLISION}}   = 4}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00038}\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a59cfc7c6231c802131996b2851529f43}{00038}} \};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00043}\mbox{\hyperlink{structtag_layer_motion}{00043}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_layer_motion}{tagLayerMotion}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00044}00044 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00045}\mbox{\hyperlink{structtag_layer_motion_a6a6b31fe4f6f267e3791dcfa29fb69a4}{00045}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a6a6b31fe4f6f267e3791dcfa29fb69a4}{x}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00046}\mbox{\hyperlink{structtag_layer_motion_a20a105a96d8d631896a3e932b94ff2c8}{00046}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a20a105a96d8d631896a3e932b94ff2c8}{y}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00047}\mbox{\hyperlink{structtag_layer_motion_a053ced6dbe2235539c91dd2bf9e657ce}{00047}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a053ced6dbe2235539c91dd2bf9e657ce}{z}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00048}\mbox{\hyperlink{structtag_layer_motion_af53bd905109504a8bbced9abd4f8e176}{00048}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_af53bd905109504a8bbced9abd4f8e176}{zVertsZeroAndThree}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00049}\mbox{\hyperlink{structtag_layer_motion_a46d67aa8dd1aa66e716965bb515ba12b}{00049}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a46d67aa8dd1aa66e716965bb515ba12b}{zVertsOneAndTwo}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00050}\mbox{\hyperlink{structtag_layer_motion_a4f464eb8738dd47ef07006bda0dfc2c5}{00050}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a4f464eb8738dd47ef07006bda0dfc2c5}{xVel}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00051}\mbox{\hyperlink{structtag_layer_motion_a26854ba72e689878bdfffa4384e7bf0d}{00051}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a26854ba72e689878bdfffa4384e7bf0d}{yVel}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00052}\mbox{\hyperlink{structtag_layer_motion_ae7c234bb6b434b5463ad7ce2c71d4e64}{00052}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_ae7c234bb6b434b5463ad7ce2c71d4e64}{zVel}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00053}\mbox{\hyperlink{structtag_layer_motion_afe88c140a067df682bd41fecccbb67e6}{00053}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_afe88c140a067df682bd41fecccbb67e6}{xStep}};   }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00054}\mbox{\hyperlink{structtag_layer_motion_a3193919887e7dfd2a83dda3a6f536e30}{00054}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a3193919887e7dfd2a83dda3a6f536e30}{yStep}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00055}\mbox{\hyperlink{structtag_layer_motion_a9e65bd9eae6d10a6dbf0cfef98d1b718}{00055}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a9e65bd9eae6d10a6dbf0cfef98d1b718}{zStep}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00056}\mbox{\hyperlink{structtag_layer_motion_ad77cdbaa8a8d9ffbe8767825c585cc53}{00056}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_ad77cdbaa8a8d9ffbe8767825c585cc53}{xMin}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00057}\mbox{\hyperlink{structtag_layer_motion_a8f7ab4ce921bdeec1d59810121a611d2}{00057}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a8f7ab4ce921bdeec1d59810121a611d2}{yMin}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00058}\mbox{\hyperlink{structtag_layer_motion_af628e287f93cbc3acba791f061802897}{00058}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_af628e287f93cbc3acba791f061802897}{zMin}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00059}\mbox{\hyperlink{structtag_layer_motion_ac9eb8ac7584bb73b88c4114b37600744}{00059}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_ac9eb8ac7584bb73b88c4114b37600744}{xMax}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00060}\mbox{\hyperlink{structtag_layer_motion_a4407fdbd910e28e4590beb8375079f24}{00060}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a4407fdbd910e28e4590beb8375079f24}{yMax}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00061}\mbox{\hyperlink{structtag_layer_motion_a7728822ea11a0ac9b76af4cc9c5c53d9}{00061}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_layer_motion_a7728822ea11a0ac9b76af4cc9c5c53d9}{zMax}}; }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00062}00062 \} \mbox{\hyperlink{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}{LayerMotion}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00068}\mbox{\hyperlink{structtag_tilemap_size}{00068}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_tilemap_size}{tagTilemapSize}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00069}00069 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00070}\mbox{\hyperlink{structtag_tilemap_size_a1ad44f13f5ed3cf13bf4a424d77cc3bf}{00070}}     \textcolor{keywordtype}{short} \mbox{\hyperlink{structtag_tilemap_size_a1ad44f13f5ed3cf13bf4a424d77cc3bf}{tilemapWidth}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00071}\mbox{\hyperlink{structtag_tilemap_size_aa166d8f557e0bdd23d3174fd89c57166}{00071}}     \textcolor{keywordtype}{short} \mbox{\hyperlink{structtag_tilemap_size_aa166d8f557e0bdd23d3174fd89c57166}{tilemapHeight}};   }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00072}\mbox{\hyperlink{structtag_tilemap_size_a3457a7d76cd7098372b7dc8804806a0d}{00072}}     \textcolor{keywordtype}{short} \mbox{\hyperlink{structtag_tilemap_size_a3457a7d76cd7098372b7dc8804806a0d}{graphicWidth}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00073}\mbox{\hyperlink{structtag_tilemap_size_a5266b2d9779f66c83afcf0833a3799f4}{00073}}     \textcolor{keywordtype}{short} \mbox{\hyperlink{structtag_tilemap_size_a5266b2d9779f66c83afcf0833a3799f4}{graphicHeight}};   }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00074}00074 \} \mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{TilemapSize}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00079}\mbox{\hyperlink{structtag_texture_coordinate_size}{00079}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_texture_coordinate_size}{tagTextureCoordinateSize}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00080}00080 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00081}\mbox{\hyperlink{structtag_texture_coordinate_size_aa1359dedb1aee1364dedbee8da5316dc}{00081}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_texture_coordinate_size_aa1359dedb1aee1364dedbee8da5316dc}{width}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00082}\mbox{\hyperlink{structtag_texture_coordinate_size_a9a2ff51095e7d65fc7d875bd7dd603ba}{00082}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_texture_coordinate_size_a9a2ff51095e7d65fc7d875bd7dd603ba}{height}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00083}00083 \} \mbox{\hyperlink{_tiled_maps_8h_aab9c495844ddd5ee5318fc1809f1ab1c}{TextureCoordinateSize}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00088}\mbox{\hyperlink{structtag_texture_index}{00088}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_texture_index}{tagTextureIndex}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00089}00089 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00090}\mbox{\hyperlink{structtag_texture_index_a6748e1f69afdea5a2228247c7da1f370}{00090}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structtag_texture_index_a6748e1f69afdea5a2228247c7da1f370}{xIndex}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00091}\mbox{\hyperlink{structtag_texture_index_a52df2efd30214c075a465fc2a8d1db6f}{00091}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structtag_texture_index_a52df2efd30214c075a465fc2a8d1db6f}{yIndex}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00092}\mbox{\hyperlink{_tiled_maps_8h_a71f3956d50a6afa6035f3e3213c5b3fb}{00092}} \} \mbox{\hyperlink{_tiled_maps_8h_a71f3956d50a6afa6035f3e3213c5b3fb}{TextureIndex}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00094}\mbox{\hyperlink{structtag_quad_z_values}{00094}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_quad_z_values}{tagQuadZValues}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00095}00095 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00096}\mbox{\hyperlink{structtag_quad_z_values_a7ca60203cc7da807559a2873915ae936}{00096}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a7ca60203cc7da807559a2873915ae936}{topLeft}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00097}\mbox{\hyperlink{structtag_quad_z_values_af0f005bbb0ec68d640e176876f733414}{00097}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_af0f005bbb0ec68d640e176876f733414}{topRight}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00098}\mbox{\hyperlink{structtag_quad_z_values_a93ed6748ad6b7de843f8e39ead416a0e}{00098}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a93ed6748ad6b7de843f8e39ead416a0e}{bottomRight}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00099}\mbox{\hyperlink{structtag_quad_z_values_ab26845a5f84ab762d340fa0874712d70}{00099}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_ab26845a5f84ab762d340fa0874712d70}{bottomLeft}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00100}\mbox{\hyperlink{structtag_quad_z_values_a9ed1a764e4d7a984ff04fb7b4651c6e2}{00100}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a9ed1a764e4d7a984ff04fb7b4651c6e2}{tlNormalX}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00101}\mbox{\hyperlink{structtag_quad_z_values_a8ddd683d9d1fe53f16ac69a034547a09}{00101}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a8ddd683d9d1fe53f16ac69a034547a09}{tlNormalY}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00102}\mbox{\hyperlink{structtag_quad_z_values_a374cddb60facd5c5fa48e521bdb3b1da}{00102}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a374cddb60facd5c5fa48e521bdb3b1da}{tlNormalZ}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00103}\mbox{\hyperlink{structtag_quad_z_values_ad522a6b4b2ce5f741f06f5718d74c0c7}{00103}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_ad522a6b4b2ce5f741f06f5718d74c0c7}{trNormalX}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00104}\mbox{\hyperlink{structtag_quad_z_values_a370102154e25e4a1a8feb67c60f3933e}{00104}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a370102154e25e4a1a8feb67c60f3933e}{trNormalY}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00105}\mbox{\hyperlink{structtag_quad_z_values_a4bc9817bc1c80876eb1e27419987f248}{00105}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a4bc9817bc1c80876eb1e27419987f248}{trNormalZ}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00106}\mbox{\hyperlink{structtag_quad_z_values_a2cc376cfa0b051b147b65844cbbc3d84}{00106}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a2cc376cfa0b051b147b65844cbbc3d84}{brNormalX}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00107}\mbox{\hyperlink{structtag_quad_z_values_a7fdbb2ff34e73e8a7d527c7f926b8aef}{00107}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a7fdbb2ff34e73e8a7d527c7f926b8aef}{brNormalY}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00108}\mbox{\hyperlink{structtag_quad_z_values_a517a8118bd7490d1624cf590ca1d23a4}{00108}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a517a8118bd7490d1624cf590ca1d23a4}{brNormalZ}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00109}\mbox{\hyperlink{structtag_quad_z_values_a36f5abfc6c74e23c98912cdaee4b7697}{00109}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a36f5abfc6c74e23c98912cdaee4b7697}{blNormalX}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00110}\mbox{\hyperlink{structtag_quad_z_values_a8fb623049e5cf67338dd8e0642023c48}{00110}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a8fb623049e5cf67338dd8e0642023c48}{blNormalY}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00111}\mbox{\hyperlink{structtag_quad_z_values_a7df2675d159db374bfbe1ced76f6a620}{00111}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{structtag_quad_z_values_a7df2675d159db374bfbe1ced76f6a620}{blNormalZ}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00112}00112 \} \mbox{\hyperlink{_tiled_maps_8h_a8e69c7c662c7c15c0d22a2fcc93c7090}{QuadZValues}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00117}\mbox{\hyperlink{_tiled_maps_8h_ac9da29830fd8e0f8688861cedd47362f}{00117}} \textcolor{keyword}{typedef} std::vector<TextureIndex> \mbox{\hyperlink{_tiled_maps_8h_ac9da29830fd8e0f8688861cedd47362f}{TilemapData}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00118}\mbox{\hyperlink{_tiled_maps_8h_a811cd55ac23216722c43a253772c5062}{00118}} \textcolor{keyword}{typedef} TilemapData::iterator \mbox{\hyperlink{_tiled_maps_8h_a811cd55ac23216722c43a253772c5062}{TilemapDataIterator}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00123}\mbox{\hyperlink{_tiled_maps_8h_a9113324e79cb5c0537e657ea90290c0f}{00123}} \textcolor{keyword}{typedef} std::vector<bool> \mbox{\hyperlink{_tiled_maps_8h_a9113324e79cb5c0537e657ea90290c0f}{CollisionData}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00124}\mbox{\hyperlink{_tiled_maps_8h_a0918de80dde438b6898ff09b731fc003}{00124}} \textcolor{keyword}{typedef} CollisionData::iterator \mbox{\hyperlink{_tiled_maps_8h_a0918de80dde438b6898ff09b731fc003}{CollisionDataIterator}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00130}\mbox{\hyperlink{_tiled_maps_8h_a9403eeffcaa5b6d170e44b283cef8980}{00130}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} \mbox{\hyperlink{_tiled_maps_8h_a9403eeffcaa5b6d170e44b283cef8980}{TileAccessCount}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00131}\mbox{\hyperlink{_tiled_maps_8h_a7f9fedd812d346c3979d13221f80f2f4}{00131}} \textcolor{keyword}{typedef} std::map<int, TileAccessCount> \mbox{\hyperlink{_tiled_maps_8h_a7f9fedd812d346c3979d13221f80f2f4}{TileAccessCounts}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00132}\mbox{\hyperlink{_tiled_maps_8h_a867aa923acea2a9f00d11871cfddb1cf}{00132}} \textcolor{keyword}{typedef} TileAccessCounts::iterator \mbox{\hyperlink{_tiled_maps_8h_a867aa923acea2a9f00d11871cfddb1cf}{TileAccessCountsIterator}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00137}\mbox{\hyperlink{_tiled_maps_8h_a9f1de003a4c953d12f03fa5d99e7f677}{00137}} \textcolor{keyword}{typedef} std::map<int, Quad> \mbox{\hyperlink{_tiled_maps_8h_a9f1de003a4c953d12f03fa5d99e7f677}{TilemapQuads}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00138}\mbox{\hyperlink{_tiled_maps_8h_a7dc28cb88877f79dc17f81f78b783a73}{00138}} \textcolor{keyword}{typedef} TilemapQuads::iterator \mbox{\hyperlink{_tiled_maps_8h_a7dc28cb88877f79dc17f81f78b783a73}{TilemapQuadsIterator}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00143}\mbox{\hyperlink{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}{00143}} \textcolor{keyword}{typedef} std::map<int, QuadZValues> \mbox{\hyperlink{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}{TilemapZValues}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00144}\mbox{\hyperlink{_tiled_maps_8h_ac66cc4a1535c3b2e1392d7988d614c16}{00144}} \textcolor{keyword}{typedef} TilemapZValues::iterator \mbox{\hyperlink{_tiled_maps_8h_ac66cc4a1535c3b2e1392d7988d614c16}{TilemapZValuesIterator}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00149}\mbox{\hyperlink{structtag_tilemap_layer}{00149}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_tilemap_layer}{tagTilemapLayer}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00150}00150 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00151}\mbox{\hyperlink{structtag_tilemap_layer_a7cb5ac6a2a9270201d90ffa04f548b85}{00151}}     \mbox{\hyperlink{_tiled_maps_8h_ac9da29830fd8e0f8688861cedd47362f}{TilemapData}}      \mbox{\hyperlink{structtag_tilemap_layer_a7cb5ac6a2a9270201d90ffa04f548b85}{tiles}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00152}\mbox{\hyperlink{structtag_tilemap_layer_acecd9367ff66dbbfb38b830735b21911}{00152}}     \mbox{\hyperlink{_tiled_maps_8h_a9f1de003a4c953d12f03fa5d99e7f677}{TilemapQuads}}        \mbox{\hyperlink{structtag_tilemap_layer_acecd9367ff66dbbfb38b830735b21911}{quads}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00153}\mbox{\hyperlink{structtag_tilemap_layer_af6f4a0dc304839e4cf260b8e99b691e7}{00153}}     \textcolor{keywordtype}{float}               \mbox{\hyperlink{structtag_tilemap_layer_af6f4a0dc304839e4cf260b8e99b691e7}{animationTimeScale}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00154}\mbox{\hyperlink{structtag_tilemap_layer_a1278905d9ae2356be8b7329a465bcb55}{00154}}     \textcolor{keywordtype}{float}               \mbox{\hyperlink{structtag_tilemap_layer_a1278905d9ae2356be8b7329a465bcb55}{currentAnimationFrame}}; }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00155}\mbox{\hyperlink{structtag_tilemap_layer_a1f9b40996256b013800248b7c884ed78}{00155}}     \textcolor{keywordtype}{int}                 \mbox{\hyperlink{structtag_tilemap_layer_a1f9b40996256b013800248b7c884ed78}{mapAnimationIndex}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00156}\mbox{\hyperlink{structtag_tilemap_layer_a1b44f9562be327e9f1e6d7567d55d23c}{00156}}     \textcolor{keywordtype}{bool}                \mbox{\hyperlink{structtag_tilemap_layer_a1b44f9562be327e9f1e6d7567d55d23c}{mapWrapEdges}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00157}\mbox{\hyperlink{structtag_tilemap_layer_a3b11f625de0c0dd9b4fe7d7261fc7da3}{00157}}     Vector              \mbox{\hyperlink{structtag_tilemap_layer_a3b11f625de0c0dd9b4fe7d7261fc7da3}{mapCoordinates}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00158}\mbox{\hyperlink{structtag_tilemap_layer_a5fa65063c070cddd8b4920f2221ae526}{00158}}     Vector              \mbox{\hyperlink{structtag_tilemap_layer_a5fa65063c070cddd8b4920f2221ae526}{mapVelocityPerSec}}; }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00159}\mbox{\hyperlink{structtag_tilemap_layer_aa57f4cb4c9424d8c5afbb8741ff6101d}{00159}}     \mbox{\hyperlink{structtag_layer_motion}{LayerMotion}}      \mbox{\hyperlink{structtag_tilemap_layer_aa57f4cb4c9424d8c5afbb8741ff6101d}{layerMotion}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00160}\mbox{\hyperlink{structtag_tilemap_layer_af00ee5d260f21613341113fab5cb3002}{00160}}     \mbox{\hyperlink{structtag_vertex_array}{QuadVertexArray}}      \mbox{\hyperlink{structtag_tilemap_layer_af00ee5d260f21613341113fab5cb3002}{quadVertexArray}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00161}00161 \} \mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{TilemapLayer}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00166}\mbox{\hyperlink{structtag_tilemap_collision_layer}{00166}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_tilemap_collision_layer}{tagTilemapCollisionLayer}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00167}00167 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00168}\mbox{\hyperlink{structtag_tilemap_collision_layer_a882f4a5071a2f0acad8767693d5125ed}{00168}}   \mbox{\hyperlink{_tiled_maps_8h_a9113324e79cb5c0537e657ea90290c0f}{CollisionData}}        \mbox{\hyperlink{structtag_tilemap_collision_layer_a882f4a5071a2f0acad8767693d5125ed}{tilemapCollision}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00169}\mbox{\hyperlink{structtag_tilemap_collision_layer_a36052a7b0ac598256fa2f62c1507b726}{00169}}   \mbox{\hyperlink{_tiled_maps_8h_a7f9fedd812d346c3979d13221f80f2f4}{TileAccessCounts}}      \mbox{\hyperlink{structtag_tilemap_collision_layer_a36052a7b0ac598256fa2f62c1507b726}{tilemapAccessCounts}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00170}\mbox{\hyperlink{structtag_tilemap_collision_layer_acdbed0f27f572cc4f58883878d27a0fd}{00170}}   Vector                \mbox{\hyperlink{structtag_tilemap_collision_layer_acdbed0f27f572cc4f58883878d27a0fd}{mapCoordinates}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00171}\mbox{\hyperlink{structtag_tilemap_collision_layer_a1ae5d2573ce79bad7f22262ac5f4ed29}{00171}}   Vector                \mbox{\hyperlink{structtag_tilemap_collision_layer_a1ae5d2573ce79bad7f22262ac5f4ed29}{mapVelocityPerSec}};  }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00172}00172 \} \mbox{\hyperlink{_tiled_maps_8h_aa46fee61c4f4e192a1a610750ac4add9}{CollisionLayer}};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00177}\mbox{\hyperlink{class_tiled_maps}{00177}} \textcolor{keyword}{class }\mbox{\hyperlink{class_tiled_maps}{TiledMaps}}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00178}00178 \{}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00179}00179    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00180}00180     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00184}00184     \mbox{\hyperlink{class_tiled_maps_a6c260b7014b9bcdadb9190ff94b61613}{TiledMaps}}();}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00185}00185     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00189}00189     \mbox{\hyperlink{class_tiled_maps_a4bee7c3a63841ef49037238ac8ac6c11}{\string~TiledMaps}}();}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00190}00190         }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00194}00194     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_a15fd01be6383b84e82d02564f5dc0b4f}{assignTextures}}(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} tileTexture, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} waterTexture, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} cloudTexture, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} waterLightMap, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} waterNormalMap);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00195}00195     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00199}00199     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_afc500ba2c76cb178ac514a40fa415b1d}{addWaterNormalMap}}(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} waterNormalMap); }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00204}00204     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_a67478a234f22f66249b90b3c9b4069c1}{clearWaterNormalMaps}}();}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00205}00205 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00212}00212     Vector \mbox{\hyperlink{class_tiled_maps_a13bf49e8e11525f10538421d86ef944f}{findBestVectorOnPath}}(Vector currentPosition, Vector destination, \textcolor{keywordtype}{float} currentAngle, \textcolor{keywordtype}{int} numberOfTilesAway, \textcolor{keywordtype}{int} skipTempCollisionID);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00213}00213     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00221}00221     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_tiled_maps_aeeb2e293c661ff413fb0e8ee73fce5c1}{findAngleToDestination}}(Vector currentPosition, \textcolor{keywordtype}{float} currentAngle, Vector destination, \textcolor{keywordtype}{int} skipCollisionID);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00222}00222     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00226}00226     \textcolor{keyword}{virtual} \mbox{\hyperlink{structtag_tilemap_size}{TilemapSize}} \mbox{\hyperlink{class_tiled_maps_aaa0f89c604503b63598a0695f8f4d9f0}{getTilemapSize}}();}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00231}00231     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_tiled_maps_aee4d854a24b13a170e3a55a94e3bd12d}{loadTileMap}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00232}00232     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00236}00236     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_adead5741f235f5f78605ee20600b19d6}{setMinimumBoundary}}(Vector minimumBoundary);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00237}00237     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00241}00241     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_a104627d37160c3619e9e773ddcbb0b90}{translateMap}}(\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}} layer, Vector translation);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00242}00242     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00246}00246     \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_tiled_maps_a9941b1c1c42a1e3fea32e6844f1dd6ad}{getLocation}}(\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}} layer);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00247}00247     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00251}00251     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_af379459179990bcd8941047d0699c456}{setMapVelocity}}(\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}} layer, Vector unitsPerSecond);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00252}00252         }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00257}00257     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_tiled_maps_a9faaee6cbb09076cb07fc5751a2ad404}{checkForCollisionAt}}(Vector collisionOffset, \textcolor{keywordtype}{int} tempCollisionID);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00258}00258 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00262}00262     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_tiled_maps_a9faaee6cbb09076cb07fc5751a2ad404}{checkForCollisionAt}}(Vector collisionOffset);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00263}00263 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00267}00267     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_ad40ce10ec6fe6963f0de40f858c1fc44}{setTempCollisionAt}}(\textcolor{keywordtype}{int} collisionID, Vector collisionOffset); }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00273}00273     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_tiled_maps_a57567dc109ceeba897d57525cc1b820a}{getZValueAt}}(Vector \&location);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00278}00278     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_a65561b37df5e72744187cc2c42cdad8f}{removeTempCollision}}(\textcolor{keywordtype}{int} collisionID);   }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00279}00279 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00283}00283     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_abe8a74cb75d65c85bd8c433e9ca11787}{clearTempCollisionTable}}();}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00284}00284     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00288}00288     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_aaff90a3ef7215ed3619885111cab76b6}{generateLayerVertexArrays}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}} layer);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00289}00289 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00293}00293     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_a77a3145036168ebfa07ac4d65e3edb7a}{freeLayerVertexArrays}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}} layer);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00298}00298     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_a2fbc1884278e96c739d88042f0b594f7}{renderLayerVertexArrays}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}} layer);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00299}00299     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00303}00303     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_a8d2064dc9f73c356dc9d1ee7a094089f}{animationTask}}(\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}} layer);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00304}00304 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00308}00308     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_a313f3b08d304c2d0a4fb6633527dc9c6}{velocityTask}}();}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00309}00309 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00313}00313     \textcolor{keyword}{virtual} \mbox{\hyperlink{structtag_layer_motion}{LayerMotion}} \mbox{\hyperlink{class_tiled_maps_ace281bb17654f0254b54f0515c41e5f5}{getLayerMotion}}(\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\_LAYER}} layer);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00314}00314 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00318}00318     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tiled_maps_af1fc781b624caf55f9e5240631ca3d22}{shakeMapFor}}(\textcolor{keywordtype}{float} timeUnits, \textcolor{keywordtype}{float} magnitude);}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00319}00319 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00323}00323     \textcolor{keyword}{virtual} \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} \mbox{\hyperlink{class_tiled_maps_a842921ca04906747bee2118cedc2377b}{getCurrentWaterNormalMap}}();}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00324}00324 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00325}00325    \textcolor{keyword}{private}:     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00326}00326     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00327}00327     \textcolor{comment}{// Specifies the width and height of our texture coordinates...}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00328}00328     \mbox{\hyperlink{structtag_texture_coordinate_size}{TextureCoordinateSize}} myTextureCoordinateSize;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00329}00329     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00330}00330     \textcolor{comment}{// Defines the texture handle the graphics subsystem has indicated for us to use ...}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00331}00331     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myTileTexture;   }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00332}00332     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myWaterTexture;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00333}00333     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myCloudTexture;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00334}00334     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myWaterLightMap; }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00335}00335     std::vector<TextureHandle> myWaterNormalMaps;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00336}00336     \textcolor{keywordtype}{int} myCurrentWaterNormalMap;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00337}00337    }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00338}00338     \textcolor{comment}{// Specifies the width and height of our tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00339}00339     \mbox{\hyperlink{structtag_tilemap_size}{TilemapSize}} myTilemapSize;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00340}00340     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00341}00341     \textcolor{comment}{// Specifies the minimum and maximum display coordinates of our tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00342}00342     Vector myMinimumBoundary;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00343}00343     Vector myMaximumBoundary;   }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00344}00344     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00345}00345     \textcolor{comment}{// specifies a timer used to delay animations}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00346}00346     \textcolor{keywordtype}{float} myAnimationTimer;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00347}00347     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00348}00348     \textcolor{comment}{// Used to count how many frames to skip before rendering water motion}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00349}00349     ushort myWaterAnimationCounter;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00350}00350 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00351}00351     \textcolor{comment}{// Some data we use in our tilemap code}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00352}00352     \textcolor{keywordtype}{float} myAnimationsPerSecond;    }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00353}00353 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00354}00354     \textcolor{comment}{// If this value is > 0 then we'll shake the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00355}00355     \textcolor{keywordtype}{float} myShakeTimer;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00356}00356     \textcolor{keywordtype}{float} myShakeMagnitude;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00357}00357     }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00358}00358     \textcolor{comment}{// This data severs as a container for each graphic and collision layer in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00359}00359     \mbox{\hyperlink{structtag_tilemap_layer}{TilemapLayer}} myTilemapLayerA;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00360}00360     \mbox{\hyperlink{structtag_tilemap_layer}{TilemapLayer}} myTilemapLayerB;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00361}00361     \mbox{\hyperlink{structtag_tilemap_layer}{TilemapLayer}} myTilemapLayerC;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00362}00362     \mbox{\hyperlink{structtag_tilemap_layer}{TilemapLayer}} myTilemapLayerD;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00363}00363     \mbox{\hyperlink{structtag_tilemap_collision_layer}{CollisionLayer}} myTilemapCollisionLayer;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00364}00364     \mbox{\hyperlink{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}{TilemapZValues}} myTilemapZValues;}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00365}00365 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00366}00366     \textcolor{comment}{// stores a tilemap index for the moveable collision point...   }}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00367}00367     \mbox{\hyperlink{_tiled_maps_8h_acd8c4220fc0290c79c07f548dbe0c696}{TempCollisionTable}} myTempCollisionTable;  }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00368}00368 \};}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00369}00369 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00370}00370 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00371}00371 }
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00372}00372 \textcolor{comment}{/* SWIM FISHY SWIM TILEMAP FORMAT}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00373}00373 \textcolor{comment}{    MAP DATA IS STORED AS BIG ENDIAN AUTOMATICALLY -\/> Although endian support will be incorporated}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00374}00374 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00375}00375 \textcolor{comment}{1. TilemapSize Data:}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00376}00376 \textcolor{comment}{    short tilemapWidth;  (2 bytes)   -\/ Describes the width of the actual tilemap in tiles}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00377}00377 \textcolor{comment}{    short tilemapHeight; (2 bytes)   -\/ Describes the height of the actual tilemap in tiles}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00378}00378 \textcolor{comment}{    short graphicWidth;  (2 bytes)   -\/ Descirbes the width of the graphic file in pixels}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00379}00379 \textcolor{comment}{    short graphicHeight; (2 bytes)   -\/ Describes the height of the graphic file in pixels}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00380}00380 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00381}00381 \textcolor{comment}{2.  TilemapData Layer A:}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00382}00382 \textcolor{comment}{    int mapIndexDataX[tilemapWidth * tilemapHeight]; -\/ Describes the X graphic index for each tile in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00383}00383 \textcolor{comment}{    int mapIndexDataY[tilemapWidth * tilemapHeight]; -\/ Describes the Y graphic index for each tile in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00384}00384 \textcolor{comment}{    (The above two arrays should be loaded into an vector of TextureIndex structs)}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00385}00385 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00386}00386 \textcolor{comment}{3.  TilemapData Layer B:}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00387}00387 \textcolor{comment}{    int mapIndexDataX[tilemapWidth * tilemapHeight]; -\/ Describes the X graphic index for each tile in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00388}00388 \textcolor{comment}{    int mapIndexDataY[tilemapWidth * tilemapHeight]; -\/ Describes the Y graphic index for each tile in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00389}00389 \textcolor{comment}{    (The above two arrays should be loaded into an vector of TextureIndex structs)}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00390}00390 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00391}00391 \textcolor{comment}{4.  TilemapData Layer C:}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00392}00392 \textcolor{comment}{    int mapIndexDataX[tilemapWidth * tilemapHeight]; -\/ Describes the X graphic index for each tile in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00393}00393 \textcolor{comment}{    int mapIndexDataY[tilemapWidth * tilemapHeight]; -\/ Describes the Y graphic index for each tile in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00394}00394 \textcolor{comment}{    (The above two arrays should be loaded into an vector of TextureIndex structs)}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00395}00395 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00396}00396 \textcolor{comment}{5.  TilemapData Layer D:}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00397}00397 \textcolor{comment}{    int mapIndexDataX[tilemapWidth * tilemapHeight]; -\/ Describes the X graphic index for each tile in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00398}00398 \textcolor{comment}{    int mapIndexDataY[tilemapWidth * tilemapHeight]; -\/ Describes the Y graphic index for each tile in the tilemap}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00399}00399 \textcolor{comment}{    (The above two arrays should be loaded into an vector of TextureIndex structs)}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00400}00400 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00401}00401 \textcolor{comment}{5.  Collision Layer:}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00402}00402 \textcolor{comment}{    bool mapCollisionData[tilemapWidth * tilemapHeight]; -\/ Describes collisions by (x * y) indexing. true if collision on tile, false if not.}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00403}00403 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00404}00404 \textcolor{comment}{6.  Z Layer:}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00405}00405 \textcolor{comment}{    QuadZValues mapZData[tilemapWidth * tilemapHeight]; -\/ Describes z values as a set of 4 bytes for each tile... I know it should technically be for each corner... but this let's us get away with some normal looking tilemap combinations...}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00406}00406 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00407}00407 \textcolor{comment}{7.  That's the entire file!}}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00408}00408 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{_tiled_maps_8h_source_l00409}00409 \textcolor{comment}{*/}}
+
+\end{DoxyCode}

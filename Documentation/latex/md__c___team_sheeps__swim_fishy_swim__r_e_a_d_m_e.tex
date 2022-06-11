@@ -1,0 +1,1196 @@
+Swim Fishy Swim is a now defunct Wii Homebrew project (back when everything was 4\+:3 and Unity3d was only on Macs). The project compiles to a rom capable of running in an SD card on the wii using the \href{https://wiibrew.org/wiki/Main_Page}{\texttt{ Wii\+Brew}} toolchain.
+
+Footage of the actual (admittedly rather odd but fun) gameplay can be found here\+: \href{https://youtu.be/giIlyl0D9iA}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md0}{}\doxysection{SFS Games Design Document (\+GDD)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md0}
+Below was once a media wiki document that served as the general design doc for the game. It was hacked somewhere in 2014 and I was only able to restore this version from internet archives\+:\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md1}{}\doxysubsubsection{From Sfswiki}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md1}
+Jump to\+: navigation, search
+
+\DoxyHorRuler{0}
+
+
+Green Door Games, LLC Software Engineering Document
+
+\DoxyHorRuler{0}
+
+
+Functional, Requirement, Analysis and Game Design Document\+: {\bfseries{Swim Fishy Swim (tm)}}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{Contents}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item 1 Document Contribution\+:
+\item 2 Document Revision\+:
+\item 3 Introduction\+:
+\begin{DoxyItemize}
+\item 3.1 Background (why we are doing this)\+:
+\item 3.2 Scope\+:
+\item 3.3 Audience\+:
+\item 3.4 Conventions\+:
+\item 3.5 Game Story\+:
+\end{DoxyItemize}
+\item 4 Swim Fishy Swim (SLTN001)\+:
+\begin{DoxyItemize}
+\item 4.1 Solution Use Case Diagram\+:
+\item 4.2 Solution Actors\+:
+\item 4.3 Solution Systems\+:
+\end{DoxyItemize}
+\item 5 Title Screen/\+Main Menu (SYS1)\+:
+\begin{DoxyItemize}
+\item 5.1 Use Case Diagram\+:
+\item 5.2 Requirements\+:
+\item 5.3 Actors\+:
+\item 5.4 System Use Cases\+:
+\begin{DoxyItemize}
+\item 5.4.1 Player Views Title Screen (SYS1-\/\+UC001)\+:
+\item 5.4.2 Player Watches Story (SYS1-\/\+UC002)\+:
+\item 5.4.3 Player Starts New Game (SYS1-\/\+UC003)\+:
+\item 5.4.4 Player Continues Game (SYS1-\/\+UC004)\+:
+\end{DoxyItemize}
+\item 5.5 Mockups\+:
+\begin{DoxyItemize}
+\item 5.5.1 Title Screen\+:
+\item 5.5.2 Story (Storyboards in video format)\+:
+\item 5.5.3 Tutorial Screens\+:
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item 6 Game Progress / Level Details Screen (SYS2)\+:
+\begin{DoxyItemize}
+\item 6.1 Use Case Diagram\+:
+\item 6.2 Requirements\+:
+\item 6.3 Actors\+:
+\item 6.4 System Use Cases\+:
+\begin{DoxyItemize}
+\item 6.4.1 Player views Game Progress (SYS2-\/\+UC001)\+:
+\end{DoxyItemize}
+\item 6.5 Mockups\+:
+\begin{DoxyItemize}
+\item 6.5.1 Progress Screen\+:
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item 7 Towers (Flowers) and their Behaviors (SYS3)\+:
+\begin{DoxyItemize}
+\item 7.1 Use Case Diagram\+:
+\item 7.2 Requirements\+:
+\item 7.3 System Use Cases\+:
+\begin{DoxyItemize}
+\item 7.3.1 Windy Tower Interacts w/ Baddies\+: (SYS3-\/\+UC001)
+\item 7.3.2 Thorny Tower interacts w/ Baddies (SYS3-\/\+UC002) \+:
+\item 7.3.3 Plompy Tower interacts w/ Baddies (SYS3-\/\+UC003) \+:
+\item 7.3.4 Ptewey Tower interacts w/ Baddies (SYS3-\/\+UC004) \+:
+\end{DoxyItemize}
+\item 7.4 Mockups\+:
+\begin{DoxyItemize}
+\item 7.4.1 Windy Towers\+:
+\item 7.4.2 Thorny Towers (with Windy Towers)\+:
+\item 7.4.3 Petewy Towers\+:
+\item 7.4.4 Plompy Towers\+:
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item 8 Baddie Behaviors (SYS4)\+:
+\begin{DoxyItemize}
+\item 8.1 Use Case Diagram\+:
+\item 8.2 Requirements\+:
+\item 8.3 System Use Cases\+:
+\item 8.4 Mockups\+:
+\end{DoxyItemize}
+\item 9 Weapons/\+Attacks and their Behaviors (SYS5)\+:
+\begin{DoxyItemize}
+\item 9.1 Use Case Diagram\+:
+\item 9.2 Requirements\+:
+\item 9.3 System Use Cases\+:
+\begin{DoxyItemize}
+\item 9.3.1 Fires Swigen Cannon (SYS5-\/\+UC001)\+:
+\item 9.3.2 Arms Dŵr Bomb (SYS5-\/\+UC002)\+:
+\item 9.3.3 Triggers Bubble Wal (SYS5-\/\+UC003)\+:
+\item 9.3.4 Releases Carterfi Fishy (SYS5-\/\+UC004)\+:
+\end{DoxyItemize}
+\item 9.4 Mockups\+:
+\end{DoxyItemize}
+\item 10 Tower Building Phase (SYS6)\+:
+\begin{DoxyItemize}
+\item 10.1 SYS6 -\/ Use Case Diagram\+:
+\item 10.2 SYS6 -\/ Requirements\+:
+\item 10.3 SYS6\+: System Use Cases\+:
+\begin{DoxyItemize}
+\item 10.3.1 Collects Power-\/ups and Grows Flowers\+: (SYS6-\/\+UC001)
+\item 10.3.2 Talks to Pickle, Chooses Weapon (SYS6-\/\+UC002)\+:
+\item 10.3.3 Mockups\+:
+\item 10.3.4 Phase Overview\+:
+\item 10.3.5 Hero, Choose your Weapon\+:
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item 11 Tower Defense Phase (SYS7)\+:
+\begin{DoxyItemize}
+\item 11.1 SYS7 -\/ Use Case Diagram\+:
+\item 11.2 SYS7 -\/ Requirements\+:
+\item 11.3 SYS7\+: System Use Cases\+:
+\begin{DoxyItemize}
+\item 11.3.1 Upgrades Towers as points are available (SYS7-\/\+UC001)\+:
+\item 11.3.2 Attempts to stop or hamper baddies from reaching pickle (SYS7-\/\+UC002)\+:
+\item 11.3.3 Mockups\+:
+\item 11.3.4 Phase Overview\+:
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item 12 Level End Phase (SYS8)\+:
+\item 13 DEPRECATED -\/ Flower Upgrades Screen (SYS9)\+:
+\item 14 End of Wave Upgrades Screen (SYS10)\+:
+\item 15 Level 1-\/1 Pysgode River (Lands of Brine) (SYS11)\+:
+\item 16 Level 1-\/2 Lake Briney (Lands of Brine) (SYS12)\+:
+\item 17 Level 1-\/3 Cornichon Sound (Lands of Brine) (SYS13)\+:
+\item 18 Level 2-\/1 Nibble Island (Sandy Salty Desert) (SYS14)\+:
+\item 19 Level 2-\/2 Barren Wind Isle (Sandy Salty Desert) (SYS15)\+:
+\item 20 Level 2-\/3 Little Pickle Rock (Sandy Salty Desert) (SYS16)\+:
+\item 21 Level 3-\/1 Scraggly Skiffle (Frozen Sepul Coral Wasteland) (SYS17)\+:
+\item 22 Level 3-\/2 Ragged Range (Frozen Sepul Coral Wasteland) (SYS18)\+:
+\item 23 Level 3-\/3 Mount Echinoderm (Frozen Sepul Coral Wasteland) (SYS19)\+:
+\item 24 Weapons/\+Attacks and their Behaviors (APPENDIX-\/A)\+:
+\begin{DoxyItemize}
+\item 24.1 Swigen Cannon
+\begin{DoxyItemize}
+\item 24.1.1 Purchase/\+Upgrade
+\item 24.1.2 Levels
+\item 24.1.3 Costs
+\end{DoxyItemize}
+\item 24.2 Dŵr Bomb
+\begin{DoxyItemize}
+\item 24.2.1 Purchase/\+Upgrade
+\item 24.2.2 Levels
+\item 24.2.3 Costs
+\end{DoxyItemize}
+\item 24.3 Bubble Wal
+\begin{DoxyItemize}
+\item 24.3.1 Purchase/\+Upgrade
+\item 24.3.2 Levels
+\item 24.3.3 Costs
+\end{DoxyItemize}
+\item 24.4 Carterfi Fishy
+\begin{DoxyItemize}
+\item 24.4.1 Purchase/\+Upgrade
+\item 24.4.2 Levels
+\item 24.4.3 Costs
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item 25 Baddies and their Behaviors (APPENDIX-\/B)\+:
+\begin{DoxyItemize}
+\item 25.1 L1 Baddies\+: (Levels 1-\/1 to 1-\/3)
+\item 25.2 L1 Boss\+: (Level 1-\/3)
+\item 25.3 L2 Baddies\+: (Levels 2-\/1 to 2-\/3)
+\item 25.4 L2 Boss\+: (Level 2-\/3)
+\item 25.5 L3 Baddies\+: (Levels 3-\/1 to 3-\/3)
+\item 25.6 L3 Boss\+: (Level 3-\/3)
+\end{DoxyItemize}
+\item 26 Towers Upgrade Options (APPENDIX-\/C)\+:
+\end{DoxyItemize}
+
+if (window.\+show\+Toc\+Toggle) \{ var toc\+Show\+Text = \char`\"{}show\char`\"{}; var toc\+Hide\+Text = \char`\"{}hide\char`\"{}; show\+Toc\+Toggle(); \}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{Document Contribution\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md3}
+{\bfseries{Prepared By\+:}} Eagan Rackley
+
+{\bfseries{Title\+:}} Game Designer and Software Engineer
+
+{\bfseries{Company\+:}} Green Door Games, LLC\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{Document Revision\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md4}
+{\bfseries{Created on\+:}} 10/3/2010
+
+{\bfseries{Version\+:}} 0.\+5
+
+{\bfseries{Approved\+:}} No\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Introduction\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md5}
+\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md6}{}\doxysubsubsection{Background (why we are doing this)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md6}
+Possessing the skill set and experience in requisite parts to make what we believe could be great games, the Green Door Games team has decided to embark on a test of those skills. Specifically, to author and complete a video game, and (if possible) release it on one or more platforms.
+
+Aside from a deep love of video games and the desire to create, the major motivation for this project stems from a \char`\"{}\+Desire to continue living\char`\"{}. This motivation may seem confusing until one attempts any major home repair project with our lead developer. Therefore the specific metric for success of this project has been specified by his spouse as, \char`\"{}\+Make enough money to re-\/do the kitchen, and you\textquotesingle{}ll never have to do a major home repair again.\char`\"{}
+
+All joking aside, the true goal of this and future projects is to create a company that breaks the norm of the industry.
+
+The long term goal of this project is to create a company that focuses on fun, creativity, stability, social responsibility, and community involvement (e.\+g. we\textquotesingle{}d like our company to make enough money to allow us to do some volunteer work teaching inner city kids how to write software. The hope of this particular goal is that the encouragement of software development skills (not necessarily games, but games as a draw for young, bright minds) in the hopes that such a low overhead skill can lead to life and community changing experiences).\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md7}{}\doxysubsubsection{Scope\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md7}
+The scope of this document should be limited to high level design decisions associated with Swim Fishy Swim. This includes general level design, general character/behavior description, menus, and descriptions of overall system functionality. Any low level implementation decisions, sales and marketing decisions, or graphic presentation decisions are outside the scope of this document and should be specified in other parts of the wiki.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md8}{}\doxysubsubsection{Audience\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md8}
+The audience for this document is generally going to be a technically savvy individual, most likely associated with Green Door Games, LLC as a company. The technical details of the document will mostly focus on how the product is used by the player as is common in a Use Case driven development methodology.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsection{Conventions\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md9}
+This document lays out an overall design specification based on two primary analysis tools\+:
+
+{\bfseries{The use case}}\+: \href{https://web.archive.org/web/20120323054600/http://en.wikipedia.org/wiki/Use_case}{\texttt{ http\+://en.\+wikipedia.\+org/wiki/\+Use\+\_\+case}}
+
+{\bfseries{The use case diagram}}\+: \href{https://web.archive.org/web/20120323054600/http://en.wikipedia.org/wiki/Use_case_diagram}{\texttt{ http\+://en.\+wikipedia.\+org/wiki/\+Use\+\_\+case\+\_\+diagram}}
+
+Generally, this type of \char`\"{}use case driven\char`\"{} methodology depends upon use cases to describe overall systems, and then depends on analysis of those use cases to break down a system design at the code level.
+
+The use cases in the document will intentionally include as little design specification as possible. We will also be omitting use case elements other than steps unless that information is actually outside of what would be considered shared common knowledge (e.\+g. Trigger\+: \char`\"{}\+User Turns on Video Game System\char`\"{} is implied, everyone knows you have to do it -\/ so it doesn\textquotesingle{}t need to be written down).
+
+This document will generally adhere to the following layout\+:
+
+
+\begin{DoxyEnumerate}
+\item The Solution (e.\+g. Swim Fishy Swim)
+\begin{DoxyEnumerate}
+\item Solution Requirements
+\item Solution Actors
+\item Solution Use Cases
+\item Systems that make up the solution \+\_\+(there can be 1..n of these!)\+\_\+
+\begin{DoxyEnumerate}
+\item System Name (e.\+g. SYS1\+: Title Screen)
+\begin{DoxyEnumerate}
+\item System Requirements
+\item System Actors
+\item System Use Cases
+\end{DoxyEnumerate}
+\item System Name (e.\+g. SYS2\+: Game Progress / Level Details Screen)
+\begin{DoxyEnumerate}
+\item System Requirements
+\item System Actors
+\item System Use Cases
+\end{DoxyEnumerate}
+\item etc...
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+
+The breakout between each System allows the design to tackle small parts of the problem at a time. Use cases for the most part should be sufficient to describe game interactions, however map and character design may include mockup graphics as well.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md10}{}\doxysubsubsection{Game Story\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md10}
+In lieu of making this document the focus of the game story, please view the storyboards associated with this video\+: \href{https://web.archive.org/web/20120323054600/http://www.youtube.com/watch?v=qNLGHPQjGns}{\texttt{ http\+://www.\+youtube.\+com/watch?v=q\+NLGHPQj\+Gns}}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md11}{}\doxysubsection{$<$strong$>$\+Swim Fishy Swim (\+SLTN001)\+:$<$/strong$>$}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md11}
+\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md12}{}\doxysubsubsection{Solution Use Case Diagram\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md12}
+\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md13}{}\doxysubsubsection{Solution Actors\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md13}
+A1 Player
+
+Describes a single player interacting with the game, from the perspective of either a Wii\+Mote or other input device (such as a keyboard)
+
+
+\begin{DoxyItemize}
+\item Goals
+\begin{DoxyItemize}
+\item 1. To learn the story of the game, and accomplish missions laid out by game levels.
+\item 2. To have fun.
+\item 3. To avoid playing a game too difficult to be entertaining.
+\item 4. To avoid unnecessary cut scenes or text that interrupt gameplay.
+\item 5. To care about the characters in the game and the goal of the game in some capacity.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md14}{}\doxysubsubsection{Solution Systems\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md14}
+The intent of this section is to provide a high level picture of the entire solution. Below is listed the various systems that make up Swim Fishy Swim, including a brief description for each.
+
+{\bfseries{Title Screen/\+Main Menu (SYS1)\+:}}
+
+Describes the first screen a player sees, and the possible interactions the player has with that screen.
+
+{\bfseries{Game Progress / Level Details Screen (SYS2)\+:}}
+
+Describes a progress screen used at the start of the game, when continuing, and between each level to indicate overall progress.
+
+{\bfseries{Towers (Flowers) and their Behaviors (SYS3)\+:}}
+
+Describes the tower system (the towers in the game), how they interact with baddies, and the ammo-\/speed system for each tower. Details on how towers are created will be covered in later sections of the GDD. This system covers their behavior once they exist on the game map.
+
+{\bfseries{Baddies and their Behaviors (SYS4)\+:}}
+
+Describes the baddies in the game, and how they interact with the environment. Details on when/where the baddies spawn will be covered in later sections of the GDD.
+
+{\bfseries{Weapons/\+Attacks and their Behaviors (SYS5)\+:}}
+
+Describes interactions of weapons with the environment, baddies, and the player. See Appendix A for more information about the weapons in the game (cost, when they can be purchased, etc.).
+
+{\bfseries{Tower Building Phase (SYS6)\+:}}
+
+Describes the tower system (the towers in the game), how they interact with baddies, and the ammo-\/speed system for each tower. Details on how towers are created will be covered in later sections of the GDD. This system covers their behavior once they exist on the game map.
+
+{\bfseries{Tower Defense Phase (SYS7)\+:}}
+
+Describes the defense phase when baddies attack and the player/towers defend the pickle against them, as well as the potential upgrade opportunities in this phase.
+
+{\bfseries{Level End Phase (SYS8)\+:}}
+
+Describes the process of identifying the next level and providing opportunities for major weapon upgrades.
+
+{\bfseries{DEPRECATED -\/ Flower Upgrades Screen (SYS9)\+:}}
+
+Describes the options available when a player selects a flower for upgrade.
+
+{\bfseries{End of Wave Upgrades Screen (SYS10)\+:}}
+
+Describes the options available at the end of each wave (general tower improvements)
+
+{\bfseries{Level 1-\/1 Pysgod River (Lands of Brine) (SYS11)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+{\bfseries{Level 1-\/2 Lake Briney (Lands of Brine) (SYS12)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+{\bfseries{Level 1-\/3 Cornichon Sound (Lands of Brine) (SYS13)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+{\bfseries{Level 2-\/1 Nibble Island (Sandy Salty Desert) (SYS14)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+{\bfseries{Level 2-\/2 Barren Wind Isle (Sandy Salty Desert) (SYS15)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+{\bfseries{Level 2-\/3 Little Pickle Rock (Sandy Salty Desert) (SYS16)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+{\bfseries{Level 3-\/1 Scraggly Skiffle (Frozen Sepul Coral Wasteland) (SYS17)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+{\bfseries{Level 3-\/2 Ragged Range (Frozen Sepul Coral Wasteland) (SYS18)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+{\bfseries{Level 3-\/3 Mount Echinoderm (Frozen Sepul Coral Wasteland) (SYS19)\+:}}
+
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{Title Screen/\+Main Menu (\+SYS1)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md15}
+Describes the first screen a player sees, and the possible interactions the player has with that screen.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md16}{}\doxysubsubsection{Use Case Diagram\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md16}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SLTN001-SYS1-UCD001.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md17}{}\doxysubsubsection{Requirements\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md17}
+\DoxyHorRuler{0}
+
+
+{\bfseries{SYS1-\/\+MAINMENU001\+:}}
+
+System shall display a title screen that gives the player a clear first impression of the game look/feel.
+
+{\bfseries{Notes\+:}}
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Player Views Title Screen (SYS1-\/\+UC001)
+\end{DoxyItemize}
+
+{\bfseries{SYS1-\/\+MAINMENU002\+:}}
+
+If player does not interact with the title screen in a reasonable period of time the system will display the game story.
+
+{\bfseries{Notes\+:}}
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Player Watches Story (SYS1-\/\+UC002)
+\end{DoxyItemize}
+
+{\bfseries{SYS1-\/\+MAINMENU003\+:}}
+
+System shall allow player to interact with title screen in a way that will allow them to select an option to start a new game.
+
+{\bfseries{Notes\+:}}
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Player Starts New Game (SYS1-\/\+UC003)
+\end{DoxyItemize}
+
+{\bfseries{SYS1-\/\+MAINMENU004\+:}}
+
+System shall allow player to interact with title screen in a way that will allow them to continue playing a game from the last save point.
+
+{\bfseries{Notes\+:}} Only one save point will be available -\/ which is overwritten every time a player saves.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Player Continues Game (SYS1-\/\+UC004)
+\end{DoxyItemize}
+
+{\bfseries{SYS1-\/\+MAINMENU005\+:}}
+
+System shall display the progress of the game before beginning actual game play.
+
+{\bfseries{Notes\+:}}
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Views Game Progress (SYS1-\/\+UC005)
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md18}{}\doxysubsubsection{Actors\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md18}
+\DoxyHorRuler{0}
+
+
+SYS1-\/\+A1 Player
+
+Describes the player interacting with the game either by Wii\+Mote, Keyboard, Mouse, or other controller.
+
+
+\begin{DoxyItemize}
+\item Goals
+\begin{DoxyItemize}
+\item 1. To understand the story of the game
+\item 1. To Start a New game when desired
+\item 2. To Continue playing from a previously saved game when desired.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md19}{}\doxysubsubsection{System Use Cases\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md19}
+\DoxyHorRuler{0}
+
+
+Below are listed all of the use cases associated with this system and its\textquotesingle{} requirements.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md20}{}\doxyparagraph{Player Views Title Screen (\+SYS1-\/\+UC001)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md20}
+
+\begin{DoxyEnumerate}
+\item Player turns on System and waits for menu to display.
+\item Player clicks on icon for \char`\"{}\+Swim Fishy Swim\char`\"{} (icon is animated screen on Wii).
+\item \char`\"{}\+Swim Fishy Swim\char`\"{} title screen fades in.
+\begin{DoxyEnumerate}
+\item Title screen shows sunset, and land going from ashen, to sandy, to green. (ashen on right, green on left)
+\item Swim Fishy Swim logo scrolls in on top of screen.
+\item Display \mbox{\hyperlink{class_text}{Text}}\+: \char`\"{}\+Start\char`\"{} and \char`\"{}\+Continue\char`\"{} under logo.
+\item A selection of baddie fish swim from right to left across screen.
+\end{DoxyEnumerate}
+\item Player doesn\textquotesingle{}t do a dang thing.
+\begin{DoxyEnumerate}
+\item Goto\+: \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS1-\/\+UC002\+: Player Watches Story)
+\end{DoxyEnumerate}
+\item (Alternate Path) Player clicks \char`\"{}\+Start\char`\"{}.
+\begin{DoxyEnumerate}
+\item Goto\+: \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS1-\/\+UC003\+: Player Starts New Game)
+\end{DoxyEnumerate}
+\item (Alternate Path) Player clicks \char`\"{}\+Continue\char`\"{}.
+\begin{DoxyEnumerate}
+\item Goto\+: \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS1-\/\+UC004\+: Player Continues Game)
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md21}{}\doxyparagraph{Player Watches Story (\+SYS1-\/\+UC002)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md21}
+
+\begin{DoxyEnumerate}
+\item Player views introduction story\+: \href{https://web.archive.org/web/20120323054600/http://www.youtube.com/watch?v=qNLGHPQjGns}{\texttt{ http\+://www.\+youtube.\+com/watch?v=q\+NLGHPQj\+Gns}}
+\item (Alternative) Player presses a button/key. Return to title screen with main menu open.
+\begin{DoxyEnumerate}
+\item Goto\+: \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS1-\/\+UC001\+: Player Views Title Screen)
+\end{DoxyEnumerate}
+\item Introduction finishes without player interaction. Return to title screen with main menu not unopened.
+\begin{DoxyEnumerate}
+\item Goto\+: \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS1-\/\+UC001\+: Player Views Title Screen)
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md22}{}\doxyparagraph{Player Starts New Game (\+SYS1-\/\+UC003)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md22}
+
+\begin{DoxyEnumerate}
+\item System provides optional introductory tutorial (likely static images, player can quit at any time)\+:
+\begin{DoxyEnumerate}
+\item System explains what the goal of the game is (defend your pickle)
+\item System explains the phases of the game and defenses at your disposal
+\begin{DoxyEnumerate}
+\item System explains flower building phase (before baddies show up)\+:
+\begin{DoxyEnumerate}
+\item System explains chompy flower
+\item System explains ptewey flower
+\item System explains stunner flower
+\item System explains windy flower
+\item System explains how flowers get weaker over time
+\end{DoxyEnumerate}
+\item System explains pickle protecting phase (after baddies show up -\/ no more building -\/ choose from 1 of 4 weapons)\+:
+\begin{DoxyEnumerate}
+\item System explains bubble cannon
+\item System explains bubble mines
+\item System explains bubble ring
+\item System explains bubble blaster
+\item System explains physical attack
+\item System explains that all defenses come from pickle power (magic) and that if it runs out it has to recharge before the defenses work again.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\item Goto\+: \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS1-\/\+UC005\+: Player Views Game Progress)
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md23}{}\doxyparagraph{Player Continues Game (\+SYS1-\/\+UC004)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md23}
+
+\begin{DoxyEnumerate}
+\item System loads previous save point from file system
+\item Seriously... that\textquotesingle{}s all that happens here.
+\begin{DoxyEnumerate}
+\item Goto\+: \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS2-\/\+UC001\+: Player views Game Progress)
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md24}{}\doxysubsubsection{Mockups\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md24}
+This section provides visual mock ups of the in-\/game elements. Please note that these do not contain actual branding or design elements but simply exist to act as a placeholder to act as a general suggestion to a professional artist. (That\textquotesingle{}s why most of them look like they were rendered by a 12 year old using a bacon wrapped mouse with MS Paint)\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md25}{}\doxyparagraph{Title Screen\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md25}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SYS1-TitleScreen.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md26}{}\doxyparagraph{Story (\+Storyboards in video format)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md26}
+\href{https://web.archive.org/web/20120323054600/http://www.youtube.com/watch?v=qNLGHPQjGns}{\texttt{ http\+://www.\+youtube.\+com/watch?v=q\+NLGHPQj\+Gns}}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md27}{}\doxyparagraph{Tutorial Screens\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md27}
+TODO\+: Mock up tutorial screens once remaining design is complete and we\textquotesingle{}re confident that we\textquotesingle{}ve got game play elements that are worth keeping.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md28}{}\doxysubsection{Game Progress / Level Details Screen (\+SYS2)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md28}
+Describes a screen where the player can see their current status and their progress in the game.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md29}{}\doxysubsubsection{Use Case Diagram\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md29}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SLTN001-SYS2-UCD001.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md30}{}\doxysubsubsection{Requirements\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md30}
+{\bfseries{SYS2-\/\+PROG001\+:}}
+
+System shall display current progress and points of player in the game between each level, and before starting a new or continuing an existing game.
+
+{\bfseries{Notes\+:}}
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item (SYS2-\/\+UC001) Player views Game Progress
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md31}{}\doxysubsubsection{Actors\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md31}
+\DoxyHorRuler{0}
+
+
+SYS2-\/\+A1 Player
+
+Describes the player interacting with the game either by Wii\+Mote, Keyboard, Mouse, or other controller.
+
+
+\begin{DoxyItemize}
+\item Goals
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item To view current points
+\item To view progress in the game
+\item To view progress needed to complete game
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md32}{}\doxysubsubsection{System Use Cases\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md32}
+\DoxyHorRuler{0}
+
+
+Below are listed all of the use cases associated with this system and it\textquotesingle{}s requirements.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md33}{}\doxyparagraph{Player views Game Progress (\+SYS2-\/\+UC001)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md33}
+
+\begin{DoxyEnumerate}
+\item System displays player status on screen (Points Earned, and... TODO\+: Figure out what status information is relevant between levels!)
+\item System displays map of all levels from the lands of brine to sepul coral
+\item Systems displays icon at level player is currently on (e.\+g. First level if starting new game, otherwise last level saved)
+\item System displays name of level
+\item System loops playing music until a key/button is pressed
+\end{DoxyEnumerate}
+
+{\bfseries{Postcondition\+:}} System is now ready for gameplay. The first part of each level is the tower building phase. Please review SYS5 (Tower Building Phase) for more details. After the tower building phase the game moves into SYS6 -\/ Tower Defense Phase, followed by SYS7 -\/ Level End Phase.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md34}{}\doxysubsubsection{Mockups\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md34}
+This section provides visual mock ups of the in-\/game elements. Please note that these do not contain actual branding or design elements but simply exist to act as a placeholder to act as a general suggestion to a professional artist. (That\textquotesingle{}s why most of them look like they were rendered by a 12 year old)\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md35}{}\doxyparagraph{Progress Screen\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md35}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SYS2-Progress.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md36}{}\doxysubsection{Towers (\+Flowers) and their Behaviors (\+SYS3)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md36}
+Describes the tower system (the towers in the game), how they interact with baddies, and the ammo-\/speed system for each tower. Details on how towers are created will be covered in later sections of the GDD. This system covers their behavior once they exist on the game map.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md37}{}\doxysubsubsection{Use Case Diagram\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md37}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SLTN001-SYS3-UCD001.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md38}{}\doxysubsubsection{Requirements\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md38}
+\DoxyHorRuler{0}
+
+
+{\bfseries{SYS3-\/\+TOWER001\+:}}
+
+System shall support a tower that will push baddies relative to the direction the tower faces and the
+
+position of the baddie relative to the tower.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Windy Tower Interacts w/ Baddies (SYS3-\/\+UC001)
+\end{DoxyItemize}
+
+{\bfseries{SYS3-\/\+TOWER002\+:}}
+
+System shall support a tower that will cause severe damage to any approaching enemy, but only in a very
+
+small radius around the tower.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Thorny Tower interacts w/ Baddies (SYS3-\/\+UC002)
+\end{DoxyItemize}
+
+{\bfseries{SYS3-\/\+TOWER003\+:}}
+
+System shall support a tower that will launch projectiles in an arc (allowing baddies to slip under this arc). When
+
+the projectiles connect with a baddie, the baddie will be knocked in the opposite direction from it\textquotesingle{}s current trajectory, and take \+:medium damage.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Plompy Tower interacts w/ Baddies (SYS3-\/\+UC003)
+\end{DoxyItemize}
+
+{\bfseries{SYS3-\/\+TOWER004\+:}}
+
+System shall support a tower that will shoot rapid low damage projectiles at the nearest baddie.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Ptewey Tower interacts w/ Baddies (SYS3-\/\+UC004)
+\end{DoxyItemize}
+
+{\bfseries{SYS3-\/\+TOWER005\+:}}
+
+Projectile towers in the system will contain their own magic-\/meter which is diminished the more they are used.
+
+When the magic-\/meter reaches 0, the tower will need to recharge before firing again.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Plompy Tower interacts w/ Baddies (SYS3-\/\+UC003)
+\item Ptewey Tower interacts w/ Baddies (SYS3-\/\+UC004)
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md39}{}\doxysubsubsection{System Use Cases\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md39}
+\DoxyHorRuler{0}
+
+
+Below are listed all of the use cases associated with this system and its\textquotesingle{} requirements.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md40}{}\doxyparagraph{Windy Tower Interacts w/ Baddies\+: (\+SYS3-\/\+UC001)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md40}
+
+\begin{DoxyEnumerate}
+\item Windy tower uses default standing animation.
+\item Windy tower evaluates which baddie is the nearest baddie.
+\item Windy tower adjusts its current angle to face the nearest baddie.
+\item If \mbox{[}player or baddie collides with tower\mbox{]}
+\begin{DoxyEnumerate}
+\item Windy tower stops current animation.
+\item Windy tower switches to swaying animation (think reeds swaying in the breeze, or a corn field someone is running through).
+\item Windy tower doesn\textquotesingle{}t affect baddies in range while swaying.
+\end{DoxyEnumerate}
+\item If \mbox{[}a baddie is within range\mbox{]}
+\begin{DoxyEnumerate}
+\item Windy Tower changes to attack animation (the flower petals spin like a fan)
+\item Windy tower evaluates current velocity of baddie.
+\item Windy tower changes the baddie velocity by half of the current velocity for the baddie multiplied by the angle of the tower.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md41}{}\doxyparagraph{Thorny Tower interacts w/ Baddies (\+SYS3-\/\+UC002) \+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md41}
+
+\begin{DoxyEnumerate}
+\item Thorny tower uses default standing animation.
+\item Thorny tower evaluates which baddie is the nearest baddie.
+\item Thorny tower adjusts its current angle to face the nearest baddie.
+\item If \mbox{[}player or baddie collides with tower\mbox{]}
+\begin{DoxyEnumerate}
+\item Thorny tower stops current animation.
+\item Thorny tower switches to swaying animation (think reeds swaying in the breeze, or a corn field someone is running through).
+\item If Thorny tower is swaying, then it can\textquotesingle{}t attack.
+\end{DoxyEnumerate}
+\item If \mbox{[}a baddie is within range\mbox{]}
+\begin{DoxyEnumerate}
+\item Thorny Tower changes to attack animation (A stabbing motion)
+\item If \mbox{[}closest Baddie has health left\mbox{]}
+\begin{DoxyEnumerate}
+\item Thorny tower does heavy damage, offset by tower upgrades.
+\end{DoxyEnumerate}
+\item Thorny tower cannot attack again until the attack animation is complete.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md42}{}\doxyparagraph{Plompy Tower interacts w/ Baddies (\+SYS3-\/\+UC003) \+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md42}
+
+\begin{DoxyEnumerate}
+\item Plompy tower uses default standing animation.
+\item Plompy tower evaluates which baddie is the nearest it\textquotesingle{}s goal.
+\item Plompy tower adjusts its current angle to face the baddie nearest it\textquotesingle{}s goal.
+\item If \mbox{[}player or baddie collides with tower\mbox{]}
+\begin{DoxyEnumerate}
+\item Plompy tower stops current animation.
+\item Plompy tower switches to swaying animation (think reeds swaying in the breeze, or a corn field someone is running through).
+\item If Plompy tower is swaying, then it can\textquotesingle{}t attack.
+\end{DoxyEnumerate}
+\item If \mbox{[}a baddie is within range\mbox{]}
+\begin{DoxyEnumerate}
+\item Plompy Tower changes to attack animation (like vomiting something up into the air)
+\begin{DoxyEnumerate}
+\item Plompy triggers a projectile to toss in the air at a 45 degree vertical angle.
+\item If \mbox{[}the projectile hits a baddie\mbox{]} the baddie is knocked backward and receives medium damage
+\end{DoxyEnumerate}
+\item Plompy tower cannot shoot again until the attack animation is complete.
+\item Plompy tower reduces it\textquotesingle{}s energy level each time it fires. As energy runs out, it shoots slower.
+\item If \mbox{[}Plompy tower energy level reaches 0\mbox{]} Plompy can\textquotesingle{}t fire until it recharges the minimum amount.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md43}{}\doxyparagraph{Ptewey Tower interacts w/ Baddies (\+SYS3-\/\+UC004) \+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md43}
+
+\begin{DoxyEnumerate}
+\item Ptewey tower uses default standing animation.
+\item Ptewey tower evaluates which baddie is nearest it\textquotesingle{}s goal.
+\item Ptewey tower adjusts its current angle to face the baddie nearest it\textquotesingle{}s goal.
+\item If \mbox{[}player or baddie collides with tower\mbox{]}
+\begin{DoxyEnumerate}
+\item Ptewey tower stops current animation.
+\item Ptewey tower switches to swaying animation (think reeds swaying in the breeze, or a corn field someone is running through).
+\item If Ptewey tower is swaying, then it can\textquotesingle{}t attack.
+\end{DoxyEnumerate}
+\item If \mbox{[}a baddie is within range\mbox{]}
+\begin{DoxyEnumerate}
+\item Ptewey Tower changes to attack animation (like vomiting something up into the air)
+\begin{DoxyEnumerate}
+\item Ptewey triggers a projectile targeting the baddie by angle.
+\item If \mbox{[}the projectile hits a baddie\mbox{]} the baddie receives a low level of damage. No other effect.
+\end{DoxyEnumerate}
+\item Ptewey tower cannot shoot again until the attack animation is complete.
+\item Ptewey tower reduces it\textquotesingle{}s energy level each time it fires. As energy runs out, it shoots slower.
+\item If \mbox{[}Ptewey tower energy level reaches 0\mbox{]} Ptewey can\textquotesingle{}t fire until it recharges the minimum amount.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md44}{}\doxysubsubsection{Mockups\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md44}
+This section provides visual mock ups of the in-\/game elements. Please note that these do not contain actual branding or design elements but simply exist to act as a placeholder to act as a general suggestion to a professional artist. (That\textquotesingle{}s why most of them look like they were rendered by a 12 year old)\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md45}{}\doxyparagraph{Windy Towers\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md45}
+Windy towers affect the movement of the baddies they\textquotesingle{}re pointing at based on the position of the baddie relative to the position of the tower. Windy towers are the least expensive tower to build, taking only 15\% of the players magic bar.
+
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SYS3_Towers_Windy2.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md46}{}\doxyparagraph{Thorny Towers (with Windy Towers)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md46}
+Thorny towers do a high level of damage at close range. They can be used in conjunction with Windy towers to create a sort of baddie fish boobie trap. Thorny towers are the 2nd least expensive tower, taking up 25\% of the players magic bar.
+
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SYS3_Towers_Windy.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md47}{}\doxyparagraph{Petewy Towers\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md47}
+Petewy towers deploy a rapid fire bubble attack to damage enemies. If this was super mario brothers 2, this tower would be Mario. It\textquotesingle{}s your general all purpose workhorse. This is the third most expensive tower, taking 35\% of the players magic bar.
+
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SYS3_Towers_Ptewey.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md48}{}\doxyparagraph{Plompy Towers\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md48}
+Plompy towers are useful in that they both stun enemies. When they have full energy, a well placed plompy tower could keep an enemy in the same location for a while... except for how it would kill the enemy b/c they do a fair bit of damage. These are the most expensive tower, taking 45\% of the players magic bar to create.
+
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SYS3_Towers_Plompy.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md49}{}\doxysubsection{Baddie Behaviors (\+SYS4)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md49}
+Describes the possible baddie behavior in the game, and how baddies interact with the environment. Details on when/where the baddies spawn will be covered in later sections of the GDD.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md50}{}\doxysubsubsection{Use Case Diagram\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md50}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SLTN001-SYS4-UCD001b.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md51}{}\doxysubsubsection{Requirements\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md51}
+{\bfseries{SYS4-\/\+WEAP001\+:}}
+
+System shall support a small quick fire bubble weapon that does a small amount of damage for each eat (but can fire rapidly)
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Fires Swigen Cannon (SYS4-\/\+UC001)
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md52}{}\doxysubsubsection{System Use Cases\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md52}
+\DoxyHorRuler{0}
+
+
+Below are listed all of the use cases associated with this system and its\textquotesingle{} requirements.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md53}{}\doxysubsubsection{Mockups\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md53}
+This section provides visual mock ups of the in-\/game elements. Please note that these do not contain actual branding or design elements but simply exist to act as a placeholder to act as a general suggestion to a professional artist. (That\textquotesingle{}s why most of them look like they were rendered by a 12 year old)\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md54}{}\doxysubsection{Weapons/\+Attacks and their Behaviors (\+SYS5)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md54}
+Describes interactions of weapons with the environment, baddies, and the player. See Appendix A for more information about the weapons in the game (cost, when they can be purchased, etc.).\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md55}{}\doxysubsubsection{Use Case Diagram\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md55}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SLTN001-SYS5-UCD001.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md56}{}\doxysubsubsection{Requirements\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md56}
+{\bfseries{SYS5-\/\+WEAP001\+:}}
+
+System shall support a small quick fire bubble weapon that does a small amount of damage for each eat (but can fire rapidly)
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Fires Swigen Cannon (SYS5-\/\+UC001)
+\end{DoxyItemize}
+
+{\bfseries{SYS5-\/\+WEAP002\+:}}
+
+System shall support a mine like weapon that creates bubble shrapnel that fires in random directions.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Arms Dŵr Bomb (SYS5-\/\+UC002)
+\end{DoxyItemize}
+
+{\bfseries{SYS5-\/\+WEAP003\+:}}
+
+System shall support a defensive tool that creates giant bubbles that deflect baddie movement for a time.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Triggers Bubble Wal (SYS5-\/\+UC002)
+\end{DoxyItemize}
+
+{\bfseries{SYS5-\/\+WEAP004\+:}}
+
+System shall support an offensive tool that creates a small fishy that will patroll the area where it is spawned until a baddie comes in range (at which time it will pursue the baddie)
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Releases Carterfi Fishy (SYS5-\/\+UC002)
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md57}{}\doxysubsubsection{System Use Cases\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md57}
+\DoxyHorRuler{0}
+
+
+Below are listed all of the use cases associated with this system and its\textquotesingle{} requirements.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md58}{}\doxyparagraph{Fires Swigen Cannon (\+SYS5-\/\+UC001)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md58}
+Precondition\+: Player presses fire button (B on Wii).
+
+
+\begin{DoxyEnumerate}
+\item System checks to ensure that a bubble can be deployed based on cannon level (see\+: APPENDIX-\/A)
+\item \mbox{[}Ammo available\mbox{]} System fires a long range bubble shaped projectile through the air on an arc.
+\begin{DoxyEnumerate}
+\item Projectile velocity and angle set upon firing
+\end{DoxyEnumerate}
+\item REPEAT (until projectile life is \texorpdfstring{$<$}{<}= 0)\+:
+\begin{DoxyEnumerate}
+\item Remove one from projectile life
+\item Move projectile based on current velocity and angle
+\item \mbox{[}Projectile collides with wall\mbox{]} Projectile changes angle to bounce off of wall.
+\item \mbox{[}Projectile collides with baddie\mbox{]} Projectile removes health from baddie based on remaining life of projectile
+\begin{DoxyEnumerate}
+\item Projectile life set to 0
+\end{DoxyEnumerate}
+\item \mbox{[}Projectile lands in water\mbox{]} Projectile velocity is slowed
+\begin{DoxyEnumerate}
+\item Projectile bobs in water as it moves forward.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md59}{}\doxyparagraph{Arms Dŵr Bomb (\+SYS5-\/\+UC002)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md59}
+Precondition\+: Player presses fire button (B on Wii), and has selected the Dŵr Bomb as the current weapon.
+
+
+\begin{DoxyEnumerate}
+\item System checks to ensure that a bubble mine can be deployed based on weapon level (see\+: APPENDIX-\/A)
+\item \mbox{[}Ammo available\mbox{]} System sets bubble/mine shaped projectile in water behind player.
+\item REPEAT (until projectile life is \texorpdfstring{$<$}{<}= 0)\+:
+\begin{DoxyEnumerate}
+\item Remove one from projectile life
+\item Mine stays in same place in water, and bobs up an down.
+\item \mbox{[}Projectile collides with baddie\mbox{]} Projectile removes health from baddie based on remaining life of projectile
+\begin{DoxyEnumerate}
+\item Baddie is tossed up into the air
+\item Projectile life set to 0
+\end{DoxyEnumerate}
+\item \mbox{[}Projectile life runs out without hitting baddie\mbox{]} Projectile shrinks and vanishes.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md60}{}\doxyparagraph{Triggers Bubble Wal (\+SYS5-\/\+UC003)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md60}
+Precondition\+: Player presses fire button (B on Wii), and has selected the Bubble Wal as the current weapon.
+
+
+\begin{DoxyEnumerate}
+\item System checks to ensure that a bubble wal can be deployed based on weapon level (see\+: APPENDIX-\/A)
+\item \mbox{[}Ammo available\mbox{]} System places small bubble wal in front of players location, which expands to block path.
+\item REPEAT (until projectile life is \texorpdfstring{$<$}{<}= 0)\+:
+\begin{DoxyEnumerate}
+\item Remove one from projectile life
+\item Wal stays in same place in water, and bobs up an down.
+\item \mbox{[}Baddie collides with Bubble Wal\mbox{]} Remove one from projectile life
+\begin{DoxyEnumerate}
+\item Baddie is tossed backward -\/ away from Bubble Wal
+\end{DoxyEnumerate}
+\item \mbox{[}Projectile Health \texorpdfstring{$<$}{<}= 0\mbox{]} Bubble Wal shrinks and disappears
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md61}{}\doxyparagraph{Releases Carterfi Fishy (\+SYS5-\/\+UC004)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md61}
+
+\begin{DoxyEnumerate}
+\item System checks to ensure that a fishy can be deployed based on ammo level (see\+: APPENDIX-\/A)
+\item \mbox{[}Ammo available\mbox{]} System releases small fishy at player location
+\begin{DoxyEnumerate}
+\item Projectile velocity and angle set upon firing
+\end{DoxyEnumerate}
+\item REPEAT (until projectile life is \texorpdfstring{$<$}{<}= 0)\+:
+\begin{DoxyEnumerate}
+\item Fish pathfinds toward the closest baddie and reroutes around map obstacles
+\item \mbox{[}Projectile collides with baddie\mbox{]} Projectile removes health from baddie based on total life of projectile
+\begin{DoxyEnumerate}
+\item Projectile life set to 0
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md62}{}\doxysubsubsection{Mockups\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md62}
+This section provides visual mock ups of the in-\/game elements. Please note that these do not contain actual branding or design elements but simply exist to act as a placeholder to act as a general suggestion to a professional artist. (That\textquotesingle{}s why most of them look like they were rendered by a 12 year old)\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md63}{}\doxysubsection{Tower Building Phase (\+SYS6)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md63}
+Describes the tower system (the towers in the game), how they interact with baddies, and the ammo-\/speed system for each tower. Details on how towers are created will be covered in later sections of the GDD. This system covers their behavior once they exist on the game map.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md64}{}\doxysubsubsection{SYS6 -\/ Use Case Diagram\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md64}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SLTN001-SYS6-UCD001a.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md65}{}\doxysubsubsection{SYS6 -\/ Requirements\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md65}
+\DoxyHorRuler{0}
+
+
+{\bfseries{SYS6-\/\+BUILDING001\+:}}
+
+System shall allow player a period of time (adjusted based on difficulty of level) to collect power ups, and build tower defenses before the level begins.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Collects Power-\/ups and Grows Flowers (SYS6-\/\+UC001)
+\end{DoxyItemize}
+
+{\bfseries{SYS6-\/\+BUILDING002\+:}}
+
+System shall allow player to speak with the Pickle to end the building phase early, and select a weapon.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Talks to pickle, chooses weapon. (SYS6-\/\+UC002)
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md66}{}\doxysubsubsection{SYS6\+: System Use Cases\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md66}
+\DoxyHorRuler{0}
+
+
+Below are listed all of the use cases associated with this system and its\textquotesingle{} requirements.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md67}{}\doxyparagraph{Collects Power-\/ups and Grows Flowers\+: (\+SYS6-\/\+UC001)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md67}
+
+\begin{DoxyEnumerate}
+\item Player spawns in map on opposite side of map from Pickle.
+\item System indicates that it\textquotesingle{}s the Tower Building (Flower Growing) phase.
+\item Player navigates maps collecting Magic Power-\/\+Ups (They give a bonus that increases current magic level)
+\item As Player has the magic level to grow each flower (15\% Windy, 25\% Thorny, 40\% Lobby, 50\% Ptewey) player presses Up,Down,Left, or Right to cause flower to be grown.
+\item System displays and decrements a timer value indicating how much time is left in the building phase.
+\item \mbox{[}Timer runs out\mbox{]} Building phase is over, even if player hasn\textquotesingle{}t talked to pickle yet.
+\begin{DoxyEnumerate}
+\item System indicates that building phase is over.
+\item \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS6-\/\+UC002) Talks to Pickle, Chooses Weapon.
+\item System begins Tower Defense Phase
+\end{DoxyEnumerate}
+\item \mbox{[}Player is done building, and talks to Pickle\mbox{]}
+\begin{DoxyEnumerate}
+\item Pickle asks player if the player is done growing flowers
+\item \mbox{[}No\mbox{]} System continues with Building Phase.
+\item \mbox{[}Yes\mbox{]} \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} (SYS6-\/\+UC002) Talks to Pickle, Chooses Weapon.
+\begin{DoxyEnumerate}
+\item System begins Tower Defense Phase.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md68}{}\doxyparagraph{Talks to Pickle, Chooses Weapon (\+SYS6-\/\+UC002)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md68}
+
+\begin{DoxyEnumerate}
+\item \mbox{[}Building timer not expired before player talks to pickle\mbox{]} Dialog is displayed asking character whether he wishes to finish building.
+\begin{DoxyEnumerate}
+\item \mbox{[}Yes\mbox{]} \texorpdfstring{$<$}{<}$<$\+Goto$>$\texorpdfstring{$>$}{>} (SYS6-\/\+UC001) Collects Power-\/ups and Grows Flowers Step 1
+\item \mbox{[}No\mbox{]} Dialog is displayed showing one of four weapons that the player can choose from.
+\begin{DoxyEnumerate}
+\item Player chooses a bubble weapon that shoots forward (quick fire/weak dmg) (bounce/fire rate available as upgrade).
+\item (Alternative) Player chooses a bubble weapon that lays bubble-\/mines (very slow fire/stron dmg) (bounce/fire rate available as upgrade).
+\item (Alternative) Player chooses a bubble weapon that creates huge bubble barriers (slow/no dmg) (barrier life available as upgrade).
+\item (Alternative) Player chooses a bubble weapon that creates homing-\/fish that home in on and ram enemies (med fire / med damage).
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\item \texorpdfstring{$<$}{<}$<$\+Return to$>$\texorpdfstring{$>$}{>} (SYS6-\/\+UC001) Collects Power-\/ups and Grows Flowers
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md69}{}\doxyparagraph{Mockups\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md69}
+This section provides visual mock ups of the in-\/game elements. Please note that these do not contain actual branding or design elements but simply exist to act as a placeholder to act as a general suggestion to a professional artist. (That\textquotesingle{}s why most of them look like they were rendered by a 12 year old)\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md70}{}\doxyparagraph{Phase Overview\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md70}
+Gives a visual overview of how this phase might be laid out on level one.
+
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Tower_building_phase.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md71}{}\doxyparagraph{Hero, Choose your Weapon\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md71}
+Provides a visual indication of the potential weapon elements. (Maybe my worst mockup, dear artist, will you please correct these?)
+
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SYS6_-_Tower_Building_Weapons_a.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md72}{}\doxysubsection{Tower Defense Phase (\+SYS7)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md72}
+Describes the defense phase when baddies attack and the player/towers defend the pickle against them, as well as the potential upgrade opportunities in this phase.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md73}{}\doxysubsubsection{SYS7 -\/ Use Case Diagram\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md73}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:SLTN001-SYS7-UCD001.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md74}{}\doxysubsubsection{SYS7 -\/ Requirements\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md74}
+\DoxyHorRuler{0}
+
+
+{\bfseries{SYS7-\/\+DEFEND001\+:}}
+
+System shall allow Player to upgrade towers based on points specified in APPENDIX-\/C.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Upgrades Towers as points are available (SYS7-\/\+UC001)
+\end{DoxyItemize}
+
+{\bfseries{SYS7-\/\+DEFEND002\+:}}
+
+System shall give Player a visual indication when a tower upgrade is available for the nearest tower.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Upgrades Towers as points are available (SYS7-\/\+UC001)
+\end{DoxyItemize}
+
+{\bfseries{SYS7-\/\+DEFEND003\+:}}
+
+System shall allow Player to navigate the game world, using physical and projectile attacks in conjunction with current tower defense to hamper or stop baddie progress.
+
+{\bfseries{Applies to Use Case(s)\+:}}
+
+
+\begin{DoxyItemize}
+\item Attempts to stop or hamper baddies from reaching pickle (SYS7-\/\+UC002)
+\end{DoxyItemize}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md75}{}\doxysubsubsection{SYS7\+: System Use Cases\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md75}
+\DoxyHorRuler{0}
+
+
+Below are listed all of the use cases associated with this system and its\textquotesingle{} requirements.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md76}{}\doxyparagraph{Upgrades Towers as points are available (\+SYS7-\/\+UC001)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md76}
+Describes process for displaying potential upgrades
+
+
+\begin{DoxyEnumerate}
+\item Player navigates map
+\item As player comes within firing range of towers
+\begin{DoxyEnumerate}
+\item The nearest tower begins to glow on the map
+\item \mbox{[}Enough Upgrade Points Available, and tower has upgrades left\mbox{]} A button appears on screen that will trigger upgrade specifying \# of points required.
+\item (Alternative) \mbox{[}Enough Upgrade Points Not Available, and tower has upgrades left\mbox{]} A translucent button appears on screen specifying \# of points required.
+\end{DoxyEnumerate}
+\item As player leaves firing range of any towers, they stop glowing and the button disappears.
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md77}{}\doxyparagraph{Attempts to stop or hamper baddies from reaching pickle (\+SYS7-\/\+UC002)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md77}
+High level description of player interaction (mostly links to other use cases)
+
+
+\begin{DoxyEnumerate}
+\item Player navigates map.
+\item As baddies slip through tower defenses player can attempt to stop them by\+:
+\begin{DoxyEnumerate}
+\item Players fires Swigen Cannon by pressing B button
+\begin{DoxyEnumerate}
+\item \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} Fires Swigen Cannon (SYS5-\/\+UC001)
+\end{DoxyEnumerate}
+\item Players arms Dŵr Bomb by pressing B button
+\begin{DoxyEnumerate}
+\item \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} Arms Dŵr Bomb (SYS5-\/\+UC002)
+\end{DoxyEnumerate}
+\item Player triggers Bubble Wal by pressing B button
+\begin{DoxyEnumerate}
+\item \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} Triggers Bubble Wal (SYS5-\/\+UC003)
+\end{DoxyEnumerate}
+\item Player releases Carterfi Fishy by pressing B button
+\begin{DoxyEnumerate}
+\item \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>} Releases Carterfi Fishy (SYS5-\/\+UC004)
+\end{DoxyEnumerate}
+\item Player triggers physical spin-\/attack by shaking Wiimote
+\begin{DoxyEnumerate}
+\item Player shakes wiimote horizontally
+\item \mbox{[}Contact with baddie is made\mbox{]} Baddie is pushed back in water at an angle from player
+\begin{DoxyEnumerate}
+\item Baddie takes damage relative to how close they are to center
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md78}{}\doxyparagraph{Mockups\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md78}
+This section provides visual mock ups of the in-\/game elements. Please note that these do not contain actual branding or design elements but simply exist to act as a placeholder to act as a general suggestion to a professional artist. (That\textquotesingle{}s why most of them look like they were rendered by a 12 year old)\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md79}{}\doxyparagraph{Phase Overview\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md79}
+Gives a visual overview of how this phase might be laid out on level one.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md80}{}\doxysubsection{Level End Phase (\+SYS8)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md80}
+Describes the process of identifying the next level and providing opportunities for major weapon upgrades.
+
+TODO\+: Move this phase over from pen \& paper documentation\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md81}{}\doxysubsection{DEPRECATED -\/ Flower Upgrades Screen (\+SYS9)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md81}
+Describes the options available when a player selects a flower for upgrade.
+
+TODO\+: Move this phase over from pen \& paper documentation\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md82}{}\doxysubsection{End of Wave Upgrades Screen (\+SYS10)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md82}
+Describes the options available at the end of each wave (general tower improvements)
+
+TODO\+: Move this phase over from pen \& paper documentation\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md83}{}\doxysubsection{Level 1-\/1 Pysgode River (\+Lands of Brine) (\+SYS11)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md83}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Level_1-1a.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md84}{}\doxysubsection{Level 1-\/2 Lake Briney (\+Lands of Brine) (\+SYS12)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md84}
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Level_1-2.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md85}{}\doxysubsection{Level 1-\/3 Cornichon Sound (\+Lands of Brine) (\+SYS13)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md85}
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Level_1-3.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md86}{}\doxysubsection{Level 2-\/1 Nibble Island (\+Sandy Salty Desert) (\+SYS14)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md86}
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+TODO\+: Once we\textquotesingle{}re sure levels 1-\/1 to 1-\/3 are tweaked then design the rest!\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md87}{}\doxysubsection{Level 2-\/2 Barren Wind Isle (\+Sandy Salty Desert) (\+SYS15)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md87}
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+TODO\+: Once we\textquotesingle{}re sure levels 1-\/1 to 1-\/3 are tweaked then design the rest!\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md88}{}\doxysubsection{Level 2-\/3 Little Pickle Rock (\+Sandy Salty Desert) (\+SYS16)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md88}
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+TODO\+: Once we\textquotesingle{}re sure levels 1-\/1 to 1-\/3 are tweaked then design the rest!\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md89}{}\doxysubsection{Level 3-\/1 Scraggly Skiffle (\+Frozen Sepul Coral Wasteland) (\+SYS17)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md89}
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+TODO\+: Once we\textquotesingle{}re sure levels 1-\/1 to 1-\/3 are tweaked then design the rest!\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md90}{}\doxysubsection{Level 3-\/2 Ragged Range (\+Frozen Sepul Coral Wasteland) (\+SYS18)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md90}
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+TODO\+: Once we\textquotesingle{}re sure levels 1-\/1 to 1-\/3 are tweaked then design the rest!\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md91}{}\doxysubsection{Level 3-\/3 Mount Echinoderm (\+Frozen Sepul Coral Wasteland) (\+SYS19)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md91}
+Describes the layout of the level, list of baddies/numbers, and a description of the boss fight.
+
+TODO\+: Once we\textquotesingle{}re sure levels 1-\/1 to 1-\/3 are tweaked then design the rest!\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md92}{}\doxysubsection{Weapons/\+Attacks and their Behaviors (\+APPENDIX-\/\+A)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md92}
+This section of the appendix covers details regarding weapons, attacks, their cost, and provides some small details about behavior.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md93}{}\doxysubsubsection{Swigen Cannon}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md93}
+When fired the Swigen Cannon will shoot a single bright bubble quickly at the angle the Player is moving. Swigen bullets will ricochet off of walls when encountered.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md94}{}\doxyparagraph{Purchase/\+Upgrade}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md94}
+The Swigen Cannon is available by default, and can be upgraded at the end of level menu.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md95}{}\doxyparagraph{Levels}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md95}
+Level 1
+
+Level one will allow four shots per second.
+
+Level 2
+
+Level two will allow six shots per second.
+
+Level 3
+
+Level three will allow eight shots per second
+
+Level 4
+
+Level four will allow ten shots per second\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md96}{}\doxyparagraph{Costs}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md96}
+Level1
+
+0 Upgrade Points
+
+Level2
+
+1000 Upgrade Points
+
+Level3
+
+10000 Upgrade Points
+
+Level4
+
+30000 Upgrade Points\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md97}{}\doxysubsubsection{Dŵr Bomb}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md97}
+When fired the Dŵr Bomb sits in the water for a period of 20 seconds, or until a baddie collides with it. When it explodes it shoots out multiple bubbles in multiple directions, inflicting heavy damage.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md98}{}\doxyparagraph{Purchase/\+Upgrade}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md98}
+The Dŵr Bomb can be upgraded at the end of level menu.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md99}{}\doxyparagraph{Levels}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md99}
+Level 1
+
+Level one will allow only a single bomb at a time on the map.
+
+Level 2
+
+Level two will allow only two bombs at a time on the map.
+
+Level 3
+
+Level three will allow only three bombs at a time on the map.
+
+Level 4
+
+Level four will allow only four bombs at a time on the map.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md100}{}\doxyparagraph{Costs}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md100}
+Level1
+
+3000 Upgrade Points
+
+Level2
+
+15000 Upgrade Points
+
+Level3
+
+40000 Upgrade Points
+
+Level4
+
+50000 Upgrade Points\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md101}{}\doxysubsubsection{Bubble Wal}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md101}
+When fired Bubble Wal will create a huge bubble that will cause baddies to continually bounce off of it until the bubble breaks, or 40 seconds have passed since the last time it was hit.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md102}{}\doxyparagraph{Purchase/\+Upgrade}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md102}
+The Bubble Wal can be upgraded at the end of level menu.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md103}{}\doxyparagraph{Levels}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md103}
+Level 1
+
+Level one will allow only a single Wal at a time on the map.
+
+Level 2
+
+Level two will allow only two Wals at a time on the map.
+
+Level 3
+
+Level three will allow only three Wals at a time on the map.
+
+Level 4
+
+Level four will allow only four Wals at a time on the map.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md104}{}\doxyparagraph{Costs}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md104}
+Level1
+
+1500 Upgrade Points
+
+Level2
+
+15000 Upgrade Points
+
+Level3
+
+30000 Upgrade Points
+
+Level4
+
+45000 Upgrade Points\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md105}{}\doxysubsubsection{Carterfi Fishy}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md105}
+When fired Carterfi Fishy will spawn a small fish that will patrol an area and home in on the first baddie that gets near.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md106}{}\doxyparagraph{Purchase/\+Upgrade}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md106}
+The Caterfi Fishy can be upgraded at the end of level menu.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md107}{}\doxyparagraph{Levels}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md107}
+Level 1
+
+Level one will allow only a single fishy at a time on the map.
+
+Level 2
+
+Level two will allow only two fishys at a time on the map.
+
+Level 3
+
+Level three will allow only three fishys at a time on the map.
+
+Level 4
+
+Level four will allow only four fishys at a time on the map.\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md108}{}\doxyparagraph{Costs}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md108}
+Level1
+
+700 Upgrade Points
+
+Level2
+
+9000 Upgrade Points
+
+Level3
+
+18000 Upgrade Points
+
+Level4
+
+36000 Upgrade Points\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md109}{}\doxysubsection{Baddies and their Behaviors (\+APPENDIX-\/\+B)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md109}
+Provides details and visual suggestion for the baddies in the game\+:\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md110}{}\doxysubsubsection{L1 Baddies\+: (\+Levels 1-\/1 to 1-\/3)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md110}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Bumbler_L1.png}{\texttt{ }} \href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Swarmer_L1.png}{\texttt{ }} \href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Eel_L1.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md111}{}\doxysubsubsection{L1 Boss\+: (\+Level 1-\/3)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md111}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Crab_L1.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md112}{}\doxysubsubsection{L2 Baddies\+: (\+Levels 2-\/1 to 2-\/3)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md112}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Bumbler_L2.png}{\texttt{ }} \href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Swarmer_L2.png}{\texttt{ }} \href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Eel_L2.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md113}{}\doxysubsubsection{L2 Boss\+: (\+Level 2-\/3)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md113}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Crab_L2.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md114}{}\doxysubsubsection{L3 Baddies\+: (\+Levels 3-\/1 to 3-\/3)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md114}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Bumbler_L3.png}{\texttt{ }} \href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Swarmer_L3.png}{\texttt{ }} \href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Eel_L3.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md115}{}\doxysubsubsection{L3 Boss\+: (\+Level 3-\/3)}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md115}
+\href{/web/20120323054600/http://www.greendoorgames.com/sfswiki/index.php?title=File:Crab_L3.png}{\texttt{ }}\hypertarget{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md116}{}\doxysubsection{Towers Upgrade Options (\+APPENDIX-\/\+C)\+:}\label{md__c___team_sheeps__swim_fishy_swim__r_e_a_d_m_e_autotoc_md116}
+Provides details and visual suggestion for the towers in the game, and their available levels\+:
+
+Retrieved from \char`\"{}\mbox{[}http\+://www.\+greendoorgames.\+com/sfswiki/index.\+php?title=\+SFS\textbackslash{}\+\_\+\+Games\textbackslash{}\+\_\+\+Design\textbackslash{}\+\_\+\+Document\textbackslash{}\+\_\+(\+GDD)\mbox{]}(https\+://web.\+archive.\+org/web/20120323054600/http\+://www.\+greendoorgames.\+com/sfswiki/index.\+php?title=\+SFS\+\_\+\+Games\+\_\+\+Design\+\_\+\+Document\+\_\+(\+GDD))\char`\"{} 

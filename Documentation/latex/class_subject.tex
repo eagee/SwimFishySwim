@@ -1,0 +1,131 @@
+\hypertarget{class_subject}{}\doxysection{Subject Class Reference}
+\label{class_subject}\index{Subject@{Subject}}
+
+
+{\ttfamily \#include $<$Subject.\+h$>$}
+
+
+
+Inheritance diagram for Subject\+:
+% FIG 0
+
+
+Collaboration diagram for Subject\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_subject_aec83e316ab306b22c94d43676b35d8ec}{Subject}} (\mbox{\hyperlink{class_i_subject}{ISubject}} $\ast$owner)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_subject}{Subject}} \mbox{\hyperlink{class_i_subject}{ISubject}} implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_subject_a7c4f522850f718466e5be7eb55ba1969}{$\sim$\+Subject}} ()
+\begin{DoxyCompactList}\small\item\em summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_subject_a4406475155676da74b821029f7ce9467}{register\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer)
+\item 
+virtual void \mbox{\hyperlink{class_subject_a4cecb738e1b6e7b60ad527dd05fe85df}{remove\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer)
+\item 
+virtual void \mbox{\hyperlink{class_subject_a130edb815aef88deebc1542a32fa9af9}{notify\+Observers}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_subject_8h_source_l00008}{8}} of file \mbox{\hyperlink{_subject_8h_source}{Subject.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_subject_aec83e316ab306b22c94d43676b35d8ec}\label{class_subject_aec83e316ab306b22c94d43676b35d8ec}} 
+\index{Subject@{Subject}!Subject@{Subject}}
+\index{Subject@{Subject}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{Subject()}{Subject()}}
+{\footnotesize\ttfamily Subject\+::\+Subject (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_subject}{ISubject}} $\ast$}]{owner }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_subject}{Subject}} \mbox{\hyperlink{class_i_subject}{ISubject}} implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Constructor for the \mbox{\hyperlink{class_subject}{Subject}} \mbox{\hyperlink{class_i_subject}{ISubject}} implementation /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Destructor for the \mbox{\hyperlink{class_subject}{Subject}} \mbox{\hyperlink{class_i_subject}{ISubject}} implementation /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_subject_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_subject_8cpp_source}{Subject.\+cpp}}.
+
+\mbox{\Hypertarget{class_subject_a7c4f522850f718466e5be7eb55ba1969}\label{class_subject_a7c4f522850f718466e5be7eb55ba1969}} 
+\index{Subject@{Subject}!````~Subject@{$\sim$Subject}}
+\index{````~Subject@{$\sim$Subject}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{$\sim$Subject()}{~Subject()}}
+{\footnotesize\ttfamily Subject\+::$\sim$\+Subject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Registers an observer of this subject object /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_subject_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_subject_8cpp_source}{Subject.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_subject_a130edb815aef88deebc1542a32fa9af9}\label{class_subject_a130edb815aef88deebc1542a32fa9af9}} 
+\index{Subject@{Subject}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily void Subject\+::notify\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Checks to see whether \mbox{\hyperlink{class_i_subject}{ISubject}} implementation already contains observer ... /summary\texorpdfstring{$>$}{>} returns\texorpdfstring{$>$}{>} \mbox{[}list contains observer\mbox{]} true \mbox{[}else\mbox{]} false \texorpdfstring{$<$}{<}/returns?bool Subject\+::contains\+Observer (\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer) 
+
+Implements \mbox{\hyperlink{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}{ISubject}}.
+
+
+
+Definition at line \mbox{\hyperlink{_subject_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{_subject_8cpp_source}{Subject.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_subject_a4406475155676da74b821029f7ce9467}\label{class_subject_a4406475155676da74b821029f7ce9467}} 
+\index{Subject@{Subject}!registerObserver@{registerObserver}}
+\index{registerObserver@{registerObserver}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{registerObserver()}{registerObserver()}}
+{\footnotesize\ttfamily void Subject\+::register\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+summary\texorpdfstring{$>$}{>} Removes an observer of this subject object /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_subject_a5f5438de11e3a94bc58f6bc563fbf7c4}{ISubject}}.
+
+
+
+Definition at line \mbox{\hyperlink{_subject_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_subject_8cpp_source}{Subject.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_subject_a4cecb738e1b6e7b60ad527dd05fe85df}\label{class_subject_a4cecb738e1b6e7b60ad527dd05fe85df}} 
+\index{Subject@{Subject}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily void Subject\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Notifies observers of this object of a change in state ... /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}{ISubject}}.
+
+
+
+Definition at line \mbox{\hyperlink{_subject_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_subject_8cpp_source}{Subject.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_subject_8h}{Subject.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_subject_8cpp}{Subject.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,195 @@
+\hypertarget{class_text}{}\doxysection{Text Class Reference}
+\label{class_text}\index{Text@{Text}}
+
+
+{\ttfamily \#include $<$Text.\+h$>$}
+
+
+
+Inheritance diagram for Text\+:
+% FIG 0
+
+
+Collaboration diagram for Text\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_text_a72c6e07d1fdb2acd4cca930b1ca25a11}{Text}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_text}{Text}} \mbox{\hyperlink{class_i_text}{IText}} implementation Handles all the setup stuff, private for singleton... /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_text_a7947d36446d2e8236a9433d8c9eec845}{set\+Text\+Size}} (float width, float height, float spacing)
+\item 
+virtual float \mbox{\hyperlink{class_text_a65b77a9f0d957c934978176b453c8611}{get\+Text\+Width}} ()
+\item 
+virtual float \mbox{\hyperlink{class_text_accb6d36a049d5f9e9c94f85e24d15e35}{get\+Text\+Height}} ()
+\item 
+virtual float \mbox{\hyperlink{class_text_a56c6ec671c9e16f8c1414df9ada4d40b}{get\+Text\+Spacing}} ()
+\item 
+virtual \mbox{\hyperlink{class_text_a2d49e5c280e205125b149f7777ae30c7}{$\sim$\+Text}} ()
+\item 
+virtual void \mbox{\hyperlink{class_text_a328a7cc86a7f572c7f3da2ec52691774}{assign\+Texture}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)
+\item 
+virtual void \mbox{\hyperlink{class_text_aabc4172e384eb696f319a399d3fac567}{render\+Text}} (Vector location, const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_i_text}{IText}} $\ast$ \mbox{\hyperlink{class_text_a62e6da9d5c4261b0147ae103f97dfd01}{get\+Single\+Instance}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_text_8h_source_l00017}{17}} of file \mbox{\hyperlink{_text_8h_source}{Text.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_text_a72c6e07d1fdb2acd4cca930b1ca25a11}\label{class_text_a72c6e07d1fdb2acd4cca930b1ca25a11}} 
+\index{Text@{Text}!Text@{Text}}
+\index{Text@{Text}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}}
+{\footnotesize\ttfamily Text\+::\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{class_text}{Text}} \mbox{\hyperlink{class_i_text}{IText}} implementation Handles all the setup stuff, private for singleton... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Changes the menuing options so that we can adjust the width, height, and spacing used by the menu... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{class_text_a2d49e5c280e205125b149f7777ae30c7}\label{class_text_a2d49e5c280e205125b149f7777ae30c7}} 
+\index{Text@{Text}!````~Text@{$\sim$Text}}
+\index{````~Text@{$\sim$Text}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{$\sim$Text()}{~Text()}}
+{\footnotesize\ttfamily Text\+::$\sim$\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Implements text as a singleton object so that all objects can render text without having to be aware of the texture ID it is using, but allow objects to change the texture ID of the instantiated object... /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Assings a texture to be used with the text object... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_text_a328a7cc86a7f572c7f3da2ec52691774}\label{class_text_a328a7cc86a7f572c7f3da2ec52691774}} 
+\index{Text@{Text}!assignTexture@{assignTexture}}
+\index{assignTexture@{assignTexture}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{assignTexture()}{assignTexture()}}
+{\footnotesize\ttfamily void Text\+::assign\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the formatted text specified at the location specified... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Updates the texture coordinates of the quad to facilitate animation... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_text_af5ec65f638a8a5d257e9adcb00b2b51b}{IText}}.
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{class_text_a62e6da9d5c4261b0147ae103f97dfd01}\label{class_text_a62e6da9d5c4261b0147ae103f97dfd01}} 
+\index{Text@{Text}!getSingleInstance@{getSingleInstance}}
+\index{getSingleInstance@{getSingleInstance}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{getSingleInstance()}{getSingleInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_text}{IText}} $\ast$ Text\+::get\+Single\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+summary\texorpdfstring{$>$}{>} Assings a texture to be used with the text object... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Constructor for the \mbox{\hyperlink{class_text}{Text}} \mbox{\hyperlink{class_i_text}{IText}} implementation /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_text_accb6d36a049d5f9e9c94f85e24d15e35}\label{class_text_accb6d36a049d5f9e9c94f85e24d15e35}} 
+\index{Text@{Text}!getTextHeight@{getTextHeight}}
+\index{getTextHeight@{getTextHeight}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{getTextHeight()}{getTextHeight()}}
+{\footnotesize\ttfamily float Text\+::get\+Text\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current spacing used between each text quad /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_text_a9d803605b0a9aa3048ef48d5e753292e}{IText}}.
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{class_text_a56c6ec671c9e16f8c1414df9ada4d40b}\label{class_text_a56c6ec671c9e16f8c1414df9ada4d40b}} 
+\index{Text@{Text}!getTextSpacing@{getTextSpacing}}
+\index{getTextSpacing@{getTextSpacing}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{getTextSpacing()}{getTextSpacing()}}
+{\footnotesize\ttfamily float Text\+::get\+Text\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Destructor for the \mbox{\hyperlink{class_text}{Text}} \mbox{\hyperlink{class_i_text}{IText}} implementation Handles all the shutdown stuff, private for singleton /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Destructor for the \mbox{\hyperlink{class_text}{Text}} \mbox{\hyperlink{class_i_text}{IText}} implementation /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_text_a636d25ba2e0352008951ecf6bd2e69f1}{IText}}.
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{class_text_a65b77a9f0d957c934978176b453c8611}\label{class_text_a65b77a9f0d957c934978176b453c8611}} 
+\index{Text@{Text}!getTextWidth@{getTextWidth}}
+\index{getTextWidth@{getTextWidth}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{getTextWidth()}{getTextWidth()}}
+{\footnotesize\ttfamily float Text\+::get\+Text\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current text quad height /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_text_aa98c4fd494e32864f09ae965f74bb42c}{IText}}.
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{class_text_aabc4172e384eb696f319a399d3fac567}\label{class_text_aabc4172e384eb696f319a399d3fac567}} 
+\index{Text@{Text}!renderText@{renderText}}
+\index{renderText@{renderText}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{renderText()}{renderText()}}
+{\footnotesize\ttfamily void Text\+::render\+Text (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_text_a7a10f049abf954f05089fcb1fa99c2b1}{IText}}.
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00152}{152}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+\mbox{\Hypertarget{class_text_a7947d36446d2e8236a9433d8c9eec845}\label{class_text_a7947d36446d2e8236a9433d8c9eec845}} 
+\index{Text@{Text}!setTextSize@{setTextSize}}
+\index{setTextSize@{setTextSize}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{setTextSize()}{setTextSize()}}
+{\footnotesize\ttfamily void Text\+::set\+Text\+Size (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{float}]{spacing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current text quad width /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_text_a56cba572e30bbd5e4fe783163222e3d4}{IText}}.
+
+
+
+Definition at line \mbox{\hyperlink{_text_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{_text_8cpp_source}{Text.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_text_8h}{Text.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_text_8cpp}{Text.\+cpp}}\end{DoxyCompactItemize}

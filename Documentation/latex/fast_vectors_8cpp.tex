@@ -1,0 +1,145 @@
+\hypertarget{fast_vectors_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/fast\+Vectors.cpp File Reference}
+\label{fast_vectors_8cpp}\index{C:/TeamSheeps/SwimFishySwim/fastVectors.cpp@{C:/TeamSheeps/SwimFishySwim/fastVectors.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+Include dependency graph for fast\+Vectors.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fast_vectors_8cpp_a6e0ffbea726d6c59d7d8a28fb43fcf68}{FAST\+\_\+\+WII\+\_\+\+VECTORS}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fast_vectors_8cpp_a8bfaf7daab6ab51992e936d56786d080}{fast\+Vector\+Scale}} (Vector $\ast$src, Vector $\ast$dst, f32 scale)
+\begin{DoxyCompactList}\small\item\em Calls an accelerated function (if available on platform) that will multiply src by scale and store the output in dst /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fast_vectors_8cpp_a03d26deba2b3bbcc979c94db20a33957}{fast\+Vector\+Add}} (Vector $\ast$a, Vector $\ast$b, Vector $\ast$ab)
+\item 
+void \mbox{\hyperlink{fast_vectors_8cpp_a28c104c0b85c3fbc7e3c6db006fc9a85}{fast\+Vector\+Subtract}} (Vector $\ast$a, Vector $\ast$b, Vector $\ast$ab)
+\item 
+float \mbox{\hyperlink{fast_vectors_8cpp_a5a9214db3d2f582049cd4aafdeeb881d}{fast\+Vector\+Dot\+Product}} (Vector $\ast$a, Vector $\ast$b)
+\item 
+void \mbox{\hyperlink{fast_vectors_8cpp_aa50f4bd496b717866866d7684dd86a55}{fast\+Vector\+Cross\+Product}} (Vector $\ast$a, Vector $\ast$b, Vector $\ast$axb)
+\item 
+float \mbox{\hyperlink{fast_vectors_8cpp_adcb950a60c63c980fb3e583144e6ef11}{fast\+Vector\+Length}} (Vector $\ast$a)
+\item 
+void \mbox{\hyperlink{fast_vectors_8cpp_a4ff060a95266d962b7d3e9777a1bc487}{fast\+Vector\+Normalize}} (Vector $\ast$a)
+\item 
+float \mbox{\hyperlink{fast_vectors_8cpp_a1a5423cb7330784982bbd52908de9da4}{fast\+Linear\+Interpolation}} (float value\+One, float value\+Two, float interpolation\+Value)
+\item 
+Vector \mbox{\hyperlink{fast_vectors_8cpp_ad97e3fa7a7840fc7ef645c2784ddd1ff}{fast\+Vector\+Init}} (float x, float y, float z)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fast_vectors_8cpp_a6e0ffbea726d6c59d7d8a28fb43fcf68}\label{fast_vectors_8cpp_a6e0ffbea726d6c59d7d8a28fb43fcf68}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!FAST\_WII\_VECTORS@{FAST\_WII\_VECTORS}}
+\index{FAST\_WII\_VECTORS@{FAST\_WII\_VECTORS}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{FAST\_WII\_VECTORS}{FAST\_WII\_VECTORS}}
+{\footnotesize\ttfamily \#define FAST\+\_\+\+WII\+\_\+\+VECTORS~1}
+
+summary\texorpdfstring{$>$}{>} Calls an accelerated function (if available on platform) that will multiply src by scale and store the output in dst /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fast_vectors_8cpp_a1a5423cb7330784982bbd52908de9da4}\label{fast_vectors_8cpp_a1a5423cb7330784982bbd52908de9da4}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastLinearInterpolation@{fastLinearInterpolation}}
+\index{fastLinearInterpolation@{fastLinearInterpolation}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastLinearInterpolation()}{fastLinearInterpolation()}}
+{\footnotesize\ttfamily float fast\+Linear\+Interpolation (\begin{DoxyParamCaption}\item[{float}]{value\+One,  }\item[{float}]{value\+Two,  }\item[{float}]{interpolation\+Value }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns initialized Vector for use with functions below /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{fast_vectors_8cpp_a03d26deba2b3bbcc979c94db20a33957}\label{fast_vectors_8cpp_a03d26deba2b3bbcc979c94db20a33957}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastVectorAdd@{fastVectorAdd}}
+\index{fastVectorAdd@{fastVectorAdd}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastVectorAdd()}{fastVectorAdd()}}
+{\footnotesize\ttfamily void fast\+Vector\+Add (\begin{DoxyParamCaption}\item[{Vector $\ast$}]{a,  }\item[{Vector $\ast$}]{b,  }\item[{Vector $\ast$}]{ab }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Calls an accelerated function (if available on platform) that will subtract Vectors a and b and place the difference in ab /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+\mbox{\Hypertarget{fast_vectors_8cpp_aa50f4bd496b717866866d7684dd86a55}\label{fast_vectors_8cpp_aa50f4bd496b717866866d7684dd86a55}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastVectorCrossProduct@{fastVectorCrossProduct}}
+\index{fastVectorCrossProduct@{fastVectorCrossProduct}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastVectorCrossProduct()}{fastVectorCrossProduct()}}
+{\footnotesize\ttfamily void fast\+Vector\+Cross\+Product (\begin{DoxyParamCaption}\item[{Vector $\ast$}]{a,  }\item[{Vector $\ast$}]{b,  }\item[{Vector $\ast$}]{axb }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns the length of a vector /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+\mbox{\Hypertarget{fast_vectors_8cpp_a5a9214db3d2f582049cd4aafdeeb881d}\label{fast_vectors_8cpp_a5a9214db3d2f582049cd4aafdeeb881d}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastVectorDotProduct@{fastVectorDotProduct}}
+\index{fastVectorDotProduct@{fastVectorDotProduct}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastVectorDotProduct()}{fastVectorDotProduct()}}
+{\footnotesize\ttfamily float fast\+Vector\+Dot\+Product (\begin{DoxyParamCaption}\item[{Vector $\ast$}]{a,  }\item[{Vector $\ast$}]{b }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Calls an accelerated function (if available on platform) that will obtain the cross product for a pair of vectors /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{fast_vectors_8cpp_ad97e3fa7a7840fc7ef645c2784ddd1ff}\label{fast_vectors_8cpp_ad97e3fa7a7840fc7ef645c2784ddd1ff}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastVectorInit@{fastVectorInit}}
+\index{fastVectorInit@{fastVectorInit}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastVectorInit()}{fastVectorInit()}}
+{\footnotesize\ttfamily Vector fast\+Vector\+Init (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns a default path appended to another asset path in order to ensure assets can be loaded regardless of the path on the intended platform. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+\mbox{\Hypertarget{fast_vectors_8cpp_adcb950a60c63c980fb3e583144e6ef11}\label{fast_vectors_8cpp_adcb950a60c63c980fb3e583144e6ef11}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastVectorLength@{fastVectorLength}}
+\index{fastVectorLength@{fastVectorLength}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastVectorLength()}{fastVectorLength()}}
+{\footnotesize\ttfamily float fast\+Vector\+Length (\begin{DoxyParamCaption}\item[{Vector $\ast$}]{a }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Calls an accelerated function (if available on platform) that will normalize the vector /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+\mbox{\Hypertarget{fast_vectors_8cpp_a4ff060a95266d962b7d3e9777a1bc487}\label{fast_vectors_8cpp_a4ff060a95266d962b7d3e9777a1bc487}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastVectorNormalize@{fastVectorNormalize}}
+\index{fastVectorNormalize@{fastVectorNormalize}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastVectorNormalize()}{fastVectorNormalize()}}
+{\footnotesize\ttfamily void fast\+Vector\+Normalize (\begin{DoxyParamCaption}\item[{Vector $\ast$}]{a }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Gets a linear interpolation between value\+One and value\+Two based on the interpolation\+Value Doesn\textquotesingle{}t really go here, when there is time/energy put in it\textquotesingle{}s own lib? /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+\mbox{\Hypertarget{fast_vectors_8cpp_a8bfaf7daab6ab51992e936d56786d080}\label{fast_vectors_8cpp_a8bfaf7daab6ab51992e936d56786d080}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastVectorScale@{fastVectorScale}}
+\index{fastVectorScale@{fastVectorScale}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastVectorScale()}{fastVectorScale()}}
+{\footnotesize\ttfamily void fast\+Vector\+Scale (\begin{DoxyParamCaption}\item[{Vector $\ast$}]{src,  }\item[{Vector $\ast$}]{dst,  }\item[{f32}]{scale }\end{DoxyParamCaption})}
+
+
+
+Calls an accelerated function (if available on platform) that will multiply src by scale and store the output in dst /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Calls an accelerated function (if available on platform) that will add Vectors a and b and place the sum in ab /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+\mbox{\Hypertarget{fast_vectors_8cpp_a28c104c0b85c3fbc7e3c6db006fc9a85}\label{fast_vectors_8cpp_a28c104c0b85c3fbc7e3c6db006fc9a85}} 
+\index{fastVectors.cpp@{fastVectors.cpp}!fastVectorSubtract@{fastVectorSubtract}}
+\index{fastVectorSubtract@{fastVectorSubtract}!fastVectors.cpp@{fastVectors.cpp}}
+\doxysubsubsection{\texorpdfstring{fastVectorSubtract()}{fastVectorSubtract()}}
+{\footnotesize\ttfamily void fast\+Vector\+Subtract (\begin{DoxyParamCaption}\item[{Vector $\ast$}]{a,  }\item[{Vector $\ast$}]{b,  }\item[{Vector $\ast$}]{ab }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Calls an accelerated function (if available on platform) that will obtain the dot product for a vector /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+

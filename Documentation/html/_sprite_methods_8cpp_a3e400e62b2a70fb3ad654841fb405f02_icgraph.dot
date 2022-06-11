@@ -1,0 +1,24 @@
+digraph "spriteMethodsSetLocation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="spriteMethodsSetLocation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SpriteBaddie::setLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html#a006300e43e9b3aa5775f19d84c1d31a6",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SpriteBullet::setLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_bullet.html#a84e90619402b19f80c9809ccb5e9908c",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SpriteEffect::setLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_effect.html#aad637e10ac6339699c178e78a6a1360f",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SpritePlayer::setLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_player.html#a9e218695e70795a566fdefb1bd2c1ccd",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SpritePowerup::setLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_powerup.html#af26500fa1cf1c51a25a54fd228308215",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SpriteScenery::setLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_scenery.html#a1dd4d5b2255537e34c41b0f4ab9e2573",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="SpriteTarget::setLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_target.html#a56e0b78a226137e4cb83ea240c9436b9",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="SpriteTower::setLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_tower.html#a1ee8b6a8e9370243b0ec9e1e1cb5ce5f",tooltip=" "];
+}

@@ -1,0 +1,82 @@
+\hypertarget{_mem_track_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Mem\+Track.h}
+\mbox{\hyperlink{_mem_track_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00002}00002 \textcolor{comment}{Copyright (c) 2002, 2008 Curtis Bartley}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00003}00003 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00004}00004 \textcolor{comment}{Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00005}00005 \textcolor{comment}{modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00006}00006 \textcolor{comment}{are met:}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00008}00008 \textcolor{comment}{-\/ Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00009}00009 \textcolor{comment}{notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00010}00010 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00011}00011 \textcolor{comment}{-\/ Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00012}00012 \textcolor{comment}{notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00013}00013 \textcolor{comment}{documentation and/or other materials provided with the}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00014}00014 \textcolor{comment}{distribution.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00015}00015 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00016}00016 \textcolor{comment}{-\/ Neither the name of Curtis Bartley nor the names of any other}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00017}00017 \textcolor{comment}{contributors may be used to endorse or promote products derived}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00018}00018 \textcolor{comment}{from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00019}00019 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00020}00020 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00021}00021 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00022}00022 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00023}00023 \textcolor{comment}{FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00024}00024 \textcolor{comment}{COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00025}00025 \textcolor{comment}{INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00026}00026 \textcolor{comment}{(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00027}00027 \textcolor{comment}{SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00028}00028 \textcolor{comment}{HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00029}00029 \textcolor{comment}{STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00030}00030 \textcolor{comment}{ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00031}00031 \textcolor{comment}{OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00032}00032 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00034}00034 \textcolor{preprocessor}{\#ifndef MemTrack\_H\_}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00035}00035 \textcolor{preprocessor}{\#define MemTrack\_H\_}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00037}00037 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00039}00039 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_mem_track}{MemTrack}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00040}00040 \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00041}00041     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ class MemStamp */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00043}\mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{00043}}     \textcolor{keyword}{class }\mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{MemStamp}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00044}00044     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00045}00045         \textcolor{keyword}{public}:        \textcolor{comment}{// member variables}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00046}\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_a12324901fd8119722fe070e10f4d2821}{00046}}             \textcolor{keywordtype}{char} \textcolor{keyword}{const} * \textcolor{keyword}{const} \mbox{\hyperlink{class_mem_track_1_1_mem_stamp_a12324901fd8119722fe070e10f4d2821}{filename}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00047}\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_ae2f108bf5f2537651222789817b8f53f}{00047}}             \textcolor{keywordtype}{int} \textcolor{keyword}{const} \mbox{\hyperlink{class_mem_track_1_1_mem_stamp_ae2f108bf5f2537651222789817b8f53f}{lineNum}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00048}00048         \textcolor{keyword}{public}:        \textcolor{comment}{// construction/destruction}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00049}\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_af7a3f7297a0d39c21798c97a038993bc}{00049}}             \mbox{\hyperlink{class_mem_track_1_1_mem_stamp_af7a3f7297a0d39c21798c97a038993bc}{MemStamp}}(\textcolor{keywordtype}{char} \textcolor{keyword}{const} *\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_a12324901fd8119722fe070e10f4d2821}{filename}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_mem_track_1_1_mem_stamp_ae2f108bf5f2537651222789817b8f53f}{lineNum}})}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00050}00050                 : \mbox{\hyperlink{class_mem_track_1_1_mem_stamp_a12324901fd8119722fe070e10f4d2821}{filename}}(\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_a12324901fd8119722fe070e10f4d2821}{filename}}), \mbox{\hyperlink{class_mem_track_1_1_mem_stamp_ae2f108bf5f2537651222789817b8f53f}{lineNum}}(\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_ae2f108bf5f2537651222789817b8f53f}{lineNum}}) \{ \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00051}\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_a81eddbb140a03a91f9bef730c5e0fd2f}{00051}}             \mbox{\hyperlink{class_mem_track_1_1_mem_stamp_a81eddbb140a03a91f9bef730c5e0fd2f}{\string~MemStamp}}() \{ \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00052}00052     \};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00054}00054     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ memory allocation and stamping prototypes */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00056}00056     \textcolor{keywordtype}{void} *\mbox{\hyperlink{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}{TrackMalloc}}(\textcolor{keywordtype}{size\_t} size);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00057}00057     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}{TrackFree}}(\textcolor{keywordtype}{void} *p);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00058}00058     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}{TrackStamp}}(\textcolor{keywordtype}{void} *p, \textcolor{keyword}{const} MemStamp \&stamp, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *typeName);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00059}00059     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_mem_track_ab97b33af33d0255feeecde45606f26e5}{TrackDumpBlocks}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00060}00060     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}{TrackListMemoryUsage}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00062}00062     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ operator * (MemStamp, ptr) */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00064}\mbox{\hyperlink{namespace_mem_track_a7a33e12ed6d0fd72b70dfc91b81c1ab6}{00064}}     \textcolor{keyword}{template} <\textcolor{keyword}{class} T> \textcolor{keyword}{inline} T *\mbox{\hyperlink{namespace_mem_track_a7a33e12ed6d0fd72b70dfc91b81c1ab6}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{MemStamp}} \&stamp, T *p)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00065}00065     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00066}00066         \mbox{\hyperlink{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}{TrackStamp}}(p, stamp, \textcolor{keyword}{typeid}(T).name());}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00067}00067         \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00070}00070 \}    \textcolor{comment}{// namespace MemTrack}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00072}00072 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ new macro */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00074}\mbox{\hyperlink{_mem_track_8h_ab6fe88a112d4613e09d2f7e367cda4ed}{00074}} \textcolor{preprocessor}{\#define MEMTRACK\_NEW MemTrack::MemStamp(\_\_FILE\_\_, \_\_LINE\_\_) * new}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00075}\mbox{\hyperlink{_mem_track_8h_a1ac41480eb2e4aadd52252ee550b630a}{00075}} \textcolor{preprocessor}{\#define new MEMTRACK\_NEW}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8h_source_l00077}00077 \textcolor{preprocessor}{\#endif    }\textcolor{comment}{// MemTrack\_H\_}}
+
+\end{DoxyCode}

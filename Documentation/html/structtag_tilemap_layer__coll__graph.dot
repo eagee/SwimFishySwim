@@ -1,0 +1,40 @@
+digraph "tagTilemapLayer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{tagTilemapLayer\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +tiles" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{vector\< TextureIndex \>\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +quads" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{map\< int, Quad \>\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +animationTimeScale\n+currentAnimationFrame" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{float\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +mapAnimationIndex" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{int\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +mapWrapEdges" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{bool\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +mapCoordinates\n+mapVelocityPerSec" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{Vector\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +layerMotion" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{tagLayerMotion\n|+ z\l+ zVertsZeroAndThree\l+ zVertsOneAndTwo\l+ zVel\l+ zStep\l+ zMin\l+ zMax\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtag_layer_motion.html",tooltip=" "];
+  Node4 -> Node8 [color="grey25",fontsize="10",style="solid",label=" +x\n+xMax\n+xMin\n+xStep\n+xVel\n+y\n+yMax\n+yMin\n+yStep\n+yVel\n..." ,arrowhead="odiamond",fontname="Helvetica"];
+  Node9 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +quadVertexArray" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node9 [label="{tagVertexArray\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtag_vertex_array.html",tooltip="Defines a vertex array we can use for rendering our quad ..."];
+  Node10 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +properties" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node10 [label="{tagQuadVertexArrayProperties\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtag_quad_vertex_array_properties.html",tooltip="Defines a set of properties used to allocate a vertex array for accessing quad data...."];
+  Node11 -> Node10 [color="grey25",fontsize="10",style="solid",label=" +quadsHigh\n+quadsWide" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node11 [label="{short\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node10 [color="grey25",fontsize="10",style="solid",label=" +quadTexHeight\n+quadTexWidth" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 -> Node10 [color="grey25",fontsize="10",style="solid",label=" +texTilesHigh\n+texTilesWide" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 -> Node10 [color="grey25",fontsize="10",style="solid",label=" +cullBacks" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node12 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +NormalStride\n+TextureStride\n+VertexArraySize\n+VertexStride" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node12 [label="{size_t\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +Verticies" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +TextureCoordsST" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node11 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +TexCoordLookup" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node13 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +Normals" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node13 [label="{tagFixedVector\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtag_fixed_vector.html",tooltip="Defines a vector for fractional 8bit fixed numbers"];
+  Node14 -> Node13 [color="grey25",fontsize="10",style="solid",label=" +x\n+y\n+z" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node14 [label="{char\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+}

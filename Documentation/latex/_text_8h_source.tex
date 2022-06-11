@@ -1,0 +1,57 @@
+\hypertarget{_text_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Text.h}
+\mbox{\hyperlink{_text_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00001}00001 \textcolor{comment}{// Text.h}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00002}00002 \textcolor{comment}{// Implements the IText interface allowing textured text images to be displayed on screen similarly to printf...}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef TEXTOUT\_H}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00005}00005 \textcolor{preprocessor}{\#define TEXTOUT\_H}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_graphics_8h}{IGraphics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_text_8h}{IText.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00012}00012 \textcolor{preprocessor}{\#define MAXIMUM\_TEXT\_CHARACTERS 256}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00017}\mbox{\hyperlink{class_text}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{class_text}{Text}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_i_text}{IText}}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00018}00018    \{}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00019}00019    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00024}00024     \mbox{\hyperlink{class_text_a72c6e07d1fdb2acd4cca930b1ca25a11}{Text}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00029}00029     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_text_a7947d36446d2e8236a9433d8c9eec845}{setTextSize}}(\textcolor{keywordtype}{float} width, \textcolor{keywordtype}{float} height, \textcolor{keywordtype}{float} spacing);}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00034}00034     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_text_a65b77a9f0d957c934978176b453c8611}{getTextWidth}}();}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00035}00035     }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00039}00039     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_text_accb6d36a049d5f9e9c94f85e24d15e35}{getTextHeight}}();}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00040}00040     }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00044}00044     \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_text_a56c6ec671c9e16f8c1414df9ada4d40b}{getTextSpacing}}();}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00045}00045             }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00050}00050     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_text_a2d49e5c280e205125b149f7777ae30c7}{\string~Text}}();}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00051}00051     }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00057}00057     \textcolor{keyword}{static} \mbox{\hyperlink{class_i_text}{IText}}* \mbox{\hyperlink{class_text_a62e6da9d5c4261b0147ae103f97dfd01}{getSingleInstance}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00058}00058     }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00062}00062     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_text_a328a7cc86a7f572c7f3da2ec52691774}{assignTexture}}(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID);}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00063}00063     }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00067}00067     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_text_aabc4172e384eb696f319a399d3fac567}{renderText}}(Vector location, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt, ...);}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00068}00068     }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00069}00069    \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00070}00070     \textcolor{comment}{// Defines the texture handle the graphics subsystem has indicated for us to use ...}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00071}00071     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myTextureHandle;}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00072}00072     }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00073}00073     \textcolor{comment}{// Reference to a GxGraphics object..}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00074}00074     \mbox{\hyperlink{class_i_graphics}{IGraphics}} *myGraphics;}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00075}00075     }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00076}00076     \textcolor{comment}{// Defines the string buffer in which we keep our formatted string}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00077}00077     \textcolor{keywordtype}{char} myFormattedString[\mbox{\hyperlink{_text_8h_aca4c5a0985f768350f39c2230ac3fb60}{MAXIMUM\_TEXT\_CHARACTERS}}];}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00079}00079     \textcolor{comment}{// Defines width, height, and spacing for our fonts}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00080}00080     \textcolor{keywordtype}{float} myQuadWidth;}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00081}00081     \textcolor{keywordtype}{float} myQuadHeight;}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00082}00082     \textcolor{keywordtype}{float} myQuadSpacing;}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00083}00083    \};}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00085}00085 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_text_8h_source_l00086}00086 }
+
+\end{DoxyCode}

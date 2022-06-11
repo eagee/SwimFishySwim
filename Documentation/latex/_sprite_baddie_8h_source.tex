@@ -1,0 +1,152 @@
+\hypertarget{_sprite_baddie_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Sprite\+Baddie.h}
+\mbox{\hyperlink{_sprite_baddie_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00001}00001 \textcolor{comment}{// SpriteBaddie.h}}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00002}00002 \textcolor{comment}{// Defines implementation for a common interface for dealing with multiple sprite behaviors...}}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef BADDIE\_SPRITE\_H}}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00005}00005 \textcolor{preprocessor}{\#define BADDIE\_SPRITE\_H}}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_node_waypoints_8h}{INodeWaypoints.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00008}00008 \textcolor{keyword}{class }\mbox{\hyperlink{class_i_sprite}{ISprite}};}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00013}\mbox{\hyperlink{class_sprite_baddie}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{class_sprite_baddie}{SpriteBaddie}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_sprite}{ISprite}}, \textcolor{keyword}{public} \mbox{\hyperlink{class_i_node_waypoints}{INodeWaypoints}}}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00014}00014 \{ }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00015}00015     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00016}00016         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00017}00017         \mbox{\hyperlink{class_sprite_baddie_a9a9071b8ec7dbb229cc9eca306ab8db0}{SpriteBaddie}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00018}00018         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00019}00019         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_sprite_baddie_a97378cdf7c2e1487e4d5ec58149b8a85}{\string~SpriteBaddie}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00024}00024         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a41e015c02a1062702eb9b843506ba643}{setID}}(\textcolor{keywordtype}{int} ID);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00025}00025         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00029}00029         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_baddie_aa22947834bf5674cd360a757ec7c9e2b}{getID}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00030}00030         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00034}00034         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_baddie_a913bfad879e741d81a580b81370c1a10}{isDead}}();        }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00039}00039         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a4c4b76a1bbf5fcc978e7ff4c5c98e468}{assignModel}}(\mbox{\hyperlink{class_i_model}{IModel}} *model);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00044}00044         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_aa1ab07469f4570c69bc5fc7b0c980802}{assignWeapon}}(\mbox{\hyperlink{class_i_projectile_weapon}{IProjectileWeapon}} *weapon);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00049}00049         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a4029ef5a7f603d8abc8fa60e4901a0fa}{lockOnTarget}}(\mbox{\hyperlink{class_i_sprite}{ISprite}} \&target);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00050}00050         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00051}00051         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00055}00055         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_baddie_a6afceb58ed0be247b6504d4f3160a5b9}{checkDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00056}00056         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00060}00060         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a60bbe30beb1bf5943694f935b110c808}{handleCollision}}(\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\_TYPE}} type, \textcolor{keywordtype}{float} collisionForce);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00061}00061         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00065}00065         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a09a4afa36a8c76d67f536dc85eec9211}{handleJump}}(\textcolor{keywordtype}{float} jumpForce);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00066}00066         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00070}00070         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_acccbe788a97e4f258591876667a54be6}{setDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);        }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00071}00071         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00075}00075         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a54ab66cbff62f0826b3024a5cc5176b9}{unsetDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);                }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00076}00076         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00080}00080         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_aed619ac74243d76672a41c1a6e8dbb7e}{translateSprite}}(Vector spriteLocation);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00081}00081         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00085}00085         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_baddie_a32a1912537109a8f1c0e368dccb14c52}{updateLocationByVelocity}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00086}00086         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00090}00090         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_baddie_a82e6d110f67a8ea834bcb9d5faafbd23}{getLocation}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00096}00096         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_baddie_af791cb918b7fa83b542d68d2299f121a}{getWaterLevel}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00101}00101         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_acf5aa4c11bed0f9c1adc932ef1780326}{setWaterLevel}}(\textcolor{keywordtype}{float} waterLevel);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00107}00107         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a1e5ea0af0cc4be6b6f70e96c1a49d2bc}{setJump}}(\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\_STATE}} jumpState);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00112}00112         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\_STATE}} \mbox{\hyperlink{class_sprite_baddie_a00bf647e63d77f22923c89105a4120e6}{getJump}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00117}00117         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_baddie_afa87a20f59799d01e7f8b06300d5dbe5}{getSpeed}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00118}00118         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00122}00122         \mbox{\hyperlink{structtag_sprite_bounding_triangle}{BoundingTriangle}} \mbox{\hyperlink{class_sprite_baddie_ab8c42ee2ff0e67ef4859aafe438cff45}{getBoundingTriangle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00131}00131         \textcolor{keyword}{virtual} \mbox{\hyperlink{structtag_bounding_circle}{BoundingCircle}} \mbox{\hyperlink{class_sprite_baddie_ad379806b8b041bc0333c58131411b288}{getBoundingCircle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00136}00136         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a418bbaf526861f7d1fb0c20befa3fdf7}{setBoundingTriangleSize}}(\textcolor{keywordtype}{float} size);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00141}00141         \mbox{\hyperlink{structtag_sprite_bounding_box}{BoundingBox}} \mbox{\hyperlink{class_sprite_baddie_aa89cb2879e4956e05334fefe09301a3d}{getBoundingBox}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00142}00142         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00146}00146         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a006300e43e9b3aa5775f19d84c1d31a6}{setLocation}}(Vector location);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00147}00147         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00151}00151         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a7d18702983c7a087a66d6d10b7d4bc5a}{setOffset}}(Vector offset);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00156}00156         Vector \mbox{\hyperlink{class_sprite_baddie_aa92496ccf8e66ccf906cb7a87db71d0d}{getOffset}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00157}00157                 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00161}00161         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_baddie_a151f87a99a796030318833ccc14b70f9}{spriteWidth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00162}00162         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00166}00166         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_baddie_ae1a8d17c4c34b0ca80933cfc12c0dd02}{spriteHeight}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00167}00167         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00174}00174         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_aaf4a83444f07903369ea6d24a1906274}{setVelocities}}(\textcolor{keywordtype}{float} maxNormalVelocity, \textcolor{keywordtype}{float} dragVelocity, \textcolor{keywordtype}{float} accelerationVelocity);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00175}00175         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00179}00179         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_ae3897a21ac5c06e03aa29f5262435bd0}{increaseAcceleration}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00186}00186         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a9e530d7f46869eeeb83978835b8abddd}{setControlMagnitude}}(\textcolor{keywordtype}{float} controlMagnitude);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00191}00191         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a79b47b2a5646c3ce3d7e11e8291e40a4}{setAngle}}(\textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00192}00192 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00196}00196         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_baddie_a0f93aa66a15c19035354e46a9c6a6661}{getControlAngle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00197}00197         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00201}00201         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_baddie_ae0ed7cba15ddc22687922e4dbddf903b}{getAngle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00202}00202         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00206}00206         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a3fb15b57d1a864b79f125896f0ae16ca}{renderSprite}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);        }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00211}00211         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a460e2ec5e3f6cf396197e9d72c817684}{renderHealthBar}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);      }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00212}00212         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00216}00216         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\_TYPE}} \mbox{\hyperlink{class_sprite_baddie_a4f0c4bae9b4eaca82ece0c36023bc974}{spriteType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00217}00217         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00221}00221         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a19e829267c0267bce7f04c69e2fe4f46}{setAnimation}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} animation);        }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00226}00226         \textcolor{keyword}{virtual} \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} \mbox{\hyperlink{class_sprite_baddie_a696597690c6d57144c6ce93aff3cc663}{getCurrentAnimation}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00231}00231         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_abc7617d59765cff636fa448b2c8eb2a9}{setHealth}}(\textcolor{keywordtype}{float} health);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00236}00236         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_adeb6f5b8c910e7b66ee39b1343b166f7}{modifyHealthBy}}(\textcolor{keywordtype}{float} healthModifier);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00241}00241         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_baddie_aa9086b454bdcfebad3237a230db1c6bf}{getHealth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00246}00246         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_baddie_aab6f2aa524117622c9c700f87cc7ed38}{getMaxHealth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00251}00251         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_baddie_aa63af030a823019c5f1d482d22dc6800}{getPointValue}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00252}00252 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00256}00256         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_ae4536bde9edb898575eb38565ba3bdb9}{setPointValue}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00261}00261         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a56e8b616eca858fe4b4317525780ccb6}{setLevel}}(\textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00266}00266         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_baddie_af46e6901f665a56edc07176281a56d36}{getLevel}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00271}00271         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a9578cf17cb0d9f47a33a6a8ae7e6d6d9}{setPowerUpType}}(\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\_POWER\_UP}} powerUpType);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00276}00276         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\_POWER\_UP}} \mbox{\hyperlink{class_sprite_baddie_a0d822c0c178827346f8b11abb2b400b6}{getPowerUpType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00277}00277 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00281}00281         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_a5db413581f881a7059618b5eb149765d}{addWaypoint}}(Vector waypoint);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00282}00282 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00286}00286         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_baddie_a75eb48506084ce4e0ad2c5375817852b}{getCurrentWaypoint}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00291}00291         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_ae899de0246a432a4d4c26d849c1766fe}{clearWaypoints}}();                        }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00292}00292 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00296}00296         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_ad23fd18ce5022bf63ae345e14794150b}{setAttackType}}(\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\_TYPE}} type);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00297}00297         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00301}00301         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\_TYPE}} \mbox{\hyperlink{class_sprite_baddie_a2f843505aba799e895d5f88402292c37}{getAttackType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00302}00302 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00306}00306         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_baddie_ae5efc130481306f12c60881c4b1bc1ed}{modifyRotationBy}}(\textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00307}00307 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00311}00311         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_baddie_a3773f050478f369d15f97d629b09e080}{hasPeriodicTimerExpired}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00312}00312 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00316}00316         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_baddie_a0b9c3da366b59b0ae0151e52282c6a95}{getVelocity}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00317}00317 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00318}00318     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00319}00319     }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00323}00323         \textcolor{keywordtype}{void} processVelocity();     }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00324}00324         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00325}00325         \textcolor{comment}{// Attributes       }}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00326}00326         }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00327}00327         \textcolor{comment}{// Assocations}}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00328}00328         \mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} mySpriteInfo;}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00329}00329         Vector myOffsetValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00330}00330         Vector myCurrentWaypoint;}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00331}00331         \mbox{\hyperlink{_i_node_waypoints_8h_a435cbefeff187b44ca507afc59cd46a3}{NodeWaypoints}} myNodeWaypoints;}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00332}00332 \};}
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00333}00333 }
+\DoxyCodeLine{\Hypertarget{_sprite_baddie_8h_source_l00334}00334 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

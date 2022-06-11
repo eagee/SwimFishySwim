@@ -1,0 +1,169 @@
+\hypertarget{class_i_controllers}{}\doxysection{IControllers Class Reference}
+\label{class_i_controllers}\index{IControllers@{IControllers}}
+
+
+{\ttfamily \#include $<$IControllers.\+h$>$}
+
+
+
+Inheritance diagram for IControllers\+:
+% FIG 0
+
+
+Collaboration diagram for IControllers\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_controllers_a899274bf83719f120b82c612e60fe31b}{update\+Controller\+States}} ()=0
+\begin{DoxyCompactList}\small\item\em A call to this will update all of the most recent controller states ... /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}{check\+Button\+Press}} (int controller\+ID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\+\_\+\+BUTTONS}} code)=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_controllers_aad5e10e6a32daffc9537152f29229d68}{check\+Button\+Release}} (int controller\+ID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\+\_\+\+BUTTONS}} code)=0
+\item 
+virtual unsigned int \mbox{\hyperlink{class_i_controllers_aafb39b53c40219613979fd8c7e38ddb3}{get\+Status\+Of\+All\+Buttons}} (int controller\+ID)=0
+\item 
+virtual \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\+\_\+\+STATUS}} \mbox{\hyperlink{class_i_controllers_a3b48a4c38334614b878dc3a5dc0e3340}{check\+Controller\+Status}} (int controller\+ID)=0
+\item 
+virtual int \mbox{\hyperlink{class_i_controllers_af539bc2356271605f30d2983e8699e26}{number\+Of\+Connected\+Devices}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_controllers_afe73b0df07ed499b7ad486a5770b39f5}{check\+Pointer}} (int controller\+ID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a6b990e2e89908296b4d8980255acc578}{CONTROLLER\+\_\+\+POINTER}} pointer\+Data)=0
+\item 
+virtual \mbox{\hyperlink{_i_controllers_8h_a455bbd97e50a56951e3784414deeee5d}{Accelerometer\+Data}} \mbox{\hyperlink{class_i_controllers_a67d2e070b2d910bbab0cbc79fe2f6430}{check\+Motion}} (int controller\+ID)=0
+\item 
+virtual float \mbox{\hyperlink{class_i_controllers_add583028b8b630a809f3c48d80dc175c}{check\+Orientation}} (int controller\+ID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_ab29701098659a5e97984c4e4827a2842}{CONTROLLER\+\_\+\+ORIENTATION}} orient\+Data)=0
+\begin{DoxyCompactList}\small\item\em Can be used to check Pitch, Roll, and Yaw orientation data from controller \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_controllers_a890908debb0932bbf3c72f6ba4b7441f}{check\+Joystick\+Angle}} (int controller\+ID)=0
+\begin{DoxyCompactList}\small\item\em Tells us the angle of the joystick if applicable (0 to 360 degrees, 0 being up) \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_controllers_aeaaa310c560e88ef9190afeabd99235f}{check\+Joystick\+Magnitude}} (int controller\+ID)=0
+\begin{DoxyCompactList}\small\item\em Returns a float between 0.\+0 and 1.\+0 defining how much pressure is being placed on the joystick... \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_controllers_a4efebcb5a21d6996bba2b2cad8aea265}{stop\+Rumble\+Pack}} (int controller\+ID)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_controllers_ad57d47bfa33b8b8ba604963c19347b46}{start\+Rumble\+Pack}} (int controller\+ID)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_controllers_a21e434babec3ad87783808fdecbfd1d7}{dispose}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_i_controllers_8h_source_l00027}{27}} of file \mbox{\hyperlink{_i_controllers_8h_source}{IControllers.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}\label{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}} 
+\index{IControllers@{IControllers}!checkButtonPress@{checkButtonPress}}
+\index{checkButtonPress@{checkButtonPress}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{checkButtonPress()}{checkButtonPress()}}
+{\footnotesize\ttfamily virtual bool IControllers\+::check\+Button\+Press (\begin{DoxyParamCaption}\item[{int}]{controller\+ID,  }\item[{\mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\+\_\+\+BUTTONS}}}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns true if button code for controller ID has been released, else false /summary\texorpdfstring{$>$}{>} ~\newline
+ Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_i_controllers_aad5e10e6a32daffc9537152f29229d68}\label{class_i_controllers_aad5e10e6a32daffc9537152f29229d68}} 
+\index{IControllers@{IControllers}!checkButtonRelease@{checkButtonRelease}}
+\index{checkButtonRelease@{checkButtonRelease}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{checkButtonRelease()}{checkButtonRelease()}}
+{\footnotesize\ttfamily virtual bool IControllers\+::check\+Button\+Release (\begin{DoxyParamCaption}\item[{int}]{controller\+ID,  }\item[{\mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\+\_\+\+BUTTONS}}}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns an unsigned int with or\textquotesingle{}d values of all active buttons /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{class_i_controllers_a3b48a4c38334614b878dc3a5dc0e3340}\label{class_i_controllers_a3b48a4c38334614b878dc3a5dc0e3340}} 
+\index{IControllers@{IControllers}!checkControllerStatus@{checkControllerStatus}}
+\index{checkControllerStatus@{checkControllerStatus}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{checkControllerStatus()}{checkControllerStatus()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\+\_\+\+STATUS}} IControllers\+::check\+Controller\+Status (\begin{DoxyParamCaption}\item[{int}]{controller\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns an integer value specifying the number of devices properly connected and identified /summary\texorpdfstring{$>$}{>} Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_i_controllers_a890908debb0932bbf3c72f6ba4b7441f}\label{class_i_controllers_a890908debb0932bbf3c72f6ba4b7441f}} 
+\index{IControllers@{IControllers}!checkJoystickAngle@{checkJoystickAngle}}
+\index{checkJoystickAngle@{checkJoystickAngle}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{checkJoystickAngle()}{checkJoystickAngle()}}
+{\footnotesize\ttfamily virtual float IControllers\+::check\+Joystick\+Angle (\begin{DoxyParamCaption}\item[{int}]{controller\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Tells us the angle of the joystick if applicable (0 to 360 degrees, 0 being up) 
+
+\mbox{\Hypertarget{class_i_controllers_aeaaa310c560e88ef9190afeabd99235f}\label{class_i_controllers_aeaaa310c560e88ef9190afeabd99235f}} 
+\index{IControllers@{IControllers}!checkJoystickMagnitude@{checkJoystickMagnitude}}
+\index{checkJoystickMagnitude@{checkJoystickMagnitude}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{checkJoystickMagnitude()}{checkJoystickMagnitude()}}
+{\footnotesize\ttfamily virtual float IControllers\+::check\+Joystick\+Magnitude (\begin{DoxyParamCaption}\item[{int}]{controller\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns a float between 0.\+0 and 1.\+0 defining how much pressure is being placed on the joystick... 
+
+summary\texorpdfstring{$>$}{>} \mbox{[}Controller is rumbling\mbox{]} stops the rumbling bit ... /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{class_i_controllers_a67d2e070b2d910bbab0cbc79fe2f6430}\label{class_i_controllers_a67d2e070b2d910bbab0cbc79fe2f6430}} 
+\index{IControllers@{IControllers}!checkMotion@{checkMotion}}
+\index{checkMotion@{checkMotion}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{checkMotion()}{checkMotion()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_i_controllers_8h_a455bbd97e50a56951e3784414deeee5d}{Accelerometer\+Data}} IControllers\+::check\+Motion (\begin{DoxyParamCaption}\item[{int}]{controller\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{class_i_controllers_add583028b8b630a809f3c48d80dc175c}\label{class_i_controllers_add583028b8b630a809f3c48d80dc175c}} 
+\index{IControllers@{IControllers}!checkOrientation@{checkOrientation}}
+\index{checkOrientation@{checkOrientation}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{checkOrientation()}{checkOrientation()}}
+{\footnotesize\ttfamily virtual float IControllers\+::check\+Orientation (\begin{DoxyParamCaption}\item[{int}]{controller\+ID,  }\item[{\mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_ab29701098659a5e97984c4e4827a2842}{CONTROLLER\+\_\+\+ORIENTATION}}}]{orient\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Can be used to check Pitch, Roll, and Yaw orientation data from controller 
+
+\mbox{\Hypertarget{class_i_controllers_afe73b0df07ed499b7ad486a5770b39f5}\label{class_i_controllers_afe73b0df07ed499b7ad486a5770b39f5}} 
+\index{IControllers@{IControllers}!checkPointer@{checkPointer}}
+\index{checkPointer@{checkPointer}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{checkPointer()}{checkPointer()}}
+{\footnotesize\ttfamily virtual float IControllers\+::check\+Pointer (\begin{DoxyParamCaption}\item[{int}]{controller\+ID,  }\item[{\mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a6b990e2e89908296b4d8980255acc578}{CONTROLLER\+\_\+\+POINTER}}}]{pointer\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Can be used to check X,Y,Z Accelerometer motion from controller /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{class_i_controllers_a21e434babec3ad87783808fdecbfd1d7}\label{class_i_controllers_a21e434babec3ad87783808fdecbfd1d7}} 
+\index{IControllers@{IControllers}!dispose@{dispose}}
+\index{dispose@{dispose}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{dispose()}{dispose()}}
+{\footnotesize\ttfamily virtual void IControllers\+::dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{class_i_controllers_aafb39b53c40219613979fd8c7e38ddb3}\label{class_i_controllers_aafb39b53c40219613979fd8c7e38ddb3}} 
+\index{IControllers@{IControllers}!getStatusOfAllButtons@{getStatusOfAllButtons}}
+\index{getStatusOfAllButtons@{getStatusOfAllButtons}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{getStatusOfAllButtons()}{getStatusOfAllButtons()}}
+{\footnotesize\ttfamily virtual unsigned int IControllers\+::get\+Status\+Of\+All\+Buttons (\begin{DoxyParamCaption}\item[{int}]{controller\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns true if device is available, else false /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{class_i_controllers_af539bc2356271605f30d2983e8699e26}\label{class_i_controllers_af539bc2356271605f30d2983e8699e26}} 
+\index{IControllers@{IControllers}!numberOfConnectedDevices@{numberOfConnectedDevices}}
+\index{numberOfConnectedDevices@{numberOfConnectedDevices}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{numberOfConnectedDevices()}{numberOfConnectedDevices()}}
+{\footnotesize\ttfamily virtual int IControllers\+::number\+Of\+Connected\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Can be used to check X,Y pointer information from controller /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{class_i_controllers_ad57d47bfa33b8b8ba604963c19347b46}\label{class_i_controllers_ad57d47bfa33b8b8ba604963c19347b46}} 
+\index{IControllers@{IControllers}!startRumblePack@{startRumblePack}}
+\index{startRumblePack@{startRumblePack}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{startRumblePack()}{startRumblePack()}}
+{\footnotesize\ttfamily virtual void IControllers\+::start\+Rumble\+Pack (\begin{DoxyParamCaption}\item[{int}]{controller\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Disposes of whatever disposable object there is ... /summary\texorpdfstring{$>$}{>} ~\newline
+ \mbox{\Hypertarget{class_i_controllers_a4efebcb5a21d6996bba2b2cad8aea265}\label{class_i_controllers_a4efebcb5a21d6996bba2b2cad8aea265}} 
+\index{IControllers@{IControllers}!stopRumblePack@{stopRumblePack}}
+\index{stopRumblePack@{stopRumblePack}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{stopRumblePack()}{stopRumblePack()}}
+{\footnotesize\ttfamily virtual void IControllers\+::stop\+Rumble\+Pack (\begin{DoxyParamCaption}\item[{int}]{controller\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} \mbox{[}Controller is not rumbling\mbox{]} starts the rumbling bit ... /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{class_i_controllers_a899274bf83719f120b82c612e60fe31b}\label{class_i_controllers_a899274bf83719f120b82c612e60fe31b}} 
+\index{IControllers@{IControllers}!updateControllerStates@{updateControllerStates}}
+\index{updateControllerStates@{updateControllerStates}!IControllers@{IControllers}}
+\doxysubsubsection{\texorpdfstring{updateControllerStates()}{updateControllerStates()}}
+{\footnotesize\ttfamily virtual void IControllers\+::update\+Controller\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A call to this will update all of the most recent controller states ... /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Returns true if button code for controller ID is active, else false /summary\texorpdfstring{$>$}{>} ~\newline
+ Here is the caller graph for this function\+:
+% FIG 4
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_i_controllers_8h}{IControllers.\+h}}\end{DoxyCompactItemize}

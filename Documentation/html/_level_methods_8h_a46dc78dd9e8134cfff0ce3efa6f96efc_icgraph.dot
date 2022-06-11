@@ -1,0 +1,18 @@
+digraph "LevelMethodsHandleSparkEffects"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="LevelMethodsHandleSparkEffects",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ProjectileBomb::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_bomb.html#a977560150de62669059bad8f4c9da19d",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ProjectileMine::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_mine.html#a47bf65effbc2950ca175749dd2b99006",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ProjectileShot::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_shot.html#a2aa67619ca4e6a0e346c46673ce6c546",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ProjectileSpit::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_spit.html#a8922717daa0413c424311b577fa4054f",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ProjectileToss::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_toss.html#ae514ed2467b1d6b7b07b7eb2c09de59a",tooltip=" "];
+}

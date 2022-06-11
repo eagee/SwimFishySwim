@@ -1,0 +1,358 @@
+\hypertarget{_controller_win_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Controller\+Win.cpp}
+\mbox{\hyperlink{_controller_win_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00001}00001 \textcolor{comment}{// ControllerWin.cpp}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00002}00002 \textcolor{comment}{// Provides implementation for Wii controllers (i.e. WiiMote)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_controllers_8h}{IControllers.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WIN}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_controller_win_8h}{ControllerWin.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00013}00013 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{_controller_wii_8cpp_ae696324ef7fc119614e60ba6da6fb12b}{kPi}} = 3.1415926;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00015}00015 \textcolor{comment}{// Variables to track our single instance and whether or not it's been created ...  }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00016}00016 \textcolor{keyword}{static} \mbox{\hyperlink{class_i_controllers}{IControllers}} *globalSingleInstance;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00021}00021  ControllerWin::ControllerWin(\textcolor{keywordtype}{int} screenWidth, \textcolor{keywordtype}{int} screenHeight) }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00022}00022  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00023}00023     mySubject = \textcolor{keyword}{new} \mbox{\hyperlink{class_subject}{Subject}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00024}00024     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00025}00025     myMotionIndex = 0;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00026}00026     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00027}00027  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00028}00028  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00033}00033  \mbox{\hyperlink{class_i_controllers}{IControllers}}* ControllerWin::getSingleInstance(\textcolor{keywordtype}{int} screenWidth, \textcolor{keywordtype}{int} screenHeight)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00034}00034  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00035}00035     \textcolor{keywordflow}{if}(globalSingleInstance == NULL)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00036}00036     \{       }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00037}00037         globalSingleInstance = \textcolor{keyword}{new} ControllerWin(screenWidth, screenHeight);    }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00039}00039     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00040}00040     \textcolor{keywordflow}{return} globalSingleInstance;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00041}00041  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00046}00046  ControllerWin::\string~ControllerWin() }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00047}00047  \{  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00048}00048     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00049}00049  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00050}00050  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00054}00054  \textcolor{keywordtype}{void} ControllerWin::dispose()}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00055}00055  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00056}00056     \textcolor{keyword}{delete} mySubject;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00057}00057     \textcolor{keyword}{delete} globalSingleInstance;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00058}00058     globalSingleInstance = NULL;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00059}00059     \textcolor{comment}{//WPAD\_Shutdown();}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00060}00060  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00061}00061  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00062}00062  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00066}00066  \textcolor{keywordtype}{void} ControllerWin::updateControllerStates()}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00067}00067  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00068}00068     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} controllerType = 0;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00069}00069     \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00070}00070     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00071}00071     \textcolor{comment}{// Call to update controller Wii states ...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00072}00072     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00073}00073     \textcolor{comment}{//WPAD\_ScanPads();}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00074}00074     \textcolor{comment}{//WPAD\_ReadPending(WPAD\_CHAN\_ALL, countevs);}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00075}00075     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00076}00076     \textcolor{comment}{// Probe each of our controllers for status.}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00077}00077     \textcolor{comment}{// [status == ready] get the latest object representing}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00078}00078     \textcolor{comment}{// each controllers current state.}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00079}00079     \textcolor{keywordflow}{for}(index = 0; index < MAXIMUM\_CONTROLLERS; index++)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00080}00080     \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00081}00081         \textcolor{comment}{//wiiMoteStatus[index] = (CONTROLLER\_STATUS)WPAD\_Probe(index, \&controllerType);}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00082}00082         }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00083}00083         \textcolor{comment}{/*if(wiiMoteStatus[index] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00084}00084 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00085}00085 \textcolor{comment}{            wiiMotes[index] = WPAD\_Data(index);}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00086}00086 \textcolor{comment}{            // Now that we know we have a controller, let's check for the nunchuck.}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00087}00087 \textcolor{comment}{            // If it's not available, then indicate an error state since we require both...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00088}00088 \textcolor{comment}{            if(wiiMotes[index]-\/>exp.type != WPAD\_EXP\_NUNCHUK)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00089}00089 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00090}00090 \textcolor{comment}{                wiiMoteStatus[index] = CONTROLLER\_NOT\_READY;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00091}00091 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00092}00092 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00093}00093     \}   }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00094}00094     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00095}00095  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00096}00096  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00100}00100  \textcolor{keywordtype}{bool} ControllerWin::checkButtonPress(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\_BUTTONS}} code)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00101}00101  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00102}00102     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);    }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00103}00103     \textcolor{comment}{// If the controller specified is in a READY state, then do a bitwise and}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00104}00104     \textcolor{comment}{// to see if the button code is set ...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00105}00105     \textcolor{comment}{/*if(wiiMoteStatus[controllerID] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00106}00106 \textcolor{comment}{    \{       }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00107}00107 \textcolor{comment}{        //debugPrint("{}WiiMoteCode: \%x Code: \%x\(\backslash\)n"{}, wiiMotes[controllerID]-\/>btns\_h, code); usleep(10000);                            }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00108}00108 \textcolor{comment}{        //printf("{}\(\backslash\)x1b[2;0H"{}); printf("{}\(\backslash\)n\(\backslash\)n\(\backslash\)nAccelDiff: \%d"{}, myAccelDifference.x);}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00109}00109 \textcolor{comment}{        // Check the regular wiimote button codes (which should be less than horizontal swing)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00110}00110 \textcolor{comment}{        // C and Z are nunchuck codes, which are stored in the 2nd 16 bits of the int}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00111}00111 \textcolor{comment}{        if((wiiMotes[controllerID]-\/>btns\_h \& 0xFFFF0000) \& code)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00112}00112 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00113}00113 \textcolor{comment}{            return true;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00114}00114 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00115}00115 \textcolor{comment}{        // The other buttons come from the wiimote, which we get from the 1st 16 bits}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00116}00116 \textcolor{comment}{        else if ((wiiMotes[controllerID]-\/>btns\_h \& 0x0000FFFF) \& code)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00117}00117 \textcolor{comment}{        \{                           }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00118}00118 \textcolor{comment}{            return true;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00119}00119 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00120}00120 \textcolor{comment}{        else if((code == WII\_HORIZONTAL\_SWING\_LEFT) \&\& (myAccelDifference.x > 250))}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00121}00121 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00122}00122 \textcolor{comment}{            return true;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00123}00123 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00124}00124 \textcolor{comment}{        else if((code == WII\_HORIZONTAL\_SWING\_RIGHT) \&\& (myAccelDifference.x < -\/250))}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00125}00125 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00126}00126 \textcolor{comment}{                return true;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00127}00127 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00128}00128 \textcolor{comment}{        else if((code == WII\_VERTICAL\_SWING\_UP) \&\& (myAccelDifference.y < -\/250))}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00129}00129 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00130}00130 \textcolor{comment}{            return true;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00131}00131 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00132}00132 \textcolor{comment}{        else if((code == WII\_VERTICAL\_SWING\_DOWN) \&\& (myAccelDifference.y > 250))}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00133}00133 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00134}00134 \textcolor{comment}{            return true;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00135}00135 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00136}00136 \textcolor{comment}{        else}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00137}00137 \textcolor{comment}{        }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00138}00138 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00139}00139 \textcolor{comment}{            return false;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00140}00140 \textcolor{comment}{        \}   }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00141}00141 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00142}00142 \textcolor{comment}{    else}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00143}00143 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00144}00144 \textcolor{comment}{        return false;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00145}00145 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00146}00146     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00147}00147  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00152}00152  \textcolor{keywordtype}{bool} ControllerWin::checkButtonRelease(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\_BUTTONS}} code)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00153}00153  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00154}00154     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);    }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00155}00155     \textcolor{comment}{// If the controller specified is in a READY state, then do a bitwise and}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00156}00156     \textcolor{comment}{// to see if the button code is set ...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00157}00157     \textcolor{comment}{/*if(wiiMoteStatus[controllerID] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00158}00158 \textcolor{comment}{    \{       }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00159}00159 \textcolor{comment}{        //debugPrint("{}WiiMoteCode: \%x Code: \%x\(\backslash\)n"{}, wiiMotes[controllerID]-\/>btns\_h, code); usleep(10000);                            }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00160}00160 \textcolor{comment}{                }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00161}00161 \textcolor{comment}{        // Check the regular wiimote button codes (which should be less than horizontal swing)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00162}00162 \textcolor{comment}{        // C and Z are nunchuck codes, which are stored in the 2nd 16 bits of the int}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00163}00163 \textcolor{comment}{        }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00164}00164 \textcolor{comment}{        if((wiiMotes[controllerID]-\/>btns\_u \& 0xFFFF0000) \& code)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00165}00165 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00166}00166 \textcolor{comment}{            return true;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00167}00167 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00168}00168 \textcolor{comment}{        // The other buttons come from the wiimote, which we get from the 1st 16 bits}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00169}00169 \textcolor{comment}{        else if ((wiiMotes[controllerID]-\/>btns\_u \& 0x0000FFFF) \& code)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00170}00170 \textcolor{comment}{        \{                           }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00171}00171 \textcolor{comment}{            return true;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00172}00172 \textcolor{comment}{        \}       }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00173}00173 \textcolor{comment}{        else}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00174}00174 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00175}00175 \textcolor{comment}{            return false;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00176}00176 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00177}00177 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00178}00178 \textcolor{comment}{    else}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00179}00179 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00180}00180     \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00181}00181         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00182}00182     \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00183}00183  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00184}00184  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00188}00188  \textcolor{keywordtype}{float} ControllerWin::checkJoystickAngle(\textcolor{keywordtype}{int} controllerID)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00189}00189  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00190}00190     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00191}00191     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00192}00192 \textcolor{comment}{    // If the controller specified is in a READY state, then return the joystick angle...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00193}00193 \textcolor{comment}{    if(wiiMoteStatus[controllerID] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00194}00194 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00195}00195 \textcolor{comment}{        return wiiMotes[controllerID]-\/>exp.nunchuk.js.ang;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00196}00196 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00197}00197 \textcolor{comment}{    else}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00198}00198 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00199}00199     \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00200}00200         \textcolor{keywordflow}{return} 0.0f;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00201}00201     \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00202}00202  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00207}00207  \textcolor{keywordtype}{float} ControllerWin::checkJoystickMagnitude(\textcolor{keywordtype}{int} controllerID)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00208}00208  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00209}00209     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00210}00210     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00211}00211 \textcolor{comment}{    // If the controller specified is in a READY state, then return the joystick angle...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00212}00212 \textcolor{comment}{    if(wiiMoteStatus[controllerID] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00213}00213 \textcolor{comment}{    \{       }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00214}00214 \textcolor{comment}{        return wiiMotes[controllerID]-\/>exp.nunchuk.js.mag;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00215}00215 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00216}00216 \textcolor{comment}{    else}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00217}00217 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00218}00218     \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00219}00219         \textcolor{keywordflow}{return} 0.0f;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00220}00220     \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00221}00221  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00222}00222     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00226}00226  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ControllerWin::getStatusOfAllButtons(\textcolor{keywordtype}{int} controllerID)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00227}00227  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00228}00228     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00229}00229     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00230}00230     \textcolor{comment}{/*if(wiiMoteStatus[controllerID] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00231}00231 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00232}00232 \textcolor{comment}{        return wiiMotes[controllerID]-\/>btns\_h;      }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00233}00233 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00234}00234 \textcolor{comment}{    else}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00235}00235 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00236}00236 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00237}00237         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00238}00238     \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00239}00239  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00240}00240     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00244}00244  \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\_STATUS}} ControllerWin::checkControllerStatus(\textcolor{keywordtype}{int} controllerID)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00245}00245  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00246}00246     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00248}00248     \textcolor{comment}{// Get the accelerometer details, and calculate the difference in motion from the last time we checked status to this one...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00249}00249     myLastMotion = myCurrentMotion;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00250}00250     myCurrentMotion = checkMotion(controllerID);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00251}00251     myAccelDifference.x = (short)myLastMotion.x -\/ (\textcolor{keywordtype}{short})myCurrentMotion.x;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00252}00252     myAccelDifference.y = (short)myLastMotion.x -\/ (\textcolor{keywordtype}{short})myCurrentMotion.y;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00253}00253     myAccelDifference.z = (short)myLastMotion.x -\/ (\textcolor{keywordtype}{short})myCurrentMotion.z;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00254}00254 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00255}00255     \textcolor{keywordflow}{return} wiiMoteStatus[controllerID];}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00256}00256  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00257}00257     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00261}00261  \textcolor{keywordtype}{int} ControllerWin::numberOfConnectedDevices()}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00262}00262  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00263}00263     \textcolor{keywordtype}{int} numberConnected = 0;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00264}00264     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} index = 0; index < MAXIMUM\_CONTROLLERS; index++)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00265}00265     \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00266}00266         \textcolor{keywordflow}{if}(wiiMoteStatus[index] == \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281a8b7efabd5049a0cc86e0d0242fac4d0c}{CONTROLLER\_READY}})}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00267}00267         \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00268}00268             numberConnected++;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00269}00269         \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00270}00270     \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00271}00271     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00272}00272     \textcolor{keywordflow}{return} numberConnected;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00273}00273  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00274}00274         }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00278}00278  \textcolor{keywordtype}{float} ControllerWin::checkPointer(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a6b990e2e89908296b4d8980255acc578}{CONTROLLER\_POINTER}} pointerData)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00279}00279  \{    }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00280}00280     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00281}00281     \textcolor{keywordtype}{float} pointerValue = 0;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00282}00282     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00283}00283     \textcolor{comment}{/*if(wiiMoteStatus[controllerID] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00284}00284 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00285}00285 \textcolor{comment}{        if(wiiMotes[controllerID]-\/>ir.valid)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00286}00286 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00287}00287 \textcolor{comment}{            switch(pointerData)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00288}00288 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00289}00289 \textcolor{comment}{                case POINTER\_X:}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00290}00290 \textcolor{comment}{                    pointerValue = (int)wiiMotes[controllerID]-\/>ir.x;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00291}00291 \textcolor{comment}{                break;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00292}00292 \textcolor{comment}{                case POINTER\_Y:}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00293}00293 \textcolor{comment}{                    pointerValue = (int)wiiMotes[controllerID]-\/>ir.y;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00294}00294 \textcolor{comment}{                break;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00295}00295 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00296}00296 \textcolor{comment}{        \}       }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00297}00297 \textcolor{comment}{    \}*/}     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00298}00298     \textcolor{keywordflow}{return} pointerValue;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00299}00299  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00300}00300     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00304}00304  \mbox{\hyperlink{structtag_accel_data}{AccelerometerData}} ControllerWin::checkMotion(\textcolor{keywordtype}{int} controllerID)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00305}00305  \{  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00306}00306     \mbox{\hyperlink{structtag_accel_data}{AccelerometerData}} returnMotion = \{0, 0, 0\};}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00307}00307 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00308}00308     \textcolor{comment}{// Save the motion values in a circular buffer}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00309}00309     \textcolor{comment}{/*myMotionIndex++;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00310}00310 \textcolor{comment}{    if(myMotionIndex >= MOTION\_SAMPLES) myMotionIndex = 0;  }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00311}00311 \textcolor{comment}{    if(wiiMoteStatus[controllerID] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00312}00312 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00313}00313 \textcolor{comment}{        ASSERT(wiiMoteStatus[controllerID] == CONTROLLER\_READY);}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00314}00314 \textcolor{comment}{        myMotionValues[myMotionIndex].x = wiiMotes[controllerID]-\/>accel.x;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00315}00315 \textcolor{comment}{        myMotionValues[myMotionIndex].y = wiiMotes[controllerID]-\/>accel.y;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00316}00316 \textcolor{comment}{        myMotionValues[myMotionIndex].z = wiiMotes[controllerID]-\/>accel.z;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00317}00317 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00318}00318 \textcolor{comment}{        // AVERAGE the values of the motion samples and return the averaged amount...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00319}00319 \textcolor{comment}{        for(int index = 0; index < MOTION\_SAMPLES; index++)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00320}00320 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00321}00321 \textcolor{comment}{            returnMotion.x += myMotionValues[myMotionIndex].x;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00322}00322 \textcolor{comment}{            returnMotion.y += myMotionValues[myMotionIndex].y;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00323}00323 \textcolor{comment}{            returnMotion.z += myMotionValues[myMotionIndex].z;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00324}00324 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00325}00325 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00326}00326 \textcolor{comment}{        returnMotion.x /= MOTION\_SAMPLES;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00327}00327 \textcolor{comment}{        returnMotion.y /= MOTION\_SAMPLES;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00328}00328 \textcolor{comment}{        returnMotion.z /= MOTION\_SAMPLES;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00329}00329 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00330}00330 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00331}00331     \textcolor{keywordflow}{return} returnMotion;    }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00332}00332  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00333}00333  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00337}00337  \textcolor{keywordtype}{float} ControllerWin::checkOrientation(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_ab29701098659a5e97984c4e4827a2842}{CONTROLLER\_ORIENTATION}} orientData)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00338}00338  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00339}00339     \textcolor{keywordtype}{float} orientValue = 0;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00340}00340     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00341}00341     \textcolor{comment}{/*if(wiiMoteStatus[controllerID] == CONTROLLER\_READY)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00342}00342 \textcolor{comment}{    \{       }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00343}00343 \textcolor{comment}{        switch(orientData)}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00344}00344 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00345}00345 \textcolor{comment}{            case ORIENT\_PITCH:}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00346}00346 \textcolor{comment}{                orientValue = wiiMotes[controllerID]-\/>orient.pitch;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00347}00347 \textcolor{comment}{            break;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00348}00348 \textcolor{comment}{            case ORIENT\_YAW:}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00349}00349 \textcolor{comment}{                orientValue = wiiMotes[controllerID]-\/>orient.yaw;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00350}00350 \textcolor{comment}{            break;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00351}00351 \textcolor{comment}{            case ORIENT\_ROLL:}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00352}00352 \textcolor{comment}{                orientValue = wiiMotes[controllerID]-\/>orient.roll;}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00353}00353 \textcolor{comment}{            break;          }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00354}00354 \textcolor{comment}{        \}       }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00355}00355 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00356}00356         }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00357}00357     \textcolor{keywordflow}{return} orientValue; }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00358}00358  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00359}00359 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00360}00360  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00364}00364  \textcolor{keywordtype}{void} ControllerWin::stopRumblePack(\textcolor{keywordtype}{int} controllerID)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00365}00365  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00366}00366     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00367}00367     \textcolor{keywordflow}{if}(wiiMoteStatus[controllerID] == \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281a8b7efabd5049a0cc86e0d0242fac4d0c}{CONTROLLER\_READY}})}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00368}00368     \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00369}00369         \textcolor{comment}{//WPAD\_Rumble(controllerID, 0);}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00370}00370     \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00371}00371  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00372}00372 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00376}00376  \textcolor{keywordtype}{void} ControllerWin::startRumblePack(\textcolor{keywordtype}{int} controllerID)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00377}00377  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00378}00378     ASSERT(controllerID <= MAXIMUM\_CONTROLLERS);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00379}00379     \textcolor{keywordflow}{if}(wiiMoteStatus[controllerID] == \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281a8b7efabd5049a0cc86e0d0242fac4d0c}{CONTROLLER\_READY}})}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00380}00380     \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00381}00381         \textcolor{comment}{//WPAD\_Rumble(controllerID, 1);}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00382}00382     \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00383}00383  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00384}00384 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00388}00388  \textcolor{keywordtype}{void} ControllerWin::registerObserver (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer)         }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00389}00389  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00390}00390     ASSERT(observer != NULL);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00391}00391     mySubject-\/>registerObserver(observer);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00392}00392  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00393}00393     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00397}00397  \textcolor{keywordtype}{void} ControllerWin::removeObserver (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer)}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00398}00398  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00399}00399     ASSERT(observer != NULL);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00400}00400     mySubject-\/>removeObserver(observer);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00401}00401  \} }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00402}00402 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00406}00406  \textcolor{keywordtype}{void} ControllerWin::notifyObservers ()}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00407}00407  \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00408}00408     mySubject-\/>notifyObservers(); }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00409}00409  \}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00410}00410 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00411}00411 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00412}00412  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00413}00413  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8cpp_source_l00414}00414 }
+
+\end{DoxyCode}

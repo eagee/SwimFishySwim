@@ -1,0 +1,142 @@
+\hypertarget{class_particle_effect}{}\doxysection{Particle\+Effect Class Reference}
+\label{class_particle_effect}\index{ParticleEffect@{ParticleEffect}}
+
+
+Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ... /summary\texorpdfstring{$>$}{>}  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Effect.\+h$>$}
+
+
+
+Inheritance diagram for Particle\+Effect\+:
+% FIG 0
+
+
+Collaboration diagram for Particle\+Effect\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_particle_effect_a5680a81d7f01c999fd1fbe2dc5305c80}{Particle\+Effect}} (\mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0a}{PARTICLE\+\_\+\+EFFECT\+\_\+\+TYPE}} effect\+Type, int max\+Particles)
+\item 
+virtual \mbox{\hyperlink{class_particle_effect_ab65f29a87c70cd92e8108867349714d3}{$\sim$\+Particle\+Effect}} ()
+\item 
+virtual void \mbox{\hyperlink{class_particle_effect_a6025ff08a59501edf8bbe593b3465162}{assign\+Texture}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)
+\item 
+virtual void \mbox{\hyperlink{class_particle_effect_a807a1af756635bd62afd7b5ad190d29c}{add\+Particles}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite, Vector offset, int number)
+\item 
+virtual void \mbox{\hyperlink{class_particle_effect_adf3193f669cf16d878702bb8cba3090b}{update\+Particles}} ()
+\item 
+virtual void \mbox{\hyperlink{class_particle_effect_ad6b509aa2eda2df339ef95f565292992}{render\+Particles}} (Vector offset, \mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_particle_effect_8h_source_l00013}{13}} of file \mbox{\hyperlink{_particle_effect_8h_source}{Particle\+Effect.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_particle_effect_a5680a81d7f01c999fd1fbe2dc5305c80}\label{class_particle_effect_a5680a81d7f01c999fd1fbe2dc5305c80}} 
+\index{ParticleEffect@{ParticleEffect}!ParticleEffect@{ParticleEffect}}
+\index{ParticleEffect@{ParticleEffect}!ParticleEffect@{ParticleEffect}}
+\doxysubsubsection{\texorpdfstring{ParticleEffect()}{ParticleEffect()}}
+{\footnotesize\ttfamily Particle\+Effect\+::\+Particle\+Effect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0a}{PARTICLE\+\_\+\+EFFECT\+\_\+\+TYPE}}}]{effect\+Type,  }\item[{int}]{max\+Particles }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Destructor /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_particle_effect_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_particle_effect_8cpp_source}{Particle\+Effect.\+cpp}}.
+
+\mbox{\Hypertarget{class_particle_effect_ab65f29a87c70cd92e8108867349714d3}\label{class_particle_effect_ab65f29a87c70cd92e8108867349714d3}} 
+\index{ParticleEffect@{ParticleEffect}!````~ParticleEffect@{$\sim$ParticleEffect}}
+\index{````~ParticleEffect@{$\sim$ParticleEffect}!ParticleEffect@{ParticleEffect}}
+\doxysubsubsection{\texorpdfstring{$\sim$ParticleEffect()}{~ParticleEffect()}}
+{\footnotesize\ttfamily Particle\+Effect\+::$\sim$\+Particle\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Assigns an \mbox{\hyperlink{class_i_model}{IModel}} instances to a sprite /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Assigns an \mbox{\hyperlink{class_i_model}{IModel}} instances to a sprite /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_particle_effect_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_particle_effect_8cpp_source}{Particle\+Effect.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_particle_effect_a807a1af756635bd62afd7b5ad190d29c}\label{class_particle_effect_a807a1af756635bd62afd7b5ad190d29c}} 
+\index{ParticleEffect@{ParticleEffect}!addParticles@{addParticles}}
+\index{addParticles@{addParticles}!ParticleEffect@{ParticleEffect}}
+\doxysubsubsection{\texorpdfstring{addParticles()}{addParticles()}}
+{\footnotesize\ttfamily void Particle\+Effect\+::add\+Particles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite,  }\item[{Vector}]{offset,  }\item[{int}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Updates all active particles /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_particle_effect_a7ca5d8d7e8447d0e3636b7d89828b3f1}{IParticle\+Effect}}.
+
+
+
+Definition at line \mbox{\hyperlink{_particle_effect_8cpp_source_l00247}{247}} of file \mbox{\hyperlink{_particle_effect_8cpp_source}{Particle\+Effect.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_particle_effect_a6025ff08a59501edf8bbe593b3465162}\label{class_particle_effect_a6025ff08a59501edf8bbe593b3465162}} 
+\index{ParticleEffect@{ParticleEffect}!assignTexture@{assignTexture}}
+\index{assignTexture@{assignTexture}!ParticleEffect@{ParticleEffect}}
+\doxysubsubsection{\texorpdfstring{assignTexture()}{assignTexture()}}
+{\footnotesize\ttfamily void Particle\+Effect\+::assign\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds a particle (if there are particles to spare) to the list of active particles otherwise, particle is not activated /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Handles setup when adding a water ripplie /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_particle_effect_a04d72eed41c6dc785f3d1311273cda27}{IParticle\+Effect}}.
+
+
+
+Definition at line \mbox{\hyperlink{_particle_effect_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{_particle_effect_8cpp_source}{Particle\+Effect.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_particle_effect_ad6b509aa2eda2df339ef95f565292992}\label{class_particle_effect_ad6b509aa2eda2df339ef95f565292992}} 
+\index{ParticleEffect@{ParticleEffect}!renderParticles@{renderParticles}}
+\index{renderParticles@{renderParticles}!ParticleEffect@{ParticleEffect}}
+\doxysubsubsection{\texorpdfstring{renderParticles()}{renderParticles()}}
+{\footnotesize\ttfamily void Particle\+Effect\+::render\+Particles (\begin{DoxyParamCaption}\item[{Vector}]{offset,  }\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_particle_effect_a19283a5ed5b2ccf92de05ae48787ae59}{IParticle\+Effect}}.
+
+
+
+Definition at line \mbox{\hyperlink{_particle_effect_8cpp_source_l00458}{458}} of file \mbox{\hyperlink{_particle_effect_8cpp_source}{Particle\+Effect.\+cpp}}.
+
+\mbox{\Hypertarget{class_particle_effect_adf3193f669cf16d878702bb8cba3090b}\label{class_particle_effect_adf3193f669cf16d878702bb8cba3090b}} 
+\index{ParticleEffect@{ParticleEffect}!updateParticles@{updateParticles}}
+\index{updateParticles@{updateParticles}!ParticleEffect@{ParticleEffect}}
+\doxysubsubsection{\texorpdfstring{updateParticles()}{updateParticles()}}
+{\footnotesize\ttfamily void Particle\+Effect\+::update\+Particles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders all active particles using \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation, and offset by the specified vector (e.\+g. for tilemap position) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_particle_effect_ab254831f7f275adbe307c1e8b564c96b}{IParticle\+Effect}}.
+
+
+
+Definition at line \mbox{\hyperlink{_particle_effect_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{_particle_effect_8cpp_source}{Particle\+Effect.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_particle_effect_8h}{Particle\+Effect.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_particle_effect_8cpp}{Particle\+Effect.\+cpp}}\end{DoxyCompactItemize}

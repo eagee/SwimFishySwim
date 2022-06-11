@@ -1,0 +1,77 @@
+\hypertarget{_endian_stuffs_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Endian\+Stuffs.h File Reference}
+\label{_endian_stuffs_8h}\index{C:/TeamSheeps/SwimFishySwim/EndianStuffs.h@{C:/TeamSheeps/SwimFishySwim/EndianStuffs.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionconvert}{convert}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_endian_stuffs_8h_a36d04521be8ba1591aee66d9f0ca80a9}{THIS\+\_\+\+IS\+\_\+\+A\+\_\+\+BIG\+\_\+\+ENDIAN\+\_\+\+SYSTEM}}~1
+\item 
+\#define \mbox{\hyperlink{_endian_stuffs_8h_a5cbd3b191731d6e19ef21a0d6c8d492d}{SWAP\+\_\+\+ENDIAN\+\_\+\+SHORT}}(x)~x = (((x \& 0x\+FF00) $>$$>$ 8) $\vert$ ((x \& 0x00\+FF) $<$$<$ 8));
+\item 
+\#define \mbox{\hyperlink{_endian_stuffs_8h_a571ca5607e9769b3b9679f0616c89018}{SWAP\+\_\+\+ENDIAN\+\_\+\+LONG}}(x)~x = (((x \& 0x\+FF000000) $>$$>$ 24) $\vert$ ((x \& 0x00\+FF0000) $>$$>$ 8) $\vert$ ((x \& 0x0000\+FF00) $<$$<$ 8) $\vert$ ((x \& 0x000000\+FF) $<$$<$ 24));
+\item 
+\#define \mbox{\hyperlink{_endian_stuffs_8h_a537523f90892ac04b2e76f619286fbb1}{SWAP\+\_\+\+ENDIAN\+\_\+\+FLOAT}}(the\+Float)~the\+Float = \mbox{\hyperlink{_endian_stuffs_8h_a4f7f09e660541b3f2b8afd081a6e717a}{convert\+Float}}(the\+Float);
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{_endian_stuffs_8h_a4f7f09e660541b3f2b8afd081a6e717a}{convert\+Float}} (float to\+Convert)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_endian_stuffs_8h_a537523f90892ac04b2e76f619286fbb1}\label{_endian_stuffs_8h_a537523f90892ac04b2e76f619286fbb1}} 
+\index{EndianStuffs.h@{EndianStuffs.h}!SWAP\_ENDIAN\_FLOAT@{SWAP\_ENDIAN\_FLOAT}}
+\index{SWAP\_ENDIAN\_FLOAT@{SWAP\_ENDIAN\_FLOAT}!EndianStuffs.h@{EndianStuffs.h}}
+\doxysubsubsection{\texorpdfstring{SWAP\_ENDIAN\_FLOAT}{SWAP\_ENDIAN\_FLOAT}}
+{\footnotesize\ttfamily \#define SWAP\+\_\+\+ENDIAN\+\_\+\+FLOAT(\begin{DoxyParamCaption}\item[{}]{the\+Float }\end{DoxyParamCaption})~the\+Float = \mbox{\hyperlink{_endian_stuffs_8h_a4f7f09e660541b3f2b8afd081a6e717a}{convert\+Float}}(the\+Float);}
+
+
+
+Definition at line \mbox{\hyperlink{_endian_stuffs_8h_source_l00022}{22}} of file \mbox{\hyperlink{_endian_stuffs_8h_source}{Endian\+Stuffs.\+h}}.
+
+\mbox{\Hypertarget{_endian_stuffs_8h_a571ca5607e9769b3b9679f0616c89018}\label{_endian_stuffs_8h_a571ca5607e9769b3b9679f0616c89018}} 
+\index{EndianStuffs.h@{EndianStuffs.h}!SWAP\_ENDIAN\_LONG@{SWAP\_ENDIAN\_LONG}}
+\index{SWAP\_ENDIAN\_LONG@{SWAP\_ENDIAN\_LONG}!EndianStuffs.h@{EndianStuffs.h}}
+\doxysubsubsection{\texorpdfstring{SWAP\_ENDIAN\_LONG}{SWAP\_ENDIAN\_LONG}}
+{\footnotesize\ttfamily \#define SWAP\+\_\+\+ENDIAN\+\_\+\+LONG(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x = (((x \& 0x\+FF000000) $>$$>$ 24) $\vert$ ((x \& 0x00\+FF0000) $>$$>$ 8) $\vert$ ((x \& 0x0000\+FF00) $<$$<$ 8) $\vert$ ((x \& 0x000000\+FF) $<$$<$ 24));}
+
+
+
+Definition at line \mbox{\hyperlink{_endian_stuffs_8h_source_l00021}{21}} of file \mbox{\hyperlink{_endian_stuffs_8h_source}{Endian\+Stuffs.\+h}}.
+
+\mbox{\Hypertarget{_endian_stuffs_8h_a5cbd3b191731d6e19ef21a0d6c8d492d}\label{_endian_stuffs_8h_a5cbd3b191731d6e19ef21a0d6c8d492d}} 
+\index{EndianStuffs.h@{EndianStuffs.h}!SWAP\_ENDIAN\_SHORT@{SWAP\_ENDIAN\_SHORT}}
+\index{SWAP\_ENDIAN\_SHORT@{SWAP\_ENDIAN\_SHORT}!EndianStuffs.h@{EndianStuffs.h}}
+\doxysubsubsection{\texorpdfstring{SWAP\_ENDIAN\_SHORT}{SWAP\_ENDIAN\_SHORT}}
+{\footnotesize\ttfamily \#define SWAP\+\_\+\+ENDIAN\+\_\+\+SHORT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x = (((x \& 0x\+FF00) $>$$>$ 8) $\vert$ ((x \& 0x00\+FF) $<$$<$ 8));}
+
+
+
+Definition at line \mbox{\hyperlink{_endian_stuffs_8h_source_l00020}{20}} of file \mbox{\hyperlink{_endian_stuffs_8h_source}{Endian\+Stuffs.\+h}}.
+
+\mbox{\Hypertarget{_endian_stuffs_8h_a36d04521be8ba1591aee66d9f0ca80a9}\label{_endian_stuffs_8h_a36d04521be8ba1591aee66d9f0ca80a9}} 
+\index{EndianStuffs.h@{EndianStuffs.h}!THIS\_IS\_A\_BIG\_ENDIAN\_SYSTEM@{THIS\_IS\_A\_BIG\_ENDIAN\_SYSTEM}}
+\index{THIS\_IS\_A\_BIG\_ENDIAN\_SYSTEM@{THIS\_IS\_A\_BIG\_ENDIAN\_SYSTEM}!EndianStuffs.h@{EndianStuffs.h}}
+\doxysubsubsection{\texorpdfstring{THIS\_IS\_A\_BIG\_ENDIAN\_SYSTEM}{THIS\_IS\_A\_BIG\_ENDIAN\_SYSTEM}}
+{\footnotesize\ttfamily \#define THIS\+\_\+\+IS\+\_\+\+A\+\_\+\+BIG\+\_\+\+ENDIAN\+\_\+\+SYSTEM~1}
+
+
+
+Definition at line \mbox{\hyperlink{_endian_stuffs_8h_source_l00009}{9}} of file \mbox{\hyperlink{_endian_stuffs_8h_source}{Endian\+Stuffs.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_endian_stuffs_8h_a4f7f09e660541b3f2b8afd081a6e717a}\label{_endian_stuffs_8h_a4f7f09e660541b3f2b8afd081a6e717a}} 
+\index{EndianStuffs.h@{EndianStuffs.h}!convertFloat@{convertFloat}}
+\index{convertFloat@{convertFloat}!EndianStuffs.h@{EndianStuffs.h}}
+\doxysubsubsection{\texorpdfstring{convertFloat()}{convertFloat()}}
+{\footnotesize\ttfamily float convert\+Float (\begin{DoxyParamCaption}\item[{float}]{to\+Convert }\end{DoxyParamCaption})}
+

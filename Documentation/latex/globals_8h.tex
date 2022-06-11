@@ -1,0 +1,152 @@
+\hypertarget{globals_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/globals.h File Reference}
+\label{globals_8h}\index{C:/TeamSheeps/SwimFishySwim/globals.h@{C:/TeamSheeps/SwimFishySwim/globals.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for globals.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{globals_8h_a7e5191bd80e63bbf760311f95835ac1d}{PLATFORM\+\_\+\+IS\+\_\+\+WII}}~1
+\begin{DoxyCompactList}\small\item\em Defines the possible platforms that we might be porting for. Comment out all but the target platform. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{globals_8h_abec8763528553738ccd4a1a5228cf326}{SLEEP}}(value)~usleep(value)
+\begin{DoxyCompactList}\small\item\em Defines a set of common commands, structs, and values used on either platform. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\+\_\+\+INIT}}(x,  y,  z)~(Vector)\{x, y, z\}
+\item 
+\#define \mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\+\_\+\+PATH}}(f)~\mbox{\hyperlink{globals_8h_ad6f0641c7f85f3d6ae12fb3df5ca1ad1}{get\+Asset\+Path}}(\char`\"{}/\char`\"{}, f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector \mbox{\hyperlink{globals_8h_ad97e3fa7a7840fc7ef645c2784ddd1ff}{fast\+Vector\+Init}} (float x, float y, float z)
+\item 
+std\+::string \mbox{\hyperlink{globals_8h_ad6f0641c7f85f3d6ae12fb3df5ca1ad1}{get\+Asset\+Path}} (std\+::string root, std\+::string path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{globals_8h_a073429ea11c010aebf656df58cd7aebb}{g\+Time\+Scale}}
+\begin{DoxyCompactList}\small\item\em Defines a global variable for tracking time (e.\+g. Time passed to define how far an object should move)\end{DoxyCompactList}\item 
+float \mbox{\hyperlink{globals_8h_acd42c29e8b71c351eab33d038aa1aa82}{g\+This\+Frame\+Time}}
+\begin{DoxyCompactList}\small\item\em summary\texorpdfstring{$>$}{>} How long it took the last frame to render to the display \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{globals_8h_a0a009b59c547a584041b42624ff45d34}{g\+Last\+Frame\+Time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}\label{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}} 
+\index{globals.h@{globals.h}!ASSET\_PATH@{ASSET\_PATH}}
+\index{ASSET\_PATH@{ASSET\_PATH}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ASSET\_PATH}{ASSET\_PATH}}
+{\footnotesize\ttfamily \#define ASSET\+\_\+\+PATH(\begin{DoxyParamCaption}\item[{}]{f }\end{DoxyParamCaption})~\mbox{\hyperlink{globals_8h_ad6f0641c7f85f3d6ae12fb3df5ca1ad1}{get\+Asset\+Path}}(\char`\"{}/\char`\"{}, f)}
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00098}{98}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+\mbox{\Hypertarget{globals_8h_a7e5191bd80e63bbf760311f95835ac1d}\label{globals_8h_a7e5191bd80e63bbf760311f95835ac1d}} 
+\index{globals.h@{globals.h}!PLATFORM\_IS\_WII@{PLATFORM\_IS\_WII}}
+\index{PLATFORM\_IS\_WII@{PLATFORM\_IS\_WII}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{PLATFORM\_IS\_WII}{PLATFORM\_IS\_WII}}
+{\footnotesize\ttfamily \#define PLATFORM\+\_\+\+IS\+\_\+\+WII~1}
+
+
+
+Defines the possible platforms that we might be porting for. Comment out all but the target platform. 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00024}{24}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+\mbox{\Hypertarget{globals_8h_abec8763528553738ccd4a1a5228cf326}\label{globals_8h_abec8763528553738ccd4a1a5228cf326}} 
+\index{globals.h@{globals.h}!SLEEP@{SLEEP}}
+\index{SLEEP@{SLEEP}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{SLEEP}{SLEEP}}
+{\footnotesize\ttfamily \#define SLEEP(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~usleep(value)}
+
+
+
+Defines a set of common commands, structs, and values used on either platform. 
+
+summary\texorpdfstring{$>$}{>} decleared and defined in \mbox{\hyperlink{fast_vectors_8h}{fast\+Vectors.\+h}} and \mbox{\hyperlink{fast_vectors_8cpp}{fast\+Vectors.\+cpp}} used with functions below. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00068}{68}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+\mbox{\Hypertarget{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}\label{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}} 
+\index{globals.h@{globals.h}!VEC\_INIT@{VEC\_INIT}}
+\index{VEC\_INIT@{VEC\_INIT}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{VEC\_INIT}{VEC\_INIT}}
+{\footnotesize\ttfamily \#define VEC\+\_\+\+INIT(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y,  }\item[{}]{z }\end{DoxyParamCaption})~(Vector)\{x, y, z\}}
+
+summary\texorpdfstring{$>$}{>} Macros below used to determine where game data is pulled from. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00096}{96}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{globals_8h_ad97e3fa7a7840fc7ef645c2784ddd1ff}\label{globals_8h_ad97e3fa7a7840fc7ef645c2784ddd1ff}} 
+\index{globals.h@{globals.h}!fastVectorInit@{fastVectorInit}}
+\index{fastVectorInit@{fastVectorInit}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{fastVectorInit()}{fastVectorInit()}}
+{\footnotesize\ttfamily Vector fast\+Vector\+Init (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns a default path appended to another asset path in order to ensure assets can be loaded regardless of the path on the intended platform. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{fast_vectors_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{fast_vectors_8cpp_source}{fast\+Vectors.\+cpp}}.
+
+\mbox{\Hypertarget{globals_8h_ad6f0641c7f85f3d6ae12fb3df5ca1ad1}\label{globals_8h_ad6f0641c7f85f3d6ae12fb3df5ca1ad1}} 
+\index{globals.h@{globals.h}!getAssetPath@{getAssetPath}}
+\index{getAssetPath@{getAssetPath}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{getAssetPath()}{getAssetPath()}}
+{\footnotesize\ttfamily std\+::string get\+Asset\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{root,  }\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} We use the following macros to get around porting problems with compilers that support ISO C99 initializations (e.\+g. (Vector)\{0.\+0f, 0.\+0f, 0.\+0f\} and those that don\textquotesingle{}t. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{globals_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{globals_8cpp_source}{globals.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{globals_8h_a0a009b59c547a584041b42624ff45d34}\label{globals_8h_a0a009b59c547a584041b42624ff45d34}} 
+\index{globals.h@{globals.h}!gLastFrameTime@{gLastFrameTime}}
+\index{gLastFrameTime@{gLastFrameTime}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{gLastFrameTime}{gLastFrameTime}}
+{\footnotesize\ttfamily float g\+Last\+Frame\+Time\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gx_graphics_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{_gx_graphics_8cpp_source}{Gx\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{globals_8h_acd42c29e8b71c351eab33d038aa1aa82}\label{globals_8h_acd42c29e8b71c351eab33d038aa1aa82}} 
+\index{globals.h@{globals.h}!gThisFrameTime@{gThisFrameTime}}
+\index{gThisFrameTime@{gThisFrameTime}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{gThisFrameTime}{gThisFrameTime}}
+{\footnotesize\ttfamily float g\+This\+Frame\+Time\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+summary\texorpdfstring{$>$}{>} How long it took the last frame to render to the display 
+
+
+
+Definition at line \mbox{\hyperlink{_gx_graphics_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_gx_graphics_8cpp_source}{Gx\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{globals_8h_a073429ea11c010aebf656df58cd7aebb}\label{globals_8h_a073429ea11c010aebf656df58cd7aebb}} 
+\index{globals.h@{globals.h}!gTimeScale@{gTimeScale}}
+\index{gTimeScale@{gTimeScale}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{gTimeScale}{gTimeScale}}
+{\footnotesize\ttfamily float g\+Time\+Scale\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Defines a global variable for tracking time (e.\+g. Time passed to define how far an object should move)
+
+summary\texorpdfstring{$>$}{>} How long it took the most recent frame to render to the display
+
+summary\texorpdfstring{$>$}{>} Returns a default path appended to another asset path in order to ensure assets can be loaded regardless of the path on the intended platform. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{globals_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{globals_8cpp_source}{globals.\+cpp}}.
+

@@ -1,0 +1,253 @@
+\hypertarget{_gl_graphics_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Gl\+Graphics.cpp File Reference}
+\label{_gl_graphics_8cpp}\index{C:/TeamSheeps/SwimFishySwim/GlGraphics.cpp@{C:/TeamSheeps/SwimFishySwim/GlGraphics.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gl\+Graphics.\+h\char`\"{}}\newline
+Include dependency graph for Gl\+Graphics.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_ad476a1d3b86997c7c50c468383d7a09e}{Clamp}}(val,  min,  max)~ ((val) = (((val) $<$ (min)) ? (min) \+: ((val) $>$ (max)) ? (max) \+: (val)))
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_ad89d421a45ba4693f9e9ab7c23f3d5a5}{LIT\+\_\+\+X\+\_\+\+ANGLE}}~-\/55.\+0f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a7705c3c901f65b73294f3fc14dee4d05}{LIT\+\_\+\+Y\+\_\+\+ANGLE}}~45.\+0f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_aa5f894104864761cdcaeab557c77d913}{LIGHT\+\_\+\+MAP\+\_\+\+RENDER\+\_\+W}}~64
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a555dd3e095fc202139dca11279bfb2b3}{LIGHT\+\_\+\+MAP\+\_\+\+RENDER\+\_\+H}}~64
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a04347cce6090bdcbcf2ce6707db0a7b5}{LIGHT\+\_\+\+MAP\+\_\+\+WIDTH}}~64
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a2a61ef299c02e264dbee106bb85866f5}{LIGHT\+\_\+\+MAP\+\_\+\+HEIGHT}}~64
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a6a7faad59a19cb923c61b806d0bbb65c}{COLUMN\+\_\+\+FORMAT}}~6
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a08683ca900b5acecff46a990a22d7b7b}{TRANSPARENCY\+\_\+\+COLOR}}~0x\+FFFFFFFF
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_ac794698c898f1c74cc44572f4686bd44}{ASPECT}}~(10.\+0f/7.\+0f)
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_aa325bac4d7f30bfcea3df757e9a94dc5}{FOVY}}~(45.\+0f)
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a456442837e067aae927e4b86a87eac5f}{SKYBOX\+\_\+\+WIDTH}}~0.\+25f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a784882e2a380c09e038166a21439e5fd}{SKYBOX\+\_\+\+HEIGHT}}~1.\+0f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_aeebbe079b284b72e8937d36e7c489dea}{SKYBOX\+\_\+\+FRONT}}~0.\+0f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a4181af3d0f289b061dd6129f3d393559}{SKYBOX\+\_\+\+RIGHT}}~0.\+75f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a238db81a9ee2c536835754e9f7e8b713}{SKYBOX\+\_\+\+BACK}}~0.\+50f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_ad9597ada1a32672dda6909b1a8e08dbe}{SKYBOX\+\_\+\+LEFT}}~0.\+25f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_afe358296542aa6d1e43905ae9bf1e252}{SKYBOX\+\_\+\+SIZE}}~164.\+0f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_a40e9682dca247dce6b33f7581f766d27}{SCENEBOX\+\_\+\+SIZE}}~116.\+0f
+\item 
+\#define \mbox{\hyperlink{_gl_graphics_8cpp_af73537c93462cc97741f2b3fe7afa2b9}{SKYBOX\+\_\+\+BOTTOM}}~20.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_gl_graphics_8cpp_ac794698c898f1c74cc44572f4686bd44}\label{_gl_graphics_8cpp_ac794698c898f1c74cc44572f4686bd44}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!ASPECT@{ASPECT}}
+\index{ASPECT@{ASPECT}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{ASPECT}{ASPECT}}
+{\footnotesize\ttfamily \#define ASPECT~(10.\+0f/7.\+0f)}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_ad476a1d3b86997c7c50c468383d7a09e}\label{_gl_graphics_8cpp_ad476a1d3b86997c7c50c468383d7a09e}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!Clamp@{Clamp}}
+\index{Clamp@{Clamp}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{Clamp}{Clamp}}
+{\footnotesize\ttfamily \#define Clamp(\begin{DoxyParamCaption}\item[{}]{val,  }\item[{}]{min,  }\item[{}]{max }\end{DoxyParamCaption})~ ((val) = (((val) $<$ (min)) ? (min) \+: ((val) $>$ (max)) ? (max) \+: (val)))}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a6a7faad59a19cb923c61b806d0bbb65c}\label{_gl_graphics_8cpp_a6a7faad59a19cb923c61b806d0bbb65c}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!COLUMN\_FORMAT@{COLUMN\_FORMAT}}
+\index{COLUMN\_FORMAT@{COLUMN\_FORMAT}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{COLUMN\_FORMAT}{COLUMN\_FORMAT}}
+{\footnotesize\ttfamily \#define COLUMN\+\_\+\+FORMAT~6}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_aa325bac4d7f30bfcea3df757e9a94dc5}\label{_gl_graphics_8cpp_aa325bac4d7f30bfcea3df757e9a94dc5}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!FOVY@{FOVY}}
+\index{FOVY@{FOVY}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{FOVY}{FOVY}}
+{\footnotesize\ttfamily \#define FOVY~(45.\+0f)}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a2a61ef299c02e264dbee106bb85866f5}\label{_gl_graphics_8cpp_a2a61ef299c02e264dbee106bb85866f5}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!LIGHT\_MAP\_HEIGHT@{LIGHT\_MAP\_HEIGHT}}
+\index{LIGHT\_MAP\_HEIGHT@{LIGHT\_MAP\_HEIGHT}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{LIGHT\_MAP\_HEIGHT}{LIGHT\_MAP\_HEIGHT}}
+{\footnotesize\ttfamily \#define LIGHT\+\_\+\+MAP\+\_\+\+HEIGHT~64}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a555dd3e095fc202139dca11279bfb2b3}\label{_gl_graphics_8cpp_a555dd3e095fc202139dca11279bfb2b3}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!LIGHT\_MAP\_RENDER\_H@{LIGHT\_MAP\_RENDER\_H}}
+\index{LIGHT\_MAP\_RENDER\_H@{LIGHT\_MAP\_RENDER\_H}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{LIGHT\_MAP\_RENDER\_H}{LIGHT\_MAP\_RENDER\_H}}
+{\footnotesize\ttfamily \#define LIGHT\+\_\+\+MAP\+\_\+\+RENDER\+\_\+H~64}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_aa5f894104864761cdcaeab557c77d913}\label{_gl_graphics_8cpp_aa5f894104864761cdcaeab557c77d913}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!LIGHT\_MAP\_RENDER\_W@{LIGHT\_MAP\_RENDER\_W}}
+\index{LIGHT\_MAP\_RENDER\_W@{LIGHT\_MAP\_RENDER\_W}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{LIGHT\_MAP\_RENDER\_W}{LIGHT\_MAP\_RENDER\_W}}
+{\footnotesize\ttfamily \#define LIGHT\+\_\+\+MAP\+\_\+\+RENDER\+\_\+W~64}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a04347cce6090bdcbcf2ce6707db0a7b5}\label{_gl_graphics_8cpp_a04347cce6090bdcbcf2ce6707db0a7b5}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!LIGHT\_MAP\_WIDTH@{LIGHT\_MAP\_WIDTH}}
+\index{LIGHT\_MAP\_WIDTH@{LIGHT\_MAP\_WIDTH}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{LIGHT\_MAP\_WIDTH}{LIGHT\_MAP\_WIDTH}}
+{\footnotesize\ttfamily \#define LIGHT\+\_\+\+MAP\+\_\+\+WIDTH~64}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_ad89d421a45ba4693f9e9ab7c23f3d5a5}\label{_gl_graphics_8cpp_ad89d421a45ba4693f9e9ab7c23f3d5a5}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!LIT\_X\_ANGLE@{LIT\_X\_ANGLE}}
+\index{LIT\_X\_ANGLE@{LIT\_X\_ANGLE}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{LIT\_X\_ANGLE}{LIT\_X\_ANGLE}}
+{\footnotesize\ttfamily \#define LIT\+\_\+\+X\+\_\+\+ANGLE~-\/55.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a7705c3c901f65b73294f3fc14dee4d05}\label{_gl_graphics_8cpp_a7705c3c901f65b73294f3fc14dee4d05}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!LIT\_Y\_ANGLE@{LIT\_Y\_ANGLE}}
+\index{LIT\_Y\_ANGLE@{LIT\_Y\_ANGLE}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{LIT\_Y\_ANGLE}{LIT\_Y\_ANGLE}}
+{\footnotesize\ttfamily \#define LIT\+\_\+\+Y\+\_\+\+ANGLE~45.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a40e9682dca247dce6b33f7581f766d27}\label{_gl_graphics_8cpp_a40e9682dca247dce6b33f7581f766d27}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SCENEBOX\_SIZE@{SCENEBOX\_SIZE}}
+\index{SCENEBOX\_SIZE@{SCENEBOX\_SIZE}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SCENEBOX\_SIZE}{SCENEBOX\_SIZE}}
+{\footnotesize\ttfamily \#define SCENEBOX\+\_\+\+SIZE~116.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a238db81a9ee2c536835754e9f7e8b713}\label{_gl_graphics_8cpp_a238db81a9ee2c536835754e9f7e8b713}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SKYBOX\_BACK@{SKYBOX\_BACK}}
+\index{SKYBOX\_BACK@{SKYBOX\_BACK}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SKYBOX\_BACK}{SKYBOX\_BACK}}
+{\footnotesize\ttfamily \#define SKYBOX\+\_\+\+BACK~0.\+50f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_af73537c93462cc97741f2b3fe7afa2b9}\label{_gl_graphics_8cpp_af73537c93462cc97741f2b3fe7afa2b9}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SKYBOX\_BOTTOM@{SKYBOX\_BOTTOM}}
+\index{SKYBOX\_BOTTOM@{SKYBOX\_BOTTOM}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SKYBOX\_BOTTOM}{SKYBOX\_BOTTOM}}
+{\footnotesize\ttfamily \#define SKYBOX\+\_\+\+BOTTOM~20.\+0f}
+
+summary\texorpdfstring{$>$}{>} Constructor for the GLGraphics \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation Handles all the setup stuff... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_aeebbe079b284b72e8937d36e7c489dea}\label{_gl_graphics_8cpp_aeebbe079b284b72e8937d36e7c489dea}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SKYBOX\_FRONT@{SKYBOX\_FRONT}}
+\index{SKYBOX\_FRONT@{SKYBOX\_FRONT}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SKYBOX\_FRONT}{SKYBOX\_FRONT}}
+{\footnotesize\ttfamily \#define SKYBOX\+\_\+\+FRONT~0.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a784882e2a380c09e038166a21439e5fd}\label{_gl_graphics_8cpp_a784882e2a380c09e038166a21439e5fd}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SKYBOX\_HEIGHT@{SKYBOX\_HEIGHT}}
+\index{SKYBOX\_HEIGHT@{SKYBOX\_HEIGHT}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SKYBOX\_HEIGHT}{SKYBOX\_HEIGHT}}
+{\footnotesize\ttfamily \#define SKYBOX\+\_\+\+HEIGHT~1.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_ad9597ada1a32672dda6909b1a8e08dbe}\label{_gl_graphics_8cpp_ad9597ada1a32672dda6909b1a8e08dbe}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SKYBOX\_LEFT@{SKYBOX\_LEFT}}
+\index{SKYBOX\_LEFT@{SKYBOX\_LEFT}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SKYBOX\_LEFT}{SKYBOX\_LEFT}}
+{\footnotesize\ttfamily \#define SKYBOX\+\_\+\+LEFT~0.\+25f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a4181af3d0f289b061dd6129f3d393559}\label{_gl_graphics_8cpp_a4181af3d0f289b061dd6129f3d393559}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SKYBOX\_RIGHT@{SKYBOX\_RIGHT}}
+\index{SKYBOX\_RIGHT@{SKYBOX\_RIGHT}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SKYBOX\_RIGHT}{SKYBOX\_RIGHT}}
+{\footnotesize\ttfamily \#define SKYBOX\+\_\+\+RIGHT~0.\+75f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_afe358296542aa6d1e43905ae9bf1e252}\label{_gl_graphics_8cpp_afe358296542aa6d1e43905ae9bf1e252}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SKYBOX\_SIZE@{SKYBOX\_SIZE}}
+\index{SKYBOX\_SIZE@{SKYBOX\_SIZE}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SKYBOX\_SIZE}{SKYBOX\_SIZE}}
+{\footnotesize\ttfamily \#define SKYBOX\+\_\+\+SIZE~164.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a456442837e067aae927e4b86a87eac5f}\label{_gl_graphics_8cpp_a456442837e067aae927e4b86a87eac5f}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!SKYBOX\_WIDTH@{SKYBOX\_WIDTH}}
+\index{SKYBOX\_WIDTH@{SKYBOX\_WIDTH}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{SKYBOX\_WIDTH}{SKYBOX\_WIDTH}}
+{\footnotesize\ttfamily \#define SKYBOX\+\_\+\+WIDTH~0.\+25f}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{_gl_graphics_8cpp_a08683ca900b5acecff46a990a22d7b7b}\label{_gl_graphics_8cpp_a08683ca900b5acecff46a990a22d7b7b}} 
+\index{GlGraphics.cpp@{GlGraphics.cpp}!TRANSPARENCY\_COLOR@{TRANSPARENCY\_COLOR}}
+\index{TRANSPARENCY\_COLOR@{TRANSPARENCY\_COLOR}!GlGraphics.cpp@{GlGraphics.cpp}}
+\doxysubsubsection{\texorpdfstring{TRANSPARENCY\_COLOR}{TRANSPARENCY\_COLOR}}
+{\footnotesize\ttfamily \#define TRANSPARENCY\+\_\+\+COLOR~0x\+FFFFFFFF}
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+

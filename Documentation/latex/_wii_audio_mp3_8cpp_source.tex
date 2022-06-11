@@ -1,0 +1,101 @@
+\hypertarget{_wii_audio_mp3_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Wii\+Audio\+Mp3.cpp}
+\mbox{\hyperlink{_wii_audio_mp3_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00001}00001 \textcolor{comment}{// WiiAudioMp3.cpp}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00002}00002 \textcolor{comment}{// Provide a concrete implementation of IAudio supporting mp3 files in Wii homebrew}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WII}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}asndlib.h"{}}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}mp3player.h"{}}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_simple_wii_heap_8h}{SimpleWiiHeap.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_wii_audio_mp3_8h}{WiiAudioMp3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00017}\mbox{\hyperlink{class_wii_audio_mp3_a47eb229bf310d3995682ea3f4febb72a}{00017}} \mbox{\hyperlink{class_wii_audio_mp3_a47eb229bf310d3995682ea3f4febb72a}{WiiAudioMp3::WiiAudioMp3}}()}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00019}00019     myFilePointer = NULL;}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00020}00020     myAudioBuffer = NULL;}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00021}00021     MP3Player\_Init();}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00022}00022     MP3Player\_Volume(127);      }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00023}00023 \}       }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00028}\mbox{\hyperlink{class_wii_audio_mp3_a7ac58bc6ce63d50c9afe999ca54f5285}{00028}} \mbox{\hyperlink{class_wii_audio_mp3_a7ac58bc6ce63d50c9afe999ca54f5285}{WiiAudioMp3::\string~WiiAudioMp3}}()}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00029}00029 \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00030}00030     \textcolor{keywordflow}{if}(myAudioBuffer != NULL)}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00031}00031     \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00032}00032         MP3Player\_Stop();}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00033}00033         \textcolor{keywordflow}{if}(myAudioBuffer != NULL)}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00034}00034         \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00035}00035             \textcolor{keyword}{delete} myAudioBuffer;}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00036}00036             \textcolor{comment}{//free(myAudioBuffer);}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00037}00037             myAudioBuffer = NULL;}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00038}00038         \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00039}00039         \textcolor{comment}{//delete myAudioBuffer;     }}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00046}\mbox{\hyperlink{class_wii_audio_mp3_acda92d4a2e8ff55493edb841c8f95cb4}{00046}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wii_audio_mp3_acda92d4a2e8ff55493edb841c8f95cb4}{WiiAudioMp3::loadFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName)}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00047}00047 \{       }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00048}00048     \textcolor{keywordflow}{if}(myFilePointer == NULL)}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00049}00049     \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00050}00050         ASSERT(myAudioBuffer == NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00051}00051         myFilePointer = fopen(fileName, \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00052}00052         ASSERT(myFilePointer != NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00053}00053         fseek (myFilePointer, 0, SEEK\_END);     }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00054}00054         myBufferSize = ftell(myFilePointer);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00055}00055         \textcolor{comment}{//myAudioBuffer = simpleWiiHeapAllocatePersistentMemory(myBufferSize);          }}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00056}00056         myAudioBuffer = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[myBufferSize];}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00057}00057         ASSERT(myAudioBuffer != NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00058}00058         \textcolor{comment}{//myAudioBuffer = memalign(32, myBufferSize);       }}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00059}00059         rewind(myFilePointer);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00060}00060         fread(myAudioBuffer, 1, myBufferSize, myFilePointer);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00061}00061         fclose(myFilePointer);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00063}00063 \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00068}\mbox{\hyperlink{class_wii_audio_mp3_a1e7bd15d9e21442ffacafa970cdf0426}{00068}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wii_audio_mp3_a1e7bd15d9e21442ffacafa970cdf0426}{WiiAudioMp3::playOnce}}()}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00069}00069 \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00070}00070     ASSERT(myAudioBuffer != NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00071}00071     \textcolor{keywordflow}{if}(myAudioBuffer != NULL)}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00072}00072     \{   }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00073}00073         \textcolor{keywordflow}{if}(MP3Player\_IsPlaying() == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00074}00074         \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00075}00075             MP3Player\_PlayBuffer(myAudioBuffer, myBufferSize, NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00076}00076         \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00083}\mbox{\hyperlink{class_wii_audio_mp3_aa741e06eb637612fcb4b34f034b3e78c}{00083}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wii_audio_mp3_aa741e06eb637612fcb4b34f034b3e78c}{WiiAudioMp3::playLooped}}()}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00084}00084 \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00085}00085     ASSERT(myAudioBuffer != NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00086}00086     \textcolor{keywordflow}{if}(myAudioBuffer != NULL)}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00087}00087     \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00088}00088         \textcolor{keywordflow}{if}(MP3Player\_IsPlaying() == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00089}00089         \{           }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00090}00090             MP3Player\_PlayBuffer(myAudioBuffer, myBufferSize, NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00091}00091         \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00092}00092     \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00093}00093 \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00098}\mbox{\hyperlink{class_wii_audio_mp3_afff5d54d70e0dfa35af3433e513135b3}{00098}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wii_audio_mp3_afff5d54d70e0dfa35af3433e513135b3}{WiiAudioMp3::stop}}()}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00099}00099 \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00100}00100     ASSERT(myAudioBuffer != NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00101}00101     MP3Player\_Stop();}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00107}\mbox{\hyperlink{class_wii_audio_mp3_afc1ebca506b9ea70b544b52114ea48a7}{00107}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wii_audio_mp3_afc1ebca506b9ea70b544b52114ea48a7}{WiiAudioMp3::pause}}()}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00108}00108 \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00109}00109     ASSERT(myAudioBuffer != NULL);}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00110}00110 \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00115}\mbox{\hyperlink{class_wii_audio_mp3_a8d9c0636673ffe00383dd5264b25c659}{00115}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_wii_audio_mp3_a8d9c0636673ffe00383dd5264b25c659}{WiiAudioMp3::isPlaying}}()}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00116}00116 \{}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00117}00117     \textcolor{keywordflow}{return} MP3Player\_IsPlaying();}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00118}00118 \}}
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_wii_audio_mp3_8cpp_source_l00120}00120 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

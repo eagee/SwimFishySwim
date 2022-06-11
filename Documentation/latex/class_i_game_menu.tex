@@ -1,0 +1,91 @@
+\hypertarget{class_i_game_menu}{}\doxysection{IGame\+Menu Class Reference}
+\label{class_i_game_menu}\index{IGameMenu@{IGameMenu}}
+
+
+Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary\texorpdfstring{$>$}{>}  
+
+
+
+
+{\ttfamily \#include $<$IGame\+Menu.\+h$>$}
+
+
+
+Inheritance diagram for IGame\+Menu\+:
+% FIG 0
+
+
+Collaboration diagram for IGame\+Menu\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_game_menu_a2cb8e1fc2bdf968107e101f76bd0b1af}{IGame\+Menu}} ()
+\item 
+virtual \mbox{\hyperlink{class_i_game_menu_af3f45237851783d956849bd7ee667073}{$\sim$\+IGame\+Menu}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_game_menu_abff3300e8f56ef0c73520a9ba479f750}{execute\+Menu}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_menu_a0f720c2d82a421065a83265948df86e1}{click\+Button}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, int button\+ID)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_i_game_menu_8h_source_l00010}{10}} of file \mbox{\hyperlink{_i_game_menu_8h_source}{IGame\+Menu.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_game_menu_a2cb8e1fc2bdf968107e101f76bd0b1af}\label{class_i_game_menu_a2cb8e1fc2bdf968107e101f76bd0b1af}} 
+\index{IGameMenu@{IGameMenu}!IGameMenu@{IGameMenu}}
+\index{IGameMenu@{IGameMenu}!IGameMenu@{IGameMenu}}
+\doxysubsubsection{\texorpdfstring{IGameMenu()}{IGameMenu()}}
+{\footnotesize\ttfamily IGame\+Menu\+::\+IGame\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_i_game_menu_8h_source_l00013}{13}} of file \mbox{\hyperlink{_i_game_menu_8h_source}{IGame\+Menu.\+h}}.
+
+\mbox{\Hypertarget{class_i_game_menu_af3f45237851783d956849bd7ee667073}\label{class_i_game_menu_af3f45237851783d956849bd7ee667073}} 
+\index{IGameMenu@{IGameMenu}!````~IGameMenu@{$\sim$IGameMenu}}
+\index{````~IGameMenu@{$\sim$IGameMenu}!IGameMenu@{IGameMenu}}
+\doxysubsubsection{\texorpdfstring{$\sim$IGameMenu()}{~IGameMenu()}}
+{\footnotesize\ttfamily virtual IGame\+Menu\+::$\sim$\+IGame\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Runs a menu, and makes changes to the Level\+Info struct based on the menu selection... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_game_menu_8h_source_l00015}{15}} of file \mbox{\hyperlink{_i_game_menu_8h_source}{IGame\+Menu.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_game_menu_a0f720c2d82a421065a83265948df86e1}\label{class_i_game_menu_a0f720c2d82a421065a83265948df86e1}} 
+\index{IGameMenu@{IGameMenu}!clickButton@{clickButton}}
+\index{clickButton@{clickButton}!IGameMenu@{IGameMenu}}
+\doxysubsubsection{\texorpdfstring{clickButton()}{clickButton()}}
+{\footnotesize\ttfamily virtual void IGame\+Menu\+::click\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{int}]{button\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_end_of_wave_menu_a529fe3ecf2e2cec57540c3c9cd678049}{End\+Of\+Wave\+Menu}}, and \mbox{\hyperlink{class_in_game_menu_ad0aa7f83ca035064356d2df735bb73fb}{In\+Game\+Menu}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_i_game_menu_abff3300e8f56ef0c73520a9ba479f750}\label{class_i_game_menu_abff3300e8f56ef0c73520a9ba479f750}} 
+\index{IGameMenu@{IGameMenu}!executeMenu@{executeMenu}}
+\index{executeMenu@{executeMenu}!IGameMenu@{IGameMenu}}
+\doxysubsubsection{\texorpdfstring{executeMenu()}{executeMenu()}}
+{\footnotesize\ttfamily virtual void IGame\+Menu\+::execute\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Allows a particular button in a menu to be executed /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_end_of_wave_menu_a892fa309419fa827727efda474dc834b}{End\+Of\+Wave\+Menu}}, \mbox{\hyperlink{class_in_game_menu_a2d958ef77bea39424bc7c47be759034b}{In\+Game\+Menu}}, and \mbox{\hyperlink{class_new_tower_menu_a915e19d358d97e8da90133fc9c9123c6}{New\+Tower\+Menu}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_i_game_menu_8h}{IGame\+Menu.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,99 @@
+\hypertarget{class_i_subject}{}\doxysection{ISubject Class Reference}
+\label{class_i_subject}\index{ISubject@{ISubject}}
+
+
+{\ttfamily \#include $<$ISubject.\+h$>$}
+
+
+
+Inheritance diagram for ISubject\+:
+% FIG 0
+
+
+Collaboration diagram for ISubject\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_subject_a02979d6a122074594a8957dcdd97d316}{ISubject}} ()
+\item 
+virtual \mbox{\hyperlink{class_i_subject_a6c5b23ca0dc6b162f13b565319f78bd8}{$\sim$\+ISubject}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a5f5438de11e3a94bc58f6bc563fbf7c4}{register\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}{remove\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$observer)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}{notify\+Observers}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+summary\texorpdfstring{$>$}{>} Defines interface for implementing the Observer pattern in C++ /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_subject_8h_source_l00014}{14}} of file \mbox{\hyperlink{_i_subject_8h_source}{ISubject.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_subject_a02979d6a122074594a8957dcdd97d316}\label{class_i_subject_a02979d6a122074594a8957dcdd97d316}} 
+\index{ISubject@{ISubject}!ISubject@{ISubject}}
+\index{ISubject@{ISubject}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{ISubject()}{ISubject()}}
+{\footnotesize\ttfamily ISubject\+::\+ISubject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_i_subject_8h_source_l00017}{17}} of file \mbox{\hyperlink{_i_subject_8h_source}{ISubject.\+h}}.
+
+\mbox{\Hypertarget{class_i_subject_a6c5b23ca0dc6b162f13b565319f78bd8}\label{class_i_subject_a6c5b23ca0dc6b162f13b565319f78bd8}} 
+\index{ISubject@{ISubject}!````~ISubject@{$\sim$ISubject}}
+\index{````~ISubject@{$\sim$ISubject}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{$\sim$ISubject()}{~ISubject()}}
+{\footnotesize\ttfamily virtual ISubject\+::$\sim$\+ISubject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Registers an observer that implements the \mbox{\hyperlink{class_i_observer}{IObserver}} interface /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_subject_8h_source_l00018}{18}} of file \mbox{\hyperlink{_i_subject_8h_source}{ISubject.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}\label{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}} 
+\index{ISubject@{ISubject}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily virtual void ISubject\+::notify\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_subject_a130edb815aef88deebc1542a32fa9af9}{Subject}}, and \mbox{\hyperlink{class_test_subject_a33054d001e1906829aae046962e39e24}{Test\+Subject}}.
+
+\mbox{\Hypertarget{class_i_subject_a5f5438de11e3a94bc58f6bc563fbf7c4}\label{class_i_subject_a5f5438de11e3a94bc58f6bc563fbf7c4}} 
+\index{ISubject@{ISubject}!registerObserver@{registerObserver}}
+\index{registerObserver@{registerObserver}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{registerObserver()}{registerObserver()}}
+{\footnotesize\ttfamily virtual void ISubject\+::register\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Removes an observer that implements the \mbox{\hyperlink{class_i_observer}{IObserver}} interface /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_subject_a4406475155676da74b821029f7ce9467}{Subject}}, and \mbox{\hyperlink{class_test_subject_a6d4c7117d4220a3c6963f80914a41607}{Test\+Subject}}.
+
+\mbox{\Hypertarget{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}\label{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}} 
+\index{ISubject@{ISubject}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily virtual void ISubject\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Notifies registered observers of a change in state /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_subject_a4cecb738e1b6e7b60ad527dd05fe85df}{Subject}}, and \mbox{\hyperlink{class_test_subject_a178568de298a150847eb096604303c5a}{Test\+Subject}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_i_subject_8h}{ISubject.\+h}}\end{DoxyCompactItemize}

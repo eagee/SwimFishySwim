@@ -1,0 +1,50 @@
+\hypertarget{_test_observer_pattern_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Test\+Observer\+Pattern.h}
+\mbox{\hyperlink{_test_observer_pattern_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00001}00001 \textcolor{comment}{// observerpatterntest.h}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00002}00002 \textcolor{comment}{// Defines a concrete implementation for the ITest interface}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00003}00003 \textcolor{comment}{// used to test the ISubect / IObserver implementations ...}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00004}00004 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00006}00006 \textcolor{preprocessor}{\#ifndef TESTOBSERVERPATTERN\_H}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00007}00007 \textcolor{preprocessor}{\#define TESTOBSERVERPATTERN\_H}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_observer_8h}{IObserver.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00010}00010 \textcolor{keyword}{class }\mbox{\hyperlink{class_subject}{Subject}};}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00015}\mbox{\hyperlink{class_test_subject}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{class_test_subject}{TestSubject}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_subject}{ISubject}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00017}00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00021}00021     \mbox{\hyperlink{class_test_subject_a21cd8e0e0f69c380f121cae532566c50}{TestSubject}}();}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00026}00026     \mbox{\hyperlink{class_test_subject_ad0fef4359af83c939ef34cf9e54cdca3}{\string~TestSubject}}();}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00031}00031     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_subject_a6d4c7117d4220a3c6963f80914a41607}{registerObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer);}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00032}00032     }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00036}00036     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_subject_a178568de298a150847eb096604303c5a}{removeObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer);   }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00041}00041     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_subject_a33054d001e1906829aae046962e39e24}{notifyObservers}} ();}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00043}00043 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00044}00044     \mbox{\hyperlink{class_subject}{Subject}} *mySubject;}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00045}00045 \};}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00050}\mbox{\hyperlink{class_test_observer_pattern}{00050}} \textcolor{keyword}{class }\mbox{\hyperlink{class_test_observer_pattern}{TestObserverPattern}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_test}{ITest}}, \textcolor{keyword}{public} \mbox{\hyperlink{class_i_observer}{IObserver}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00051}00051 \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00052}00052     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00056}00056       \mbox{\hyperlink{class_test_observer_pattern_a09cb0c5a760273ee8da5ed0c98fe007e}{TestObserverPattern}}();}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00057}00057       }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00061}00061       \mbox{\hyperlink{class_test_observer_pattern_a9a692cbbbbc86b4df830292d494804d8}{\string~TestObserverPattern}}();}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00062}00062       }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00066}00066       \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_test_observer_pattern_ac25123b6a0a12eb47aee635d9b0b027f}{executeTest}}();   }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00067}00067       }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00071}00071       \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_observer_pattern_a63bc4fa60be2b0ee2318ce2a4b44b39e}{update}}(\mbox{\hyperlink{class_i_subject}{ISubject}} *subject);}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00072}00072     }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00073}00073     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00074}00074       \textcolor{keywordtype}{bool} myTestSubjectSentUpdate;}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00075}00075       \mbox{\hyperlink{class_test_subject}{TestSubject}} *myTestSubject;}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00076}00076 \};}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8h_source_l00078}00078 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

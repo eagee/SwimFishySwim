@@ -1,0 +1,190 @@
+\hypertarget{class_mem_track_1_1_block_header}{}\doxysection{Mem\+Track\+::Block\+Header Class Reference}
+\label{class_mem_track_1_1_block_header}\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+
+
+Collaboration diagram for Mem\+Track\+::Block\+Header\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mem_track_1_1_block_header_a507547abeb72420ccc1e15ca2d2979f1}{Block\+Header}} (size\+\_\+t requested\+Size)
+\item 
+\mbox{\hyperlink{class_mem_track_1_1_block_header_ae272b50428a9a2c28124c0fecf851915}{$\sim$\+Block\+Header}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_mem_track_1_1_block_header_ac8b53e3cfe9fc103f8fef91fb9c822ea}{Get\+Requested\+Size}} () const
+\item 
+char const $\ast$ \mbox{\hyperlink{class_mem_track_1_1_block_header_abf9a779a9b8e82e8028341fc513c4c39}{Get\+Filename}} () const
+\item 
+int \mbox{\hyperlink{class_mem_track_1_1_block_header_a817f74fc613479915f3e50c3b83e1463}{Get\+Line\+Num}} () const
+\item 
+char const $\ast$ \mbox{\hyperlink{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}{Get\+Type\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_mem_track_1_1_block_header_a08ad6bf3f97cffae3b78012d35d5154c}{Stamp}} (char const $\ast$filename, int line\+Num, char const $\ast$type\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_mem_track_1_1_block_header_af1e99faac9730ba834bf0cc5d7ec0106}{Add\+Node}} (\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$node)
+\item 
+static void \mbox{\hyperlink{class_mem_track_1_1_block_header_a3980e372d46c2b50fc58104cdc88f037}{Remove\+Node}} (\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$node)
+\item 
+static size\+\_\+t \mbox{\hyperlink{class_mem_track_1_1_block_header_ae57e5e9fcbc414cc37b05c49d2424c39}{Count\+Blocks}} ()
+\item 
+static void \mbox{\hyperlink{class_mem_track_1_1_block_header_a66b917e29ed5fe282e93cada27a4d8f8}{Get\+Blocks}} (\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$$\ast$block\+Header\+PP)
+\item 
+static bool \mbox{\hyperlink{class_mem_track_1_1_block_header_a8e817ac9a699b5bc7b9f0ea93cd48984}{Type\+Greater\+Than}} (\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$header1, \mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$header2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_a507547abeb72420ccc1e15ca2d2979f1}\label{class_mem_track_1_1_block_header_a507547abeb72420ccc1e15ca2d2979f1}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!BlockHeader@{BlockHeader}}
+\index{BlockHeader@{BlockHeader}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{BlockHeader()}{BlockHeader()}}
+{\footnotesize\ttfamily Mem\+Track\+::\+Block\+Header\+::\+Block\+Header (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{requested\+Size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_ae272b50428a9a2c28124c0fecf851915}\label{class_mem_track_1_1_block_header_ae272b50428a9a2c28124c0fecf851915}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!````~BlockHeader@{$\sim$BlockHeader}}
+\index{````~BlockHeader@{$\sim$BlockHeader}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{$\sim$BlockHeader()}{~BlockHeader()}}
+{\footnotesize\ttfamily Mem\+Track\+::\+Block\+Header\+::$\sim$\+Block\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_af1e99faac9730ba834bf0cc5d7ec0106}\label{class_mem_track_1_1_block_header_af1e99faac9730ba834bf0cc5d7ec0106}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!AddNode@{AddNode}}
+\index{AddNode@{AddNode}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{AddNode()}{AddNode()}}
+{\footnotesize\ttfamily void Mem\+Track\+::\+Block\+Header\+::\+Add\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_ae57e5e9fcbc414cc37b05c49d2424c39}\label{class_mem_track_1_1_block_header_ae57e5e9fcbc414cc37b05c49d2424c39}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!CountBlocks@{CountBlocks}}
+\index{CountBlocks@{CountBlocks}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{CountBlocks()}{CountBlocks()}}
+{\footnotesize\ttfamily size\+\_\+t Mem\+Track\+::\+Block\+Header\+::\+Count\+Blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_a66b917e29ed5fe282e93cada27a4d8f8}\label{class_mem_track_1_1_block_header_a66b917e29ed5fe282e93cada27a4d8f8}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!GetBlocks@{GetBlocks}}
+\index{GetBlocks@{GetBlocks}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{GetBlocks()}{GetBlocks()}}
+{\footnotesize\ttfamily void Mem\+Track\+::\+Block\+Header\+::\+Get\+Blocks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$$\ast$}]{block\+Header\+PP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00192}{192}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_abf9a779a9b8e82e8028341fc513c4c39}\label{class_mem_track_1_1_block_header_abf9a779a9b8e82e8028341fc513c4c39}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!GetFilename@{GetFilename}}
+\index{GetFilename@{GetFilename}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{GetFilename()}{GetFilename()}}
+{\footnotesize\ttfamily char const  $\ast$ Mem\+Track\+::\+Block\+Header\+::\+Get\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_a817f74fc613479915f3e50c3b83e1463}\label{class_mem_track_1_1_block_header_a817f74fc613479915f3e50c3b83e1463}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!GetLineNum@{GetLineNum}}
+\index{GetLineNum@{GetLineNum}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{GetLineNum()}{GetLineNum()}}
+{\footnotesize\ttfamily int Mem\+Track\+::\+Block\+Header\+::\+Get\+Line\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_ac8b53e3cfe9fc103f8fef91fb9c822ea}\label{class_mem_track_1_1_block_header_ac8b53e3cfe9fc103f8fef91fb9c822ea}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!GetRequestedSize@{GetRequestedSize}}
+\index{GetRequestedSize@{GetRequestedSize}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{GetRequestedSize()}{GetRequestedSize()}}
+{\footnotesize\ttfamily size\+\_\+t Mem\+Track\+::\+Block\+Header\+::\+Get\+Requested\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}\label{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!GetTypeName@{GetTypeName}}
+\index{GetTypeName@{GetTypeName}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{GetTypeName()}{GetTypeName()}}
+{\footnotesize\ttfamily char const  $\ast$ Mem\+Track\+::\+Block\+Header\+::\+Get\+Type\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_a3980e372d46c2b50fc58104cdc88f037}\label{class_mem_track_1_1_block_header_a3980e372d46c2b50fc58104cdc88f037}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!RemoveNode@{RemoveNode}}
+\index{RemoveNode@{RemoveNode}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{RemoveNode()}{RemoveNode()}}
+{\footnotesize\ttfamily void Mem\+Track\+::\+Block\+Header\+::\+Remove\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_a08ad6bf3f97cffae3b78012d35d5154c}\label{class_mem_track_1_1_block_header_a08ad6bf3f97cffae3b78012d35d5154c}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!Stamp@{Stamp}}
+\index{Stamp@{Stamp}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{Stamp()}{Stamp()}}
+{\footnotesize\ttfamily void Mem\+Track\+::\+Block\+Header\+::\+Stamp (\begin{DoxyParamCaption}\item[{char const $\ast$}]{filename,  }\item[{int}]{line\+Num,  }\item[{char const $\ast$}]{type\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+\mbox{\Hypertarget{class_mem_track_1_1_block_header_a8e817ac9a699b5bc7b9f0ea93cd48984}\label{class_mem_track_1_1_block_header_a8e817ac9a699b5bc7b9f0ea93cd48984}} 
+\index{MemTrack::BlockHeader@{MemTrack::BlockHeader}!TypeGreaterThan@{TypeGreaterThan}}
+\index{TypeGreaterThan@{TypeGreaterThan}!MemTrack::BlockHeader@{MemTrack::BlockHeader}}
+\doxysubsubsection{\texorpdfstring{TypeGreaterThan()}{TypeGreaterThan()}}
+{\footnotesize\ttfamily bool Mem\+Track\+::\+Block\+Header\+::\+Type\+Greater\+Than (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$}]{header1,  }\item[{\mbox{\hyperlink{class_mem_track_1_1_block_header}{Block\+Header}} $\ast$}]{header2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00205}{205}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 8
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_mem_track_8cpp}{Mem\+Track.\+cpp}}\end{DoxyCompactItemize}

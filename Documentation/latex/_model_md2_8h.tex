@@ -1,0 +1,147 @@
+\hypertarget{_model_md2_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Model\+Md2.h File Reference}
+\label{_model_md2_8h}\index{C:/TeamSheeps/SwimFishySwim/ModelMd2.h@{C:/TeamSheeps/SwimFishySwim/ModelMd2.h}}
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}IGraphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IModel.\+h\char`\"{}}\newline
+Include dependency graph for Model\+Md2.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmd2_header_data}{md2\+Header\+Data}}
+\item 
+struct \mbox{\hyperlink{structmd2_vertex}{md2\+Vertex}}
+\item 
+struct \mbox{\hyperlink{structmd2_triangle}{md2\+Triangle}}
+\item 
+struct \mbox{\hyperlink{structmd2_tex_coord}{md2\+Tex\+Coord}}
+\item 
+struct \mbox{\hyperlink{structmd2_frame}{md2\+Frame}}
+\item 
+struct \mbox{\hyperlink{structmd2_animation}{md2\+Animation}}
+\item 
+class \mbox{\hyperlink{class_model_md2}{Model\+Md2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}{TOTAL\+\_\+\+MD2\+\_\+\+ANIMATIONS}}~25
+\item 
+\#define \mbox{\hyperlink{_model_md2_8h_a1cbf85403c0730662ea233c622428197}{NUMBER\+\_\+\+OF\+\_\+\+NORMALS}}~162
+\item 
+\#define \mbox{\hyperlink{_model_md2_8h_ad2ad42be75db15c49272cf6f6dca0da7}{NUMBER\+\_\+\+OF\+\_\+\+DOT\+\_\+\+PRODUCTS}}~16
+\item 
+\#define \mbox{\hyperlink{_model_md2_8h_ae5dccff48c8a942309f5ed8d55ae6f82}{NUMBER\+\_\+\+OF\+\_\+\+SCALES\+\_\+\+IN\+\_\+\+FRAME}}~3
+\item 
+\#define \mbox{\hyperlink{_model_md2_8h_a497b9fbf99a9181efdd94022f9385177}{NUMBER\+\_\+\+OF\+\_\+\+TRANSLATES\+\_\+\+IN\+\_\+\+FRAME}}~3
+\item 
+\#define \mbox{\hyperlink{_model_md2_8h_a379f3cc545c378aee137a12df1f8ba24}{NUMBER\+\_\+\+OF\+\_\+\+CHARS\+\_\+\+IN\+\_\+\+FRAME}}~16
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}} $>$ \mbox{\hyperlink{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}{Scaled\+Frame}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}{Scaled\+Frame}} $>$ \mbox{\hyperlink{_model_md2_8h_acae273cfe1459f059d7a65a862d5d48f}{Scaled\+Md2\+Frames}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} $>$ \mbox{\hyperlink{_model_md2_8h_aa7715584f7081547970249e91fd1907d}{Vertex\+Frame}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_model_md2_8h_a379f3cc545c378aee137a12df1f8ba24}\label{_model_md2_8h_a379f3cc545c378aee137a12df1f8ba24}} 
+\index{ModelMd2.h@{ModelMd2.h}!NUMBER\_OF\_CHARS\_IN\_FRAME@{NUMBER\_OF\_CHARS\_IN\_FRAME}}
+\index{NUMBER\_OF\_CHARS\_IN\_FRAME@{NUMBER\_OF\_CHARS\_IN\_FRAME}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_CHARS\_IN\_FRAME}{NUMBER\_OF\_CHARS\_IN\_FRAME}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+CHARS\+\_\+\+IN\+\_\+\+FRAME~16}
+
+summary\texorpdfstring{$>$}{>} Defines frame data as stored in the md2 file (float data compressed into 16 bits) /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00089}{89}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+
+\mbox{\Hypertarget{_model_md2_8h_ad2ad42be75db15c49272cf6f6dca0da7}\label{_model_md2_8h_ad2ad42be75db15c49272cf6f6dca0da7}} 
+\index{ModelMd2.h@{ModelMd2.h}!NUMBER\_OF\_DOT\_PRODUCTS@{NUMBER\_OF\_DOT\_PRODUCTS}}
+\index{NUMBER\_OF\_DOT\_PRODUCTS@{NUMBER\_OF\_DOT\_PRODUCTS}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_DOT\_PRODUCTS}{NUMBER\_OF\_DOT\_PRODUCTS}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+DOT\+\_\+\+PRODUCTS~16}
+
+
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00015}{15}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+
+\mbox{\Hypertarget{_model_md2_8h_a1cbf85403c0730662ea233c622428197}\label{_model_md2_8h_a1cbf85403c0730662ea233c622428197}} 
+\index{ModelMd2.h@{ModelMd2.h}!NUMBER\_OF\_NORMALS@{NUMBER\_OF\_NORMALS}}
+\index{NUMBER\_OF\_NORMALS@{NUMBER\_OF\_NORMALS}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_NORMALS}{NUMBER\_OF\_NORMALS}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+NORMALS~162}
+
+
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00014}{14}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+
+\mbox{\Hypertarget{_model_md2_8h_ae5dccff48c8a942309f5ed8d55ae6f82}\label{_model_md2_8h_ae5dccff48c8a942309f5ed8d55ae6f82}} 
+\index{ModelMd2.h@{ModelMd2.h}!NUMBER\_OF\_SCALES\_IN\_FRAME@{NUMBER\_OF\_SCALES\_IN\_FRAME}}
+\index{NUMBER\_OF\_SCALES\_IN\_FRAME@{NUMBER\_OF\_SCALES\_IN\_FRAME}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_SCALES\_IN\_FRAME}{NUMBER\_OF\_SCALES\_IN\_FRAME}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+SCALES\+\_\+\+IN\+\_\+\+FRAME~3}
+
+
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00083}{83}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+
+\mbox{\Hypertarget{_model_md2_8h_a497b9fbf99a9181efdd94022f9385177}\label{_model_md2_8h_a497b9fbf99a9181efdd94022f9385177}} 
+\index{ModelMd2.h@{ModelMd2.h}!NUMBER\_OF\_TRANSLATES\_IN\_FRAME@{NUMBER\_OF\_TRANSLATES\_IN\_FRAME}}
+\index{NUMBER\_OF\_TRANSLATES\_IN\_FRAME@{NUMBER\_OF\_TRANSLATES\_IN\_FRAME}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_TRANSLATES\_IN\_FRAME}{NUMBER\_OF\_TRANSLATES\_IN\_FRAME}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+TRANSLATES\+\_\+\+IN\+\_\+\+FRAME~3}
+
+
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00084}{84}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+
+\mbox{\Hypertarget{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}\label{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}} 
+\index{ModelMd2.h@{ModelMd2.h}!TOTAL\_MD2\_ANIMATIONS@{TOTAL\_MD2\_ANIMATIONS}}
+\index{TOTAL\_MD2\_ANIMATIONS@{TOTAL\_MD2\_ANIMATIONS}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_MD2\_ANIMATIONS}{TOTAL\_MD2\_ANIMATIONS}}
+{\footnotesize\ttfamily \#define TOTAL\+\_\+\+MD2\+\_\+\+ANIMATIONS~25}
+
+
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00013}{13}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}\label{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}} 
+\index{ModelMd2.h@{ModelMd2.h}!ScaledFrame@{ScaledFrame}}
+\index{ScaledFrame@{ScaledFrame}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{ScaledFrame}{ScaledFrame}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}}$>$ \mbox{\hyperlink{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}{Scaled\+Frame}}}
+
+
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00116}{116}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+
+\mbox{\Hypertarget{_model_md2_8h_acae273cfe1459f059d7a65a862d5d48f}\label{_model_md2_8h_acae273cfe1459f059d7a65a862d5d48f}} 
+\index{ModelMd2.h@{ModelMd2.h}!ScaledMd2Frames@{ScaledMd2Frames}}
+\index{ScaledMd2Frames@{ScaledMd2Frames}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{ScaledMd2Frames}{ScaledMd2Frames}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}{Scaled\+Frame}}$>$ \mbox{\hyperlink{_model_md2_8h_acae273cfe1459f059d7a65a862d5d48f}{Scaled\+Md2\+Frames}}}
+
+
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00117}{117}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+
+\mbox{\Hypertarget{_model_md2_8h_aa7715584f7081547970249e91fd1907d}\label{_model_md2_8h_aa7715584f7081547970249e91fd1907d}} 
+\index{ModelMd2.h@{ModelMd2.h}!VertexFrame@{VertexFrame}}
+\index{VertexFrame@{VertexFrame}!ModelMd2.h@{ModelMd2.h}}
+\doxysubsubsection{\texorpdfstring{VertexFrame}{VertexFrame}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}}$>$ \mbox{\hyperlink{_model_md2_8h_aa7715584f7081547970249e91fd1907d}{Vertex\+Frame}}}
+
+summary\texorpdfstring{$>$}{>} Definies an implementation of the md2 model format -\/ perfect for flat fish, right? /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_model_md2_8h_source_l00118}{118}} of file \mbox{\hyperlink{_model_md2_8h_source}{Model\+Md2.\+h}}.
+

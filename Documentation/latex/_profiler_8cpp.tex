@@ -1,0 +1,133 @@
+\hypertarget{_profiler_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Profiler.cpp File Reference}
+\label{_profiler_8cpp}\index{C:/TeamSheeps/SwimFishySwim/Profiler.cpp@{C:/TeamSheeps/SwimFishySwim/Profiler.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$ogcsys.\+h$>$}\newline
+{\ttfamily \#include $<$ogc/lwp\+\_\+watchdog.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Profiler.\+h\char`\"{}}\newline
+Include dependency graph for Profiler.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_method_profile}{tag\+Method\+Profile}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structtag_method_profile}{tag\+Method\+Profile}} \mbox{\hyperlink{_profiler_8cpp_a3499b125f247cb56e36afbc0d21f479d}{Method\+Profile}}
+\item 
+typedef std\+::map$<$ std\+::string, \mbox{\hyperlink{_profiler_8cpp_a3499b125f247cb56e36afbc0d21f479d}{Method\+Profile}} $>$ \mbox{\hyperlink{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}{Method\+Data}}
+\item 
+typedef Method\+Data\+::iterator \mbox{\hyperlink{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}{Method\+Data\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_profiler_8cpp_abdc024add1c98743eb6be93ee3177d8d}{profile\+Start}} (std\+::string method\+Name)
+\begin{DoxyCompactList}\small\item\em Starts profiling a routine, calls the routine, then stops profiling the routine... /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_profiler_8cpp_a57be468575124d3e2b72fdc7e405b806}{profile\+Stop}} (std\+::string method\+Name)
+\item 
+void \mbox{\hyperlink{_profiler_8cpp_af6f4d8d9d59f722dbabada97519b0d52}{output\+Profiling\+Information}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}{Method\+Data}} \mbox{\hyperlink{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}{g\+Method\+Data}}
+\item 
+\mbox{\hyperlink{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}{Method\+Data\+Iterator}} \mbox{\hyperlink{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}{g\+Method\+Iterator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}\label{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}} 
+\index{Profiler.cpp@{Profiler.cpp}!MethodData@{MethodData}}
+\index{MethodData@{MethodData}!Profiler.cpp@{Profiler.cpp}}
+\doxysubsubsection{\texorpdfstring{MethodData}{MethodData}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, \mbox{\hyperlink{_profiler_8cpp_a3499b125f247cb56e36afbc0d21f479d}{Method\+Profile}}$>$ \mbox{\hyperlink{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}{Method\+Data}}}
+
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\mbox{\Hypertarget{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}\label{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}} 
+\index{Profiler.cpp@{Profiler.cpp}!MethodDataIterator@{MethodDataIterator}}
+\index{MethodDataIterator@{MethodDataIterator}!Profiler.cpp@{Profiler.cpp}}
+\doxysubsubsection{\texorpdfstring{MethodDataIterator}{MethodDataIterator}}
+{\footnotesize\ttfamily typedef Method\+Data\+::iterator \mbox{\hyperlink{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}{Method\+Data\+Iterator}}}
+
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\mbox{\Hypertarget{_profiler_8cpp_a3499b125f247cb56e36afbc0d21f479d}\label{_profiler_8cpp_a3499b125f247cb56e36afbc0d21f479d}} 
+\index{Profiler.cpp@{Profiler.cpp}!MethodProfile@{MethodProfile}}
+\index{MethodProfile@{MethodProfile}!Profiler.cpp@{Profiler.cpp}}
+\doxysubsubsection{\texorpdfstring{MethodProfile}{MethodProfile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_method_profile}{tag\+Method\+Profile}} \mbox{\hyperlink{_profiler_8cpp_a3499b125f247cb56e36afbc0d21f479d}{Method\+Profile}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_profiler_8cpp_af6f4d8d9d59f722dbabada97519b0d52}\label{_profiler_8cpp_af6f4d8d9d59f722dbabada97519b0d52}} 
+\index{Profiler.cpp@{Profiler.cpp}!outputProfilingInformation@{outputProfilingInformation}}
+\index{outputProfilingInformation@{outputProfilingInformation}!Profiler.cpp@{Profiler.cpp}}
+\doxysubsubsection{\texorpdfstring{outputProfilingInformation()}{outputProfilingInformation()}}
+{\footnotesize\ttfamily void output\+Profiling\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_profiler_8cpp_abdc024add1c98743eb6be93ee3177d8d}\label{_profiler_8cpp_abdc024add1c98743eb6be93ee3177d8d}} 
+\index{Profiler.cpp@{Profiler.cpp}!profileStart@{profileStart}}
+\index{profileStart@{profileStart}!Profiler.cpp@{Profiler.cpp}}
+\doxysubsubsection{\texorpdfstring{profileStart()}{profileStart()}}
+{\footnotesize\ttfamily void profile\+Start (\begin{DoxyParamCaption}\item[{std\+::string}]{method\+Name }\end{DoxyParamCaption})}
+
+
+
+Starts profiling a routine, calls the routine, then stops profiling the routine... /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Records the time the profiler was stopped, and adds the total time elapsed to a total for that function /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\mbox{\Hypertarget{_profiler_8cpp_a57be468575124d3e2b72fdc7e405b806}\label{_profiler_8cpp_a57be468575124d3e2b72fdc7e405b806}} 
+\index{Profiler.cpp@{Profiler.cpp}!profileStop@{profileStop}}
+\index{profileStop@{profileStop}!Profiler.cpp@{Profiler.cpp}}
+\doxysubsubsection{\texorpdfstring{profileStop()}{profileStop()}}
+{\footnotesize\ttfamily void profile\+Stop (\begin{DoxyParamCaption}\item[{std\+::string}]{method\+Name }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Writes output from the profiler to the display /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}\label{_profiler_8cpp_aec1c38ab6bae34f7fc4f35cdc63e25fb}} 
+\index{Profiler.cpp@{Profiler.cpp}!gMethodData@{gMethodData}}
+\index{gMethodData@{gMethodData}!Profiler.cpp@{Profiler.cpp}}
+\doxysubsubsection{\texorpdfstring{gMethodData}{gMethodData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_profiler_8cpp_ab4674579cfaf3bff044be780cc1179d3}{Method\+Data}} g\+Method\+Data}
+
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\mbox{\Hypertarget{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}\label{_profiler_8cpp_af39fefd9e711a78f3b12e9db2e8df9db}} 
+\index{Profiler.cpp@{Profiler.cpp}!gMethodIterator@{gMethodIterator}}
+\index{gMethodIterator@{gMethodIterator}!Profiler.cpp@{Profiler.cpp}}
+\doxysubsubsection{\texorpdfstring{gMethodIterator}{gMethodIterator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_profiler_8cpp_aaa4a8c81878e7ac0046fb7923c486bef}{Method\+Data\+Iterator}} g\+Method\+Iterator}
+
+summary\texorpdfstring{$>$}{>} Records the time the profiler was started /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+

@@ -1,0 +1,91 @@
+\hypertarget{_end_of_wave_menu_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+End\+Of\+Wave\+Menu.cpp File Reference}
+\label{_end_of_wave_menu_8cpp}\index{C:/TeamSheeps/SwimFishySwim/EndOfWaveMenu.cpp@{C:/TeamSheeps/SwimFishySwim/EndOfWaveMenu.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IAudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Menu\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IGame\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}End\+Of\+Wave\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Menu\+Methods.\+h\char`\"{}}\newline
+Include dependency graph for End\+Of\+Wave\+Menu.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_end_of_wave_menu_8cpp_a9baf5ae0036f6978cb4182a718b05973}{PROJECTILE\+\_\+\+COST\+\_\+\+MODIFIER}}~250
+\item 
+\#define \mbox{\hyperlink{_end_of_wave_menu_8cpp_af7452dfa6bdc4de903f7b9aea4df88a8}{ATTACK\+\_\+\+COST\+\_\+\+MODIFIER}}~400
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bafd6734429217a9d45122278b6ed6b20d}{SAVE\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba0da2988988498af64df963334cb0b974}{FINISHED\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba1b625305602bed0da9f97fd0e41fd5d0}{TOWER\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}{ATTACK\+\_\+\+BUTTON}}
+, \newline
+\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}{PROJECTILE\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8aab87c2dfa28e3f0756663964e7b94b}{HEALTH\+\_\+\+BUTTON}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_end_of_wave_menu_8cpp_af7452dfa6bdc4de903f7b9aea4df88a8}\label{_end_of_wave_menu_8cpp_af7452dfa6bdc4de903f7b9aea4df88a8}} 
+\index{EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}!ATTACK\_COST\_MODIFIER@{ATTACK\_COST\_MODIFIER}}
+\index{ATTACK\_COST\_MODIFIER@{ATTACK\_COST\_MODIFIER}!EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{ATTACK\_COST\_MODIFIER}{ATTACK\_COST\_MODIFIER}}
+{\footnotesize\ttfamily \#define ATTACK\+\_\+\+COST\+\_\+\+MODIFIER~400}
+
+
+
+Definition at line \mbox{\hyperlink{_end_of_wave_menu_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_end_of_wave_menu_8cpp_source}{End\+Of\+Wave\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{_end_of_wave_menu_8cpp_a9baf5ae0036f6978cb4182a718b05973}\label{_end_of_wave_menu_8cpp_a9baf5ae0036f6978cb4182a718b05973}} 
+\index{EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}!PROJECTILE\_COST\_MODIFIER@{PROJECTILE\_COST\_MODIFIER}}
+\index{PROJECTILE\_COST\_MODIFIER@{PROJECTILE\_COST\_MODIFIER}!EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{PROJECTILE\_COST\_MODIFIER}{PROJECTILE\_COST\_MODIFIER}}
+{\footnotesize\ttfamily \#define PROJECTILE\+\_\+\+COST\+\_\+\+MODIFIER~250}
+
+
+
+Definition at line \mbox{\hyperlink{_end_of_wave_menu_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_end_of_wave_menu_8cpp_source}{End\+Of\+Wave\+Menu.\+cpp}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55b}\label{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55b}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAVE\_BUTTON@{SAVE\_BUTTON}!EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}}\index{EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}!SAVE\_BUTTON@{SAVE\_BUTTON}}}\mbox{\Hypertarget{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bafd6734429217a9d45122278b6ed6b20d}\label{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bafd6734429217a9d45122278b6ed6b20d}} 
+SAVE\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FINISHED\_BUTTON@{FINISHED\_BUTTON}!EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}}\index{EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}!FINISHED\_BUTTON@{FINISHED\_BUTTON}}}\mbox{\Hypertarget{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba0da2988988498af64df963334cb0b974}\label{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba0da2988988498af64df963334cb0b974}} 
+FINISHED\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOWER\_BUTTON@{TOWER\_BUTTON}!EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}}\index{EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}!TOWER\_BUTTON@{TOWER\_BUTTON}}}\mbox{\Hypertarget{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba1b625305602bed0da9f97fd0e41fd5d0}\label{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba1b625305602bed0da9f97fd0e41fd5d0}} 
+TOWER\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_BUTTON@{ATTACK\_BUTTON}!EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}}\index{EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}!ATTACK\_BUTTON@{ATTACK\_BUTTON}}}\mbox{\Hypertarget{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}\label{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}} 
+ATTACK\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROJECTILE\_BUTTON@{PROJECTILE\_BUTTON}!EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}}\index{EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}!PROJECTILE\_BUTTON@{PROJECTILE\_BUTTON}}}\mbox{\Hypertarget{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}\label{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}} 
+PROJECTILE\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HEALTH\_BUTTON@{HEALTH\_BUTTON}!EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}}\index{EndOfWaveMenu.cpp@{EndOfWaveMenu.cpp}!HEALTH\_BUTTON@{HEALTH\_BUTTON}}}\mbox{\Hypertarget{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8aab87c2dfa28e3f0756663964e7b94b}\label{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8aab87c2dfa28e3f0756663964e7b94b}} 
+HEALTH\+\_\+\+BUTTON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_end_of_wave_menu_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_end_of_wave_menu_8cpp_source}{End\+Of\+Wave\+Menu.\+cpp}}.
+

@@ -1,0 +1,593 @@
+\hypertarget{class_gl_graphics}{}\doxysection{Gl\+Graphics Class Reference}
+\label{class_gl_graphics}\index{GlGraphics@{GlGraphics}}
+
+
+{\ttfamily \#include $<$Gl\+Graphics.\+h$>$}
+
+
+
+Inheritance diagram for Gl\+Graphics\+:
+% FIG 0
+
+
+Collaboration diagram for Gl\+Graphics\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gl_graphics_a7aaf7783cdccfbe6dd9c1b7fbacd36c1}{Gl\+Graphics}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the GLGraphics \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation Handles all the setup stuff... /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gl_graphics_aea0cb3fb7578be45e94dc18727433a36}{$\sim$\+Gl\+Graphics}} ()
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a56228c26f69ae6bf1e9a25f287069576}{dispose}} ()
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a7f68b0d63a9706c6dbd93b44d582f0c1}{begin\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a22904aa1aae030c84f082a038d28fd1f}{rotate\+Next\+Object\+In\+Scene}} (\mbox{\hyperlink{_i_graphics_8h_ad1dbca27d29805fd2e5971fea516ebc5}{Rotate}} $\ast$rotate)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a6dae3ac5fc520b850eb0f5ab0422c93c}{add\+Points\+To\+Scene}} (Vector location, std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}} $>$ \&points, int pixel\+Size, \mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894d}{POINT\+\_\+\+TEXTURE\+\_\+\+STYLE}} texture\+Style, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_ae01373bf7f34cc37617f992f4e0f0505}{add\+Triangle\+To\+Scene}} (Vector location, \mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}} triangle)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a27528ef90c9ba5e0ddd980b8567f2a9a}{add\+Triangles\+To\+Scene}} (Vector location, std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}} $>$ \&triangles, int count, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a0b59401cfffc5171c30220ab1d6c53c5}{add\+Quads\+To\+Scene}} (Vector location, std\+::map$<$ int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}} $>$ \&quads, int count, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a79bbf758258cc4f7e0c573cce345ef4b}{add\+Skybox\+To\+Scene}} (\mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}{PROJECTION\+\_\+\+TYPE}} projection\+Type, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} skybox\+ID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} scenebox\+ID)
+\item 
+virtual \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187}{SEEN\+\_\+\+BY\+\_\+\+CAMERA}} \mbox{\hyperlink{class_gl_graphics_a60f35c844e6e368c5ce738249581dd44}{is\+Location\+Within\+Viewing\+Range}} (Vector location)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_aa30e9195d694b18e79a3edb81324ae26}{add\+Quad\+Map\+To\+Scene}} (Vector location, std\+::map$<$ int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}} $>$ \&quads, int x\+Min, int x\+Max, int y\+Min, int y\+Max, int row\+Size, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a53ef0ffa7bd88a246ead4435635d6168}{allocate\+And\+Populate\+Vertex\+Array}} (std\+::map$<$ int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}} $>$ \&quads, \mbox{\hyperlink{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}{Quad\+Vertex\+Array}} \&vertex\+Array, \mbox{\hyperlink{_i_graphics_8h_a41c857d32229eb3d9f334a5de8792b62}{Quad\+Vertex\+Array\+Properties}} array\+Properties)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_abd35bcf45a21c29c56f9bc620fd39a86}{free\+Vertex\+Array}} (\mbox{\hyperlink{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}{Quad\+Vertex\+Array}} \&vertex\+Array)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_aea1a72ceb5bb45f0a2f5e751e2b72e7c}{add\+Normal\+Mapped\+Vertex\+Array\+To\+Scene}} (\mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}{BUMP\+\_\+\+TYPE}} bump\+Type, Vector location, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} light\+Map\+ID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} normal\+Map\+ID, \mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} \&vertex\+Array)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_aaebc76f56bf2075e99b5344e756c1f04}{add\+Normal\+Mapped\+Vertex\+Array\+To\+Scene}} (\mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}{BUMP\+\_\+\+TYPE}} bump\+Type, Vector location, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} light\+Map\+ID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} normal\+Map\+ID, \mbox{\hyperlink{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}{Quad\+Vertex\+Array}} \&vertex\+Array)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a5bf60d00c531537562bf9c975a9dbeb7}{update\+Mirror\+Reflection}} (Vector mirror\+Position, Vector mirror\+Target)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a625258aa8168c70a40b9143de2e1a6f6}{allocate\+And\+Populate\+Vertex\+Array}} (std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}} $>$ \&triangles, \mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} \&vertex\+Array, bool cull\+Backs)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a01ff9a72a1049842032336f1d10178a8}{free\+Vertex\+Array}} (\mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} \&vertex\+Array)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a8030b1c1863254d2200c77ac8ab6c5b5}{add\+Vertex\+Array\+To\+Scene}} (Vector location, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID, \mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} \&vertex\+Array)
+\item 
+int \mbox{\hyperlink{class_gl_graphics_ab03f932e2555ab1d5f149cd5dbd1b379}{get\+FPS}} ()
+\item 
+void \mbox{\hyperlink{class_gl_graphics_ab146a4862f69733affc93e2cfa652dac}{set\+Camera\+Position}} (\mbox{\hyperlink{_i_graphics_8h_af4ed7468cd9a27d91d2ae4a69f947c5f}{Camera}} camera)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a502123b2a2870f053acf6bfec4b13a68}{set\+Camera\+Target}} (Vector target, float target\+Angle, float height\+Of\+Scenery)
+\item 
+float \mbox{\hyperlink{class_gl_graphics_a5d756dfe841d9edf58e28d9f1515dc1d}{get\+Camera\+Angle}} ()
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a21cd24adfcafbc3376b8b57f39c69fd9}{set\+Fog\+Mode}} (f32 startZ, f32 endZ, f32 nearZ, f32 farZ, \mbox{\hyperlink{_i_graphics_8h_a1eddc82e9cbe70e094d81c6359fa537e}{Color}} color)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a44a8e39191ca1f3bc436593a6dca242b}{end\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a5ed91851342d9b500566627932481826}{switch\+To\+Overhead\+View}} ()
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a2a3d7d14cce9378e23ca47d4f1dab837}{switch\+Back\+To\+Camera\+View}} ()
+\item 
+void $\ast$ \mbox{\hyperlink{class_gl_graphics_a8bf6c4b9494fa8d74d3ff74bd51e327c}{allocate\+Persistent\+Memory\+For\+Display\+List}} (size\+\_\+t memory\+Size)
+\item 
+void \mbox{\hyperlink{class_gl_graphics_ad30b6495b2c0387b772ebe88203c5fb0}{adjust\+Camera\+Radius}} (float adjust\+By)
+\item 
+float \mbox{\hyperlink{class_gl_graphics_af5da5dfbe91a61f51a8cb568a9c60009}{get\+Camera\+Radius}} ()
+\item 
+void \mbox{\hyperlink{class_gl_graphics_a3089ca2b43299f5fc5f825d0c9d7a06d}{adjust\+Camera\+Distance}} (float adjust\+By)
+\item 
+float \mbox{\hyperlink{class_gl_graphics_a24b282e92f86b45250e5036a737559b7}{get\+Camera\+Distance}} ()
+\item 
+Vector \mbox{\hyperlink{class_gl_graphics_a21d1f52b953be70f46bdbefcda24d7ed}{get\+Camera\+Location}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8h_source_l00049}{49}} of file \mbox{\hyperlink{_gl_graphics_8h_source}{Gl\+Graphics.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gl_graphics_a7aaf7783cdccfbe6dd9c1b7fbacd36c1}\label{class_gl_graphics_a7aaf7783cdccfbe6dd9c1b7fbacd36c1}} 
+\index{GlGraphics@{GlGraphics}!GlGraphics@{GlGraphics}}
+\index{GlGraphics@{GlGraphics}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{GlGraphics()}{GlGraphics()}}
+{\footnotesize\ttfamily Gl\+Graphics\+::\+Gl\+Graphics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the GLGraphics \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation Handles all the setup stuff... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Destructor for the GLGraphics \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation Handles all the shutdown stuff /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_aea0cb3fb7578be45e94dc18727433a36}\label{class_gl_graphics_aea0cb3fb7578be45e94dc18727433a36}} 
+\index{GlGraphics@{GlGraphics}!````~GlGraphics@{$\sim$GlGraphics}}
+\index{````~GlGraphics@{$\sim$GlGraphics}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{$\sim$GlGraphics()}{~GlGraphics()}}
+{\footnotesize\ttfamily Gl\+Graphics\+::$\sim$\+Gl\+Graphics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} This is used to dispose of the singleton object since the constructor and destructor aren\textquotesingle{}t available .. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gl_graphics_aaebc76f56bf2075e99b5344e756c1f04}\label{class_gl_graphics_aaebc76f56bf2075e99b5344e756c1f04}} 
+\index{GlGraphics@{GlGraphics}!addNormalMappedVertexArrayToScene@{addNormalMappedVertexArrayToScene}}
+\index{addNormalMappedVertexArrayToScene@{addNormalMappedVertexArrayToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addNormalMappedVertexArrayToScene()}{addNormalMappedVertexArrayToScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Normal\+Mapped\+Vertex\+Array\+To\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}{BUMP\+\_\+\+TYPE}}}]{bump\+Type,  }\item[{Vector}]{location,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{light\+Map\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{normal\+Map\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}{Quad\+Vertex\+Array}} \&}]{vertex\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Updates the Mirror texture map by placing a camera at mirror\+Position, and pointing it at mirror\+Target... /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_graphics_a53a5550fe793950f6fedc8a8a57415a6}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00197}{197}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_aea1a72ceb5bb45f0a2f5e751e2b72e7c}\label{class_gl_graphics_aea1a72ceb5bb45f0a2f5e751e2b72e7c}} 
+\index{GlGraphics@{GlGraphics}!addNormalMappedVertexArrayToScene@{addNormalMappedVertexArrayToScene}}
+\index{addNormalMappedVertexArrayToScene@{addNormalMappedVertexArrayToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addNormalMappedVertexArrayToScene()}{addNormalMappedVertexArrayToScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Normal\+Mapped\+Vertex\+Array\+To\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}{BUMP\+\_\+\+TYPE}}}]{bump\+Type,  }\item[{Vector}]{location,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{light\+Map\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{normal\+Map\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} \&}]{vertex\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} This routine will render a quad vertex array into a scene just like add\+Quads\+To\+Scene, and apply a light and normal map for EMBM effects... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a5d88f4132bebb19e4e2989467ede24f8}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00189}{189}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a6dae3ac5fc520b850eb0f5ab0422c93c}\label{class_gl_graphics_a6dae3ac5fc520b850eb0f5ab0422c93c}} 
+\index{GlGraphics@{GlGraphics}!addPointsToScene@{addPointsToScene}}
+\index{addPointsToScene@{addPointsToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addPointsToScene()}{addPointsToScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Points\+To\+Scene (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}} $>$ \&}]{points,  }\item[{int}]{pixel\+Size,  }\item[{\mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894d}{POINT\+\_\+\+TEXTURE\+\_\+\+STYLE}}}]{texture\+Style,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds a triangle based on the specified triangle definition to the scene /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a14b51a173a236e986ee4e1f129a6e231}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_aa30e9195d694b18e79a3edb81324ae26}\label{class_gl_graphics_aa30e9195d694b18e79a3edb81324ae26}} 
+\index{GlGraphics@{GlGraphics}!addQuadMapToScene@{addQuadMapToScene}}
+\index{addQuadMapToScene@{addQuadMapToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addQuadMapToScene()}{addQuadMapToScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Quad\+Map\+To\+Scene (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{std\+::map$<$ int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}} $>$ \&}]{quads,  }\item[{int}]{x\+Min,  }\item[{int}]{x\+Max,  }\item[{int}]{y\+Min,  }\item[{int}]{y\+Max,  }\item[{int}]{row\+Size,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Allocates and configures a vertex array for use with the GPU ... TODO\+: Overload these procedures to support triangles etc. /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_af4ec51a1c83db62e39b1dadae5c0dd85}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a0b59401cfffc5171c30220ab1d6c53c5}\label{class_gl_graphics_a0b59401cfffc5171c30220ab1d6c53c5}} 
+\index{GlGraphics@{GlGraphics}!addQuadsToScene@{addQuadsToScene}}
+\index{addQuadsToScene@{addQuadsToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addQuadsToScene()}{addQuadsToScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Quads\+To\+Scene (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{std\+::map$<$ int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}} $>$ \&}]{quads,  }\item[{int}]{count,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Handles all the rendering of a skybox, all it needs is a texture ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_afb3f16ee08cd60d5b09ef4c7df51876a}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a79bbf758258cc4f7e0c573cce345ef4b}\label{class_gl_graphics_a79bbf758258cc4f7e0c573cce345ef4b}} 
+\index{GlGraphics@{GlGraphics}!addSkyboxToScene@{addSkyboxToScene}}
+\index{addSkyboxToScene@{addSkyboxToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addSkyboxToScene()}{addSkyboxToScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Skybox\+To\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}{PROJECTION\+\_\+\+TYPE}}}]{projection\+Type,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{skybox\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{scenebox\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns SEEN\+\_\+\+BY\+\_\+\+CAMERA value if the vector is in the camera frustum /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a7eda94b2c40c55f250360a88f00ce392}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a27528ef90c9ba5e0ddd980b8567f2a9a}\label{class_gl_graphics_a27528ef90c9ba5e0ddd980b8567f2a9a}} 
+\index{GlGraphics@{GlGraphics}!addTrianglesToScene@{addTrianglesToScene}}
+\index{addTrianglesToScene@{addTrianglesToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addTrianglesToScene()}{addTrianglesToScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Triangles\+To\+Scene (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}} $>$ \&}]{triangles,  }\item[{int}]{count,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds quads based on the specified quad definitions to the scene /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a3a87843b21c38ade740c475998313cf9}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_ae01373bf7f34cc37617f992f4e0f0505}\label{class_gl_graphics_ae01373bf7f34cc37617f992f4e0f0505}} 
+\index{GlGraphics@{GlGraphics}!addTriangleToScene@{addTriangleToScene}}
+\index{addTriangleToScene@{addTriangleToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addTriangleToScene()}{addTriangleToScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Triangle\+To\+Scene (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}}}]{triangle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds multiple triangles to the scene, including their texture ID /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a6d47b1bb0a96a2e379a0b5866ad0c7ec}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a8030b1c1863254d2200c77ac8ab6c5b5}\label{class_gl_graphics_a8030b1c1863254d2200c77ac8ab6c5b5}} 
+\index{GlGraphics@{GlGraphics}!addVertexArrayToScene@{addVertexArrayToScene}}
+\index{addVertexArrayToScene@{addVertexArrayToScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{addVertexArrayToScene()}{addVertexArrayToScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::add\+Vertex\+Array\+To\+Scene (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID,  }\item[{\mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} \&}]{vertex\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current number of frames being rendered per second... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a285818dd1b9329201e2a61c29e3a5186}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a3089ca2b43299f5fc5f825d0c9d7a06d}\label{class_gl_graphics_a3089ca2b43299f5fc5f825d0c9d7a06d}} 
+\index{GlGraphics@{GlGraphics}!adjustCameraDistance@{adjustCameraDistance}}
+\index{adjustCameraDistance@{adjustCameraDistance}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{adjustCameraDistance()}{adjustCameraDistance()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::adjust\+Camera\+Distance (\begin{DoxyParamCaption}\item[{float}]{adjust\+By }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} returns the current radius of the camera /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a0faac7643aa03267a198376ea0e7ac0b}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00311}{311}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_ad30b6495b2c0387b772ebe88203c5fb0}\label{class_gl_graphics_ad30b6495b2c0387b772ebe88203c5fb0}} 
+\index{GlGraphics@{GlGraphics}!adjustCameraRadius@{adjustCameraRadius}}
+\index{adjustCameraRadius@{adjustCameraRadius}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{adjustCameraRadius()}{adjustCameraRadius()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::adjust\+Camera\+Radius (\begin{DoxyParamCaption}\item[{float}]{adjust\+By }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} returns the current radius of the camera /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_ad2589d2858e9166b59d250b21a690538}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00295}{295}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a53ef0ffa7bd88a246ead4435635d6168}\label{class_gl_graphics_a53ef0ffa7bd88a246ead4435635d6168}} 
+\index{GlGraphics@{GlGraphics}!allocateAndPopulateVertexArray@{allocateAndPopulateVertexArray}}
+\index{allocateAndPopulateVertexArray@{allocateAndPopulateVertexArray}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{allocateAndPopulateVertexArray()}{allocateAndPopulateVertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::allocate\+And\+Populate\+Vertex\+Array (\begin{DoxyParamCaption}\item[{std\+::map$<$ int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}} $>$ \&}]{quads,  }\item[{\mbox{\hyperlink{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}{Quad\+Vertex\+Array}} \&}]{vertex\+Array,  }\item[{\mbox{\hyperlink{_i_graphics_8h_a41c857d32229eb3d9f334a5de8792b62}{Quad\+Vertex\+Array\+Properties}}}]{array\+Properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Deallocates vertex array ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_ab5f191d5b1468fa9301c62a638c33241}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00175}{175}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a625258aa8168c70a40b9143de2e1a6f6}\label{class_gl_graphics_a625258aa8168c70a40b9143de2e1a6f6}} 
+\index{GlGraphics@{GlGraphics}!allocateAndPopulateVertexArray@{allocateAndPopulateVertexArray}}
+\index{allocateAndPopulateVertexArray@{allocateAndPopulateVertexArray}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{allocateAndPopulateVertexArray()}{allocateAndPopulateVertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::allocate\+And\+Populate\+Vertex\+Array (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}} $>$ \&}]{triangles,  }\item[{\mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} \&}]{vertex\+Array,  }\item[{bool}]{cull\+Backs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Deallocates triangle vertex array ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a7fda7491f84ae00c53e47c53604dd940}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a8bf6c4b9494fa8d74d3ff74bd51e327c}\label{class_gl_graphics_a8bf6c4b9494fa8d74d3ff74bd51e327c}} 
+\index{GlGraphics@{GlGraphics}!allocatePersistentMemoryForDisplayList@{allocatePersistentMemoryForDisplayList}}
+\index{allocatePersistentMemoryForDisplayList@{allocatePersistentMemoryForDisplayList}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{allocatePersistentMemoryForDisplayList()}{allocatePersistentMemoryForDisplayList()}}
+{\footnotesize\ttfamily void $\ast$ Gl\+Graphics\+::allocate\+Persistent\+Memory\+For\+Display\+List (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{memory\+Size }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Adjusts the current radius of the camera by the specified value /summary\texorpdfstring{$>$}{>} ~\newline
+ \mbox{\Hypertarget{class_gl_graphics_a7f68b0d63a9706c6dbd93b44d582f0c1}\label{class_gl_graphics_a7f68b0d63a9706c6dbd93b44d582f0c1}} 
+\index{GlGraphics@{GlGraphics}!beginScene@{beginScene}}
+\index{beginScene@{beginScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{beginScene()}{beginScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::begin\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Whatever is drawn next (be it a single primitive, or be it a complex object) is rotated on the axis specified and by the amount in the rotate object /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_af5d8abf1dab44be02d37f9ae0b8430a1}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a56228c26f69ae6bf1e9a25f287069576}\label{class_gl_graphics_a56228c26f69ae6bf1e9a25f287069576}} 
+\index{GlGraphics@{GlGraphics}!dispose@{dispose}}
+\index{dispose@{dispose}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{dispose()}{dispose()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Prepares a scene for rendering in the specified environment /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a44a8e39191ca1f3bc436593a6dca242b}\label{class_gl_graphics_a44a8e39191ca1f3bc436593a6dca242b}} 
+\index{GlGraphics@{GlGraphics}!endScene@{endScene}}
+\index{endScene@{endScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{endScene()}{endScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::end\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Switches to overhead view for drawing the status display /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_graphics_ac040a248f63da32281dc33fcd0e8a100}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00274}{274}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_abd35bcf45a21c29c56f9bc620fd39a86}\label{class_gl_graphics_abd35bcf45a21c29c56f9bc620fd39a86}} 
+\index{GlGraphics@{GlGraphics}!freeVertexArray@{freeVertexArray}}
+\index{freeVertexArray@{freeVertexArray}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{freeVertexArray()}{freeVertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::free\+Vertex\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}{Quad\+Vertex\+Array}} \&}]{vertex\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} This routine will render a triangle vertex array into a scene just like add\+Triangless\+To\+Scene etc. /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_graphics_a2b0cefb87633a48cf09642f339cf6910}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00182}{182}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a01ff9a72a1049842032336f1d10178a8}\label{class_gl_graphics_a01ff9a72a1049842032336f1d10178a8}} 
+\index{GlGraphics@{GlGraphics}!freeVertexArray@{freeVertexArray}}
+\index{freeVertexArray@{freeVertexArray}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{freeVertexArray()}{freeVertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::free\+Vertex\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}} \&}]{vertex\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} This routine will render a quad vertex array into a scene just like add\+Triangles\+To\+Scene etc. /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a422c1102d7621857ecf734ebbf5406bf}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00222}{222}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a5d756dfe841d9edf58e28d9f1515dc1d}\label{class_gl_graphics_a5d756dfe841d9edf58e28d9f1515dc1d}} 
+\index{GlGraphics@{GlGraphics}!getCameraAngle@{getCameraAngle}}
+\index{getCameraAngle@{getCameraAngle}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{getCameraAngle()}{getCameraAngle()}}
+{\footnotesize\ttfamily float Gl\+Graphics\+::get\+Camera\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the mode used for rendering fog /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a80b78928592312622c0b6c78217dd403}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00259}{259}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a24b282e92f86b45250e5036a737559b7}\label{class_gl_graphics_a24b282e92f86b45250e5036a737559b7}} 
+\index{GlGraphics@{GlGraphics}!getCameraDistance@{getCameraDistance}}
+\index{getCameraDistance@{getCameraDistance}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{getCameraDistance()}{getCameraDistance()}}
+{\footnotesize\ttfamily float Gl\+Graphics\+::get\+Camera\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} returns a vector with the current camera location /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a76b8ca2fcafc09d51cc852e1cc0f30a4}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a21d1f52b953be70f46bdbefcda24d7ed}\label{class_gl_graphics_a21d1f52b953be70f46bdbefcda24d7ed}} 
+\index{GlGraphics@{GlGraphics}!getCameraLocation@{getCameraLocation}}
+\index{getCameraLocation@{getCameraLocation}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{getCameraLocation()}{getCameraLocation()}}
+{\footnotesize\ttfamily Vector Gl\+Graphics\+::get\+Camera\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the mode used for rendering fog /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_af6422d1e06190c3c9598140fea2dfb16}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00327}{327}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_af5da5dfbe91a61f51a8cb568a9c60009}\label{class_gl_graphics_af5da5dfbe91a61f51a8cb568a9c60009}} 
+\index{GlGraphics@{GlGraphics}!getCameraRadius@{getCameraRadius}}
+\index{getCameraRadius@{getCameraRadius}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{getCameraRadius()}{getCameraRadius()}}
+{\footnotesize\ttfamily float Gl\+Graphics\+::get\+Camera\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adjusts the current radius of the camera by the specified value /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a45d12a0c7831de4f6bf98e931fe855c5}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00303}{303}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_ab03f932e2555ab1d5f149cd5dbd1b379}\label{class_gl_graphics_ab03f932e2555ab1d5f149cd5dbd1b379}} 
+\index{GlGraphics@{GlGraphics}!getFPS@{getFPS}}
+\index{getFPS@{getFPS}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{getFPS()}{getFPS()}}
+{\footnotesize\ttfamily int Gl\+Graphics\+::get\+FPS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Similar to gu\+Look\+At, this will allow us to move our i around as the game continues... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a4ac96e968b9bac6d6adf710e6c960264}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00237}{237}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a60f35c844e6e368c5ce738249581dd44}\label{class_gl_graphics_a60f35c844e6e368c5ce738249581dd44}} 
+\index{GlGraphics@{GlGraphics}!isLocationWithinViewingRange@{isLocationWithinViewingRange}}
+\index{isLocationWithinViewingRange@{isLocationWithinViewingRange}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{isLocationWithinViewingRange()}{isLocationWithinViewingRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187}{SEEN\+\_\+\+BY\+\_\+\+CAMERA}} Gl\+Graphics\+::is\+Location\+Within\+Viewing\+Range (\begin{DoxyParamCaption}\item[{Vector}]{location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds quads from a map based on a row size and then an x/y rectange TODO\+: Once vertex arrays are implemented this procedure should become deprecated ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_ad2595b6c33fb3b6f5f792a6d5f9b9ef9}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a22904aa1aae030c84f082a038d28fd1f}\label{class_gl_graphics_a22904aa1aae030c84f082a038d28fd1f}} 
+\index{GlGraphics@{GlGraphics}!rotateNextObjectInScene@{rotateNextObjectInScene}}
+\index{rotateNextObjectInScene@{rotateNextObjectInScene}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{rotateNextObjectInScene()}{rotateNextObjectInScene()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::rotate\+Next\+Object\+In\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ad1dbca27d29805fd2e5971fea516ebc5}{Rotate}} $\ast$}]{rotate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds a triangle based on the specified triangle definition to the scene /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_abf2eedb8adf18344b39db9aaac5ddc6d}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_ab146a4862f69733affc93e2cfa652dac}\label{class_gl_graphics_ab146a4862f69733affc93e2cfa652dac}} 
+\index{GlGraphics@{GlGraphics}!setCameraPosition@{setCameraPosition}}
+\index{setCameraPosition@{setCameraPosition}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{setCameraPosition()}{setCameraPosition()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::set\+Camera\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_af4ed7468cd9a27d91d2ae4a69f947c5f}{Camera}}}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Similar to set\+Camera\+Position, however this focuses only on the the x,y,z vector we want our camera to point at /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_acaa5ddce14b0aafc7e286b3135b16f9c}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a502123b2a2870f053acf6bfec4b13a68}\label{class_gl_graphics_a502123b2a2870f053acf6bfec4b13a68}} 
+\index{GlGraphics@{GlGraphics}!setCameraTarget@{setCameraTarget}}
+\index{setCameraTarget@{setCameraTarget}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{setCameraTarget()}{setCameraTarget()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::set\+Camera\+Target (\begin{DoxyParamCaption}\item[{Vector}]{target,  }\item[{float}]{target\+Angle,  }\item[{float}]{height\+Of\+Scenery }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Defines the angle of the camera as it\textquotesingle{}s viewing the player ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a8e1b17c0ee917f8f033697a007ef5367}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a21cd24adfcafbc3376b8b57f39c69fd9}\label{class_gl_graphics_a21cd24adfcafbc3376b8b57f39c69fd9}} 
+\index{GlGraphics@{GlGraphics}!setFogMode@{setFogMode}}
+\index{setFogMode@{setFogMode}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{setFogMode()}{setFogMode()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::set\+Fog\+Mode (\begin{DoxyParamCaption}\item[{f32}]{startZ,  }\item[{f32}]{endZ,  }\item[{f32}]{nearZ,  }\item[{f32}]{farZ,  }\item[{\mbox{\hyperlink{_i_graphics_8h_a1eddc82e9cbe70e094d81c6359fa537e}{Color}}}]{color }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Renders all of the primitives previously defined in the scene /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00267}{267}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a2a3d7d14cce9378e23ca47d4f1dab837}\label{class_gl_graphics_a2a3d7d14cce9378e23ca47d4f1dab837}} 
+\index{GlGraphics@{GlGraphics}!switchBackToCameraView@{switchBackToCameraView}}
+\index{switchBackToCameraView@{switchBackToCameraView}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{switchBackToCameraView()}{switchBackToCameraView()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::switch\+Back\+To\+Camera\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Uses a preallocation method to allocate persistent memory to be used with a display list. On systems using an OS this memory will need to be disposed of. /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Adjusts the current radius of the camera by the specified value /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a4b9e9603543fb97d768612c744f36927}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00288}{288}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a5ed91851342d9b500566627932481826}\label{class_gl_graphics_a5ed91851342d9b500566627932481826}} 
+\index{GlGraphics@{GlGraphics}!switchToOverheadView@{switchToOverheadView}}
+\index{switchToOverheadView@{switchToOverheadView}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{switchToOverheadView()}{switchToOverheadView()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::switch\+To\+Overhead\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Switches back to camera view if we were in overhead view /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_graphics_a8fe922677d26df52bb72982c160c889f}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00281}{281}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+\mbox{\Hypertarget{class_gl_graphics_a5bf60d00c531537562bf9c975a9dbeb7}\label{class_gl_graphics_a5bf60d00c531537562bf9c975a9dbeb7}} 
+\index{GlGraphics@{GlGraphics}!updateMirrorReflection@{updateMirrorReflection}}
+\index{updateMirrorReflection@{updateMirrorReflection}!GlGraphics@{GlGraphics}}
+\doxysubsubsection{\texorpdfstring{updateMirrorReflection()}{updateMirrorReflection()}}
+{\footnotesize\ttfamily void Gl\+Graphics\+::update\+Mirror\+Reflection (\begin{DoxyParamCaption}\item[{Vector}]{mirror\+Position,  }\item[{Vector}]{mirror\+Target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Allocates and configures a vertex array for use with the GPU ... IMPORTANT\+: If vertex\+Array.\+Normals == NULL then it will allocate normal data, but if it\textquotesingle{}s not then this method WILL NOT ALLOCATE NORMAL DATA! (The idea is that the normal data will be pointing to preallocated normal data to save space \& reduce cache misses... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implements \mbox{\hyperlink{class_i_graphics_a23643815eab85fc04765a26e58070c9f}{IGraphics}}.
+
+
+
+Definition at line \mbox{\hyperlink{_gl_graphics_8cpp_source_l00205}{205}} of file \mbox{\hyperlink{_gl_graphics_8cpp_source}{Gl\+Graphics.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_gl_graphics_8h}{Gl\+Graphics.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_gl_graphics_8cpp}{Gl\+Graphics.\+cpp}}\end{DoxyCompactItemize}

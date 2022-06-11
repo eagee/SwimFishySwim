@@ -1,0 +1,20 @@
+digraph "LevelMethodsHandleInput"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="LevelMethodsHandleInput",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="// Updates the controller state and modifies actions based on controller state, returns true if home ..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="IControllers::checkButton\lPress",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_controllers.html#a0c094e58f5eef47724341c44279f6b3a",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="IControllers::checkController\lStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_controllers.html#a3b48a4c38334614b878dc3a5dc0e3340",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="IGameMenu::clickButton",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_game_menu.html#a0f720c2d82a421065a83265948df86e1",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="IProjectileWeapon::\lhandleTriggerState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_projectile_weapon.html#afd1e6fbba4e3721639c0ca999be8e8d3",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="LevelMethodsModifyEnergy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#ae2b42fb2944936dcc6a5683cd4ca52a7",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="IControllers::updateController\lStates",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_controllers.html#a899274bf83719f120b82c612e60fe31b",tooltip="A call to this will update all of the most recent controller states ... /summary>"];
+}

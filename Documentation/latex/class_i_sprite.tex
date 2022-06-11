@@ -1,0 +1,823 @@
+\hypertarget{class_i_sprite}{}\doxysection{ISprite Class Reference}
+\label{class_i_sprite}\index{ISprite@{ISprite}}
+
+
+{\ttfamily \#include $<$ISprite.\+h$>$}
+
+
+
+Inheritance diagram for ISprite\+:
+% FIG 0
+
+
+Collaboration diagram for ISprite\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_sprite_af0108110ffea5eb8e9b29c81287e0d6d}{ISprite}} ()
+\item 
+virtual \mbox{\hyperlink{class_i_sprite_af6ced6a24edcdda8c5583f89632b19c7}{$\sim$\+ISprite}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a1f16a3f8d86dff3cb09901e507ba7e97}{set\+ID}} (int ID)=0
+\item 
+virtual int \mbox{\hyperlink{class_i_sprite_aeb1558c92ad0bc6473f85f5a794ae352}{get\+ID}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_sprite_aa0304d035a3be60fbfc0b558638a8711}{is\+Dead}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_ae6796972cb4c434a5d1c8ca640ceb458}{assign\+Model}} (\mbox{\hyperlink{class_i_model}{IModel}} $\ast$model)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a8040c09bcbd67f12f96634c367e7d7ae}{assign\+Weapon}} (\mbox{\hyperlink{class_i_projectile_weapon}{IProjectile\+Weapon}} $\ast$weapon)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_af28642b8e04393d225f83821a9875308}{lock\+On\+Target}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&target)=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_sprite_a0c9d4275dc2f5bfe186700de13950595}{check\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_adbc200578ecf303656c4743db0044ca7}{handle\+Collision}} (\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}} type, float collision\+Force)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a23b4623bf7bb374b961ff9ce5ea07605}{handle\+Jump}} (float jump\+Force)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a619d68c2f620557aa1234da2e574c299}{set\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a04378a9ef84c5e46c712bfb495b7d736}{unset\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a412d333cb4e2861cd006f6acb94437ad}{translate\+Sprite}} (Vector sprite\+Location)=0
+\item 
+virtual Vector \mbox{\hyperlink{class_i_sprite_ab33f3f04defb2a994c48237e6629a084}{update\+Location\+By\+Velocity}} ()=0
+\item 
+virtual Vector \mbox{\hyperlink{class_i_sprite_a04e5809c871ecfe7caeab6d6886e2bbd}{get\+Location}} ()=0
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}{Bounding\+Triangle}} \mbox{\hyperlink{class_i_sprite_ad02479bdf3ae8da1e43dd39a95b96940}{get\+Bounding\+Triangle}} ()=0
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}{Bounding\+Circle}} \mbox{\hyperlink{class_i_sprite_a7e17733b67d4a58268114d3de3f7c874}{get\+Bounding\+Circle}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a07c06f0a35dc5137e911c90272d079cb}{set\+Bounding\+Triangle\+Size}} (float size)=0
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_af09622c9d9505474ece2da58841f3ab2}{Bounding\+Box}} \mbox{\hyperlink{class_i_sprite_adf07d87015405a56c565efc59d10a937}{get\+Bounding\+Box}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a87fefd7346890ff768669c66a38db22e}{set\+Location}} (Vector location)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_ae50aaeda5334c3173fe9fc7ce40cf092}{set\+Offset}} (Vector offset)=0
+\item 
+virtual Vector \mbox{\hyperlink{class_i_sprite_aa2d94c367130a4696991c59efed7681c}{get\+Offset}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_sprite_afbb2a42fcb82e5ced198668cbdf76129}{sprite\+Width}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_sprite_a33b6f37c824c9682dd3bc39248ace4e8}{sprite\+Height}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a6654c5e990a537984c0da5bd2305cd23}{set\+Velocities}} (float max\+Normal\+Velocity, float drag\+Velocity, float acceleration\+Velocity)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a8604067bfc4764e4215c8e472390984d}{increase\+Acceleration}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_abe910800a8f6fec6aada8b348abd703b}{set\+Control\+Magnitude}} (float control\+Magnitude)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a898c383dffb69ea7a874caf7db0bd102}{set\+Angle}} (float angle)=0
+\item 
+virtual float \mbox{\hyperlink{class_i_sprite_a44ab48c7a0ca24cf44b5aeb7c84ba597}{get\+Angle}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_sprite_a8b6a25e97be982249fab6d8bf5c9e3f7}{get\+Control\+Angle}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_aee11967e900aaa36ea99368c907a7a6f}{render\+Sprite}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a069d8b5214d9cf4137f129f41b2fd005}{render\+Health\+Bar}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)=0
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\+\_\+\+TYPE}} \mbox{\hyperlink{class_i_sprite_a950ef030265205693eb1bf64d716de9a}{sprite\+Type}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_ac3c80c8b172445a5009ce33859878989}{set\+Animation}} (\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} animation)=0
+\item 
+virtual \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} \mbox{\hyperlink{class_i_sprite_a6e1e6556de6db54749ad3926c0c1720b}{get\+Current\+Animation}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a2878e9b4ef301f51b3980d90e913dc8e}{set\+Health}} (float health)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a445add3488623db74f1764652993c0dc}{modify\+Health\+By}} (float health\+Modifier)=0
+\item 
+virtual float \mbox{\hyperlink{class_i_sprite_a09dd7e151892b1314f5cf5f4699a7865}{get\+Health}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_sprite_a486bf5973dcb1d76f8c017af40fc8468}{get\+Max\+Health}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_ad59077967cb00b7d7fc66540c34c4a76}{set\+Point\+Value}} (int value)=0
+\item 
+virtual int \mbox{\hyperlink{class_i_sprite_a9821c90304790a5e8162c57d37b3ddfa}{get\+Point\+Value}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_ae285405b152c6eecfb81018a02a0025c}{set\+Level}} (int level)=0
+\item 
+virtual int \mbox{\hyperlink{class_i_sprite_a9b71685283bec8089adccce3a1fbb221}{get\+Level}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a95cc65a2ae762eb17386203a25121359}{set\+Power\+Up\+Type}} (\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}} power\+Up\+Type)=0
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}} \mbox{\hyperlink{class_i_sprite_a5b7c62c32d3eadc4b4fbcd4520fc0801}{get\+Power\+Up\+Type}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_sprite_afd39c00bbd79fc13234885c8941ea798}{get\+Water\+Level}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a8b13af37066583a800fc531c28eeae7a}{set\+Water\+Level}} (float water\+Level)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a52c634029577f209b8b331a526da3db5}{set\+Jump}} (\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}} jump\+State)=0
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}} \mbox{\hyperlink{class_i_sprite_a9b7523b584b652b79ad68ec07201362e}{get\+Jump}} ()=0
+\item 
+virtual float \mbox{\hyperlink{class_i_sprite_a1a7b5c520250a76629a97a8276051db1}{get\+Speed}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a7ee83ab65401133b1ab1eb4c7d71d417}{set\+Attack\+Type}} (\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}} type)=0
+\item 
+virtual \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}} \mbox{\hyperlink{class_i_sprite_a9a7373d42e299bb50efc7a4a368b2167}{get\+Attack\+Type}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_sprite_a9c6365557c749751ad1dcc6abc32cf20}{modify\+Rotation\+By}} (float value)=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_sprite_a7ac783a7e9180e85f608b2263aee9e2a}{has\+Periodic\+Timer\+Expired}} ()=0
+\item 
+virtual Vector \mbox{\hyperlink{class_i_sprite_a26e0ab6ad8370d69503d6641145a14b5}{get\+Velocity}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_i_sprite_8h_source_l00020}{20}} of file \mbox{\hyperlink{_i_sprite_8h_source}{ISprite.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_sprite_af0108110ffea5eb8e9b29c81287e0d6d}\label{class_i_sprite_af0108110ffea5eb8e9b29c81287e0d6d}} 
+\index{ISprite@{ISprite}!ISprite@{ISprite}}
+\index{ISprite@{ISprite}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{ISprite()}{ISprite()}}
+{\footnotesize\ttfamily ISprite\+::\+ISprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_i_sprite_8h_source_l00023}{23}} of file \mbox{\hyperlink{_i_sprite_8h_source}{ISprite.\+h}}.
+
+\mbox{\Hypertarget{class_i_sprite_af6ced6a24edcdda8c5583f89632b19c7}\label{class_i_sprite_af6ced6a24edcdda8c5583f89632b19c7}} 
+\index{ISprite@{ISprite}!````~ISprite@{$\sim$ISprite}}
+\index{````~ISprite@{$\sim$ISprite}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{$\sim$ISprite()}{~ISprite()}}
+{\footnotesize\ttfamily virtual ISprite\+::$\sim$\+ISprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets an ID value used to reference the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_sprite_8h_source_l00025}{25}} of file \mbox{\hyperlink{_i_sprite_8h_source}{ISprite.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_sprite_ae6796972cb4c434a5d1c8ca640ceb458}\label{class_i_sprite_ae6796972cb4c434a5d1c8ca640ceb458}} 
+\index{ISprite@{ISprite}!assignModel@{assignModel}}
+\index{assignModel@{assignModel}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{assignModel()}{assignModel()}}
+{\footnotesize\ttfamily virtual void ISprite\+::assign\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_model}{IModel}} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Assigns a projectile weapon to the sprite that can be triggered by the sprite... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a4c4b76a1bbf5fcc978e7ff4c5c98e468}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aeefb8503ffc2a3fe14eb810b82bebf66}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_ad9e08c979b8054accc7971112ee11e52}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a830bbc4cc2c77bc46e0e6d0532ca7022}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a117e42754f375bda4ebd72d233dd2f46}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a75eeef9b5eb87665193753a4d75efb2c}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a56605904818f2d781663fb190c6e3296}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a296a0fe901ec95d9f092ca7bf385a225}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a8040c09bcbd67f12f96634c367e7d7ae}\label{class_i_sprite_a8040c09bcbd67f12f96634c367e7d7ae}} 
+\index{ISprite@{ISprite}!assignWeapon@{assignWeapon}}
+\index{assignWeapon@{assignWeapon}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{assignWeapon()}{assignWeapon()}}
+{\footnotesize\ttfamily virtual void ISprite\+::assign\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_projectile_weapon}{IProjectile\+Weapon}} $\ast$}]{weapon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Causes the sprite to change it\textquotesingle{}s current angle to face the specified target... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aa1ab07469f4570c69bc5fc7b0c980802}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_afa2f8d296b5b4f53c931e6c1ed1a5665}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a5b8a16c7df55080bd7033128b1f053ee}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a02d57c4f317c00169bf48dc1a473d32d}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_aa5b6a6c9980d3d64fe31825356596fa2}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a05a44657fdd495458bd5258dd0551dc5}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a9c63bc1945dab59224f0fe7c74dea1cb}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ad7924bad4f5f2aba65fc42ab16e3886e}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a0c9d4275dc2f5bfe186700de13950595}\label{class_i_sprite_a0c9d4275dc2f5bfe186700de13950595}} 
+\index{ISprite@{ISprite}!checkDirection@{checkDirection}}
+\index{checkDirection@{checkDirection}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{checkDirection()}{checkDirection()}}
+{\footnotesize\ttfamily virtual bool ISprite\+::check\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Modifies velocity based upon direction to handle a wall style collision.. collision force is only applied when an attack collision type is being handled. /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a6afceb58ed0be247b6504d4f3160a5b9}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a7968b7ba8d0004dd0bada9772e986e58}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_ad47e6fc590c2109e93210aefe1fc2458}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a04caa9f7e6013aedcd42bd5216cc413d}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ada2d58bb8e95b756fca6f5009a98a3c0}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a6ab8f7ccfa87cdfbf05c42eaeb160a47}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_ae955acd06f751c96c8d3636ff8e1ce7d}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ac356674e870506b1088a73fc459ded8a}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a44ab48c7a0ca24cf44b5aeb7c84ba597}\label{class_i_sprite_a44ab48c7a0ca24cf44b5aeb7c84ba597}} 
+\index{ISprite@{ISprite}!getAngle@{getAngle}}
+\index{getAngle@{getAngle}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getAngle()}{getAngle()}}
+{\footnotesize\ttfamily virtual float ISprite\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the angle assigned with set\+Angle (which is modified by 90 degrees) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_ae0ed7cba15ddc22687922e4dbddf903b}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a9308fd153b58d3b31a5c46edf4e6d849}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_adca8fc15471df39bdacc6eabe1bf6e3b}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a3041142e2eeb933382437a097db70891}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a15e6aea8d1d25d7b579f19ad15f0f9e0}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a044108089d0142afd7d89d19f24391f9}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a529a489d20b53ef5b9f5b01b9d596a96}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a4b7e43b9d5d600ad422e087c45a34f43}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_i_sprite_a9a7373d42e299bb50efc7a4a368b2167}\label{class_i_sprite_a9a7373d42e299bb50efc7a4a368b2167}} 
+\index{ISprite@{ISprite}!getAttackType@{getAttackType}}
+\index{getAttackType@{getAttackType}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getAttackType()}{getAttackType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}} ISprite\+::get\+Attack\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Updates the rotation value a sprite uses (may not be implemented for all objects) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a2f843505aba799e895d5f88402292c37}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a5f4f456b37a778424c2568336c26e378}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_aed8584dd2b99d8dc4e73eaa421e4c03c}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_abd6850b71aee43a00610e3f39cc4a3cf}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ab1aa50e0f3ef703f5a9e0c425087a224}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_acc7cdb5cf4d04df1a69a95d41d93eb5a}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a308d5af85e6ba20090f902f0748f5543}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a3cf0c6b56ea2378a03652f9ef591cb51}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_adf07d87015405a56c565efc59d10a937}\label{class_i_sprite_adf07d87015405a56c565efc59d10a937}} 
+\index{ISprite@{ISprite}!getBoundingBox@{getBoundingBox}}
+\index{getBoundingBox@{getBoundingBox}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getBoundingBox()}{getBoundingBox()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_sprite_info_8h_af09622c9d9505474ece2da58841f3ab2}{Bounding\+Box}} ISprite\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Defines the current x/y/z location of the top left corner of the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aa89cb2879e4956e05334fefe09301a3d}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a77d6d13fa43db947ab1f17be2f455dc9}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a1f1cafb5ac640db5f678dde07253a9c4}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a9d1766ba0a6d19fccaab7c39d73ac444}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ad9044197424e423e06a818c626ff5cc3}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_ad22ff5c6659dcbcaf465e3ac333fd09c}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_af37d7ef69e8941e7f4478212a6383345}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a4850f50e256fc5285a434569a20b8acf}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_i_sprite_a7e17733b67d4a58268114d3de3f7c874}\label{class_i_sprite_a7e17733b67d4a58268114d3de3f7c874}} 
+\index{ISprite@{ISprite}!getBoundingCircle@{getBoundingCircle}}
+\index{getBoundingCircle@{getBoundingCircle}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getBoundingCircle()}{getBoundingCircle()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}{Bounding\+Circle}} ISprite\+::get\+Bounding\+Circle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns three sets of x/y/z coordinates indicating a bounding triangle for a sprite implementation... /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_ad379806b8b041bc0333c58131411b288}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a7e61639de8f71f2364dc8ef081dbfad3}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a690a508d40f84d5dc9d9518fbee6a2aa}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a8b5c5f0dc6d3d0b51c21bc88dcf19451}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a5cf1b9d44d40a7d174a109f864d24488}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a5d4a828b0de775039d7eb23c961ee158}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a7d9bbdfc6982e0dc7b8822d85a32cee3}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_abaf984f9fc0a9b7d1ce2260f786a1ee9}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_i_sprite_ad02479bdf3ae8da1e43dd39a95b96940}\label{class_i_sprite_ad02479bdf3ae8da1e43dd39a95b96940}} 
+\index{ISprite@{ISprite}!getBoundingTriangle@{getBoundingTriangle}}
+\index{getBoundingTriangle@{getBoundingTriangle}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getBoundingTriangle()}{getBoundingTriangle()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}{Bounding\+Triangle}} ISprite\+::get\+Bounding\+Triangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} The points of the bounding circle are set from the center of the model by the bounding triangle size. There are The circle will be offset from the angle of the sprite and contain eight points \mbox{[}0\mbox{]} -\/ \mbox{[}7\mbox{]}. Element \mbox{[}0\mbox{]} will represent degree 0 based on the current angle of the fish. Elements \mbox{[}1\mbox{]} to \mbox{[}7\mbox{]} will represent 45 degree increments from element \mbox{[}0\mbox{]} (e.\+g. 0, 45, 90, 135, 180, 225, 270, 315). The value stored in each element will be vertex coordinates at the specified bounding size / angle away from the center of the sprite... /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_ab8c42ee2ff0e67ef4859aafe438cff45}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a7d2d6e567b29b14a8c61b53339081df2}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a7d17d3b6e6abdaf3c49023fb726bc984}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a4f5407fe153182605b3fdf008bd3affd}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a212462837c2d69eddc3d0a3f27c34bc8}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_aaa1bcf93db00349ce85edab847063029}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_aceab3f4da8e9a8fb4100cf2b39686b77}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a890001fe9d2a956f523127bec502072d}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_i_sprite_a8b6a25e97be982249fab6d8bf5c9e3f7}\label{class_i_sprite_a8b6a25e97be982249fab6d8bf5c9e3f7}} 
+\index{ISprite@{ISprite}!getControlAngle@{getControlAngle}}
+\index{getControlAngle@{getControlAngle}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getControlAngle()}{getControlAngle()}}
+{\footnotesize\ttfamily virtual float ISprite\+::get\+Control\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the sprite using an \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a0f93aa66a15c19035354e46a9c6a6661}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a40a843628ca724d419b5dbbca4e8b4a2}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a7eab677853df9e3429dea6325a1e03b1}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_ad583ef3c71ee9c93d1618927c23e2d97}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a62c2660a6eb1d8bb5080fccf98e5cd74}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a5ad9729fed7a83bac96f0dc1eb905816}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a4637aa2bb4a9b2ddf8d8869d7b307421}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ae493eb94424db9345ba47b1ad748dc69}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_i_sprite_a6e1e6556de6db54749ad3926c0c1720b}\label{class_i_sprite_a6e1e6556de6db54749ad3926c0c1720b}} 
+\index{ISprite@{ISprite}!getCurrentAnimation@{getCurrentAnimation}}
+\index{getCurrentAnimation@{getCurrentAnimation}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getCurrentAnimation()}{getCurrentAnimation()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} ISprite\+::get\+Current\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets teh value recording the amount of health a sprite has... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a696597690c6d57144c6ce93aff3cc663}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a5a80621a216695a2bada58b85c07b153}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_ab10c38226834abca2b1ebb9a872c07ee}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a39fa0754e6e89c40a9d727601e51d018}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a8165ae7ad581ded22d7de7daa2e6ac5a}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a58dfd68acfc629a6bc42ca89ff6ba077}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a052ad85e4663c14a94dd8698717e5561}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_aa046bc8906871114a57a2701c40a3963}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_i_sprite_a09dd7e151892b1314f5cf5f4699a7865}\label{class_i_sprite_a09dd7e151892b1314f5cf5f4699a7865}} 
+\index{ISprite@{ISprite}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily virtual float ISprite\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the total health that the sprite could contain /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aa9086b454bdcfebad3237a230db1c6bf}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a4206005573b34c036510577bbdb15441}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a347da4dc0985b61f6aa9a238e5e131b0}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a911ff529fc282787d2e545880eef4846}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_afacbf5add120c8254473598938d8f5de}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a847da1fdb4a6149f0a0486a4162c9ecf}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a11c6c8e2ff5a177065e74b1ad0f11fcb}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_adf77ad303f8ab4a7c6b3632442812cb2}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_i_sprite_aeb1558c92ad0bc6473f85f5a794ae352}\label{class_i_sprite_aeb1558c92ad0bc6473f85f5a794ae352}} 
+\index{ISprite@{ISprite}!getID@{getID}}
+\index{getID@{getID}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily virtual int ISprite\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} \mbox{[}the sprite is dead\mbox{]} returns true, else false /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aa22947834bf5674cd360a757ec7c9e2b}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aa2af76f206b69e2fa64a105e49824c95}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a2d668ca41a1e5ed745138c3339a8cede}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a2ba45f2af3e317348bf1269c305daf9a}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ab34451b62b520539ee2665c44b3eab7d}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_af9b5945bbd7c2f0e6f1a094396db9d47}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_ac87ac5f8919166624a779a504ba73928}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_aaa139cd8d28c1e0c151dc815c1e2398b}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_i_sprite_a9b7523b584b652b79ad68ec07201362e}\label{class_i_sprite_a9b7523b584b652b79ad68ec07201362e}} 
+\index{ISprite@{ISprite}!getJump@{getJump}}
+\index{getJump@{getJump}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getJump()}{getJump()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}} ISprite\+::get\+Jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the length of the speed vector to indicate the speed of the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a00bf647e63d77f22923c89105a4120e6}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a5af4aaf65896b21a1ca3fd914f601f86}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a945e7b0bd3cf7e12a4e79a39628b93fe}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_acf0221f5434f82d829c35b6af1bc9f13}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ab2e13024799ebfe13c22fe76ed43d006}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a0a8fae8a4526a8ec724a0725ef846f1f}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a59bd6e28aac6b2eb6a553cc32e2c90ee}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ab5b7d595c7b321fe0f03008bb51dc4b7}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a9b71685283bec8089adccce3a1fbb221}\label{class_i_sprite_a9b71685283bec8089adccce3a1fbb221}} 
+\index{ISprite@{ISprite}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily virtual int ISprite\+::get\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the type of power up contained in a dying sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_af46e6901f665a56edc07176281a56d36}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a03bcc1a5a33401b066fb34f6e0f08ec2}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a1cee9b8c8f248a32eaa2c50e15a1ec4f}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_ada0d3c51e362a8e3929064b01c86b084}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a4f453334fef61c4b06d3f977db69969b}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_aed02d1a28e5a9c36fc36a34769f9a2f7}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a56206631b20ed6ace5f2cbc9334ef2de}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ae4173b3461d0bef73ee925bd9f0ff0bc}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a04e5809c871ecfe7caeab6d6886e2bbd}\label{class_i_sprite_a04e5809c871ecfe7caeab6d6886e2bbd}} 
+\index{ISprite@{ISprite}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily virtual Vector ISprite\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the distance of all three corners of the bounding triangle (e.\+g. how far away from the center of the sprite each point is) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a82e6d110f67a8ea834bcb9d5faafbd23}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aa8175e54aea55c4880d71b12a62511c0}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a0bcd87af3c640ef1262d45e976f96bf3}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a88d6c815244e31d2b343147b0600cc30}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a97b1039ecc2f1fb8852b8914ba4e97c5}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_aa0568f8be5514cd22dbb866b5324936e}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a96431a0651fbc7780da913951711cc3e}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a784bea4f9bd8ebbc86b4808e066a941f}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{class_i_sprite_a486bf5973dcb1d76f8c017af40fc8468}\label{class_i_sprite_a486bf5973dcb1d76f8c017af40fc8468}} 
+\index{ISprite@{ISprite}!getMaxHealth@{getMaxHealth}}
+\index{getMaxHealth@{getMaxHealth}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getMaxHealth()}{getMaxHealth()}}
+{\footnotesize\ttfamily virtual float ISprite\+::get\+Max\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the value of the sprite in points if it is destroyed /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aab6f2aa524117622c9c700f87cc7ed38}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_ad5c79abcc1b9471b03c76b9d24be5210}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_ad054f8504ba5eb4430c8ef3b08f768dc}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a8f711df1e649d61f66d679fad424eaaf}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_aa27f5f47b043187a956467ad6de5e69d}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_af99a366427d752eb00fdbe75e7741dd6}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a488701f0dc41253e39280e9f4ad21f53}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ac8be7d141e84e8194f0f52154a1c5e49}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_aa2d94c367130a4696991c59efed7681c}\label{class_i_sprite_aa2d94c367130a4696991c59efed7681c}} 
+\index{ISprite@{ISprite}!getOffset@{getOffset}}
+\index{getOffset@{getOffset}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getOffset()}{getOffset()}}
+{\footnotesize\ttfamily virtual Vector ISprite\+::get\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Defines the width of the sprite including scaling if it applies /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aa92496ccf8e66ccf906cb7a87db71d0d}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a9827d03cd3e5ee6065f568d71bdb5f4d}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a228b6ff101e74878d1d22785dd618989}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_ad532ee275a5e6973342ddf7006da5742}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ac4b86f4d8371c567e79ebb3900c0fc3f}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_ae017cfbda40e69890dd4a0e6fde2cb51}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_aa33f10537afe23d0573d479398db17b4}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a0c6a871315d7fd6f90af45d552e8964c}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{class_i_sprite_a9821c90304790a5e8162c57d37b3ddfa}\label{class_i_sprite_a9821c90304790a5e8162c57d37b3ddfa}} 
+\index{ISprite@{ISprite}!getPointValue@{getPointValue}}
+\index{getPointValue@{getPointValue}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getPointValue()}{getPointValue()}}
+{\footnotesize\ttfamily virtual int ISprite\+::get\+Point\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets a level number for the sprite which can be used to determine sprite behavior /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aa63af030a823019c5f1d482d22dc6800}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_acbe51ca32b058d8ea606bf0d1fc417ce}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a5cf925a649b8501e2964e58679a9b960}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_aba0c6aa7ec057a8480053721234af1ad}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_af2afa56f6ae023674f65eaf73b74224c}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_aeac6e3e71082def958ca6f5379acea55}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_ab0b9814017bcf96dba114358bd942f9b}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a036bc8da55e5acd15edfa9edcc39491f}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{class_i_sprite_a5b7c62c32d3eadc4b4fbcd4520fc0801}\label{class_i_sprite_a5b7c62c32d3eadc4b4fbcd4520fc0801}} 
+\index{ISprite@{ISprite}!getPowerUpType@{getPowerUpType}}
+\index{getPowerUpType@{getPowerUpType}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getPowerUpType()}{getPowerUpType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}} ISprite\+::get\+Power\+Up\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the Z point that specifies the target z for normal behavior (e.\+g. after a jump, we want to land at the water level) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a0d822c0c178827346f8b11abb2b400b6}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a31a35eb76f1450e72b5ace86fa98517f}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_afe1357e6be015c7d0b230922d4b22a0e}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a2eec03aa3555e4c26e002a078bec6011}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_aec0b31957ddb8c5ce25e9c3e5100a63b}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a7b14bfb5d71b2a48494ad4307ac46583}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a564c79beac96067caf56fe9a97a531aa}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ae747f603a9c06e4b0c3d9a46e041ed44}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a1a7b5c520250a76629a97a8276051db1}\label{class_i_sprite_a1a7b5c520250a76629a97a8276051db1}} 
+\index{ISprite@{ISprite}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily virtual float ISprite\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets what types of attack the sprite is capable of /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_afa87a20f59799d01e7f8b06300d5dbe5}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a4bb8e71cb4989c28fd75bb935d852da2}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a18d7f32bd3270a60e895b259de574aaf}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a46f4c3674f05980307b82c60c44d22c0}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ae02c4eab87e751da4b34ba641217f441}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_ac5d034408199ccd8631359b66a24f5cb}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a5779147d3e3aef3b04edda43a25782c8}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a5918266ef230dc09b82ab7f40880f6f2}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a26e0ab6ad8370d69503d6641145a14b5}\label{class_i_sprite_a26e0ab6ad8370d69503d6641145a14b5}} 
+\index{ISprite@{ISprite}!getVelocity@{getVelocity}}
+\index{getVelocity@{getVelocity}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getVelocity()}{getVelocity()}}
+{\footnotesize\ttfamily virtual Vector ISprite\+::get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a0b9c3da366b59b0ae0151e52282c6a95}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a60893647100b70bb3326dd25e870645b}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_player_a7eea83d6b7b29a6a126d03187ddf65bd}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ad5a738895340c6e26456e3a1f2393d89}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a0772eda9b52505cada1250172b708912}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a73b697b97fa515094ff12fef3df36555}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a2a494079ad0fefb3357c49fd8fd0c57d}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_afd39c00bbd79fc13234885c8941ea798}\label{class_i_sprite_afd39c00bbd79fc13234885c8941ea798}} 
+\index{ISprite@{ISprite}!getWaterLevel@{getWaterLevel}}
+\index{getWaterLevel@{getWaterLevel}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{getWaterLevel()}{getWaterLevel()}}
+{\footnotesize\ttfamily virtual float ISprite\+::get\+Water\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the z of a water level as necessary... /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_af791cb918b7fa83b542d68d2299f121a}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_abb14d1364d51d97b64cd48fd34848cea}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a64830076617b40e968648dfe04c03f82}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_adc4bf6045452dacfa2bd81af16ff0aef}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a1e9708e992fc4d005ffb1aa64fe7025b}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_ae859809eb49913189a6a39b2b675ffaa}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a4df8354deb312c2cf461c5a4d21ddc11}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_af5dd91d6c5f5a7c385345d941389ebdc}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{class_i_sprite_adbc200578ecf303656c4743db0044ca7}\label{class_i_sprite_adbc200578ecf303656c4743db0044ca7}} 
+\index{ISprite@{ISprite}!handleCollision@{handleCollision}}
+\index{handleCollision@{handleCollision}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{handleCollision()}{handleCollision()}}
+{\footnotesize\ttfamily virtual void ISprite\+::handle\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}}}]{type,  }\item[{float}]{collision\+Force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Modifies Z Velocity to create a jumping animation /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a60bbe30beb1bf5943694f935b110c808}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a7c7c0503738d74276ee80912cef20962}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_ab2440577b5207d1a3991e24154a9899c}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a9e8152889fe27b4376fae23a6055490f}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ac789945b1a0990271bc0ca3c342c0c9b}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a36e25a79b66c82166208535bdaee8e6c}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a877fd83c0bf93e3575d9868c185a1c19}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ad3ac4a8d843a960e5a2901bc5ffeb7da}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{class_i_sprite_a23b4623bf7bb374b961ff9ce5ea07605}\label{class_i_sprite_a23b4623bf7bb374b961ff9ce5ea07605}} 
+\index{ISprite@{ISprite}!handleJump@{handleJump}}
+\index{handleJump@{handleJump}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{handleJump()}{handleJump()}}
+{\footnotesize\ttfamily virtual void ISprite\+::handle\+Jump (\begin{DoxyParamCaption}\item[{float}]{jump\+Force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the direction of a sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a09a4afa36a8c76d67f536dc85eec9211}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aa958b30c29e31b2a0cc75cd91331d3fb}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_aae0efd6fc81061b774d91f75135b38f9}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_ad7aa7cff9ea60bf3a7ab7138a47fffd8}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ae31b08e2177d31b2c3911e35afb344e5}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a985e0f912a4dcad1b6296117a6184577}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a4dde891b964232ea5136de7f44054c4b}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ae5e3c35b726639e5d2813ee6fb0595b2}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{class_i_sprite_a7ac783a7e9180e85f608b2263aee9e2a}\label{class_i_sprite_a7ac783a7e9180e85f608b2263aee9e2a}} 
+\index{ISprite@{ISprite}!hasPeriodicTimerExpired@{hasPeriodicTimerExpired}}
+\index{hasPeriodicTimerExpired@{hasPeriodicTimerExpired}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{hasPeriodicTimerExpired()}{hasPeriodicTimerExpired()}}
+{\footnotesize\ttfamily virtual bool ISprite\+::has\+Periodic\+Timer\+Expired (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the current velocity of the sprite (e.\+g. The X,Y,Z Momentum of the object) /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a3773f050478f369d15f97d629b09e080}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_af8dda4bdc480b952c97a528d55e6efb3}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_player_ad3df0f51d7561e01f61c459781e6bba6}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ac5144549c530b8854106b14118008b31}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_acba7ae57345481d3207de65954028e9c}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a0c4d883c26ecb34591e335b279dcb5ba}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a8a782b43519717e451315512c6c8ea69}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 16
+\mbox{\Hypertarget{class_i_sprite_a8604067bfc4764e4215c8e472390984d}\label{class_i_sprite_a8604067bfc4764e4215c8e472390984d}} 
+\index{ISprite@{ISprite}!increaseAcceleration@{increaseAcceleration}}
+\index{increaseAcceleration@{increaseAcceleration}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{increaseAcceleration()}{increaseAcceleration()}}
+{\footnotesize\ttfamily virtual void ISprite\+::increase\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Control magnitude can affect the maximum speed of the sprite. This can be used with analog joysticks or maybe adjusted if a sprite is damaged in some way (e.\+g. can only move at .75 of it\textquotesingle{}s maximum velocity) another example might be traveling through a stick substance can reduce it\textquotesingle{}s control magnitude /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_ae3897a21ac5c06e03aa29f5262435bd0}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a4146e3c902618ca0baddb7ee62266e83}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a09e644e8c51f641a56fe24872b55af5d}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a6b857ef4734caebc35b52e972ed7a7ab}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ae35ec54c413230cd9ae6e5bb9dd396b6}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a09af58d68eb616daea73fbb752d99524}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_aebdb2c115eeed9257ab57076c72b0cb5}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a5a85c3ca1d2627a0c292f7f4cca5af8f}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{class_i_sprite_aa0304d035a3be60fbfc0b558638a8711}\label{class_i_sprite_aa0304d035a3be60fbfc0b558638a8711}} 
+\index{ISprite@{ISprite}!isDead@{isDead}}
+\index{isDead@{isDead}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{isDead()}{isDead()}}
+{\footnotesize\ttfamily virtual bool ISprite\+::is\+Dead (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Assigns an \mbox{\hyperlink{class_i_model}{IModel}} instances to a sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a913bfad879e741d81a580b81370c1a10}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aa78cfacfe9697705b1a6674cc0ac379c}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a76fc70147d48b15c7b34e611aa5676d7}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a87101c81b656acd6795aaed54b95ae1e}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a4017f916b32dca5e2d306bf36b037ba8}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a9311d88d8d56e6297bb402e7e0494bf8}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a37cc8b562fd914bc004abd3c540ca065}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ae51bf7580f099facbf8ff29ca7332e37}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{class_i_sprite_af28642b8e04393d225f83821a9875308}\label{class_i_sprite_af28642b8e04393d225f83821a9875308}} 
+\index{ISprite@{ISprite}!lockOnTarget@{lockOnTarget}}
+\index{lockOnTarget@{lockOnTarget}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{lockOnTarget()}{lockOnTarget()}}
+{\footnotesize\ttfamily virtual void ISprite\+::lock\+On\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Checks the direction of a sprite and returns true/false if the sprite is facing that direction... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a4029ef5a7f603d8abc8fa60e4901a0fa}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a988989d7d1843ff5b489faf56f904e87}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a9f107f715ac087cbe60ddd947ec2b952}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_aa13f172867ae8c20b1dc26481739dab2}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a53ec0aa9b65533113298845de8cdc58f}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a483895053223f72b050a783df372e2e2}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_aa854ab5529d65d438475803142c5f32e}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ad81f1d7245999348aae4c6c465587327}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a445add3488623db74f1764652993c0dc}\label{class_i_sprite_a445add3488623db74f1764652993c0dc}} 
+\index{ISprite@{ISprite}!modifyHealthBy@{modifyHealthBy}}
+\index{modifyHealthBy@{modifyHealthBy}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{modifyHealthBy()}{modifyHealthBy()}}
+{\footnotesize\ttfamily virtual void ISprite\+::modify\+Health\+By (\begin{DoxyParamCaption}\item[{float}]{health\+Modifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the number of health points left in the sprite... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_adeb6f5b8c910e7b66ee39b1343b166f7}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a5b6cb7c1e83b134b1c3255ce827a1113}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_af94040469a471b3b7ac34bec2fee6b72}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a6800a57ecbe748b70c8d1fa9ee0fa655}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_aba2f7c8d95862b53b9ce347c9a2bfa71}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_aa475db43f5a0a9606feaa629a7b87ec4}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_ad0500b8777eb381e86b6abe2043806ac}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_af7b3b31969d8c327d168a590f2cb3eb2}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{class_i_sprite_a9c6365557c749751ad1dcc6abc32cf20}\label{class_i_sprite_a9c6365557c749751ad1dcc6abc32cf20}} 
+\index{ISprite@{ISprite}!modifyRotationBy@{modifyRotationBy}}
+\index{modifyRotationBy@{modifyRotationBy}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{modifyRotationBy()}{modifyRotationBy()}}
+{\footnotesize\ttfamily virtual void ISprite\+::modify\+Rotation\+By (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns true when a periodic timer or condition has expired. Condition will be reset once true is returned once. /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_ae5efc130481306f12c60881c4b1bc1ed}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a6f0a2069339719b22955038cd4cac895}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a52d4dd57f2ca1f62d2ffa45794e46a97}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a5cef9d6e53f480d0845f9565e87ac540}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a473294c9d2399a24571960ab8b88acba}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a88b746b4315b187bd0c17a8bcff85000}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_add888289fc216af199e1c026e5a92f90}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_afc48bf15f690a7a81b1884b7fbca8b4b}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a069d8b5214d9cf4137f129f41b2fd005}\label{class_i_sprite_a069d8b5214d9cf4137f129f41b2fd005}} 
+\index{ISprite@{ISprite}!renderHealthBar@{renderHealthBar}}
+\index{renderHealthBar@{renderHealthBar}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{renderHealthBar()}{renderHealthBar()}}
+{\footnotesize\ttfamily virtual void ISprite\+::render\+Health\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} IDentifies the behavior associated with an instantiated sprite implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a460e2ec5e3f6cf396197e9d72c817684}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a404e65ede00328bafbe413cea48d7fd6}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a54f98c89681e04112236f31b9a8c45d9}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a4e643760c647bae621d320e780b0690d}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a22b0c6dcf5b6d20477635c0a809f1306}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_ab331b1461fdff46bd24d7d790492272a}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a9379d53799e3e973100eb49b47e44871}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_aeda57e9e4d6bb4a0690c78873eabdcf4}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_aee11967e900aaa36ea99368c907a7a6f}\label{class_i_sprite_aee11967e900aaa36ea99368c907a7a6f}} 
+\index{ISprite@{ISprite}!renderSprite@{renderSprite}}
+\index{renderSprite@{renderSprite}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{renderSprite()}{renderSprite()}}
+{\footnotesize\ttfamily virtual void ISprite\+::render\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the sprite health bar using an \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a3fb15b57d1a864b79f125896f0ae16ca}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a930f35de8c82155b85a39018c1759c9a}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_aaa7df5fc50bc61a6a6f814ab037a4ae7}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a819e727050ccf6e43ba329abbd9c7836}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_af6eda6fdcff9052038ca0a7007bf1c21}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a9f0f920ef1271a4791c7c2b8ebf342f5}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a005c55f749b48516d3618ba18186722e}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ad70534bf2ac9ce3487c91e0bbc4cf07f}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 20
+\mbox{\Hypertarget{class_i_sprite_a898c383dffb69ea7a874caf7db0bd102}\label{class_i_sprite_a898c383dffb69ea7a874caf7db0bd102}} 
+\index{ISprite@{ISprite}!setAngle@{setAngle}}
+\index{setAngle@{setAngle}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setAngle()}{setAngle()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Angle (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the angle at which our velocity will modify sprite movement... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a79b47b2a5646c3ce3d7e11e8291e40a4}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_ad53f01683e1c017c99e18919cbd80149}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a2cbd8fdc758fd04ed2d87dce0c8f09e7}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a11407e36506798b437d7f6eab0a57ec3}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a8070efe9869b37352b2b20abc91f7504}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a38690cf955c052a42e8225d6c0c6d507}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_af1b4711700f84f62442bcf26b80b615f}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a0322ac959aff8d3ac4646cbd1a2f59f6}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{class_i_sprite_ac3c80c8b172445a5009ce33859878989}\label{class_i_sprite_ac3c80c8b172445a5009ce33859878989}} 
+\index{ISprite@{ISprite}!setAnimation@{setAnimation}}
+\index{setAnimation@{setAnimation}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setAnimation()}{setAnimation()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}}}]{animation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the state/animation property of the model ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a19e829267c0267bce7f04c69e2fe4f46}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a52d35d3bdb2e19a8fdfb1cabf3e52f96}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a6d93d2447d01ad39cbf109f4f0b579b7}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a618e9e57d33ded230a0b562047f597d6}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a214106b274f9c06bc4fe18cbf240a13f}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a8beaef95e444b186b8a497c1a68351a6}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_ac70da3e7b5208cada9f94d72621c334a}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_aebcb3f437a4bc953ef153c2cd29d5fcf}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 22
+\mbox{\Hypertarget{class_i_sprite_a7ee83ab65401133b1ab1eb4c7d71d417}\label{class_i_sprite_a7ee83ab65401133b1ab1eb4c7d71d417}} 
+\index{ISprite@{ISprite}!setAttackType@{setAttackType}}
+\index{setAttackType@{setAttackType}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setAttackType()}{setAttackType()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Attack\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets what types of attack the sprite is capable of /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_ad23fd18ce5022bf63ae345e14794150b}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a7320a5beca0c893c8d6384a429ff9705}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_ac57757a12d87675876716b8e04598376}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a63d7ae03dfe5660378dd8315c2928a65}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ad50a791dd8aee52566e1137b7297f035}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a9be409005c9f629639bda5ac9786c977}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a185bc4e09fbdd631a8070a01eb961239}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_aa97daebab6e02a73b45b0f5b8a78628c}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a07c06f0a35dc5137e911c90272d079cb}\label{class_i_sprite_a07c06f0a35dc5137e911c90272d079cb}} 
+\index{ISprite@{ISprite}!setBoundingTriangleSize@{setBoundingTriangleSize}}
+\index{setBoundingTriangleSize@{setBoundingTriangleSize}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setBoundingTriangleSize()}{setBoundingTriangleSize()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Bounding\+Triangle\+Size (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns four floats top, bottom, left, and right, which can be used for simple sprite collision calculations... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a418bbaf526861f7d1fb0c20befa3fdf7}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aa18b7e47ac3d297003f9a48628d8574a}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a25e516b3c5c6a500c0e800b6ad7a477f}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a7f77738d4e6cdf4501bc7a7110a2ca58}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ab41ae10bd8881e9875ab1028346ae645}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_af6bb05383a5e6d3a117b379df6061aad}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_ab11889a35cafadffdb5c9ad56e3b9fc3}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a99c92624006da04f8a2e20b3a73a4642}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_abe910800a8f6fec6aada8b348abd703b}\label{class_i_sprite_abe910800a8f6fec6aada8b348abd703b}} 
+\index{ISprite@{ISprite}!setControlMagnitude@{setControlMagnitude}}
+\index{setControlMagnitude@{setControlMagnitude}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setControlMagnitude()}{setControlMagnitude()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Control\+Magnitude (\begin{DoxyParamCaption}\item[{float}]{control\+Magnitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the angle at which our velocity will modify sprite movement... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a9e530d7f46869eeeb83978835b8abddd}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a640c24f1292fe52a5f43c6970c2679b9}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_aca673aa2e18be714599be8c1d32584ce}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a6862fd487bcffa5860503f45134ff09f}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a7a1b712edf62b41219eab4c0dc127786}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a9b042aef7b355a4430fb067babc52ec7}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_afec4f82b0b1c405f3dc595008f1a070a}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a9d22402df64dda778adb0d928dd1ff8b}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 23
+\mbox{\Hypertarget{class_i_sprite_a619d68c2f620557aa1234da2e574c299}\label{class_i_sprite_a619d68c2f620557aa1234da2e574c299}} 
+\index{ISprite@{ISprite}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Un\+Sets the direction of a sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_acccbe788a97e4f258591876667a54be6}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a37d5432b8f54e7227f67c24be77d7a8b}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_aa2a06f41cd7898436c199585002b674e}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a5f6dffbdc6833ba6afe1b80b127b161f}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a64f158a81d7617777975a5afdc960986}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_ab1191de0caa8c5c54edff6957e946ecf}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a619d12cad9aff35f3a59d90644ae4541}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a5e2540290dcc05dfec271b345a354f82}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 24
+\mbox{\Hypertarget{class_i_sprite_a2878e9b4ef301f51b3980d90e913dc8e}\label{class_i_sprite_a2878e9b4ef301f51b3980d90e913dc8e}} 
+\index{ISprite@{ISprite}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Health (\begin{DoxyParamCaption}\item[{float}]{health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} adjusts the health of the sprite by the specified value /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_abc7617d59765cff636fa448b2c8eb2a9}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aa342d2d5c15c544e675b17447d848052}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_ab77c6619e781546ec9706a3c21dfc62e}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_af2be0464ed453cf4c40c2a895a0b4650}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_aa6aea588ba92e6a04f98ef339a62295d}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_ae18e0ad512b1f6739b15c566e825f793}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a6518ed1b75f1785f78e5a7f5450ea69b}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a9cd54287b5558e8ea926679244886649}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 25
+\mbox{\Hypertarget{class_i_sprite_a1f16a3f8d86dff3cb09901e507ba7e97}\label{class_i_sprite_a1f16a3f8d86dff3cb09901e507ba7e97}} 
+\index{ISprite@{ISprite}!setID@{setID}}
+\index{setID@{setID}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setID()}{setID()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+ID (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets an ID value used to reference the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a41e015c02a1062702eb9b843506ba643}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a541db9f31e88fc0e9e101ea347e9bb20}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a2eabfc4b24fb2d4a53e59b2b580f77cf}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a7d7e5a6b6e535b14b4f9fdf98de3f47b}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a4a4ee0852b37e2fac93d98d1a68d71f6}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a30cd8d424abd88b4ed42e9a85241665e}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a620cb02b15c72bbbb191bab9704c4250}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ad5eb26cc5fed6b271ab956cf64990855}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 26
+\mbox{\Hypertarget{class_i_sprite_a52c634029577f209b8b331a526da3db5}\label{class_i_sprite_a52c634029577f209b8b331a526da3db5}} 
+\index{ISprite@{ISprite}!setJump@{setJump}}
+\index{setJump@{setJump}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setJump()}{setJump()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}}}]{jump\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the JUMP\+\_\+\+STATE of the sprite object /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a1e5ea0af0cc4be6b6f70e96c1a49d2bc}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_af9737ef45d35213b076c3f1cfd1ce9db}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_af2f16390fbf546bb478feeb9b44c6693}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_ab02d178b7ee1c137b7793d2ddb34d962}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a7ad1e645c79ce954054c16eb999ca507}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a6eabc2f38ea59310cf5c0bf4bdc437db}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_acc0ac3d0366f114af7cc942e116d44ea}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ae43e7797dd4e3ff80e1a4e3ae7d84b09}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 27
+\mbox{\Hypertarget{class_i_sprite_ae285405b152c6eecfb81018a02a0025c}\label{class_i_sprite_ae285405b152c6eecfb81018a02a0025c}} 
+\index{ISprite@{ISprite}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setLevel()}{setLevel()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the level number for the sprite which can be used to determine sprite behavior /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a56e8b616eca858fe4b4317525780ccb6}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a3ac210bd6b268bf6731e8d53a435691e}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a6da6441a979795f3a7a73af213a4b527}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a1fd9fc07aeb5084990c999facd0a71e4}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a508fd8b3313800862a8ffabe2d6299fc}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_afdcfa8b3f39b96800dc893eba16b2623}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_ade7340e38b154e5339da303bef346bbd}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_aee5895d1fa4c31ad5e2a5bdf1b0ed2f3}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 28
+\mbox{\Hypertarget{class_i_sprite_a87fefd7346890ff768669c66a38db22e}\label{class_i_sprite_a87fefd7346890ff768669c66a38db22e}} 
+\index{ISprite@{ISprite}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Location (\begin{DoxyParamCaption}\item[{Vector}]{location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Only used in non player sprites, this sets an offset location for the sprite... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a006300e43e9b3aa5775f19d84c1d31a6}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a84e90619402b19f80c9809ccb5e9908c}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_aad637e10ac6339699c178e78a6a1360f}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a9e218695e70795a566fdefb1bd2c1ccd}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_af26500fa1cf1c51a25a54fd228308215}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a1dd4d5b2255537e34c41b0f4ab9e2573}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a56e0b78a226137e4cb83ea240c9436b9}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a1ee8b6a8e9370243b0ec9e1e1cb5ce5f}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_ae50aaeda5334c3173fe9fc7ce40cf092}\label{class_i_sprite_ae50aaeda5334c3173fe9fc7ce40cf092}} 
+\index{ISprite@{ISprite}!setOffset@{setOffset}}
+\index{setOffset@{setOffset}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setOffset()}{setOffset()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Offset (\begin{DoxyParamCaption}\item[{Vector}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns the offset location being applied to the sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a7d18702983c7a087a66d6d10b7d4bc5a}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a51dc74acb35930a8bea7bdc7746d496b}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a5e20207527cf9d5b3b333adaa96c2713}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_aef40b95ec6cc15d87d7724cff164b32c}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a56daf85eb8d45bdff5032fe2ce1428f1}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a8e43d4e3b772a2b20efd213638ca7155}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_aaed7c3b915a49c68593e1cd4daa4a8c7}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a97e111d86efc5ff54a87ac3bb1f26185}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 29
+\mbox{\Hypertarget{class_i_sprite_ad59077967cb00b7d7fc66540c34c4a76}\label{class_i_sprite_ad59077967cb00b7d7fc66540c34c4a76}} 
+\index{ISprite@{ISprite}!setPointValue@{setPointValue}}
+\index{setPointValue@{setPointValue}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setPointValue()}{setPointValue()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Point\+Value (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the value of the sprite in points if it is destroyed /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_ae4536bde9edb898575eb38565ba3bdb9}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a09a59f443bae9d6048385b52ef2ae2fd}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a7950d8bfbce30f0789e06a4bf922cf36}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a954b5ce1735d45c274fbbd5adf3415c0}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a32e225e8e33083f375225c2c0759ee57}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a3fd6dd6c31540c502697e7e764902ff4}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_abf36798cd9745e1ec4bbf475f25e6ace}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a95ee8304c777d88e375375ac15bf7294}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 30
+\mbox{\Hypertarget{class_i_sprite_a95cc65a2ae762eb17386203a25121359}\label{class_i_sprite_a95cc65a2ae762eb17386203a25121359}} 
+\index{ISprite@{ISprite}!setPowerUpType@{setPowerUpType}}
+\index{setPowerUpType@{setPowerUpType}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setPowerUpType()}{setPowerUpType()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Power\+Up\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}}}]{power\+Up\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the type of power up contained in a dying sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a9578cf17cb0d9f47a33a6a8ae7e6d6d9}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aef0ed263f1edfd8a402056f361ab8b68}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a3cd3f2909c29b96ca56c5b0a053191a4}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_accb63453300b0a369cecefc557715a4b}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a91f00d9d5cfc2e7a88969de3044f2d8b}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_aad668f7d941f545f989f1cbfcfd362a1}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a41f2827e2efd5d006fd0bfc773f18d16}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ab8dc94d40283d37f532313813c94c25b}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 31
+\mbox{\Hypertarget{class_i_sprite_a6654c5e990a537984c0da5bd2305cd23}\label{class_i_sprite_a6654c5e990a537984c0da5bd2305cd23}} 
+\index{ISprite@{ISprite}!setVelocities@{setVelocities}}
+\index{setVelocities@{setVelocities}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setVelocities()}{setVelocities()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Velocities (\begin{DoxyParamCaption}\item[{float}]{max\+Normal\+Velocity,  }\item[{float}]{drag\+Velocity,  }\item[{float}]{acceleration\+Velocity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Increases the speed vector length by the acceleration velocity specified /summary\texorpdfstring{$>$}{>} 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aaf4a83444f07903369ea6d24a1906274}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_aa7181e83ebe3fb03b42b82e1db588727}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a73ba40061877fb4b7bb2fb59b0513453}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_aa8a009b9a7d36c8de6465adc3f2ddcf9}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ace8f8322cb2a6efead42fa0253720eae}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a4225bede291df9bf1b03872dee36a061}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a80a926c13b95c335959083b311c1a8e9}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a0a94467c0221719d34b09e70da80ee65}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 32
+\mbox{\Hypertarget{class_i_sprite_a8b13af37066583a800fc531c28eeae7a}\label{class_i_sprite_a8b13af37066583a800fc531c28eeae7a}} 
+\index{ISprite@{ISprite}!setWaterLevel@{setWaterLevel}}
+\index{setWaterLevel@{setWaterLevel}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{setWaterLevel()}{setWaterLevel()}}
+{\footnotesize\ttfamily virtual void ISprite\+::set\+Water\+Level (\begin{DoxyParamCaption}\item[{float}]{water\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Indicates to the sprite object if it is ready for a jump \+:) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_acf5aa4c11bed0f9c1adc932ef1780326}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a49cbf0342d7d86453b611b7d5daf771f}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a6b9de7c8d62dab733bac4d5fe9fc67fd}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_abdf49ce813c6be10d4b9614bdbf7127a}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a5aa5c44f55ed9a2221822f95aa9a5783}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a86f597117fac856d06d611463f2b1a18}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_af527178fabccfc7d8bd17243df818a1b}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a3fc061d9f036bd5a3a2399eadbbf33e0}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 33
+\mbox{\Hypertarget{class_i_sprite_a33b6f37c824c9682dd3bc39248ace4e8}\label{class_i_sprite_a33b6f37c824c9682dd3bc39248ace4e8}} 
+\index{ISprite@{ISprite}!spriteHeight@{spriteHeight}}
+\index{spriteHeight@{spriteHeight}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{spriteHeight()}{spriteHeight()}}
+{\footnotesize\ttfamily virtual float ISprite\+::sprite\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the speeds at which the sprite travels based on direction... max\+Normal\+Velocity is the maximum normal speed the sprite can go ~\newline
+ drag\+Velocity is how much speed is reduced when the sprite isn\textquotesingle{}t moving in a direction (until speed is 0) acceleration is how much speed is increased when the sprite is moving in a direction (until speed is maximumvelocity) ~\newline
+ /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_ae1a8d17c4c34b0ca80933cfc12c0dd02}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a1f614c3cd3bea99701fc5a2ced78f372}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a01f09951a52fbe04fd35a91b10be19a5}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_abf0f93ef64a99d04bba900a992b47deb}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a943795bf6782af98792db99bf712ce45}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a90fe2d22b75f96c2f865ae3c7d183aaf}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a61a1ca34806f6ce7cf6bbb39a4dbdb41}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_acbd4e57074ec10b229be1ca3ceb3256d}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a950ef030265205693eb1bf64d716de9a}\label{class_i_sprite_a950ef030265205693eb1bf64d716de9a}} 
+\index{ISprite@{ISprite}!spriteType@{spriteType}}
+\index{spriteType@{spriteType}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{spriteType()}{spriteType()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\+\_\+\+TYPE}} ISprite\+::sprite\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Sets the state/animation property of the 3d model ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a4f0c4bae9b4eaca82ece0c36023bc974}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a347846a14fd599b8c68303a79db69e6f}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a5a112fb3172efbfac29430e7661725d5}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a9423f1260717ed4d09de44c85d8bfc76}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a169f2d4d81bb4de34422cf0d37f1ed72}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a8cdbdb990a702cbff4fdb208c1fa1332}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_acd85130eebabd6ab0378eca97beb7f36}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a4d6082ab79c9ad644c7f1fe276729b91}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 34
+\mbox{\Hypertarget{class_i_sprite_afbb2a42fcb82e5ced198668cbdf76129}\label{class_i_sprite_afbb2a42fcb82e5ced198668cbdf76129}} 
+\index{ISprite@{ISprite}!spriteWidth@{spriteWidth}}
+\index{spriteWidth@{spriteWidth}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{spriteWidth()}{spriteWidth()}}
+{\footnotesize\ttfamily virtual float ISprite\+::sprite\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Defines the width of the sprite including scaling if it applies /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a151f87a99a796030318833ccc14b70f9}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a756fb7f81c0602d88823bd8184912bed}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a4ca1900e0737f8f4fcbf3369aba76183}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a0b34a2491721d83e68d0cde4882f5ef1}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a1359b117eead58a9f693f77fe87ee51c}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a5dd4a171325ca2b5f5c922e21808b748}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a81d8b5f07333b28bd6905b589fbae26d}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ad5d4c10fe6fa934909a6c63684c7d4d9}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_a412d333cb4e2861cd006f6acb94437ad}\label{class_i_sprite_a412d333cb4e2861cd006f6acb94437ad}} 
+\index{ISprite@{ISprite}!translateSprite@{translateSprite}}
+\index{translateSprite@{translateSprite}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{translateSprite()}{translateSprite()}}
+{\footnotesize\ttfamily virtual void ISprite\+::translate\+Sprite (\begin{DoxyParamCaption}\item[{Vector}]{sprite\+Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Update the current location of the sprite by velocity and returns any affect that may have on the map... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_aed619ac74243d76672a41c1a6e8dbb7e}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_a430e04f7aaf1563469de58f497cfa5c5}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a5d3087ad5b8de4233add2497111aa919}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_a49d860cee50099d3a671651e88f5adbf}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a392616c14141773698da6b808c28d065}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a9b252b813d7d51661a939c261582b7cd}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a7b023a928d81895a3e4cd1f1f424df8e}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_ac0a28df03f65b27d4b134300b0c2e355}{Sprite\+Tower}}.
+
+Here is the caller graph for this function\+:
+% FIG 35
+\mbox{\Hypertarget{class_i_sprite_a04378a9ef84c5e46c712bfb495b7d736}\label{class_i_sprite_a04378a9ef84c5e46c712bfb495b7d736}} 
+\index{ISprite@{ISprite}!unsetDirection@{unsetDirection}}
+\index{unsetDirection@{unsetDirection}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{unsetDirection()}{unsetDirection()}}
+{\footnotesize\ttfamily virtual void ISprite\+::unset\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Translates the location of a sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a54ab66cbff62f0826b3024a5cc5176b9}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_ab2c6375a14da065ebd1d74c35dcba2cd}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a502b606e803489204103bd9ea0253295}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_ad696231d49a032ecaabb86d0489e2f3e}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_ab0b52d1f5176621d660f271bc9d1ad78}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_a7c7d6c755325082bb9727b97fc28138a}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_a55f7ddbfbe1e03084bbf8172d306f579}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a13b5db8331055a380a29c1b734a310ec}{Sprite\+Tower}}.
+
+\mbox{\Hypertarget{class_i_sprite_ab33f3f04defb2a994c48237e6629a084}\label{class_i_sprite_ab33f3f04defb2a994c48237e6629a084}} 
+\index{ISprite@{ISprite}!updateLocationByVelocity@{updateLocationByVelocity}}
+\index{updateLocationByVelocity@{updateLocationByVelocity}!ISprite@{ISprite}}
+\doxysubsubsection{\texorpdfstring{updateLocationByVelocity()}{updateLocationByVelocity()}}
+{\footnotesize\ttfamily virtual Vector ISprite\+::update\+Location\+By\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Gets the current x/y/z location of the top left corner of the sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_sprite_baddie_a32a1912537109a8f1c0e368dccb14c52}{Sprite\+Baddie}}, \mbox{\hyperlink{class_sprite_bullet_afb1c86c42b5b994f0ab0a056fa1ca901}{Sprite\+Bullet}}, \mbox{\hyperlink{class_sprite_effect_a84c8ba20d8068a554218cca755b857a9}{Sprite\+Effect}}, \mbox{\hyperlink{class_sprite_player_af3700f3fc0f40e29fa0a9196a18e7c64}{Sprite\+Player}}, \mbox{\hyperlink{class_sprite_powerup_a4e3e5795029538a98d4a6ff03743d34a}{Sprite\+Powerup}}, \mbox{\hyperlink{class_sprite_scenery_abba275bd237192b880ace831d6168ab7}{Sprite\+Scenery}}, \mbox{\hyperlink{class_sprite_target_ad90756fb498f268c3c5a84c6da19c34e}{Sprite\+Target}}, and \mbox{\hyperlink{class_sprite_tower_a9315e73bdb663f19ea9de13e24259f25}{Sprite\+Tower}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_i_sprite_8h}{ISprite.\+h}}\end{DoxyCompactItemize}

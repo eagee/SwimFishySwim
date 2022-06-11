@@ -1,0 +1,13 @@
+digraph "ISubject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ISubject\n||+ ISubject()\l+ ~ISubject()\l+ registerObserver()\l+ removeObserver()\l+ notifyObservers()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{IControllers\n||+ updateControllerStates()\l+ checkButtonPress()\l+ checkButtonRelease()\l+ getStatusOfAllButtons()\l+ checkControllerStatus()\l+ numberOfConnectedDevices()\l+ checkPointer()\l+ checkMotion()\l+ checkOrientation()\l+ checkJoystickAngle()\l+ checkJoystickMagnitude()\l+ stopRumblePack()\l+ startRumblePack()\l+ dispose()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_controllers.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{Subject\n||+ Subject()\l+ ~Subject()\l+ registerObserver()\l+ removeObserver()\l+ notifyObservers()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_subject.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{TestSubject\n||+ TestSubject()\l+ ~TestSubject()\l+ registerObserver()\l+ removeObserver()\l+ notifyObservers()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_test_subject.html",tooltip="This is the test subject object used to test the observer pattern."];
+}

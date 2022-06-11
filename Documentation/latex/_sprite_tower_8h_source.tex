@@ -1,0 +1,139 @@
+\hypertarget{_sprite_tower_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Sprite\+Tower.h}
+\mbox{\hyperlink{_sprite_tower_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00001}00001 \textcolor{comment}{// SpritePlayer.h}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00002}00002 \textcolor{comment}{// Defines implementation for a common interface for dealing with multiple sprite behaviors...}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef TOWER\_SPRITE\_H}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00005}00005 \textcolor{preprocessor}{\#define TOWER\_SPRITE\_H}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_sprite_8h}{ISprite.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00012}\mbox{\hyperlink{class_sprite_tower}{00012}} \textcolor{keyword}{class }\mbox{\hyperlink{class_sprite_tower}{SpriteTower}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_sprite}{ISprite}}}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00013}00013 \{ }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00014}00014     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00015}00015         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00016}00016         \mbox{\hyperlink{class_sprite_tower_a6e72ac3846163322bdb73ce01b7e8e74}{SpriteTower}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00017}00017         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00018}00018         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_sprite_tower_a49a9ccefc86ec23094ab55894240976e}{\string~SpriteTower}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00023}00023         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad5eb26cc5fed6b271ab956cf64990855}{setID}}(\textcolor{keywordtype}{int} ID);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00024}00024         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00028}00028         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_tower_aaa139cd8d28c1e0c151dc815c1e2398b}{getID}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00029}00029         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00033}00033         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_tower_ae51bf7580f099facbf8ff29ca7332e37}{isDead}}();        }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00038}00038         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a296a0fe901ec95d9f092ca7bf385a225}{assignModel}}(\mbox{\hyperlink{class_i_model}{IModel}} *model);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00043}00043         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad7924bad4f5f2aba65fc42ab16e3886e}{assignWeapon}}(\mbox{\hyperlink{class_i_projectile_weapon}{IProjectileWeapon}} *weapon);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00048}00048         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad81f1d7245999348aae4c6c465587327}{lockOnTarget}}(\mbox{\hyperlink{class_i_sprite}{ISprite}} \&target);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00049}00049         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00053}00053         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_tower_ac356674e870506b1088a73fc459ded8a}{checkDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00054}00054         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00058}00058         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad3ac4a8d843a960e5a2901bc5ffeb7da}{handleCollision}}(\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\_TYPE}} type, \textcolor{keywordtype}{float} collisionForce);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00059}00059         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00063}00063         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ae5e3c35b726639e5d2813ee6fb0595b2}{handleJump}}(\textcolor{keywordtype}{float} jumpForce);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00064}00064         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00068}00068         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a5e2540290dcc05dfec271b345a354f82}{setDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);        }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00069}00069         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00073}00073         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a13b5db8331055a380a29c1b734a310ec}{unsetDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);                }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00074}00074         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00078}00078         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ac0a28df03f65b27d4b134300b0c2e355}{translateSprite}}(Vector spriteLocation);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00079}00079         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00083}00083         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_tower_a9315e73bdb663f19ea9de13e24259f25}{updateLocationByVelocity}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00084}00084         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00088}00088         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_tower_a784bea4f9bd8ebbc86b4808e066a941f}{getLocation}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00089}00089         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00093}00093         \mbox{\hyperlink{structtag_sprite_bounding_triangle}{BoundingTriangle}} \mbox{\hyperlink{class_sprite_tower_a890001fe9d2a956f523127bec502072d}{getBoundingTriangle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00102}00102         \textcolor{keyword}{virtual} \mbox{\hyperlink{structtag_bounding_circle}{BoundingCircle}} \mbox{\hyperlink{class_sprite_tower_abaf984f9fc0a9b7d1ce2260f786a1ee9}{getBoundingCircle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00107}00107         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a99c92624006da04f8a2e20b3a73a4642}{setBoundingTriangleSize}}(\textcolor{keywordtype}{float} size);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00112}00112         \mbox{\hyperlink{structtag_sprite_bounding_box}{BoundingBox}} \mbox{\hyperlink{class_sprite_tower_a4850f50e256fc5285a434569a20b8acf}{getBoundingBox}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00113}00113         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00117}00117         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a1ee8b6a8e9370243b0ec9e1e1cb5ce5f}{setLocation}}(Vector location);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00118}00118         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00122}00122         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a97e111d86efc5ff54a87ac3bb1f26185}{setOffset}}(Vector offset);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00127}00127         Vector \mbox{\hyperlink{class_sprite_tower_a0c6a871315d7fd6f90af45d552e8964c}{getOffset}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00128}00128         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00132}00132         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_ad5d4c10fe6fa934909a6c63684c7d4d9}{spriteWidth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00133}00133         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00137}00137         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_acbd4e57074ec10b229be1ca3ceb3256d}{spriteHeight}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00138}00138         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00145}00145         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a0a94467c0221719d34b09e70da80ee65}{setVelocities}}(\textcolor{keywordtype}{float} maxNormalVelocity, \textcolor{keywordtype}{float} dragVelocity, \textcolor{keywordtype}{float} accelerationVelocity);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00146}00146         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00150}00150         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a5a85c3ca1d2627a0c292f7f4cca5af8f}{increaseAcceleration}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00157}00157         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a9d22402df64dda778adb0d928dd1ff8b}{setControlMagnitude}}(\textcolor{keywordtype}{float} controlMagnitude);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00162}00162         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a0322ac959aff8d3ac4646cbd1a2f59f6}{setAngle}}(\textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00163}00163         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00167}00167         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_a4b7e43b9d5d600ad422e087c45a34f43}{getAngle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00172}00172         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_ae493eb94424db9345ba47b1ad748dc69}{getControlAngle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00173}00173         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00177}00177         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ad70534bf2ac9ce3487c91e0bbc4cf07f}{renderSprite}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);        }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00182}00182         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_aeda57e9e4d6bb4a0690c78873eabdcf4}{renderHealthBar}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00183}00183         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00187}00187         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\_TYPE}} \mbox{\hyperlink{class_sprite_tower_a4d6082ab79c9ad644c7f1fe276729b91}{spriteType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00188}00188         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00192}00192         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_aebcb3f437a4bc953ef153c2cd29d5fcf}{setAnimation}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} animation);        }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00197}00197         \textcolor{keyword}{virtual} \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} \mbox{\hyperlink{class_sprite_tower_aa046bc8906871114a57a2701c40a3963}{getCurrentAnimation}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00202}00202         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a9cd54287b5558e8ea926679244886649}{setHealth}}(\textcolor{keywordtype}{float} health);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00207}00207         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_af7b3b31969d8c327d168a590f2cb3eb2}{modifyHealthBy}}(\textcolor{keywordtype}{float} healthModifier);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00212}00212         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_adf77ad303f8ab4a7c6b3632442812cb2}{getHealth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00217}00217         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_ac8be7d141e84e8194f0f52154a1c5e49}{getMaxHealth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00222}00222         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_tower_a036bc8da55e5acd15edfa9edcc39491f}{getPointValue}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00227}00227         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a95ee8304c777d88e375375ac15bf7294}{setPointValue}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00228}00228         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00232}00232         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_aee5895d1fa4c31ad5e2a5bdf1b0ed2f3}{setLevel}}(\textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00233}00233 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00237}00237         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_tower_ae4173b3461d0bef73ee925bd9f0ff0bc}{getLevel}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00238}00238 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00242}00242         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ab8dc94d40283d37f532313813c94c25b}{setPowerUpType}}(\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\_POWER\_UP}} powerUpType);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00243}00243 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00247}00247         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\_POWER\_UP}} \mbox{\hyperlink{class_sprite_tower_ae747f603a9c06e4b0c3d9a46e041ed44}{getPowerUpType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00248}00248 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00253}00253         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_af5dd91d6c5f5a7c385345d941389ebdc}{getWaterLevel}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00254}00254 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00258}00258         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_a3fc061d9f036bd5a3a2399eadbbf33e0}{setWaterLevel}}(\textcolor{keywordtype}{float} waterLevel);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00259}00259 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00263}00263         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_ae43e7797dd4e3ff80e1a4e3ae7d84b09}{setJump}}(\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\_STATE}} jumpState);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00268}00268         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\_STATE}} \mbox{\hyperlink{class_sprite_tower_ab5b7d595c7b321fe0f03008bb51dc4b7}{getJump}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00269}00269 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00273}00273         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_tower_a5918266ef230dc09b82ab7f40880f6f2}{getSpeed}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00278}00278         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_aa97daebab6e02a73b45b0f5b8a78628c}{setAttackType}}(\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\_TYPE}} type);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00279}00279         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00283}00283         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\_TYPE}} \mbox{\hyperlink{class_sprite_tower_a3cf0c6b56ea2378a03652f9ef591cb51}{getAttackType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00284}00284 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00288}00288         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_tower_afc48bf15f690a7a81b1884b7fbca8b4b}{modifyRotationBy}}(\textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00289}00289         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00293}00293         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_tower_a8a782b43519717e451315512c6c8ea69}{hasPeriodicTimerExpired}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00298}00298         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_tower_a2a494079ad0fefb3357c49fd8fd0c57d}{getVelocity}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00299}00299 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00300}00300     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00301}00301     }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00305}00305         \textcolor{keywordtype}{void} processVelocity();     }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00306}00306         }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00307}00307         \textcolor{comment}{// Attributes       }}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00308}00308         \mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} mySpriteInfo;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00309}00309         Vector myOffsetValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00310}00310 \};}
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00311}00311 }
+\DoxyCodeLine{\Hypertarget{_sprite_tower_8h_source_l00312}00312 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

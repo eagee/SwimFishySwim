@@ -1,0 +1,1137 @@
+\hypertarget{pngu_8c_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/pngu.c}
+\mbox{\hyperlink{pngu_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00001}00001 \textcolor{comment}{/********************************************************************************************}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00002}00002 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00003}00003 \textcolor{comment}{PNGU Version : 0.2a}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00004}00004 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00005}00005 \textcolor{comment}{Coder : frontier}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00006}00006 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00007}00007 \textcolor{comment}{More info : http://frontier-\/dev.net}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00008}00008 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00009}00009 \textcolor{comment}{********************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00010}00010 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00011}00011 \textcolor{preprocessor}{\#include <malloc.h>}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00012}00012 \textcolor{preprocessor}{\#include <png.h>}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pngu_8h}{pngu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00016}00016 \textcolor{comment}{// Constants}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00017}\mbox{\hyperlink{pngu_8c_ab4feb494c0b360ab705f12c6641d7a04}{00017}} \textcolor{preprocessor}{\#define PNGU\_SOURCE\_BUFFER          1}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00018}\mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{00018}} \textcolor{preprocessor}{\#define PNGU\_SOURCE\_DEVICE          2}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00021}00021 \textcolor{comment}{// Prototypes of helper functions}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00022}00022 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a3a12e3ae65a7ffd28ccd0a1473d6f4aa}{pngu\_info}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00023}00023 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{pngu\_decode}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stripAlpha);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00024}00024 \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a95076155caa3a3439b2c0b4d9cc3345c}{pngu\_free\_info}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00025}00025 \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a786ab526a2e781803c72bab3f205eef6}{pngu\_read\_data\_from\_buffer}} (png\_structp png\_ptr, png\_bytep data, png\_size\_t length);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00026}00026 \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a87b3e145823450ffbdbe521d0d5ca558}{pngu\_write\_data\_to\_buffer}} (png\_structp png\_ptr, png\_bytep data, png\_size\_t length);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00027}00027 \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a73d56249eb54d799568c5e2d23f7dde7}{pngu\_flush\_data\_to\_buffer}} (png\_structp png\_ptr);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00028}00028 \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{pngu\_clamp}} (\textcolor{keywordtype}{int} value, \textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00031}00031 \textcolor{comment}{// PNGU Image context struct}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00032}\mbox{\hyperlink{struct___i_m_g_c_t_x}{00032}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___i_m_g_c_t_x}{\_IMGCTX}}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00034}\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{00034}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00035}\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{00035}}     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00036}\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{00036}}     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00037}\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{00037}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00039}\mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{00039}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{propRead}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00040}\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{00040}}     \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p}{PNGUPROP}} \mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00042}\mbox{\hyperlink{struct___i_m_g_c_t_x_a169b39d720f691da4f00ab2b95f19e46}{00042}}     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{struct___i_m_g_c_t_x_a169b39d720f691da4f00ab2b95f19e46}{infoRead}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00043}\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{00043}}     png\_structp \mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00044}\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{00044}}     png\_infop \mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00045}\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{00045}}     FILE *\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00046}00046     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00047}\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{00047}}     png\_bytep *\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00048}\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{00048}}     png\_bytep \mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00049}00049 \};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00052}00052 \textcolor{comment}{// PNGU Implementation //}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00054}\mbox{\hyperlink{pngu_8c_a8d9ec5ac0361ec447b85e29860744bb8}{00054}} \mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} \mbox{\hyperlink{pngu_8c_a8d9ec5ac0361ec447b85e29860744bb8}{PNGU\_SelectImageFromBuffer}} (\textcolor{keyword}{const} \textcolor{keywordtype}{void} *buffer)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00055}00055 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00056}00056     \mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx = NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00058}00058     \textcolor{keywordflow}{if} (!buffer)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00059}00059         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00061}00061     ctx = malloc (\textcolor{keyword}{sizeof} (\textcolor{keyword}{struct} \mbox{\hyperlink{struct___i_m_g_c_t_x}{\_IMGCTX}}));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00062}00062     \textcolor{keywordflow}{if} (!ctx)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00063}00063         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00065}00065     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}} = (\textcolor{keywordtype}{void} *) buffer;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00066}00066     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} = \mbox{\hyperlink{pngu_8c_ab4feb494c0b360ab705f12c6641d7a04}{PNGU\_SOURCE\_BUFFER}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00067}00067     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00068}00068     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}} = NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00069}00069     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{propRead}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00070}00070     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a169b39d720f691da4f00ab2b95f19e46}{infoRead}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00072}00072     \textcolor{keywordflow}{return} ctx;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00073}00073 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00076}\mbox{\hyperlink{pngu_8c_a879590240942198d807720290c728e1f}{00076}} \mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} \mbox{\hyperlink{pngu_8c_a879590240942198d807720290c728e1f}{PNGU\_SelectImageFromDevice}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00077}00077 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00078}00078     \mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx = NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00080}00080     \textcolor{keywordflow}{if} (!filename)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00081}00081         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00083}00083     ctx = malloc (\textcolor{keyword}{sizeof} (\textcolor{keyword}{struct} \mbox{\hyperlink{struct___i_m_g_c_t_x}{\_IMGCTX}}));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00084}00084     \textcolor{keywordflow}{if} (!ctx)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00085}00085         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00087}00087     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}} = NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00088}00088     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} = \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00089}00089     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00091}00091     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}} = malloc (strlen (filename) + 1);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00092}00092     \textcolor{keywordflow}{if} (!ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00093}00093     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00094}00094         free (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00095}00095         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00096}00096     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00097}00097     strcpy(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}}, filename);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00099}00099     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{propRead}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00100}00100     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a169b39d720f691da4f00ab2b95f19e46}{infoRead}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00102}00102     \textcolor{keywordflow}{return} ctx;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00103}00103 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00106}\mbox{\hyperlink{pngu_8c_a1d3c1bbde327d7da4c7234f7a4651232}{00106}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a1d3c1bbde327d7da4c7234f7a4651232}{PNGU\_ReleaseImageContext}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00107}00107 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00108}00108     \textcolor{keywordflow}{if} (!ctx)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00109}00109         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00111}00111     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00112}00112         free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00114}00114     \textcolor{keywordflow}{if} ((ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{propRead}}) \&\& (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}}))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00115}00115         free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00117}00117     \mbox{\hyperlink{pngu_8c_a95076155caa3a3439b2c0b4d9cc3345c}{pngu\_free\_info}} (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00119}00119     free (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00120}00120 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00123}\mbox{\hyperlink{pngu_8c_a77398ea67d8889ec52590f6015e2fb70}{00123}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a77398ea67d8889ec52590f6015e2fb70}{PNGU\_GetImageProperties}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p}{PNGUPROP}} *imgprop)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00124}00124 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00125}00125     \textcolor{keywordtype}{int} res;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00127}00127     \textcolor{keywordflow}{if} (!ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{propRead}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00128}00128     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00129}00129         res = \mbox{\hyperlink{pngu_8c_a3a12e3ae65a7ffd28ccd0a1473d6f4aa}{pngu\_info}} (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00130}00130         \textcolor{keywordflow}{if} (res != \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00131}00131             \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00132}00132     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00134}00134     *imgprop = ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00136}00136     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00137}00137 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00140}\mbox{\hyperlink{pngu_8c_a7c9d230223a28ee6658c1777fd918e0b}{00140}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a7c9d230223a28ee6658c1777fd918e0b}{PNGU\_DecodeToYCbYCr}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *buffer, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stride)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00141}00141 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00142}00142     \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00143}00143     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} x, y, buffWidth;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00145}00145     \textcolor{comment}{// width needs to be divisible by two}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00146}00146     \textcolor{keywordflow}{if} (width \% 2)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00147}00147         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a6c251759f731cad6c39ca9a65f6f8b85}{PNGU\_ODD\_WIDTH}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00149}00149     \textcolor{comment}{// stride needs to be divisible by two}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00150}00150     \textcolor{keywordflow}{if} (stride \% 2)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00151}00151         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_aaa97519abb498ec57970cb2165995e62}{PNGU\_ODD\_STRIDE}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00153}00153     result = \mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{pngu\_decode}} (ctx, width, height, 1);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00154}00154     \textcolor{keywordflow}{if} (result != \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00155}00155         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00156}00156 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00157}00157     \textcolor{comment}{// Copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00158}00158     buffWidth = (width + stride) / 2;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00159}00159     \textcolor{keywordflow}{for} (y = 0; y < height; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00160}00160         \textcolor{keywordflow}{for} (x = 0; x < (width / 2); x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00161}00161             ((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)buffer)[y*buffWidth+x] = \mbox{\hyperlink{pngu_8c_af6d2697ca6f59f48ea6bc50b0aea0eb7}{PNGU\_RGB8\_TO\_YCbYCr}} (*(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6), *(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+1), *(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+2),}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00162}00162                                                             *(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+3), *(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+4), *(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+5));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00163}00163     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00164}00164     \textcolor{comment}{// Free resources}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00165}00165     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00166}00166     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00168}00168     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00169}00169     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00170}00170 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00173}\mbox{\hyperlink{pngu_8c_a12cb78b5948101e8bb8382cf75e32c9b}{00173}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a12cb78b5948101e8bb8382cf75e32c9b}{PNGU\_DecodeToRGB565}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *buffer, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stride)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00174}00174 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00175}00175     \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00176}00176     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} x, y, buffWidth;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00177}00177     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00178}00178     result = \mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{pngu\_decode}} (ctx, width, height, 1);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00179}00179     \textcolor{keywordflow}{if} (result != \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00180}00180         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00182}00182     buffWidth = width + stride;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00184}00184     \textcolor{comment}{// Copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00185}00185     \textcolor{keywordflow}{for} (y = 0; y < height; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00186}00186         \textcolor{keywordflow}{for} (x = 0; x < width; x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00187}00187             ((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}} *)buffer)[y*buffWidth+x] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00188}00188                 (((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y][x*3] \& 0xF8)) << 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00189}00189                 (((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y][x*3+1] \& 0xFC)) << 3) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00190}00190                 (((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y][x*3+2] \& 0xF8)) >> 3);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00191}00191     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00192}00192     \textcolor{comment}{// Free resources}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00193}00193     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00194}00194     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00196}00196     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00197}00197     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00198}00198 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00201}\mbox{\hyperlink{pngu_8c_a20a3577c489233cffab341008136d265}{00201}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a20a3577c489233cffab341008136d265}{PNGU\_DecodeToRGBA8}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *buffer, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stride, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} default\_alpha)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00202}00202 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00203}00203     \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00204}00204     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} x, y, buffWidth;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00205}00205     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00206}00206     result = \mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{pngu\_decode}} (ctx, width, height, 0);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00207}00207     \textcolor{keywordflow}{if} (result != \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00208}00208         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00210}00210     buffWidth = width + stride;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00212}00212     \textcolor{comment}{// Check is source image has an alpha channel}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00213}00213     \textcolor{keywordflow}{if} ( (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}}) )}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00214}00214     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00215}00215         \textcolor{comment}{// Alpha channel present, copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00216}00216         \textcolor{keywordflow}{for} (y = 0; y < height; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00217}00217             memcpy (buffer + (y * buffWidth * 4), ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y], width * 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00218}00218     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00219}00219     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00220}00220     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00221}00221         \textcolor{comment}{// No alpha channel present, copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00222}00222         \textcolor{keywordflow}{for} (y = 0; y < height; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00223}00223             \textcolor{keywordflow}{for} (x = 0; x < width; x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00224}00224                 ((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)buffer)[y*buffWidth+x] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00225}00225                     (((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}}) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y][x*3]) << 24) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00226}00226                     (((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}}) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y][x*3+1]) << 16) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00227}00227                     (((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}}) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y][x*3+2]) << 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00228}00228                     ((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}}) default\_alpha);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00229}00229     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00230}00230     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00231}00231     \textcolor{comment}{// Free resources}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00232}00232     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00233}00233     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00235}00235     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00236}00236     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00237}00237 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00238}00238 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00239}00239 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00240}\mbox{\hyperlink{pngu_8c_ad1eacbbb449f3bfef1afeafb3f70b3bd}{00240}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_ad1eacbbb449f3bfef1afeafb3f70b3bd}{PNGU\_DecodeTo4x4RGB565}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *buffer)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00241}00241 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00242}00242     \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00243}00243     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} x, y, qwidth, qheight;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00245}00245     \textcolor{comment}{// width and height need to be divisible by four}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00246}00246     \textcolor{keywordflow}{if} ((width \% 4) || (height \% 4))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00247}00247         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_afb465a5841168569bb08c23f0f1b1cdd}{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00248}00248 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00249}00249     result = \mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{pngu\_decode}} (ctx, width, height, 1);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00250}00250     \textcolor{keywordflow}{if} (result != \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00251}00251         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00252}00252 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00253}00253     \textcolor{comment}{// Copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00254}00254     qwidth = width / 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00255}00255     qheight = height / 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00256}00256 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00257}00257     \textcolor{keywordflow}{for} (y = 0; y < qheight; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00258}00258         \textcolor{keywordflow}{for} (x = 0; x < qwidth; x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00259}00259         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00260}00260             \textcolor{keywordtype}{int} blockbase = (y * qwidth + x) * 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00261}00261 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00262}00262             \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00263}00263             \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00264}00264             ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00265}00265                 (((field64 \& 0xF800000000000000ULL) | ((field64 \& 0xFC000000000000ULL) << 3) | ((field64 \& 0xF80000000000ULL) << 5)) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00266}00266                 (((field64 \& 0xF800000000ULL) << 8) | ((field64 \& 0xFC000000ULL) << 11) | ((field64 \& 0xF80000ULL) << 13)) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00267}00267                 (((field64 \& 0xF800ULL) << 16) | ((field64 \& 0xFCULL) << 19) | ((field32 \& 0xF8000000ULL) >> 11)) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00268}00268                 (((field32 \& 0xF80000ULL) >> 8) | ((field32 \& 0xFC00ULL) >> 5) | ((field32 \& 0xF8ULL) >> 3)));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00269}00269 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00270}00270             field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00271}00271             field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00272}00272             ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+1] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00273}00273                 (((field64 \& 0xF800000000000000ULL) | ((field64 \& 0xFC000000000000ULL) << 3) | ((field64 \& 0xF80000000000ULL) << 5)) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00274}00274                 (((field64 \& 0xF800000000ULL) << 8) | ((field64 \& 0xFC000000ULL) << 11) | ((field64 \& 0xF80000ULL) << 13)) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00275}00275                 (((field64 \& 0xF800ULL) << 16) | ((field64 \& 0xFCULL) << 19) | ((field32 \& 0xF8000000ULL) >> 11)) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00276}00276                 (((field32 \& 0xF80000ULL) >> 8) | ((field32 \& 0xFC00ULL) >> 5) | ((field32 \& 0xF8ULL) >> 3)));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00277}00277 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00278}00278             field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00279}00279             field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00280}00280             ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+2] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00281}00281                 (((field64 \& 0xF800000000000000ULL) | ((field64 \& 0xFC000000000000ULL) << 3) | ((field64 \& 0xF80000000000ULL) << 5)) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00282}00282                 (((field64 \& 0xF800000000ULL) << 8) | ((field64 \& 0xFC000000ULL) << 11) | ((field64 \& 0xF80000ULL) << 13)) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00283}00283                 (((field64 \& 0xF800ULL) << 16) | ((field64 \& 0xFCULL) << 19) | ((field32 \& 0xF8000000ULL) >> 11)) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00284}00284                 (((field32 \& 0xF80000ULL) >> 8) | ((field32 \& 0xFC00ULL) >> 5) | ((field32 \& 0xF8ULL) >> 3)));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00285}00285 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00286}00286             field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00287}00287             field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00288}00288             ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+3] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00289}00289                 (((field64 \& 0xF800000000000000ULL) | ((field64 \& 0xFC000000000000ULL) << 3) | ((field64 \& 0xF80000000000ULL) << 5)) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00290}00290                 (((field64 \& 0xF800000000ULL) << 8) | ((field64 \& 0xFC000000ULL) << 11) | ((field64 \& 0xF80000ULL) << 13)) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00291}00291                 (((field64 \& 0xF800ULL) << 16) | ((field64 \& 0xFCULL) << 19) | ((field32 \& 0xF8000000ULL) >> 11)) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00292}00292                 (((field32 \& 0xF80000ULL) >> 8) | ((field32 \& 0xFC00ULL) >> 5) | ((field32 \& 0xF8ULL) >> 3)));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00293}00293         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00294}00294     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00295}00295     \textcolor{comment}{// Free resources}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00296}00296     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00297}00297     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00298}00298 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00299}00299     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00300}00300     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00301}00301 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00302}00302 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00303}00303 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00304}\mbox{\hyperlink{pngu_8c_a52df1b9aa4d2a806b2c34ca8fcd3865f}{00304}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a52df1b9aa4d2a806b2c34ca8fcd3865f}{PNGU\_DecodeTo4x4RGB5A3}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *buffer, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} default\_alpha)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00305}00305 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00306}00306     \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00307}00307     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} x, y, qwidth, qheight;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00308}00308     \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} alphaMask;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00309}00309 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00310}00310     \textcolor{comment}{// width and height need to be divisible by four}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00311}00311     \textcolor{keywordflow}{if} ((width \% 4) || (height \% 4))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00312}00312         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_afb465a5841168569bb08c23f0f1b1cdd}{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00313}00313 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00314}00314     result = \mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{pngu\_decode}} (ctx, width, height, 0);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00315}00315     \textcolor{keywordflow}{if} (result != \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00316}00316         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00317}00317 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00318}00318     \textcolor{comment}{// Init some vars}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00319}00319     qwidth = width / 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00320}00320     qheight = height / 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00321}00321 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00322}00322     \textcolor{comment}{// Check is source image has an alpha channel}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00323}00323     \textcolor{keywordflow}{if} ( (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}}) )}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00324}00324     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00325}00325         \textcolor{comment}{// Alpha channel present, copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00326}00326         \textcolor{keywordflow}{for} (y = 0; y < qheight; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00327}00327             \textcolor{keywordflow}{for} (x = 0; x < qwidth; x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00328}00328             \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00329}00329                 \textcolor{keywordtype}{int} blockbase = (y * qwidth + x) * 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00330}00330                 \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} tmp;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00331}00331 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00332}00332                 \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} fieldA = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*16));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00333}00333                 \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} fieldB = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*16+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00334}00334                 \textcolor{comment}{// If first pixel is opaque set MSB to 1 and encode colors in RGB555, else set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00335}00335                 \textcolor{keywordflow}{if} ((fieldA \& 0xE000000000ULL) == 0xE000000000ULL)          }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00336}00336                     tmp = 0x8000000000000000ULL | ((fieldA \& 0xF800000000000000ULL) >> 1) | ((fieldA \& 0xF8000000000000ULL) << 2) | ((fieldA \& 0xF80000000000ULL) << 5);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00337}00337                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00338}00338                     tmp = ((fieldA \& 0xE000000000ULL) << 23) | ((fieldA \& 0xF000000000000000ULL) >> 4) | (fieldA \& 0xF0000000000000ULL) | ((fieldA \& 0xF00000000000ULL) << 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00339}00339 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00340}00340                 \textcolor{comment}{// If second pixel is opaque set MSB to 1 and encode colors in RGB555, else set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00341}00341                 \textcolor{keywordflow}{if} ((fieldA \& 0xE0ULL) == 0xE0ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00342}00342                     tmp = tmp | 0x800000000000ULL | ((fieldA \& 0xF8000000ULL) << 15) | ((fieldA \& 0xF80000ULL) << 18) | ((fieldA \& 0xF800ULL) << 21);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00343}00343                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00344}00344                     tmp = tmp | ((fieldA \& 0xE0ULL) << 39) | ((fieldA \& 0xF0000000ULL) << 12) | ((fieldA \& 0xF00000ULL) << 16) | ((fieldA \& 0xF000ULL) << 20);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00345}00345 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00346}00346                 \textcolor{comment}{// If third pixel is opaque set MSB to 1 and encode colors in RGB555, else set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00347}00347                 \textcolor{keywordflow}{if} ((fieldB \& 0xE000000000ULL) == 0xE000000000ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00348}00348                     tmp = tmp | 0x80000000ULL | ((fieldB \& 0xF800000000000000ULL) >> 33) | ((fieldB \& 0xF8000000000000ULL) >> 30) | ((fieldB \& 0xF80000000000ULL) >> 27);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00349}00349                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00350}00350                     tmp = tmp | ((fieldB \& 0xE000000000ULL) >> 9) | ((fieldB \& 0xF000000000000000ULL) >> 36) | ((fieldB \& 0xF0000000000000ULL) >> 32) | ((fieldB \& 0xF00000000000ULL) >> 28);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00351}00351 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00352}00352                 \textcolor{comment}{// If fourth pixel is opaque set MSB to 1 and encode colors in RGB555, else set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00353}00353                 \textcolor{keywordflow}{if} ((fieldB \& 0xE0ULL) == 0xE0ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00354}00354                     tmp = tmp | 0x8000ULL | ((fieldB \& 0xF8000000ULL) >> 17) | ((fieldB \& 0xF80000ULL) >> 14) | ((fieldB \& 0xF800ULL) >> 11);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00355}00355                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00356}00356                     tmp = tmp | ((fieldB \& 0xE0ULL) << 7) | ((fieldB \& 0xF0000000ULL) >> 20) | ((fieldB \& 0xF00000ULL) >> 16) | ((fieldB \& 0xF000ULL) >> 12);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00357}00357                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase] = tmp;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00358}00358 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00359}00359                 fieldA = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*16));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00360}00360                 fieldB = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*16+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00361}00361                 \textcolor{keywordflow}{if} ((fieldA \& 0xE000000000ULL) == 0xE000000000ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00362}00362                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00363}00363                     tmp = 0x8000000000000000ULL | ((fieldA \& 0xF800000000000000ULL) >> 1) | ((fieldA \& 0xF8000000000000ULL) << 2) | ((fieldA \& 0xF80000000000ULL) << 5);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00364}00364                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00365}00365                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00366}00366                     tmp = ((fieldA \& 0xE000000000ULL) << 23) | ((fieldA \& 0xF000000000000000ULL) >> 4) | (fieldA \& 0xF0000000000000ULL) | ((fieldA \& 0xF00000000000ULL) << 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00367}00367 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00368}00368                 \textcolor{keywordflow}{if} ((fieldA \& 0xE0ULL) == 0xE0ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00369}00369                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00370}00370                     tmp = tmp | 0x800000000000ULL | ((fieldA \& 0xF8000000ULL) << 15) | ((fieldA \& 0xF80000ULL) << 18) | ((fieldA \& 0xF800ULL) << 21);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00371}00371                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00372}00372                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00373}00373                     tmp = tmp | ((fieldA \& 0xE0ULL) << 39) | ((fieldA \& 0xF0000000ULL) << 12) | ((fieldA \& 0xF00000ULL) << 16) | ((fieldA \& 0xF000ULL) << 20);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00374}00374 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00375}00375                 \textcolor{keywordflow}{if} ((fieldB \& 0xE000000000ULL) == 0xE000000000ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00376}00376                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00377}00377                     tmp = tmp | 0x80000000ULL | ((fieldB \& 0xF800000000000000ULL) >> 33) | ((fieldB \& 0xF8000000000000ULL) >> 30) | ((fieldB \& 0xF80000000000ULL) >> 27);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00378}00378                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00379}00379                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00380}00380                     tmp = tmp | ((fieldB \& 0xE000000000ULL) >> 9) | ((fieldB \& 0xF000000000000000ULL) >> 36) | ((fieldB \& 0xF0000000000000ULL) >> 32) | ((fieldB \& 0xF00000000000ULL) >> 28);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00381}00381 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00382}00382                 \textcolor{keywordflow}{if} ((fieldB \& 0xE0ULL) == 0xE0ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00383}00383                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00384}00384                     tmp = tmp | 0x8000ULL | ((fieldB \& 0xF8000000ULL) >> 17) | ((fieldB \& 0xF80000ULL) >> 14) | ((fieldB \& 0xF800ULL) >> 11);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00385}00385                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00386}00386                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00387}00387                     tmp = tmp | ((fieldB \& 0xE0ULL) << 7) | ((fieldB \& 0xF0000000ULL) >> 20) | ((fieldB \& 0xF00000ULL) >> 16) | ((fieldB \& 0xF000ULL) >> 12);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00388}00388                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+1] = tmp;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00389}00389 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00390}00390                 fieldA = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*16));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00391}00391                 fieldB = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*16+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00392}00392                 \textcolor{keywordflow}{if} ((fieldA \& 0xE000000000ULL) == 0xE000000000ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00393}00393                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00394}00394                     tmp = 0x8000000000000000ULL | ((fieldA \& 0xF800000000000000ULL) >> 1) | ((fieldA \& 0xF8000000000000ULL) << 2) | ((fieldA \& 0xF80000000000ULL) << 5);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00395}00395                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00396}00396                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00397}00397                     tmp = ((fieldA \& 0xE000000000ULL) << 23) | ((fieldA \& 0xF000000000000000ULL) >> 4) | (fieldA \& 0xF0000000000000ULL) | ((fieldA \& 0xF00000000000ULL) << 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00398}00398 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00399}00399                 \textcolor{keywordflow}{if} ((fieldA \& 0xE0ULL) == 0xE0ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00400}00400                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00401}00401                     tmp = tmp | 0x800000000000ULL | ((fieldA \& 0xF8000000ULL) << 15) | ((fieldA \& 0xF80000ULL) << 18) | ((fieldA \& 0xF800ULL) << 21);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00402}00402                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00403}00403                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00404}00404                     tmp = tmp | ((fieldA \& 0xE0ULL) << 39) | ((fieldA \& 0xF0000000ULL) << 12) | ((fieldA \& 0xF00000ULL) << 16) | ((fieldA \& 0xF000ULL) << 20);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00405}00405 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00406}00406                 \textcolor{keywordflow}{if} ((fieldB \& 0xE000000000ULL) == 0xE000000000ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00407}00407                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00408}00408                     tmp = tmp | 0x80000000ULL | ((fieldB \& 0xF800000000000000ULL) >> 33) | ((fieldB \& 0xF8000000000000ULL) >> 30) | ((fieldB \& 0xF80000000000ULL) >> 27);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00409}00409                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00410}00410                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00411}00411                     tmp = tmp | ((fieldB \& 0xE000000000ULL) >> 9) | ((fieldB \& 0xF000000000000000ULL) >> 36) | ((fieldB \& 0xF0000000000000ULL) >> 32) | ((fieldB \& 0xF00000000000ULL) >> 28);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00412}00412 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00413}00413                 \textcolor{keywordflow}{if} ((fieldB \& 0xE0ULL) == 0xE0ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00414}00414                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00415}00415                     tmp = tmp | 0x8000ULL | ((fieldB \& 0xF8000000ULL) >> 17) | ((fieldB \& 0xF80000ULL) >> 14) | ((fieldB \& 0xF800ULL) >> 11);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00416}00416                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00417}00417                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00418}00418                     tmp = tmp | ((fieldB \& 0xE0ULL) << 7) | ((fieldB \& 0xF0000000ULL) >> 20) | ((fieldB \& 0xF00000ULL) >> 16) | ((fieldB \& 0xF000ULL) >> 12);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00419}00419                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+2] = tmp;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00420}00420 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00421}00421                 fieldA = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*16));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00422}00422                 fieldB = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*16+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00423}00423                 \textcolor{keywordflow}{if} ((fieldA \& 0xE000000000ULL) == 0xE000000000ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00424}00424                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00425}00425                     tmp = 0x8000000000000000ULL | ((fieldA \& 0xF800000000000000ULL) >> 1) | ((fieldA \& 0xF8000000000000ULL) << 2) | ((fieldA \& 0xF80000000000ULL) << 5);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00426}00426                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00427}00427                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00428}00428                     tmp = ((fieldA \& 0xE000000000ULL) << 23) | ((fieldA \& 0xF000000000000000ULL) >> 4) | (fieldA \& 0xF0000000000000ULL) | ((fieldA \& 0xF00000000000ULL) << 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00429}00429 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00430}00430                 \textcolor{keywordflow}{if} ((fieldA \& 0xE0ULL) == 0xE0ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00431}00431                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00432}00432                     tmp = tmp | 0x800000000000ULL | ((fieldA \& 0xF8000000ULL) << 15) | ((fieldA \& 0xF80000ULL) << 18) | ((fieldA \& 0xF800ULL) << 21);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00433}00433                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00434}00434                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00435}00435                     tmp = tmp | ((fieldA \& 0xE0ULL) << 39) | ((fieldA \& 0xF0000000ULL) << 12) | ((fieldA \& 0xF00000ULL) << 16) | ((fieldA \& 0xF000ULL) << 20);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00436}00436 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00437}00437                 \textcolor{keywordflow}{if} ((fieldB \& 0xE000000000ULL) == 0xE000000000ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00438}00438                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00439}00439                     tmp = tmp | 0x80000000ULL | ((fieldB \& 0xF800000000000000ULL) >> 33) | ((fieldB \& 0xF8000000000000ULL) >> 30) | ((fieldB \& 0xF80000000000ULL) >> 27);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00440}00440                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00441}00441                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00442}00442                     tmp = tmp | ((fieldB \& 0xE000000000ULL) >> 9) | ((fieldB \& 0xF000000000000000ULL) >> 36) | ((fieldB \& 0xF0000000000000ULL) >> 32) | ((fieldB \& 0xF00000000000ULL) >> 28);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00443}00443 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00444}00444                 \textcolor{keywordflow}{if} ((fieldB \& 0xE0ULL) == 0xE0ULL)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00445}00445                     \textcolor{comment}{// Opaque pixel, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00446}00446                     tmp = tmp | 0x8000ULL | ((fieldB \& 0xF8000000ULL) >> 17) | ((fieldB \& 0xF80000ULL) >> 14) | ((fieldB \& 0xF800ULL) >> 11);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00447}00447                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00448}00448                     \textcolor{comment}{// Tranlucid pixel, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00449}00449                     tmp = tmp | ((fieldB \& 0xE0ULL) << 7) | ((fieldB \& 0xF0000000ULL) >> 20) | ((fieldB \& 0xF00000ULL) >> 16) | ((fieldB \& 0xF000ULL) >> 12);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00450}00450                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+3] = tmp;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00451}00451             \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00452}00452     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00453}00453     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00454}00454     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00455}00455         \textcolor{comment}{// No alpha channel present, copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00456}00456         default\_alpha = (default\_alpha >> 5);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00457}00457         \textcolor{keywordflow}{if} (default\_alpha == 7)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00458}00458         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00459}00459             \textcolor{comment}{// The user wants an opaque texture, so set MSB to 1 and encode colors in RGB555}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00460}00460             alphaMask = 0x8000800080008000ULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00461}00461 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00462}00462             \textcolor{keywordflow}{for} (y = 0; y < qheight; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00463}00463                 \textcolor{keywordflow}{for} (x = 0; x < qwidth; x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00464}00464                 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00465}00465                     \textcolor{keywordtype}{int} blockbase = (y * qwidth + x) * 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00466}00466 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00467}00467                     \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00468}00468                     \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00469}00469                     ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00470}00470                          alphaMask | ((field64 \& 0xF800000000000000ULL) >> 1) | ((field64 \& 0xF8000000000000ULL) << 2) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00471}00471                         ((field64 \& 0xF80000000000ULL) << 5) | ((field64 \& 0xF800000000ULL) << 7) | ((field64 \& 0xF8000000ULL) << 10) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00472}00472                         ((field64 \& 0xF80000ULL) << 13) | ((field64 \& 0xF800ULL) << 15) | ((field64 \& 0xF8ULL) << 18) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00473}00473                         ((field32 \& 0xF8000000ULL) >> 11) | ((field32 \& 0xF80000ULL) >> 9) | ((field32 \& 0xF800ULL) >> 6) | ((field32 \& 0xF8ULL) >> 3);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00474}00474 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00475}00475                     field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00476}00476                     field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00477}00477                     ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+1] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00478}00478                         alphaMask | ((field64 \& 0xF800000000000000ULL) >> 1) | ((field64 \& 0xF8000000000000ULL) << 2) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00479}00479                         ((field64 \& 0xF80000000000ULL) << 5) | ((field64 \& 0xF800000000ULL) << 7) | ((field64 \& 0xF8000000ULL) << 10) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00480}00480                         ((field64 \& 0xF80000ULL) << 13) | ((field64 \& 0xF800ULL) << 15) | ((field64 \& 0xF8ULL) << 18) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00481}00481                         ((field32 \& 0xF8000000ULL) >> 11) | ((field32 \& 0xF80000ULL) >> 9) | ((field32 \& 0xF800ULL) >> 6) | ((field32 \& 0xF8ULL) >> 3);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00482}00482 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00483}00483                     field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00484}00484                     field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00485}00485                     ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+2] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00486}00486                         alphaMask | ((field64 \& 0xF800000000000000ULL) >> 1) | ((field64 \& 0xF8000000000000ULL) << 2) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00487}00487                         ((field64 \& 0xF80000000000ULL) << 5) | ((field64 \& 0xF800000000ULL) << 7) | ((field64 \& 0xF8000000ULL) << 10) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00488}00488                         ((field64 \& 0xF80000ULL) << 13) | ((field64 \& 0xF800ULL) << 15) | ((field64 \& 0xF8ULL) << 18) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00489}00489                         ((field32 \& 0xF8000000ULL) >> 11) | ((field32 \& 0xF80000ULL) >> 9) | ((field32 \& 0xF800ULL) >> 6) | ((field32 \& 0xF8ULL) >> 3);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00490}00490 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00491}00491                     field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00492}00492                     field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00493}00493                     ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+3] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00494}00494                         alphaMask | ((field64 \& 0xF800000000000000ULL) >> 1) | ((field64 \& 0xF8000000000000ULL) << 2) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00495}00495                         ((field64 \& 0xF80000000000ULL) << 5) | ((field64 \& 0xF800000000ULL) << 7) | ((field64 \& 0xF8000000ULL) << 10) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00496}00496                         ((field64 \& 0xF80000ULL) << 13) | ((field64 \& 0xF800ULL) << 15) | ((field64 \& 0xF8ULL) << 18) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00497}00497                         ((field32 \& 0xF8000000ULL) >> 11) | ((field32 \& 0xF80000ULL) >> 9) | ((field32 \& 0xF800ULL) >> 6) | ((field32 \& 0xF8ULL) >> 3);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00498}00498                 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00499}00499         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00500}00500         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00501}00501         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00502}00502             \textcolor{comment}{// The user wants a translucid texture, so set MSB to 0 and encode colors in ARGB3444}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00503}00503             default\_alpha = (default\_alpha << 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00504}00504             alphaMask = (((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) default\_alpha) << 56) | (((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) default\_alpha) << 40) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00505}00505                         (((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) default\_alpha) << 24) | (((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) default\_alpha) << 8);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00506}00506 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00507}00507             \textcolor{keywordflow}{for} (y = 0; y < qheight; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00508}00508                 \textcolor{keywordflow}{for} (x = 0; x < qwidth; x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00509}00509                 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00510}00510                     \textcolor{keywordtype}{int} blockbase = (y * qwidth + x) * 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00511}00511 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00512}00512                     \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00513}00513                     \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00514}00514                     ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00515}00515                         alphaMask | ((field64 \& 0xF000000000000000ULL) >> 4) | (field64 \& 0xF0000000000000ULL) | ((field64 \& 0xF00000000000ULL) << 4) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00516}00516                         ((field64 \& 0xF000000000ULL) << 4) | ((field64 \& 0xF0000000ULL) << 8) | ((field64 \& 0xF00000ULL) << 12) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00517}00517                         ((field64 \& 0xF000ULL) << 12) | ((field64 \& 0xF0ULL) << 16) | ((field32 \& 0xF0000000ULL) >> 12) |   }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00518}00518                         ((field32 \& 0xF00000ULL) >> 12) | ((field32 \& 0xF000ULL) >> 8) | ((field32 \& 0xF0ULL) >> 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00519}00519 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00520}00520                     field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00521}00521                     field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00522}00522                     ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+1] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00523}00523                         alphaMask | ((field64 \& 0xF000000000000000ULL) >> 4) | (field64 \& 0xF0000000000000ULL) | ((field64 \& 0xF00000000000ULL) << 4) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00524}00524                         ((field64 \& 0xF000000000ULL) << 4) | ((field64 \& 0xF0000000ULL) << 8) | ((field64 \& 0xF00000ULL) << 12) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00525}00525                         ((field64 \& 0xF000ULL) << 12) | ((field64 \& 0xF0ULL) << 16) | ((field32 \& 0xF0000000ULL) >> 12) |   }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00526}00526                         ((field32 \& 0xF00000ULL) >> 12) | ((field32 \& 0xF000ULL) >> 8) | ((field32 \& 0xF0ULL) >> 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00527}00527 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00528}00528                     field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00529}00529                     field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00530}00530                     ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+2] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00531}00531                         alphaMask | ((field64 \& 0xF000000000000000ULL) >> 4) | (field64 \& 0xF0000000000000ULL) | ((field64 \& 0xF00000000000ULL) << 4) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00532}00532                         ((field64 \& 0xF000000000ULL) << 4) | ((field64 \& 0xF0000000ULL) << 8) | ((field64 \& 0xF00000ULL) << 12) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00533}00533                         ((field64 \& 0xF000ULL) << 12) | ((field64 \& 0xF0ULL) << 16) | ((field32 \& 0xF0000000ULL) >> 12) |   }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00534}00534                         ((field32 \& 0xF00000ULL) >> 12) | ((field32 \& 0xF000ULL) >> 8) | ((field32 \& 0xF0ULL) >> 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00535}00535 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00536}00536                     field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00537}00537                     field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00538}00538                     ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+3] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00539}00539                         alphaMask | ((field64 \& 0xF000000000000000ULL) >> 4) | (field64 \& 0xF0000000000000ULL) | ((field64 \& 0xF00000000000ULL) << 4) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00540}00540                         ((field64 \& 0xF000000000ULL) << 4) | ((field64 \& 0xF0000000ULL) << 8) | ((field64 \& 0xF00000ULL) << 12) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00541}00541                         ((field64 \& 0xF000ULL) << 12) | ((field64 \& 0xF0ULL) << 16) | ((field32 \& 0xF0000000ULL) >> 12) |   }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00542}00542                         ((field32 \& 0xF00000ULL) >> 12) | ((field32 \& 0xF000ULL) >> 8) | ((field32 \& 0xF0ULL) >> 4);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00543}00543                 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00544}00544         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00545}00545     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00546}00546     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00547}00547     \textcolor{comment}{// Free resources}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00548}00548     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00549}00549     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00550}00550 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00551}00551     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00552}00552     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00553}00553 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00554}00554 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00555}00555 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00556}\mbox{\hyperlink{pngu_8c_a23c5c1c50cc3a7dcb9a020f12855b70d}{00556}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a23c5c1c50cc3a7dcb9a020f12855b70d}{PNGU\_DecodeTo4x4RGBA8}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *buffer, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} default\_alpha)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00557}00557 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00558}00558     \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00559}00559     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} x, y, qwidth, qheight;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00560}00560     \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} alphaMask;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00561}00561 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00562}00562     \textcolor{comment}{// width and height need to be divisible by four}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00563}00563     \textcolor{keywordflow}{if} ((width \% 4) || (height \% 4))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00564}00564         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_afb465a5841168569bb08c23f0f1b1cdd}{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00565}00565 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00566}00566     result = \mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{pngu\_decode}} (ctx, width, height, 0);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00567}00567     \textcolor{keywordflow}{if} (result != \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00568}00568         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00569}00569 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00570}00570     \textcolor{comment}{// Init some variables}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00571}00571     qwidth = width / 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00572}00572     qheight = height / 4;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00573}00573 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00574}00574     \textcolor{comment}{// Check is source image has an alpha channel}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00575}00575     \textcolor{keywordflow}{if} ( (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}}) )}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00576}00576     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00577}00577         \textcolor{comment}{// Alpha channel present, copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00578}00578         \textcolor{keywordflow}{for} (y = 0; y < qheight; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00579}00579             \textcolor{keywordflow}{for} (x = 0; x < qwidth; x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00580}00580             \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00581}00581                 \textcolor{keywordtype}{int} blockbase = (y * qwidth + x) * 8;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00582}00582 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00583}00583                 \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} fieldA = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*16));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00584}00584                 \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} fieldB = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*16+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00585}00585                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00586}00586                     ((fieldA \& 0xFF00000000ULL) << 24) | ((fieldA \& 0xFF00000000000000ULL) >> 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00587}00587                     ((fieldA \& 0xFFULL) << 40) | ((fieldA \& 0xFF000000ULL) << 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00588}00588                     ((fieldB \& 0xFF00000000ULL) >> 8) | ((fieldB \& 0xFF00000000000000ULL) >> 40) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00589}00589                     ((fieldB \& 0xFFULL) << 8) | ((fieldB \& 0xFF000000ULL) >> 24);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00590}00590                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+4] =}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00591}00591                     ((fieldA \& 0xFFFF0000000000ULL) << 8) | ((fieldA \& 0xFFFF00ULL) << 24) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00592}00592                     ((fieldB \& 0xFFFF0000000000ULL) >> 24) | ((fieldB \& 0xFFFF00ULL) >> 8);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00593}00593 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00594}00594                 fieldA = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*16));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00595}00595                 fieldB = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*16+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00596}00596                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+1] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00597}00597                     ((fieldA \& 0xFF00000000ULL) << 24) | ((fieldA \& 0xFF00000000000000ULL) >> 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00598}00598                     ((fieldA \& 0xFFULL) << 40) | ((fieldA \& 0xFF000000ULL) << 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00599}00599                     ((fieldB \& 0xFF00000000ULL) >> 8) | ((fieldB \& 0xFF00000000000000ULL) >> 40) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00600}00600                     ((fieldB \& 0xFFULL) << 8) | ((fieldB \& 0xFF000000ULL) >> 24);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00601}00601                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+5] =}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00602}00602                     ((fieldA \& 0xFFFF0000000000ULL) << 8) | ((fieldA \& 0xFFFF00ULL) << 24) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00603}00603                     ((fieldB \& 0xFFFF0000000000ULL) >> 24) | ((fieldB \& 0xFFFF00ULL) >> 8);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00604}00604 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00605}00605                 fieldA = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*16));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00606}00606                 fieldB = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*16+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00607}00607                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+2] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00608}00608                     ((fieldA \& 0xFF00000000ULL) << 24) | ((fieldA \& 0xFF00000000000000ULL) >> 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00609}00609                     ((fieldA \& 0xFFULL) << 40) | ((fieldA \& 0xFF000000ULL) << 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00610}00610                     ((fieldB \& 0xFF00000000ULL) >> 8) | ((fieldB \& 0xFF00000000000000ULL) >> 40) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00611}00611                     ((fieldB \& 0xFFULL) << 8) | ((fieldB \& 0xFF000000ULL) >> 24);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00612}00612                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+6] =}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00613}00613                     ((fieldA \& 0xFFFF0000000000ULL) << 8) | ((fieldA \& 0xFFFF00ULL) << 24) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00614}00614                     ((fieldB \& 0xFFFF0000000000ULL) >> 24) | ((fieldB \& 0xFFFF00ULL) >> 8);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00615}00615 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00616}00616                 fieldA = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*16));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00617}00617                 fieldB = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*16+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00618}00618                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+3] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00619}00619                     ((fieldA \& 0xFF00000000ULL) << 24) | ((fieldA \& 0xFF00000000000000ULL) >> 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00620}00620                     ((fieldA \& 0xFFULL) << 40) | ((fieldA \& 0xFF000000ULL) << 8) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00621}00621                     ((fieldB \& 0xFF00000000ULL) >> 8) | ((fieldB \& 0xFF00000000000000ULL) >> 40) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00622}00622                     ((fieldB \& 0xFFULL) << 8) | ((fieldB \& 0xFF000000ULL) >> 24);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00623}00623                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+7] =}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00624}00624                     ((fieldA \& 0xFFFF0000000000ULL) << 8) | ((fieldA \& 0xFFFF00ULL) << 24) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00625}00625                     ((fieldB \& 0xFFFF0000000000ULL) >> 24) | ((fieldB \& 0xFFFF00ULL) >> 8);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00626}00626             \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00627}00627     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00628}00628     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00629}00629     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00630}00630         \textcolor{comment}{// No alpha channel present, copy image to the output buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00631}00631         alphaMask = (((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}})default\_alpha) << 56) | (((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}})default\_alpha) << 40) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00632}00632                     (((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}})default\_alpha) << 24) | (((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}})default\_alpha) << 8);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00633}00633 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00634}00634         \textcolor{keywordflow}{for} (y = 0; y < qheight; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00635}00635             \textcolor{keywordflow}{for} (x = 0; x < qwidth; x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00636}00636             \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00637}00637                 \textcolor{keywordtype}{int} blockbase = (y * qwidth + x) * 8;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00638}00638 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00639}00639                 \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00640}00640                 \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00641}00641                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00642}00642                     (((field64 \& 0xFF00000000000000ULL) >> 8) | (field64 \& 0xFF00000000ULL) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00643}00643                     ((field64 \& 0xFF00ULL) << 8) | ((field32 \& 0xFF0000ULL) >> 16) | alphaMask);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00644}00644                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+4] =}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00645}00645                     (((field64 \& 0xFFFF0000000000ULL) << 8) | ((field64 \& 0xFFFF0000ULL) << 16) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00646}00646                     ((field64 \& 0xFFULL) << 24) | ((field32 \& 0xFF000000ULL) >> 8) | (field32 \& 0xFFFFULL));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00647}00647 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00648}00648                 field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00649}00649                 field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+1]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00650}00650                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+1] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00651}00651                     (((field64 \& 0xFF00000000000000ULL) >> 8) | (field64 \& 0xFF00000000ULL) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00652}00652                     ((field64 \& 0xFF00ULL) << 8) | ((field32 \& 0xFF0000ULL) >> 16) | alphaMask);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00653}00653                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+5] =}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00654}00654                     (((field64 \& 0xFFFF0000000000ULL) << 8) | ((field64 \& 0xFFFF0000ULL) << 16) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00655}00655                     ((field64 \& 0xFFULL) << 24) | ((field32 \& 0xFF000000ULL) >> 8) | (field32 \& 0xFFFFULL));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00656}00656 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00657}00657                 field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00658}00658                 field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+2]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00659}00659                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+2] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00660}00660                     (((field64 \& 0xFF00000000000000ULL) >> 8) | (field64 \& 0xFF00000000ULL) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00661}00661                     ((field64 \& 0xFF00ULL) << 8) | ((field32 \& 0xFF0000ULL) >> 16) | alphaMask);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00662}00662                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+6] =}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00663}00663                     (((field64 \& 0xFFFF0000000000ULL) << 8) | ((field64 \& 0xFFFF0000ULL) << 16) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00664}00664                     ((field64 \& 0xFFULL) << 24) | ((field32 \& 0xFF000000ULL) >> 8) | (field32 \& 0xFFFFULL));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00665}00665 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00666}00666                 field64 = *((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*12));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00667}00667                 field32 = (\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}}) *((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y*4+3]+x*12+8));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00668}00668                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+3] = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00669}00669                     (((field64 \& 0xFF00000000000000ULL) >> 8) | (field64 \& 0xFF00000000ULL) | }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00670}00670                     ((field64 \& 0xFF00ULL) << 8) | ((field32 \& 0xFF0000ULL) >> 16) | alphaMask);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00671}00671                 ((\mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\_u64}} *) buffer)[blockbase+7] =}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00672}00672                     (((field64 \& 0xFFFF0000000000ULL) << 8) | ((field64 \& 0xFFFF0000ULL) << 16) |}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00673}00673                     ((field64 \& 0xFFULL) << 24) | ((field32 \& 0xFF000000ULL) >> 8) | (field32 \& 0xFFFFULL));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00674}00674             \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00675}00675     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00676}00676     }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00677}00677     \textcolor{comment}{// Free resources}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00678}00678     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00679}00679     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00680}00680 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00681}00681     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00682}00682     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00683}00683 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00684}00684 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00685}00685 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00686}\mbox{\hyperlink{pngu_8c_a4a7f91e558b5a0da015d3c0dc8d3e180}{00686}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a4a7f91e558b5a0da015d3c0dc8d3e180}{PNGU\_EncodeFromYCbYCr}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \textcolor{keywordtype}{void} *buffer, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stride)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00687}00687 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00688}00688     png\_uint\_32 rowbytes;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00689}00689     \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} x, y, buffWidth;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00690}00690 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00691}00691     \textcolor{comment}{// Erase from the context any readed info}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00692}00692     \mbox{\hyperlink{pngu_8c_a95076155caa3a3439b2c0b4d9cc3345c}{pngu\_free\_info}} (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00693}00693     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{propRead}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00694}00694 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00695}00695     \textcolor{comment}{// Check if the user has selected a file to write the image}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00696}00696     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_ab4feb494c0b360ab705f12c6641d7a04}{PNGU\_SOURCE\_BUFFER}}); }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00697}00697 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00698}00698     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00699}00699     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00700}00700         \textcolor{comment}{// Open file}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00701}00701         \textcolor{keywordflow}{if} (!(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}} = fopen (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}}, \textcolor{stringliteral}{"{}wb"{}})))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00702}00702             \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_af3832969e5ff0598a6d9c8e20b5f01bd}{PNGU\_CANT\_OPEN\_FILE}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00703}00703     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00704}00704 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00705}00705     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00706}00706         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a44df464719d7186f93f37ad72dd04664}{PNGU\_NO\_FILE\_SELECTED}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00707}00707 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00708}00708     \textcolor{comment}{// Allocation of libpng structs}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00709}00709     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}} = png\_create\_write\_struct (PNG\_LIBPNG\_VER\_STRING, NULL, NULL, NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00710}00710     \textcolor{keywordflow}{if} (!(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00711}00711     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00712}00712         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00713}00713             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00714}00714         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\_LIB\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00715}00715     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00716}00716 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00717}00717     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}} = png\_create\_info\_struct (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00718}00718     \textcolor{keywordflow}{if} (!(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00719}00719     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00720}00720         png\_destroy\_write\_struct (\&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}), (png\_infopp)NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00721}00721         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00722}00722             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00723}00723         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\_LIB\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00724}00724     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00725}00725 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00726}00726     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_ab4feb494c0b360ab705f12c6641d7a04}{PNGU\_SOURCE\_BUFFER}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00727}00727     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00728}00728         \textcolor{comment}{// Installation of our custom data writer function}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00729}00729         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00730}00730         png\_set\_write\_fn (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx, \mbox{\hyperlink{pngu_8c_a87b3e145823450ffbdbe521d0d5ca558}{pngu\_write\_data\_to\_buffer}}, \mbox{\hyperlink{pngu_8c_a73d56249eb54d799568c5e2d23f7dde7}{pngu\_flush\_data\_to\_buffer}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00731}00731     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00732}00732     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00733}00733     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00734}00734         \textcolor{comment}{// Default data writer uses function fwrite, so it needs to use our FILE*}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00735}00735         png\_init\_io (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00736}00736     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00737}00737 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00738}00738     \textcolor{comment}{// Setup output file properties}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00739}00739     png\_set\_IHDR (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}, width, height, 8, PNG\_COLOR\_TYPE\_RGB, }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00740}00740                 PNG\_INTERLACE\_NONE, PNG\_COMPRESSION\_TYPE\_DEFAULT, PNG\_FILTER\_TYPE\_DEFAULT);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00741}00741 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00742}00742     \textcolor{comment}{// Allocate memory to store the image in RGB format}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00743}00743     rowbytes = width * 3;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00744}00744     \textcolor{keywordflow}{if} (rowbytes \% 4)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00745}00745         rowbytes = ((rowbytes / 4) + 1) * 4; \textcolor{comment}{// Add extra padding so each row starts in a 4 byte boundary}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00746}00746 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00747}00747     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}} = malloc (rowbytes * height);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00748}00748     \textcolor{keywordflow}{if} (!ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00749}00749     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00750}00750         png\_destroy\_write\_struct (\&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}), (png\_infopp)NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00751}00751         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00752}00752             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00753}00753         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\_LIB\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00754}00754     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00755}00755 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00756}00756     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}} = malloc (\textcolor{keyword}{sizeof} (png\_bytep) * height);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00757}00757     \textcolor{keywordflow}{if} (!ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00758}00758     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00759}00759         png\_destroy\_write\_struct (\&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}), (png\_infopp)NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00760}00760         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00761}00761             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00762}00762         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\_LIB\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00763}00763     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00764}00764 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00765}00765     \textcolor{comment}{// Encode YCbYCr image into RGB8 format}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00766}00766     buffWidth = (width + stride) / 2;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00767}00767     \textcolor{keywordflow}{for} (y = 0; y < height; y++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00768}00768     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00769}00769         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y] = ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}} + (y * rowbytes);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00770}00770 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00771}00771         \textcolor{keywordflow}{for} (x = 0; x < (width / 2); x++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00772}00772             \mbox{\hyperlink{pngu_8c_ad656f399c1ba77ffc3c803c364f5722f}{PNGU\_YCbYCr\_TO\_RGB8}} ( ((\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} *)buffer)[y*buffWidth+x], }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00773}00773                 ((\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6), ((\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+1),}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00774}00774                 ((\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+2), ((\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+3),}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00775}00775                 ((\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+4), ((\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *) ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[y]+x*6+5) );}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00776}00776     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00777}00777 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00778}00778     \textcolor{comment}{// Tell libpng where is our image data}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00779}00779     png\_set\_rows (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00780}00780 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00781}00781     \textcolor{comment}{// Write file header and image data}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00782}00782     png\_write\_png (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}, PNG\_TRANSFORM\_IDENTITY, NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00783}00783 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00784}00784     \textcolor{comment}{// Tell libpng we have no more data to write}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00785}00785     png\_write\_end (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, (png\_infop) NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00786}00786 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00787}00787     \textcolor{comment}{// Free resources}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00788}00788     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00789}00789     free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00790}00790     png\_destroy\_write\_struct (\&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}), \&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}));}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00791}00791     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00792}00792         fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00793}00793 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00794}00794     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00795}00795     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00796}00796 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00797}00797 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00798}00798 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00799}00799 \textcolor{comment}{// This function is taken from a libogc example}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00800}\mbox{\hyperlink{pngu_8c_af6d2697ca6f59f48ea6bc50b0aea0eb7}{00800}} \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} \mbox{\hyperlink{pngu_8c_af6d2697ca6f59f48ea6bc50b0aea0eb7}{PNGU\_RGB8\_TO\_YCbYCr}} (\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} r1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} g1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} b1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} r2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} g2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} b2)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00801}00801 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00802}00802   \textcolor{keywordtype}{int} y1, cb1, cr1, y2, cb2, cr2, cb, cr;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00803}00803 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00804}00804   y1 = (299 * r1 + 587 * g1 + 114 * b1) / 1000;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00805}00805   cb1 = (-\/16874 * r1 -\/ 33126 * g1 + 50000 * b1 + 12800000) / 100000;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00806}00806   cr1 = (50000 * r1 -\/ 41869 * g1 -\/ 8131 * b1 + 12800000) / 100000;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00807}00807  }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00808}00808   y2 = (299 * r2 + 587 * g2 + 114 * b2) / 1000;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00809}00809   cb2 = (-\/16874 * r2 -\/ 33126 * g2 + 50000 * b2 + 12800000) / 100000;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00810}00810   cr2 = (50000 * r2 -\/ 41869 * g2 -\/ 8131 * b2 + 12800000) / 100000;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00811}00811  }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00812}00812   cb = (cb1 + cb2) >> 1;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00813}00813   cr = (cr1 + cr2) >> 1;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00814}00814  }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00815}00815   \textcolor{keywordflow}{return} (\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}}) ((y1 << 24) | (cb << 16) | (y2 << 8) | cr);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00816}00816 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00817}00817 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00818}00818 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00819}\mbox{\hyperlink{pngu_8c_ad656f399c1ba77ffc3c803c364f5722f}{00819}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_ad656f399c1ba77ffc3c803c364f5722f}{PNGU\_YCbYCr\_TO\_RGB8}} (\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} ycbycr, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *r1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *g1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *b1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *r2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *g2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *b2)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00820}00820 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00821}00821     \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *val = (\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\_u8}} *) \&ycbycr;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00822}00822     \textcolor{keywordtype}{int} r, g, b;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00823}00823 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00824}00824     r = 1.371f * (val[3] -\/ 128);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00825}00825     g = -\/ 0.698f * (val[3] -\/ 128) -\/ 0.336f * (val[1] -\/ 128);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00826}00826     b = 1.732f * (val[1] -\/ 128);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00827}00827 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00828}00828     *r1 = \mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{pngu\_clamp}} (val[0] + r, 0, 255);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00829}00829     *g1 = \mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{pngu\_clamp}} (val[0] + g, 0, 255);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00830}00830     *b1 = \mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{pngu\_clamp}} (val[0] + b, 0, 255);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00831}00831 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00832}00832     *r2 = \mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{pngu\_clamp}} (val[2] + r, 0, 255);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00833}00833     *g2 = \mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{pngu\_clamp}} (val[2] + g, 0, 255);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00834}00834     *b2 = \mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{pngu\_clamp}} (val[2] + b, 0, 255);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00835}00835 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00836}00836 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00837}00837 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00838}\mbox{\hyperlink{pngu_8c_a3a12e3ae65a7ffd28ccd0a1473d6f4aa}{00838}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a3a12e3ae65a7ffd28ccd0a1473d6f4aa}{pngu\_info}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00839}00839 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00840}00840     png\_byte magic[8];}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00841}00841     png\_uint\_32 width;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00842}00842     png\_uint\_32 height;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00843}00843     png\_color\_16p background;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00844}00844     png\_bytep trans;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00845}00845     png\_color\_16p trans\_values;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00846}00846     \textcolor{keywordtype}{int} scale, i;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00847}00847 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00848}00848     \textcolor{comment}{// Check if there is a file selected and if it is a valid .png}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00849}00849     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_ab4feb494c0b360ab705f12c6641d7a04}{PNGU\_SOURCE\_BUFFER}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00850}00850         memcpy (magic, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}}, 8);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00851}00851 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00852}00852     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00853}00853     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00854}00854         \textcolor{comment}{// Open file}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00855}00855         \textcolor{keywordflow}{if} (!(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}} = fopen (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ac03c97336c8b159070fb8aa6115f8ea0}{filename}}, \textcolor{stringliteral}{"{}rb"{}})))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00856}00856             \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_af3832969e5ff0598a6d9c8e20b5f01bd}{PNGU\_CANT\_OPEN\_FILE}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00857}00857 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00858}00858         \textcolor{comment}{// Load first 8 bytes into magic buffer}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00859}00859         \textcolor{keywordflow}{if} (fread (magic, 1, 8, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}}) != 8)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00860}00860         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00861}00861             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00862}00862             \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a06ee95bac3327c66e6b63b036d9d8daf}{PNGU\_CANT\_READ\_FILE}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00863}00863         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00864}00864     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00865}00865 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00866}00866     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00867}00867         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a44df464719d7186f93f37ad72dd04664}{PNGU\_NO\_FILE\_SELECTED}};;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00868}00868 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00869}00869     \textcolor{keywordflow}{if} (png\_sig\_cmp(magic, 0, 8) != 0)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00870}00870     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00871}00871         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00872}00872             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00873}00873         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a87d3ae9979131b3d67234755b9a34abe}{PNGU\_FILE\_IS\_NOT\_PNG}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00874}00874     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00875}00875 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00876}00876     \textcolor{comment}{// Allocation of libpng structs}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00877}00877     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}} = png\_create\_read\_struct (PNG\_LIBPNG\_VER\_STRING, NULL, NULL, NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00878}00878     \textcolor{keywordflow}{if} (!(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00879}00879     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00880}00880         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00881}00881             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00882}00882         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\_LIB\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00883}00883     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00884}00884 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00885}00885     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}} = png\_create\_info\_struct (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00886}00886     \textcolor{keywordflow}{if} (!(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00887}00887     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00888}00888         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00889}00889             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00890}00890         png\_destroy\_read\_struct (\&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}), (png\_infopp)NULL, (png\_infopp)NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00891}00891         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\_LIB\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00892}00892     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00893}00893 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00894}00894     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_ab4feb494c0b360ab705f12c6641d7a04}{PNGU\_SOURCE\_BUFFER}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00895}00895     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00896}00896         \textcolor{comment}{// Installation of our custom data provider function}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00897}00897         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00898}00898         png\_set\_read\_fn (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx, \mbox{\hyperlink{pngu_8c_a786ab526a2e781803c72bab3f205eef6}{pngu\_read\_data\_from\_buffer}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00899}00899     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00900}00900     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00901}00901     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00902}00902         \textcolor{comment}{// Default data provider uses function fread, so it needs to use our FILE*}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00903}00903         png\_init\_io (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00904}00904         png\_set\_sig\_bytes (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, 8); \textcolor{comment}{// We have read 8 bytes already to check PNG authenticity}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00905}00905     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00906}00906 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00907}00907     \textcolor{comment}{// Read png header}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00908}00908     png\_read\_info (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00909}00909 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00910}00910     \textcolor{comment}{// Query image properties if they have not been queried before}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00911}00911     \textcolor{keywordflow}{if} (!ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{propRead}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00912}00912     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00913}00913         png\_get\_IHDR(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}, \&width, \&height,}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00914}00914                     (\textcolor{keywordtype}{int} *) \&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a816d486d8f85046f646f87cf4af96599}{imgBitDepth}}), }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00915}00915                     (\textcolor{keywordtype}{int} *) \&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}}),}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00916}00916                     NULL, NULL, NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00917}00917 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00918}00918         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aff2b428ef8cf7f5c4ba5b7a5e7b39bdf}{imgWidth}} = width;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00919}00919         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a88d8571455583510180948553817b742}{imgHeight}} = height;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00920}00920         \textcolor{keywordflow}{switch} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00921}00921         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00922}00922             \textcolor{keywordflow}{case} PNG\_COLOR\_TYPE\_GRAY:}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00923}00923                 ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} = \mbox{\hyperlink{pngu_8h_a474a93e6dcf0674450bf60affa479e46}{PNGU\_COLOR\_TYPE\_GRAY}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00924}00924                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00925}00925             \textcolor{keywordflow}{case} PNG\_COLOR\_TYPE\_GRAY\_ALPHA:}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00926}00926                 ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} = \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00927}00927                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00928}00928             \textcolor{keywordflow}{case} PNG\_COLOR\_TYPE\_PALETTE:}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00929}00929                 ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} = \mbox{\hyperlink{pngu_8h_ae2b218161e5c9e567bf1406db4201f55}{PNGU\_COLOR\_TYPE\_PALETTE}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00930}00930                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00931}00931             \textcolor{keywordflow}{case} PNG\_COLOR\_TYPE\_RGB:}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00932}00932                 ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} = \mbox{\hyperlink{pngu_8h_a6ff6f2a0dc030bb90414ce8a6ea1d201}{PNGU\_COLOR\_TYPE\_RGB}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00933}00933                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00934}00934             \textcolor{keywordflow}{case} PNG\_COLOR\_TYPE\_RGB\_ALPHA:}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00935}00935                 ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} = \mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00936}00936                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00937}00937             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00938}00938                 ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} = \mbox{\hyperlink{pngu_8h_a50069315f029ce8c6613fbb9ab4d0229}{PNGU\_COLOR\_TYPE\_UNKNOWN}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00939}00939                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00940}00940         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00941}00941 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00942}00942         \textcolor{comment}{// Constant used to scale 16 bit values to 8 bit values}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00943}00943         scale = 1;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00944}00944         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a816d486d8f85046f646f87cf4af96599}{imgBitDepth}} == 16)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00945}00945             scale = 256;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00946}00946 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00947}00947         \textcolor{comment}{// Query background color, if any.}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00948}00948         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a2371695c9ef7ae16aa613fc48d338bbd}{validBckgrnd}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00949}00949         \textcolor{keywordflow}{if} (((ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_a6ff6f2a0dc030bb90414ce8a6ea1d201}{PNGU\_COLOR\_TYPE\_RGB}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}})) \&\&}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00950}00950             (png\_get\_bKGD (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}, \&background)))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00951}00951         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00952}00952             ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a2371695c9ef7ae16aa613fc48d338bbd}{validBckgrnd}} = 1;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00953}00953             ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a84ac6a0cde5d05575077d60caa53fe57}{bckgrnd}}.\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_a9bdd17994681a6bd27483ffa08f07f00}{r}} = background-\/>red / scale;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00954}00954             ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a84ac6a0cde5d05575077d60caa53fe57}{bckgrnd}}.\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_acd73e6a8f605dd180562110249c9cef1}{g}} = background-\/>green / scale;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00955}00955             ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a84ac6a0cde5d05575077d60caa53fe57}{bckgrnd}}.\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_aaa523d5a79e33b2963c200781bac316d}{b}} = background-\/>blue / scale;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00956}00956         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00957}00957         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (((ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_a474a93e6dcf0674450bf60affa479e46}{PNGU\_COLOR\_TYPE\_GRAY}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}})) \&\&}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00958}00958             (png\_get\_bKGD (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}, \&background)))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00959}00959         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00960}00960             ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a2371695c9ef7ae16aa613fc48d338bbd}{validBckgrnd}} = 1;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00961}00961             ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a84ac6a0cde5d05575077d60caa53fe57}{bckgrnd}}.\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_a9bdd17994681a6bd27483ffa08f07f00}{r}} = ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a84ac6a0cde5d05575077d60caa53fe57}{bckgrnd}}.\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_acd73e6a8f605dd180562110249c9cef1}{g}} = ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a84ac6a0cde5d05575077d60caa53fe57}{bckgrnd}}.\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_aaa523d5a79e33b2963c200781bac316d}{b}} = background-\/>gray / scale;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00962}00962         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00963}00963 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00964}00964         \textcolor{comment}{// Query list of transparent colors, if any.}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00965}00965         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00966}00966         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}} = NULL;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00967}00967         \textcolor{keywordflow}{if} (((ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_a6ff6f2a0dc030bb90414ce8a6ea1d201}{PNGU\_COLOR\_TYPE\_RGB}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}})) \&\&}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00968}00968             (png\_get\_tRNS (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}, \&trans, (\textcolor{keywordtype}{int} *) \&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}}), \&trans\_values)))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00969}00969         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00970}00970             \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00971}00971             \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00972}00972                 ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}} = malloc (\textcolor{keyword}{sizeof} (\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r}{PNGUCOLOR}}) * ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00973}00973                 \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00974}00974                     \textcolor{keywordflow}{for} (i = 0; i < ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}}; i++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00975}00975                     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00976}00976                         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}}[i].\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_a9bdd17994681a6bd27483ffa08f07f00}{r}} = trans\_values[i].red / scale;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00977}00977                         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}}[i].\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_acd73e6a8f605dd180562110249c9cef1}{g}} = trans\_values[i].green / scale;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00978}00978                         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}}[i].\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_aaa523d5a79e33b2963c200781bac316d}{b}} = trans\_values[i].blue / scale;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00979}00979                     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00980}00980                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00981}00981                     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00982}00982             \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00983}00983         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00984}00984         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (((ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_a474a93e6dcf0674450bf60affa479e46}{PNGU\_COLOR\_TYPE\_GRAY}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}})) \&\&}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00985}00985             (png\_get\_tRNS (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}, \&trans, (\textcolor{keywordtype}{int} *) \&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}}), \&trans\_values)))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00986}00986         \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00987}00987             \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00988}00988             \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00989}00989                 ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}} = malloc (\textcolor{keyword}{sizeof} (\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r}{PNGUCOLOR}}) * ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00990}00990                 \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00991}00991                     \textcolor{keywordflow}{for} (i = 0; i < ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}}; i++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00992}00992                         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}}[i].\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_a9bdd17994681a6bd27483ffa08f07f00}{r}} = ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}}[i].\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_acd73e6a8f605dd180562110249c9cef1}{g}} = ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a1635aac44d241f159f10b504b28b62b0}{trans}}[i].\mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r_aaa523d5a79e33b2963c200781bac316d}{b}} = }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00993}00993                         trans\_values[i].gray / scale;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00994}00994                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00995}00995                     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aef5c57e9ec792f02eecfbd06fe3397a4}{numTrans}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00996}00996             \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00997}00997         \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00998}00998 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l00999}00999         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6f9a24d3c8699ea6f3dbf6eca2827563}{propRead}} = 1;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01000}01000     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01001}01001 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01002}01002     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01003}01003     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a169b39d720f691da4f00ab2b95f19e46}{infoRead}} = 1;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01004}01004 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01005}01005     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01006}01006 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01007}01007 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01008}01008 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01009}\mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{01009}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_aa2f96f225bd715033eb4aa481f45b500}{pngu\_decode}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} height, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\_u32}} stripAlpha)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01010}01010 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01011}01011     png\_uint\_32 rowbytes;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01012}01012     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01013}01013 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01014}01014     \textcolor{comment}{// Read info if it hasn't been read before}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01015}01015     \textcolor{keywordflow}{if} (!ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a169b39d720f691da4f00ab2b95f19e46}{infoRead}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01016}01016     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01017}01017         i = \mbox{\hyperlink{pngu_8c_a3a12e3ae65a7ffd28ccd0a1473d6f4aa}{pngu\_info}} (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01018}01018         \textcolor{keywordflow}{if} (i != \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01019}01019             \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01020}01020     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01021}01021 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01022}01022     \textcolor{comment}{// Check if the user has specified the real width and height of the image}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01023}01023     \textcolor{keywordflow}{if} ( (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_aff2b428ef8cf7f5c4ba5b7a5e7b39bdf}{imgWidth}} != width) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a88d8571455583510180948553817b742}{imgHeight}} != height) )}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01024}01024         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_afb465a5841168569bb08c23f0f1b1cdd}{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01025}01025 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01026}01026     \textcolor{comment}{// Check if color type is supported by PNGU}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01027}01027     \textcolor{keywordflow}{if} ( (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_ae2b218161e5c9e567bf1406db4201f55}{PNGU\_COLOR\_TYPE\_PALETTE}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_a50069315f029ce8c6613fbb9ab4d0229}{PNGU\_COLOR\_TYPE\_UNKNOWN}}) )}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01028}01028         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_abca8b04f6d5dee4dfcf86710dd8a4de7}{PNGU\_UNSUPPORTED\_COLOR\_TYPE}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01029}01029 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01030}01030     \textcolor{comment}{// Scale 16 bit samples to 8 bit}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01031}01031     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a816d486d8f85046f646f87cf4af96599}{imgBitDepth}} == 16)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01032}01032         png\_set\_strip\_16 (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01033}01033 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01034}01034     \textcolor{comment}{// Remove alpha channel if we don't need it}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01035}01035     \textcolor{keywordflow}{if} (stripAlpha \&\& ((ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}})))}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01036}01036         png\_set\_strip\_alpha (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01037}01037 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01038}01038     \textcolor{comment}{// Expand 1, 2 and 4 bit samples to 8 bit}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01039}01039     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a816d486d8f85046f646f87cf4af96599}{imgBitDepth}} < 8)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01040}01040         png\_set\_packing (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01041}01041 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01042}01042     \textcolor{comment}{// Transform grayscale images to RGB}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01043}01043     \textcolor{keywordflow}{if} ( (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_a474a93e6dcf0674450bf60affa479e46}{PNGU\_COLOR\_TYPE\_GRAY}}) || (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_ac2a83a516475d0d06f0e5df750f2224f}{imgColorType}} == \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}}) )}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01044}01044         png\_set\_gray\_to\_rgb (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01045}01045 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01046}01046     \textcolor{comment}{// Flush transformations}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01047}01047     png\_read\_update\_info (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01048}01048 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01049}01049     \textcolor{comment}{// Allocate memory to store the image}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01050}01050     rowbytes = png\_get\_rowbytes (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01051}01051     \textcolor{keywordflow}{if} (rowbytes \% 4)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01052}01052         rowbytes = ((rowbytes / 4) + 1) * 4; \textcolor{comment}{// Add extra padding so each row starts in a 4 byte boundary}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01053}01053 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01054}01054     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}} = malloc (rowbytes * ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a88d8571455583510180948553817b742}{imgHeight}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01055}01055     \textcolor{keywordflow}{if} (!ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01056}01056     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01057}01057         \mbox{\hyperlink{pngu_8c_a95076155caa3a3439b2c0b4d9cc3345c}{pngu\_free\_info}} (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01058}01058         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\_LIB\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01059}01059     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01060}01060 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01061}01061     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}} = malloc (\textcolor{keyword}{sizeof} (png\_bytep) * ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a88d8571455583510180948553817b742}{imgHeight}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01062}01062     \textcolor{keywordflow}{if} (!ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01063}01063     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01064}01064         free (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01065}01065         \mbox{\hyperlink{pngu_8c_a95076155caa3a3439b2c0b4d9cc3345c}{pngu\_free\_info}} (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01066}01066         \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\_LIB\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01067}01067     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01068}01068 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01069}01069     \textcolor{keywordflow}{for} (i = 0; i < ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a1cd41af4f5eb1268b104aac1e53c23e2}{prop}}.\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p_a88d8571455583510180948553817b742}{imgHeight}}; i++)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01070}01070         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}}[i] = ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a06a9d323d2ccb9ef0ddeaeb99abd943a}{img\_data}} + (i * rowbytes);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01071}01071 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01072}01072     \textcolor{comment}{// Transform the image and copy it to our allocated memory}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01073}01073     png\_read\_image (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_adaf1bb5e13418b5e0cad02d1f4df4cf4}{row\_pointers}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01074}01074 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01075}01075     \textcolor{comment}{// Free resources}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01076}01076     \mbox{\hyperlink{pngu_8c_a95076155caa3a3439b2c0b4d9cc3345c}{pngu\_free\_info}} (ctx);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01077}01077 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01078}01078     \textcolor{comment}{// Success}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01079}01079     \textcolor{keywordflow}{return} \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\_OK}};}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01080}01080 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01081}01081 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01082}01082 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01083}\mbox{\hyperlink{pngu_8c_a95076155caa3a3439b2c0b4d9cc3345c}{01083}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a95076155caa3a3439b2c0b4d9cc3345c}{pngu\_free\_info}} (\mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01084}01084 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01085}01085     \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a169b39d720f691da4f00ab2b95f19e46}{infoRead}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01086}01086     \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01087}01087         \textcolor{keywordflow}{if} (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_ab21573da4fbfdddba9593e974c3fab69}{source}} == \mbox{\hyperlink{pngu_8c_a971e69bb42328001372743fd7cb93ef6}{PNGU\_SOURCE\_DEVICE}})}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01088}01088             fclose (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_afee992fdb689378f659cb0b797889062}{fd}});}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01089}01089 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01090}01090         png\_destroy\_read\_struct (\&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a6240bb86db0a6839f65b24488fb82774}{png\_ptr}}), \&(ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a9c981973841fa46102bae1d6154c339a}{info\_ptr}}), (png\_infopp)NULL);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01091}01091 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01092}01092         ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a169b39d720f691da4f00ab2b95f19e46}{infoRead}} = 0;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01093}01093     \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01094}01094 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01095}01095 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01096}01096 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01097}01097 \textcolor{comment}{// Custom data provider function used for reading from memory buffers.}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01098}\mbox{\hyperlink{pngu_8c_a786ab526a2e781803c72bab3f205eef6}{01098}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a786ab526a2e781803c72bab3f205eef6}{pngu\_read\_data\_from\_buffer}} (png\_structp png\_ptr, png\_bytep data, png\_size\_t length)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01099}01099 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01100}01100     \mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx = (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}) png\_get\_io\_ptr (png\_ptr);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01101}01101     memcpy (data, ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}} + ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}}, length);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01102}01102     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}} += length;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01103}01103 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01104}01104 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01105}01105 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01106}01106 \textcolor{comment}{// Custom data writer function used for writing to memory buffers.}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01107}\mbox{\hyperlink{pngu_8c_a87b3e145823450ffbdbe521d0d5ca558}{01107}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a87b3e145823450ffbdbe521d0d5ca558}{pngu\_write\_data\_to\_buffer}} (png\_structp png\_ptr, png\_bytep data, png\_size\_t length)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01108}01108 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01109}01109     \mbox{\hyperlink{struct___i_m_g_c_t_x}{IMGCTX}} ctx = (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}) png\_get\_io\_ptr (png\_ptr);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01110}01110     memcpy (ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_a131c0a2fadef806a419c98010b095eb7}{buffer}} + ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}}, data, length);}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01111}01111     ctx-\/>\mbox{\hyperlink{struct___i_m_g_c_t_x_aa0d3ca898ae15f94e3625a33f75c6303}{cursor}} += length;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01112}01112 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01113}01113 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01114}01114 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01115}01115 \textcolor{comment}{// Custom data flusher function used for writing to memory buffers.}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01116}\mbox{\hyperlink{pngu_8c_a73d56249eb54d799568c5e2d23f7dde7}{01116}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pngu_8c_a73d56249eb54d799568c5e2d23f7dde7}{pngu\_flush\_data\_to\_buffer}} (png\_structp png\_ptr)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01117}01117 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01118}01118     \textcolor{comment}{// Nothing to do here}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01119}01119 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01120}01120 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01121}01121 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01122}01122 \textcolor{comment}{// Function used in YCbYCr to RGB decoding}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01123}\mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{01123}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pngu_8c_a1567c56fee50fa9fbaafccb79233e9d4}{pngu\_clamp}} (\textcolor{keywordtype}{int} value, \textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01124}01124 \{}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01125}01125     \textcolor{keywordflow}{if} (value < min)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01126}01126         value = min;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01127}01127     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (value > max)}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01128}01128         value = max;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01129}01129 }
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01130}01130     \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01131}01131 \}}
+\DoxyCodeLine{\Hypertarget{pngu_8c_source_l01132}01132 }
+
+\end{DoxyCode}

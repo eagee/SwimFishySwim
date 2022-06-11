@@ -1,0 +1,16 @@
+digraph "SpriteTower::getBoundingTriangle"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SpriteTower::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="spriteMethodsGetBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#ad9d10bdfc75a2c1db8d1bc929a0b6db3",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="modifyAngleByDegrees",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$angles_8cpp.html#af9d7486016974d2bf6bf337b007bbccc",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="modifyVectorByAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$angles_8cpp.html#a54b5da6c7486a0a224fd34341c0dc065",tooltip="Routine that gets cartesian coordinates for a Vector from location data, length, and radian angle...."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="getRadiansForAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$angles_8cpp.html#afd678569a928773e3637374773ada97e",tooltip=" "];
+}

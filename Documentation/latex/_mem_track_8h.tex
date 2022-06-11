@@ -1,0 +1,62 @@
+\hypertarget{_mem_track_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Mem\+Track.h File Reference}
+\label{_mem_track_8h}\index{C:/TeamSheeps/SwimFishySwim/MemTrack.h@{C:/TeamSheeps/SwimFishySwim/MemTrack.h}}
+{\ttfamily \#include $<$typeinfo$>$}\newline
+Include dependency graph for Mem\+Track.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{Mem\+Track\+::\+Mem\+Stamp}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_mem_track}{Mem\+Track}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_mem_track_8h_ab6fe88a112d4613e09d2f7e367cda4ed}{MEMTRACK\+\_\+\+NEW}}~\mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{Mem\+Track\+::\+Mem\+Stamp}}(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+) $\ast$ \mbox{\hyperlink{_mem_track_8h_a1ac41480eb2e4aadd52252ee550b630a}{new}}
+\item 
+\#define \mbox{\hyperlink{_mem_track_8h_a1ac41480eb2e4aadd52252ee550b630a}{new}}~\mbox{\hyperlink{_mem_track_8h_ab6fe88a112d4613e09d2f7e367cda4ed}{MEMTRACK\+\_\+\+NEW}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}{Mem\+Track\+::\+Track\+Malloc}} (size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}{Mem\+Track\+::\+Track\+Free}} (void $\ast$p)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}{Mem\+Track\+::\+Track\+Stamp}} (void $\ast$p, const Mem\+Stamp \&stamp, char const $\ast$type\+Name)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_ab97b33af33d0255feeecde45606f26e5}{Mem\+Track\+::\+Track\+Dump\+Blocks}} ()
+\item 
+void \mbox{\hyperlink{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}{Mem\+Track\+::\+Track\+List\+Memory\+Usage}} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ \mbox{\hyperlink{namespace_mem_track_a7a33e12ed6d0fd72b70dfc91b81c1ab6}{Mem\+Track\+::operator$\ast$}} (const Mem\+Stamp \&stamp, T $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_mem_track_8h_ab6fe88a112d4613e09d2f7e367cda4ed}\label{_mem_track_8h_ab6fe88a112d4613e09d2f7e367cda4ed}} 
+\index{MemTrack.h@{MemTrack.h}!MEMTRACK\_NEW@{MEMTRACK\_NEW}}
+\index{MEMTRACK\_NEW@{MEMTRACK\_NEW}!MemTrack.h@{MemTrack.h}}
+\doxysubsubsection{\texorpdfstring{MEMTRACK\_NEW}{MEMTRACK\_NEW}}
+{\footnotesize\ttfamily \#define MEMTRACK\+\_\+\+NEW~\mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{Mem\+Track\+::\+Mem\+Stamp}}(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+) $\ast$ \mbox{\hyperlink{_mem_track_8h_a1ac41480eb2e4aadd52252ee550b630a}{new}}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8h_source_l00074}{74}} of file \mbox{\hyperlink{_mem_track_8h_source}{Mem\+Track.\+h}}.
+
+\mbox{\Hypertarget{_mem_track_8h_a1ac41480eb2e4aadd52252ee550b630a}\label{_mem_track_8h_a1ac41480eb2e4aadd52252ee550b630a}} 
+\index{MemTrack.h@{MemTrack.h}!new@{new}}
+\index{new@{new}!MemTrack.h@{MemTrack.h}}
+\doxysubsubsection{\texorpdfstring{new}{new}}
+{\footnotesize\ttfamily \#define new~\mbox{\hyperlink{_mem_track_8h_ab6fe88a112d4613e09d2f7e367cda4ed}{MEMTRACK\+\_\+\+NEW}}}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8h_source_l00075}{75}} of file \mbox{\hyperlink{_mem_track_8h_source}{Mem\+Track.\+h}}.
+

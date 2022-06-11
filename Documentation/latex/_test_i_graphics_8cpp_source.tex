@@ -1,0 +1,157 @@
+\hypertarget{_test_i_graphics_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Test\+IGraphics.cpp}
+\mbox{\hyperlink{_test_i_graphics_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00001}00001 \textcolor{comment}{// testObserverPattern.cpp}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00002}00002 \textcolor{comment}{// Provides implementation of testObserverPattern.h definition}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#ifndef GLFW\_DLL}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00006}\mbox{\hyperlink{_test_i_graphics_8cpp_acaaeb59c827bcce5feadee7db40525b0}{00006}} \textcolor{preprocessor}{    \#define GLFW\_DLL}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_test_8h}{ITest.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_test_i_graphics_8h}{TestIGraphics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_gl_graphics_8h}{GlGraphics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_tiled_maps_8h}{TiledMaps.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_model_8h}{IModel.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_model_md2_8h}{ModelMd2.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00021}\mbox{\hyperlink{class_test_i_graphics_a35769111a3114985f1e2822e707f64d2}{00021}}  \mbox{\hyperlink{class_test_i_graphics_a35769111a3114985f1e2822e707f64d2}{TestIGraphics::TestIGraphics}}() }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00022}00022  \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00023}00023  \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00028}\mbox{\hyperlink{class_test_i_graphics_a102d4363fbb681e50e5f6ac999a789f2}{00028}}  \mbox{\hyperlink{class_test_i_graphics_a102d4363fbb681e50e5f6ac999a789f2}{TestIGraphics::\string~TestIGraphics}}() }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00029}00029  \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00030}00030     }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00031}00031  \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00037}\mbox{\hyperlink{class_test_i_graphics_a526eed13c6c38a2cad0b734df55ee8cd}{00037}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_test_i_graphics_a526eed13c6c38a2cad0b734df55ee8cd}{TestIGraphics::executeTest}}()}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00038}00038 \{   }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00039}00039     \textcolor{keywordtype}{bool} returnValue = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00041}00041     myGraphics = \textcolor{keyword}{new} \mbox{\hyperlink{class_gl_graphics}{GlGraphics}}();}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00042}00042     }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00043}00043     \textcolor{comment}{//printf("{}Preallocating skybox: \%s \(\backslash\)n"{}, fileName);}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00044}00044     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} skyboxTexture = myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a7c38b073633f06fbc3cd80b71d1b74e8}{addTextureData}}(\mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\_PATH}}(\textcolor{stringliteral}{"{}//assets//texOther//skyboxA.tga"{}}), \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\_TEXTURE}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00045}00045     }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00046}00046     \textcolor{comment}{//printf("{}Preallocating skybox: \%s \(\backslash\)n"{}, fileName);}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00047}00047     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} sceneboxTexture = myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a7c38b073633f06fbc3cd80b71d1b74e8}{addTextureData}}(\mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\_PATH}}(\textcolor{stringliteral}{"{}//assets//texOther//sceneboxA.tga"{}}), \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\_TEXTURE}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00049}00049     \textcolor{comment}{//printf("{}Preallocating tilemap texture: \%s \(\backslash\)n"{}, fileName);}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00050}00050     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} tilemapTexture = myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a7c38b073633f06fbc3cd80b71d1b74e8}{addTextureData}}(\mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\_PATH}}(\textcolor{stringliteral}{"{}//assets//texOther//mapTypeA.tga"{}}), \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\_TEXTURE}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00051}00051     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} waterTexture = myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a7c38b073633f06fbc3cd80b71d1b74e8}{addTextureData}}(\mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\_PATH}}(\textcolor{stringliteral}{"{}//assets//tex128//waterA.tga"{}}), \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\_TEXTURE}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00053}00053     Vector mapCoords = \mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/32.0, -\/40.0f, -\/20.5f);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00054}00054     Vector waterCoords = \mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/32.0f, -\/40.0f, -\/18.5f);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00056}00056     Vector cameraTarget = \mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(0.0, 0.0f, 20.5f);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00058}00058     \textcolor{comment}{//printf("{}Preallocating tilemap: \%s \(\backslash\)n"{}, fileNme);}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00059}00059     \mbox{\hyperlink{class_tiled_maps}{TiledMaps}} tileMap;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00060}00060     tileMap.\mbox{\hyperlink{class_tiled_maps_aee4d854a24b13a170e3a55a94e3bd12d}{loadTileMap}}(\mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\_PATH}}(\textcolor{stringliteral}{"{}/assets/map/LevelOne.sfs"{}}));}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00061}00061     tileMap.\mbox{\hyperlink{class_tiled_maps_aaff90a3ef7215ed3619885111cab76b6}{generateLayerVertexArrays}}(myGraphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}{TILEMAP\_LAYER\_A}});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00062}00062     tileMap.\mbox{\hyperlink{class_tiled_maps_aaff90a3ef7215ed3619885111cab76b6}{generateLayerVertexArrays}}(myGraphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}{TILEMAP\_LAYER\_D}});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00063}00063     tileMap.\mbox{\hyperlink{class_tiled_maps_a15fd01be6383b84e82d02564f5dc0b4f}{assignTextures}}(tilemapTexture, waterTexture, tilemapTexture, tilemapTexture, tilemapTexture);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00064}00064     tileMap.\mbox{\hyperlink{class_tiled_maps_adead5741f235f5f78605ee20600b19d6}{setMinimumBoundary}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/12.0f, -\/12.0f, 50.0f));  }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00066}00066     \textcolor{comment}{//printf("{}Allocating test md2 model...\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00067}00067     \mbox{\hyperlink{class_model_md2}{ModelMd2}} model;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00068}00068     \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}} animState;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00069}00069     model.\mbox{\hyperlink{class_model_md2_a11c491d1f4e2b2edb385adbfbf6966af}{loadFromFile}}(\mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\_PATH}}(\textcolor{stringliteral}{"{}/assets//models//traditional//hero.md2"{}}), \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa11824deb7e0baed5361c45bac7322dbf}{ANIMATION\_TRADITIONAL\_MD2}});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00070}00070     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} modelTexture = myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a7c38b073633f06fbc3cd80b71d1b74e8}{addTextureData}}(\mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\_PATH}}(\textcolor{stringliteral}{"{}/assets/tex128//hero.tga"{}}), \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\_TEXTURE}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00071}00071     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} modelBump = myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a7c38b073633f06fbc3cd80b71d1b74e8}{addTextureData}}(\mbox{\hyperlink{globals_8h_a2479c4884c0927e4cd70d31dcd7dedf9}{ASSET\_PATH}}(\textcolor{stringliteral}{"{}/assets/tex128//heroBump.tga"{}}), \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\_TEXTURE}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00072}00072     model.assignTexture(modelTexture);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00073}00073     model.assignBumpTexture(modelBump, modelBump);  }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00074}00074     model.\mbox{\hyperlink{class_model_md2_a7fe0847aa62531e17d88fdb2eb83789f}{handleAnimation}}(\mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}}, animState);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00075}00075     model.\mbox{\hyperlink{class_model_md2_a8a8be3f0f4658bea81639257f8729fd2}{setAnimationType}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a126cee880a60e98bde4f048afce5fe02}{ATTACK\_A}});   }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00076}00076     model.\mbox{\hyperlink{class_model_md2_ac814e4d54b63cb8fd972436360ddc14a}{setModelScale}}(0.11f);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00077}00077     model.\mbox{\hyperlink{class_model_md2_ab578f1b63633526733604f13f02c8b32}{translateModel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(10.0f, 10.0f, -\/18.0f));}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00078}00078     model.\mbox{\hyperlink{class_model_md2_ac6d16ddd19d466ff2f1476bc6ae98aba}{buildVertexArrays}}(myGraphics, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00080}00080     \textcolor{keywordtype}{float} zValue = 90.0f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00081}00081         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00082}00082     \textcolor{comment}{//for(float zValue = 0.0f; zValue <= 360.0f; zValue += 0.075f)}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00083}00083     \textcolor{keywordflow}{while}(returnValue == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00084}00084     \{       }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00085}00085         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00086}00086         \textcolor{comment}{// Get some input so that we can pan around our graphics...}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00087}00087         \textcolor{keywordflow}{if}(glfwGetKey(GLFW\_KEY\_RIGHT) == GLFW\_PRESS)}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00088}00088         \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00089}00089             cameraTarget.x += 0.25f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00090}00090         \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00091}00091         \textcolor{keywordflow}{if}(glfwGetKey(GLFW\_KEY\_LEFT) == GLFW\_PRESS)}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00092}00092         \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00093}00093             cameraTarget.x -\/= 0.25f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00094}00094         \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00095}00095         \textcolor{keywordflow}{if}(glfwGetKey(GLFW\_KEY\_UP) == GLFW\_PRESS)}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00096}00096         \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00097}00097             \textcolor{comment}{//myGraphics-\/>adjustCameraDistance(1.0f);}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00098}00098             cameraTarget.y -\/= 0.25f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00099}00099         \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00100}00100         \textcolor{keywordflow}{if}(glfwGetKey(GLFW\_KEY\_DOWN) == GLFW\_PRESS)}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00101}00101         \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00102}00102             \textcolor{comment}{//myGraphics-\/>adjustCameraDistance(-\/1.0f);}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00103}00103             cameraTarget.y += 0.25f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00104}00104         \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00105}00105         \textcolor{keywordflow}{if}(glfwGetKey(GLFW\_KEY\_F1) == GLFW\_PRESS)}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00106}00106         \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00107}00107             \textcolor{comment}{//myGraphics-\/>adjustCameraDistance(1.0f);}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00108}00108             cameraTarget.z -\/= 0.25f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00109}00109         \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00110}00110         \textcolor{keywordflow}{if}(glfwGetKey(GLFW\_KEY\_F2) == GLFW\_PRESS)}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00111}00111         \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00112}00112             \textcolor{comment}{//myGraphics-\/>adjustCameraDistance(-\/1.0f);}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00113}00113             cameraTarget.z += 0.25f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00114}00114         \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00115}00115         \textcolor{keywordflow}{if}(glfwGetKey(GLFW\_KEY\_ESC) == GLFW\_PRESS)}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00116}00116         \{}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00117}00117             returnValue = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00118}00118         \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00119}00119         tileMap.\mbox{\hyperlink{class_tiled_maps_a104627d37160c3619e9e773ddcbb0b90}{translateMap}}(\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}{TILEMAP\_LAYER\_A}}, mapCoords);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00120}00120         tileMap.\mbox{\hyperlink{class_tiled_maps_a104627d37160c3619e9e773ddcbb0b90}{translateMap}}(\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}{TILEMAP\_LAYER\_D}}, waterCoords);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00121}00121         tileMap.\mbox{\hyperlink{class_tiled_maps_a8d2064dc9f73c356dc9d1ee7a094089f}{animationTask}}(\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}{TILEMAP\_LAYER\_D}});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00123}00123         myGraphics-\/>\mbox{\hyperlink{class_i_graphics_af5d8abf1dab44be02d37f9ae0b8430a1}{beginScene}}();             }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00125}00125         myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a8e1b17c0ee917f8f033697a007ef5367}{setCameraTarget}}(cameraTarget, zValue, 0.0f);     }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00127}00127         \textcolor{comment}{// This part of the test draws a rotating triangle}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00128}00128         \mbox{\hyperlink{structtag_triangle}{Triangle}} test;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00129}00129         test.\mbox{\hyperlink{structtag_triangle_a9f54d344797bd9c9747dc5d0356cd332}{texture\_S}}[0] = 0.0f; test.\mbox{\hyperlink{structtag_triangle_aa05ebce9298d058f8c2bb492d1546edb}{texture\_T}}[0] = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00130}00130         test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[0].x =  1.0f; test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[0].y =  0.0f; test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[0].z = 20.0f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00131}00131         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00132}00132         test.\mbox{\hyperlink{structtag_triangle_a9f54d344797bd9c9747dc5d0356cd332}{texture\_S}}[0] = 1.0f; test.\mbox{\hyperlink{structtag_triangle_aa05ebce9298d058f8c2bb492d1546edb}{texture\_T}}[0] = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00133}00133         test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[1].x = -\/1.0f; test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[1].y = -\/1.0f; test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[1].z = 20.0f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00134}00134         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00135}00135         test.\mbox{\hyperlink{structtag_triangle_a9f54d344797bd9c9747dc5d0356cd332}{texture\_S}}[0] = 1.0f; test.\mbox{\hyperlink{structtag_triangle_aa05ebce9298d058f8c2bb492d1546edb}{texture\_T}}[0] = 1.0f;       }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00136}00136         test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[2].x =  1.0f; test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[2].y = 1.0f; test.\mbox{\hyperlink{structtag_triangle_a02b7bbad258f45061d8b7f9cc7871fd4}{verticies}}[2].z = 20.0f;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00137}00137         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00138}00138         myGraphics-\/>\mbox{\hyperlink{class_i_graphics_abf2eedb8adf18344b39db9aaac5ddc6d}{rotateNextObjectInScene}}(\&ROT\_INIT(1.0f, 0.0f, 0.0f, zValue));}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00139}00139         myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a6d47b1bb0a96a2e379a0b5866ad0c7ec}{addTriangleToScene}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(5.0f, 5.0f, 20.0f), test, skyboxTexture);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00140}00140         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00141}00141         tileMap.\mbox{\hyperlink{class_tiled_maps_a2fbc1884278e96c739d88042f0b594f7}{renderLayerVertexArrays}}(myGraphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}{TILEMAP\_LAYER\_A}});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00142}00142         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00143}00143         model.\mbox{\hyperlink{class_model_md2_a7fe0847aa62531e17d88fdb2eb83789f}{handleAnimation}}(\mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}}, animState);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00144}00144         model.\mbox{\hyperlink{class_model_md2_afe66a3c9cee535b1ea297afc29138f64}{renderModel}}(myGraphics, animState, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00145}00145         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00146}00146         tileMap.\mbox{\hyperlink{class_tiled_maps_a2fbc1884278e96c739d88042f0b594f7}{renderLayerVertexArrays}}(myGraphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}{TILEMAP\_LAYER\_D}});     }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00147}00147         }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00148}00148         \textcolor{comment}{// This part of the test adds a triangle into the scene...}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00149}00149         myGraphics-\/>\mbox{\hyperlink{class_i_graphics_a7eda94b2c40c55f250360a88f00ce392}{addSkyboxToScene}}(\mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937aafd0f74115125e8825c410f359bc642a4}{PROJECTION\_NORMAL}}, skyboxTexture, sceneboxTexture);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00150}00150         myGraphics-\/>\mbox{\hyperlink{class_i_graphics_ac040a248f63da32281dc33fcd0e8a100}{endScene}}(); }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00151}00151     \}}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00153}00153     tileMap.\mbox{\hyperlink{class_tiled_maps_a77a3145036168ebfa07ac4d65e3edb7a}{freeLayerVertexArrays}}(myGraphics, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}{TILEMAP\_LAYER\_A}});}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00154}00154     model.\mbox{\hyperlink{class_model_md2_adf6fd2920491a6c96078a93f6d8027d5}{freeVertexArrays}}(myGraphics);}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00156}00156     myGraphics-\/>dispose();}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00158}00158     \textcolor{keyword}{delete} myGraphics;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00159}00159     }
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00160}00160     \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{\Hypertarget{_test_i_graphics_8cpp_source_l00161}00161 \}}
+
+\end{DoxyCode}

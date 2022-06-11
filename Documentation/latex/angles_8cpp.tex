@@ -1,0 +1,148 @@
+\hypertarget{angles_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/angles.cpp File Reference}
+\label{angles_8cpp}\index{C:/TeamSheeps/SwimFishySwim/angles.cpp@{C:/TeamSheeps/SwimFishySwim/angles.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+Include dependency graph for angles.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{angles_8cpp_a7f7e2685ab71efefb9d176543e4fa599}{adjust\+Angle\+Rotation}} (float \&current\+Angle, const float target\+Angle, float rotation\+Speed)
+\begin{DoxyCompactList}\small\item\em Routine for adjusting a sprite rotation to reflect it\textquotesingle{}s target rotation over a period of time ... I\textquotesingle{}m not a math guy so I have no idea if this is the best way... ~\newline
+ /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{modify\+Angle\+By\+Degrees}} (float angle, float modifier)
+\item 
+float \mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{get\+Radians\+For\+Angle}} (float angle)
+\item 
+Vector \mbox{\hyperlink{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}{modify\+Vector\+By\+Angle}} (Vector location, float distance\+Length, float angle\+In\+Degrees)
+\begin{DoxyCompactList}\small\item\em Routine that gets cartesian coordinates for a Vector from location data, length, and radian angle.. /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+Vector \mbox{\hyperlink{angles_8cpp_a01eca5c9e7450e3198c46569b7e1a3a6}{rotate\+Vector\+By\+Angle}} (Vector location, float angle\+In\+Degrees)
+\item 
+float \mbox{\hyperlink{angles_8cpp_a51569664e82f97f4fa306050a9622fb9}{get\+Angle\+Between\+Two\+Vectors}} (Vector v1, Vector v2)
+\item 
+float \mbox{\hyperlink{angles_8cpp_a30d6878d81e316089e36122cc281edc3}{get\+Angle\+Between\+Two\+Points}} (float x1, float y1, float x2, float y2)
+\item 
+float \mbox{\hyperlink{angles_8cpp_a69c5e5d3ac492beffad6a93013a859fa}{adjust\+Input\+Angle\+By\+Camera\+Angle}} (float input\+Angle, float camera\+Angle)
+\item 
+float \mbox{\hyperlink{angles_8cpp_a06f77c5c09f62b40f212b6e204379385}{get\+Distance\+Between\+Two\+Angles}} (float a1, float a2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{angles_8cpp_a7f7e2685ab71efefb9d176543e4fa599}\label{angles_8cpp_a7f7e2685ab71efefb9d176543e4fa599}} 
+\index{angles.cpp@{angles.cpp}!adjustAngleRotation@{adjustAngleRotation}}
+\index{adjustAngleRotation@{adjustAngleRotation}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{adjustAngleRotation()}{adjustAngleRotation()}}
+{\footnotesize\ttfamily void adjust\+Angle\+Rotation (\begin{DoxyParamCaption}\item[{float \&}]{current\+Angle,  }\item[{const float}]{target\+Angle,  }\item[{float}]{rotation\+Speed }\end{DoxyParamCaption})}
+
+
+
+Routine for adjusting a sprite rotation to reflect it\textquotesingle{}s target rotation over a period of time ... I\textquotesingle{}m not a math guy so I have no idea if this is the best way... ~\newline
+ /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Routine that will modify an angle by a certain number of degrees and adjust for above or below 360.. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{angles_8cpp_a69c5e5d3ac492beffad6a93013a859fa}\label{angles_8cpp_a69c5e5d3ac492beffad6a93013a859fa}} 
+\index{angles.cpp@{angles.cpp}!adjustInputAngleByCameraAngle@{adjustInputAngleByCameraAngle}}
+\index{adjustInputAngleByCameraAngle@{adjustInputAngleByCameraAngle}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{adjustInputAngleByCameraAngle()}{adjustInputAngleByCameraAngle()}}
+{\footnotesize\ttfamily float adjust\+Input\+Angle\+By\+Camera\+Angle (\begin{DoxyParamCaption}\item[{float}]{input\+Angle,  }\item[{float}]{camera\+Angle }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns the distance between two angles ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+\mbox{\Hypertarget{angles_8cpp_a30d6878d81e316089e36122cc281edc3}\label{angles_8cpp_a30d6878d81e316089e36122cc281edc3}} 
+\index{angles.cpp@{angles.cpp}!getAngleBetweenTwoPoints@{getAngleBetweenTwoPoints}}
+\index{getAngleBetweenTwoPoints@{getAngleBetweenTwoPoints}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{getAngleBetweenTwoPoints()}{getAngleBetweenTwoPoints()}}
+{\footnotesize\ttfamily float get\+Angle\+Between\+Two\+Points (\begin{DoxyParamCaption}\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{x2,  }\item[{float}]{y2 }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Adjusts the input angle by the distances of the camera angle from 180.\+0f degrees input angle must be in degrees for this to work ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{angles_8cpp_a51569664e82f97f4fa306050a9622fb9}\label{angles_8cpp_a51569664e82f97f4fa306050a9622fb9}} 
+\index{angles.cpp@{angles.cpp}!getAngleBetweenTwoVectors@{getAngleBetweenTwoVectors}}
+\index{getAngleBetweenTwoVectors@{getAngleBetweenTwoVectors}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{getAngleBetweenTwoVectors()}{getAngleBetweenTwoVectors()}}
+{\footnotesize\ttfamily float get\+Angle\+Between\+Two\+Vectors (\begin{DoxyParamCaption}\item[{Vector}]{v1,  }\item[{Vector}]{v2 }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns the angle in degrees between two points /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{angles_8cpp_a06f77c5c09f62b40f212b6e204379385}\label{angles_8cpp_a06f77c5c09f62b40f212b6e204379385}} 
+\index{angles.cpp@{angles.cpp}!getDistanceBetweenTwoAngles@{getDistanceBetweenTwoAngles}}
+\index{getDistanceBetweenTwoAngles@{getDistanceBetweenTwoAngles}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{getDistanceBetweenTwoAngles()}{getDistanceBetweenTwoAngles()}}
+{\footnotesize\ttfamily float get\+Distance\+Between\+Two\+Angles (\begin{DoxyParamCaption}\item[{float}]{a1,  }\item[{float}]{a2 }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns the angle in degrees between two points /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+\mbox{\Hypertarget{angles_8cpp_afd678569a928773e3637374773ada97e}\label{angles_8cpp_afd678569a928773e3637374773ada97e}} 
+\index{angles.cpp@{angles.cpp}!getRadiansForAngle@{getRadiansForAngle}}
+\index{getRadiansForAngle@{getRadiansForAngle}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{getRadiansForAngle()}{getRadiansForAngle()}}
+{\footnotesize\ttfamily float get\+Radians\+For\+Angle (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Routine that will return degrees (0 to 360) from angle containing radians (0 to 255) /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}\label{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}} 
+\index{angles.cpp@{angles.cpp}!modifyAngleByDegrees@{modifyAngleByDegrees}}
+\index{modifyAngleByDegrees@{modifyAngleByDegrees}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{modifyAngleByDegrees()}{modifyAngleByDegrees()}}
+{\footnotesize\ttfamily float modify\+Angle\+By\+Degrees (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{float}]{modifier }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Routine that will return radians (0 to 255) from anle containing degrees (0 to 360) /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}\label{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}} 
+\index{angles.cpp@{angles.cpp}!modifyVectorByAngle@{modifyVectorByAngle}}
+\index{modifyVectorByAngle@{modifyVectorByAngle}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{modifyVectorByAngle()}{modifyVectorByAngle()}}
+{\footnotesize\ttfamily Vector modify\+Vector\+By\+Angle (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{float}]{distance\+Length,  }\item[{float}]{angle\+In\+Degrees }\end{DoxyParamCaption})}
+
+
+
+Routine that gets cartesian coordinates for a Vector from location data, length, and radian angle.. /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Rotates a vector around the z axis it\textquotesingle{}s currently on... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{angles_8cpp_a01eca5c9e7450e3198c46569b7e1a3a6}\label{angles_8cpp_a01eca5c9e7450e3198c46569b7e1a3a6}} 
+\index{angles.cpp@{angles.cpp}!rotateVectorByAngle@{rotateVectorByAngle}}
+\index{rotateVectorByAngle@{rotateVectorByAngle}!angles.cpp@{angles.cpp}}
+\doxysubsubsection{\texorpdfstring{rotateVectorByAngle()}{rotateVectorByAngle()}}
+{\footnotesize\ttfamily Vector rotate\+Vector\+By\+Angle (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{float}]{angle\+In\+Degrees }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns the angle in degrees between two vectors /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{angles_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{angles_8cpp_source}{angles.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 8

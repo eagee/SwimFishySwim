@@ -1,0 +1,362 @@
+\hypertarget{_tiled_maps_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Tiled\+Maps.h File Reference}
+\label{_tiled_maps_8h}\index{C:/TeamSheeps/SwimFishySwim/TiledMaps.h@{C:/TeamSheeps/SwimFishySwim/TiledMaps.h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}IGraphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}INode\+Waypoints.\+h\char`\"{}}\newline
+Include dependency graph for Tiled\+Maps.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_layer_motion}{tag\+Layer\+Motion}}
+\item 
+struct \mbox{\hyperlink{structtag_tilemap_size}{tag\+Tilemap\+Size}}
+\item 
+struct \mbox{\hyperlink{structtag_texture_coordinate_size}{tag\+Texture\+Coordinate\+Size}}
+\item 
+struct \mbox{\hyperlink{structtag_texture_index}{tag\+Texture\+Index}}
+\item 
+struct \mbox{\hyperlink{structtag_quad_z_values}{tag\+Quad\+ZValues}}
+\item 
+struct \mbox{\hyperlink{structtag_tilemap_layer}{tag\+Tilemap\+Layer}}
+\item 
+struct \mbox{\hyperlink{structtag_tilemap_collision_layer}{tag\+Tilemap\+Collision\+Layer}}
+\item 
+class \mbox{\hyperlink{class_tiled_maps}{Tiled\+Maps}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8h_ac5c2ce76b8250ab7b6be50c2e7a0ee57}{TILEMAP\+\_\+\+ANIMATIONS\+\_\+\+PER\+\_\+\+SECOND}}~15
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8h_a75d504cb36a2e68068c451e18481cd9d}{TILEMAP\+\_\+\+TILE\+\_\+\+SIZE}}~32
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8h_a62546ac0cca73eefde6a4e315692b8cb}{TILE\+\_\+\+QUAD\+\_\+\+WIDTH}}~1.\+0f
+\item 
+\#define \mbox{\hyperlink{_tiled_maps_8h_ac1402328a0b1a689fe767a9511c8f689}{TILE\+\_\+\+QUAD\+\_\+\+HEIGHT}}~1.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, int $>$ \mbox{\hyperlink{_tiled_maps_8h_acd8c4220fc0290c79c07f548dbe0c696}{Temp\+Collision\+Table}}
+\item 
+typedef Temp\+Collision\+Table\+::iterator \mbox{\hyperlink{_tiled_maps_8h_afaf9a63a1f2ad8dddea6b21d8f939054}{Temp\+Collision\+Iterator}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_layer_motion}{tag\+Layer\+Motion}} \mbox{\hyperlink{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}{Layer\+Motion}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_tilemap_size}{tag\+Tilemap\+Size}} \mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{Tilemap\+Size}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_texture_coordinate_size}{tag\+Texture\+Coordinate\+Size}} \mbox{\hyperlink{_tiled_maps_8h_aab9c495844ddd5ee5318fc1809f1ab1c}{Texture\+Coordinate\+Size}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_texture_index}{tag\+Texture\+Index}} \mbox{\hyperlink{_tiled_maps_8h_a71f3956d50a6afa6035f3e3213c5b3fb}{Texture\+Index}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_quad_z_values}{tag\+Quad\+ZValues}} \mbox{\hyperlink{_tiled_maps_8h_a8e69c7c662c7c15c0d22a2fcc93c7090}{Quad\+ZValues}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{_tiled_maps_8h_a71f3956d50a6afa6035f3e3213c5b3fb}{Texture\+Index}} $>$ \mbox{\hyperlink{_tiled_maps_8h_ac9da29830fd8e0f8688861cedd47362f}{Tilemap\+Data}}
+\item 
+typedef Tilemap\+Data\+::iterator \mbox{\hyperlink{_tiled_maps_8h_a811cd55ac23216722c43a253772c5062}{Tilemap\+Data\+Iterator}}
+\item 
+typedef std\+::vector$<$ bool $>$ \mbox{\hyperlink{_tiled_maps_8h_a9113324e79cb5c0537e657ea90290c0f}{Collision\+Data}}
+\item 
+typedef Collision\+Data\+::iterator \mbox{\hyperlink{_tiled_maps_8h_a0918de80dde438b6898ff09b731fc003}{Collision\+Data\+Iterator}}
+\item 
+typedef int \mbox{\hyperlink{_tiled_maps_8h_a9403eeffcaa5b6d170e44b283cef8980}{Tile\+Access\+Count}}
+\item 
+typedef std\+::map$<$ int, \mbox{\hyperlink{_tiled_maps_8h_a9403eeffcaa5b6d170e44b283cef8980}{Tile\+Access\+Count}} $>$ \mbox{\hyperlink{_tiled_maps_8h_a7f9fedd812d346c3979d13221f80f2f4}{Tile\+Access\+Counts}}
+\item 
+typedef Tile\+Access\+Counts\+::iterator \mbox{\hyperlink{_tiled_maps_8h_a867aa923acea2a9f00d11871cfddb1cf}{Tile\+Access\+Counts\+Iterator}}
+\item 
+typedef std\+::map$<$ int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}} $>$ \mbox{\hyperlink{_tiled_maps_8h_a9f1de003a4c953d12f03fa5d99e7f677}{Tilemap\+Quads}}
+\item 
+typedef Tilemap\+Quads\+::iterator \mbox{\hyperlink{_tiled_maps_8h_a7dc28cb88877f79dc17f81f78b783a73}{Tilemap\+Quads\+Iterator}}
+\item 
+typedef std\+::map$<$ int, \mbox{\hyperlink{_tiled_maps_8h_a8e69c7c662c7c15c0d22a2fcc93c7090}{Quad\+ZValues}} $>$ \mbox{\hyperlink{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}{Tilemap\+ZValues}}
+\item 
+typedef Tilemap\+ZValues\+::iterator \mbox{\hyperlink{_tiled_maps_8h_ac66cc4a1535c3b2e1392d7988d614c16}{Tilemap\+ZValues\+Iterator}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_tilemap_layer}{tag\+Tilemap\+Layer}} \mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{Tilemap\+Layer}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_tilemap_collision_layer}{tag\+Tilemap\+Collision\+Layer}} \mbox{\hyperlink{_tiled_maps_8h_aa46fee61c4f4e192a1a610750ac4add9}{Collision\+Layer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}} \{ \newline
+\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}{TILEMAP\+\_\+\+LAYER\+\_\+A}} = 0
+, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a816f4eaa2baca44879d1830ee14727a8}{TILEMAP\+\_\+\+LAYER\+\_\+B}} = 1
+, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a968e1f9ab07ab91cf5c4ab59b6fb873a}{TILEMAP\+\_\+\+LAYER\+\_\+C}} = 2
+, \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}{TILEMAP\+\_\+\+LAYER\+\_\+D}} = 3
+, \newline
+\mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a59cfc7c6231c802131996b2851529f43}{TILEMAP\+\_\+\+COLLISION}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the various layers in our tilemap \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_tiled_maps_8h_ac1402328a0b1a689fe767a9511c8f689}\label{_tiled_maps_8h_ac1402328a0b1a689fe767a9511c8f689}} 
+\index{TiledMaps.h@{TiledMaps.h}!TILE\_QUAD\_HEIGHT@{TILE\_QUAD\_HEIGHT}}
+\index{TILE\_QUAD\_HEIGHT@{TILE\_QUAD\_HEIGHT}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TILE\_QUAD\_HEIGHT}{TILE\_QUAD\_HEIGHT}}
+{\footnotesize\ttfamily \#define TILE\+\_\+\+QUAD\+\_\+\+HEIGHT~1.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00022}{22}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_a62546ac0cca73eefde6a4e315692b8cb}\label{_tiled_maps_8h_a62546ac0cca73eefde6a4e315692b8cb}} 
+\index{TiledMaps.h@{TiledMaps.h}!TILE\_QUAD\_WIDTH@{TILE\_QUAD\_WIDTH}}
+\index{TILE\_QUAD\_WIDTH@{TILE\_QUAD\_WIDTH}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TILE\_QUAD\_WIDTH}{TILE\_QUAD\_WIDTH}}
+{\footnotesize\ttfamily \#define TILE\+\_\+\+QUAD\+\_\+\+WIDTH~1.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00021}{21}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_ac5c2ce76b8250ab7b6be50c2e7a0ee57}\label{_tiled_maps_8h_ac5c2ce76b8250ab7b6be50c2e7a0ee57}} 
+\index{TiledMaps.h@{TiledMaps.h}!TILEMAP\_ANIMATIONS\_PER\_SECOND@{TILEMAP\_ANIMATIONS\_PER\_SECOND}}
+\index{TILEMAP\_ANIMATIONS\_PER\_SECOND@{TILEMAP\_ANIMATIONS\_PER\_SECOND}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TILEMAP\_ANIMATIONS\_PER\_SECOND}{TILEMAP\_ANIMATIONS\_PER\_SECOND}}
+{\footnotesize\ttfamily \#define TILEMAP\+\_\+\+ANIMATIONS\+\_\+\+PER\+\_\+\+SECOND~15}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00019}{19}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_a75d504cb36a2e68068c451e18481cd9d}\label{_tiled_maps_8h_a75d504cb36a2e68068c451e18481cd9d}} 
+\index{TiledMaps.h@{TiledMaps.h}!TILEMAP\_TILE\_SIZE@{TILEMAP\_TILE\_SIZE}}
+\index{TILEMAP\_TILE\_SIZE@{TILEMAP\_TILE\_SIZE}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TILEMAP\_TILE\_SIZE}{TILEMAP\_TILE\_SIZE}}
+{\footnotesize\ttfamily \#define TILEMAP\+\_\+\+TILE\+\_\+\+SIZE~32}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00020}{20}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_tiled_maps_8h_a9113324e79cb5c0537e657ea90290c0f}\label{_tiled_maps_8h_a9113324e79cb5c0537e657ea90290c0f}} 
+\index{TiledMaps.h@{TiledMaps.h}!CollisionData@{CollisionData}}
+\index{CollisionData@{CollisionData}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{CollisionData}{CollisionData}}
+{\footnotesize\ttfamily typedef std\+::vector$<$bool$>$ \mbox{\hyperlink{_tiled_maps_8h_a9113324e79cb5c0537e657ea90290c0f}{Collision\+Data}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00123}{123}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_a0918de80dde438b6898ff09b731fc003}\label{_tiled_maps_8h_a0918de80dde438b6898ff09b731fc003}} 
+\index{TiledMaps.h@{TiledMaps.h}!CollisionDataIterator@{CollisionDataIterator}}
+\index{CollisionDataIterator@{CollisionDataIterator}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{CollisionDataIterator}{CollisionDataIterator}}
+{\footnotesize\ttfamily typedef Collision\+Data\+::iterator \mbox{\hyperlink{_tiled_maps_8h_a0918de80dde438b6898ff09b731fc003}{Collision\+Data\+Iterator}}}
+
+summary\texorpdfstring{$>$}{>} Defines a vector that records the number of times a tile is used for pathfinding to keep sprites moving forward and add some randomness to their behavior (used with pathfinding code) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00124}{124}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_aa46fee61c4f4e192a1a610750ac4add9}\label{_tiled_maps_8h_aa46fee61c4f4e192a1a610750ac4add9}} 
+\index{TiledMaps.h@{TiledMaps.h}!CollisionLayer@{CollisionLayer}}
+\index{CollisionLayer@{CollisionLayer}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{CollisionLayer}{CollisionLayer}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_tilemap_collision_layer}{tag\+Tilemap\+Collision\+Layer}} \mbox{\hyperlink{_tiled_maps_8h_aa46fee61c4f4e192a1a610750ac4add9}{Collision\+Layer}}}
+
+summary\texorpdfstring{$>$}{>} Defines an interface into any type of model /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}\label{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}} 
+\index{TiledMaps.h@{TiledMaps.h}!LayerMotion@{LayerMotion}}
+\index{LayerMotion@{LayerMotion}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{LayerMotion}{LayerMotion}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_layer_motion}{tag\+Layer\+Motion}} \mbox{\hyperlink{_tiled_maps_8h_a7f3b7b2131c9425713935e0a52cd4401}{Layer\+Motion}}}
+
+summary\texorpdfstring{$>$}{>} Defines the width and height of the tilemap in tiles /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_tiled_maps_8h_a8e69c7c662c7c15c0d22a2fcc93c7090}\label{_tiled_maps_8h_a8e69c7c662c7c15c0d22a2fcc93c7090}} 
+\index{TiledMaps.h@{TiledMaps.h}!QuadZValues@{QuadZValues}}
+\index{QuadZValues@{QuadZValues}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{QuadZValues}{QuadZValues}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_quad_z_values}{tag\+Quad\+ZValues}} \mbox{\hyperlink{_tiled_maps_8h_a8e69c7c662c7c15c0d22a2fcc93c7090}{Quad\+ZValues}}}
+
+summary\texorpdfstring{$>$}{>} Defines a vector of float data used to specify the x or y coordinate of graphic in the tilemap /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_tiled_maps_8h_afaf9a63a1f2ad8dddea6b21d8f939054}\label{_tiled_maps_8h_afaf9a63a1f2ad8dddea6b21d8f939054}} 
+\index{TiledMaps.h@{TiledMaps.h}!TempCollisionIterator@{TempCollisionIterator}}
+\index{TempCollisionIterator@{TempCollisionIterator}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TempCollisionIterator}{TempCollisionIterator}}
+{\footnotesize\ttfamily typedef Temp\+Collision\+Table\+::iterator \mbox{\hyperlink{_tiled_maps_8h_afaf9a63a1f2ad8dddea6b21d8f939054}{Temp\+Collision\+Iterator}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00026}{26}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_acd8c4220fc0290c79c07f548dbe0c696}\label{_tiled_maps_8h_acd8c4220fc0290c79c07f548dbe0c696}} 
+\index{TiledMaps.h@{TiledMaps.h}!TempCollisionTable@{TempCollisionTable}}
+\index{TempCollisionTable@{TempCollisionTable}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TempCollisionTable}{TempCollisionTable}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, int$>$ \mbox{\hyperlink{_tiled_maps_8h_acd8c4220fc0290c79c07f548dbe0c696}{Temp\+Collision\+Table}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00025}{25}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_aab9c495844ddd5ee5318fc1809f1ab1c}\label{_tiled_maps_8h_aab9c495844ddd5ee5318fc1809f1ab1c}} 
+\index{TiledMaps.h@{TiledMaps.h}!TextureCoordinateSize@{TextureCoordinateSize}}
+\index{TextureCoordinateSize@{TextureCoordinateSize}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TextureCoordinateSize}{TextureCoordinateSize}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_texture_coordinate_size}{tag\+Texture\+Coordinate\+Size}} \mbox{\hyperlink{_tiled_maps_8h_aab9c495844ddd5ee5318fc1809f1ab1c}{Texture\+Coordinate\+Size}}}
+
+summary\texorpdfstring{$>$}{>} Defines how many units into a texture at X and Y /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_tiled_maps_8h_a71f3956d50a6afa6035f3e3213c5b3fb}\label{_tiled_maps_8h_a71f3956d50a6afa6035f3e3213c5b3fb}} 
+\index{TiledMaps.h@{TiledMaps.h}!TextureIndex@{TextureIndex}}
+\index{TextureIndex@{TextureIndex}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TextureIndex}{TextureIndex}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_texture_index}{tag\+Texture\+Index}} \mbox{\hyperlink{_tiled_maps_8h_a71f3956d50a6afa6035f3e3213c5b3fb}{Texture\+Index}}}
+
+\mbox{\Hypertarget{_tiled_maps_8h_a9403eeffcaa5b6d170e44b283cef8980}\label{_tiled_maps_8h_a9403eeffcaa5b6d170e44b283cef8980}} 
+\index{TiledMaps.h@{TiledMaps.h}!TileAccessCount@{TileAccessCount}}
+\index{TileAccessCount@{TileAccessCount}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TileAccessCount}{TileAccessCount}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{_tiled_maps_8h_a9403eeffcaa5b6d170e44b283cef8980}{Tile\+Access\+Count}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00130}{130}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_a7f9fedd812d346c3979d13221f80f2f4}\label{_tiled_maps_8h_a7f9fedd812d346c3979d13221f80f2f4}} 
+\index{TiledMaps.h@{TiledMaps.h}!TileAccessCounts@{TileAccessCounts}}
+\index{TileAccessCounts@{TileAccessCounts}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TileAccessCounts}{TileAccessCounts}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, \mbox{\hyperlink{_tiled_maps_8h_a9403eeffcaa5b6d170e44b283cef8980}{Tile\+Access\+Count}}$>$ \mbox{\hyperlink{_tiled_maps_8h_a7f9fedd812d346c3979d13221f80f2f4}{Tile\+Access\+Counts}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00131}{131}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_a867aa923acea2a9f00d11871cfddb1cf}\label{_tiled_maps_8h_a867aa923acea2a9f00d11871cfddb1cf}} 
+\index{TiledMaps.h@{TiledMaps.h}!TileAccessCountsIterator@{TileAccessCountsIterator}}
+\index{TileAccessCountsIterator@{TileAccessCountsIterator}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TileAccessCountsIterator}{TileAccessCountsIterator}}
+{\footnotesize\ttfamily typedef Tile\+Access\+Counts\+::iterator \mbox{\hyperlink{_tiled_maps_8h_a867aa923acea2a9f00d11871cfddb1cf}{Tile\+Access\+Counts\+Iterator}}}
+
+summary\texorpdfstring{$>$}{>} Defines a map of quad objects that define a tilemap /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00132}{132}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_ac9da29830fd8e0f8688861cedd47362f}\label{_tiled_maps_8h_ac9da29830fd8e0f8688861cedd47362f}} 
+\index{TiledMaps.h@{TiledMaps.h}!TilemapData@{TilemapData}}
+\index{TilemapData@{TilemapData}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TilemapData}{TilemapData}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{_tiled_maps_8h_a71f3956d50a6afa6035f3e3213c5b3fb}{Texture\+Index}}$>$ \mbox{\hyperlink{_tiled_maps_8h_ac9da29830fd8e0f8688861cedd47362f}{Tilemap\+Data}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00117}{117}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_a811cd55ac23216722c43a253772c5062}\label{_tiled_maps_8h_a811cd55ac23216722c43a253772c5062}} 
+\index{TiledMaps.h@{TiledMaps.h}!TilemapDataIterator@{TilemapDataIterator}}
+\index{TilemapDataIterator@{TilemapDataIterator}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TilemapDataIterator}{TilemapDataIterator}}
+{\footnotesize\ttfamily typedef Tilemap\+Data\+::iterator \mbox{\hyperlink{_tiled_maps_8h_a811cd55ac23216722c43a253772c5062}{Tilemap\+Data\+Iterator}}}
+
+summary\texorpdfstring{$>$}{>} Defines a vector of bool data used to specify whether or not a particular coordinate is marked for collision /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00118}{118}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}\label{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}} 
+\index{TiledMaps.h@{TiledMaps.h}!TilemapLayer@{TilemapLayer}}
+\index{TilemapLayer@{TilemapLayer}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TilemapLayer}{TilemapLayer}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_tilemap_layer}{tag\+Tilemap\+Layer}} \mbox{\hyperlink{_tiled_maps_8h_aaa1e10a3658575c7afe2edfbd9b9e755}{Tilemap\+Layer}}}
+
+summary\texorpdfstring{$>$}{>} Defines a single layer of boolean values accessible as an x/y index ... /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_tiled_maps_8h_a9f1de003a4c953d12f03fa5d99e7f677}\label{_tiled_maps_8h_a9f1de003a4c953d12f03fa5d99e7f677}} 
+\index{TiledMaps.h@{TiledMaps.h}!TilemapQuads@{TilemapQuads}}
+\index{TilemapQuads@{TilemapQuads}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TilemapQuads}{TilemapQuads}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}}$>$ \mbox{\hyperlink{_tiled_maps_8h_a9f1de003a4c953d12f03fa5d99e7f677}{Tilemap\+Quads}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00137}{137}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_a7dc28cb88877f79dc17f81f78b783a73}\label{_tiled_maps_8h_a7dc28cb88877f79dc17f81f78b783a73}} 
+\index{TiledMaps.h@{TiledMaps.h}!TilemapQuadsIterator@{TilemapQuadsIterator}}
+\index{TilemapQuadsIterator@{TilemapQuadsIterator}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TilemapQuadsIterator}{TilemapQuadsIterator}}
+{\footnotesize\ttfamily typedef Tilemap\+Quads\+::iterator \mbox{\hyperlink{_tiled_maps_8h_a7dc28cb88877f79dc17f81f78b783a73}{Tilemap\+Quads\+Iterator}}}
+
+summary\texorpdfstring{$>$}{>} Defines a map of quad z values that define the vertical height of each corner of each tile in the tilemap /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00138}{138}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}\label{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}} 
+\index{TiledMaps.h@{TiledMaps.h}!TilemapSize@{TilemapSize}}
+\index{TilemapSize@{TilemapSize}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TilemapSize}{TilemapSize}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_tilemap_size}{tag\+Tilemap\+Size}} \mbox{\hyperlink{_tiled_maps_8h_ad21824ea94853fc29b327de9d89687d1}{Tilemap\+Size}}}
+
+summary\texorpdfstring{$>$}{>} Defines the texture coordinate size of each tile on the graphic associated with the tilemap /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}\label{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}} 
+\index{TiledMaps.h@{TiledMaps.h}!TilemapZValues@{TilemapZValues}}
+\index{TilemapZValues@{TilemapZValues}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TilemapZValues}{TilemapZValues}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, \mbox{\hyperlink{_tiled_maps_8h_a8e69c7c662c7c15c0d22a2fcc93c7090}{Quad\+ZValues}}$>$ \mbox{\hyperlink{_tiled_maps_8h_a56539e34ecfc52a242a3662753f8779f}{Tilemap\+ZValues}}}
+
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00143}{143}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+\mbox{\Hypertarget{_tiled_maps_8h_ac66cc4a1535c3b2e1392d7988d614c16}\label{_tiled_maps_8h_ac66cc4a1535c3b2e1392d7988d614c16}} 
+\index{TiledMaps.h@{TiledMaps.h}!TilemapZValuesIterator@{TilemapZValuesIterator}}
+\index{TilemapZValuesIterator@{TilemapZValuesIterator}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TilemapZValuesIterator}{TilemapZValuesIterator}}
+{\footnotesize\ttfamily typedef Tilemap\+ZValues\+::iterator \mbox{\hyperlink{_tiled_maps_8h_ac66cc4a1535c3b2e1392d7988d614c16}{Tilemap\+ZValues\+Iterator}}}
+
+summary\texorpdfstring{$>$}{>} Defines a single layer of x and y coordinate information used to texture our tilemap /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00144}{144}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}\label{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}} 
+\index{TiledMaps.h@{TiledMaps.h}!TILEMAP\_LAYER@{TILEMAP\_LAYER}}
+\index{TILEMAP\_LAYER@{TILEMAP\_LAYER}!TiledMaps.h@{TiledMaps.h}}
+\doxysubsubsection{\texorpdfstring{TILEMAP\_LAYER}{TILEMAP\_LAYER}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62}{TILEMAP\+\_\+\+LAYER}}}
+
+
+
+Defines the various layers in our tilemap 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TILEMAP\_LAYER\_A@{TILEMAP\_LAYER\_A}!TiledMaps.h@{TiledMaps.h}}\index{TiledMaps.h@{TiledMaps.h}!TILEMAP\_LAYER\_A@{TILEMAP\_LAYER\_A}}}\mbox{\Hypertarget{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}\label{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a2565aa6f822ede484a0440bc0c56784b}} 
+TILEMAP\+\_\+\+LAYER\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TILEMAP\_LAYER\_B@{TILEMAP\_LAYER\_B}!TiledMaps.h@{TiledMaps.h}}\index{TiledMaps.h@{TiledMaps.h}!TILEMAP\_LAYER\_B@{TILEMAP\_LAYER\_B}}}\mbox{\Hypertarget{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a816f4eaa2baca44879d1830ee14727a8}\label{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a816f4eaa2baca44879d1830ee14727a8}} 
+TILEMAP\+\_\+\+LAYER\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TILEMAP\_LAYER\_C@{TILEMAP\_LAYER\_C}!TiledMaps.h@{TiledMaps.h}}\index{TiledMaps.h@{TiledMaps.h}!TILEMAP\_LAYER\_C@{TILEMAP\_LAYER\_C}}}\mbox{\Hypertarget{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a968e1f9ab07ab91cf5c4ab59b6fb873a}\label{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a968e1f9ab07ab91cf5c4ab59b6fb873a}} 
+TILEMAP\+\_\+\+LAYER\+\_\+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TILEMAP\_LAYER\_D@{TILEMAP\_LAYER\_D}!TiledMaps.h@{TiledMaps.h}}\index{TiledMaps.h@{TiledMaps.h}!TILEMAP\_LAYER\_D@{TILEMAP\_LAYER\_D}}}\mbox{\Hypertarget{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}\label{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62aa315c0c19d3f3069231ebbf22acdf207}} 
+TILEMAP\+\_\+\+LAYER\+\_\+D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TILEMAP\_COLLISION@{TILEMAP\_COLLISION}!TiledMaps.h@{TiledMaps.h}}\index{TiledMaps.h@{TiledMaps.h}!TILEMAP\_COLLISION@{TILEMAP\_COLLISION}}}\mbox{\Hypertarget{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a59cfc7c6231c802131996b2851529f43}\label{_tiled_maps_8h_a1cfca5558758b9f02245040db4f2fd62a59cfc7c6231c802131996b2851529f43}} 
+TILEMAP\+\_\+\+COLLISION&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_tiled_maps_8h_source_l00031}{31}} of file \mbox{\hyperlink{_tiled_maps_8h_source}{Tiled\+Maps.\+h}}.
+

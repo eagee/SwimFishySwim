@@ -1,0 +1,92 @@
+\hypertarget{class_i_map}{}\doxysection{IMap Class Reference}
+\label{class_i_map}\index{IMap@{IMap}}
+
+
+Defines an interface into any type of model /summary\texorpdfstring{$>$}{>}  
+
+
+
+
+{\ttfamily \#include $<$IMap.\+h$>$}
+
+
+
+Collaboration diagram for IMap\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_map_ac705a2e065b5c4604e43a44b488d798a}{IMap}} ()
+\begin{DoxyCompactList}\small\item\em Defines the constructor for an \mbox{\hyperlink{class_i_map}{IMap}} implementation /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_map_afc75e6369e1f1cd2792a672b46604432}{$\sim$\+IMap}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_i_map_a4b6db843d4acacf6fb7a4159af8fa6c9}{add\+File\+To\+Map}} (const char $\ast$file\+Name, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} texture\+ID)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_map_a0176ebb5f8364dadd3cba97d90d8d6ba}{translate\+Map}} (Vector translation)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_map_a7bdfaa1fac83b3d7ef3a6b5d41e3bbd7}{render\+Map}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines an interface into any type of model /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_i_map_8h_source_l00014}{14}} of file \mbox{\hyperlink{_i_map_8h_source}{IMap.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_map_ac705a2e065b5c4604e43a44b488d798a}\label{class_i_map_ac705a2e065b5c4604e43a44b488d798a}} 
+\index{IMap@{IMap}!IMap@{IMap}}
+\index{IMap@{IMap}!IMap@{IMap}}
+\doxysubsubsection{\texorpdfstring{IMap()}{IMap()}}
+{\footnotesize\ttfamily IMap\+::\+IMap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Defines the constructor for an \mbox{\hyperlink{class_i_map}{IMap}} implementation /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Defines the destructor for an \mbox{\hyperlink{class_i_map}{IMap}} implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_map_8h_source_l00021}{21}} of file \mbox{\hyperlink{_i_map_8h_source}{IMap.\+h}}.
+
+\mbox{\Hypertarget{class_i_map_afc75e6369e1f1cd2792a672b46604432}\label{class_i_map_afc75e6369e1f1cd2792a672b46604432}} 
+\index{IMap@{IMap}!````~IMap@{$\sim$IMap}}
+\index{````~IMap@{$\sim$IMap}!IMap@{IMap}}
+\doxysubsubsection{\texorpdfstring{$\sim$IMap()}{~IMap()}}
+{\footnotesize\ttfamily virtual IMap\+::$\sim$\+IMap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Adds a file/texture combination into the \mbox{\hyperlink{class_i_map}{IMap}} object /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_map_8h_source_l00026}{26}} of file \mbox{\hyperlink{_i_map_8h_source}{IMap.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_map_a4b6db843d4acacf6fb7a4159af8fa6c9}\label{class_i_map_a4b6db843d4acacf6fb7a4159af8fa6c9}} 
+\index{IMap@{IMap}!addFileToMap@{addFileToMap}}
+\index{addFileToMap@{addFileToMap}!IMap@{IMap}}
+\doxysubsubsection{\texorpdfstring{addFileToMap()}{addFileToMap()}}
+{\footnotesize\ttfamily virtual bool IMap\+::add\+File\+To\+Map (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{texture\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Translates all objects loaded in the map based on an xyz coordinate set /summary\texorpdfstring{$>$}{>} ~\newline
+ \mbox{\Hypertarget{class_i_map_a7bdfaa1fac83b3d7ef3a6b5d41e3bbd7}\label{class_i_map_a7bdfaa1fac83b3d7ef3a6b5d41e3bbd7}} 
+\index{IMap@{IMap}!renderMap@{renderMap}}
+\index{renderMap@{renderMap}!IMap@{IMap}}
+\doxysubsubsection{\texorpdfstring{renderMap()}{renderMap()}}
+{\footnotesize\ttfamily virtual void IMap\+::render\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{class_i_map_a0176ebb5f8364dadd3cba97d90d8d6ba}\label{class_i_map_a0176ebb5f8364dadd3cba97d90d8d6ba}} 
+\index{IMap@{IMap}!translateMap@{translateMap}}
+\index{translateMap@{translateMap}!IMap@{IMap}}
+\doxysubsubsection{\texorpdfstring{translateMap()}{translateMap()}}
+{\footnotesize\ttfamily virtual void IMap\+::translate\+Map (\begin{DoxyParamCaption}\item[{Vector}]{translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Renders the map object onto the \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_i_map_8h}{IMap.\+h}}\end{DoxyCompactItemize}

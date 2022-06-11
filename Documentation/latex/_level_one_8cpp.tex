@@ -1,0 +1,364 @@
+\hypertarget{_level_one_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Level\+One.cpp File Reference}
+\label{_level_one_8cpp}\index{C:/TeamSheeps/SwimFishySwim/LevelOne.cpp@{C:/TeamSheeps/SwimFishySwim/LevelOne.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IAudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+One.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Methods.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IProjectile\+Weapon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}End\+Of\+Wave\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}New\+Tower\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Menu\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Profiler.\+h\char`\"{}}\newline
+Include dependency graph for Level\+One.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_add25646e486d8a129bd4e26a79658f33}{NUM\+\_\+\+L1\+\_\+\+BADDIE\+\_\+\+SPRITES}}~73
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a4ad3d06b4edbdef233d0f8c7b51f36df}{MAX\+\_\+\+BADDIES\+\_\+\+AT\+\_\+\+A\+\_\+\+TIME}}~6
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_abbac5f9853767037f2f0926286bcde15}{NUMBER\+\_\+\+OF\+\_\+\+WAVES}}~5
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_ac2bcc07f41a532fc7e1c46af445b78fa}{BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+1}}~24
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a934db20f8bee3794372e70397fe1fdfc}{BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+2}}~72
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a7d9fe4c6763ab75895ab4f3458f171fb}{BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+3}}~36
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a060894fcf1f90c317080c439b840c523}{BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+4}}~2
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a7af15f6c85cae7badc4bb0779e869f79}{BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+5}}~24
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a706f6bfabd98783f3af3c22e308bd83d}{BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+6}}~24
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_aef8d196b68812ad94b4b7e1316292fe2}{LEVEL\+\_\+\+ONE\+\_\+\+BADDIE\+\_\+\+VALUE}}~5
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_ad3b1ade046d7f86a00af82406a71d013}{LEVEL\+\_\+\+TWO\+\_\+\+BADDIE\+\_\+\+VALUE}}~10
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a74f36d01bb4b89b7f5a5d22d3bf3d981}{LEVEL\+\_\+\+THREE\+\_\+\+BADDIE\+\_\+\+VALUE}}~20
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a630e741f7a159fb2ee9c67365fccba8e}{LEVEL\+\_\+\+FOUR\+\_\+\+BADDIE\+\_\+\+VALUE}}~40
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a5ac552f7295fff9e6621672390389d0c}{LEVEL\+\_\+\+FIVE\+\_\+\+BADDIE\+\_\+\+VALUE}}~60
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a814b69779d37ea065ce9e0fc0fce1503}{LEVEL\+\_\+\+TEN\+\_\+\+BADDIE\+\_\+\+VALUE}}~250
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a44d26e8543172e5521323276677da582}{WAVE\+\_\+\+READY\+\_\+Z}}~0.\+036f
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a1b89ef5ff43cbc089aac8df442b77390}{WAVE\+\_\+\+DONE\+\_\+Z}}~0.\+042f
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a5126085485ae038229b5f8b4eaae361f}{TX\+\_\+X}}~0.\+0026f
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a24efcc7e0f68ba5e0f318b2db18a3e23}{TX\+\_\+Y}}~0.\+0026f
+\item 
+\#define \mbox{\hyperlink{_level_one_8cpp_a6958fa0391f158bc5ed24adc2aca8029}{TX\+\_\+Z}}~0.\+0026f
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2}{L1\+\_\+\+APPROACH}} \{ \newline
+\mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2abba9dd3c3ce82d420f976da312976ea8}{L1\+\_\+\+CENTER}} = 0
+, \mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a258da7e43cb9f3813d4029493570ca3f}{L1\+\_\+\+LEFT}} = 1
+, \mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2ac462c43d077fcaf6bcae660b9a82b24d}{L1\+\_\+\+RIGHT}} = 2
+, \mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a5af55bd54a876bc6fb757baa267ab109}{L1\+\_\+\+ZIG\+\_\+\+ZAG\+\_\+L}} = 3
+, \newline
+\mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2ab9e139897e93fdf671572d68c22d061d}{L1\+\_\+\+ZIG\+\_\+\+ZAG\+\_\+R}} = 4
+, \mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a27037b45c5f70ebbc92cb41abbcd467e}{L1\+\_\+\+RANDOM}} = 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_level_one_8cpp_a43ed097a987340b8bd0819c06b84cdea}{setup\+Level\+One\+Waypoints}} (\mbox{\hyperlink{class_sprite_baddie}{Sprite\+Baddie}} $\ast$sprite, \mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2}{L1\+\_\+\+APPROACH}} approach)
+\begin{DoxyCompactList}\small\item\em Randomly selects from a set of three different routes the baddies can take... \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_one_8cpp_aa91dc3dd11adcac277b491be9198b469}{allocate\+Scenery\+Sprites}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} \&level\+Info)
+\item 
+void \mbox{\hyperlink{_level_one_8cpp_ac0b1ddf440626547dc28b46d1886b818}{deallocate\+Scenery\+Sprites}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} \&level\+Info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_level_one_8cpp_ac2bcc07f41a532fc7e1c46af445b78fa}\label{_level_one_8cpp_ac2bcc07f41a532fc7e1c46af445b78fa}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!BADDIES\_IN\_WAVE\_1@{BADDIES\_IN\_WAVE\_1}}
+\index{BADDIES\_IN\_WAVE\_1@{BADDIES\_IN\_WAVE\_1}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{BADDIES\_IN\_WAVE\_1}{BADDIES\_IN\_WAVE\_1}}
+{\footnotesize\ttfamily \#define BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+1~24}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a934db20f8bee3794372e70397fe1fdfc}\label{_level_one_8cpp_a934db20f8bee3794372e70397fe1fdfc}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!BADDIES\_IN\_WAVE\_2@{BADDIES\_IN\_WAVE\_2}}
+\index{BADDIES\_IN\_WAVE\_2@{BADDIES\_IN\_WAVE\_2}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{BADDIES\_IN\_WAVE\_2}{BADDIES\_IN\_WAVE\_2}}
+{\footnotesize\ttfamily \#define BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+2~72}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a7d9fe4c6763ab75895ab4f3458f171fb}\label{_level_one_8cpp_a7d9fe4c6763ab75895ab4f3458f171fb}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!BADDIES\_IN\_WAVE\_3@{BADDIES\_IN\_WAVE\_3}}
+\index{BADDIES\_IN\_WAVE\_3@{BADDIES\_IN\_WAVE\_3}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{BADDIES\_IN\_WAVE\_3}{BADDIES\_IN\_WAVE\_3}}
+{\footnotesize\ttfamily \#define BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+3~36}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a060894fcf1f90c317080c439b840c523}\label{_level_one_8cpp_a060894fcf1f90c317080c439b840c523}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!BADDIES\_IN\_WAVE\_4@{BADDIES\_IN\_WAVE\_4}}
+\index{BADDIES\_IN\_WAVE\_4@{BADDIES\_IN\_WAVE\_4}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{BADDIES\_IN\_WAVE\_4}{BADDIES\_IN\_WAVE\_4}}
+{\footnotesize\ttfamily \#define BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+4~2}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a7af15f6c85cae7badc4bb0779e869f79}\label{_level_one_8cpp_a7af15f6c85cae7badc4bb0779e869f79}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!BADDIES\_IN\_WAVE\_5@{BADDIES\_IN\_WAVE\_5}}
+\index{BADDIES\_IN\_WAVE\_5@{BADDIES\_IN\_WAVE\_5}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{BADDIES\_IN\_WAVE\_5}{BADDIES\_IN\_WAVE\_5}}
+{\footnotesize\ttfamily \#define BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+5~24}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a706f6bfabd98783f3af3c22e308bd83d}\label{_level_one_8cpp_a706f6bfabd98783f3af3c22e308bd83d}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!BADDIES\_IN\_WAVE\_6@{BADDIES\_IN\_WAVE\_6}}
+\index{BADDIES\_IN\_WAVE\_6@{BADDIES\_IN\_WAVE\_6}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{BADDIES\_IN\_WAVE\_6}{BADDIES\_IN\_WAVE\_6}}
+{\footnotesize\ttfamily \#define BADDIES\+\_\+\+IN\+\_\+\+WAVE\+\_\+6~24}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a5ac552f7295fff9e6621672390389d0c}\label{_level_one_8cpp_a5ac552f7295fff9e6621672390389d0c}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!LEVEL\_FIVE\_BADDIE\_VALUE@{LEVEL\_FIVE\_BADDIE\_VALUE}}
+\index{LEVEL\_FIVE\_BADDIE\_VALUE@{LEVEL\_FIVE\_BADDIE\_VALUE}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{LEVEL\_FIVE\_BADDIE\_VALUE}{LEVEL\_FIVE\_BADDIE\_VALUE}}
+{\footnotesize\ttfamily \#define LEVEL\+\_\+\+FIVE\+\_\+\+BADDIE\+\_\+\+VALUE~60}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a630e741f7a159fb2ee9c67365fccba8e}\label{_level_one_8cpp_a630e741f7a159fb2ee9c67365fccba8e}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!LEVEL\_FOUR\_BADDIE\_VALUE@{LEVEL\_FOUR\_BADDIE\_VALUE}}
+\index{LEVEL\_FOUR\_BADDIE\_VALUE@{LEVEL\_FOUR\_BADDIE\_VALUE}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{LEVEL\_FOUR\_BADDIE\_VALUE}{LEVEL\_FOUR\_BADDIE\_VALUE}}
+{\footnotesize\ttfamily \#define LEVEL\+\_\+\+FOUR\+\_\+\+BADDIE\+\_\+\+VALUE~40}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_aef8d196b68812ad94b4b7e1316292fe2}\label{_level_one_8cpp_aef8d196b68812ad94b4b7e1316292fe2}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!LEVEL\_ONE\_BADDIE\_VALUE@{LEVEL\_ONE\_BADDIE\_VALUE}}
+\index{LEVEL\_ONE\_BADDIE\_VALUE@{LEVEL\_ONE\_BADDIE\_VALUE}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{LEVEL\_ONE\_BADDIE\_VALUE}{LEVEL\_ONE\_BADDIE\_VALUE}}
+{\footnotesize\ttfamily \#define LEVEL\+\_\+\+ONE\+\_\+\+BADDIE\+\_\+\+VALUE~5}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a814b69779d37ea065ce9e0fc0fce1503}\label{_level_one_8cpp_a814b69779d37ea065ce9e0fc0fce1503}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!LEVEL\_TEN\_BADDIE\_VALUE@{LEVEL\_TEN\_BADDIE\_VALUE}}
+\index{LEVEL\_TEN\_BADDIE\_VALUE@{LEVEL\_TEN\_BADDIE\_VALUE}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{LEVEL\_TEN\_BADDIE\_VALUE}{LEVEL\_TEN\_BADDIE\_VALUE}}
+{\footnotesize\ttfamily \#define LEVEL\+\_\+\+TEN\+\_\+\+BADDIE\+\_\+\+VALUE~250}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a74f36d01bb4b89b7f5a5d22d3bf3d981}\label{_level_one_8cpp_a74f36d01bb4b89b7f5a5d22d3bf3d981}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!LEVEL\_THREE\_BADDIE\_VALUE@{LEVEL\_THREE\_BADDIE\_VALUE}}
+\index{LEVEL\_THREE\_BADDIE\_VALUE@{LEVEL\_THREE\_BADDIE\_VALUE}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{LEVEL\_THREE\_BADDIE\_VALUE}{LEVEL\_THREE\_BADDIE\_VALUE}}
+{\footnotesize\ttfamily \#define LEVEL\+\_\+\+THREE\+\_\+\+BADDIE\+\_\+\+VALUE~20}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_ad3b1ade046d7f86a00af82406a71d013}\label{_level_one_8cpp_ad3b1ade046d7f86a00af82406a71d013}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!LEVEL\_TWO\_BADDIE\_VALUE@{LEVEL\_TWO\_BADDIE\_VALUE}}
+\index{LEVEL\_TWO\_BADDIE\_VALUE@{LEVEL\_TWO\_BADDIE\_VALUE}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{LEVEL\_TWO\_BADDIE\_VALUE}{LEVEL\_TWO\_BADDIE\_VALUE}}
+{\footnotesize\ttfamily \#define LEVEL\+\_\+\+TWO\+\_\+\+BADDIE\+\_\+\+VALUE~10}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a4ad3d06b4edbdef233d0f8c7b51f36df}\label{_level_one_8cpp_a4ad3d06b4edbdef233d0f8c7b51f36df}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!MAX\_BADDIES\_AT\_A\_TIME@{MAX\_BADDIES\_AT\_A\_TIME}}
+\index{MAX\_BADDIES\_AT\_A\_TIME@{MAX\_BADDIES\_AT\_A\_TIME}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_BADDIES\_AT\_A\_TIME}{MAX\_BADDIES\_AT\_A\_TIME}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BADDIES\+\_\+\+AT\+\_\+\+A\+\_\+\+TIME~6}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_add25646e486d8a129bd4e26a79658f33}\label{_level_one_8cpp_add25646e486d8a129bd4e26a79658f33}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!NUM\_L1\_BADDIE\_SPRITES@{NUM\_L1\_BADDIE\_SPRITES}}
+\index{NUM\_L1\_BADDIE\_SPRITES@{NUM\_L1\_BADDIE\_SPRITES}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_L1\_BADDIE\_SPRITES}{NUM\_L1\_BADDIE\_SPRITES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+L1\+\_\+\+BADDIE\+\_\+\+SPRITES~73}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_abbac5f9853767037f2f0926286bcde15}\label{_level_one_8cpp_abbac5f9853767037f2f0926286bcde15}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!NUMBER\_OF\_WAVES@{NUMBER\_OF\_WAVES}}
+\index{NUMBER\_OF\_WAVES@{NUMBER\_OF\_WAVES}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_WAVES}{NUMBER\_OF\_WAVES}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+WAVES~5}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a5126085485ae038229b5f8b4eaae361f}\label{_level_one_8cpp_a5126085485ae038229b5f8b4eaae361f}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!TX\_X@{TX\_X}}
+\index{TX\_X@{TX\_X}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{TX\_X}{TX\_X}}
+{\footnotesize\ttfamily \#define TX\+\_\+X~0.\+0026f}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00217}{217}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a24efcc7e0f68ba5e0f318b2db18a3e23}\label{_level_one_8cpp_a24efcc7e0f68ba5e0f318b2db18a3e23}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!TX\_Y@{TX\_Y}}
+\index{TX\_Y@{TX\_Y}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{TX\_Y}{TX\_Y}}
+{\footnotesize\ttfamily \#define TX\+\_\+Y~0.\+0026f}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a6958fa0391f158bc5ed24adc2aca8029}\label{_level_one_8cpp_a6958fa0391f158bc5ed24adc2aca8029}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!TX\_Z@{TX\_Z}}
+\index{TX\_Z@{TX\_Z}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{TX\_Z}{TX\_Z}}
+{\footnotesize\ttfamily \#define TX\+\_\+Z~0.\+0026f}
+
+summary\texorpdfstring{$>$}{>} Renders the wave number and title when a wave begins... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00223}{223}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a1b89ef5ff43cbc089aac8df442b77390}\label{_level_one_8cpp_a1b89ef5ff43cbc089aac8df442b77390}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!WAVE\_DONE\_Z@{WAVE\_DONE\_Z}}
+\index{WAVE\_DONE\_Z@{WAVE\_DONE\_Z}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{WAVE\_DONE\_Z}{WAVE\_DONE\_Z}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+DONE\+\_\+Z~0.\+042f}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a44d26e8543172e5521323276677da582}\label{_level_one_8cpp_a44d26e8543172e5521323276677da582}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!WAVE\_READY\_Z@{WAVE\_READY\_Z}}
+\index{WAVE\_READY\_Z@{WAVE\_READY\_Z}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{WAVE\_READY\_Z}{WAVE\_READY\_Z}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+READY\+\_\+Z~0.\+036f}
+
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2}\label{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!L1\_APPROACH@{L1\_APPROACH}}
+\index{L1\_APPROACH@{L1\_APPROACH}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{L1\_APPROACH}{L1\_APPROACH}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2}{L1\+\_\+\+APPROACH}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1\_CENTER@{L1\_CENTER}!LevelOne.cpp@{LevelOne.cpp}}\index{LevelOne.cpp@{LevelOne.cpp}!L1\_CENTER@{L1\_CENTER}}}\mbox{\Hypertarget{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2abba9dd3c3ce82d420f976da312976ea8}\label{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2abba9dd3c3ce82d420f976da312976ea8}} 
+L1\+\_\+\+CENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1\_LEFT@{L1\_LEFT}!LevelOne.cpp@{LevelOne.cpp}}\index{LevelOne.cpp@{LevelOne.cpp}!L1\_LEFT@{L1\_LEFT}}}\mbox{\Hypertarget{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a258da7e43cb9f3813d4029493570ca3f}\label{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a258da7e43cb9f3813d4029493570ca3f}} 
+L1\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1\_RIGHT@{L1\_RIGHT}!LevelOne.cpp@{LevelOne.cpp}}\index{LevelOne.cpp@{LevelOne.cpp}!L1\_RIGHT@{L1\_RIGHT}}}\mbox{\Hypertarget{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2ac462c43d077fcaf6bcae660b9a82b24d}\label{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2ac462c43d077fcaf6bcae660b9a82b24d}} 
+L1\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1\_ZIG\_ZAG\_L@{L1\_ZIG\_ZAG\_L}!LevelOne.cpp@{LevelOne.cpp}}\index{LevelOne.cpp@{LevelOne.cpp}!L1\_ZIG\_ZAG\_L@{L1\_ZIG\_ZAG\_L}}}\mbox{\Hypertarget{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a5af55bd54a876bc6fb757baa267ab109}\label{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a5af55bd54a876bc6fb757baa267ab109}} 
+L1\+\_\+\+ZIG\+\_\+\+ZAG\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1\_ZIG\_ZAG\_R@{L1\_ZIG\_ZAG\_R}!LevelOne.cpp@{LevelOne.cpp}}\index{LevelOne.cpp@{LevelOne.cpp}!L1\_ZIG\_ZAG\_R@{L1\_ZIG\_ZAG\_R}}}\mbox{\Hypertarget{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2ab9e139897e93fdf671572d68c22d061d}\label{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2ab9e139897e93fdf671572d68c22d061d}} 
+L1\+\_\+\+ZIG\+\_\+\+ZAG\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L1\_RANDOM@{L1\_RANDOM}!LevelOne.cpp@{LevelOne.cpp}}\index{LevelOne.cpp@{LevelOne.cpp}!L1\_RANDOM@{L1\_RANDOM}}}\mbox{\Hypertarget{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a27037b45c5f70ebbc92cb41abbcd467e}\label{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2a27037b45c5f70ebbc92cb41abbcd467e}} 
+L1\+\_\+\+RANDOM&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_level_one_8cpp_aa91dc3dd11adcac277b491be9198b469}\label{_level_one_8cpp_aa91dc3dd11adcac277b491be9198b469}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!allocateScenerySprites@{allocateScenerySprites}}
+\index{allocateScenerySprites@{allocateScenerySprites}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{allocateScenerySprites()}{allocateScenerySprites()}}
+{\footnotesize\ttfamily void allocate\+Scenery\+Sprites (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} \&}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Deallocate scenery sprites for this level /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00800}{800}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_level_one_8cpp_ac0b1ddf440626547dc28b46d1886b818}\label{_level_one_8cpp_ac0b1ddf440626547dc28b46d1886b818}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!deallocateScenerySprites@{deallocateScenerySprites}}
+\index{deallocateScenerySprites@{deallocateScenerySprites}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{deallocateScenerySprites()}{deallocateScenerySprites()}}
+{\footnotesize\ttfamily void deallocate\+Scenery\+Sprites (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} \&}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Indicates that the level will loop internally handling all input, and output (audio, visual) until the user either completes the level (e.\+g. defeats all the waves for that level) or chooses to exit summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00844}{844}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+\mbox{\Hypertarget{_level_one_8cpp_a43ed097a987340b8bd0819c06b84cdea}\label{_level_one_8cpp_a43ed097a987340b8bd0819c06b84cdea}} 
+\index{LevelOne.cpp@{LevelOne.cpp}!setupLevelOneWaypoints@{setupLevelOneWaypoints}}
+\index{setupLevelOneWaypoints@{setupLevelOneWaypoints}!LevelOne.cpp@{LevelOne.cpp}}
+\doxysubsubsection{\texorpdfstring{setupLevelOneWaypoints()}{setupLevelOneWaypoints()}}
+{\footnotesize\ttfamily void setup\+Level\+One\+Waypoints (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sprite_baddie}{Sprite\+Baddie}} $\ast$}]{sprite,  }\item[{\mbox{\hyperlink{_level_one_8cpp_ac8a0ccdf00cdbca01672416cb14757a2}{L1\+\_\+\+APPROACH}}}]{approach }\end{DoxyParamCaption})}
+
+
+
+Randomly selects from a set of three different routes the baddies can take... 
+
+static void 
+
+Definition at line \mbox{\hyperlink{_level_one_8cpp_source_l00344}{344}} of file \mbox{\hyperlink{_level_one_8cpp_source}{Level\+One.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3

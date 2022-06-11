@@ -1,0 +1,44 @@
+\hypertarget{_subject_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Subject.h}
+\mbox{\hyperlink{_subject_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00001}00001 \textcolor{comment}{// Subject.h}}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00002}00002 \textcolor{comment}{// Provides an implementation for the ISubject pure virtual class (interface)}}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00005}00005 \textcolor{preprocessor}{\#ifndef SUBJECT\_H}}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00006}00006 \textcolor{preprocessor}{\#define SUBJECT\_H}}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00008}\mbox{\hyperlink{class_subject}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{class_subject}{Subject}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_subject}{ISubject}}}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00009}00009    \{}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00010}00010     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00011}00011        }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00015}00015         \mbox{\hyperlink{class_subject_aec83e316ab306b22c94d43676b35d8ec}{Subject}}(\mbox{\hyperlink{class_i_subject}{ISubject}} *owner);}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00016}00016        }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00020}00020         \mbox{\hyperlink{class_subject_a7c4f522850f718466e5be7eb55ba1969}{\string~Subject}}();}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00025}00025         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_subject_a4406475155676da74b821029f7ce9467}{registerObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer);         }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00026}00026         }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00030}00030         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_subject_a4cecb738e1b6e7b60ad527dd05fe85df}{removeObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer); }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00031}00031         }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00035}00035         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_subject_a130edb815aef88deebc1542a32fa9af9}{notifyObservers}} ();}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00036}00036         }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00037}00037     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00038}00038     }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00039}00039         \textcolor{comment}{// Attributes               }}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00040}00040         \textcolor{keyword}{typedef} std::list<IObserver*> ObserverList;}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00041}00041         \textcolor{keyword}{typedef} ObserverList::iterator ObserverIterator;}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00042}00042         ObserverList myObservers;}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00044}00044         }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00045}00045         \textcolor{comment}{// Associations}}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00046}00046         \mbox{\hyperlink{class_i_subject}{ISubject}} *myOwner;}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00047}00047         }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00048}00048         \textcolor{comment}{// Operations}}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00049}00049         }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00054}00054         \textcolor{keywordtype}{bool} containsObserver (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer);}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00055}00055             }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00056}00056    \};}
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_subject_8h_source_l00058}00058 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

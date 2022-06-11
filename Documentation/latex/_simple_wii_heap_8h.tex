@@ -1,0 +1,45 @@
+\hypertarget{_simple_wii_heap_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Simple\+Wii\+Heap.h File Reference}
+\label{_simple_wii_heap_8h}\index{C:/TeamSheeps/SwimFishySwim/SimpleWiiHeap.h@{C:/TeamSheeps/SwimFishySwim/SimpleWiiHeap.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_simple_wii_heap_8h_a894fd4387f79b47b697e2e781b7021ab}{simple\+Wii\+Heap\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the Wii heap to use MEM2... /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{_simple_wii_heap_8h_a804518549d7f6c8af348513b73c81c1f}{simple\+Wii\+Heap\+Allocate\+Persistent\+Memory}} (size\+\_\+t memory\+Size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_simple_wii_heap_8h_a804518549d7f6c8af348513b73c81c1f}\label{_simple_wii_heap_8h_a804518549d7f6c8af348513b73c81c1f}} 
+\index{SimpleWiiHeap.h@{SimpleWiiHeap.h}!simpleWiiHeapAllocatePersistentMemory@{simpleWiiHeapAllocatePersistentMemory}}
+\index{simpleWiiHeapAllocatePersistentMemory@{simpleWiiHeapAllocatePersistentMemory}!SimpleWiiHeap.h@{SimpleWiiHeap.h}}
+\doxysubsubsection{\texorpdfstring{simpleWiiHeapAllocatePersistentMemory()}{simpleWiiHeapAllocatePersistentMemory()}}
+{\footnotesize\ttfamily void $\ast$ simple\+Wii\+Heap\+Allocate\+Persistent\+Memory (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{memory\+Size }\end{DoxyParamCaption})}
+
+
+
+
+
+~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_simple_wii_heap_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_simple_wii_heap_8cpp_source}{Simple\+Wii\+Heap.\+cpp}}.
+
+\mbox{\Hypertarget{_simple_wii_heap_8h_a894fd4387f79b47b697e2e781b7021ab}\label{_simple_wii_heap_8h_a894fd4387f79b47b697e2e781b7021ab}} 
+\index{SimpleWiiHeap.h@{SimpleWiiHeap.h}!simpleWiiHeapInit@{simpleWiiHeapInit}}
+\index{simpleWiiHeapInit@{simpleWiiHeapInit}!SimpleWiiHeap.h@{SimpleWiiHeap.h}}
+\doxysubsubsection{\texorpdfstring{simpleWiiHeapInit()}{simpleWiiHeapInit()}}
+{\footnotesize\ttfamily void simple\+Wii\+Heap\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the Wii heap to use MEM2... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Mark the requested memory as used, align the {\itshape new} current start address to 32 bytes, and then return the old starting address. That memory will now no longer be availe. ASSERTS failure and throws std\+::bad\+\_\+alloc if we\textquotesingle{}re out 
+
+Definition at line \mbox{\hyperlink{_simple_wii_heap_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_simple_wii_heap_8cpp_source}{Simple\+Wii\+Heap.\+cpp}}.
+

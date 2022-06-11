@@ -1,0 +1,67 @@
+\hypertarget{_model_image_sprite_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Model\+Image\+Sprite.h}
+\mbox{\hyperlink{_model_image_sprite_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00001}00001 \textcolor{comment}{// ModelImageSprite.h}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00002}00002 \textcolor{comment}{// Implements the IModel interface as it applies to a flat graphical point as opposed to an actual 3d model...}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef SPRITE\_MODEL\_H}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00005}00005 \textcolor{preprocessor}{\#define SPRITE\_MODEL\_H}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_model_8h}{IModel.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00013}\mbox{\hyperlink{class_model_image_sprite}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{class_model_image_sprite}{ModelImageSprite}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_model}{IModel}}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00015}00015 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00019}00019     \mbox{\hyperlink{class_model_image_sprite_a591aa3b6a2dbb9dcbeb6660105000388}{ModelImageSprite}}();}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00024}00024     \mbox{\hyperlink{class_model_image_sprite_a37af22f17253d503de48fa96b2bd201f}{\string~ModelImageSprite}}();}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00029}00029     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_model_image_sprite_a6bf6b109fef7f94f90afb173079296a9}{loadFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{AnimationFormat}} animationFormat);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00034}00034     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_a4730f9783ce7f0ebd8f1949f83440873}{assignTexture}}(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00039}00039     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_ac073363fcd317038707f1329d496fdfc}{assignBumpTexture}}(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} bumpTextureID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} lightTextureID);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00044}00044     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_a0e67dcdb48794d58a4e86207a1a4b103}{translateModel}}(Vector translation);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00049}00049     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_a7bebb2b537eba80708d1e757140a4820}{setAnimationType}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} type);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00054}00054     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_a7bebb2b537eba80708d1e757140a4820}{setAnimationType}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} type, \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}} \&modelAnim);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00059}00059     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_a5a6eca28b5c286ef8fad4321d73e0f96}{setModelScale}}(\textcolor{keywordtype}{float} scale);     }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00064}00064     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_a77bcf438e0ec301e5d809594da1e1012}{buildVertexArrays}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \textcolor{keywordtype}{bool} cullBacks);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00069}00069     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_ac3974843d1583738d700685864a746c7}{freeVertexArrays}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00074}00074     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_ada6d595e0fab445b3188731cbe29ae08}{renderModel}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}} \&animation, \textcolor{keywordtype}{bool} interpolate);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00079}00079     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_ada6d595e0fab445b3188731cbe29ae08}{renderModel}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \textcolor{keywordtype}{bool} interpolate);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00084}00084     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_image_sprite_a398b3da644585a5566a84730726c7897}{handleAnimation}}(\textcolor{keywordtype}{float} time, \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}} \&modelAnim);}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00085}00085         }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00087}00087 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00089}00089     \textcolor{comment}{// This identifies the current x,y,z position of the model}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00090}00090     Vector myLocation;}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00092}00092     \textcolor{comment}{// Indicates our current animation state ...}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00093}00093     \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}}    myAnim;}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00095}00095     \textcolor{comment}{// Indicates the current scale we're drawing our model at ...}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00096}00096     \textcolor{keywordtype}{float}   myScale;}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00098}00098     \textcolor{comment}{// Defines the texture handle the graphics subsystem has indicated for us to use ...}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00099}00099     \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myTextureHandle;}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00101}00101     \textcolor{comment}{// Defines the Point used with the graphics lib to display this sprite ...}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00102}00102     \mbox{\hyperlink{structtag_point}{Point}} myPoint;}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00103}00103     std::vector<Point> myPoints;}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00104}00104 \};}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00106}00106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_model_image_sprite_8h_source_l00107}00107 }
+
+\end{DoxyCode}

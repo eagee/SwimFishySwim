@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['near_5fplane_0',['NEAR_PLANE',['../_gl_graphics_8h.html#a2a63d0f9e8c8889d4fdd2b668c23c289',1,'NEAR_PLANE():&#160;GlGraphics.h'],['../_gx_graphics_8h.html#a2a63d0f9e8c8889d4fdd2b668c23c289',1,'NEAR_PLANE():&#160;GxGraphics.h']]],
+  ['new_1',['new',['../_mem_track_8h.html#a1ac41480eb2e4aadd52252ee550b630a',1,'MemTrack.h']]],
+  ['no_5fbutton_5fclicked_2',['NO_BUTTON_CLICKED',['../_game_menu_methods_8h.html#a1c4966df27c0286a55fa8f9179b45444',1,'GameMenuMethods.h']]],
+  ['no_5fwaypoint_5fspecified_3',['NO_WAYPOINT_SPECIFIED',['../_i_node_waypoints_8h.html#ac49b4ba5b6d7f6825c506d3ec0cdaed2',1,'INodeWaypoints.h']]],
+  ['num_5fl1_5fbaddie_5fsprites_4',['NUM_L1_BADDIE_SPRITES',['../_level_one_8cpp.html#add25646e486d8a129bd4e26a79658f33',1,'LevelOne.cpp']]],
+  ['number_5fof_5fcharacters_5fin_5fcolumn_5',['NUMBER_OF_CHARACTERS_IN_COLUMN',['../_text_8cpp.html#ac59d65940b5ea8a6a0d45a4a283b3e50',1,'Text.cpp']]],
+  ['number_5fof_5fcharacters_5fin_5frow_6',['NUMBER_OF_CHARACTERS_IN_ROW',['../_text_8cpp.html#a69a5395f9a4eb4c96241aa2fa7131444',1,'Text.cpp']]],
+  ['number_5fof_5fchars_5fin_5fframe_7',['NUMBER_OF_CHARS_IN_FRAME',['../_model_md2_8h.html#a379f3cc545c378aee137a12df1f8ba24',1,'ModelMd2.h']]],
+  ['number_5fof_5fdot_5fproducts_8',['NUMBER_OF_DOT_PRODUCTS',['../_model_md2_8h.html#ad2ad42be75db15c49272cf6f6dca0da7',1,'ModelMd2.h']]],
+  ['number_5fof_5fgfx_5fbuffers_9',['NUMBER_OF_GFX_BUFFERS',['../_gx_graphics_8cpp.html#a499f1cbe061435adace6d7a20163f12f',1,'GxGraphics.cpp']]],
+  ['number_5fof_5fnormals_10',['NUMBER_OF_NORMALS',['../_model_md2_8h.html#a1cbf85403c0730662ea233c622428197',1,'ModelMd2.h']]],
+  ['number_5fof_5fpathfinding_5fnodes_11',['NUMBER_OF_PATHFINDING_NODES',['../_tiled_maps_8cpp.html#a3b43eaa215d9c67f51ae30741a871e15',1,'TiledMaps.cpp']]],
+  ['number_5fof_5fscales_5fin_5fframe_12',['NUMBER_OF_SCALES_IN_FRAME',['../_model_md2_8h.html#ae5dccff48c8a942309f5ed8d55ae6f82',1,'ModelMd2.h']]],
+  ['number_5fof_5ftexture_5fstyles_13',['NUMBER_OF_TEXTURE_STYLES',['../_i_graphics_8h.html#a62164409f5b2158f3c151d193bb7595f',1,'IGraphics.h']]],
+  ['number_5fof_5ftranslates_5fin_5fframe_14',['NUMBER_OF_TRANSLATES_IN_FRAME',['../_model_md2_8h.html#a497b9fbf99a9181efdd94022f9385177',1,'ModelMd2.h']]],
+  ['number_5fof_5fwater_5ftextures_15',['NUMBER_OF_WATER_TEXTURES',['../_level_methods_8cpp.html#a03a15da0247dd975b8b8db18f405b783',1,'LevelMethods.cpp']]],
+  ['number_5fof_5fwater_5ftiles_16',['NUMBER_OF_WATER_TILES',['../_tiled_maps_8cpp.html#a06ad862a1fe79d1748a7616cd4eaa600',1,'TiledMaps.cpp']]],
+  ['number_5fof_5fwaves_17',['NUMBER_OF_WAVES',['../_level_one_8cpp.html#abbac5f9853767037f2f0926286bcde15',1,'LevelOne.cpp']]]
+];

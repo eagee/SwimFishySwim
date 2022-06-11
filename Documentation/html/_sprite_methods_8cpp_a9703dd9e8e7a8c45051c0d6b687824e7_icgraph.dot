@@ -1,0 +1,24 @@
+digraph "spirteMethodsInitSpriteInfo"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="spirteMethodsInitSpriteInfo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Initializes some of our default values ... /summary>"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SpriteBaddie::SpriteBaddie",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html#a9a9071b8ec7dbb229cc9eca306ab8db0",tooltip="Constructor for Player Sprite object. /summary>"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SpriteBullet::SpriteBullet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_bullet.html#ac4c32d7018b96e65302ae785c4f08a5d",tooltip="Constructor for Player Sprite object. /summary>"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SpriteEffect::SpriteEffect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_effect.html#a7d6e3164e8470c0bf6ed7d3b131b692f",tooltip="Constructor for Player Sprite object. /summary>"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SpritePlayer::SpritePlayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_player.html#a91c944c10479838a7169d92d932f8338",tooltip="Constructor for Player Sprite object. /summary>"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SpritePowerup::SpritePowerup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_powerup.html#a4708f818df15fde48a03bba991ae521d",tooltip="Constructor for Player Sprite object. /summary>"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SpriteScenery::SpriteScenery",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_scenery.html#a943955ebbb399e0a9fb9a033b7e654de",tooltip="Constructor for Player Sprite object. /summary>"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="SpriteTarget::SpriteTarget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_target.html#a0babd2f0be50a823a14bd282dc679417",tooltip="Constructor for Player Sprite object. /summary>"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="SpriteTower::SpriteTower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_tower.html#a6e72ac3846163322bdb73ce01b7e8e74",tooltip="Constructor for Player Sprite object. /summary>"];
+}

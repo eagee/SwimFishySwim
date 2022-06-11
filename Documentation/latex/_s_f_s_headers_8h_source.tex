@@ -1,0 +1,57 @@
+\hypertarget{_s_f_s_headers_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+SFSHeaders.h}
+\mbox{\hyperlink{_s_f_s_headers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00001}00001 \textcolor{comment}{// SFSHeaders.h}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00002}00002 \textcolor{comment}{// Provides a simple method of distributing header files that will be compatible with multiple platforms...}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef SFS\_HEADERS\_H}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00005}00005 \textcolor{preprocessor}{\#define SFS\_HEADERS\_H}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00009}00009 \textcolor{comment}{// Standard C Library}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <malloc.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00017}00017 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WII}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00018}00018 \textcolor{preprocessor}{    \#include "{}asndlib.h"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00019}00019 \textcolor{preprocessor}{    \#include <gccore.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00020}00020 \textcolor{preprocessor}{    \#include <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00021}00021 \textcolor{preprocessor}{    \#include <debug.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00022}00022 \textcolor{preprocessor}{    \#include <fat.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00023}00023 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00025}00025 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WIN}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00026}00026 \textcolor{preprocessor}{    \#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00027}00027 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00029}00029 \textcolor{comment}{// C++ Library}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00030}00030 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00031}00031 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00032}00032 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00033}00033 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00034}00034 \textcolor{preprocessor}{\#include <cctype>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00035}00035 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00036}00036 \textcolor{preprocessor}{\#include <cstdarg>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00037}00037 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00038}00038 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00039}00039 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00041}00041 \textcolor{comment}{// 3rd Party Libraries}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00042}00042 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mem_track_8h}{MemTrack.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00043}00043 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00044}00044 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{assert_8h}{assert.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00045}00045 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_tracing_8h}{Tracing.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00046}00046 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_debug_stuffs_8h}{DebugStuffs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00047}00047 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_endian_stuffs_8h}{EndianStuffs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00048}00048 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fast_vectors_8h}{fastVectors.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00049}00049 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{angles_8h}{angles.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00051}00051 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_s_f_s_headers_8h_source_l00052}00052 }
+
+\end{DoxyCode}

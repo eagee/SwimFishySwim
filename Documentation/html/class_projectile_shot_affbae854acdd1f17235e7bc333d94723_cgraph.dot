@@ -1,0 +1,16 @@
+digraph "ProjectileShot::ProjectileShot"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ProjectileShot::ProjectileShot",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Constructor...duh /summary>"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ProjectileMethodsInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_projectile_methods_8cpp.html#a9b95167b82b23e2f117666281f2fd1fb",tooltip="Performs projectile initialization"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="LevelMethodsSetupSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a401d1e8b9ca756d47ceabc972779ef38",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ISprite::setID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a1f16a3f8d86dff3cb09901e507ba7e97",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ProjectileMethodsCalculate\lMaxProjectiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_projectile_methods_8cpp.html#a60938b8426986e55ff13683725cb193f",tooltip="Calculates the maximum projectiles available when a level changes..."];
+}

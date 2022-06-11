@@ -1,0 +1,12 @@
+digraph "SpriteEffect::setAnimation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SpriteEffect::setAnimation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="IModel::handleAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_model.html#ab987f81128faba7427d2eb087ce790d1",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="IModel::setAnimationType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_model.html#af95a96f345d05c3283940872e6a3fc74",tooltip=" "];
+}

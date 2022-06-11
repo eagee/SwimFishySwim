@@ -1,0 +1,105 @@
+\hypertarget{_tracing_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Tracing.cpp}
+\mbox{\hyperlink{_tracing_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00001}00001 \textcolor{comment}{// Tracing.h}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00002}00002 \textcolor{comment}{// Defines an interface for tracing debug information to a file}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00008}00008 \textcolor{comment}{// Standard C Library}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <malloc.h>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00016}00016 \textcolor{comment}{// C++ Library}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00019}00019 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00020}00020 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00021}00021 \textcolor{preprocessor}{\#include <cctype>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00022}00022 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00023}00023 \textcolor{preprocessor}{\#include <cstdarg>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00024}00024 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00025}00025 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00026}00026 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00028}00028 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{assert_8h}{assert.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00029}00029 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_debug_stuffs_8h}{DebugStuffs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00031}00031 \textcolor{comment}{// A file handle for us to use ...}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00032}\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{00032}} FILE *\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}};}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00034}00034 \textcolor{comment}{// Defines the string buffer in which we keep our formatted string}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00035}\mbox{\hyperlink{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}{00035}} \textcolor{keywordtype}{char} \mbox{\hyperlink{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}{gFormattedString}}[256];}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00041}\mbox{\hyperlink{_tracing_8cpp_ac7c48560d975bc92d0aa4fa86bc68f4d}{00041}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_tracing_8cpp_ac7c48560d975bc92d0aa4fa86bc68f4d}{setupTrace}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* traceFile)}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00042}00042 \{}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00043}00043     ASSERT(\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}} == NULL);   }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00044}00044     \mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}} = fopen(traceFile, \textcolor{stringliteral}{"{}w+"{}});  }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00045}00045     ASSERT(\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}} != NULL);}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00051}\mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{00051}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* file, \textcolor{keywordtype}{int} line, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt, ...)}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00052}00052 \{}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00053}00053     }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00054}00054     ASSERT(\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}} != NULL);}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00055}00055     \textcolor{keywordflow}{if}(\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}} != NULL)}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00056}00056     \{}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00057}00057         va\_list args;}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00058}00058     }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00059}00059         \textcolor{comment}{// Clear out our formatted string buffer will null terminators}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00060}00060         memset(\&\mbox{\hyperlink{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}{gFormattedString}}, 0, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}{gFormattedString}})); }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00061}00061         va\_start(args, fmt);}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00063}00063         \textcolor{comment}{// Assign our arguments to a string ...}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00064}00064         vsprintf(\mbox{\hyperlink{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}{gFormattedString}}, fmt, args);}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00066}00066         \textcolor{comment}{// We're done with the formatted text now ...}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00067}00067         va\_end(args);}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00069}00069         printf(\textcolor{stringliteral}{"{}\%s,\%d,\%s"{}}, file, line, \mbox{\hyperlink{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}{gFormattedString}}); \textcolor{comment}{//usleep(1000000);}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00070}00070         fprintf(\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}}, \textcolor{stringliteral}{"{}\%s,\%d,\%s"{}}, file, line, \mbox{\hyperlink{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}{gFormattedString}});}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00071}00071     \}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00072}00072 \}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00077}\mbox{\hyperlink{_tracing_8cpp_a4fc1d14166a550064f5e38f6b685a1bf}{00077}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt, ...)}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00078}00078 \{   }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00079}00079     \textcolor{comment}{//debugPrint("{}\%s\(\backslash\)n"{}, gFormattedString); usleep(100000);}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00080}00080     }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00081}00081     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00082}00082 \textcolor{comment}{    va\_list args;}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00083}00083 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00084}00084 \textcolor{comment}{    ASSERT(gTraceFileHandle != NULL);}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00085}00085 \textcolor{comment}{    if(gTraceFileHandle != NULL)}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00086}00086 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00087}00087 \textcolor{comment}{        // Clear out our formatted string buffer will null terminators}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00088}00088 \textcolor{comment}{        memset(\&gFormattedString, 0, sizeof(gFormattedString)); }}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00089}00089 \textcolor{comment}{        va\_start(args, fmt);}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00090}00090 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00091}00091 \textcolor{comment}{        // Assign our arguments to a string ...}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00092}00092 \textcolor{comment}{        vsprintf(gFormattedString, fmt, args);}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00093}00093 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00094}00094 \textcolor{comment}{        // We're done with the formatted text now ...}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00095}00095 \textcolor{comment}{        va\_end(args);}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00096}00096 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00097}00097 \textcolor{comment}{        //fprintf(gTraceFileHandle, "{}\%s\(\backslash\)n\(\backslash\)r"{}, gFormattedString);}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00098}00098 \textcolor{comment}{        debugPrint("{}\%s\(\backslash\)n"{}, gFormattedString); usleep(100000);   }}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00099}00099 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00100}00100 \}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00105}\mbox{\hyperlink{_tracing_8cpp_aa9afe9ee27d1f53fe28b338f98243916}{00105}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_tracing_8cpp_aa9afe9ee27d1f53fe28b338f98243916}{shutDownTrace}}()}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00106}00106 \{}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00107}00107     ASSERT(\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}} != NULL);}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00108}00108     \textcolor{keywordflow}{if}(\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}} != NULL)}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00109}00109     \{}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00110}00110         fclose(\mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{gTraceFileHandle}});}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00111}00111     \}}
+\DoxyCodeLine{\Hypertarget{_tracing_8cpp_source_l00112}00112 \}}
+
+\end{DoxyCode}

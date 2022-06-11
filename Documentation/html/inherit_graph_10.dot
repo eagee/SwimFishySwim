@@ -1,0 +1,22 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="IObserver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_observer.html",tooltip=" "];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="TestObserverPattern",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_test_observer_pattern.html",tooltip=" "];
+  Node2 [label="ITest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_test.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="TestIControllers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_test_i_controllers.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="TestIGraphics",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_test_i_graphics.html",tooltip="Defines a concrete implementation of the ITest interface for testing the graphics display ...."];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="TestIModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_test_i_model.html",tooltip="Definest a concrete implementation of the ITest interface for testing the controllers interface ...."];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="TestIText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_test_i_text.html",tooltip="Definest a concrete implementation of the ITest interface for testing the controllers interface ...."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="TestTiledMaps",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_test_tiled_maps.html",tooltip="Provides implementation of ITest interface to test functionality of the observer pattern objects /sum..."];
+}

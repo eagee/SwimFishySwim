@@ -1,0 +1,113 @@
+\hypertarget{_tracing_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Tracing.cpp File Reference}
+\label{_tracing_8cpp}\index{C:/TeamSheeps/SwimFishySwim/Tracing.cpp@{C:/TeamSheeps/SwimFishySwim/Tracing.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstdarg$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Debug\+Stuffs.\+h\char`\"{}}\newline
+Include dependency graph for Tracing.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_tracing_8cpp_ac7c48560d975bc92d0aa4fa86bc68f4d}{setup\+Trace}} (const char $\ast$trace\+File)
+\begin{DoxyCompactList}\small\item\em Sets up the trace log /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}} (const char $\ast$file, int line, const char $\ast$fmt,...)
+\item 
+void \mbox{\hyperlink{_tracing_8cpp_a4fc1d14166a550064f5e38f6b685a1bf}{trace}} (const char $\ast$fmt,...)
+\item 
+void \mbox{\hyperlink{_tracing_8cpp_aa9afe9ee27d1f53fe28b338f98243916}{shut\+Down\+Trace}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+FILE $\ast$ \mbox{\hyperlink{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}{g\+Trace\+File\+Handle}}
+\item 
+char \mbox{\hyperlink{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}{g\+Formatted\+String}} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_tracing_8cpp_ac7c48560d975bc92d0aa4fa86bc68f4d}\label{_tracing_8cpp_ac7c48560d975bc92d0aa4fa86bc68f4d}} 
+\index{Tracing.cpp@{Tracing.cpp}!setupTrace@{setupTrace}}
+\index{setupTrace@{setupTrace}!Tracing.cpp@{Tracing.cpp}}
+\doxysubsubsection{\texorpdfstring{setupTrace()}{setupTrace()}}
+{\footnotesize\ttfamily void setup\+Trace (\begin{DoxyParamCaption}\item[{const char $\ast$}]{trace\+File }\end{DoxyParamCaption})}
+
+
+
+Sets up the trace log /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Traces the information specified in message out /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tracing_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_tracing_8cpp_source}{Tracing.\+cpp}}.
+
+\mbox{\Hypertarget{_tracing_8cpp_aa9afe9ee27d1f53fe28b338f98243916}\label{_tracing_8cpp_aa9afe9ee27d1f53fe28b338f98243916}} 
+\index{Tracing.cpp@{Tracing.cpp}!shutDownTrace@{shutDownTrace}}
+\index{shutDownTrace@{shutDownTrace}!Tracing.cpp@{Tracing.cpp}}
+\doxysubsubsection{\texorpdfstring{shutDownTrace()}{shutDownTrace()}}
+{\footnotesize\ttfamily void shut\+Down\+Trace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_tracing_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{_tracing_8cpp_source}{Tracing.\+cpp}}.
+
+\mbox{\Hypertarget{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}\label{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}} 
+\index{Tracing.cpp@{Tracing.cpp}!trace@{trace}}
+\index{trace@{trace}!Tracing.cpp@{Tracing.cpp}}
+\doxysubsubsection{\texorpdfstring{trace()}{trace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void trace (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file,  }\item[{int}]{line,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Traces information without the file and line data... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tracing_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{_tracing_8cpp_source}{Tracing.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{_tracing_8cpp_a4fc1d14166a550064f5e38f6b685a1bf}\label{_tracing_8cpp_a4fc1d14166a550064f5e38f6b685a1bf}} 
+\index{Tracing.cpp@{Tracing.cpp}!trace@{trace}}
+\index{trace@{trace}!Tracing.cpp@{Tracing.cpp}}
+\doxysubsubsection{\texorpdfstring{trace()}{trace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void trace (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Closes the trace log /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tracing_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_tracing_8cpp_source}{Tracing.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}\label{_tracing_8cpp_a039941a0f39027c7274b9f273cdb77c3}} 
+\index{Tracing.cpp@{Tracing.cpp}!gFormattedString@{gFormattedString}}
+\index{gFormattedString@{gFormattedString}!Tracing.cpp@{Tracing.cpp}}
+\doxysubsubsection{\texorpdfstring{gFormattedString}{gFormattedString}}
+{\footnotesize\ttfamily char g\+Formatted\+String\mbox{[}256\mbox{]}}
+
+summary\texorpdfstring{$>$}{>} Sets up the trace log /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_tracing_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{_tracing_8cpp_source}{Tracing.\+cpp}}.
+
+\mbox{\Hypertarget{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}\label{_tracing_8cpp_ab4eed4adcc95225a744e540209e1b1b8}} 
+\index{Tracing.cpp@{Tracing.cpp}!gTraceFileHandle@{gTraceFileHandle}}
+\index{gTraceFileHandle@{gTraceFileHandle}!Tracing.cpp@{Tracing.cpp}}
+\doxysubsubsection{\texorpdfstring{gTraceFileHandle}{gTraceFileHandle}}
+{\footnotesize\ttfamily FILE$\ast$ g\+Trace\+File\+Handle}
+
+
+
+Definition at line \mbox{\hyperlink{_tracing_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_tracing_8cpp_source}{Tracing.\+cpp}}.
+

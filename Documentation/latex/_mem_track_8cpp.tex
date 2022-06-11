@@ -1,0 +1,133 @@
+\hypertarget{_mem_track_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Mem\+Track.cpp File Reference}
+\label{_mem_track_8cpp}\index{C:/TeamSheeps/SwimFishySwim/MemTrack.cpp@{C:/TeamSheeps/SwimFishySwim/MemTrack.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$new$>$}\newline
+{\ttfamily \#include \char`\"{}Debug\+Stuffs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Mem\+Track.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tracing.\+h\char`\"{}}\newline
+Include dependency graph for Mem\+Track.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_mem_track_1_1_block_header}{Mem\+Track\+::\+Block\+Header}}
+\item 
+class \mbox{\hyperlink{class_mem_track_1_1_signature}{Mem\+Track\+::\+Signature}}
+\item 
+struct \mbox{\hyperlink{struct_mem_track_1_1_mem_digest}{Mem\+Track\+::\+Mem\+Digest}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_mem_track}{Mem\+Track}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\+\_\+\+TO\+\_\+\+ALIGNMENT\+\_\+\+BOUNDARY}}(value)~        ((value) + ((ALIGNMENT -\/ ((value) \% ALIGNMENT)) \% ALIGNMENT))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}{Mem\+Track\+::\+Track\+Malloc}} (size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}{Mem\+Track\+::\+Track\+Free}} (void $\ast$p)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}{Mem\+Track\+::\+Track\+Stamp}} (void $\ast$p, const Mem\+Stamp \&stamp, char const $\ast$type\+Name)
+\item 
+void \mbox{\hyperlink{namespace_mem_track_ab97b33af33d0255feeecde45606f26e5}{Mem\+Track\+::\+Track\+Dump\+Blocks}} ()
+\item 
+void \mbox{\hyperlink{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}{Mem\+Track\+::\+Track\+List\+Memory\+Usage}} ()
+\item 
+void $\ast$ \mbox{\hyperlink{_mem_track_8cpp_a160dcabc54bbecfc69484678cafadb81}{operator new}} (size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{_mem_track_8cpp_a86107594327f3a001230df9802cd4422}{operator delete}} (void $\ast$p)
+\item 
+void $\ast$ \mbox{\hyperlink{_mem_track_8cpp_af2243bb4c2126b7b2b393e06090fbe59}{operator new\mbox{[}$\,$\mbox{]}}} (size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{_mem_track_8cpp_aaa8d8403dca7d813a59dd1f07728349d}{operator delete\mbox{[}$\,$\mbox{]}}} (void $\ast$p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a2283199082893e4916679370998529cf}{Mem\+Track\+::\+ALIGNMENT}} = 4
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}{Mem\+Track\+::\+SIZE\+\_\+\+Block\+Header}} = \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\+\_\+\+TO\+\_\+\+ALIGNMENT\+\_\+\+BOUNDARY}}(sizeof(Block\+Header))
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}{Mem\+Track\+::\+SIZE\+\_\+\+Signature}} = \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\+\_\+\+TO\+\_\+\+ALIGNMENT\+\_\+\+BOUNDARY}}(sizeof(Signature))
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}{Mem\+Track\+::\+OFFSET\+\_\+\+Block\+Header}} = 0
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}{Mem\+Track\+::\+OFFSET\+\_\+\+Signature}} = OFFSET\+\_\+\+Block\+Header + SIZE\+\_\+\+Block\+Header
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{Mem\+Track\+::\+OFFSET\+\_\+\+User\+Chunk}} = OFFSET\+\_\+\+Signature + SIZE\+\_\+\+Signature
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespace_mem_track_a1833ed4e31c20e02bc6e238b26b63a5e}{Mem\+Track\+::\+SIZE\+\_\+\+Prolog\+Chunk}} = OFFSET\+\_\+\+User\+Chunk
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}\label{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}} 
+\index{MemTrack.cpp@{MemTrack.cpp}!PAD\_TO\_ALIGNMENT\_BOUNDARY@{PAD\_TO\_ALIGNMENT\_BOUNDARY}}
+\index{PAD\_TO\_ALIGNMENT\_BOUNDARY@{PAD\_TO\_ALIGNMENT\_BOUNDARY}!MemTrack.cpp@{MemTrack.cpp}}
+\doxysubsubsection{\texorpdfstring{PAD\_TO\_ALIGNMENT\_BOUNDARY}{PAD\_TO\_ALIGNMENT\_BOUNDARY}}
+{\footnotesize\ttfamily \#define PAD\+\_\+\+TO\+\_\+\+ALIGNMENT\+\_\+\+BOUNDARY(\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})~        ((value) + ((ALIGNMENT -\/ ((value) \% ALIGNMENT)) \% ALIGNMENT))}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00262}{262}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_mem_track_8cpp_a86107594327f3a001230df9802cd4422}\label{_mem_track_8cpp_a86107594327f3a001230df9802cd4422}} 
+\index{MemTrack.cpp@{MemTrack.cpp}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!MemTrack.cpp@{MemTrack.cpp}}
+\doxysubsubsection{\texorpdfstring{operator delete()}{operator delete()}}
+{\footnotesize\ttfamily void operator delete (\begin{DoxyParamCaption}\item[{void $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00587}{587}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{_mem_track_8cpp_aaa8d8403dca7d813a59dd1f07728349d}\label{_mem_track_8cpp_aaa8d8403dca7d813a59dd1f07728349d}} 
+\index{MemTrack.cpp@{MemTrack.cpp}!operator delete\mbox{[}\mbox{]}@{operator delete[]}}
+\index{operator delete\mbox{[}\mbox{]}@{operator delete[]}!MemTrack.cpp@{MemTrack.cpp}}
+\doxysubsubsection{\texorpdfstring{operator delete[]()}{operator delete[]()}}
+{\footnotesize\ttfamily void operator delete\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{void $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00603}{603}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_mem_track_8cpp_a160dcabc54bbecfc69484678cafadb81}\label{_mem_track_8cpp_a160dcabc54bbecfc69484678cafadb81}} 
+\index{MemTrack.cpp@{MemTrack.cpp}!operator new@{operator new}}
+\index{operator new@{operator new}!MemTrack.cpp@{MemTrack.cpp}}
+\doxysubsubsection{\texorpdfstring{operator new()}{operator new()}}
+{\footnotesize\ttfamily void $\ast$ operator \mbox{\hyperlink{_mem_track_8h_a1ac41480eb2e4aadd52252ee550b630a}{new}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00578}{578}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{_mem_track_8cpp_af2243bb4c2126b7b2b393e06090fbe59}\label{_mem_track_8cpp_af2243bb4c2126b7b2b393e06090fbe59}} 
+\index{MemTrack.cpp@{MemTrack.cpp}!operator new\mbox{[}\mbox{]}@{operator new[]}}
+\index{operator new\mbox{[}\mbox{]}@{operator new[]}!MemTrack.cpp@{MemTrack.cpp}}
+\doxysubsubsection{\texorpdfstring{operator new[]()}{operator new[]()}}
+{\footnotesize\ttfamily void $\ast$ operator \mbox{\hyperlink{_mem_track_8h_a1ac41480eb2e4aadd52252ee550b630a}{new}}\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_mem_track_8cpp_source_l00594}{594}} of file \mbox{\hyperlink{_mem_track_8cpp_source}{Mem\+Track.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4

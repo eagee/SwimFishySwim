@@ -1,0 +1,239 @@
+\hypertarget{_end_of_wave_menu_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+End\+Of\+Wave\+Menu.cpp}
+\mbox{\hyperlink{_end_of_wave_menu_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00001}00001 \textcolor{comment}{// EndOfWaveMenu.h}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00002}00002 \textcolor{comment}{// Implements IGameMenu interface to provide a menu option at the end of a wave ...}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_audio_8h}{IAudio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_level_info_8h}{LevelInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_menu_info_8h}{GameMenuInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_game_menu_8h}{IGameMenu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_endof_wave_menu_8h}{EndOfWaveMenu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_menu_methods_8h}{GameMenuMethods.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00013}00013 \textcolor{comment}{// When a button is selected this changes the price}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00014}\mbox{\hyperlink{_end_of_wave_menu_8cpp_a9baf5ae0036f6978cb4182a718b05973}{00014}} \textcolor{preprocessor}{\#define PROJECTILE\_COST\_MODIFIER 250}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00015}\mbox{\hyperlink{_end_of_wave_menu_8cpp_af7452dfa6bdc4de903f7b9aea4df88a8}{00015}} \textcolor{preprocessor}{\#define ATTACK\_COST\_MODIFIER 400}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00017}00017 \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00019}\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bafd6734429217a9d45122278b6ed6b20d}{00019}}     \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bafd6734429217a9d45122278b6ed6b20d}{SAVE\_BUTTON}},}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00020}\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba0da2988988498af64df963334cb0b974}{00020}}     \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba0da2988988498af64df963334cb0b974}{FINISHED\_BUTTON}},}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00021}\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba1b625305602bed0da9f97fd0e41fd5d0}{00021}}     \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba1b625305602bed0da9f97fd0e41fd5d0}{TOWER\_BUTTON}},}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00022}\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}{00022}}     \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}{ATTACK\_BUTTON}},}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00023}\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}{00023}}     \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}{PROJECTILE\_BUTTON}},}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00024}00024     \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8aab87c2dfa28e3f0756663964e7b94b}{HEALTH\_BUTTON}}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00025}\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8aab87c2dfa28e3f0756663964e7b94b}{00025}} \};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00027}00027 \textcolor{comment}{// Static valused used whenever this menu is displayed}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00028}00028 \textcolor{keyword}{static} \textcolor{keywordtype}{int} gProjectileCost = 250;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00029}00029 \textcolor{keyword}{static} \textcolor{keywordtype}{int} gAttackCost = 400;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00030}00030 \textcolor{keyword}{static} \textcolor{keywordtype}{int} gTowerCost = 500;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00031}00031 \textcolor{keyword}{static} \textcolor{keywordtype}{int} gPickleCost = 1000;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00036}00036 \textcolor{keyword}{static} \textcolor{keywordtype}{void} setupUpgradeWeaponButton(\mbox{\hyperlink{structtag_game_menu_info}{GameMenuInfo}} \&gameMenu, \mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo)}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00037}00037 \{   }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00038}00038     std::stringstream projectileCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00039}00039     projectileCost << gProjectileCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00040}00040     \mbox{\hyperlink{structtag_game_button}{GameButton}} upWeaponButton;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00041}00041     upWeaponButton.\mbox{\hyperlink{structtag_game_button_aadc6b58830e9a1bb73462c8c8b4b5457}{ID}} = \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}{PROJECTILE\_BUTTON}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00042}00042     \mbox{\hyperlink{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}{GameMenuMethodsSetupButton}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(1.1f, -\/0.9f, 4.9f), levelInfo, \&upWeaponButton, 1.2f, \mbox{\hyperlink{_i_text_8h_ada7e8d3ac5fbe37fc65d65a1bf806ae0}{DEFAULT\_TEXT\_HEIGHT}}, projectileCost.str());}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00043}00043     gameMenu.\mbox{\hyperlink{structtag_game_menu_info_a5f9d390f280a44463b780d7c089e588b}{ButtonList}}.erase(\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}{PROJECTILE\_BUTTON}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00044}00044     gameMenu.\mbox{\hyperlink{structtag_game_menu_info_a5f9d390f280a44463b780d7c089e588b}{ButtonList}}[\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}{PROJECTILE\_BUTTON}}] = upWeaponButton;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00050}00050 \textcolor{keyword}{static} \textcolor{keywordtype}{void} setupUpgradeAttackButton(\mbox{\hyperlink{structtag_game_menu_info}{GameMenuInfo}} \&gameMenu, \mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo)}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00051}00051 \{   }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00052}00052     std::stringstream attackCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00053}00053     attackCost << gAttackCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00054}00054     \mbox{\hyperlink{structtag_game_button}{GameButton}} upAttackButton;    }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00055}00055     upAttackButton.\mbox{\hyperlink{structtag_game_button_aadc6b58830e9a1bb73462c8c8b4b5457}{ID}} = \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}{ATTACK\_BUTTON}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00056}00056     \mbox{\hyperlink{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}{GameMenuMethodsSetupButton}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(1.1f, -\/0.4f, 4.9f), levelInfo, \&upAttackButton, 1.2f, \mbox{\hyperlink{_i_text_8h_ada7e8d3ac5fbe37fc65d65a1bf806ae0}{DEFAULT\_TEXT\_HEIGHT}}, attackCost.str());}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00057}00057     gameMenu.\mbox{\hyperlink{structtag_game_menu_info_a5f9d390f280a44463b780d7c089e588b}{ButtonList}}.erase(\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}{ATTACK\_BUTTON}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00058}00058     gameMenu.\mbox{\hyperlink{structtag_game_menu_info_a5f9d390f280a44463b780d7c089e588b}{ButtonList}}[\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}{ATTACK\_BUTTON}}] = upAttackButton;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00059}00059 \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00064}\mbox{\hyperlink{class_end_of_wave_menu_a95745803c00195bb238a859f5832535b}{00064}} \mbox{\hyperlink{class_end_of_wave_menu_a95745803c00195bb238a859f5832535b}{EndOfWaveMenu::EndOfWaveMenu}}(\mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo)}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00065}00065 \{   }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00066}00066     std::stringstream towerCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00067}00067     std::stringstream pickleCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00068}00068     towerCost << gTowerCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00069}00069     pickleCost << gPickleCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00070}00070     }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00071}00071     \mbox{\hyperlink{_game_menu_methods_8cpp_aa8199ef57b7632e5a76df370421351d1}{GameMenuMethodsSetupMenuInfo}}(\&myGameMenu, levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a18f63f79bbc32ccccf5441070786d2a4}{MenuTexture}}, levelInfo-\/>\mbox{\hyperlink{structtag_level_info_ae4b012815d3aa718c8ff0419ba187c38}{ButtonTexture}}, levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a0e540e6dc3bb72503ca2456c883d946a}{FocusedButtonTexture}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00072}00072     }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00073}00073     \textcolor{comment}{// Define the labels that will be used in our menu and add it to our vector}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00075}00075     \mbox{\hyperlink{structtag_game_label}{GameLabel}} titleLabel;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00076}00076     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.45f, -\/1.65f, 4.9f), 0.28f, 0.28f, 0.15f, \&titleLabel, \textcolor{stringliteral}{"{}End of Wave Upgrades:"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00077}00077     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(titleLabel);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00079}00079     \mbox{\hyperlink{structtag_game_label}{GameLabel}} underscoreLabel;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00080}00080     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.50f, -\/1.6f, 4.9f), 0.36f, 0.36f, 0.15f, \&underscoreLabel, \textcolor{stringliteral}{"{}\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00081}00081     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(underscoreLabel);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00083}00083     \textcolor{comment}{// Define the buttons that will be used in our menu and add it to our vector}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00084}00084     }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00085}00085     \mbox{\hyperlink{structtag_game_label}{GameLabel}} weaponLabel;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00086}00086     \mbox{\hyperlink{structtag_game_label}{GameLabel}} weaponDetails;   }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00087}00087     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.4f, -\/1.0f, 4.9f), 0.26f, 0.26f, 0.15f, \&weaponLabel,   \textcolor{stringliteral}{"{}Projectile Damage:"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00088}00088     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.4f, -\/0.8f, 4.9f), 0.18f, 0.18f, 0.09f, \&weaponDetails, \textcolor{stringliteral}{"{}Increases players' projectile damage"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00089}00089     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(weaponLabel);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00090}00090     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(weaponDetails);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00091}00091     setupUpgradeWeaponButton(myGameMenu, levelInfo);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00092}00092     }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00094}00094     \mbox{\hyperlink{structtag_game_label}{GameLabel}} attackLabel;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00095}00095     \mbox{\hyperlink{structtag_game_label}{GameLabel}} attackDetails;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00096}00096     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.4f, -\/0.5f, 4.9f), 0.26f, 0.26f, 0.15f, \&attackLabel,   \textcolor{stringliteral}{"{}Attack Damage:"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00097}00097     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.4f, -\/0.3f, 4.9f), 0.18f, 0.18f, 0.09f, \&attackDetails, \textcolor{stringliteral}{"{}Increases players' physical damage"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00098}00098     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(attackLabel);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00099}00099     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(attackDetails);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00100}00100     setupUpgradeAttackButton(myGameMenu, levelInfo);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00101}00101     }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00102}00102     \mbox{\hyperlink{structtag_game_label}{GameLabel}} towerLabel;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00103}00103     \mbox{\hyperlink{structtag_game_label}{GameLabel}} towerDetails;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00104}00104     \mbox{\hyperlink{structtag_game_button}{GameButton}} upTowerButton; }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00105}00105     upTowerButton.\mbox{\hyperlink{structtag_game_button_aadc6b58830e9a1bb73462c8c8b4b5457}{ID}} = \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba1b625305602bed0da9f97fd0e41fd5d0}{TOWER\_BUTTON}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00106}00106     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.4f, 0.0f, 4.9f), 0.26f, 0.26f, 0.15f, \&towerLabel,   \textcolor{stringliteral}{"{}Tower Damage:"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00107}00107     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.4f, 0.2f, 4.9f), 0.18f, 0.18f, 0.09f, \&towerDetails, \textcolor{stringliteral}{"{}Increases all Tower damage"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00108}00108     \mbox{\hyperlink{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}{GameMenuMethodsSetupButton}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(1.1f, 0.1f, 4.9f), levelInfo, \&upTowerButton, 1.2f, \mbox{\hyperlink{_i_text_8h_ada7e8d3ac5fbe37fc65d65a1bf806ae0}{DEFAULT\_TEXT\_HEIGHT}}, towerCost.str());}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00109}00109     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a5f9d390f280a44463b780d7c089e588b}{ButtonList}}[\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba1b625305602bed0da9f97fd0e41fd5d0}{TOWER\_BUTTON}}] = upTowerButton;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00110}00110     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(towerLabel);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00111}00111     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(towerDetails);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00112}00112     }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00113}00113     \mbox{\hyperlink{structtag_game_label}{GameLabel}} healthLabel;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00114}00114     \mbox{\hyperlink{structtag_game_label}{GameLabel}} healthDetails;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00115}00115     \mbox{\hyperlink{structtag_game_button}{GameButton}} upHealthButton;    }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00116}00116     upHealthButton.\mbox{\hyperlink{structtag_game_button_aadc6b58830e9a1bb73462c8c8b4b5457}{ID}} = \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8aab87c2dfa28e3f0756663964e7b94b}{HEALTH\_BUTTON}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00117}00117     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.4f, 0.5f, 4.9f), 0.26f, 0.26f, 0.15f, \&healthLabel,   \textcolor{stringliteral}{"{}Pickle Health:"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00118}00118     \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.4f, 0.7f, 4.9f), 0.18f, 0.18f, 0.09f, \&healthDetails, \textcolor{stringliteral}{"{}Recovers Pickle Health Points"{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00119}00119     \mbox{\hyperlink{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}{GameMenuMethodsSetupButton}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(1.1f, 0.6f, 4.9f), levelInfo, \&upHealthButton, 1.2f, \mbox{\hyperlink{_i_text_8h_ada7e8d3ac5fbe37fc65d65a1bf806ae0}{DEFAULT\_TEXT\_HEIGHT}}, pickleCost.str());}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00120}00120     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a5f9d390f280a44463b780d7c089e588b}{ButtonList}}[\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba8aab87c2dfa28e3f0756663964e7b94b}{HEALTH\_BUTTON}}] = upHealthButton;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00121}00121     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(healthLabel);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00122}00122     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_ae9d0e1817998ed84fc60f196559d8793}{LabelList}}.push\_back(healthDetails);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00123}00123     }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00124}00124     \mbox{\hyperlink{structtag_game_button}{GameButton}} saveButton;    }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00125}00125     saveButton.\mbox{\hyperlink{structtag_game_button_aadc6b58830e9a1bb73462c8c8b4b5457}{ID}} = \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bafd6734429217a9d45122278b6ed6b20d}{SAVE\_BUTTON}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00126}00126     \mbox{\hyperlink{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}{GameMenuMethodsSetupButton}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.2f, 1.3f, 4.9f), levelInfo, \&saveButton, \mbox{\hyperlink{_i_text_8h_a33973d93f1fd8e410cbcd7e2d4403780}{DEFAULT\_TEXT\_WIDTH}}, \mbox{\hyperlink{_i_text_8h_ada7e8d3ac5fbe37fc65d65a1bf806ae0}{DEFAULT\_TEXT\_HEIGHT}}, \textcolor{stringliteral}{"{} Save Game "{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00127}00127     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a5f9d390f280a44463b780d7c089e588b}{ButtonList}}[\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bafd6734429217a9d45122278b6ed6b20d}{SAVE\_BUTTON}}] = saveButton;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00129}00129     \mbox{\hyperlink{structtag_game_button}{GameButton}} finishedButton;    }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00130}00130     finishedButton.\mbox{\hyperlink{structtag_game_button_aadc6b58830e9a1bb73462c8c8b4b5457}{ID}} = \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba0da2988988498af64df963334cb0b974}{FINISHED\_BUTTON}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00131}00131     \mbox{\hyperlink{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}{GameMenuMethodsSetupButton}}(\mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(0.2f, 1.3f, 4.9f), levelInfo, \&finishedButton, \mbox{\hyperlink{_i_text_8h_a33973d93f1fd8e410cbcd7e2d4403780}{DEFAULT\_TEXT\_WIDTH}}, \mbox{\hyperlink{_i_text_8h_ada7e8d3ac5fbe37fc65d65a1bf806ae0}{DEFAULT\_TEXT\_HEIGHT}}, \textcolor{stringliteral}{"{} Finished "{}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00132}00132     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a5f9d390f280a44463b780d7c089e588b}{ButtonList}}[\mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba0da2988988498af64df963334cb0b974}{FINISHED\_BUTTON}}] = finishedButton;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00134}00134     \textcolor{comment}{// Define the verticies our background quad object that we'll use to display the menu (the rest of the setup was done in SetupMenuInfo above)}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00135}00135     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_acbc9a489cf49e7ca24c802ece66f38b3}{backgroundQuad}}.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[0] = \mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.5f, -\/1.7f, 5.0f);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00136}00136     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_acbc9a489cf49e7ca24c802ece66f38b3}{backgroundQuad}}.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1] = \mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}( 2.5f, -\/1.7f, 5.0f);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00137}00137     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_acbc9a489cf49e7ca24c802ece66f38b3}{backgroundQuad}}.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2] = \mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}( 2.5f,  1.7f, 5.0f);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00138}00138     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_acbc9a489cf49e7ca24c802ece66f38b3}{backgroundQuad}}.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[3] = \mbox{\hyperlink{globals_8h_af5c89cee7363ee76dfcf432f0a55aac4}{VEC\_INIT}}(-\/2.5f,  1.7f, 5.0f);   }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00139}00139 \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00144}\mbox{\hyperlink{class_end_of_wave_menu_ac830a05af6ca15be563dd13fe1fefe61}{00144}} \mbox{\hyperlink{class_end_of_wave_menu_ac830a05af6ca15be563dd13fe1fefe61}{EndOfWaveMenu::\string~EndOfWaveMenu}}()}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00145}00145 \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00146}00146 \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00151}\mbox{\hyperlink{class_end_of_wave_menu_a892fa309419fa827727efda474dc834b}{00151}} \textcolor{keywordtype}{void}  \mbox{\hyperlink{class_end_of_wave_menu_a892fa309419fa827727efda474dc834b}{EndOfWaveMenu::executeMenu}}(\mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo)}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00152}00152 \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00153}00153     \textcolor{keywordtype}{bool} doneLooping = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00154}00154     \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\_STATUS}} status;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00156}00156     \textcolor{keywordflow}{while}(doneLooping == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00157}00157     \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00158}00158         \textcolor{comment}{// This is our input code, and should always be run}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00159}00159         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_acb9fff1eca579b69bf1893d8aefee697}{Controllers}}-\/>\mbox{\hyperlink{class_i_controllers_a899274bf83719f120b82c612e60fe31b}{updateControllerStates}}();}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00160}00160         status = levelInfo-\/>\mbox{\hyperlink{structtag_level_info_acb9fff1eca579b69bf1893d8aefee697}{Controllers}}-\/>\mbox{\hyperlink{class_i_controllers_a3b48a4c38334614b878dc3a5dc0e3340}{checkControllerStatus}}(0);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00161}00161         \textcolor{keywordflow}{if}(status == \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281a8b7efabd5049a0cc86e0d0242fac4d0c}{CONTROLLER\_READY}})}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00162}00162         \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00164}00164             \textcolor{keywordflow}{if}(levelInfo-\/>\mbox{\hyperlink{structtag_level_info_acb9fff1eca579b69bf1893d8aefee697}{Controllers}}-\/>\mbox{\hyperlink{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}{checkButtonPress}}(0, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771ea38589bd3dd1c83bdea2b70e38cc0e441}{WII\_BUTTON\_PLUS}}) == \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00165}00165             \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00166}00166 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WII}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00167}00167                 \_break();}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00168}00168 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00169}00169             \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00170}00170             }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00172}00172             \textcolor{keywordtype}{bool} menuButtonPressed = levelInfo-\/>\mbox{\hyperlink{structtag_level_info_acb9fff1eca579b69bf1893d8aefee697}{Controllers}}-\/>\mbox{\hyperlink{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}{checkButtonPress}}(0, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771ea0aecd265daf98e37ec2f72a014a46c17}{WII\_BUTTON\_A}});}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00174}00174             \textcolor{keywordflow}{if}(levelInfo-\/>\mbox{\hyperlink{structtag_level_info_acb9fff1eca579b69bf1893d8aefee697}{Controllers}}-\/>\mbox{\hyperlink{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}{checkButtonPress}}(0, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771eae2c4a932520c0bf1a293115feaf96cbb}{WII\_BUTTON\_B}}) == \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00175}00175             \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00176}00176                 \textcolor{comment}{// if A and B are pressed at the same time, they want to exit cest menu...}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00177}00177                 levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a437d4add0d406f51b826c0fe0b077629}{Sounds}}[\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a2daa1a96a8f7deb7290a7796fae9cdee}{MENU\_YES}}]-\/>\mbox{\hyperlink{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}{playOnce}}();}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00178}00178                 doneLooping = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00179}00179             \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00180}00180             }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00181}00181             \textcolor{comment}{// Check for the A button to be pressed}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00182}00182             \textcolor{keywordflow}{if}(myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a7022597d00efb91372297c9de4c706b7}{CurrentButtonState}} == \mbox{\hyperlink{_game_menu_info_8h_ad696fdf468534ccb242e232448ba7cb7a666f5349284be6384467ac357ec7d461}{BUTTON\_RELEASED}})}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00183}00183             \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00184}00184                 myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a7022597d00efb91372297c9de4c706b7}{CurrentButtonState}} = \mbox{\hyperlink{_game_menu_info_8h_ad696fdf468534ccb242e232448ba7cb7ab5db1af060b4af81d7f5f397684227cc}{BUTTON\_FREE}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00185}00185             \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00186}00186             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a7022597d00efb91372297c9de4c706b7}{CurrentButtonState}} == \mbox{\hyperlink{_game_menu_info_8h_ad696fdf468534ccb242e232448ba7cb7ab5db1af060b4af81d7f5f397684227cc}{BUTTON\_FREE}})}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00187}00187             \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00188}00188                 myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a49e7e3c949d767c42859956b6afaa0e8}{ClickedButtonID}} = \mbox{\hyperlink{_game_menu_methods_8h_a1c4966df27c0286a55fa8f9179b45444}{NO\_BUTTON\_CLICKED}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00189}00189                 \textcolor{keywordflow}{if}(menuButtonPressed == \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00190}00190                 \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00191}00191                     myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a7022597d00efb91372297c9de4c706b7}{CurrentButtonState}} = \mbox{\hyperlink{_game_menu_info_8h_ad696fdf468534ccb242e232448ba7cb7abd19dea9e19d02d7d39464dfdde1e48b}{BUTTON\_PRESSED}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00192}00192                     \mbox{\hyperlink{_game_menu_methods_8cpp_a542d81df1c7ab426ad41a43b52d33735}{GameMenuMethodsUpdateClickedButtonID}}(0, \&myGameMenu, levelInfo);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00193}00193                 \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00194}00194             \}           }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00195}00195             \textcolor{comment}{// Once A is pressed, check for it to be released, then once it's released check to see if we were inside}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00196}00196             \textcolor{comment}{// a set of button coordinates...}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00197}00197             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a7022597d00efb91372297c9de4c706b7}{CurrentButtonState}} == \mbox{\hyperlink{_game_menu_info_8h_ad696fdf468534ccb242e232448ba7cb7abd19dea9e19d02d7d39464dfdde1e48b}{BUTTON\_PRESSED}}) \&\& (menuButtonPressed == \textcolor{keyword}{false}))}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00198}00198             \{                                               }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00199}00199                 \mbox{\hyperlink{_game_menu_methods_8cpp_a542d81df1c7ab426ad41a43b52d33735}{GameMenuMethodsUpdateClickedButtonID}}(0, \&myGameMenu, levelInfo);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00200}00200                 \textcolor{keywordflow}{switch}(myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a49e7e3c949d767c42859956b6afaa0e8}{ClickedButtonID}})}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00201}00201                 \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00202}00202                 \textcolor{keywordflow}{case} \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba0da2988988498af64df963334cb0b974}{FINISHED\_BUTTON}}:}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00203}00203                     levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a437d4add0d406f51b826c0fe0b077629}{Sounds}}[\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a2daa1a96a8f7deb7290a7796fae9cdee}{MENU\_YES}}]-\/>\mbox{\hyperlink{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}{playOnce}}();}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00204}00204                     doneLooping = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00205}00205                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00206}00206                 \textcolor{keywordflow}{case} \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55bac3f7581533c8ac4b8b8b42b315de2c01}{PROJECTILE\_BUTTON}}:}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00207}00207                     \textcolor{keywordflow}{if}(levelInfo-\/>\mbox{\hyperlink{structtag_level_info_ae87f67cb305489cf8c22311a69f755b5}{CurrentUpgradePoints}} >= gProjectileCost)}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00208}00208                     \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00209}00209                         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a437d4add0d406f51b826c0fe0b077629}{Sounds}}[\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a2daa1a96a8f7deb7290a7796fae9cdee}{MENU\_YES}}]-\/>\mbox{\hyperlink{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}{playOnce}}();}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00210}00210                         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_ae87f67cb305489cf8c22311a69f755b5}{CurrentUpgradePoints}} -\/= gProjectileCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00211}00211                         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a1be81f5b4361792811538f093b43b70c}{CurrentPlayerBulletDamage}} += 1.0f;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00212}00212                         gProjectileCost += \mbox{\hyperlink{_end_of_wave_menu_8cpp_a9baf5ae0036f6978cb4182a718b05973}{PROJECTILE\_COST\_MODIFIER}};                        }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00213}00213                         setupUpgradeWeaponButton(myGameMenu, levelInfo);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00214}00214                     \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00215}00215                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00216}00216                     \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00217}00217                         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a437d4add0d406f51b826c0fe0b077629}{Sounds}}[\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a18290ab50b80bd8f942f73c6aa25e24d}{MENU\_NO}}]-\/>\mbox{\hyperlink{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}{playOnce}}();}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00218}00218                     \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00219}00219                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00220}00220                     \textcolor{keywordflow}{case} \mbox{\hyperlink{_end_of_wave_menu_8cpp_a06fc87d81c62e9abb8790b6e5713c55ba99c25e771d57b208c545091b610b42ce}{ATTACK\_BUTTON}}:}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00221}00221                     \textcolor{keywordflow}{if}(levelInfo-\/>\mbox{\hyperlink{structtag_level_info_ae87f67cb305489cf8c22311a69f755b5}{CurrentUpgradePoints}} >= gAttackCost)}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00222}00222                     \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00223}00223                         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a437d4add0d406f51b826c0fe0b077629}{Sounds}}[\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a2daa1a96a8f7deb7290a7796fae9cdee}{MENU\_YES}}]-\/>\mbox{\hyperlink{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}{playOnce}}();}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00224}00224                         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_ae87f67cb305489cf8c22311a69f755b5}{CurrentUpgradePoints}} -\/= gAttackCost;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00225}00225                         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a3bf38b2735cebda8d8bef59f98fc6ee9}{CurrentPlayerRepelDamage}} += 1.0f;}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00226}00226                         gAttackCost += \mbox{\hyperlink{_end_of_wave_menu_8cpp_af7452dfa6bdc4de903f7b9aea4df88a8}{ATTACK\_COST\_MODIFIER}};                        }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00227}00227                         setupUpgradeAttackButton(myGameMenu, levelInfo);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00228}00228                     \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00229}00229                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00230}00230                     \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00231}00231                         levelInfo-\/>\mbox{\hyperlink{structtag_level_info_a437d4add0d406f51b826c0fe0b077629}{Sounds}}[\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a18290ab50b80bd8f942f73c6aa25e24d}{MENU\_NO}}]-\/>\mbox{\hyperlink{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}{playOnce}}();}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00232}00232                     \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00233}00233                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00234}00234                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00235}00235                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00236}00236                 \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00237}00237                                 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00238}00238                 myGameMenu.\mbox{\hyperlink{structtag_game_menu_info_a7022597d00efb91372297c9de4c706b7}{CurrentButtonState}} = \mbox{\hyperlink{_game_menu_info_8h_ad696fdf468534ccb242e232448ba7cb7a666f5349284be6384467ac357ec7d461}{BUTTON\_RELEASED}};}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00239}00239             \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00241}00241             \mbox{\hyperlink{_game_menu_methods_8cpp_a6f3d4af6b7101a2d98f2c246a317b218}{GameMenuMethodsRenderMenu}}(0, \&myGameMenu, levelInfo);}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00242}00242         \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00243}00243         \textcolor{comment}{//TODO: We need a dialog that informs the user that the controller is not responding...}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00244}00244     \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00245}00245 \}}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00246}00246 }
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00250}\mbox{\hyperlink{class_end_of_wave_menu_a529fe3ecf2e2cec57540c3c9cd678049}{00250}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_end_of_wave_menu_a529fe3ecf2e2cec57540c3c9cd678049}{EndOfWaveMenu::clickButton}}(\mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo, \textcolor{keywordtype}{int} buttonID)}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00251}00251 \{}
+\DoxyCodeLine{\Hypertarget{_end_of_wave_menu_8cpp_source_l00252}00252 \}}
+
+\end{DoxyCode}

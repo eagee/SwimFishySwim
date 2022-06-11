@@ -1,0 +1,49 @@
+\hypertarget{_i_particle_effect_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+IParticle\+Effect.h}
+\mbox{\hyperlink{_i_particle_effect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00001}00001 \textcolor{comment}{// IParticleEffect.h}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00002}00002 \textcolor{comment}{// Defines a common interface for implementation classes that deal with particle effects...}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef IPARTICLE\_EFFECTS\_H}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00005}00005 \textcolor{preprocessor}{\#define IPARTICLE\_EFFECTS\_H}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_sprite_8h}{ISprite.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00013}\mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0a}{00013}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00015}\mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa63e6e67b5071dcfaf02e6724d33ae12a}{00015}}     \mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa63e6e67b5071dcfaf02e6724d33ae12a}{PARTICLE\_EFFECT\_WATER\_RIPPLE}},}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00016}\mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa80e9d17ad3c133b5c3cdcbfc23816f56}{00016}}     \mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa80e9d17ad3c133b5c3cdcbfc23816f56}{PARTICLE\_EFFECT\_REPEL\_ENEMIES}},}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00017}\mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa23a07cf15a7ee41f3c78b7d1ffb49386}{00017}}     \mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa23a07cf15a7ee41f3c78b7d1ffb49386}{PARTICLE\_EFFECT\_SPARK}},}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00018}\mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa9f3a0a39fcfb3e76847264950d5ba47e}{00018}}     \mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa9f3a0a39fcfb3e76847264950d5ba47e}{PARTICLE\_EFFECT\_SPLASH}},}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00019}00019     \mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa0e391dfd93de2924b03d10344aff6d34}{PARTICLE\_EFFECT\_WARP}}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00020}\mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0aa0e391dfd93de2924b03d10344aff6d34}{00020}} \} \mbox{\hyperlink{_i_particle_effect_8h_aa80f6fe7d3d8b515a875aedff5bd5c0a}{PARTICLE\_EFFECT\_TYPE}};}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00025}\mbox{\hyperlink{structtag_particle}{00025}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_particle}{tagParticle}}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00026}00026 \{}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00027}\mbox{\hyperlink{structtag_particle_a3cbc35e2f958b33f456308c25b79d811}{00027}}     Vector \mbox{\hyperlink{structtag_particle_a3cbc35e2f958b33f456308c25b79d811}{location}};}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00028}\mbox{\hyperlink{structtag_particle_a7ae765815b5f5cdd366d8328bd0f5dfb}{00028}}     Vector \mbox{\hyperlink{structtag_particle_a7ae765815b5f5cdd366d8328bd0f5dfb}{velocity}};}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00029}\mbox{\hyperlink{structtag_particle_a65de9127844c1d9491cf53d6f2eead5d}{00029}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_particle_a65de9127844c1d9491cf53d6f2eead5d}{lifeSpan}};}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00030}\mbox{\hyperlink{structtag_particle_afb1212f9d5e580a327c2efc65c53bf4f}{00030}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structtag_particle_afb1212f9d5e580a327c2efc65c53bf4f}{scale}};}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00031}\mbox{\hyperlink{structtag_particle_aa9061a5a32e74eae53ed036d10f19608}{00031}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structtag_particle_aa9061a5a32e74eae53ed036d10f19608}{delay}};}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00032}00032 \} \mbox{\hyperlink{_i_particle_effect_8h_ac9519ccc7dd2c1dfd314a1502af575d6}{Particle}};}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00037}\mbox{\hyperlink{class_i_particle_effect}{00037}} \textcolor{keyword}{class }\mbox{\hyperlink{class_i_particle_effect}{IParticleEffect}}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00038}00038 \{ }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00039}00039     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00040}\mbox{\hyperlink{class_i_particle_effect_a0202a1c0d9370d898f1a5f3c1675cbe3}{00040}}         \mbox{\hyperlink{class_i_particle_effect_a0202a1c0d9370d898f1a5f3c1675cbe3}{IParticleEffect}}()\{\}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00041}00041         }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00042}\mbox{\hyperlink{class_i_particle_effect_a23f0bd9fc8dc61106ac5c32b98594a46}{00042}}         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_i_particle_effect_a23f0bd9fc8dc61106ac5c32b98594a46}{\string~IParticleEffect}}()\{\}}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00047}\mbox{\hyperlink{class_i_particle_effect_a04d72eed41c6dc785f3d1311273cda27}{00047}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_particle_effect_a04d72eed41c6dc785f3d1311273cda27}{assignTexture}}(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00048}00048         }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00053}\mbox{\hyperlink{class_i_particle_effect_a7ca5d8d7e8447d0e3636b7d89828b3f1}{00053}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_particle_effect_a7ca5d8d7e8447d0e3636b7d89828b3f1}{addParticles}}(\mbox{\hyperlink{class_i_sprite}{ISprite}} *sprite, Vector offset, \textcolor{keywordtype}{int} number) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00058}\mbox{\hyperlink{class_i_particle_effect_ab254831f7f275adbe307c1e8b564c96b}{00058}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_particle_effect_ab254831f7f275adbe307c1e8b564c96b}{updateParticles}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00059}00059         }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00063}\mbox{\hyperlink{class_i_particle_effect_a19283a5ed5b2ccf92de05ae48787ae59}{00063}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_particle_effect_a19283a5ed5b2ccf92de05ae48787ae59}{renderParticles}}(Vector offset, \mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00064}00064 \};}
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_i_particle_effect_8h_source_l00066}00066 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

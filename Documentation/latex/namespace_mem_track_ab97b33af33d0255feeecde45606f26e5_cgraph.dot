@@ -1,0 +1,22 @@
+digraph "MemTrack::TrackDumpBlocks"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="MemTrack::TrackDumpBlocks",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="MemTrack::BlockHeader\l::CountBlocks",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_mem_track_1_1_block_header.html#ae57e5e9fcbc414cc37b05c49d2424c39",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="MemTrack::BlockHeader\l::GetBlocks",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_mem_track_1_1_block_header.html#a66b917e29ed5fe282e93cada27a4d8f8",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="MemTrack::BlockHeader\l::GetFilename",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_mem_track_1_1_block_header.html#abf9a779a9b8e82e8028341fc513c4c39",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="MemTrack::BlockHeader\l::GetLineNum",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_mem_track_1_1_block_header.html#a817f74fc613479915f3e50c3b83e1463",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="MemTrack::BlockHeader\l::GetRequestedSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_mem_track_1_1_block_header.html#ac8b53e3cfe9fc103f8fef91fb9c822ea",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="MemTrack::BlockHeader\l::GetTypeName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_mem_track_1_1_block_header.html#af44bf935fa81fe16dcbe3956a1b4031f",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="trace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_tracing_8cpp.html#ac940487afa646b167f2df0fe20a42294",tooltip=" "];
+}

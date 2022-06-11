@@ -1,0 +1,31 @@
+\hypertarget{_game_menu_methods_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Game\+Menu\+Methods.h}
+\mbox{\hyperlink{_game_menu_methods_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00001}00001 \textcolor{comment}{// GameMenuMethods.h}}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00002}00002 \textcolor{comment}{// Provides delegate functionality for all IGameMenu implementations}}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef GAME\_MENU\_METHODS\_H}}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00005}00005 \textcolor{preprocessor}{\#define GAME\_MENU\_METHODS\_H}}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00007}00007 \textcolor{preprocessor}{\#define NO\_BUTTON\_CLICKED 1024}}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00012}00012 \textcolor{keywordtype}{void} \mbox{\hyperlink{_game_menu_methods_8h_aa8199ef57b7632e5a76df370421351d1}{GameMenuMethodsSetupMenuInfo}}(\mbox{\hyperlink{structtag_game_menu_info}{GameMenuInfo}} *menuInfo, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} background, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} button, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} focusedButton);}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00017}00017 \textcolor{keywordtype}{void} \mbox{\hyperlink{_game_menu_methods_8h_ab20bb550bb8aaaed6979ea0aae1be4fe}{GameMenuMethodsSetupLabel}}(Vector location, \textcolor{keywordtype}{float} width, \textcolor{keywordtype}{float} height, \textcolor{keywordtype}{float} spacing, \mbox{\hyperlink{structtag_game_label}{GameLabel}} *label, std::string text);}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00022}00022 \textcolor{keywordtype}{void} \mbox{\hyperlink{_game_menu_methods_8h_a96079713bb45b371267e96f7ed9ea62c}{GameMenuMethodsSetupButton}}(Vector location, \mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo, \mbox{\hyperlink{structtag_game_button}{GameButton}} *button, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, std::string text);}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00027}00027 \textcolor{keywordtype}{void} \mbox{\hyperlink{_game_menu_methods_8h_a7590a0534f75c6eabec4dbd823043896}{GameMethodsRenderButtonsOnly}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{structtag_game_menu_info}{GameMenuInfo}} *menuInfo, \mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo);}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00032}00032 \textcolor{keywordtype}{void} \mbox{\hyperlink{_game_menu_methods_8h_a6f3d4af6b7101a2d98f2c246a317b218}{GameMenuMethodsRenderMenu}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{structtag_game_menu_info}{GameMenuInfo}} *menuInfo, \mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo);}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00039}00039 \textcolor{keywordtype}{void} \mbox{\hyperlink{_game_menu_methods_8h_a542d81df1c7ab426ad41a43b52d33735}{GameMenuMethodsUpdateClickedButtonID}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{structtag_game_menu_info}{GameMenuInfo}} *menuInfo, \mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo);}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00044}00044 \textcolor{keywordtype}{void} \mbox{\hyperlink{_game_menu_methods_8h_ac63becef449d23a36aaabbd5f52e8d0d}{GameMenuMethodsSetupPointer}}(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} pointerTexture);}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00049}00049 \textcolor{keywordtype}{void} \mbox{\hyperlink{_game_menu_methods_8h_ae9bb43b916a91851983f8bd5dd738070}{GameMenuMethodsSetupSquareButton}}(Vector location, \mbox{\hyperlink{structtag_level_info}{LevelInfo}} *levelInfo, \mbox{\hyperlink{structtag_game_button}{GameButton}} *button, \textcolor{keywordtype}{float} size, std::string text);}
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_game_menu_methods_8h_source_l00051}00051 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

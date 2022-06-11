@@ -1,0 +1,216 @@
+\hypertarget{_i_model_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+IModel.h File Reference}
+\label{_i_model_8h}\index{C:/TeamSheeps/SwimFishySwim/IModel.h@{C:/TeamSheeps/SwimFishySwim/IModel.h}}
+{\ttfamily \#include \char`\"{}IGraphics.\+h\char`\"{}}\newline
+Include dependency graph for IModel.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_model_anim_state}{Model\+Anim\+State}}
+\item 
+class \mbox{\hyperlink{class_i_model}{IModel}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} \{ \newline
+\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}{STAND}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a439c688a4e9ed31638d5922a50680a8e}{RUN}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a126cee880a60e98bde4f048afce5fe02}{ATTACK\+\_\+A}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a213d971d6fb4b3de0ea672c0b4e89ab0}{ATTACK\+\_\+B}}
+, \newline
+\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a13b1487da10cc87b08ede71f228c45be}{ATTACK\+\_\+C}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}{PAIN\+\_\+A}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ae029d966a4919e6e59344c845c973fc1}{PAIN\+\_\+B}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab6814ebbfa14333d1c500452549f6294}{PAIN\+\_\+C}}
+, \newline
+\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a1f28d4392b1c1e7da2af2283632d81e1}{JUMP}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a97744c5570e743b377f5fb63b9aa3587}{FLIP}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ac7db2ebf82ea932f70d47d5013ea01d1}{SALUTE}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af2c4a9167e46ccafb2fb7bf6f81a3792}{FALLBACK}}
+, \newline
+\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a4025728e15f4cee76a85d2cc65ccb565}{WAVE}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab2dcc2c0547e8bdd8bd4a11948d2b125}{POINTY}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aff46bb914b1051cbe1b3a5e48cf7da48}{CROUCH\+\_\+\+STAND}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a73cbf1b59fc94f5b0e92aef53411dd31}{CROUCH\+\_\+\+WALK}}
+, \newline
+\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa12627bba14516046ff6bf3d759b170}{CROUCH\+\_\+\+ATTACK}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a495c378d971dd8314164705a6741ea84}{CROUCH\+\_\+\+PAIN}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a7c75ea5c4f28b309f35622ea455f368c}{CROUCH\+\_\+\+DEATH}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\+\_\+\+FALLBACK}}
+, \newline
+\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\+\_\+\+FALLFORWARD}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\+\_\+\+FALLBACKSLOW}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa3add929d11057d4b06aece9c3d723a}{BOOM}}
+, \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a15d05c2cec19bb436a9b2ff70e5ba388}{REVERSE\+\_\+\+ATTACK}}
+, \newline
+\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a660f6237488403d196154eb30e2bd25b}{MAX\+\_\+\+ANIMATIONS}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines a list of animations types that we can make use of in our game, they stand for generic state used in other games, too /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{Animation\+Format}} \{ \newline
+\mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa11824deb7e0baed5361c45bac7322dbf}{ANIMATION\+\_\+\+TRADITIONAL\+\_\+\+MD2}}
+, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa8965f81b9dbcd1dda1a92e4962480007}{ANIMATION\+\_\+\+PRE\+\_\+\+RENDERED\+\_\+\+MD2}}
+, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa3e731be220d9a3368a209d89cae60010}{ANIMATION\+\_\+\+TRADITIONAL\+\_\+\+FAST\+\_\+\+MD2}}
+, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa80a4a33e0f54c2c7334fca2ac4bb41dd}{ANIMATION\+\_\+\+STATIC\+\_\+\+MD2}}
+, \newline
+\mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa5c8b55f030e6639870b1011240c71bd3}{ANIMATION\+\_\+\+BADDIE\+\_\+\+MD2}}
+, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280faa74beeb2bc459c45b0281a4f24c28fd7}{ANIMATION\+\_\+\+TEXTURE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}\label{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}} 
+\index{IModel.h@{IModel.h}!AnimationFormat@{AnimationFormat}}
+\index{AnimationFormat@{AnimationFormat}!IModel.h@{IModel.h}}
+\doxysubsubsection{\texorpdfstring{AnimationFormat}{AnimationFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{Animation\+Format}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANIMATION\_TRADITIONAL\_MD2@{ANIMATION\_TRADITIONAL\_MD2}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ANIMATION\_TRADITIONAL\_MD2@{ANIMATION\_TRADITIONAL\_MD2}}}\mbox{\Hypertarget{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa11824deb7e0baed5361c45bac7322dbf}\label{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa11824deb7e0baed5361c45bac7322dbf}} 
+ANIMATION\+\_\+\+TRADITIONAL\+\_\+\+MD2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANIMATION\_PRE\_RENDERED\_MD2@{ANIMATION\_PRE\_RENDERED\_MD2}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ANIMATION\_PRE\_RENDERED\_MD2@{ANIMATION\_PRE\_RENDERED\_MD2}}}\mbox{\Hypertarget{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa8965f81b9dbcd1dda1a92e4962480007}\label{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa8965f81b9dbcd1dda1a92e4962480007}} 
+ANIMATION\+\_\+\+PRE\+\_\+\+RENDERED\+\_\+\+MD2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANIMATION\_TRADITIONAL\_FAST\_MD2@{ANIMATION\_TRADITIONAL\_FAST\_MD2}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ANIMATION\_TRADITIONAL\_FAST\_MD2@{ANIMATION\_TRADITIONAL\_FAST\_MD2}}}\mbox{\Hypertarget{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa3e731be220d9a3368a209d89cae60010}\label{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa3e731be220d9a3368a209d89cae60010}} 
+ANIMATION\+\_\+\+TRADITIONAL\+\_\+\+FAST\+\_\+\+MD2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANIMATION\_STATIC\_MD2@{ANIMATION\_STATIC\_MD2}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ANIMATION\_STATIC\_MD2@{ANIMATION\_STATIC\_MD2}}}\mbox{\Hypertarget{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa80a4a33e0f54c2c7334fca2ac4bb41dd}\label{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa80a4a33e0f54c2c7334fca2ac4bb41dd}} 
+ANIMATION\+\_\+\+STATIC\+\_\+\+MD2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANIMATION\_BADDIE\_MD2@{ANIMATION\_BADDIE\_MD2}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ANIMATION\_BADDIE\_MD2@{ANIMATION\_BADDIE\_MD2}}}\mbox{\Hypertarget{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa5c8b55f030e6639870b1011240c71bd3}\label{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280fa5c8b55f030e6639870b1011240c71bd3}} 
+ANIMATION\+\_\+\+BADDIE\+\_\+\+MD2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANIMATION\_TEXTURE@{ANIMATION\_TEXTURE}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ANIMATION\_TEXTURE@{ANIMATION\_TEXTURE}}}\mbox{\Hypertarget{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280faa74beeb2bc459c45b0281a4f24c28fd7}\label{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280faa74beeb2bc459c45b0281a4f24c28fd7}} 
+ANIMATION\+\_\+\+TEXTURE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_i_model_8h_source_l00044}{44}} of file \mbox{\hyperlink{_i_model_8h_source}{IModel.\+h}}.
+
+\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95}} 
+\index{IModel.h@{IModel.h}!AnimationType@{AnimationType}}
+\index{AnimationType@{AnimationType}!IModel.h@{IModel.h}}
+\doxysubsubsection{\texorpdfstring{AnimationType}{AnimationType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}}}
+
+
+
+Defines a list of animations types that we can make use of in our game, they stand for generic state used in other games, too /summary\texorpdfstring{$>$}{>} 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAND@{STAND}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!STAND@{STAND}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}} 
+STAND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUN@{RUN}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!RUN@{RUN}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a439c688a4e9ed31638d5922a50680a8e}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a439c688a4e9ed31638d5922a50680a8e}} 
+RUN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_A@{ATTACK\_A}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ATTACK\_A@{ATTACK\_A}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a126cee880a60e98bde4f048afce5fe02}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a126cee880a60e98bde4f048afce5fe02}} 
+ATTACK\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_B@{ATTACK\_B}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ATTACK\_B@{ATTACK\_B}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a213d971d6fb4b3de0ea672c0b4e89ab0}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a213d971d6fb4b3de0ea672c0b4e89ab0}} 
+ATTACK\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_C@{ATTACK\_C}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!ATTACK\_C@{ATTACK\_C}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a13b1487da10cc87b08ede71f228c45be}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a13b1487da10cc87b08ede71f228c45be}} 
+ATTACK\+\_\+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAIN\_A@{PAIN\_A}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!PAIN\_A@{PAIN\_A}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}} 
+PAIN\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAIN\_B@{PAIN\_B}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!PAIN\_B@{PAIN\_B}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95ae029d966a4919e6e59344c845c973fc1}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95ae029d966a4919e6e59344c845c973fc1}} 
+PAIN\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAIN\_C@{PAIN\_C}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!PAIN\_C@{PAIN\_C}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab6814ebbfa14333d1c500452549f6294}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab6814ebbfa14333d1c500452549f6294}} 
+PAIN\+\_\+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUMP@{JUMP}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!JUMP@{JUMP}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a1f28d4392b1c1e7da2af2283632d81e1}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a1f28d4392b1c1e7da2af2283632d81e1}} 
+JUMP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLIP@{FLIP}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!FLIP@{FLIP}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a97744c5570e743b377f5fb63b9aa3587}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a97744c5570e743b377f5fb63b9aa3587}} 
+FLIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SALUTE@{SALUTE}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!SALUTE@{SALUTE}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95ac7db2ebf82ea932f70d47d5013ea01d1}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95ac7db2ebf82ea932f70d47d5013ea01d1}} 
+SALUTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FALLBACK@{FALLBACK}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!FALLBACK@{FALLBACK}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95af2c4a9167e46ccafb2fb7bf6f81a3792}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95af2c4a9167e46ccafb2fb7bf6f81a3792}} 
+FALLBACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAVE@{WAVE}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!WAVE@{WAVE}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a4025728e15f4cee76a85d2cc65ccb565}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a4025728e15f4cee76a85d2cc65ccb565}} 
+WAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POINTY@{POINTY}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!POINTY@{POINTY}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab2dcc2c0547e8bdd8bd4a11948d2b125}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab2dcc2c0547e8bdd8bd4a11948d2b125}} 
+POINTY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CROUCH\_STAND@{CROUCH\_STAND}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!CROUCH\_STAND@{CROUCH\_STAND}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95aff46bb914b1051cbe1b3a5e48cf7da48}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95aff46bb914b1051cbe1b3a5e48cf7da48}} 
+CROUCH\+\_\+\+STAND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CROUCH\_WALK@{CROUCH\_WALK}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!CROUCH\_WALK@{CROUCH\_WALK}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a73cbf1b59fc94f5b0e92aef53411dd31}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a73cbf1b59fc94f5b0e92aef53411dd31}} 
+CROUCH\+\_\+\+WALK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CROUCH\_ATTACK@{CROUCH\_ATTACK}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!CROUCH\_ATTACK@{CROUCH\_ATTACK}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa12627bba14516046ff6bf3d759b170}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa12627bba14516046ff6bf3d759b170}} 
+CROUCH\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CROUCH\_PAIN@{CROUCH\_PAIN}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!CROUCH\_PAIN@{CROUCH\_PAIN}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a495c378d971dd8314164705a6741ea84}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a495c378d971dd8314164705a6741ea84}} 
+CROUCH\+\_\+\+PAIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CROUCH\_DEATH@{CROUCH\_DEATH}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!CROUCH\_DEATH@{CROUCH\_DEATH}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a7c75ea5c4f28b309f35622ea455f368c}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a7c75ea5c4f28b309f35622ea455f368c}} 
+CROUCH\+\_\+\+DEATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEATH\_FALLBACK@{DEATH\_FALLBACK}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!DEATH\_FALLBACK@{DEATH\_FALLBACK}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}} 
+DEATH\+\_\+\+FALLBACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEATH\_FALLFORWARD@{DEATH\_FALLFORWARD}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!DEATH\_FALLFORWARD@{DEATH\_FALLFORWARD}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}} 
+DEATH\+\_\+\+FALLFORWARD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEATH\_FALLBACKSLOW@{DEATH\_FALLBACKSLOW}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!DEATH\_FALLBACKSLOW@{DEATH\_FALLBACKSLOW}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}} 
+DEATH\+\_\+\+FALLBACKSLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOOM@{BOOM}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!BOOM@{BOOM}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa3add929d11057d4b06aece9c3d723a}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa3add929d11057d4b06aece9c3d723a}} 
+BOOM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REVERSE\_ATTACK@{REVERSE\_ATTACK}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!REVERSE\_ATTACK@{REVERSE\_ATTACK}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a15d05c2cec19bb436a9b2ff70e5ba388}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a15d05c2cec19bb436a9b2ff70e5ba388}} 
+REVERSE\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_ANIMATIONS@{MAX\_ANIMATIONS}!IModel.h@{IModel.h}}\index{IModel.h@{IModel.h}!MAX\_ANIMATIONS@{MAX\_ANIMATIONS}}}\mbox{\Hypertarget{_i_model_8h_affb455e5ea72d01e065758c70f810a95a660f6237488403d196154eb30e2bd25b}\label{_i_model_8h_affb455e5ea72d01e065758c70f810a95a660f6237488403d196154eb30e2bd25b}} 
+MAX\+\_\+\+ANIMATIONS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_i_model_8h_source_l00012}{12}} of file \mbox{\hyperlink{_i_model_8h_source}{IModel.\+h}}.
+

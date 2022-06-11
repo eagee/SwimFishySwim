@@ -1,0 +1,18 @@
+digraph "ProjectileMethodsInit"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ProjectileMethodsInit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Performs projectile initialization"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ProjectileBomb::ProjectileBomb",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_bomb.html#abc9ef7b453cd49bc61f672eb92e3471e",tooltip="Constructor...duh /summary>"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ProjectileMine::ProjectileMine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_mine.html#a9e13c95f963ad767dca18019f2b1d6cb",tooltip="Constructor...duh /summary>"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ProjectileShot::ProjectileShot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_shot.html#affbae854acdd1f17235e7bc333d94723",tooltip="Constructor...duh /summary>"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ProjectileSpit::ProjectileSpit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_spit.html#a31d4982dde77bb88e497192fd557b2b5",tooltip="Constructor...duh /summary>"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ProjectileToss::ProjectileToss",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_toss.html#a8b0051277d8000669bc95f8e7268d2aa",tooltip="Constructor...duh /summary>"];
+}

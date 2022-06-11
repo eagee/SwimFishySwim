@@ -1,0 +1,40 @@
+digraph "spriteMethodsGetBoundingTriangle"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="spriteMethodsGetBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="SpriteBaddie::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html#aa89cb2879e4956e05334fefe09301a3d",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="SpriteBullet::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_bullet.html#a77d6d13fa43db947ab1f17be2f455dc9",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="SpriteEffect::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_effect.html#a1f1cafb5ac640db5f678dde07253a9c4",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="SpritePlayer::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_player.html#a9d1766ba0a6d19fccaab7c39d73ac444",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="SpritePowerup::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_powerup.html#ad9044197424e423e06a818c626ff5cc3",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="SpriteScenery::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_scenery.html#ad22ff5c6659dcbcaf465e3ac333fd09c",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="SpriteTarget::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_target.html#af37d7ef69e8941e7f4478212a6383345",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="SpriteTower::getBoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_tower.html#a4850f50e256fc5285a434569a20b8acf",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="SpriteBaddie::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html#ab8c42ee2ff0e67ef4859aafe438cff45",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="SpriteBullet::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_bullet.html#a7d2d6e567b29b14a8c61b53339081df2",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="SpriteEffect::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_effect.html#a7d17d3b6e6abdaf3c49023fb726bc984",tooltip=" "];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="SpritePlayer::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_player.html#a4f5407fe153182605b3fdf008bd3affd",tooltip=" "];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="SpritePowerup::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_powerup.html#a212462837c2d69eddc3d0a3f27c34bc8",tooltip=" "];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="SpriteScenery::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_scenery.html#aaa1bcf93db00349ce85edab847063029",tooltip=" "];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="SpriteTarget::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_target.html#aceab3f4da8e9a8fb4100cf2b39686b77",tooltip=" "];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="SpriteTower::getBounding\lTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_tower.html#a890001fe9d2a956f523127bec502072d",tooltip=" "];
+}

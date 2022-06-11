@@ -1,0 +1,97 @@
+\hypertarget{_test_observer_pattern_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Test\+Observer\+Pattern.cpp}
+\mbox{\hyperlink{_test_observer_pattern_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00001}00001 \textcolor{comment}{// testObserverPattern.cpp}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00002}00002 \textcolor{comment}{// Provides implementation of testObserverPattern.h definition}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_test_8h}{ITest.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_observer_8h}{IObserver.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_subject_8h}{ISubject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_subject_8h}{Subject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_test_observer_pattern_8h}{TestObserverPattern.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00015}\mbox{\hyperlink{class_test_subject_a21cd8e0e0f69c380f121cae532566c50}{00015}}  \mbox{\hyperlink{class_test_subject_a21cd8e0e0f69c380f121cae532566c50}{TestSubject::TestSubject}}() }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00016}00016  \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00017}00017     mySubject = \textcolor{keyword}{new} \mbox{\hyperlink{class_subject}{Subject}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00018}00018  \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00023}\mbox{\hyperlink{class_test_subject_ad0fef4359af83c939ef34cf9e54cdca3}{00023}}  \mbox{\hyperlink{class_test_subject_ad0fef4359af83c939ef34cf9e54cdca3}{TestSubject::\string~TestSubject}}() }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00024}00024  \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00025}00025     \textcolor{keyword}{delete} mySubject;}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00026}00026  \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00031}\mbox{\hyperlink{class_test_subject_a6d4c7117d4220a3c6963f80914a41607}{00031}}  \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_subject_a6d4c7117d4220a3c6963f80914a41607}{TestSubject::registerObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer)         }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00032}00032  \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00033}00033     mySubject-\/>\mbox{\hyperlink{class_subject_a4406475155676da74b821029f7ce9467}{registerObserver}}(observer);}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00034}00034  \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00035}00035     }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00039}\mbox{\hyperlink{class_test_subject_a178568de298a150847eb096604303c5a}{00039}}  \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_subject_a178568de298a150847eb096604303c5a}{TestSubject::removeObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer)}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00040}00040  \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00041}00041     mySubject-\/>\mbox{\hyperlink{class_subject_a4cecb738e1b6e7b60ad527dd05fe85df}{removeObserver}}(observer);}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00042}00042  \} }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00047}\mbox{\hyperlink{class_test_subject_a33054d001e1906829aae046962e39e24}{00047}}  \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_subject_a33054d001e1906829aae046962e39e24}{TestSubject::notifyObservers}} ()}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00048}00048  \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00049}00049     mySubject-\/>\mbox{\hyperlink{class_subject_a130edb815aef88deebc1542a32fa9af9}{notifyObservers}}(); }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00050}00050  \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00056}\mbox{\hyperlink{class_test_observer_pattern_a09cb0c5a760273ee8da5ed0c98fe007e}{00056}} \mbox{\hyperlink{class_test_observer_pattern_a09cb0c5a760273ee8da5ed0c98fe007e}{TestObserverPattern::TestObserverPattern}}()}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00057}00057 \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00058}00058     myTestSubject = \textcolor{keyword}{new} \mbox{\hyperlink{class_test_subject}{TestSubject}}();}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00059}00059     myTestSubjectSentUpdate = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00061}00061       }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00065}\mbox{\hyperlink{class_test_observer_pattern_a9a692cbbbbc86b4df830292d494804d8}{00065}} \mbox{\hyperlink{class_test_observer_pattern_a9a692cbbbbc86b4df830292d494804d8}{TestObserverPattern::\string~TestObserverPattern}}()}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00066}00066 \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00067}00067     \textcolor{keyword}{delete} myTestSubject;}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00073}\mbox{\hyperlink{class_test_observer_pattern_ac25123b6a0a12eb47aee635d9b0b027f}{00073}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_test_observer_pattern_ac25123b6a0a12eb47aee635d9b0b027f}{TestObserverPattern::executeTest}}()}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00074}00074 \{   }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00075}00075     \textcolor{keywordtype}{bool} returnValue = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00076}00076     printf(\textcolor{stringliteral}{"{}Executing ObserverPattern test 1: Register and Notify\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00077}00077     myTestSubject-\/>\mbox{\hyperlink{class_test_subject_a6d4c7117d4220a3c6963f80914a41607}{registerObserver}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00078}00078     myTestSubject-\/>\mbox{\hyperlink{class_test_subject_a33054d001e1906829aae046962e39e24}{notifyObservers}}();}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00079}00079     \textcolor{keywordflow}{if}(myTestSubjectSentUpdate == \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00080}00080     \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00081}00081         myTestSubjectSentUpdate = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00082}00082         printf(\textcolor{stringliteral}{"{}    Passed!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00083}00083         printf(\textcolor{stringliteral}{"{}Executing ObserverPattern test 2: Remove and Notify\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00084}00084         myTestSubject-\/>\mbox{\hyperlink{class_test_subject_a178568de298a150847eb096604303c5a}{removeObserver}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00085}00085         myTestSubject-\/>\mbox{\hyperlink{class_test_subject_a33054d001e1906829aae046962e39e24}{notifyObservers}}();}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00086}00086         \textcolor{keywordflow}{if}(myTestSubjectSentUpdate == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00087}00087         \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00088}00088             printf(\textcolor{stringliteral}{"{}    Passed!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00089}00089             returnValue = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00090}00090         \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00091}00091         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00092}00092         \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00093}00093             printf(\textcolor{stringliteral}{"{}    Failed!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00094}00094         \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00095}00095     \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00096}00096     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00097}00097     \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00098}00098         printf(\textcolor{stringliteral}{"{}    Failed!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00100}00100     }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00101}00101     \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00107}\mbox{\hyperlink{class_test_observer_pattern_a63bc4fa60be2b0ee2318ce2a4b44b39e}{00107}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_observer_pattern_a63bc4fa60be2b0ee2318ce2a4b44b39e}{TestObserverPattern::update}}(\mbox{\hyperlink{class_i_subject}{ISubject}} *subject)}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00108}00108 \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00109}00109     }
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00110}00110     \textcolor{keywordflow}{if}(subject == myTestSubject)}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00111}00111     \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00112}00112         printf(\textcolor{stringliteral}{"{}    Update Rxed!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00113}00113         myTestSubjectSentUpdate = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00114}00114     \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00115}00115     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00116}00116     \{}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00117}00117         printf(\textcolor{stringliteral}{"{}    Update Rxed, but invalid type!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{_test_observer_pattern_8cpp_source_l00119}00119 \}}
+
+\end{DoxyCode}

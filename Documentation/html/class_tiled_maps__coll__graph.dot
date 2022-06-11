@@ -1,0 +1,7 @@
+digraph "TiledMaps"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{TiledMaps\n||+ TiledMaps()\l+ ~TiledMaps()\l+ assignTextures()\l+ addWaterNormalMap()\l+ clearWaterNormalMaps()\l+ findBestVectorOnPath()\l+ findAngleToDestination()\l+ getTilemapSize()\l+ loadTileMap()\l+ setMinimumBoundary()\l+ translateMap()\l+ getLocation()\l+ setMapVelocity()\l+ checkForCollisionAt()\l+ checkForCollisionAt()\l+ setTempCollisionAt()\l+ getZValueAt()\l+ removeTempCollision()\l+ clearTempCollisionTable()\l+ generateLayerVertexArrays()\l+ freeLayerVertexArrays()\l+ renderLayerVertexArrays()\l+ animationTask()\l+ velocityTask()\l+ getLayerMotion()\l+ shakeMapFor()\l+ getCurrentWaterNormalMap()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

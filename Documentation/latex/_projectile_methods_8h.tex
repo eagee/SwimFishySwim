@@ -1,0 +1,193 @@
+\hypertarget{_projectile_methods_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Projectile\+Methods.h File Reference}
+\label{_projectile_methods_8h}\index{C:/TeamSheeps/SwimFishySwim/ProjectileMethods.h@{C:/TeamSheeps/SwimFishySwim/ProjectileMethods.h}}
+{\ttfamily \#include \char`\"{}Projectile\+Weapon\+Info.\+h\char`\"{}}\newline
+Include dependency graph for Projectile\+Methods.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_projectile_methods_8h_a9b95167b82b23e2f117666281f2fd1fb}{Projectile\+Methods\+Init}} (\mbox{\hyperlink{class_i_model}{IModel}} $\ast$model, \mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$upgrade\+Sound, \mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$down\+Grade\+Sound, \mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$shooting\+Sound, \mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info, int total\+Levels, int max\+Experience, int max\+Projectiles)
+\begin{DoxyCompactList}\small\item\em Performs projectile initialization \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_projectile_methods_8h_a60938b8426986e55ff13683725cb193f}{Projectile\+Methods\+Calculate\+Max\+Projectiles}} (\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info, int total\+Levels, int maximum\+Projectiles)
+\begin{DoxyCompactList}\small\item\em Calculates the maximum projectiles available when a level changes... \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_projectile_methods_8h_a6ae279912f991524c93cab86f9db21bb}{Projectile\+Methods\+Activate}} (int weapon\+Level, float xy\+Modifier, float angle\+Offset, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$projectile, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$triggered\+By\+Sprite, Vector \&sprite\+Offset, \mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$sound\+To\+Play)
+\begin{DoxyCompactList}\small\item\em Delegate method to activate an available bullet sprite so that it can shoot off into the wild blue yonder \+:D \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_projectile_methods_8h_ab3de2090188cbc1b622a1e75d4e3c5d0}{Projectile\+Methods\+Render}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, \mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info)
+\item 
+bool \mbox{\hyperlink{_projectile_methods_8h_af9076332aa4585978395bb7fede00d20}{Projectile\+Methods\+Is\+Weapon\+Ready}} (\mbox{\hyperlink{_projectile_weapon_info_8h_a37ab2c5940fbf02ed4a60f9727e22f70}{PROJECTILE\+\_\+\+TRIGGER\+\_\+\+STATE}} state, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$triggered\+By\+Sprite, \mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info)
+\item 
+void \mbox{\hyperlink{_projectile_methods_8h_ad9e74693b4ff84bab3143f9cdc263fb5}{Projectile\+Methods\+Increment\+Projectile}} (\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info, int max\+Projectiles)
+\item 
+void \mbox{\hyperlink{_projectile_methods_8h_aa5e4b60863cb90cfcf051452061671bf}{Projectile\+Methods\+Update\+Projectiles}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info)
+\item 
+\mbox{\hyperlink{_projectile_weapon_info_8h_acb768b84d74e972690a4b15d0daee6a9}{PROJECTILE\+\_\+\+LEVEL\+\_\+\+STATE}} \mbox{\hyperlink{_projectile_methods_8h_a73fa18d2cd56ceb3105b249fe0884db2}{Projectile\+Methods\+Update\+Experience}} (\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info, int total\+Levels, int maximum\+Projectiles)
+\item 
+void \mbox{\hyperlink{_projectile_methods_8h_a948a25f09c225655e485b740d935f719}{Projectile\+Methods\+Modify\+Experience\+By}} (\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info, int experience\+Points, int max\+Experience)
+\item 
+void \mbox{\hyperlink{_projectile_methods_8h_afc2a6484c7adae312b715cef31f9f913}{Projectile\+Methods\+Reduce\+Experience}} (\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info, float reduce\+By)
+\item 
+void \mbox{\hyperlink{_projectile_methods_8h_af817abcbc31e6f47b31ded1fc69052bc}{Projectile\+Methods\+Handle\+If\+Sprite\+Dead}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&sprite, \mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&weapon\+Info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_projectile_methods_8h_a6ae279912f991524c93cab86f9db21bb}\label{_projectile_methods_8h_a6ae279912f991524c93cab86f9db21bb}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsActivate@{ProjectileMethodsActivate}}
+\index{ProjectileMethodsActivate@{ProjectileMethodsActivate}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsActivate()}{ProjectileMethodsActivate()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Activate (\begin{DoxyParamCaption}\item[{int}]{weapon\+Level,  }\item[{float}]{xy\+Modifier,  }\item[{float}]{angle\+Offset,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{projectile,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{triggered\+By\+Sprite,  }\item[{Vector \&}]{sprite\+Offset,  }\item[{\mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$}]{sound\+To\+Play }\end{DoxyParamCaption})}
+
+
+
+Delegate method to activate an available bullet sprite so that it can shoot off into the wild blue yonder \+:D 
+
+summary\texorpdfstring{$>$}{>} Renders the weapon projectiles on the screen ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_projectile_methods_8h_a60938b8426986e55ff13683725cb193f}\label{_projectile_methods_8h_a60938b8426986e55ff13683725cb193f}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsCalculateMaxProjectiles@{ProjectileMethodsCalculateMaxProjectiles}}
+\index{ProjectileMethodsCalculateMaxProjectiles@{ProjectileMethodsCalculateMaxProjectiles}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsCalculateMaxProjectiles()}{ProjectileMethodsCalculateMaxProjectiles()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Calculate\+Max\+Projectiles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info,  }\item[{int}]{total\+Levels,  }\item[{int}]{maximum\+Projectiles }\end{DoxyParamCaption})}
+
+
+
+Calculates the maximum projectiles available when a level changes... 
+
+summary\texorpdfstring{$>$}{>} Updates the current weapon percentage, and level... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{_projectile_methods_8h_af817abcbc31e6f47b31ded1fc69052bc}\label{_projectile_methods_8h_af817abcbc31e6f47b31ded1fc69052bc}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsHandleIfSpriteDead@{ProjectileMethodsHandleIfSpriteDead}}
+\index{ProjectileMethodsHandleIfSpriteDead@{ProjectileMethodsHandleIfSpriteDead}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsHandleIfSpriteDead()}{ProjectileMethodsHandleIfSpriteDead()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Handle\+If\+Sprite\+Dead (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{sprite,  }\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{_projectile_methods_8h_ad9e74693b4ff84bab3143f9cdc263fb5}\label{_projectile_methods_8h_ad9e74693b4ff84bab3143f9cdc263fb5}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsIncrementProjectile@{ProjectileMethodsIncrementProjectile}}
+\index{ProjectileMethodsIncrementProjectile@{ProjectileMethodsIncrementProjectile}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsIncrementProjectile()}{ProjectileMethodsIncrementProjectile()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Increment\+Projectile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info,  }\item[{int}]{max\+Projectiles }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Updates the projectiles for a weapon /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Handles adjusting the experience used by a projectile when it is fired... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_projectile_methods_8h_a9b95167b82b23e2f117666281f2fd1fb}\label{_projectile_methods_8h_a9b95167b82b23e2f117666281f2fd1fb}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsInit@{ProjectileMethodsInit}}
+\index{ProjectileMethodsInit@{ProjectileMethodsInit}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsInit()}{ProjectileMethodsInit()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_model}{IModel}} $\ast$}]{model,  }\item[{\mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$}]{upgrade\+Sound,  }\item[{\mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$}]{down\+Grade\+Sound,  }\item[{\mbox{\hyperlink{class_i_audio}{IAudio}} $\ast$}]{shooting\+Sound,  }\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info,  }\item[{int}]{total\+Levels,  }\item[{int}]{max\+Experience,  }\item[{int}]{max\+Projectiles }\end{DoxyParamCaption})}
+
+
+
+Performs projectile initialization 
+
+
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{_projectile_methods_8h_af9076332aa4585978395bb7fede00d20}\label{_projectile_methods_8h_af9076332aa4585978395bb7fede00d20}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsIsWeaponReady@{ProjectileMethodsIsWeaponReady}}
+\index{ProjectileMethodsIsWeaponReady@{ProjectileMethodsIsWeaponReady}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsIsWeaponReady()}{ProjectileMethodsIsWeaponReady()}}
+{\footnotesize\ttfamily bool Projectile\+Methods\+Is\+Weapon\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_a37ab2c5940fbf02ed4a60f9727e22f70}{PROJECTILE\+\_\+\+TRIGGER\+\_\+\+STATE}}}]{state,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{triggered\+By\+Sprite,  }\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Increments to the next available projectile /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{_projectile_methods_8h_a948a25f09c225655e485b740d935f719}\label{_projectile_methods_8h_a948a25f09c225655e485b740d935f719}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsModifyExperienceBy@{ProjectileMethodsModifyExperienceBy}}
+\index{ProjectileMethodsModifyExperienceBy@{ProjectileMethodsModifyExperienceBy}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsModifyExperienceBy()}{ProjectileMethodsModifyExperienceBy()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Modify\+Experience\+By (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info,  }\item[{int}]{experience\+Points,  }\item[{int}]{max\+Experience }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles adjusting the experience used by a projectile when it is fired... /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Handles the situation if a sprite dies due to collision with a projectile /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00234}{234}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{_projectile_methods_8h_afc2a6484c7adae312b715cef31f9f913}\label{_projectile_methods_8h_afc2a6484c7adae312b715cef31f9f913}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsReduceExperience@{ProjectileMethodsReduceExperience}}
+\index{ProjectileMethodsReduceExperience@{ProjectileMethodsReduceExperience}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsReduceExperience()}{ProjectileMethodsReduceExperience()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Reduce\+Experience (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info,  }\item[{float}]{reduce\+By }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles the situation if a sprite dies due to collision with a projectile /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Updates the projectiles for a weapon /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_projectile_methods_8h_ab3de2090188cbc1b622a1e75d4e3c5d0}\label{_projectile_methods_8h_ab3de2090188cbc1b622a1e75d4e3c5d0}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsRender@{ProjectileMethodsRender}}
+\index{ProjectileMethodsRender@{ProjectileMethodsRender}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsRender()}{ProjectileMethodsRender()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Determines if the triggering sprite is in a state to use this weapon... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{_projectile_methods_8h_a73fa18d2cd56ceb3105b249fe0884db2}\label{_projectile_methods_8h_a73fa18d2cd56ceb3105b249fe0884db2}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsUpdateExperience@{ProjectileMethodsUpdateExperience}}
+\index{ProjectileMethodsUpdateExperience@{ProjectileMethodsUpdateExperience}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsUpdateExperience()}{ProjectileMethodsUpdateExperience()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_projectile_weapon_info_8h_acb768b84d74e972690a4b15d0daee6a9}{PROJECTILE\+\_\+\+LEVEL\+\_\+\+STATE}} Projectile\+Methods\+Update\+Experience (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info,  }\item[{int}]{total\+Levels,  }\item[{int}]{maximum\+Projectiles }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Sets the experience level of the weapon /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Sets the experience level of the weapon... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{_projectile_methods_8h_aa5e4b60863cb90cfcf051452061671bf}\label{_projectile_methods_8h_aa5e4b60863cb90cfcf051452061671bf}} 
+\index{ProjectileMethods.h@{ProjectileMethods.h}!ProjectileMethodsUpdateProjectiles@{ProjectileMethodsUpdateProjectiles}}
+\index{ProjectileMethodsUpdateProjectiles@{ProjectileMethodsUpdateProjectiles}!ProjectileMethods.h@{ProjectileMethods.h}}
+\doxysubsubsection{\texorpdfstring{ProjectileMethodsUpdateProjectiles()}{ProjectileMethodsUpdateProjectiles()}}
+{\footnotesize\ttfamily void Projectile\+Methods\+Update\+Projectiles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{_projectile_weapon_info_8h_aa98919760147963a0c504d3f4311b6a7}{Projectile\+Weapon\+Info}} \&}]{weapon\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Updates the current weapon percentage, and level... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_projectile_methods_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{_projectile_methods_8cpp_source}{Projectile\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15

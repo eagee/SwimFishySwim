@@ -1,0 +1,26 @@
+digraph "spriteMethodsSetAngle"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="spriteMethodsSetAngle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="SpriteBaddie::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html#a79b47b2a5646c3ce3d7e11e8291e40a4",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="SpriteBaddie::SpriteBaddie",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html#a9a9071b8ec7dbb229cc9eca306ab8db0",tooltip="Constructor for Player Sprite object. /summary>"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="SpriteBullet::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_bullet.html#ad53f01683e1c017c99e18919cbd80149",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="SpriteEffect::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_effect.html#a2cbd8fdc758fd04ed2d87dce0c8f09e7",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="SpritePlayer::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_player.html#a11407e36506798b437d7f6eab0a57ec3",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="SpritePowerup::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_powerup.html#a8070efe9869b37352b2b20abc91f7504",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="SpriteScenery::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_scenery.html#a38690cf955c052a42e8225d6c0c6d507",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="SpriteTarget::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_target.html#af1b4711700f84f62442bcf26b80b615f",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="SpriteTower::setAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_tower.html#a0322ac959aff8d3ac4646cbd1a2f59f6",tooltip=" "];
+}

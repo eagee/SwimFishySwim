@@ -1,0 +1,7 @@
+digraph "IModel"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{IModel\n||+ IModel()\l+ ~IModel()\l+ loadFromFile()\l+ assignTexture()\l+ assignBumpTexture()\l+ translateModel()\l+ setAnimationType()\l+ setAnimationType()\l+ setModelScale()\l+ buildVertexArrays()\l+ freeVertexArrays()\l+ renderModel()\l+ renderModel()\l+ handleAnimation()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

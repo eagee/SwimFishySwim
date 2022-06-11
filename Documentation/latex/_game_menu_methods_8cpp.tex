@@ -1,0 +1,159 @@
+\hypertarget{_game_menu_methods_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Game\+Menu\+Methods.cpp File Reference}
+\label{_game_menu_methods_8cpp}\index{C:/TeamSheeps/SwimFishySwim/GameMenuMethods.cpp@{C:/TeamSheeps/SwimFishySwim/GameMenuMethods.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Menu\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IAudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IProjectile\+Weapon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Methods.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Menu\+Methods.\+h\char`\"{}}\newline
+Include dependency graph for Game\+Menu\+Methods.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_game_menu_methods_8cpp_ae98035e5bee7146fab48f941818a2bc7}{BUTTON\+\_\+\+WIDTH}}~0.\+10f
+\item 
+\#define \mbox{\hyperlink{_game_menu_methods_8cpp_a94be6e055d514b19c7cb5f56f492f016}{BUTTON\+\_\+\+HEIGHT}}~0.\+10f
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_aa8199ef57b7632e5a76df370421351d1}{Game\+Menu\+Methods\+Setup\+Menu\+Info}} (\mbox{\hyperlink{_game_menu_info_8h_a3a4d22d3a2434dfe17799b3994fc6238}{Game\+Menu\+Info}} $\ast$menu\+Info, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} background, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} button, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} focused\+Button)
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_ac63becef449d23a36aaabbd5f52e8d0d}{Game\+Menu\+Methods\+Setup\+Pointer}} (\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} pointer\+Texture)
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_a0433c5e355eb1876cd71f90a3a62a107}{Game\+Menu\+Methods\+Render\+Pointer}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, Vector location)
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}{Game\+Menu\+Methods\+Setup\+Label}} (Vector location, float width, float height, float spacing, \mbox{\hyperlink{_game_menu_info_8h_a68f14a2a7af2f9526c11d34d665977a3}{Game\+Label}} $\ast$label, std\+::string text)
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}{Game\+Menu\+Methods\+Setup\+Button}} (Vector location, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{_game_menu_info_8h_aced5b2ff3a1246d1b0e3673fb3c12d9c}{Game\+Button}} $\ast$button, float w, float h, std\+::string text)
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_ae9bb43b916a91851983f8bd5dd738070}{Game\+Menu\+Methods\+Setup\+Square\+Button}} (Vector location, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{_game_menu_info_8h_aced5b2ff3a1246d1b0e3673fb3c12d9c}{Game\+Button}} $\ast$button, float size, std\+::string text)
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_a7590a0534f75c6eabec4dbd823043896}{Game\+Methods\+Render\+Buttons\+Only}} (int controller\+ID, \mbox{\hyperlink{_game_menu_info_8h_a3a4d22d3a2434dfe17799b3994fc6238}{Game\+Menu\+Info}} $\ast$menu\+Info, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_a6f3d4af6b7101a2d98f2c246a317b218}{Game\+Menu\+Methods\+Render\+Menu}} (int controller\+ID, \mbox{\hyperlink{_game_menu_info_8h_a3a4d22d3a2434dfe17799b3994fc6238}{Game\+Menu\+Info}} $\ast$menu\+Info, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_game_menu_methods_8cpp_a542d81df1c7ab426ad41a43b52d33735}{Game\+Menu\+Methods\+Update\+Clicked\+Button\+ID}} (int controller\+ID, \mbox{\hyperlink{_game_menu_info_8h_a3a4d22d3a2434dfe17799b3994fc6238}{Game\+Menu\+Info}} $\ast$menu\+Info, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_game_menu_methods_8cpp_a94be6e055d514b19c7cb5f56f492f016}\label{_game_menu_methods_8cpp_a94be6e055d514b19c7cb5f56f492f016}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!BUTTON\_HEIGHT@{BUTTON\_HEIGHT}}
+\index{BUTTON\_HEIGHT@{BUTTON\_HEIGHT}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_HEIGHT}{BUTTON\_HEIGHT}}
+{\footnotesize\ttfamily \#define BUTTON\+\_\+\+HEIGHT~0.\+10f}
+
+summary\texorpdfstring{$>$}{>} Sets up a quad by reference, excepting the location of the verticies... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_game_menu_methods_8cpp_ae98035e5bee7146fab48f941818a2bc7}\label{_game_menu_methods_8cpp_ae98035e5bee7146fab48f941818a2bc7}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!BUTTON\_WIDTH@{BUTTON\_WIDTH}}
+\index{BUTTON\_WIDTH@{BUTTON\_WIDTH}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_WIDTH}{BUTTON\_WIDTH}}
+{\footnotesize\ttfamily \#define BUTTON\+\_\+\+WIDTH~0.\+10f}
+
+
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_game_menu_methods_8cpp_a6f3d4af6b7101a2d98f2c246a317b218}\label{_game_menu_methods_8cpp_a6f3d4af6b7101a2d98f2c246a317b218}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMenuMethodsRenderMenu@{GameMenuMethodsRenderMenu}}
+\index{GameMenuMethodsRenderMenu@{GameMenuMethodsRenderMenu}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMenuMethodsRenderMenu()}{GameMenuMethodsRenderMenu()}}
+{\footnotesize\ttfamily void Game\+Menu\+Methods\+Render\+Menu (\begin{DoxyParamCaption}\item[{int}]{controller\+ID,  }\item[{\mbox{\hyperlink{_game_menu_info_8h_a3a4d22d3a2434dfe17799b3994fc6238}{Game\+Menu\+Info}} $\ast$}]{menu\+Info,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Gets the button index ID from the button list that matches the current pointer location. Returns NO\+\_\+\+BUTTON\+\_\+\+HIGHLIGHTED if no buttons are active... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00330}{330}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{_game_menu_methods_8cpp_a0433c5e355eb1876cd71f90a3a62a107}\label{_game_menu_methods_8cpp_a0433c5e355eb1876cd71f90a3a62a107}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMenuMethodsRenderPointer@{GameMenuMethodsRenderPointer}}
+\index{GameMenuMethodsRenderPointer@{GameMenuMethodsRenderPointer}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMenuMethodsRenderPointer()}{GameMenuMethodsRenderPointer()}}
+{\footnotesize\ttfamily void Game\+Menu\+Methods\+Render\+Pointer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{Vector}]{location }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Setup a game label object summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}\label{_game_menu_methods_8cpp_a96079713bb45b371267e96f7ed9ea62c}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMenuMethodsSetupButton@{GameMenuMethodsSetupButton}}
+\index{GameMenuMethodsSetupButton@{GameMenuMethodsSetupButton}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMenuMethodsSetupButton()}{GameMenuMethodsSetupButton()}}
+{\footnotesize\ttfamily void Game\+Menu\+Methods\+Setup\+Button (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{_game_menu_info_8h_aced5b2ff3a1246d1b0e3673fb3c12d9c}{Game\+Button}} $\ast$}]{button,  }\item[{float}]{w,  }\item[{float}]{h,  }\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Setup a game button object as a square -\/ ignorning the text settings... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}\label{_game_menu_methods_8cpp_ab20bb550bb8aaaed6979ea0aae1be4fe}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMenuMethodsSetupLabel@{GameMenuMethodsSetupLabel}}
+\index{GameMenuMethodsSetupLabel@{GameMenuMethodsSetupLabel}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMenuMethodsSetupLabel()}{GameMenuMethodsSetupLabel()}}
+{\footnotesize\ttfamily void Game\+Menu\+Methods\+Setup\+Label (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{float}]{width,  }\item[{float}]{height,  }\item[{float}]{spacing,  }\item[{\mbox{\hyperlink{_game_menu_info_8h_a68f14a2a7af2f9526c11d34d665977a3}{Game\+Label}} $\ast$}]{label,  }\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Setup a game button object summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_game_menu_methods_8cpp_aa8199ef57b7632e5a76df370421351d1}\label{_game_menu_methods_8cpp_aa8199ef57b7632e5a76df370421351d1}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMenuMethodsSetupMenuInfo@{GameMenuMethodsSetupMenuInfo}}
+\index{GameMenuMethodsSetupMenuInfo@{GameMenuMethodsSetupMenuInfo}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMenuMethodsSetupMenuInfo()}{GameMenuMethodsSetupMenuInfo()}}
+{\footnotesize\ttfamily void Game\+Menu\+Methods\+Setup\+Menu\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_menu_info_8h_a3a4d22d3a2434dfe17799b3994fc6238}{Game\+Menu\+Info}} $\ast$}]{menu\+Info,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{background,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{button,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{focused\+Button }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Assigns a global variable used to render the pointer/cursor used in menu operations summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_game_menu_methods_8cpp_ac63becef449d23a36aaabbd5f52e8d0d}\label{_game_menu_methods_8cpp_ac63becef449d23a36aaabbd5f52e8d0d}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMenuMethodsSetupPointer@{GameMenuMethodsSetupPointer}}
+\index{GameMenuMethodsSetupPointer@{GameMenuMethodsSetupPointer}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMenuMethodsSetupPointer()}{GameMenuMethodsSetupPointer()}}
+{\footnotesize\ttfamily void Game\+Menu\+Methods\+Setup\+Pointer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{pointer\+Texture }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles rendering of the quad pointer to the screen... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_game_menu_methods_8cpp_ae9bb43b916a91851983f8bd5dd738070}\label{_game_menu_methods_8cpp_ae9bb43b916a91851983f8bd5dd738070}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMenuMethodsSetupSquareButton@{GameMenuMethodsSetupSquareButton}}
+\index{GameMenuMethodsSetupSquareButton@{GameMenuMethodsSetupSquareButton}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMenuMethodsSetupSquareButton()}{GameMenuMethodsSetupSquareButton()}}
+{\footnotesize\ttfamily void Game\+Menu\+Methods\+Setup\+Square\+Button (\begin{DoxyParamCaption}\item[{Vector}]{location,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{_game_menu_info_8h_aced5b2ff3a1246d1b0e3673fb3c12d9c}{Game\+Button}} $\ast$}]{button,  }\item[{float}]{size,  }\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns a Vector with our current IR pointer location summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00183}{183}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_game_menu_methods_8cpp_a542d81df1c7ab426ad41a43b52d33735}\label{_game_menu_methods_8cpp_a542d81df1c7ab426ad41a43b52d33735}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMenuMethodsUpdateClickedButtonID@{GameMenuMethodsUpdateClickedButtonID}}
+\index{GameMenuMethodsUpdateClickedButtonID@{GameMenuMethodsUpdateClickedButtonID}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMenuMethodsUpdateClickedButtonID()}{GameMenuMethodsUpdateClickedButtonID()}}
+{\footnotesize\ttfamily void Game\+Menu\+Methods\+Update\+Clicked\+Button\+ID (\begin{DoxyParamCaption}\item[{int}]{controller\+ID,  }\item[{\mbox{\hyperlink{_game_menu_info_8h_a3a4d22d3a2434dfe17799b3994fc6238}{Game\+Menu\+Info}} $\ast$}]{menu\+Info,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Assigns a global variable used to render the pointer/cursor used in menu operations summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00432}{432}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_game_menu_methods_8cpp_a7590a0534f75c6eabec4dbd823043896}\label{_game_menu_methods_8cpp_a7590a0534f75c6eabec4dbd823043896}} 
+\index{GameMenuMethods.cpp@{GameMenuMethods.cpp}!GameMethodsRenderButtonsOnly@{GameMethodsRenderButtonsOnly}}
+\index{GameMethodsRenderButtonsOnly@{GameMethodsRenderButtonsOnly}!GameMenuMethods.cpp@{GameMenuMethods.cpp}}
+\doxysubsubsection{\texorpdfstring{GameMethodsRenderButtonsOnly()}{GameMethodsRenderButtonsOnly()}}
+{\footnotesize\ttfamily void Game\+Methods\+Render\+Buttons\+Only (\begin{DoxyParamCaption}\item[{int}]{controller\+ID,  }\item[{\mbox{\hyperlink{_game_menu_info_8h_a3a4d22d3a2434dfe17799b3994fc6238}{Game\+Menu\+Info}} $\ast$}]{menu\+Info,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Render our menu information summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_game_menu_methods_8cpp_source_l00230}{230}} of file \mbox{\hyperlink{_game_menu_methods_8cpp_source}{Game\+Menu\+Methods.\+cpp}}.
+

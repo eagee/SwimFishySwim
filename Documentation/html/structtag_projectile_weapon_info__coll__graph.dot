@@ -1,0 +1,21 @@
+digraph "tagProjectileWeaponInfo"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{tagProjectileWeaponInfo\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +FiringDelayCounter\n+MaxFiringDelay\n+MaxWeaponExperiencePoints\n+PercentageComplete\n+RotationValue\n+WeaponExperiencePoints" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{float\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +CurrentMaxProjectiles\n+CurrentProjectileIndex\n+WeaponLevelNumber" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{int\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +DowngradeSound\n+ShootingSound\n+UpgradeSound" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{IAudio\n||+ IAudio()\l+ ~IAudio()\l+ loadFromFile()\l+ playOnce()\l+ playLooped()\l+ stop()\l+ pause()\l+ isPlaying()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_audio.html",tooltip="// Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary>"];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +WeaponState" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{PROJECTILE_TRIGGER\l_STATE\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +ProjectileModel" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{IModel\n||+ IModel()\l+ ~IModel()\l+ loadFromFile()\l+ assignTexture()\l+ assignBumpTexture()\l+ translateModel()\l+ setAnimationType()\l+ setAnimationType()\l+ setModelScale()\l+ buildVertexArrays()\l+ freeVertexArrays()\l+ renderModel()\l+ renderModel()\l+ handleAnimation()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_model.html",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +triggeredByType" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{SPRITE_TYPE\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +Projectiles" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{vector\< SpriteBullet \>\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",tooltip=" "];
+}

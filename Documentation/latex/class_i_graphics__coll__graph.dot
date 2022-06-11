@@ -1,0 +1,7 @@
+digraph "IGraphics"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{IGraphics\n||+ beginScene()\l+ endScene()\l+ rotateNextObjectInScene()\l+ addPointsToScene()\l+ addTriangleToScene()\l+ addTrianglesToScene()\l+ addQuadsToScene()\l+ addQuadMapToScene()\l+ addSkyboxToScene()\l+ allocateAndPopulateVertex\lArray()\l+ isLocationWithinViewingRange()\l+ freeVertexArray()\l+ addNormalMappedVertexArray\lToScene()\l+ addNormalMappedVertexArray\lToScene()\l+ updateMirrorReflection()\l+ allocateAndPopulateVertex\lArray()\l+ freeVertexArray()\l+ addVertexArrayToScene()\l+ getFPS()\l+ setCameraPosition()\l+ setCameraTarget()\l+ getCameraAngle()\l+ adjustCameraRadius()\l+ getCameraRadius()\l+ adjustCameraDistance()\l+ getCameraDistance()\l+ getCameraLocation()\l+ setFogMode()\l+ clearTextureData()\l+ addTextureData()\l+ freeTextureData()\l+ switchToOverheadView()\l+ switchBackToCameraView()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

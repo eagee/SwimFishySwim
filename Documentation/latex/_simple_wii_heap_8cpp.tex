@@ -1,0 +1,103 @@
+\hypertarget{_simple_wii_heap_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Simple\+Wii\+Heap.cpp File Reference}
+\label{_simple_wii_heap_8cpp}\index{C:/TeamSheeps/SwimFishySwim/SimpleWiiHeap.cpp@{C:/TeamSheeps/SwimFishySwim/SimpleWiiHeap.cpp}}
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+Include dependency graph for Simple\+Wii\+Heap.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_memory_block}{tag\+Memory\+Block}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}{MEMORY\+\_\+\+ALIGNMENT\+\_\+\+SIZE}}~32
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structtag_memory_block}{tag\+Memory\+Block}} \mbox{\hyperlink{_simple_wii_heap_8cpp_ae9fb037d0f3b7933c844fd87300ade1b}{Memory\+Block}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_simple_wii_heap_8cpp_a894fd4387f79b47b697e2e781b7021ab}{simple\+Wii\+Heap\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the Wii heap to use MEM2... /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{_simple_wii_heap_8cpp_a804518549d7f6c8af348513b73c81c1f}{simple\+Wii\+Heap\+Allocate\+Persistent\+Memory}} (size\+\_\+t memory\+Size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_simple_wii_heap_8cpp_ae9fb037d0f3b7933c844fd87300ade1b}{Memory\+Block}} \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{g\+Memory\+Available}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}\label{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}} 
+\index{SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}!MEMORY\_ALIGNMENT\_SIZE@{MEMORY\_ALIGNMENT\_SIZE}}
+\index{MEMORY\_ALIGNMENT\_SIZE@{MEMORY\_ALIGNMENT\_SIZE}!SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}}
+\doxysubsubsection{\texorpdfstring{MEMORY\_ALIGNMENT\_SIZE}{MEMORY\_ALIGNMENT\_SIZE}}
+{\footnotesize\ttfamily \#define MEMORY\+\_\+\+ALIGNMENT\+\_\+\+SIZE~32}
+
+
+
+Definition at line \mbox{\hyperlink{_simple_wii_heap_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_simple_wii_heap_8cpp_source}{Simple\+Wii\+Heap.\+cpp}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_simple_wii_heap_8cpp_ae9fb037d0f3b7933c844fd87300ade1b}\label{_simple_wii_heap_8cpp_ae9fb037d0f3b7933c844fd87300ade1b}} 
+\index{SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}!MemoryBlock@{MemoryBlock}}
+\index{MemoryBlock@{MemoryBlock}!SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}}
+\doxysubsubsection{\texorpdfstring{MemoryBlock}{MemoryBlock}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_memory_block}{tag\+Memory\+Block}} \mbox{\hyperlink{_simple_wii_heap_8cpp_ae9fb037d0f3b7933c844fd87300ade1b}{Memory\+Block}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_simple_wii_heap_8cpp_a804518549d7f6c8af348513b73c81c1f}\label{_simple_wii_heap_8cpp_a804518549d7f6c8af348513b73c81c1f}} 
+\index{SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}!simpleWiiHeapAllocatePersistentMemory@{simpleWiiHeapAllocatePersistentMemory}}
+\index{simpleWiiHeapAllocatePersistentMemory@{simpleWiiHeapAllocatePersistentMemory}!SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}}
+\doxysubsubsection{\texorpdfstring{simpleWiiHeapAllocatePersistentMemory()}{simpleWiiHeapAllocatePersistentMemory()}}
+{\footnotesize\ttfamily void $\ast$ simple\+Wii\+Heap\+Allocate\+Persistent\+Memory (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{memory\+Size }\end{DoxyParamCaption})}
+
+
+
+
+
+~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_simple_wii_heap_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_simple_wii_heap_8cpp_source}{Simple\+Wii\+Heap.\+cpp}}.
+
+\mbox{\Hypertarget{_simple_wii_heap_8cpp_a894fd4387f79b47b697e2e781b7021ab}\label{_simple_wii_heap_8cpp_a894fd4387f79b47b697e2e781b7021ab}} 
+\index{SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}!simpleWiiHeapInit@{simpleWiiHeapInit}}
+\index{simpleWiiHeapInit@{simpleWiiHeapInit}!SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}}
+\doxysubsubsection{\texorpdfstring{simpleWiiHeapInit()}{simpleWiiHeapInit()}}
+{\footnotesize\ttfamily void simple\+Wii\+Heap\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the Wii heap to use MEM2... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Mark the requested memory as used, align the {\itshape new} current start address to 32 bytes, and then return the old starting address. That memory will now no longer be availe. ASSERTS failure and throws std\+::bad\+\_\+alloc if we\textquotesingle{}re out 
+
+Definition at line \mbox{\hyperlink{_simple_wii_heap_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_simple_wii_heap_8cpp_source}{Simple\+Wii\+Heap.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}\label{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}} 
+\index{SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}!gMemoryAvailable@{gMemoryAvailable}}
+\index{gMemoryAvailable@{gMemoryAvailable}!SimpleWiiHeap.cpp@{SimpleWiiHeap.cpp}}
+\doxysubsubsection{\texorpdfstring{gMemoryAvailable}{gMemoryAvailable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_simple_wii_heap_8cpp_ae9fb037d0f3b7933c844fd87300ade1b}{Memory\+Block}} g\+Memory\+Available}
+
+summary\texorpdfstring{$>$}{>} Sets up the Wii heap to use MEM2... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_simple_wii_heap_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_simple_wii_heap_8cpp_source}{Simple\+Wii\+Heap.\+cpp}}.
+

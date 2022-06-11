@@ -1,0 +1,40 @@
+\hypertarget{_projectile_methods_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Projectile\+Methods.h}
+\mbox{\hyperlink{_projectile_methods_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00001}00001 \textcolor{comment}{// ProjectileMethods.h}}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00002}00002 \textcolor{comment}{// Defines delegate implementation for common Projectile oriented procedures}}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef PROJECTILE\_METHODS\_H}}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00005}00005 \textcolor{preprocessor}{\#define PROJECTILE\_METHODS\_H}}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_projectile_weapon_info_8h}{ProjectileWeaponInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00013}00013 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_a9b95167b82b23e2f117666281f2fd1fb}{ProjectileMethodsInit}}(\mbox{\hyperlink{class_i_model}{IModel}} *model, \mbox{\hyperlink{class_i_audio}{IAudio}} *upgradeSound, \mbox{\hyperlink{class_i_audio}{IAudio}} *downGradeSound, \mbox{\hyperlink{class_i_audio}{IAudio}} *shootingSound, \mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo,}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00014}00014         \textcolor{keywordtype}{int} totalLevels, \textcolor{keywordtype}{int} maxExperience, \textcolor{keywordtype}{int} maxProjectiles);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00019}00019 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_a60938b8426986e55ff13683725cb193f}{ProjectileMethodsCalculateMaxProjectiles}}(\mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo, \textcolor{keywordtype}{int} totalLevels, \textcolor{keywordtype}{int} maximumProjectiles);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00024}00024 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_a6ae279912f991524c93cab86f9db21bb}{ProjectileMethodsActivate}}(\textcolor{keywordtype}{int} weaponLevel, \textcolor{keywordtype}{float} xyModifier, \textcolor{keywordtype}{float} angleOffset, \mbox{\hyperlink{class_i_sprite}{ISprite}} *projectile, \mbox{\hyperlink{class_i_sprite}{ISprite}} *triggeredBySprite, Vector \&spriteOffset, \mbox{\hyperlink{class_i_audio}{IAudio}} *soundToPlay);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00029}00029 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_ab3de2090188cbc1b622a1e75d4e3c5d0}{ProjectileMethodsRender}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00034}00034 \textcolor{keywordtype}{bool} \mbox{\hyperlink{_projectile_methods_8h_af9076332aa4585978395bb7fede00d20}{ProjectileMethodsIsWeaponReady}}(\mbox{\hyperlink{_projectile_weapon_info_8h_a37ab2c5940fbf02ed4a60f9727e22f70}{PROJECTILE\_TRIGGER\_STATE}} state, \mbox{\hyperlink{class_i_sprite}{ISprite}} *triggeredBySprite, \mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00039}00039 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_ad9e74693b4ff84bab3143f9cdc263fb5}{ProjectileMethodsIncrementProjectile}}(\mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo, \textcolor{keywordtype}{int} maxProjectiles);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00044}00044 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_aa5e4b60863cb90cfcf051452061671bf}{ProjectileMethodsUpdateProjectiles}}(\mbox{\hyperlink{structtag_level_info}{LevelInfo}}* levelInfo, \mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00049}00049 \mbox{\hyperlink{_projectile_weapon_info_8h_acb768b84d74e972690a4b15d0daee6a9}{PROJECTILE\_LEVEL\_STATE}} \mbox{\hyperlink{_projectile_methods_8h_a73fa18d2cd56ceb3105b249fe0884db2}{ProjectileMethodsUpdateExperience}}(\mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo, \textcolor{keywordtype}{int} totalLevels, \textcolor{keywordtype}{int} maximumProjectiles);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00054}00054 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_a948a25f09c225655e485b740d935f719}{ProjectileMethodsModifyExperienceBy}}(\mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo, \textcolor{keywordtype}{int} experiencePoints, \textcolor{keywordtype}{int} maxExperience);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00059}00059 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_afc2a6484c7adae312b715cef31f9f913}{ProjectileMethodsReduceExperience}}(\mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo, \textcolor{keywordtype}{float} reduceBy);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00064}00064 \textcolor{keywordtype}{void} \mbox{\hyperlink{_projectile_methods_8h_af817abcbc31e6f47b31ded1fc69052bc}{ProjectileMethodsHandleIfSpriteDead}}(\mbox{\hyperlink{class_i_sprite}{ISprite}} \&sprite, \mbox{\hyperlink{structtag_projectile_weapon_info}{ProjectileWeaponInfo}} \&weaponInfo);}
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_projectile_methods_8h_source_l00068}00068 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

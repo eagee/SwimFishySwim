@@ -1,0 +1,29 @@
+\hypertarget{_i_subject_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+ISubject.h}
+\mbox{\hyperlink{_i_subject_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00001}00001 \textcolor{comment}{// ISubject.h}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00002}00002 \textcolor{comment}{// Defines Subject Interface via a Pure Virtual Class and template methods}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00005}00005 \textcolor{preprocessor}{\#ifndef ISUBJECT\_H}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00006}00006 \textcolor{preprocessor}{\#define ISUBJECT\_H}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00008}00008 \textcolor{comment}{// forward declaration of IObserver interface}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00009}00009 \textcolor{keyword}{class }\mbox{\hyperlink{class_i_observer}{IObserver}};}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00014}\mbox{\hyperlink{class_i_subject}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{class_i_subject}{ISubject}}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00015}00015    \{}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00016}00016    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00017}\mbox{\hyperlink{class_i_subject_a02979d6a122074594a8957dcdd97d316}{00017}}       \mbox{\hyperlink{class_i_subject_a02979d6a122074594a8957dcdd97d316}{ISubject}}()\{\}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00018}\mbox{\hyperlink{class_i_subject_a6c5b23ca0dc6b162f13b565319f78bd8}{00018}}       \textcolor{keyword}{virtual} \mbox{\hyperlink{class_i_subject_a6c5b23ca0dc6b162f13b565319f78bd8}{\string~ISubject}}()\{\}}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00019}00019       }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00023}\mbox{\hyperlink{class_i_subject_a5f5438de11e3a94bc58f6bc563fbf7c4}{00023}}       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_subject_a5f5438de11e3a94bc58f6bc563fbf7c4}{registerObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer) = 0;         }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00024}00024       }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00028}\mbox{\hyperlink{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}{00028}}       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}{removeObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer) = 0; }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00029}00029       }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00033}\mbox{\hyperlink{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}{00033}}       \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}{notifyObservers}} () = 0;                     }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00034}00034    \};}
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_i_subject_8h_source_l00036}00036 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

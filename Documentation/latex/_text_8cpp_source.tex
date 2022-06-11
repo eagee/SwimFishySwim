@@ -1,0 +1,168 @@
+\hypertarget{_text_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Text.cpp}
+\mbox{\hyperlink{_text_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00001}00001 \textcolor{comment}{// Text.cpp}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00002}00002 \textcolor{comment}{// Provides a class implementation of the IText interface allowing textured text images to be displayed }}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00003}00003 \textcolor{comment}{// on screen similarly to how printf statements are displayed...}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00004}00004 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00008}00008 \textcolor{comment}{// Defines the range of ascii values supported by our texture...}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00009}\mbox{\hyperlink{_text_8cpp_a4a0032f227dfc39607cf0d5368dc1fa4}{00009}} \textcolor{preprocessor}{\#define MIN\_ASCII\_RANGE 0}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00010}\mbox{\hyperlink{_text_8cpp_a117938be9699b40713fc3c81c39f2285}{00010}} \textcolor{preprocessor}{\#define MAX\_ASCII\_RANGE 255}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00012}\mbox{\hyperlink{_text_8cpp_a47081dc75da2892206f36a5de379fde7}{00012}} \textcolor{preprocessor}{\#define TEXT\_SPACING 0.20f}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00014}00014 \textcolor{comment}{// Defines values specifically associated with pulling characters from our textures...}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00015}\mbox{\hyperlink{_text_8cpp_a69a5395f9a4eb4c96241aa2fa7131444}{00015}} \textcolor{preprocessor}{\#define NUMBER\_OF\_CHARACTERS\_IN\_ROW     16}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00016}\mbox{\hyperlink{_text_8cpp_ac59d65940b5ea8a6a0d45a4a283b3e50}{00016}} \textcolor{preprocessor}{\#define NUMBER\_OF\_CHARACTERS\_IN\_COLUMN  16}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00017}\mbox{\hyperlink{_text_8cpp_aac66906b90fe2620a40a69da8d3976ff}{00017}} \textcolor{preprocessor}{\#define WIDTH\_OF\_EACH\_CHARACTER         0.0625f}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00018}\mbox{\hyperlink{_text_8cpp_a16ad4ad481ea54c44be8d2c1aeae68a5}{00018}} \textcolor{preprocessor}{\#define HEIGHT\_OF\_EACH\_CHARACTER        0.0625f}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00020}00020 \textcolor{comment}{// Variables to track our single instance and whether or not it's been created ...  }}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00021}00021 \textcolor{keyword}{static} \mbox{\hyperlink{class_i_text}{IText}} *globalSingleInstance;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00026}\mbox{\hyperlink{_text_8cpp_a842592a5bdb2481d5a176de897d6b198}{00026}} \textcolor{keyword}{typedef} std::map<int, Quad> \mbox{\hyperlink{_text_8cpp_a842592a5bdb2481d5a176de897d6b198}{TextQuads}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00031}\mbox{\hyperlink{class_text_a62e6da9d5c4261b0147ae103f97dfd01}{00031}} \mbox{\hyperlink{class_i_text}{IText}}* \mbox{\hyperlink{class_text_a62e6da9d5c4261b0147ae103f97dfd01}{Text::getSingleInstance}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00032}00032 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00033}00033     \textcolor{keywordflow}{if}(globalSingleInstance == NULL)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00034}00034     \{       }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00035}00035         globalSingleInstance = \textcolor{keyword}{new} \mbox{\hyperlink{class_text_a72c6e07d1fdb2acd4cca930b1ca25a11}{Text}}(graphics);  }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00037}00037     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00038}00038     \textcolor{keywordflow}{return} globalSingleInstance;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00039}00039 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00044}\mbox{\hyperlink{class_text_a72c6e07d1fdb2acd4cca930b1ca25a11}{00044}} \mbox{\hyperlink{class_text_a72c6e07d1fdb2acd4cca930b1ca25a11}{Text::Text}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00045}00045 \{   }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00046}00046     myGraphics = graphics;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00047}00047     myQuadWidth = \mbox{\hyperlink{_i_text_8h_a33973d93f1fd8e410cbcd7e2d4403780}{DEFAULT\_TEXT\_WIDTH}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00048}00048     myQuadHeight = \mbox{\hyperlink{_i_text_8h_ada7e8d3ac5fbe37fc65d65a1bf806ae0}{DEFAULT\_TEXT\_HEIGHT}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00049}00049     myQuadSpacing = \mbox{\hyperlink{_i_text_8h_a91f451161d1fad7625daea60cb1009fc}{DEFAULT\_TEXT\_SPACING}};   }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00055}\mbox{\hyperlink{class_text_a7947d36446d2e8236a9433d8c9eec845}{00055}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_text_a7947d36446d2e8236a9433d8c9eec845}{Text::setTextSize}}(\textcolor{keywordtype}{float} width, \textcolor{keywordtype}{float} height, \textcolor{keywordtype}{float} spacing)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00057}00057     myQuadWidth = width;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00058}00058     myQuadHeight = height;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00059}00059     myQuadSpacing = spacing;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00065}\mbox{\hyperlink{class_text_a65b77a9f0d957c934978176b453c8611}{00065}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_text_a65b77a9f0d957c934978176b453c8611}{Text::getTextWidth}}()}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00066}00066 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00067}00067     \textcolor{keywordflow}{return} myQuadWidth;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00073}\mbox{\hyperlink{class_text_accb6d36a049d5f9e9c94f85e24d15e35}{00073}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_text_accb6d36a049d5f9e9c94f85e24d15e35}{Text::getTextHeight}}()}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00074}00074 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00075}00075     \textcolor{keywordflow}{return} myQuadHeight;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00076}00076 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00081}\mbox{\hyperlink{class_text_a56c6ec671c9e16f8c1414df9ada4d40b}{00081}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_text_a56c6ec671c9e16f8c1414df9ada4d40b}{Text::getTextSpacing}}()}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00082}00082 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00083}00083     \textcolor{keywordflow}{return} myQuadSpacing;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00084}00084 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00089}\mbox{\hyperlink{class_text_a2d49e5c280e205125b149f7777ae30c7}{00089}} \mbox{\hyperlink{class_text_a2d49e5c280e205125b149f7777ae30c7}{Text::\string~Text}}()}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00090}00090 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00091}00091 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00096}\mbox{\hyperlink{class_text_a328a7cc86a7f572c7f3da2ec52691774}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_text_a328a7cc86a7f572c7f3da2ec52691774}{Text::assignTexture}}(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00097}00097 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00098}00098     myTextureHandle = textureID;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00099}00099 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00104}00104 \textcolor{keyword}{static} \textcolor{keywordtype}{void} updateTextureCoordinates(\mbox{\hyperlink{structtag_quad}{Quad}} *quad, \textcolor{keywordtype}{int} textureIndex)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00105}00105 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00106}00106     \textcolor{comment}{// Texture our tiles based on the data specified ...}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00107}00107     ASSERT(textureIndex >= \mbox{\hyperlink{_text_8cpp_a4a0032f227dfc39607cf0d5368dc1fa4}{MIN\_ASCII\_RANGE}});}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00108}00108     ASSERT(textureIndex < \mbox{\hyperlink{_text_8cpp_a117938be9699b40713fc3c81c39f2285}{MAX\_ASCII\_RANGE}});}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00109}00109     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00110}00110     \textcolor{comment}{// Figure out our X and Y texture coordinates based on the ASCII value specified in textureIndex}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00111}00111     \textcolor{keywordtype}{float} baseTextureX = (textureIndex \% \mbox{\hyperlink{_text_8cpp_ac59d65940b5ea8a6a0d45a4a283b3e50}{NUMBER\_OF\_CHARACTERS\_IN\_COLUMN}}) * \mbox{\hyperlink{_text_8cpp_aac66906b90fe2620a40a69da8d3976ff}{WIDTH\_OF\_EACH\_CHARACTER}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00112}00112     \textcolor{keywordtype}{float} baseTextureY = (textureIndex / \mbox{\hyperlink{_text_8cpp_a69a5395f9a4eb4c96241aa2fa7131444}{NUMBER\_OF\_CHARACTERS\_IN\_ROW}}) * \mbox{\hyperlink{_text_8cpp_a16ad4ad481ea54c44be8d2c1aeae68a5}{HEIGHT\_OF\_EACH\_CHARACTER}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00114}00114     quad-\/>\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[0] = baseTextureX;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00115}00115     quad-\/>\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[1] = baseTextureX + \mbox{\hyperlink{_text_8cpp_aac66906b90fe2620a40a69da8d3976ff}{WIDTH\_OF\_EACH\_CHARACTER}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00116}00116     quad-\/>\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[2] = baseTextureX + \mbox{\hyperlink{_text_8cpp_aac66906b90fe2620a40a69da8d3976ff}{WIDTH\_OF\_EACH\_CHARACTER}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00117}00117     quad-\/>\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[3] = baseTextureX;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00118}00118             }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00119}00119     quad-\/>\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[0] = baseTextureY;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00120}00120     quad-\/>\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[1] = baseTextureY;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00121}00121     quad-\/>\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[2] = baseTextureY + \mbox{\hyperlink{_text_8cpp_a16ad4ad481ea54c44be8d2c1aeae68a5}{HEIGHT\_OF\_EACH\_CHARACTER}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00122}00122     quad-\/>\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[3] = baseTextureY + \mbox{\hyperlink{_text_8cpp_a16ad4ad481ea54c44be8d2c1aeae68a5}{HEIGHT\_OF\_EACH\_CHARACTER}};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00123}00123 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00128}00128 \textcolor{keyword}{static} \textcolor{keywordtype}{void} setupQuad(\mbox{\hyperlink{structtag_quad}{Quad}} *quad, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{int} textureIndex)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00129}00129 \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00130}00130     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[0].x = x;  }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00131}00131     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[0].y = y;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00132}00132     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[0].z = z;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00133}00133     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00134}00134     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1].x = x + w;  }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00135}00135     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1].y = y;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00136}00136     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1].z = z;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00137}00137     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00138}00138     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2].x = x + w;  }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00139}00139     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2].y = y + h;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00140}00140     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2].z = z;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00141}00141     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00142}00142     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[3].x = x ; }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00143}00143     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[3].y = y + h;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00144}00144     quad-\/>\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[3].z = z;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00145}00145     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00146}00146     updateTextureCoordinates(quad, textureIndex);}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00147}00147 \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00148}00148     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00152}\mbox{\hyperlink{class_text_aabc4172e384eb696f319a399d3fac567}{00152}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_text_aabc4172e384eb696f319a399d3fac567}{Text::renderText}}(Vector location, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fmt, ...)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00153}00153 \{   }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00154}00154     \mbox{\hyperlink{_text_8cpp_a842592a5bdb2481d5a176de897d6b198}{TextQuads}} lineOfQuads;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00155}00155     Vector startingLocation = location;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00156}00156     va\_list args;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00157}00157     \textcolor{keywordtype}{int} asciiValue = 0;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00158}00158     \textcolor{keywordtype}{int} newQuadIndex = 0;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00159}00159     \textcolor{keywordtype}{int} outputIndex = 0;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00160}00160     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00161}00161     \textcolor{comment}{// Clear out our formatted string buffer will null terminators}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00162}00162     memset(\&myFormattedString, 0, \textcolor{keyword}{sizeof}(myFormattedString));   }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00163}00163     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00164}00164     va\_start(args, fmt);}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00165}00165     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00166}00166     \textcolor{comment}{// Assign our arguments to a string ...}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00167}00167     vsprintf(myFormattedString, fmt, args);}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00168}00168     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00169}00169     \textcolor{comment}{// Loop through our formatted string until we hit a null value...}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00170}00170     \textcolor{keywordflow}{while}((myFormattedString[outputIndex] != 0) \&\& (outputIndex < \mbox{\hyperlink{_text_8h_aca4c5a0985f768350f39c2230ac3fb60}{MAXIMUM\_TEXT\_CHARACTERS}}))}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00171}00171     \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00172}00172         asciiValue = myFormattedString[outputIndex];}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00173}00173         }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00174}00174         \textcolor{comment}{//debugPrint("{}\(\backslash\)n\(\backslash\)nASCII VALUE: \%d\(\backslash\)n\(\backslash\)n"{}, asciiValue);usleep(1000000);}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00175}00175         }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00176}00176         \textcolor{comment}{// Create a new quad for drawing this value, texture map it, and add it to the list ...}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00177}00177         \mbox{\hyperlink{structtag_quad}{Quad}} newQuad;   }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00178}00178         }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00179}00179         setupQuad(\&newQuad, location.x, location.y, location.z, myQuadWidth, myQuadHeight, asciiValue);}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00180}00180         }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00181}00181         \textcolor{comment}{// Add this quad to our map}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00182}00182         lineOfQuads[newQuadIndex] = newQuad;                        }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00183}00183         newQuadIndex++;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00184}00184         }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00185}00185         location.x += myQuadSpacing;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00186}00186         outputIndex++;}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00187}00187     \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00188}00188     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00189}00189     \textcolor{comment}{// We're done with the formatted text now ...}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00190}00190     va\_end(args);}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00191}00191     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00192}00192     \textcolor{keywordflow}{if}(myGraphics != NULL)}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00193}00193     \{}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00194}00194         \textcolor{comment}{// So we can render using the IGraphics implementation specified in the parameters above}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00195}00195         Vector zeroVector = \{0.0f, 0.0f, 0.0f\};}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00196}00196         myGraphics-\/>\mbox{\hyperlink{class_i_graphics_afb3f16ee08cd60d5b09ef4c7df51876a}{addQuadsToScene}}(zeroVector, lineOfQuads, lineOfQuads.size(), myTextureHandle);           }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00197}00197     \}}
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00198}00198     }
+\DoxyCodeLine{\Hypertarget{_text_8cpp_source_l00199}00199 \}}
+
+\end{DoxyCode}

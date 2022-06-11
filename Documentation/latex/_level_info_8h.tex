@@ -1,0 +1,560 @@
+\hypertarget{_level_info_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Level\+Info.h File Reference}
+\label{_level_info_8h}\index{C:/TeamSheeps/SwimFishySwim/LevelInfo.h@{C:/TeamSheeps/SwimFishySwim/LevelInfo.h}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IControllers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IGraphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Power\+Up.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Bullet.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Baddie.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Tower.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Scenery.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IParticle\+Effect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Particle\+Effect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tiled\+Maps.\+h\char`\"{}}\newline
+Include dependency graph for Level\+Info.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_level_powerup_info}{tag\+Level\+Powerup\+Info}}
+\begin{DoxyCompactList}\small\item\em Defines information used to control powerup behavior \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_floating_text}{tag\+Floating\+Text}}
+\begin{DoxyCompactList}\small\item\em Defines scrolling informational messages displayed in the 3d world... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_baddie_detail_info}{tag\+Baddie\+Detail\+Info}}
+\begin{DoxyCompactList}\small\item\em Values used to manage release of baddies during each wave in a level \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_level_info}{tag\+Level\+Info}}
+\begin{DoxyCompactList}\small\item\em Defines the information that will be used to define the behavior in a level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_ae69dc802d3d021a3caa2b6d8f49cc76e}{ALL\+\_\+\+SPRITE\+\_\+\+VELOCITY}}~21.\+0f
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_ad34c274c6e14a19f4bd16c86d74e4648}{ALL\+\_\+\+SPRITE\+\_\+\+DRAG}}~0.\+2f
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_a946aa3a5518087d25ce1c5a0998aac18}{ALL\+\_\+\+SPRITE\+\_\+\+ACCEL}}~0.\+6f
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_a5fdabc4d29c99ae258fb9e883a33b810}{TOTAL\+\_\+\+MODELS}}~(\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa22a3cf174ec9a81f3edb294066583bb9}{CHOMPY\+\_\+\+FLOWER\+\_\+\+TOWER}} + 1)
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_a3a878d3ca8cfae613639a99476faaf5a}{TOTAL\+\_\+\+SONGS}}~(\mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544ab02ef6cd282aa139203e9470496fc89c}{MP3\+\_\+\+AUDIO}} + 1)
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_abfa3d5146e9a75d4ea625d947166fabd}{TOTAL\+\_\+\+SOUNDS}}~(\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a887afb26a57b9e031af17848633ca42a}{PICKLE\+\_\+\+DAMAGE}} + 1)
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_a992b6a16818bca31938d0eeff6d169b7}{TOTAL\+\_\+\+PROJECTILE\+\_\+\+TYPES}}~(\mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a596f294db1c6c6f0b3bf7d286c672aaa}{PROJECTILE\+\_\+\+TYPE\+\_\+\+THROW}} + 1)
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_ad4c81a3be23b7200388e5d00698cd9c2}{TOTAL\+\_\+\+TOWER\+\_\+\+TYPES}}~(\mbox{\hyperlink{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa78b5f48fefcb5c63b15e92f4e4ae0a03}{CHOMP\+\_\+\+TOWER}} + 1)
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_aa75ff3391b1b1b4246cff324cd6b490c}{TOTAL\+\_\+\+TOWER\+\_\+\+BUTTONS}}~(\mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a800b0a8cb0764fddc3e26ccb20d69b71}{DIRECTION\+\_\+\+PAD\+\_\+\+BUTTON}} + 1)
+\item 
+\#define \mbox{\hyperlink{_level_info_8h_ab4b27559315737b71cf97b85a505e163}{MAXIMUM\+\_\+\+POWERUPS}}~12
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structtag_level_powerup_info}{tag\+Level\+Powerup\+Info}} \mbox{\hyperlink{_level_info_8h_a4afad5168e0b9f326f3e17e5a3ce28e2}{Level\+Powerup\+Info}}
+\begin{DoxyCompactList}\small\item\em Defines information used to control powerup behavior \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_floating_text}{tag\+Floating\+Text}} \mbox{\hyperlink{_level_info_8h_a31768c247784ddc00c4f1be4c637300c}{Floating\+Text}}
+\begin{DoxyCompactList}\small\item\em Defines scrolling informational messages displayed in the 3d world... \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_baddie_detail_info}{tag\+Baddie\+Detail\+Info}} \mbox{\hyperlink{_level_info_8h_a2b9115745d0de3f588e136c8e89180ae}{Baddie\+Detail\+Info}}
+\begin{DoxyCompactList}\small\item\em Values used to manage release of baddies during each wave in a level \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_level_info}{tag\+Level\+Info}} \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}}
+\begin{DoxyCompactList}\small\item\em Defines the information that will be used to define the behavior in a level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}} \{ \newline
+\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefaa5748be94829ac36ecdefaa965410b6d}{PRIMARY\+\_\+\+FISH\+\_\+\+MODEL}} = 0x000
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8fe16b9ad0c6817c653ee061a921ef62}{SMALL\+\_\+\+BADDIE\+\_\+\+FISH\+\_\+\+MODEL}} = 0x001
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa995662ac4d2ec7596258aedbf3aae45c}{MEDIUM\+\_\+\+BADDIE\+\_\+\+FISH\+\_\+\+MODEL}} = 0x002
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa3b1da2b38950fdbc1c4ec2c173c27bf4}{FAST\+\_\+\+BADDIE\+\_\+\+FISH\+\_\+\+MODEL}} = 0x003
+, \newline
+\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa837f056f9cf64d986bb940be392b0a7e}{ATTACKING\+\_\+\+BADDIE\+\_\+\+FISH\+\_\+\+MODEL}} = 0x004
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa5deb8181cd5b7eee5c00084da6c3412c}{PICKLE\+\_\+\+MODEL}} = 0x005
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefaa224edb424e85f4d775404fe68136bfb}{SHOT\+\_\+\+MODEL}} = 0x006
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa45a1faf127c3a2da747ab65f3c43321b}{BOMB\+\_\+\+MODEL}} = 0x007
+, \newline
+\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefaed046d0123cb526b2be40bec63ba1bba}{MINE\+\_\+\+MODEL}} = 0x008
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa24614100c72b51fe229a07b6e201b990}{POWERUP\+\_\+\+MODEL}} = 0x009
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa0fa86c76320b7b3d7740b126f20aeb91}{ROCK\+\_\+\+MODEL}} = 0x00A
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa5dbcfff44cb1207f1c863ccb765c6dd0}{BOSS\+\_\+\+FISH\+\_\+\+MODEL}} = 0x00B
+, \newline
+\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefaed06b3ac2c3272b80d504db8f86f387a}{TOSS\+\_\+\+MODEL}} = 0x00C
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefacaf5351b8967ae5b00294637fd235474}{SPIT\+\_\+\+MODEL}} = 0x00D
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa433e3a005fa0bcff1d2c2d4e766db0ae}{WIND\+\_\+\+MODEL}} = 0x00E
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa88fea7b58f7872021d94ef3bcef45439}{TREE\+\_\+\+MODEL}} = 0x00F
+, \newline
+\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa9a86e09d54e4f2fc0a09589a6a138933}{FLOWER\+\_\+\+A\+\_\+\+MODEL}} = 0x010
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefaaaf73e5b852af922555ba73a84cd1c40}{FLOWER\+\_\+\+B\+\_\+\+MODEL}} = 0x011
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefaef6bbf917d1d31c39e75433139365576}{FLOWER\+\_\+\+C\+\_\+\+MODEL}} = 0x012
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8ccf6df5c2035406c4f74e79205c9c5c}{SPITTING\+\_\+\+FLOWER\+\_\+\+TOWER}} = 0x013
+, \newline
+\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8f80104d57eb0c9a9a3f921c8eb03dac}{TOSSING\+\_\+\+FLOWER\+\_\+\+TOWER}} = 0x014
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa11a037aa22ac62382e597a59cfddf5c4}{WINDY\+\_\+\+FLOWER\+\_\+\+TOWER}} = 0x015
+, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa22a3cf174ec9a81f3edb294066583bb9}{CHOMPY\+\_\+\+FLOWER\+\_\+\+TOWER}} = 0x016
+ \}
+\begin{DoxyCompactList}\small\item\em Defines update types that can arrive from our controller interface \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544}{SONG\+\_\+\+NAME}} \{ \mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544ab02ef6cd282aa139203e9470496fc89c}{MP3\+\_\+\+AUDIO}} = 0x00
+ \}
+\item 
+enum \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392}{SOUND\+\_\+\+NAME}} \{ \newline
+\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392ada2c01ad98cb4aa6d8ed58086ed274ab}{BWOOP}} = 0x00
+, \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a42039a73181440a36d7a3ecb1ef0c2eb}{BOING}} = 0x01
+, \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a63aaba770d9de01dbde3c9fe2e89f314}{LEVEL\+\_\+\+UP}} = 0x02
+, \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a4f5a6bb9c08ac6fe1e71bb8868f2bade}{POWER\+\_\+\+UP}} = 0x03
+, \newline
+\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a8248fe8ed4925bbf0b59aac90590d4f3}{SPIN\+\_\+\+ATTACK}} = 0x04
+, \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a7da33de1b31dff51b107c63c87bf4732}{WAVE\+\_\+\+FINISHED}} = 0x05
+, \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a6fb435ce5df49f99e65d639866be0d51}{BADDIE\+\_\+\+DEATH}} = 0x06
+, \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a2daa1a96a8f7deb7290a7796fae9cdee}{MENU\+\_\+\+YES}} = 0x07
+, \newline
+\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a18290ab50b80bd8f942f73c6aa25e24d}{MENU\+\_\+\+NO}} = 0x08
+, \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a887afb26a57b9e031af17848633ca42a}{PICKLE\+\_\+\+DAMAGE}} = 0x09
+ \}
+\item 
+enum \mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07}{PROJECTILE\+\_\+\+TYPE}} \{ \newline
+\mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07ae7ff1f8a0f865258479563a2c711e667}{PROJECTILE\+\_\+\+TYPE\+\_\+\+SHOT}} = 0x00
+, \mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07ae5d2c5fb59deee4350e95335c54d3ff3}{PROJECTILE\+\_\+\+TYPE\+\_\+\+BOMB}} = 0x01
+, \mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a3e21f98e0020fca89aa11f844c15d325}{PROJECTILE\+\_\+\+TYPE\+\_\+\+MINE}} = 0x02
+, \mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a1728d50e74e2510e677388f72a87ffa0}{PROJECTILE\+\_\+\+TYPE\+\_\+\+SPIT}} = 0x03
+, \newline
+\mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a596f294db1c6c6f0b3bf7d286c672aaa}{PROJECTILE\+\_\+\+TYPE\+\_\+\+THROW}} = 0x04
+ \}
+\item 
+enum \mbox{\hyperlink{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0a}{TOWER\+\_\+\+TYPES}} \{ \mbox{\hyperlink{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa5d7ddc8fd76f271ec726e2551bf9100e}{SPITTING\+\_\+\+TOWER}} = 0x00
+, \mbox{\hyperlink{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aac7d228b7cd8a84f13862ef687141422c}{THROWING\+\_\+\+TOWER}} = 0x01
+, \mbox{\hyperlink{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa496ce0deb0cff7322d0f701d52b37bc1}{WIND\+\_\+\+TOWER}} = 0x02
+, \mbox{\hyperlink{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa78b5f48fefcb5c63b15e92f4e4ae0a03}{CHOMP\+\_\+\+TOWER}} = 0x03
+ \}
+\item 
+enum \mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024}{TOWER\+\_\+\+BUTTON\+\_\+\+TYPES}} \{ \newline
+\mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a27be5d930d48ae0eabb45a80374525fb}{SPITTING\+\_\+\+TOWER\+\_\+\+BUTTON}} = 0x00
+, \mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a7f16ce417db9d9cab0c775b3ea7362ec}{THROWING\+\_\+\+TOWER\+\_\+\+BUTTON}} = 0x01
+, \mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024af330982cb2b9fefea7775e532fe03c48}{WIND\+\_\+\+TOWER\+\_\+\+BUTTON}} = 0x02
+, \mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a56c73841ecac2c095e85bfb7a06fd395}{CHOMP\+\_\+\+TOWER\+\_\+\+BUTTON}} = 0x03
+, \newline
+\mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a800b0a8cb0764fddc3e26ccb20d69b71}{DIRECTION\+\_\+\+PAD\+\_\+\+BUTTON}} = 0x04
+, \mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024ac2cf6e1192bcc32d6c2b9ccb33939e05}{NO\+\_\+\+TOWER\+\_\+\+BUTTON\+\_\+\+SELECTED}} = 0x05
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_level_info_8h_a946aa3a5518087d25ce1c5a0998aac18}\label{_level_info_8h_a946aa3a5518087d25ce1c5a0998aac18}} 
+\index{LevelInfo.h@{LevelInfo.h}!ALL\_SPRITE\_ACCEL@{ALL\_SPRITE\_ACCEL}}
+\index{ALL\_SPRITE\_ACCEL@{ALL\_SPRITE\_ACCEL}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{ALL\_SPRITE\_ACCEL}{ALL\_SPRITE\_ACCEL}}
+{\footnotesize\ttfamily \#define ALL\+\_\+\+SPRITE\+\_\+\+ACCEL~0.\+6f}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00026}{26}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_ad34c274c6e14a19f4bd16c86d74e4648}\label{_level_info_8h_ad34c274c6e14a19f4bd16c86d74e4648}} 
+\index{LevelInfo.h@{LevelInfo.h}!ALL\_SPRITE\_DRAG@{ALL\_SPRITE\_DRAG}}
+\index{ALL\_SPRITE\_DRAG@{ALL\_SPRITE\_DRAG}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{ALL\_SPRITE\_DRAG}{ALL\_SPRITE\_DRAG}}
+{\footnotesize\ttfamily \#define ALL\+\_\+\+SPRITE\+\_\+\+DRAG~0.\+2f}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00025}{25}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_ae69dc802d3d021a3caa2b6d8f49cc76e}\label{_level_info_8h_ae69dc802d3d021a3caa2b6d8f49cc76e}} 
+\index{LevelInfo.h@{LevelInfo.h}!ALL\_SPRITE\_VELOCITY@{ALL\_SPRITE\_VELOCITY}}
+\index{ALL\_SPRITE\_VELOCITY@{ALL\_SPRITE\_VELOCITY}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{ALL\_SPRITE\_VELOCITY}{ALL\_SPRITE\_VELOCITY}}
+{\footnotesize\ttfamily \#define ALL\+\_\+\+SPRITE\+\_\+\+VELOCITY~21.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00024}{24}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_ab4b27559315737b71cf97b85a505e163}\label{_level_info_8h_ab4b27559315737b71cf97b85a505e163}} 
+\index{LevelInfo.h@{LevelInfo.h}!MAXIMUM\_POWERUPS@{MAXIMUM\_POWERUPS}}
+\index{MAXIMUM\_POWERUPS@{MAXIMUM\_POWERUPS}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{MAXIMUM\_POWERUPS}{MAXIMUM\_POWERUPS}}
+{\footnotesize\ttfamily \#define MAXIMUM\+\_\+\+POWERUPS~12}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00114}{114}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_a5fdabc4d29c99ae258fb9e883a33b810}\label{_level_info_8h_a5fdabc4d29c99ae258fb9e883a33b810}} 
+\index{LevelInfo.h@{LevelInfo.h}!TOTAL\_MODELS@{TOTAL\_MODELS}}
+\index{TOTAL\_MODELS@{TOTAL\_MODELS}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_MODELS}{TOTAL\_MODELS}}
+{\footnotesize\ttfamily \#define TOTAL\+\_\+\+MODELS~(\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfefa22a3cf174ec9a81f3edb294066583bb9}{CHOMPY\+\_\+\+FLOWER\+\_\+\+TOWER}} + 1)}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00058}{58}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_a992b6a16818bca31938d0eeff6d169b7}\label{_level_info_8h_a992b6a16818bca31938d0eeff6d169b7}} 
+\index{LevelInfo.h@{LevelInfo.h}!TOTAL\_PROJECTILE\_TYPES@{TOTAL\_PROJECTILE\_TYPES}}
+\index{TOTAL\_PROJECTILE\_TYPES@{TOTAL\_PROJECTILE\_TYPES}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_PROJECTILE\_TYPES}{TOTAL\_PROJECTILE\_TYPES}}
+{\footnotesize\ttfamily \#define TOTAL\+\_\+\+PROJECTILE\+\_\+\+TYPES~(\mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a596f294db1c6c6f0b3bf7d286c672aaa}{PROJECTILE\+\_\+\+TYPE\+\_\+\+THROW}} + 1)}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00089}{89}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_a3a878d3ca8cfae613639a99476faaf5a}\label{_level_info_8h_a3a878d3ca8cfae613639a99476faaf5a}} 
+\index{LevelInfo.h@{LevelInfo.h}!TOTAL\_SONGS@{TOTAL\_SONGS}}
+\index{TOTAL\_SONGS@{TOTAL\_SONGS}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_SONGS}{TOTAL\_SONGS}}
+{\footnotesize\ttfamily \#define TOTAL\+\_\+\+SONGS~(\mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544ab02ef6cd282aa139203e9470496fc89c}{MP3\+\_\+\+AUDIO}} + 1)}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00064}{64}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_abfa3d5146e9a75d4ea625d947166fabd}\label{_level_info_8h_abfa3d5146e9a75d4ea625d947166fabd}} 
+\index{LevelInfo.h@{LevelInfo.h}!TOTAL\_SOUNDS@{TOTAL\_SOUNDS}}
+\index{TOTAL\_SOUNDS@{TOTAL\_SOUNDS}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_SOUNDS}{TOTAL\_SOUNDS}}
+{\footnotesize\ttfamily \#define TOTAL\+\_\+\+SOUNDS~(\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a887afb26a57b9e031af17848633ca42a}{PICKLE\+\_\+\+DAMAGE}} + 1)}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00079}{79}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_aa75ff3391b1b1b4246cff324cd6b490c}\label{_level_info_8h_aa75ff3391b1b1b4246cff324cd6b490c}} 
+\index{LevelInfo.h@{LevelInfo.h}!TOTAL\_TOWER\_BUTTONS@{TOTAL\_TOWER\_BUTTONS}}
+\index{TOTAL\_TOWER\_BUTTONS@{TOTAL\_TOWER\_BUTTONS}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_TOWER\_BUTTONS}{TOTAL\_TOWER\_BUTTONS}}
+{\footnotesize\ttfamily \#define TOTAL\+\_\+\+TOWER\+\_\+\+BUTTONS~(\mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a800b0a8cb0764fddc3e26ccb20d69b71}{DIRECTION\+\_\+\+PAD\+\_\+\+BUTTON}} + 1)}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00110}{110}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_ad4c81a3be23b7200388e5d00698cd9c2}\label{_level_info_8h_ad4c81a3be23b7200388e5d00698cd9c2}} 
+\index{LevelInfo.h@{LevelInfo.h}!TOTAL\_TOWER\_TYPES@{TOTAL\_TOWER\_TYPES}}
+\index{TOTAL\_TOWER\_TYPES@{TOTAL\_TOWER\_TYPES}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{TOTAL\_TOWER\_TYPES}{TOTAL\_TOWER\_TYPES}}
+{\footnotesize\ttfamily \#define TOTAL\+\_\+\+TOWER\+\_\+\+TYPES~(\mbox{\hyperlink{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa78b5f48fefcb5c63b15e92f4e4ae0a03}{CHOMP\+\_\+\+TOWER}} + 1)}
+
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00098}{98}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_level_info_8h_a2b9115745d0de3f588e136c8e89180ae}\label{_level_info_8h_a2b9115745d0de3f588e136c8e89180ae}} 
+\index{LevelInfo.h@{LevelInfo.h}!BaddieDetailInfo@{BaddieDetailInfo}}
+\index{BaddieDetailInfo@{BaddieDetailInfo}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{BaddieDetailInfo}{BaddieDetailInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_baddie_detail_info}{tag\+Baddie\+Detail\+Info}} \mbox{\hyperlink{_level_info_8h_a2b9115745d0de3f588e136c8e89180ae}{Baddie\+Detail\+Info}}}
+
+
+
+Values used to manage release of baddies during each wave in a level 
+
+\mbox{\Hypertarget{_level_info_8h_a31768c247784ddc00c4f1be4c637300c}\label{_level_info_8h_a31768c247784ddc00c4f1be4c637300c}} 
+\index{LevelInfo.h@{LevelInfo.h}!FloatingText@{FloatingText}}
+\index{FloatingText@{FloatingText}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{FloatingText}{FloatingText}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_floating_text}{tag\+Floating\+Text}} \mbox{\hyperlink{_level_info_8h_a31768c247784ddc00c4f1be4c637300c}{Floating\+Text}}}
+
+
+
+Defines scrolling informational messages displayed in the 3d world... 
+
+\mbox{\Hypertarget{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}\label{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}} 
+\index{LevelInfo.h@{LevelInfo.h}!LevelInfo@{LevelInfo}}
+\index{LevelInfo@{LevelInfo}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{LevelInfo}{LevelInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_level_info}{tag\+Level\+Info}} \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}}}
+
+
+
+Defines the information that will be used to define the behavior in a level. 
+
+\mbox{\Hypertarget{_level_info_8h_a4afad5168e0b9f326f3e17e5a3ce28e2}\label{_level_info_8h_a4afad5168e0b9f326f3e17e5a3ce28e2}} 
+\index{LevelInfo.h@{LevelInfo.h}!LevelPowerupInfo@{LevelPowerupInfo}}
+\index{LevelPowerupInfo@{LevelPowerupInfo}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{LevelPowerupInfo}{LevelPowerupInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_level_powerup_info}{tag\+Level\+Powerup\+Info}} \mbox{\hyperlink{_level_info_8h_a4afad5168e0b9f326f3e17e5a3ce28e2}{Level\+Powerup\+Info}}}
+
+
+
+Defines information used to control powerup behavior 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfef}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfef}} 
+\index{LevelInfo.h@{LevelInfo.h}!MODEL\_TYPE@{MODEL\_TYPE}}
+\index{MODEL\_TYPE@{MODEL\_TYPE}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{MODEL\_TYPE}{MODEL\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}}}
+
+
+
+Defines update types that can arrive from our controller interface 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRIMARY\_FISH\_MODEL@{PRIMARY\_FISH\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!PRIMARY\_FISH\_MODEL@{PRIMARY\_FISH\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefaa5748be94829ac36ecdefaa965410b6d}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefaa5748be94829ac36ecdefaa965410b6d}} 
+PRIMARY\+\_\+\+FISH\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SMALL\_BADDIE\_FISH\_MODEL@{SMALL\_BADDIE\_FISH\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!SMALL\_BADDIE\_FISH\_MODEL@{SMALL\_BADDIE\_FISH\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8fe16b9ad0c6817c653ee061a921ef62}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8fe16b9ad0c6817c653ee061a921ef62}} 
+SMALL\+\_\+\+BADDIE\+\_\+\+FISH\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEDIUM\_BADDIE\_FISH\_MODEL@{MEDIUM\_BADDIE\_FISH\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!MEDIUM\_BADDIE\_FISH\_MODEL@{MEDIUM\_BADDIE\_FISH\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa995662ac4d2ec7596258aedbf3aae45c}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa995662ac4d2ec7596258aedbf3aae45c}} 
+MEDIUM\+\_\+\+BADDIE\+\_\+\+FISH\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAST\_BADDIE\_FISH\_MODEL@{FAST\_BADDIE\_FISH\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!FAST\_BADDIE\_FISH\_MODEL@{FAST\_BADDIE\_FISH\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa3b1da2b38950fdbc1c4ec2c173c27bf4}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa3b1da2b38950fdbc1c4ec2c173c27bf4}} 
+FAST\+\_\+\+BADDIE\+\_\+\+FISH\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACKING\_BADDIE\_FISH\_MODEL@{ATTACKING\_BADDIE\_FISH\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!ATTACKING\_BADDIE\_FISH\_MODEL@{ATTACKING\_BADDIE\_FISH\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa837f056f9cf64d986bb940be392b0a7e}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa837f056f9cf64d986bb940be392b0a7e}} 
+ATTACKING\+\_\+\+BADDIE\+\_\+\+FISH\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PICKLE\_MODEL@{PICKLE\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!PICKLE\_MODEL@{PICKLE\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa5deb8181cd5b7eee5c00084da6c3412c}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa5deb8181cd5b7eee5c00084da6c3412c}} 
+PICKLE\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHOT\_MODEL@{SHOT\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!SHOT\_MODEL@{SHOT\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefaa224edb424e85f4d775404fe68136bfb}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefaa224edb424e85f4d775404fe68136bfb}} 
+SHOT\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOMB\_MODEL@{BOMB\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!BOMB\_MODEL@{BOMB\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa45a1faf127c3a2da747ab65f3c43321b}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa45a1faf127c3a2da747ab65f3c43321b}} 
+BOMB\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINE\_MODEL@{MINE\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!MINE\_MODEL@{MINE\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefaed046d0123cb526b2be40bec63ba1bba}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefaed046d0123cb526b2be40bec63ba1bba}} 
+MINE\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POWERUP\_MODEL@{POWERUP\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!POWERUP\_MODEL@{POWERUP\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa24614100c72b51fe229a07b6e201b990}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa24614100c72b51fe229a07b6e201b990}} 
+POWERUP\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROCK\_MODEL@{ROCK\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!ROCK\_MODEL@{ROCK\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa0fa86c76320b7b3d7740b126f20aeb91}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa0fa86c76320b7b3d7740b126f20aeb91}} 
+ROCK\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOSS\_FISH\_MODEL@{BOSS\_FISH\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!BOSS\_FISH\_MODEL@{BOSS\_FISH\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa5dbcfff44cb1207f1c863ccb765c6dd0}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa5dbcfff44cb1207f1c863ccb765c6dd0}} 
+BOSS\+\_\+\+FISH\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOSS\_MODEL@{TOSS\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!TOSS\_MODEL@{TOSS\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefaed06b3ac2c3272b80d504db8f86f387a}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefaed06b3ac2c3272b80d504db8f86f387a}} 
+TOSS\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPIT\_MODEL@{SPIT\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!SPIT\_MODEL@{SPIT\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefacaf5351b8967ae5b00294637fd235474}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefacaf5351b8967ae5b00294637fd235474}} 
+SPIT\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIND\_MODEL@{WIND\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!WIND\_MODEL@{WIND\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa433e3a005fa0bcff1d2c2d4e766db0ae}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa433e3a005fa0bcff1d2c2d4e766db0ae}} 
+WIND\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TREE\_MODEL@{TREE\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!TREE\_MODEL@{TREE\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa88fea7b58f7872021d94ef3bcef45439}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa88fea7b58f7872021d94ef3bcef45439}} 
+TREE\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOWER\_A\_MODEL@{FLOWER\_A\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!FLOWER\_A\_MODEL@{FLOWER\_A\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa9a86e09d54e4f2fc0a09589a6a138933}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa9a86e09d54e4f2fc0a09589a6a138933}} 
+FLOWER\+\_\+\+A\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOWER\_B\_MODEL@{FLOWER\_B\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!FLOWER\_B\_MODEL@{FLOWER\_B\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefaaaf73e5b852af922555ba73a84cd1c40}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefaaaf73e5b852af922555ba73a84cd1c40}} 
+FLOWER\+\_\+\+B\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOWER\_C\_MODEL@{FLOWER\_C\_MODEL}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!FLOWER\_C\_MODEL@{FLOWER\_C\_MODEL}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefaef6bbf917d1d31c39e75433139365576}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefaef6bbf917d1d31c39e75433139365576}} 
+FLOWER\+\_\+\+C\+\_\+\+MODEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPITTING\_FLOWER\_TOWER@{SPITTING\_FLOWER\_TOWER}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!SPITTING\_FLOWER\_TOWER@{SPITTING\_FLOWER\_TOWER}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8ccf6df5c2035406c4f74e79205c9c5c}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8ccf6df5c2035406c4f74e79205c9c5c}} 
+SPITTING\+\_\+\+FLOWER\+\_\+\+TOWER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOSSING\_FLOWER\_TOWER@{TOSSING\_FLOWER\_TOWER}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!TOSSING\_FLOWER\_TOWER@{TOSSING\_FLOWER\_TOWER}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8f80104d57eb0c9a9a3f921c8eb03dac}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa8f80104d57eb0c9a9a3f921c8eb03dac}} 
+TOSSING\+\_\+\+FLOWER\+\_\+\+TOWER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDY\_FLOWER\_TOWER@{WINDY\_FLOWER\_TOWER}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!WINDY\_FLOWER\_TOWER@{WINDY\_FLOWER\_TOWER}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa11a037aa22ac62382e597a59cfddf5c4}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa11a037aa22ac62382e597a59cfddf5c4}} 
+WINDY\+\_\+\+FLOWER\+\_\+\+TOWER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHOMPY\_FLOWER\_TOWER@{CHOMPY\_FLOWER\_TOWER}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!CHOMPY\_FLOWER\_TOWER@{CHOMPY\_FLOWER\_TOWER}}}\mbox{\Hypertarget{_level_info_8h_a04534293e3157cccde859fe44b3acfefa22a3cf174ec9a81f3edb294066583bb9}\label{_level_info_8h_a04534293e3157cccde859fe44b3acfefa22a3cf174ec9a81f3edb294066583bb9}} 
+CHOMPY\+\_\+\+FLOWER\+\_\+\+TOWER&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00032}{32}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07}\label{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07}} 
+\index{LevelInfo.h@{LevelInfo.h}!PROJECTILE\_TYPE@{PROJECTILE\_TYPE}}
+\index{PROJECTILE\_TYPE@{PROJECTILE\_TYPE}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{PROJECTILE\_TYPE}{PROJECTILE\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07}{PROJECTILE\+\_\+\+TYPE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROJECTILE\_TYPE\_SHOT@{PROJECTILE\_TYPE\_SHOT}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!PROJECTILE\_TYPE\_SHOT@{PROJECTILE\_TYPE\_SHOT}}}\mbox{\Hypertarget{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07ae7ff1f8a0f865258479563a2c711e667}\label{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07ae7ff1f8a0f865258479563a2c711e667}} 
+PROJECTILE\+\_\+\+TYPE\+\_\+\+SHOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROJECTILE\_TYPE\_BOMB@{PROJECTILE\_TYPE\_BOMB}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!PROJECTILE\_TYPE\_BOMB@{PROJECTILE\_TYPE\_BOMB}}}\mbox{\Hypertarget{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07ae5d2c5fb59deee4350e95335c54d3ff3}\label{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07ae5d2c5fb59deee4350e95335c54d3ff3}} 
+PROJECTILE\+\_\+\+TYPE\+\_\+\+BOMB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROJECTILE\_TYPE\_MINE@{PROJECTILE\_TYPE\_MINE}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!PROJECTILE\_TYPE\_MINE@{PROJECTILE\_TYPE\_MINE}}}\mbox{\Hypertarget{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a3e21f98e0020fca89aa11f844c15d325}\label{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a3e21f98e0020fca89aa11f844c15d325}} 
+PROJECTILE\+\_\+\+TYPE\+\_\+\+MINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROJECTILE\_TYPE\_SPIT@{PROJECTILE\_TYPE\_SPIT}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!PROJECTILE\_TYPE\_SPIT@{PROJECTILE\_TYPE\_SPIT}}}\mbox{\Hypertarget{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a1728d50e74e2510e677388f72a87ffa0}\label{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a1728d50e74e2510e677388f72a87ffa0}} 
+PROJECTILE\+\_\+\+TYPE\+\_\+\+SPIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROJECTILE\_TYPE\_THROW@{PROJECTILE\_TYPE\_THROW}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!PROJECTILE\_TYPE\_THROW@{PROJECTILE\_TYPE\_THROW}}}\mbox{\Hypertarget{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a596f294db1c6c6f0b3bf7d286c672aaa}\label{_level_info_8h_ad663ff88ad5019f39e59d1b4cbbc7b07a596f294db1c6c6f0b3bf7d286c672aaa}} 
+PROJECTILE\+\_\+\+TYPE\+\_\+\+THROW&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00081}{81}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544}\label{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544}} 
+\index{LevelInfo.h@{LevelInfo.h}!SONG\_NAME@{SONG\_NAME}}
+\index{SONG\_NAME@{SONG\_NAME}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{SONG\_NAME}{SONG\_NAME}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544}{SONG\+\_\+\+NAME}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MP3\_AUDIO@{MP3\_AUDIO}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!MP3\_AUDIO@{MP3\_AUDIO}}}\mbox{\Hypertarget{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544ab02ef6cd282aa139203e9470496fc89c}\label{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544ab02ef6cd282aa139203e9470496fc89c}} 
+MP3\+\_\+\+AUDIO&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00060}{60}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392}} 
+\index{LevelInfo.h@{LevelInfo.h}!SOUND\_NAME@{SOUND\_NAME}}
+\index{SOUND\_NAME@{SOUND\_NAME}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{SOUND\_NAME}{SOUND\_NAME}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392}{SOUND\+\_\+\+NAME}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BWOOP@{BWOOP}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!BWOOP@{BWOOP}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392ada2c01ad98cb4aa6d8ed58086ed274ab}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392ada2c01ad98cb4aa6d8ed58086ed274ab}} 
+BWOOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOING@{BOING}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!BOING@{BOING}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a42039a73181440a36d7a3ecb1ef0c2eb}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a42039a73181440a36d7a3ecb1ef0c2eb}} 
+BOING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_UP@{LEVEL\_UP}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!LEVEL\_UP@{LEVEL\_UP}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a63aaba770d9de01dbde3c9fe2e89f314}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a63aaba770d9de01dbde3c9fe2e89f314}} 
+LEVEL\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POWER\_UP@{POWER\_UP}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!POWER\_UP@{POWER\_UP}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a4f5a6bb9c08ac6fe1e71bb8868f2bade}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a4f5a6bb9c08ac6fe1e71bb8868f2bade}} 
+POWER\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPIN\_ATTACK@{SPIN\_ATTACK}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!SPIN\_ATTACK@{SPIN\_ATTACK}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a8248fe8ed4925bbf0b59aac90590d4f3}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a8248fe8ed4925bbf0b59aac90590d4f3}} 
+SPIN\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAVE\_FINISHED@{WAVE\_FINISHED}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!WAVE\_FINISHED@{WAVE\_FINISHED}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a7da33de1b31dff51b107c63c87bf4732}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a7da33de1b31dff51b107c63c87bf4732}} 
+WAVE\+\_\+\+FINISHED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BADDIE\_DEATH@{BADDIE\_DEATH}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!BADDIE\_DEATH@{BADDIE\_DEATH}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a6fb435ce5df49f99e65d639866be0d51}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a6fb435ce5df49f99e65d639866be0d51}} 
+BADDIE\+\_\+\+DEATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_YES@{MENU\_YES}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!MENU\_YES@{MENU\_YES}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a2daa1a96a8f7deb7290a7796fae9cdee}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a2daa1a96a8f7deb7290a7796fae9cdee}} 
+MENU\+\_\+\+YES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_NO@{MENU\_NO}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!MENU\_NO@{MENU\_NO}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a18290ab50b80bd8f942f73c6aa25e24d}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a18290ab50b80bd8f942f73c6aa25e24d}} 
+MENU\+\_\+\+NO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PICKLE\_DAMAGE@{PICKLE\_DAMAGE}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!PICKLE\_DAMAGE@{PICKLE\_DAMAGE}}}\mbox{\Hypertarget{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a887afb26a57b9e031af17848633ca42a}\label{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392a887afb26a57b9e031af17848633ca42a}} 
+PICKLE\+\_\+\+DAMAGE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00066}{66}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024}\label{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024}} 
+\index{LevelInfo.h@{LevelInfo.h}!TOWER\_BUTTON\_TYPES@{TOWER\_BUTTON\_TYPES}}
+\index{TOWER\_BUTTON\_TYPES@{TOWER\_BUTTON\_TYPES}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{TOWER\_BUTTON\_TYPES}{TOWER\_BUTTON\_TYPES}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024}{TOWER\+\_\+\+BUTTON\+\_\+\+TYPES}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPITTING\_TOWER\_BUTTON@{SPITTING\_TOWER\_BUTTON}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!SPITTING\_TOWER\_BUTTON@{SPITTING\_TOWER\_BUTTON}}}\mbox{\Hypertarget{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a27be5d930d48ae0eabb45a80374525fb}\label{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a27be5d930d48ae0eabb45a80374525fb}} 
+SPITTING\+\_\+\+TOWER\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{THROWING\_TOWER\_BUTTON@{THROWING\_TOWER\_BUTTON}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!THROWING\_TOWER\_BUTTON@{THROWING\_TOWER\_BUTTON}}}\mbox{\Hypertarget{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a7f16ce417db9d9cab0c775b3ea7362ec}\label{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a7f16ce417db9d9cab0c775b3ea7362ec}} 
+THROWING\+\_\+\+TOWER\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIND\_TOWER\_BUTTON@{WIND\_TOWER\_BUTTON}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!WIND\_TOWER\_BUTTON@{WIND\_TOWER\_BUTTON}}}\mbox{\Hypertarget{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024af330982cb2b9fefea7775e532fe03c48}\label{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024af330982cb2b9fefea7775e532fe03c48}} 
+WIND\+\_\+\+TOWER\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHOMP\_TOWER\_BUTTON@{CHOMP\_TOWER\_BUTTON}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!CHOMP\_TOWER\_BUTTON@{CHOMP\_TOWER\_BUTTON}}}\mbox{\Hypertarget{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a56c73841ecac2c095e85bfb7a06fd395}\label{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a56c73841ecac2c095e85bfb7a06fd395}} 
+CHOMP\+\_\+\+TOWER\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIRECTION\_PAD\_BUTTON@{DIRECTION\_PAD\_BUTTON}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!DIRECTION\_PAD\_BUTTON@{DIRECTION\_PAD\_BUTTON}}}\mbox{\Hypertarget{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a800b0a8cb0764fddc3e26ccb20d69b71}\label{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024a800b0a8cb0764fddc3e26ccb20d69b71}} 
+DIRECTION\+\_\+\+PAD\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_TOWER\_BUTTON\_SELECTED@{NO\_TOWER\_BUTTON\_SELECTED}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!NO\_TOWER\_BUTTON\_SELECTED@{NO\_TOWER\_BUTTON\_SELECTED}}}\mbox{\Hypertarget{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024ac2cf6e1192bcc32d6c2b9ccb33939e05}\label{_level_info_8h_aa6246da0a3681b4d4fe89ca5b58c4024ac2cf6e1192bcc32d6c2b9ccb33939e05}} 
+NO\+\_\+\+TOWER\+\_\+\+BUTTON\+\_\+\+SELECTED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00101}{101}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+
+\mbox{\Hypertarget{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0a}\label{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0a}} 
+\index{LevelInfo.h@{LevelInfo.h}!TOWER\_TYPES@{TOWER\_TYPES}}
+\index{TOWER\_TYPES@{TOWER\_TYPES}!LevelInfo.h@{LevelInfo.h}}
+\doxysubsubsection{\texorpdfstring{TOWER\_TYPES}{TOWER\_TYPES}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0a}{TOWER\+\_\+\+TYPES}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPITTING\_TOWER@{SPITTING\_TOWER}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!SPITTING\_TOWER@{SPITTING\_TOWER}}}\mbox{\Hypertarget{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa5d7ddc8fd76f271ec726e2551bf9100e}\label{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa5d7ddc8fd76f271ec726e2551bf9100e}} 
+SPITTING\+\_\+\+TOWER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{THROWING\_TOWER@{THROWING\_TOWER}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!THROWING\_TOWER@{THROWING\_TOWER}}}\mbox{\Hypertarget{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aac7d228b7cd8a84f13862ef687141422c}\label{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aac7d228b7cd8a84f13862ef687141422c}} 
+THROWING\+\_\+\+TOWER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIND\_TOWER@{WIND\_TOWER}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!WIND\_TOWER@{WIND\_TOWER}}}\mbox{\Hypertarget{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa496ce0deb0cff7322d0f701d52b37bc1}\label{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa496ce0deb0cff7322d0f701d52b37bc1}} 
+WIND\+\_\+\+TOWER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHOMP\_TOWER@{CHOMP\_TOWER}!LevelInfo.h@{LevelInfo.h}}\index{LevelInfo.h@{LevelInfo.h}!CHOMP\_TOWER@{CHOMP\_TOWER}}}\mbox{\Hypertarget{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa78b5f48fefcb5c63b15e92f4e4ae0a03}\label{_level_info_8h_ac392058eb293cf335e74fdb6f6c48a0aa78b5f48fefcb5c63b15e92f4e4ae0a03}} 
+CHOMP\+\_\+\+TOWER&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_level_info_8h_source_l00091}{91}} of file \mbox{\hyperlink{_level_info_8h_source}{Level\+Info.\+h}}.
+

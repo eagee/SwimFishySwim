@@ -1,0 +1,9 @@
+digraph "IParticleEffect"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{IParticleEffect\n||+ IParticleEffect()\l+ ~IParticleEffect()\l+ assignTexture()\l+ addParticles()\l+ updateParticles()\l+ renderParticles()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{ParticleEffect\n||+ ParticleEffect()\l+ ~ParticleEffect()\l+ assignTexture()\l+ addParticles()\l+ updateParticles()\l+ renderParticles()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_particle_effect.html",tooltip="Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ...."];
+}

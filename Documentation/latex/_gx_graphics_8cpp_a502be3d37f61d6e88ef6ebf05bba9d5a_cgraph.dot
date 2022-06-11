@@ -1,0 +1,26 @@
+digraph "allocatePNGTexture"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="allocatePNGTexture",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="PNGU_DecodeTo4x4RGBA8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pngu_8c.html#a23c5c1c50cc3a7dcb9a020f12855b70d",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="pngu_decode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pngu_8c.html#aa2f96f225bd715033eb4aa481f45b500",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="pngu_free_info",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pngu_8c.html#a95076155caa3a3439b2c0b4d9cc3345c",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="pngu_info",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pngu_8c.html#a3a12e3ae65a7ffd28ccd0a1473d6f4aa",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="pngu_read_data_from\l_buffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pngu_8c.html#a786ab526a2e781803c72bab3f205eef6",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="PNGU_GetImageProperties",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pngu_8c.html#a77398ea67d8889ec52590f6015e2fb70",tooltip=" "];
+  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="PNGU_ReleaseImageContext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pngu_8c.html#a1d3c1bbde327d7da4c7234f7a4651232",tooltip=" "];
+  Node8 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="PNGU_SelectImageFromDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pngu_8c.html#a879590240942198d807720290c728e1f",tooltip=" "];
+}

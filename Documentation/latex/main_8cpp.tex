@@ -1,0 +1,371 @@
+\hypertarget{main_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/main.cpp File Reference}
+\label{main_8cpp}\index{C:/TeamSheeps/SwimFishySwim/main.cpp@{C:/TeamSheeps/SwimFishySwim/main.cpp}}
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Testing.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IControllers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ISprite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ILevel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IAudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IProjectile\+Weapon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Methods.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+One.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Target.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Bullet.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Projectile\+Shot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Projectile\+Spit.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Projectile\+Bomb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Projectile\+Mine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Projectile\+Toss.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Controller\+Wii.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gx\+Graphics.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a05710e80db10fe76fa57f629ca32b7e5}{PLAYER\+\_\+\+VELOCITY}}~20.\+0f
+\item 
+\#define \mbox{\hyperlink{main_8cpp_adef07a83b763aa8ea505b0d6b01f9260}{PLAYER\+\_\+\+DRAG}}~0.\+1f
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a71df7ec0cb199f8ae614e86988e43416}{PLAYER\+\_\+\+ACCEL}}~0.\+5f
+\item 
+\#define \mbox{\hyperlink{main_8cpp_aad83b5ec5f8d43384c666cf26865aaea}{PLAYER}}~0
+\item 
+\#define \mbox{\hyperlink{main_8cpp_abf5b8fbbeb8255336e401a15a80214a8}{TREE}}~1
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ac5cc41d68017af4d6facb861094b07d4}{ROCK}}~2
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a02b1f94d077fe429d429abc9809b4eaf}{BADDIE}}~3
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_adc55d66d01b104380f72a64f36c4cb9d}{run\+Unit\+Tests}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_ac99faa70519b7b2ef2fad8e3d96b2644}{setup\+Text\+Rendering}} (\mbox{\hyperlink{class_i_text}{IText}} \&text, \mbox{\hyperlink{class_i_graphics}{IGraphics}} \&graphics)
+\item 
+void \mbox{\hyperlink{main_8cpp_a201fc25b32d87b4c76ff249079453e5c}{pre\+Allocate\+Game\+Models}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_a890aa0a6c8fbb9fc022525f3b0d643db}{pre\+Allocate\+Sprite\+Objects}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_a412af34e0f4f64fdafdda45036961dff}{pre\+Allocate\+Menu\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_afebec8e7edae80c1130614cf0966d6fa}{pre\+Allocate\+Particle\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_a59342c8f32725e192c07bd29c2b724e4}{de\+Allocate\+Particle\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_a5750aba0eb26bf5b42e74987e506ea89}{de\+Allocate\+Sprite\+Objects}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_a3b299c261b806f6fe2a8aeaf9f2274bb}{de\+Allocate\+Game\+Models}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_a3a5882239f9423748288463243d502c4}{pre\+Allocate\+Audio\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_a183665efc0ff1ac34295ba07b98c2f7c}{de\+Allocate\+Audio\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_a3bf3920604fb69528f2cc162d1e954a4}{de\+Allocate\+Menu\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{main_8cpp_aa4173368a267598f9c3c83944e79a303}{Run\+Game\+Main}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_a225bf580053e8dbb4870bdcb72c7e01e}{setup\+Unit\+Testing}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_text}{Text}} $\ast$ \mbox{\hyperlink{main_8cpp_a2b23bd133a8b13b32aef97c1ce9fb4e5}{g\+Text\+Display}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_a02b1f94d077fe429d429abc9809b4eaf}\label{main_8cpp_a02b1f94d077fe429d429abc9809b4eaf}} 
+\index{main.cpp@{main.cpp}!BADDIE@{BADDIE}}
+\index{BADDIE@{BADDIE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BADDIE}{BADDIE}}
+{\footnotesize\ttfamily \#define BADDIE~3}
+
+summary\texorpdfstring{$>$}{>} Provides an interface for executing all of the unit testing associated with swim fishy swim. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_aad83b5ec5f8d43384c666cf26865aaea}\label{main_8cpp_aad83b5ec5f8d43384c666cf26865aaea}} 
+\index{main.cpp@{main.cpp}!PLAYER@{PLAYER}}
+\index{PLAYER@{PLAYER}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PLAYER}{PLAYER}}
+{\footnotesize\ttfamily \#define PLAYER~0}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a71df7ec0cb199f8ae614e86988e43416}\label{main_8cpp_a71df7ec0cb199f8ae614e86988e43416}} 
+\index{main.cpp@{main.cpp}!PLAYER\_ACCEL@{PLAYER\_ACCEL}}
+\index{PLAYER\_ACCEL@{PLAYER\_ACCEL}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_ACCEL}{PLAYER\_ACCEL}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+ACCEL~0.\+5f}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_adef07a83b763aa8ea505b0d6b01f9260}\label{main_8cpp_adef07a83b763aa8ea505b0d6b01f9260}} 
+\index{main.cpp@{main.cpp}!PLAYER\_DRAG@{PLAYER\_DRAG}}
+\index{PLAYER\_DRAG@{PLAYER\_DRAG}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_DRAG}{PLAYER\_DRAG}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+DRAG~0.\+1f}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a05710e80db10fe76fa57f629ca32b7e5}\label{main_8cpp_a05710e80db10fe76fa57f629ca32b7e5}} 
+\index{main.cpp@{main.cpp}!PLAYER\_VELOCITY@{PLAYER\_VELOCITY}}
+\index{PLAYER\_VELOCITY@{PLAYER\_VELOCITY}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_VELOCITY}{PLAYER\_VELOCITY}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+VELOCITY~20.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_ac5cc41d68017af4d6facb861094b07d4}\label{main_8cpp_ac5cc41d68017af4d6facb861094b07d4}} 
+\index{main.cpp@{main.cpp}!ROCK@{ROCK}}
+\index{ROCK@{ROCK}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ROCK}{ROCK}}
+{\footnotesize\ttfamily \#define ROCK~2}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_abf5b8fbbeb8255336e401a15a80214a8}\label{main_8cpp_abf5b8fbbeb8255336e401a15a80214a8}} 
+\index{main.cpp@{main.cpp}!TREE@{TREE}}
+\index{TREE@{TREE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{TREE}{TREE}}
+{\footnotesize\ttfamily \#define TREE~1}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a183665efc0ff1ac34295ba07b98c2f7c}\label{main_8cpp_a183665efc0ff1ac34295ba07b98c2f7c}} 
+\index{main.cpp@{main.cpp}!deAllocateAudioData@{deAllocateAudioData}}
+\index{deAllocateAudioData@{deAllocateAudioData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{deAllocateAudioData()}{deAllocateAudioData()}}
+{\footnotesize\ttfamily void de\+Allocate\+Audio\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Deallocates data used for menus ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{main_8cpp_a3b299c261b806f6fe2a8aeaf9f2274bb}\label{main_8cpp_a3b299c261b806f6fe2a8aeaf9f2274bb}} 
+\index{main.cpp@{main.cpp}!deAllocateGameModels@{deAllocateGameModels}}
+\index{deAllocateGameModels@{deAllocateGameModels}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{deAllocateGameModels()}{deAllocateGameModels()}}
+{\footnotesize\ttfamily void de\+Allocate\+Game\+Models (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Preallocates data used for music ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00273}{273}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{main_8cpp_a3bf3920604fb69528f2cc162d1e954a4}\label{main_8cpp_a3bf3920604fb69528f2cc162d1e954a4}} 
+\index{main.cpp@{main.cpp}!deAllocateMenuData@{deAllocateMenuData}}
+\index{deAllocateMenuData@{deAllocateMenuData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{deAllocateMenuData()}{deAllocateMenuData()}}
+{\footnotesize\ttfamily void de\+Allocate\+Menu\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Run\+Game\+Main preallocates data, runs levels, and deallocates data before exiting /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00333}{333}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{main_8cpp_a59342c8f32725e192c07bd29c2b724e4}\label{main_8cpp_a59342c8f32725e192c07bd29c2b724e4}} 
+\index{main.cpp@{main.cpp}!deAllocateParticleData@{deAllocateParticleData}}
+\index{deAllocateParticleData@{deAllocateParticleData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{deAllocateParticleData()}{deAllocateParticleData()}}
+{\footnotesize\ttfamily void de\+Allocate\+Particle\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Deallocates sprite objects that were used throughtout the game /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00244}{244}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{main_8cpp_a5750aba0eb26bf5b42e74987e506ea89}\label{main_8cpp_a5750aba0eb26bf5b42e74987e506ea89}} 
+\index{main.cpp@{main.cpp}!deAllocateSpriteObjects@{deAllocateSpriteObjects}}
+\index{deAllocateSpriteObjects@{deAllocateSpriteObjects}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{deAllocateSpriteObjects()}{deAllocateSpriteObjects()}}
+{\footnotesize\ttfamily void de\+Allocate\+Sprite\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Deallocates models that were used throughout the game /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00257}{257}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00418}{418}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{main_8cpp_a3a5882239f9423748288463243d502c4}\label{main_8cpp_a3a5882239f9423748288463243d502c4}} 
+\index{main.cpp@{main.cpp}!preAllocateAudioData@{preAllocateAudioData}}
+\index{preAllocateAudioData@{preAllocateAudioData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{preAllocateAudioData()}{preAllocateAudioData()}}
+{\footnotesize\ttfamily void pre\+Allocate\+Audio\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Deallocates data used for music ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00292}{292}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{main_8cpp_a201fc25b32d87b4c76ff249079453e5c}\label{main_8cpp_a201fc25b32d87b4c76ff249079453e5c}} 
+\index{main.cpp@{main.cpp}!preAllocateGameModels@{preAllocateGameModels}}
+\index{preAllocateGameModels@{preAllocateGameModels}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{preAllocateGameModels()}{preAllocateGameModels()}}
+{\footnotesize\ttfamily void pre\+Allocate\+Game\+Models (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Preallocates sprite objects that are used throughout the game /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{main_8cpp_a412af34e0f4f64fdafdda45036961dff}\label{main_8cpp_a412af34e0f4f64fdafdda45036961dff}} 
+\index{main.cpp@{main.cpp}!preAllocateMenuData@{preAllocateMenuData}}
+\index{preAllocateMenuData@{preAllocateMenuData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{preAllocateMenuData()}{preAllocateMenuData()}}
+{\footnotesize\ttfamily void pre\+Allocate\+Menu\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Preallocates the particle engines we\textquotesingle{}ll use in the game... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{main_8cpp_afebec8e7edae80c1130614cf0966d6fa}\label{main_8cpp_afebec8e7edae80c1130614cf0966d6fa}} 
+\index{main.cpp@{main.cpp}!preAllocateParticleData@{preAllocateParticleData}}
+\index{preAllocateParticleData@{preAllocateParticleData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{preAllocateParticleData()}{preAllocateParticleData()}}
+{\footnotesize\ttfamily void pre\+Allocate\+Particle\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} deallocates the particle engines we\textquotesingle{}ll use in the game... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00223}{223}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 16
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{main_8cpp_a890aa0a6c8fbb9fc022525f3b0d643db}\label{main_8cpp_a890aa0a6c8fbb9fc022525f3b0d643db}} 
+\index{main.cpp@{main.cpp}!preAllocateSpriteObjects@{preAllocateSpriteObjects}}
+\index{preAllocateSpriteObjects@{preAllocateSpriteObjects}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{preAllocateSpriteObjects()}{preAllocateSpriteObjects()}}
+{\footnotesize\ttfamily void pre\+Allocate\+Sprite\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Preallocates the menus we\textquotesingle{}ll use in the game... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 18
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{main_8cpp_aa4173368a267598f9c3c83944e79a303}\label{main_8cpp_aa4173368a267598f9c3c83944e79a303}} 
+\index{main.cpp@{main.cpp}!RunGameMain@{RunGameMain}}
+\index{RunGameMain@{RunGameMain}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RunGameMain()}{RunGameMain()}}
+{\footnotesize\ttfamily void Run\+Game\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00341}{341}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 20
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{main_8cpp_adc55d66d01b104380f72a64f36c4cb9d}\label{main_8cpp_adc55d66d01b104380f72a64f36c4cb9d}} 
+\index{main.cpp@{main.cpp}!runUnitTests@{runUnitTests}}
+\index{runUnitTests@{runUnitTests}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{runUnitTests()}{runUnitTests()}}
+{\footnotesize\ttfamily void run\+Unit\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 22
+Here is the caller graph for this function\+:
+% FIG 23
+\mbox{\Hypertarget{main_8cpp_ac99faa70519b7b2ef2fad8e3d96b2644}\label{main_8cpp_ac99faa70519b7b2ef2fad8e3d96b2644}} 
+\index{main.cpp@{main.cpp}!setupTextRendering@{setupTextRendering}}
+\index{setupTextRendering@{setupTextRendering}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setupTextRendering()}{setupTextRendering()}}
+{\footnotesize\ttfamily void setup\+Text\+Rendering (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_text}{IText}} \&}]{text,  }\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} \&}]{graphics }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Preallocates models that are used throughout the game /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 24
+Here is the caller graph for this function\+:
+% FIG 25
+\mbox{\Hypertarget{main_8cpp_a225bf580053e8dbb4870bdcb72c7e01e}\label{main_8cpp_a225bf580053e8dbb4870bdcb72c7e01e}} 
+\index{main.cpp@{main.cpp}!setupUnitTesting@{setupUnitTesting}}
+\index{setupUnitTesting@{setupUnitTesting}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setupUnitTesting()}{setupUnitTesting()}}
+{\footnotesize\ttfamily void setup\+Unit\+Testing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00406}{406}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 26
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a2b23bd133a8b13b32aef97c1ce9fb4e5}\label{main_8cpp_a2b23bd133a8b13b32aef97c1ce9fb4e5}} 
+\index{main.cpp@{main.cpp}!gTextDisplay@{gTextDisplay}}
+\index{gTextDisplay@{gTextDisplay}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gTextDisplay}{gTextDisplay}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_text}{Text}}$\ast$ g\+Text\+Display}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

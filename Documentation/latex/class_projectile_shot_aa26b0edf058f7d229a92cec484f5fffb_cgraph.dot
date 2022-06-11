@@ -1,0 +1,35 @@
+digraph "ProjectileShot::updateWeaponAndProjectiles"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ProjectileShot::updateWeapon\lAndProjectiles",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ProjectileMethodsUpdateExperience",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_projectile_methods_8cpp.html#a73fa18d2cd56ceb3105b249fe0884db2",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ProjectileMethodsCalculate\lMaxProjectiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_projectile_methods_8cpp.html#a60938b8426986e55ff13683725cb193f",tooltip="Calculates the maximum projectiles available when a level changes..."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ProjectileMethodsUpdateProjectiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_projectile_methods_8cpp.html#aa5e4b60863cb90cfcf051452061671bf",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="LevelMethodsHandleRipple\lEffects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#abd61dfe68f73958d52c6281f759ed6b5",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ParticleEffect::addParticles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_particle_effect.html#a807a1af756635bd62afd7b5ad190d29c",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ISprite::getAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a44ab48c7a0ca24cf44b5aeb7c84ba597",tooltip=" "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ISprite::getLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a04e5809c871ecfe7caeab6d6886e2bbd",tooltip=" "];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="ISprite::getWaterLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#afd39c00bbd79fc13234885c8941ea798",tooltip=" "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="ISprite::hasPeriodicTimer\lExpired",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a7ac783a7e9180e85f608b2263aee9e2a",tooltip=" "];
+  Node4 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="LevelMethodsHandleSplash\lEffects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#ab1aa958de1a8fc83d2c96975a85e746a",tooltip=" "];
+  Node11 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="LevelMethodsHandleTilemap\lCollision",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#ae36552f0fda1d15060566206e64d996f",tooltip=" "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="ISprite::getBoundingTriangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#ad02479bdf3ae8da1e43dd39a95b96940",tooltip=" "];
+  Node12 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+}

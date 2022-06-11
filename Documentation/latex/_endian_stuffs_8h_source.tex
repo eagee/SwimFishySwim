@@ -1,0 +1,29 @@
+\hypertarget{_endian_stuffs_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Endian\+Stuffs.h}
+\mbox{\hyperlink{_endian_stuffs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00001}00001 \textcolor{comment}{// EndianStuffs.h}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00002}00002 \textcolor{comment}{// Defines a set of Macros that can be used to swap the endianness of anything in the known universe ...}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00005}00005 \textcolor{preprocessor}{\#ifndef ENDIAN\_STUFFS\_H}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00006}00006 \textcolor{preprocessor}{\#define ENDIAN\_STUFFS\_H}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00008}00008 \textcolor{comment}{// Change this to 0 if we're going to compile for one of those retard-\/little-\/endian-\/chips... oh wait...}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00009}\mbox{\hyperlink{_endian_stuffs_8h_a36d04521be8ba1591aee66d9f0ca80a9}{00009}} \textcolor{preprocessor}{\#define THIS\_IS\_A\_BIG\_ENDIAN\_SYSTEM 1}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00011}00011 \textcolor{comment}{// This is used for converting a float from a little endian system to a float on a big endian system ...}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00012}\mbox{\hyperlink{unionconvert}{00012}} \textcolor{keyword}{typedef} \textcolor{keyword}{union}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00014}\mbox{\hyperlink{unionconvert_a1bffb0c36a7c274a6eb13fb0c2b03d5c}{00014}}       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i[ \textcolor{keyword}{sizeof}(float) ];   }
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00015}\mbox{\hyperlink{unionconvert_a345bd04550d2b84b490acb97a783968b}{00015}}       \textcolor{keywordtype}{float} \mbox{\hyperlink{unionconvert_a345bd04550d2b84b490acb97a783968b}{f}};}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00016}00016 \}\mbox{\hyperlink{unionconvert}{convert}};}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00018}\mbox{\hyperlink{_endian_stuffs_8h_a4f7f09e660541b3f2b8afd081a6e717a}{00018}} \textcolor{keywordtype}{float} \mbox{\hyperlink{_endian_stuffs_8h_a4f7f09e660541b3f2b8afd081a6e717a}{convertFloat}}(\textcolor{keywordtype}{float} toConvert);}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00020}\mbox{\hyperlink{_endian_stuffs_8h_a5cbd3b191731d6e19ef21a0d6c8d492d}{00020}} \textcolor{preprocessor}{\#define SWAP\_ENDIAN\_SHORT(x) x = (((x \& 0xFF00) >> 8) | ((x \& 0x00FF) << 8));}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00021}\mbox{\hyperlink{_endian_stuffs_8h_a571ca5607e9769b3b9679f0616c89018}{00021}} \textcolor{preprocessor}{\#define SWAP\_ENDIAN\_LONG(x) x = (((x \& 0xFF000000) >> 24) | ((x \& 0x00FF0000) >> 8) | ((x \& 0x0000FF00) << 8) | ((x \& 0x000000FF) << 24));}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00022}\mbox{\hyperlink{_endian_stuffs_8h_a537523f90892ac04b2e76f619286fbb1}{00022}} \textcolor{preprocessor}{\#define SWAP\_ENDIAN\_FLOAT(theFloat) theFloat = convertFloat(theFloat);}}
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00023}00023  }
+\DoxyCodeLine{\Hypertarget{_endian_stuffs_8h_source_l00024}00024 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

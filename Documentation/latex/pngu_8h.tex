@@ -1,0 +1,576 @@
+\hypertarget{pngu_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/pngu.h File Reference}
+\label{pngu_8h}\index{C:/TeamSheeps/SwimFishySwim/pngu.h@{C:/TeamSheeps/SwimFishySwim/pngu.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_n_g_u_c_o_l_o_r}{PNGUCOLOR}}
+\item 
+struct \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p}{PNGUPROP}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}{PNGU\+\_\+\+OK}}~0
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a6c251759f731cad6c39ca9a65f6f8b85}{PNGU\+\_\+\+ODD\+\_\+\+WIDTH}}~1
+\item 
+\#define \mbox{\hyperlink{pngu_8h_aaa97519abb498ec57970cb2165995e62}{PNGU\+\_\+\+ODD\+\_\+\+STRIDE}}~2
+\item 
+\#define \mbox{\hyperlink{pngu_8h_afb465a5841168569bb08c23f0f1b1cdd}{PNGU\+\_\+\+INVALID\+\_\+\+WIDTH\+\_\+\+OR\+\_\+\+HEIGHT}}~3
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a87d3ae9979131b3d67234755b9a34abe}{PNGU\+\_\+\+FILE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+PNG}}~4
+\item 
+\#define \mbox{\hyperlink{pngu_8h_abca8b04f6d5dee4dfcf86710dd8a4de7}{PNGU\+\_\+\+UNSUPPORTED\+\_\+\+COLOR\+\_\+\+TYPE}}~5
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a44df464719d7186f93f37ad72dd04664}{PNGU\+\_\+\+NO\+\_\+\+FILE\+\_\+\+SELECTED}}~6
+\item 
+\#define \mbox{\hyperlink{pngu_8h_af3832969e5ff0598a6d9c8e20b5f01bd}{PNGU\+\_\+\+CANT\+\_\+\+OPEN\+\_\+\+FILE}}~7
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a06ee95bac3327c66e6b63b036d9d8daf}{PNGU\+\_\+\+CANT\+\_\+\+READ\+\_\+\+FILE}}~8
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a4f6946705916a4384970f305e1189789}{PNGU\+\_\+\+LIB\+\_\+\+ERROR}}~9
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a474a93e6dcf0674450bf60affa479e46}{PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+GRAY}}~1
+\item 
+\#define \mbox{\hyperlink{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}{PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+GRAY\+\_\+\+ALPHA}}~2
+\item 
+\#define \mbox{\hyperlink{pngu_8h_ae2b218161e5c9e567bf1406db4201f55}{PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+PALETTE}}~3
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a6ff6f2a0dc030bb90414ce8a6ea1d201}{PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+RGB}}~4
+\item 
+\#define \mbox{\hyperlink{pngu_8h_aedee73538b02a8db54580fe0dd314963}{PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+RGB\+\_\+\+ALPHA}}~5
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a50069315f029ce8c6613fbb9ab4d0229}{PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+UNKNOWN}}~6
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a196e7a14f5c7c9b0d5a94cc7ef1761b6}{PNGU\+\_\+\+RGB8\+\_\+\+TO\+\_\+\+RGB565}}(r,  g,  b)~( ((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\+\_\+u16}}) r) \& 0x\+F8U) $<$$<$ 8) $\vert$ ((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\+\_\+u16}}) g) \& 0x\+FCU) $<$$<$ 3) $\vert$ (((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\+\_\+u16}}) b) $>$$>$ 3) )
+\item 
+\#define \mbox{\hyperlink{pngu_8h_aadd98cf17d2ff500386e9e59459227ad}{PNGU\+\_\+\+RGB8\+\_\+\+TO\+\_\+\+RGB5\+A3}}(r,  g,  b,  a)
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a04f355e969ff951a560383eb874201c0}{PNGU\+\_\+\+DECODE\+\_\+\+TO\+\_\+\+COORDS\+\_\+\+YCb\+YCr}}(ctx,  coordX,  coordY,  img\+Width,  img\+Height,  buffer\+Width,  buffer\+Height,  buffer)
+\item 
+\#define \mbox{\hyperlink{pngu_8h_ae8d44aa2171c5eb7527b7f4d31e745d8}{PNGU\+\_\+\+DECODE\+\_\+\+TO\+\_\+\+COORDS\+\_\+\+RGB565}}(ctx,  coordX,  coordY,  img\+Width,  img\+Height,  buffer\+Width,  buffer\+Height,  buffer)
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a21ccca92f5abec10fdf9a3439f56bf2c}{PNGU\+\_\+\+DECODE\+\_\+\+TO\+\_\+\+COORDS\+\_\+\+RGBA8}}(ctx,  coordX,  coordY,  img\+Width,  img\+Height,  default\+\_\+alpha,  buffer\+Width,  buffer\+Height,  buffer)
+\item 
+\#define \mbox{\hyperlink{pngu_8h_a03ed02b09017aad1b18ee0af6cf11019}{PNGU\+\_\+\+ENCODE\+\_\+\+TO\+\_\+\+COORDS\+\_\+\+YCb\+YCr}}(ctx,  coordX,  coordY,  img\+Width,  img\+Height,  buffer\+Width,  buffer\+Height,  buffer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}
+\item 
+typedef unsigned short \mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\+\_\+u16}}
+\item 
+typedef unsigned int \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}
+\item 
+typedef unsigned long long \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\+\_\+u64}}
+\item 
+typedef struct \mbox{\hyperlink{struct___i_m_g_c_t_x}{\+\_\+\+IMGCTX}} $\ast$ \mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} \mbox{\hyperlink{pngu_8h_af6d2697ca6f59f48ea6bc50b0aea0eb7}{PNGU\+\_\+\+RGB8\+\_\+\+TO\+\_\+\+YCb\+YCr}} (\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} r1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} g1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} b1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} r2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} g2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} b2)
+\item 
+void \mbox{\hyperlink{pngu_8h_ad656f399c1ba77ffc3c803c364f5722f}{PNGU\+\_\+\+YCb\+YCr\+\_\+\+TO\+\_\+\+RGB8}} (\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} ycbycr, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$r1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$g1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$b1, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$r2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$g2, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$b2)
+\item 
+\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} \mbox{\hyperlink{pngu_8h_a8d9ec5ac0361ec447b85e29860744bb8}{PNGU\+\_\+\+Select\+Image\+From\+Buffer}} (const void $\ast$buffer)
+\item 
+\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} \mbox{\hyperlink{pngu_8h_a879590240942198d807720290c728e1f}{PNGU\+\_\+\+Select\+Image\+From\+Device}} (const char $\ast$filename)
+\item 
+void \mbox{\hyperlink{pngu_8h_a1d3c1bbde327d7da4c7234f7a4651232}{PNGU\+\_\+\+Release\+Image\+Context}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx)
+\item 
+int \mbox{\hyperlink{pngu_8h_ad70e86e397bf714f95f8cf1ad2a3628d}{PNGU\+\_\+\+Get\+Image\+Properties}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx, \mbox{\hyperlink{struct_p_n_g_u_p_r_o_p}{PNGUPROP}} $\ast$fileproperties)
+\item 
+int \mbox{\hyperlink{pngu_8h_a7c9d230223a28ee6658c1777fd918e0b}{PNGU\+\_\+\+Decode\+To\+YCb\+YCr}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} height, void $\ast$buffer, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} stride)
+\item 
+int \mbox{\hyperlink{pngu_8h_a12cb78b5948101e8bb8382cf75e32c9b}{PNGU\+\_\+\+Decode\+To\+RGB565}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} height, void $\ast$buffer, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} stride)
+\item 
+int \mbox{\hyperlink{pngu_8h_a20a3577c489233cffab341008136d265}{PNGU\+\_\+\+Decode\+To\+RGBA8}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} height, void $\ast$buffer, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} stride, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} default\+\_\+alpha)
+\item 
+int \mbox{\hyperlink{pngu_8h_ad1eacbbb449f3bfef1afeafb3f70b3bd}{PNGU\+\_\+\+Decode\+To4x4\+RGB565}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} height, void $\ast$buffer)
+\item 
+int \mbox{\hyperlink{pngu_8h_a52df1b9aa4d2a806b2c34ca8fcd3865f}{PNGU\+\_\+\+Decode\+To4x4\+RGB5\+A3}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} height, void $\ast$buffer, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} default\+\_\+alpha)
+\item 
+int \mbox{\hyperlink{pngu_8h_a23c5c1c50cc3a7dcb9a020f12855b70d}{PNGU\+\_\+\+Decode\+To4x4\+RGBA8}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} height, void $\ast$buffer, \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} default\+\_\+alpha)
+\item 
+int \mbox{\hyperlink{pngu_8h_a4a7f91e558b5a0da015d3c0dc8d3e180}{PNGU\+\_\+\+Encode\+From\+YCb\+YCr}} (\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} ctx, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} width, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} height, void $\ast$buffer, \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} stride)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pngu_8h_af3832969e5ff0598a6d9c8e20b5f01bd}\label{pngu_8h_af3832969e5ff0598a6d9c8e20b5f01bd}} 
+\index{pngu.h@{pngu.h}!PNGU\_CANT\_OPEN\_FILE@{PNGU\_CANT\_OPEN\_FILE}}
+\index{PNGU\_CANT\_OPEN\_FILE@{PNGU\_CANT\_OPEN\_FILE}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_CANT\_OPEN\_FILE}{PNGU\_CANT\_OPEN\_FILE}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+CANT\+\_\+\+OPEN\+\_\+\+FILE~7}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00021}{21}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a06ee95bac3327c66e6b63b036d9d8daf}\label{pngu_8h_a06ee95bac3327c66e6b63b036d9d8daf}} 
+\index{pngu.h@{pngu.h}!PNGU\_CANT\_READ\_FILE@{PNGU\_CANT\_READ\_FILE}}
+\index{PNGU\_CANT\_READ\_FILE@{PNGU\_CANT\_READ\_FILE}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_CANT\_READ\_FILE}{PNGU\_CANT\_READ\_FILE}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+CANT\+\_\+\+READ\+\_\+\+FILE~8}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00022}{22}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a474a93e6dcf0674450bf60affa479e46}\label{pngu_8h_a474a93e6dcf0674450bf60affa479e46}} 
+\index{pngu.h@{pngu.h}!PNGU\_COLOR\_TYPE\_GRAY@{PNGU\_COLOR\_TYPE\_GRAY}}
+\index{PNGU\_COLOR\_TYPE\_GRAY@{PNGU\_COLOR\_TYPE\_GRAY}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_COLOR\_TYPE\_GRAY}{PNGU\_COLOR\_TYPE\_GRAY}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+GRAY~1}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00026}{26}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}\label{pngu_8h_adcd4b65f1ca1234acc32f4980bbf3a56}} 
+\index{pngu.h@{pngu.h}!PNGU\_COLOR\_TYPE\_GRAY\_ALPHA@{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}}
+\index{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA@{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}{PNGU\_COLOR\_TYPE\_GRAY\_ALPHA}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+GRAY\+\_\+\+ALPHA~2}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00027}{27}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_ae2b218161e5c9e567bf1406db4201f55}\label{pngu_8h_ae2b218161e5c9e567bf1406db4201f55}} 
+\index{pngu.h@{pngu.h}!PNGU\_COLOR\_TYPE\_PALETTE@{PNGU\_COLOR\_TYPE\_PALETTE}}
+\index{PNGU\_COLOR\_TYPE\_PALETTE@{PNGU\_COLOR\_TYPE\_PALETTE}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_COLOR\_TYPE\_PALETTE}{PNGU\_COLOR\_TYPE\_PALETTE}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+PALETTE~3}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00028}{28}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a6ff6f2a0dc030bb90414ce8a6ea1d201}\label{pngu_8h_a6ff6f2a0dc030bb90414ce8a6ea1d201}} 
+\index{pngu.h@{pngu.h}!PNGU\_COLOR\_TYPE\_RGB@{PNGU\_COLOR\_TYPE\_RGB}}
+\index{PNGU\_COLOR\_TYPE\_RGB@{PNGU\_COLOR\_TYPE\_RGB}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_COLOR\_TYPE\_RGB}{PNGU\_COLOR\_TYPE\_RGB}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+RGB~4}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00029}{29}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_aedee73538b02a8db54580fe0dd314963}\label{pngu_8h_aedee73538b02a8db54580fe0dd314963}} 
+\index{pngu.h@{pngu.h}!PNGU\_COLOR\_TYPE\_RGB\_ALPHA@{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}}
+\index{PNGU\_COLOR\_TYPE\_RGB\_ALPHA@{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}{PNGU\_COLOR\_TYPE\_RGB\_ALPHA}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+RGB\+\_\+\+ALPHA~5}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00030}{30}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a50069315f029ce8c6613fbb9ab4d0229}\label{pngu_8h_a50069315f029ce8c6613fbb9ab4d0229}} 
+\index{pngu.h@{pngu.h}!PNGU\_COLOR\_TYPE\_UNKNOWN@{PNGU\_COLOR\_TYPE\_UNKNOWN}}
+\index{PNGU\_COLOR\_TYPE\_UNKNOWN@{PNGU\_COLOR\_TYPE\_UNKNOWN}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_COLOR\_TYPE\_UNKNOWN}{PNGU\_COLOR\_TYPE\_UNKNOWN}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+COLOR\+\_\+\+TYPE\+\_\+\+UNKNOWN~6}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00031}{31}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_ae8d44aa2171c5eb7527b7f4d31e745d8}\label{pngu_8h_ae8d44aa2171c5eb7527b7f4d31e745d8}} 
+\index{pngu.h@{pngu.h}!PNGU\_DECODE\_TO\_COORDS\_RGB565@{PNGU\_DECODE\_TO\_COORDS\_RGB565}}
+\index{PNGU\_DECODE\_TO\_COORDS\_RGB565@{PNGU\_DECODE\_TO\_COORDS\_RGB565}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DECODE\_TO\_COORDS\_RGB565}{PNGU\_DECODE\_TO\_COORDS\_RGB565}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+DECODE\+\_\+\+TO\+\_\+\+COORDS\+\_\+\+RGB565(\begin{DoxyParamCaption}\item[{}]{ctx,  }\item[{}]{coordX,  }\item[{}]{coordY,  }\item[{}]{img\+Width,  }\item[{}]{img\+Height,  }\item[{}]{buffer\+Width,  }\item[{}]{buffer\+Height,  }\item[{}]{buffer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                            \(\backslash\)}
+\DoxyCodeLine{        PNGU\_DecodeToRGB565 (ctx, imgWidth, imgHeight, ((\textcolor{keywordtype}{void} *) buffer) + (coordY) * (bufferWidth) * 2 +   \(\backslash\)}
+\DoxyCodeLine{                            (coordX) * 2, (bufferWidth) -\/ (imgWidth))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00128}{128}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a21ccca92f5abec10fdf9a3439f56bf2c}\label{pngu_8h_a21ccca92f5abec10fdf9a3439f56bf2c}} 
+\index{pngu.h@{pngu.h}!PNGU\_DECODE\_TO\_COORDS\_RGBA8@{PNGU\_DECODE\_TO\_COORDS\_RGBA8}}
+\index{PNGU\_DECODE\_TO\_COORDS\_RGBA8@{PNGU\_DECODE\_TO\_COORDS\_RGBA8}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DECODE\_TO\_COORDS\_RGBA8}{PNGU\_DECODE\_TO\_COORDS\_RGBA8}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+DECODE\+\_\+\+TO\+\_\+\+COORDS\+\_\+\+RGBA8(\begin{DoxyParamCaption}\item[{}]{ctx,  }\item[{}]{coordX,  }\item[{}]{coordY,  }\item[{}]{img\+Width,  }\item[{}]{img\+Height,  }\item[{}]{default\+\_\+alpha,  }\item[{}]{buffer\+Width,  }\item[{}]{buffer\+Height,  }\item[{}]{buffer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                            \(\backslash\)}
+\DoxyCodeLine{        PNGU\_DecodeToRGBA8 (ctx, imgWidth, imgHeight, ((\textcolor{keywordtype}{void} *) buffer) + (coordY) * (bufferWidth) * 2 +    \(\backslash\)}
+\DoxyCodeLine{                            (coordX) * 2, (bufferWidth) -\/ (imgWidth), default\_alpha)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00139}{139}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a04f355e969ff951a560383eb874201c0}\label{pngu_8h_a04f355e969ff951a560383eb874201c0}} 
+\index{pngu.h@{pngu.h}!PNGU\_DECODE\_TO\_COORDS\_YCbYCr@{PNGU\_DECODE\_TO\_COORDS\_YCbYCr}}
+\index{PNGU\_DECODE\_TO\_COORDS\_YCbYCr@{PNGU\_DECODE\_TO\_COORDS\_YCbYCr}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DECODE\_TO\_COORDS\_YCbYCr}{PNGU\_DECODE\_TO\_COORDS\_YCbYCr}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+DECODE\+\_\+\+TO\+\_\+\+COORDS\+\_\+\+YCb\+YCr(\begin{DoxyParamCaption}\item[{}]{ctx,  }\item[{}]{coordX,  }\item[{}]{coordY,  }\item[{}]{img\+Width,  }\item[{}]{img\+Height,  }\item[{}]{buffer\+Width,  }\item[{}]{buffer\+Height,  }\item[{}]{buffer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                            \(\backslash\)}
+\DoxyCodeLine{        PNGU\_DecodeToYCbYCr (ctx, imgWidth, imgHeight, ((\textcolor{keywordtype}{void} *) buffer) + (coordY) * (bufferWidth) * 2 +   \(\backslash\)}
+\DoxyCodeLine{                            (coordX) * 2, (bufferWidth) -\/ (imgWidth))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00118}{118}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a03ed02b09017aad1b18ee0af6cf11019}\label{pngu_8h_a03ed02b09017aad1b18ee0af6cf11019}} 
+\index{pngu.h@{pngu.h}!PNGU\_ENCODE\_TO\_COORDS\_YCbYCr@{PNGU\_ENCODE\_TO\_COORDS\_YCbYCr}}
+\index{PNGU\_ENCODE\_TO\_COORDS\_YCbYCr@{PNGU\_ENCODE\_TO\_COORDS\_YCbYCr}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_ENCODE\_TO\_COORDS\_YCbYCr}{PNGU\_ENCODE\_TO\_COORDS\_YCbYCr}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+ENCODE\+\_\+\+TO\+\_\+\+COORDS\+\_\+\+YCb\+YCr(\begin{DoxyParamCaption}\item[{}]{ctx,  }\item[{}]{coordX,  }\item[{}]{coordY,  }\item[{}]{img\+Width,  }\item[{}]{img\+Height,  }\item[{}]{buffer\+Width,  }\item[{}]{buffer\+Height,  }\item[{}]{buffer }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                                                            \(\backslash\)}
+\DoxyCodeLine{        PNGU\_EncodeFromYCbYCr (ctx, imgWidth, imgHeight, ((\textcolor{keywordtype}{void} *) buffer) + (coordY) * (bufferWidth) * 2 + \(\backslash\)}
+\DoxyCodeLine{                            (coordX) * 2, (bufferWidth) -\/ (imgWidth))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00161}{161}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a87d3ae9979131b3d67234755b9a34abe}\label{pngu_8h_a87d3ae9979131b3d67234755b9a34abe}} 
+\index{pngu.h@{pngu.h}!PNGU\_FILE\_IS\_NOT\_PNG@{PNGU\_FILE\_IS\_NOT\_PNG}}
+\index{PNGU\_FILE\_IS\_NOT\_PNG@{PNGU\_FILE\_IS\_NOT\_PNG}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_FILE\_IS\_NOT\_PNG}{PNGU\_FILE\_IS\_NOT\_PNG}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+FILE\+\_\+\+IS\+\_\+\+NOT\+\_\+\+PNG~4}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00018}{18}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_afb465a5841168569bb08c23f0f1b1cdd}\label{pngu_8h_afb465a5841168569bb08c23f0f1b1cdd}} 
+\index{pngu.h@{pngu.h}!PNGU\_INVALID\_WIDTH\_OR\_HEIGHT@{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT}}
+\index{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT@{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT}{PNGU\_INVALID\_WIDTH\_OR\_HEIGHT}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+INVALID\+\_\+\+WIDTH\+\_\+\+OR\+\_\+\+HEIGHT~3}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00017}{17}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a4f6946705916a4384970f305e1189789}\label{pngu_8h_a4f6946705916a4384970f305e1189789}} 
+\index{pngu.h@{pngu.h}!PNGU\_LIB\_ERROR@{PNGU\_LIB\_ERROR}}
+\index{PNGU\_LIB\_ERROR@{PNGU\_LIB\_ERROR}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_LIB\_ERROR}{PNGU\_LIB\_ERROR}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+LIB\+\_\+\+ERROR~9}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00023}{23}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a44df464719d7186f93f37ad72dd04664}\label{pngu_8h_a44df464719d7186f93f37ad72dd04664}} 
+\index{pngu.h@{pngu.h}!PNGU\_NO\_FILE\_SELECTED@{PNGU\_NO\_FILE\_SELECTED}}
+\index{PNGU\_NO\_FILE\_SELECTED@{PNGU\_NO\_FILE\_SELECTED}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_NO\_FILE\_SELECTED}{PNGU\_NO\_FILE\_SELECTED}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+NO\+\_\+\+FILE\+\_\+\+SELECTED~6}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00020}{20}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_aaa97519abb498ec57970cb2165995e62}\label{pngu_8h_aaa97519abb498ec57970cb2165995e62}} 
+\index{pngu.h@{pngu.h}!PNGU\_ODD\_STRIDE@{PNGU\_ODD\_STRIDE}}
+\index{PNGU\_ODD\_STRIDE@{PNGU\_ODD\_STRIDE}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_ODD\_STRIDE}{PNGU\_ODD\_STRIDE}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+ODD\+\_\+\+STRIDE~2}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00016}{16}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a6c251759f731cad6c39ca9a65f6f8b85}\label{pngu_8h_a6c251759f731cad6c39ca9a65f6f8b85}} 
+\index{pngu.h@{pngu.h}!PNGU\_ODD\_WIDTH@{PNGU\_ODD\_WIDTH}}
+\index{PNGU\_ODD\_WIDTH@{PNGU\_ODD\_WIDTH}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_ODD\_WIDTH}{PNGU\_ODD\_WIDTH}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+ODD\+\_\+\+WIDTH~1}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00015}{15}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}\label{pngu_8h_a43c062cb5a68ebe377f451863a4f8ccf}} 
+\index{pngu.h@{pngu.h}!PNGU\_OK@{PNGU\_OK}}
+\index{PNGU\_OK@{PNGU\_OK}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_OK}{PNGU\_OK}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+OK~0}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00014}{14}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a196e7a14f5c7c9b0d5a94cc7ef1761b6}\label{pngu_8h_a196e7a14f5c7c9b0d5a94cc7ef1761b6}} 
+\index{pngu.h@{pngu.h}!PNGU\_RGB8\_TO\_RGB565@{PNGU\_RGB8\_TO\_RGB565}}
+\index{PNGU\_RGB8\_TO\_RGB565@{PNGU\_RGB8\_TO\_RGB565}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_RGB8\_TO\_RGB565}{PNGU\_RGB8\_TO\_RGB565}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+RGB8\+\_\+\+TO\+\_\+\+RGB565(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~( ((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\+\_\+u16}}) r) \& 0x\+F8U) $<$$<$ 8) $\vert$ ((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\+\_\+u16}}) g) \& 0x\+FCU) $<$$<$ 3) $\vert$ (((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\+\_\+u16}}) b) $>$$>$ 3) )}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00073}{73}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_aadd98cf17d2ff500386e9e59459227ad}\label{pngu_8h_aadd98cf17d2ff500386e9e59459227ad}} 
+\index{pngu.h@{pngu.h}!PNGU\_RGB8\_TO\_RGB5A3@{PNGU\_RGB8\_TO\_RGB5A3}}
+\index{PNGU\_RGB8\_TO\_RGB5A3@{PNGU\_RGB8\_TO\_RGB5A3}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_RGB8\_TO\_RGB5A3}{PNGU\_RGB8\_TO\_RGB5A3}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+RGB8\+\_\+\+TO\+\_\+\+RGB5\+A3(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b,  }\item[{}]{a }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                        (\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) (((a \& 0xE0U) == 0xE0U) ? \(\backslash\)}
+\DoxyCodeLine{                                        (0x8000U | ((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) r) \& 0xF8U) << 7) | ((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) g) \& 0xF8U) << 2) | (((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) b) >> 3)) : \(\backslash\)}
+\DoxyCodeLine{                                        (((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) a) \& 0xE0U) << 7) | ((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) r) \& 0xF0U) << 4) | (((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) g) \& 0xF0U) | ((((\mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\_u16}}) b) \& 0xF0U) >> 4)))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00076}{76}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_abca8b04f6d5dee4dfcf86710dd8a4de7}\label{pngu_8h_abca8b04f6d5dee4dfcf86710dd8a4de7}} 
+\index{pngu.h@{pngu.h}!PNGU\_UNSUPPORTED\_COLOR\_TYPE@{PNGU\_UNSUPPORTED\_COLOR\_TYPE}}
+\index{PNGU\_UNSUPPORTED\_COLOR\_TYPE@{PNGU\_UNSUPPORTED\_COLOR\_TYPE}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_UNSUPPORTED\_COLOR\_TYPE}{PNGU\_UNSUPPORTED\_COLOR\_TYPE}}
+{\footnotesize\ttfamily \#define PNGU\+\_\+\+UNSUPPORTED\+\_\+\+COLOR\+\_\+\+TYPE~5}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00019}{19}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}\label{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}} 
+\index{pngu.h@{pngu.h}!IMGCTX@{IMGCTX}}
+\index{IMGCTX@{IMGCTX}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{IMGCTX}{IMGCTX}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___i_m_g_c_t_x}{\+\_\+\+IMGCTX}}$\ast$ \mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00065}{65}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}\label{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}} 
+\index{pngu.h@{pngu.h}!PNGU\_u16@{PNGU\_u16}}
+\index{PNGU\_u16@{PNGU\_u16}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_u16}{PNGU\_u16}}
+{\footnotesize\ttfamily typedef unsigned short \mbox{\hyperlink{pngu_8h_a830cd994a58bcda8226b30beb0c2188f}{PNGU\+\_\+u16}}}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00040}{40}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}\label{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}} 
+\index{pngu.h@{pngu.h}!PNGU\_u32@{PNGU\_u32}}
+\index{PNGU\_u32@{PNGU\_u32}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_u32}{PNGU\_u32}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00041}{41}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a51eaf023fcb79992909ef9e27480425c}\label{pngu_8h_a51eaf023fcb79992909ef9e27480425c}} 
+\index{pngu.h@{pngu.h}!PNGU\_u64@{PNGU\_u64}}
+\index{PNGU\_u64@{PNGU\_u64}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_u64}{PNGU\_u64}}
+{\footnotesize\ttfamily typedef unsigned long long \mbox{\hyperlink{pngu_8h_a51eaf023fcb79992909ef9e27480425c}{PNGU\+\_\+u64}}}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00042}{42}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+\mbox{\Hypertarget{pngu_8h_a575662a1901431f5938b6238ead71d19}\label{pngu_8h_a575662a1901431f5938b6238ead71d19}} 
+\index{pngu.h@{pngu.h}!PNGU\_u8@{PNGU\_u8}}
+\index{PNGU\_u8@{PNGU\_u8}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_u8}{PNGU\_u8}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8h_source_l00039}{39}} of file \mbox{\hyperlink{pngu_8h_source}{pngu.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pngu_8h_ad1eacbbb449f3bfef1afeafb3f70b3bd}\label{pngu_8h_ad1eacbbb449f3bfef1afeafb3f70b3bd}} 
+\index{pngu.h@{pngu.h}!PNGU\_DecodeTo4x4RGB565@{PNGU\_DecodeTo4x4RGB565}}
+\index{PNGU\_DecodeTo4x4RGB565@{PNGU\_DecodeTo4x4RGB565}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DecodeTo4x4RGB565()}{PNGU\_DecodeTo4x4RGB565()}}
+{\footnotesize\ttfamily int PNGU\+\_\+\+Decode\+To4x4\+RGB565 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{width,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{height,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00240}{240}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{pngu_8h_a52df1b9aa4d2a806b2c34ca8fcd3865f}\label{pngu_8h_a52df1b9aa4d2a806b2c34ca8fcd3865f}} 
+\index{pngu.h@{pngu.h}!PNGU\_DecodeTo4x4RGB5A3@{PNGU\_DecodeTo4x4RGB5A3}}
+\index{PNGU\_DecodeTo4x4RGB5A3@{PNGU\_DecodeTo4x4RGB5A3}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DecodeTo4x4RGB5A3()}{PNGU\_DecodeTo4x4RGB5A3()}}
+{\footnotesize\ttfamily int PNGU\+\_\+\+Decode\+To4x4\+RGB5\+A3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{width,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{height,  }\item[{void $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{default\+\_\+alpha }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00304}{304}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{pngu_8h_a23c5c1c50cc3a7dcb9a020f12855b70d}\label{pngu_8h_a23c5c1c50cc3a7dcb9a020f12855b70d}} 
+\index{pngu.h@{pngu.h}!PNGU\_DecodeTo4x4RGBA8@{PNGU\_DecodeTo4x4RGBA8}}
+\index{PNGU\_DecodeTo4x4RGBA8@{PNGU\_DecodeTo4x4RGBA8}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DecodeTo4x4RGBA8()}{PNGU\_DecodeTo4x4RGBA8()}}
+{\footnotesize\ttfamily int PNGU\+\_\+\+Decode\+To4x4\+RGBA8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{width,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{height,  }\item[{void $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{default\+\_\+alpha }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00556}{556}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{pngu_8h_a12cb78b5948101e8bb8382cf75e32c9b}\label{pngu_8h_a12cb78b5948101e8bb8382cf75e32c9b}} 
+\index{pngu.h@{pngu.h}!PNGU\_DecodeToRGB565@{PNGU\_DecodeToRGB565}}
+\index{PNGU\_DecodeToRGB565@{PNGU\_DecodeToRGB565}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DecodeToRGB565()}{PNGU\_DecodeToRGB565()}}
+{\footnotesize\ttfamily int PNGU\+\_\+\+Decode\+To\+RGB565 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{width,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{height,  }\item[{void $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{stride }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00173}{173}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{pngu_8h_a20a3577c489233cffab341008136d265}\label{pngu_8h_a20a3577c489233cffab341008136d265}} 
+\index{pngu.h@{pngu.h}!PNGU\_DecodeToRGBA8@{PNGU\_DecodeToRGBA8}}
+\index{PNGU\_DecodeToRGBA8@{PNGU\_DecodeToRGBA8}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DecodeToRGBA8()}{PNGU\_DecodeToRGBA8()}}
+{\footnotesize\ttfamily int PNGU\+\_\+\+Decode\+To\+RGBA8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{width,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{height,  }\item[{void $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{stride,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{default\+\_\+alpha }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00201}{201}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{pngu_8h_a7c9d230223a28ee6658c1777fd918e0b}\label{pngu_8h_a7c9d230223a28ee6658c1777fd918e0b}} 
+\index{pngu.h@{pngu.h}!PNGU\_DecodeToYCbYCr@{PNGU\_DecodeToYCbYCr}}
+\index{PNGU\_DecodeToYCbYCr@{PNGU\_DecodeToYCbYCr}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_DecodeToYCbYCr()}{PNGU\_DecodeToYCbYCr()}}
+{\footnotesize\ttfamily int PNGU\+\_\+\+Decode\+To\+YCb\+YCr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{width,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{height,  }\item[{void $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{stride }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00140}{140}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{pngu_8h_a4a7f91e558b5a0da015d3c0dc8d3e180}\label{pngu_8h_a4a7f91e558b5a0da015d3c0dc8d3e180}} 
+\index{pngu.h@{pngu.h}!PNGU\_EncodeFromYCbYCr@{PNGU\_EncodeFromYCbYCr}}
+\index{PNGU\_EncodeFromYCbYCr@{PNGU\_EncodeFromYCbYCr}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_EncodeFromYCbYCr()}{PNGU\_EncodeFromYCbYCr()}}
+{\footnotesize\ttfamily int PNGU\+\_\+\+Encode\+From\+YCb\+YCr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{width,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{height,  }\item[{void $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{stride }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00686}{686}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{pngu_8h_ad70e86e397bf714f95f8cf1ad2a3628d}\label{pngu_8h_ad70e86e397bf714f95f8cf1ad2a3628d}} 
+\index{pngu.h@{pngu.h}!PNGU\_GetImageProperties@{PNGU\_GetImageProperties}}
+\index{PNGU\_GetImageProperties@{PNGU\_GetImageProperties}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_GetImageProperties()}{PNGU\_GetImageProperties()}}
+{\footnotesize\ttfamily int PNGU\+\_\+\+Get\+Image\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx,  }\item[{\mbox{\hyperlink{struct_p_n_g_u_p_r_o_p}{PNGUPROP}} $\ast$}]{fileproperties }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00123}{123}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{pngu_8h_a1d3c1bbde327d7da4c7234f7a4651232}\label{pngu_8h_a1d3c1bbde327d7da4c7234f7a4651232}} 
+\index{pngu.h@{pngu.h}!PNGU\_ReleaseImageContext@{PNGU\_ReleaseImageContext}}
+\index{PNGU\_ReleaseImageContext@{PNGU\_ReleaseImageContext}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_ReleaseImageContext()}{PNGU\_ReleaseImageContext()}}
+{\footnotesize\ttfamily void PNGU\+\_\+\+Release\+Image\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}}}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00106}{106}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{pngu_8h_af6d2697ca6f59f48ea6bc50b0aea0eb7}\label{pngu_8h_af6d2697ca6f59f48ea6bc50b0aea0eb7}} 
+\index{pngu.h@{pngu.h}!PNGU\_RGB8\_TO\_YCbYCr@{PNGU\_RGB8\_TO\_YCbYCr}}
+\index{PNGU\_RGB8\_TO\_YCbYCr@{PNGU\_RGB8\_TO\_YCbYCr}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_RGB8\_TO\_YCbYCr()}{PNGU\_RGB8\_TO\_YCbYCr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}} PNGU\+\_\+\+RGB8\+\_\+\+TO\+\_\+\+YCb\+YCr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{r1,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{g1,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{b1,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{r2,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{g2,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}}}]{b2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00800}{800}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{pngu_8h_a8d9ec5ac0361ec447b85e29860744bb8}\label{pngu_8h_a8d9ec5ac0361ec447b85e29860744bb8}} 
+\index{pngu.h@{pngu.h}!PNGU\_SelectImageFromBuffer@{PNGU\_SelectImageFromBuffer}}
+\index{PNGU\_SelectImageFromBuffer@{PNGU\_SelectImageFromBuffer}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_SelectImageFromBuffer()}{PNGU\_SelectImageFromBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} PNGU\+\_\+\+Select\+Image\+From\+Buffer (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00054}{54}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+\mbox{\Hypertarget{pngu_8h_a879590240942198d807720290c728e1f}\label{pngu_8h_a879590240942198d807720290c728e1f}} 
+\index{pngu.h@{pngu.h}!PNGU\_SelectImageFromDevice@{PNGU\_SelectImageFromDevice}}
+\index{PNGU\_SelectImageFromDevice@{PNGU\_SelectImageFromDevice}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_SelectImageFromDevice()}{PNGU\_SelectImageFromDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pngu_8h_a787877ae99eda0c23a09ed3b2c6f8353}{IMGCTX}} PNGU\+\_\+\+Select\+Image\+From\+Device (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00076}{76}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{pngu_8h_ad656f399c1ba77ffc3c803c364f5722f}\label{pngu_8h_ad656f399c1ba77ffc3c803c364f5722f}} 
+\index{pngu.h@{pngu.h}!PNGU\_YCbYCr\_TO\_RGB8@{PNGU\_YCbYCr\_TO\_RGB8}}
+\index{PNGU\_YCbYCr\_TO\_RGB8@{PNGU\_YCbYCr\_TO\_RGB8}!pngu.h@{pngu.h}}
+\doxysubsubsection{\texorpdfstring{PNGU\_YCbYCr\_TO\_RGB8()}{PNGU\_YCbYCr\_TO\_RGB8()}}
+{\footnotesize\ttfamily void PNGU\+\_\+\+YCb\+YCr\+\_\+\+TO\+\_\+\+RGB8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pngu_8h_a1a0b55bc4503f87abc0d18154bc68874}{PNGU\+\_\+u32}}}]{ycbycr,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$}]{r1,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$}]{g1,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$}]{b1,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$}]{r2,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$}]{g2,  }\item[{\mbox{\hyperlink{pngu_8h_a575662a1901431f5938b6238ead71d19}{PNGU\+\_\+u8}} $\ast$}]{b2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pngu_8c_source_l00819}{819}} of file \mbox{\hyperlink{pngu_8c_source}{pngu.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 15
+Here is the caller graph for this function\+:
+% FIG 16

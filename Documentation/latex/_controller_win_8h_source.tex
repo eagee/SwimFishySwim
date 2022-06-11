@@ -1,0 +1,104 @@
+\hypertarget{_controller_win_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Controller\+Win.h}
+\mbox{\hyperlink{_controller_win_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00001}00001 \textcolor{comment}{// ControllerWii.h}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00002}00002 \textcolor{comment}{// Provides an implementation for the IControllers interface}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00005}00005 \textcolor{preprocessor}{\#ifndef CONTROLLER\_WIN\_H}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00006}00006 \textcolor{preprocessor}{\#define CONTROLLER\_WIN\_H}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00009}00009 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WIN}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_controllers_8h}{IControllers.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_observer_8h}{IObserver.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00013}00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_subject_8h}{ISubject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00014}00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_subject_8h}{Subject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00017}00017 \textcolor{preprocessor}{\#define MAXIMUM\_CONTROLLERS 4}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00019}00019 \textcolor{preprocessor}{\#define MOTION\_SAMPLES 3}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00024}00024 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }tagSignedAccelData}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00025}00025 \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00026}00026     \textcolor{keywordtype}{short} x;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00027}00027     \textcolor{keywordtype}{short} y;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00028}00028     \textcolor{keywordtype}{short} z;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00029}00029 \} SignedAccelData;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00034}00034 \textcolor{keyword}{class }ControllerWin: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_controllers}{IControllers}}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00035}00035 \{}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00036}00036 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00038}00038     \textcolor{comment}{// Private Operations ...   }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00042}00042 \textcolor{comment}{}    ControllerWin(\textcolor{keywordtype}{int} screenWidth, \textcolor{keywordtype}{int} screenHeight);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00043}00043     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00047}00047     \textcolor{keyword}{virtual} \string~ControllerWin();}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00048}00048     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00053}00053     \textcolor{keyword}{static} \mbox{\hyperlink{class_i_controllers}{IControllers}}* getSingleInstance(\textcolor{keywordtype}{int} screenWidth, \textcolor{keywordtype}{int} screenHeight);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00054}00054     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00058}00058     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_controllers_a21e434babec3ad87783808fdecbfd1d7}{dispose}}();  }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00059}00059     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00063}00063     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_controllers_a899274bf83719f120b82c612e60fe31b}{updateControllerStates}}();}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00064}00064     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00068}00068     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}{checkButtonPress}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\_BUTTONS}} code);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00073}00073     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_i_controllers_aad5e10e6a32daffc9537152f29229d68}{checkButtonRelease}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\_BUTTONS}} code);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00074}00074     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00078}00078     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_i_controllers_aafb39b53c40219613979fd8c7e38ddb3}{getStatusOfAllButtons}}(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00079}00079     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00083}00083     \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\_STATUS}} \mbox{\hyperlink{class_i_controllers_a3b48a4c38334614b878dc3a5dc0e3340}{checkControllerStatus}}(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00084}00084     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00088}00088     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_i_controllers_af539bc2356271605f30d2983e8699e26}{numberOfConnectedDevices}}();}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00089}00089     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00093}00093     \textcolor{keywordtype}{void} enableUpdatesFrom(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_ad3558f3e696c2108762a80487c6404dc}{CONTROLLER\_UPDATE\_TYPE}} updateType);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00094}00094     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00098}00098     \textcolor{keywordtype}{void} disableUpdatesFrom(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_ad3558f3e696c2108762a80487c6404dc}{CONTROLLER\_UPDATE\_TYPE}} updateType);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00099}00099     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00103}00103     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_i_controllers_afe73b0df07ed499b7ad486a5770b39f5}{checkPointer}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a6b990e2e89908296b4d8980255acc578}{CONTROLLER\_POINTER}} pointerData);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00104}00104     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00108}00108     \mbox{\hyperlink{structtag_accel_data}{AccelerometerData}} \mbox{\hyperlink{class_i_controllers_a67d2e070b2d910bbab0cbc79fe2f6430}{checkMotion}}(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00109}00109     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00113}00113     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_i_controllers_add583028b8b630a809f3c48d80dc175c}{checkOrientation}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_ab29701098659a5e97984c4e4827a2842}{CONTROLLER\_ORIENTATION}} orientData);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00114}00114     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00118}00118     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_i_controllers_a890908debb0932bbf3c72f6ba4b7441f}{checkJoystickAngle}}(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00119}00119         }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00123}00123     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_i_controllers_aeaaa310c560e88ef9190afeabd99235f}{checkJoystickMagnitude}}(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00124}00124     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00128}00128     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_controllers_a4efebcb5a21d6996bba2b2cad8aea265}{stopRumblePack}}(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00129}00129         }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00133}00133     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_controllers_ad57d47bfa33b8b8ba604963c19347b46}{startRumblePack}}(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00138}00138     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_subject_a5f5438de11e3a94bc58f6bc563fbf7c4}{registerObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer);}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00139}00139     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00143}00143     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_subject_a9c3c18703e8588c15ab1361137a8d449}{removeObserver}} (\mbox{\hyperlink{class_i_observer}{IObserver}} *observer);   }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00148}00148     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}{notifyObservers}} ();}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00150}00150 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00151}00151     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00152}00152     \textcolor{comment}{// Attributes   }}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00153}00153     \textcolor{keywordtype}{int} myMotionIndex;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00154}00154     \mbox{\hyperlink{structtag_accel_data}{AccelerometerData}} myMotionValues[MOTION\_SAMPLES];}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00156}00156     \textcolor{comment}{// Used to determine what the averaged motion is between two frames ...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00157}00157     \mbox{\hyperlink{structtag_accel_data}{AccelerometerData}} myCurrentMotion;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00158}00158     \mbox{\hyperlink{structtag_accel_data}{AccelerometerData}} myLastMotion;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00159}00159     SignedAccelData myAccelDifference;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00160}00160     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00161}00161     \textcolor{comment}{// It's my subject, dummy...}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00162}00162     \mbox{\hyperlink{class_subject}{Subject}} *mySubject;}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00163}00163     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00164}00164     \textcolor{comment}{// Points to our four possible wiimotes}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00165}00165     \textcolor{comment}{//WPADData *wiiMotes[MAXIMUM\_WIIMOTES];}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00166}00166     }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00167}00167     \textcolor{comment}{// Describes the current status of each wiimote}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00168}00168     \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\_STATUS}} wiiMoteStatus[MAXIMUM\_CONTROLLERS];      }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00169}00169 \};}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00171}00171 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_controller_win_8h_source_l00172}00172 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

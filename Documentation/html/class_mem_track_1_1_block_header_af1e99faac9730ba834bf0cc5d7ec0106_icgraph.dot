@@ -1,0 +1,14 @@
+digraph "MemTrack::BlockHeader::AddNode"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="MemTrack::BlockHeader\l::AddNode",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MemTrack::TrackMalloc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespace_mem_track.html#a5ba36a69f55067f4fd578ff772c07176",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="operator new",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_mem_track_8cpp.html#a160dcabc54bbecfc69484678cafadb81",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="operator new[]",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_mem_track_8cpp.html#af2243bb4c2126b7b2b393e06090fbe59",tooltip=" "];
+}

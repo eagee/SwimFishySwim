@@ -1,0 +1,276 @@
+\hypertarget{_gl_graphics_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Gl\+Graphics.h}
+\mbox{\hyperlink{_gl_graphics_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00001}00001 \textcolor{comment}{// GlGraphics.h}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00002}00002 \textcolor{comment}{// Implements IGraphics interface as it applieds to the OpenGL Library}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00005}00005 \textcolor{preprocessor}{\#ifndef GL\_GRAPHICS\_H}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00006}00006 \textcolor{preprocessor}{\#define GL\_GRAPHICS\_H}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_graphics_8h}{IGraphics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00010}00010 \textcolor{comment}{// Defines for calculating our frustum planes}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00011}\mbox{\hyperlink{_gl_graphics_8h_acc22c499b762fef9f445c0558388e3d4}{00011}} \textcolor{preprocessor}{\#define TOTAL\_FRUSTUM\_PLANES 6}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00012}\mbox{\hyperlink{_gl_graphics_8h_a91264b4c3a4de5c8df4e78875794bb00}{00012}} \textcolor{preprocessor}{\#define RIGHT\_PLANE     0}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00013}\mbox{\hyperlink{_gl_graphics_8h_ab658e9b11e66784ba255c4578f23448e}{00013}} \textcolor{preprocessor}{\#define LEFT\_PLANE      1}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00014}\mbox{\hyperlink{_gl_graphics_8h_a3f690252b42823b580fe4d9b5ce60426}{00014}} \textcolor{preprocessor}{\#define BOTTOM\_PLANE    2}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00015}\mbox{\hyperlink{_gl_graphics_8h_a6b05d8ce3aa1acb3bf7ac20ad31a26e1}{00015}} \textcolor{preprocessor}{\#define TOP\_PLANE       3}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00016}\mbox{\hyperlink{_gl_graphics_8h_ae69d04c4d256d9db0ff98b5c97646a80}{00016}} \textcolor{preprocessor}{\#define FAR\_PLANE       4}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00017}00017 \textcolor{preprocessor}{\#define NEAR\_PLANE      5}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00022}\mbox{\hyperlink{structtag_gl_texture_data}{00022}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_gl_texture_data}{tagGlTextureData}}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00023}00023 \{           }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00024}\mbox{\hyperlink{structtag_gl_texture_data_a9c0d3c00cfc99082ecb2aa6f7e2a00be}{00024}}     \textcolor{keywordtype}{void} *\mbox{\hyperlink{structtag_gl_texture_data_a9c0d3c00cfc99082ecb2aa6f7e2a00be}{textureData}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00025}\mbox{\hyperlink{structtag_gl_texture_data_a4c8f24569c2ff76ca95824438d150049}{00025}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structtag_gl_texture_data_a4c8f24569c2ff76ca95824438d150049}{width}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00026}\mbox{\hyperlink{structtag_gl_texture_data_a8e2864055754ec75a1b45c665b811e94}{00026}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structtag_gl_texture_data_a8e2864055754ec75a1b45c665b811e94}{height}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00027}\mbox{\hyperlink{structtag_gl_texture_data_af7188ea30cc5d8340e2b8cba968214a0}{00027}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structtag_gl_texture_data_af7188ea30cc5d8340e2b8cba968214a0}{bytesPerTexel}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00028}\mbox{\hyperlink{structtag_gl_texture_data_a09529591159a24554f44efe5875a0d39}{00028}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structtag_gl_texture_data_a09529591159a24554f44efe5875a0d39}{size}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00029}\mbox{\hyperlink{structtag_gl_texture_data_ae676f54236c8cf736f65472fe24543fe}{00029}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structtag_gl_texture_data_ae676f54236c8cf736f65472fe24543fe}{wrap}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00030}\mbox{\hyperlink{structtag_gl_texture_data_abed81a236633e4fe36127c59dc337bf3}{00030}}     \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987df}{TEXTURE\_FORMAT}} \mbox{\hyperlink{structtag_gl_texture_data_abed81a236633e4fe36127c59dc337bf3}{format}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00031}\mbox{\hyperlink{structtag_gl_texture_data_ab7114a7e50546bc5a4f3d94ab3cb4cd5}{00031}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}} \mbox{\hyperlink{structtag_gl_texture_data_ab7114a7e50546bc5a4f3d94ab3cb4cd5}{textureMap}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00032}\mbox{\hyperlink{_gl_graphics_8h_af186cf71543c0710d1a2d403ddc91475}{00032}} \} \mbox{\hyperlink{_gl_graphics_8h_af186cf71543c0710d1a2d403ddc91475}{GlTextureData}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00034}\mbox{\hyperlink{structtag_gl_color}{00034}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_gl_color}{tagGlColor}} \{}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00035}\mbox{\hyperlink{structtag_gl_color_a845e01f76e9b77692790c5d184d62e15}{00035}}     u8 \mbox{\hyperlink{structtag_gl_color_a845e01f76e9b77692790c5d184d62e15}{r}};          }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00036}\mbox{\hyperlink{structtag_gl_color_a44be580f6ae446b7525a2a71923e5c26}{00036}}     u8 \mbox{\hyperlink{structtag_gl_color_a44be580f6ae446b7525a2a71923e5c26}{g}};          }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00037}\mbox{\hyperlink{structtag_gl_color_ab1e1a79fad908d27a4e2b3f3ef6e0ae4}{00037}}     u8 \mbox{\hyperlink{structtag_gl_color_ab1e1a79fad908d27a4e2b3f3ef6e0ae4}{b}};          }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00038}\mbox{\hyperlink{structtag_gl_color_a74fc4f2162d056ebeadc7563c3509fb5}{00038}}     u8 \mbox{\hyperlink{structtag_gl_color_a74fc4f2162d056ebeadc7563c3509fb5}{a}};          }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00039}\mbox{\hyperlink{_gl_graphics_8h_a2c197943076f3e98aa7099cf511c3f1f}{00039}} \} \mbox{\hyperlink{_gl_graphics_8h_a2c197943076f3e98aa7099cf511c3f1f}{GlColor}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00041}\mbox{\hyperlink{structtag_gl_light_obj}{00041}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_gl_light_obj}{tagGlLightObj}} \{}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00042}\mbox{\hyperlink{structtag_gl_light_obj_aab04a2f13a488584b983f3bcbe40db06}{00042}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}} \mbox{\hyperlink{structtag_gl_light_obj_aab04a2f13a488584b983f3bcbe40db06}{val}}[16];}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00043}00043 \} \mbox{\hyperlink{_gl_graphics_8h_a858496bdf555e02ec2350bca6f7f309a}{GlLightObj}};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00049}\mbox{\hyperlink{class_gl_graphics}{00049}} \textcolor{keyword}{class }\mbox{\hyperlink{class_gl_graphics}{GlGraphics}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_graphics}{IGraphics}}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00050}00050 \{ }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00051}00051 \textcolor{keyword}{public}: }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00052}00052     }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00057}00057     \mbox{\hyperlink{class_gl_graphics_a7aaf7783cdccfbe6dd9c1b7fbacd36c1}{GlGraphics}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00063}00063     \mbox{\hyperlink{class_gl_graphics_aea0cb3fb7578be45e94dc18727433a36}{\string~GlGraphics}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00068}00068     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a56228c26f69ae6bf1e9a25f287069576}{dispose}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00073}00073     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a7f68b0d63a9706c6dbd93b44d582f0c1}{beginScene}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00079}00079     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a22904aa1aae030c84f082a038d28fd1f}{rotateNextObjectInScene}}(\mbox{\hyperlink{structtag_rotate}{Rotate}} *rotate);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00084}00084     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a6dae3ac5fc520b850eb0f5ab0422c93c}{addPointsToScene}}(Vector location, std::vector<Point> \&points, \textcolor{keywordtype}{int} pixelSize, \mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894d}{POINT\_TEXTURE\_STYLE}} textureStyle, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00089}00089     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_ae01373bf7f34cc37617f992f4e0f0505}{addTriangleToScene}}(Vector location, \mbox{\hyperlink{structtag_triangle}{Triangle}} triangle);          }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00094}00094     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a27528ef90c9ba5e0ddd980b8567f2a9a}{addTrianglesToScene}}(Vector location, std::vector<Triangle> \&triangles, \textcolor{keywordtype}{int} count, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00099}00099     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a0b59401cfffc5171c30220ab1d6c53c5}{addQuadsToScene}}(Vector location, std::map<int, Quad> \&quads, \textcolor{keywordtype}{int} count, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00104}00104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a79bbf758258cc4f7e0c573cce345ef4b}{addSkyboxToScene}}(\mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}{PROJECTION\_TYPE}} projectionType, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} skyboxID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} sceneboxID);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00109}00109     \textcolor{keyword}{virtual} \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187}{SEEN\_BY\_CAMERA}} \mbox{\hyperlink{class_gl_graphics_a60f35c844e6e368c5ce738249581dd44}{isLocationWithinViewingRange}}(Vector location);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00115}00115     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_aa30e9195d694b18e79a3edb81324ae26}{addQuadMapToScene}}(Vector location, std::map<int, Quad> \&quads, \textcolor{keywordtype}{int} xMin, \textcolor{keywordtype}{int} xMax, \textcolor{keywordtype}{int} yMin, \textcolor{keywordtype}{int} yMax, \textcolor{keywordtype}{int} rowSize, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00121}00121     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a53ef0ffa7bd88a246ead4435635d6168}{allocateAndPopulateVertexArray}}(std::map<int, Quad> \&quads, \mbox{\hyperlink{structtag_vertex_array}{QuadVertexArray}} \&vertexArray, \mbox{\hyperlink{structtag_quad_vertex_array_properties}{QuadVertexArrayProperties}} arrayProperties);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00126}00126     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_abd35bcf45a21c29c56f9bc620fd39a86}{freeVertexArray}}(\mbox{\hyperlink{structtag_vertex_array}{QuadVertexArray}} \&vertexArray);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00131}00131     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_aea1a72ceb5bb45f0a2f5e751e2b72e7c}{addNormalMappedVertexArrayToScene}}(\mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}{BUMP\_TYPE}} bumpType, Vector location, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} lightMapID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} normalMapID,}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00132}00132         \mbox{\hyperlink{structtag_triangle_vertex_array}{TriangleVertexArray}} \&vertexArray);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00137}00137     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_aea1a72ceb5bb45f0a2f5e751e2b72e7c}{addNormalMappedVertexArrayToScene}}(\mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}{BUMP\_TYPE}} bumpType, Vector location, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} lightMapID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} normalMapID,}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00138}00138         \mbox{\hyperlink{structtag_vertex_array}{QuadVertexArray}} \&vertexArray);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00143}00143     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a5bf60d00c531537562bf9c975a9dbeb7}{updateMirrorReflection}}(Vector mirrorPosition, Vector mirrorTarget);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00151}00151     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a53ef0ffa7bd88a246ead4435635d6168}{allocateAndPopulateVertexArray}}(std::vector<Triangle> \&triangles, \mbox{\hyperlink{structtag_triangle_vertex_array}{TriangleVertexArray}} \&vertexArray, \textcolor{keywordtype}{bool} cullBacks);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00156}00156     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_abd35bcf45a21c29c56f9bc620fd39a86}{freeVertexArray}}(\mbox{\hyperlink{structtag_triangle_vertex_array}{TriangleVertexArray}} \&vertexArray);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00161}00161     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a8030b1c1863254d2200c77ac8ab6c5b5}{addVertexArrayToScene}}(Vector location, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID, \mbox{\hyperlink{structtag_triangle_vertex_array}{TriangleVertexArray}} \&vertexArray);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00167}00167     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_gl_graphics_ab03f932e2555ab1d5f149cd5dbd1b379}{getFPS}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00172}00172     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_ab146a4862f69733affc93e2cfa652dac}{setCameraPosition}}(\mbox{\hyperlink{structtag_camera}{Camera}} camera);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00177}00177     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a502123b2a2870f053acf6bfec4b13a68}{setCameraTarget}}(Vector target, \textcolor{keywordtype}{float} targetAngle, \textcolor{keywordtype}{float} heightOfScenery);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00182}00182     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_gl_graphics_a5d756dfe841d9edf58e28d9f1515dc1d}{getCameraAngle}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00187}00187     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a21cd24adfcafbc3376b8b57f39c69fd9}{setFogMode}}(f32 startZ, f32 endZ, f32 nearZ, f32 farZ, \mbox{\hyperlink{structtag_color}{Color}} color);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00192}00192     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a44a8e39191ca1f3bc436593a6dca242b}{endScene}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00197}00197     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a5ed91851342d9b500566627932481826}{switchToOverheadView}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00202}00202     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a2a3d7d14cce9378e23ca47d4f1dab837}{switchBackToCameraView}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00208}\mbox{\hyperlink{class_gl_graphics_a8bf6c4b9494fa8d74d3ff74bd51e327c}{00208}}     \textcolor{keywordtype}{void} *\mbox{\hyperlink{class_gl_graphics_a8bf6c4b9494fa8d74d3ff74bd51e327c}{allocatePersistentMemoryForDisplayList}}(\textcolor{keywordtype}{size\_t} memorySize);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00213}00213     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_ad30b6495b2c0387b772ebe88203c5fb0}{adjustCameraRadius}}(\textcolor{keywordtype}{float} adjustBy);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00218}00218     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_gl_graphics_af5da5dfbe91a61f51a8cb568a9c60009}{getCameraRadius}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00219}00219 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00223}00223     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gl_graphics_a3089ca2b43299f5fc5f825d0c9d7a06d}{adjustCameraDistance}}(\textcolor{keywordtype}{float} adjustBy);}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00224}00224 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00228}00228     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_gl_graphics_a24b282e92f86b45250e5036a737559b7}{getCameraDistance}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00229}00229 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00233}00233     Vector \mbox{\hyperlink{class_gl_graphics_a21d1f52b953be70f46bdbefcda24d7ed}{getCameraLocation}}();}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00235}00235 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00236}00236     \textcolor{comment}{// This variable actually stores the 6 planes of the frustum which helps us identify}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00237}00237     \textcolor{comment}{// whether or not a location/radius exists within the frustum...}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00238}00238     \mbox{\hyperlink{structtag_frustum_plane}{FrustumPlane}} myFrustumPlanes[\mbox{\hyperlink{_gl_graphics_8h_acc22c499b762fef9f445c0558388e3d4}{TOTAL\_FRUSTUM\_PLANES}}];}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00239}00239 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00240}00240     \textcolor{comment}{// This is the camera associated with our graphics object ...           }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00241}00241     \mbox{\hyperlink{structtag_camera}{Camera}} myCamera;}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00242}00242             }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00243}00243 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00244}00244     \textcolor{comment}{/*private:                          }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00245}00245 \textcolor{comment}{    // Initializes a texture object}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00246}00246 \textcolor{comment}{    void initTextureObject(GlTextureData \&textureData);}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00247}00247 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00248}00248 \textcolor{comment}{    // Assigns a GLTexObj to a texture map for rendering ...            }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00249}00249 \textcolor{comment}{    void setupTextureObject(int textureID);}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00250}00250 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00251}00251 \textcolor{comment}{    // Assigns a GLTexObj to a texture map for tesselating pixel z values ...                       }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00252}00252 \textcolor{comment}{    void setupHeightTextureObject(int textureID);}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00253}00253 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00254}00254 \textcolor{comment}{    // Handles Matrix Calculations for Rotation and Translation}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00255}00255 \textcolor{comment}{    void handleMatrixCalculations(Vector location);}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00256}00256 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00260}00260 \textcolor{comment}{    void setupSkyboxValues();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00261}00261 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00265}00265 \textcolor{comment}{    void setupFIFO();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00266}00266 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00272}00272 \textcolor{comment}{    void setRenderingParameters();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00273}00273 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00277}00277 \textcolor{comment}{    void setupLightingMatrix(float xAngle, float yAngle);}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00278}00278 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00279}00279 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00283}00283 \textcolor{comment}{    void setupRenderingPass();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00284}00284 \textcolor{comment}{    void setupHeightRenderingPass();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00285}00285 \textcolor{comment}{    void setupEmbossedRenderingPass();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00286}00286 \textcolor{comment}{    void setupNormalMapRenderingPass();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00287}00287 \textcolor{comment}{    void setupXYZMapRenderingPass();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00288}00288 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00292}00292 \textcolor{comment}{    void setupProjectionMatrix();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00293}00293 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00297}00297 \textcolor{comment}{    void checkObjectRotation();         }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00298}00298 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00302}00302 \textcolor{comment}{    void clearTextureData();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00303}00303 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00309}00309 \textcolor{comment}{    TextureHandle addTextureData(const char* fileName, TEXTURE\_FORMAT format, bool wrap);   }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00310}00310 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00314}00314 \textcolor{comment}{    void freeTextureData(TextureHandle handle);}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00315}00315 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00319}00319 \textcolor{comment}{    void enableLighting();          }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00320}00320 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00321}00321 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00325}00325 \textcolor{comment}{    void disableLighting();         }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00326}00326 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00330}00330 \textcolor{comment}{    void setupReflectionTexture();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00331}00331 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00335}00335 \textcolor{comment}{    void setupLightMapTexture();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00336}00336 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00340}00340 \textcolor{comment}{    void updateFrustumPlanes();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00341}00341 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00349}00349 \textcolor{comment}{    void HaveGPProcessFIFO();}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00350}00350 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00354}00354 \textcolor{comment}{    void handleBumpMatrixAndRenderingSetup(BUMP\_TYPE \&bumpType, Vector \&location);}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00355}00355 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00359}00359 \textcolor{comment}{    void handleBumpTextureSetup(TextureHandle \&textureID, TextureHandle \&lightMapID, TextureHandle \&normalMapID);}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00360}00360 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00361}00361 \textcolor{comment}{    // This indicates the amount at which we should rotate if myNextObjectShouldRotate is set ....}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00362}00362 \textcolor{comment}{    // and can include several routates for one set of triangles}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00363}00363 \textcolor{comment}{    std::vector<Rotate> myNextRotateValues;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00364}00364 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00365}00365 \textcolor{comment}{    // This is the camera associated with our graphics object ...           }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00366}00366 \textcolor{comment}{    Camera myCamera;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00367}00367 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00368}00368 \textcolor{comment}{    // Defines the y scale for our rendering environment}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00369}00369 \textcolor{comment}{    f32 myYScale;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00370}00370 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00371}00371 \textcolor{comment}{    // Defines our framebuffer height ...}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00372}00372 \textcolor{comment}{    u32 myFrameBufferHeight;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00373}00373 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00374}00374 \textcolor{comment}{    // References the current framebuffer ...}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00375}00375 \textcolor{comment}{    u32 myCurrentFrameBuffer;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00376}00376 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00377}00377 \textcolor{comment}{    // Points to our mode object... TODO: Define this a little better...}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00378}00378 \textcolor{comment}{    GXRModeObj *myRegisterMode;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00379}00379 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00380}00380 \textcolor{comment}{    // Here we define our matricies for view, perspective, model, and modelview}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00381}00381 \textcolor{comment}{    // View Matrix -\/ what the camera is pointing at}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00382}00382 \textcolor{comment}{    Mtx44 myView;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00383}00383 \textcolor{comment}{    // Projection Matrix -\/ how things are projected into screen coords}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00384}00384 \textcolor{comment}{    Mtx44 myPerspective;  }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00385}00385 \textcolor{comment}{    // model matrix}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00386}00386 \textcolor{comment}{    Mtx44 myModel;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00387}00387 \textcolor{comment}{    // model view matrix}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00388}00388 \textcolor{comment}{    Mtx44 myModelView;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00389}00389 \textcolor{comment}{    // temporary rotation matrix}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00390}00390 \textcolor{comment}{    Mtx44 myTempRotate;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00391}00391 \textcolor{comment}{    // Used for texture projection (which we aint doint rite now)}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00392}00392 \textcolor{comment}{    Mtx myTextureProjection;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00393}00393 \textcolor{comment}{    // Used to keep track of what our frustum is for culling on the model level...}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00394}00394 \textcolor{comment}{    //Mtx44 myFrustumMatrix;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00395}00395 \textcolor{comment}{    // Used for working out those fine lighting effects :)}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00396}00396 \textcolor{comment}{    Mtx myLightMatrix;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00397}00397 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00398}00398 \textcolor{comment}{    // This variable actually stores the 6 planes of the frustum which helps us identify}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00399}00399 \textcolor{comment}{    // whether or not a location/radius exists within the frustum...}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00400}00400 \textcolor{comment}{    FrustumPlane myFrustumPlanes[TOTAL\_FRUSTUM\_PLANES];}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00401}00401 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00402}00402 \textcolor{comment}{    // Points to the fifo in the rendering pipeline.}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00403}00403 \textcolor{comment}{    void *myGpFifoBuffer;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00404}00404 \textcolor{comment}{    GXFifoObj myFifo;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00405}00405 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00406}00406 \textcolor{comment}{    // This is a list of all the Texture Coordinates in the md2 file}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00407}00407 \textcolor{comment}{    TextureHandle myCurrentTextureID;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00408}00408 \textcolor{comment}{    typedef std::map<int, GlTextureData> GxTexMap;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00409}00409 \textcolor{comment}{    typedef GxTexMap::iterator GxTexMapIterator;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00410}00410 \textcolor{comment}{    GxTexMap myGxTextures;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00411}00411 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00412}00412 \textcolor{comment}{    // Used to track our current FPS...}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00413}00413 \textcolor{comment}{    int myFPS;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00414}00414 \textcolor{comment}{    int myFPSCounter;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00415}00415 \textcolor{comment}{    float myFPSTimeSpan;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00416}00416 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00417}00417 \textcolor{comment}{    // Variables used to manage bump mapping}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00418}00418 \textcolor{comment}{    float myPostTransMtxScale;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00419}00419 \textcolor{comment}{    float myPostTransMtxOffset;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00420}00420 \textcolor{comment}{    float myIndTexMtxFactor;            }}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00421}00421 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00425}00425 \textcolor{comment}{    int myFirstGxFrame;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00426}00426 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00431}00431 \textcolor{comment}{    GlTextureData myReflectionTexture;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00432}00432 \textcolor{comment}{    TextureHandle myReflectionTexHandle;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00433}00433 \textcolor{comment}{    GlTextureData myLightMapTexture;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00434}00434 \textcolor{comment}{    TextureHandle myLightMapTexHandle;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00435}00435 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00436}00436 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00440}00440 \textcolor{comment}{    GlLightObj mySpecLight;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00441}00441 \textcolor{comment}{    GlLightObj mySpotLight;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00442}00442 \textcolor{comment}{    float mySpecularTheta;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00443}00443 \textcolor{comment}{    float mySpecularPhi;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00444}00444 \textcolor{comment}{    Vector myLightPosition;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00445}00445 \textcolor{comment}{    Vector myLightDirection;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00446}00446 \textcolor{comment}{    GlColor myAmbientColor0;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00447}00447 \textcolor{comment}{    GlColor myMaterialColor0;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00448}00448 \textcolor{comment}{    GlColor myAmbientColor1;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00449}00449 \textcolor{comment}{    GlColor myMaterialColor1;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00450}00450 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00451}00451 \textcolor{comment}{    // These values are used to build our skybox arrays}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00452}00452 \textcolor{comment}{    Vector *mySkyboxCoords;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00453}00453 \textcolor{comment}{    Vector *mySceneboxCoords;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00454}00454 \textcolor{comment}{    float *mySkyboxTextures;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00455}00455 \textcolor{comment}{    Vector *mySkyboxNormals;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00456}00456 \textcolor{comment}{    Rotate mySkyboxRotation;}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00457}00457 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00458}00458 \};}
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00459}00459 }
+\DoxyCodeLine{\Hypertarget{_gl_graphics_8h_source_l00460}00460 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

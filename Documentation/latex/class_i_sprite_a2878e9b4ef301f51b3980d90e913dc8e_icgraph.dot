@@ -1,0 +1,28 @@
+digraph "ISprite::setHealth"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ISprite::setHealth",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="LevelMethodsActivatePowerup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a6d369950fdf186510fa7c6d6d946c22f",tooltip="Activates an available powerup sprite so that the player can pick up a little extra power :)"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="preAllocateSpriteObjects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a890aa0a6c8fbb9fc022525f3b0d643db",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="RunGameMain",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#aa4173368a267598f9c3c83944e79a303",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ProjectileMethodsHandleIf\lSpriteDead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_projectile_methods_8cpp.html#af817abcbc31e6f47b31ded1fc69052bc",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ProjectileBomb::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_bomb.html#a977560150de62669059bad8f4c9da19d",tooltip=" "];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ProjectileMine::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_mine.html#a47bf65effbc2950ca175749dd2b99006",tooltip=" "];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="ProjectileShot::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_shot.html#a2aa67619ca4e6a0e346c46673ce6c546",tooltip=" "];
+  Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="ProjectileSpit::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_spit.html#a8922717daa0413c424311b577fa4054f",tooltip=" "];
+  Node6 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="ProjectileToss::handleSprite\lCollisions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_toss.html#ae514ed2467b1d6b7b07b7eb2c09de59a",tooltip=" "];
+}

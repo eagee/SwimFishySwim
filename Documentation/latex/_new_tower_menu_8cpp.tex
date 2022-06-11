@@ -1,0 +1,60 @@
+\hypertarget{_new_tower_menu_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+New\+Tower\+Menu.cpp File Reference}
+\label{_new_tower_menu_8cpp}\index{C:/TeamSheeps/SwimFishySwim/NewTowerMenu.cpp@{C:/TeamSheeps/SwimFishySwim/NewTowerMenu.cpp}}
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IAudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IProjectile\+Weapon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Menu\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IGame\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}New\+Tower\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game\+Menu\+Methods.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Level\+Methods.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ISprite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Tower.\+h\char`\"{}}\newline
+Include dependency graph for New\+Tower\+Menu.\+cpp\+:
+% FIG 0
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a346b17300fd0f719b3fa411a4ac886d9}{NEW\+\_\+\+SPITTING\+\_\+\+TOWER\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7aba17717fd2d0170177f5cd078b0d36ef}{NEW\+\_\+\+THROWING\+\_\+\+TOWER\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a2bade141851bab45bf94cb87bc9eac7b}{NEW\+\_\+\+WIND\+\_\+\+TOWER\+\_\+\+BUTTON}}
+, \mbox{\hyperlink{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7ac1e47f8c36969796f398805cf5469a4a}{ENERGIZE\+\_\+\+TOWERS\+\_\+\+BUTTON}}
+, \newline
+\mbox{\hyperlink{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a0da2988988498af64df963334cb0b974}{FINISHED\+\_\+\+BUTTON}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7}\label{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEW\_SPITTING\_TOWER\_BUTTON@{NEW\_SPITTING\_TOWER\_BUTTON}!NewTowerMenu.cpp@{NewTowerMenu.cpp}}\index{NewTowerMenu.cpp@{NewTowerMenu.cpp}!NEW\_SPITTING\_TOWER\_BUTTON@{NEW\_SPITTING\_TOWER\_BUTTON}}}\mbox{\Hypertarget{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a346b17300fd0f719b3fa411a4ac886d9}\label{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a346b17300fd0f719b3fa411a4ac886d9}} 
+NEW\+\_\+\+SPITTING\+\_\+\+TOWER\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEW\_THROWING\_TOWER\_BUTTON@{NEW\_THROWING\_TOWER\_BUTTON}!NewTowerMenu.cpp@{NewTowerMenu.cpp}}\index{NewTowerMenu.cpp@{NewTowerMenu.cpp}!NEW\_THROWING\_TOWER\_BUTTON@{NEW\_THROWING\_TOWER\_BUTTON}}}\mbox{\Hypertarget{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7aba17717fd2d0170177f5cd078b0d36ef}\label{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7aba17717fd2d0170177f5cd078b0d36ef}} 
+NEW\+\_\+\+THROWING\+\_\+\+TOWER\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEW\_WIND\_TOWER\_BUTTON@{NEW\_WIND\_TOWER\_BUTTON}!NewTowerMenu.cpp@{NewTowerMenu.cpp}}\index{NewTowerMenu.cpp@{NewTowerMenu.cpp}!NEW\_WIND\_TOWER\_BUTTON@{NEW\_WIND\_TOWER\_BUTTON}}}\mbox{\Hypertarget{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a2bade141851bab45bf94cb87bc9eac7b}\label{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a2bade141851bab45bf94cb87bc9eac7b}} 
+NEW\+\_\+\+WIND\+\_\+\+TOWER\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENERGIZE\_TOWERS\_BUTTON@{ENERGIZE\_TOWERS\_BUTTON}!NewTowerMenu.cpp@{NewTowerMenu.cpp}}\index{NewTowerMenu.cpp@{NewTowerMenu.cpp}!ENERGIZE\_TOWERS\_BUTTON@{ENERGIZE\_TOWERS\_BUTTON}}}\mbox{\Hypertarget{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7ac1e47f8c36969796f398805cf5469a4a}\label{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7ac1e47f8c36969796f398805cf5469a4a}} 
+ENERGIZE\+\_\+\+TOWERS\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FINISHED\_BUTTON@{FINISHED\_BUTTON}!NewTowerMenu.cpp@{NewTowerMenu.cpp}}\index{NewTowerMenu.cpp@{NewTowerMenu.cpp}!FINISHED\_BUTTON@{FINISHED\_BUTTON}}}\mbox{\Hypertarget{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a0da2988988498af64df963334cb0b974}\label{_new_tower_menu_8cpp_adf764cbdea00d65edcd07bb9953ad2b7a0da2988988498af64df963334cb0b974}} 
+FINISHED\+\_\+\+BUTTON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_new_tower_menu_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_new_tower_menu_8cpp_source}{New\+Tower\+Menu.\+cpp}}.
+

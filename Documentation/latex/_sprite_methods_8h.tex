@@ -1,0 +1,455 @@
+\hypertarget{_sprite_methods_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Sprite\+Methods.h File Reference}
+\label{_sprite_methods_8h}\index{C:/TeamSheeps/SwimFishySwim/SpriteMethods.h@{C:/TeamSheeps/SwimFishySwim/SpriteMethods.h}}
+{\ttfamily \#include \char`\"{}IModel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ISprite.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sprite\+Info.\+h\char`\"{}}\newline
+Include dependency graph for Sprite\+Methods.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a9703dd9e8e7a8c45051c0d6b687824e7}{spirte\+Methods\+Init\+Sprite\+Info}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\begin{DoxyCompactList}\small\item\em Initializes some of our default values ... /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_sprite_methods_8h_afe69b086977244e7b27fbc2c5635d679}{sprite\+Methods\+Has\+Timer\+Expired}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, float max\+Value)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a0353a1f314bbaac068a68198e616962a}{sprite\+Methods\+Assign\+Model}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{class_i_model}{IModel}} $\ast$model)
+\item 
+bool \mbox{\hyperlink{_sprite_methods_8h_a473abee9f84727912dab71aa48bdfe64}{sprite\+Methods\+Check\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a771d26785a516650e09230082cbd1cf3}{sprite\+Methods\+Handle\+Collision}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}} type, float collision\+Force)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a6bfdc270d6c5c1b5fa1144a98e8f27d8}{sprite\+Methods\+Handle\+Slide\+Collision}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}} type, float collision\+Force)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a9edbed78645deb6d2e2e90dcf6737412}{sprite\+Methods\+Set\+Control\+Magnitude}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, float control\+Magnitude)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a5a16bdcb12d4b50018959afac7014568}{sprite\+Methods\+Increase\+Acceleration}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a4c96beb223e046f6218f0c1f20146363}{sprite\+Methods\+Set\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a78a2d01eb0f24769d841a1f62b1f465d}{sprite\+Methods\+Unset\+Direction}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_af8b26da7debce38238aa454f2b76f94f}{sprite\+Methods\+Translate\+Sprite}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, Vector sprite\+Location)
+\item 
+\mbox{\hyperlink{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}{Bounding\+Triangle}} \mbox{\hyperlink{_sprite_methods_8h_ad9d10bdfc75a2c1db8d1bc929a0b6db3}{sprite\+Methods\+Get\+Bounding\+Triangle}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\item 
+\mbox{\hyperlink{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}{Bounding\+Circle}} \mbox{\hyperlink{_sprite_methods_8h_ada2450ce26a424a516216fe6592c48d3}{sprite\+Methods\+Get\+Bounding\+Circle}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, int number\+Of\+Points)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a23cdae259828a109013da3c57a2b669e}{sprite\+Methods\+Set\+Velocities}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, float max\+Normal\+Velocity, float drag\+Velocity, float acceleration\+Velocity)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a2614b4b9eef76a54c374fae551197335}{sprite\+Methods\+Set\+Angle}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, float angle)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a115e89f458f763005e03f2042976b4b9}{sprite\+Methods\+Process\+Animation}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a47691f146f3e5e93aebc3d7391f268e7}{sprite\+Methods\+Process\+Bullet\+Animation}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a35ce33b222b696259af008c64d0d1ebe}{sprite\+Methods\+Render\+Sprite}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, Vector render\+Offset, bool interpolate)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_ac5aa6115d522e815ddc30282080e6396}{sprite\+Methods\+Render\+Health\+Bar}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, Vector render\+Offset)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_ab809974f3a01fee347b7328cac94bfad}{sprite\+Methods\+Render\+Experience\+Bar}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, Vector render\+Offset, float percentage)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a3898b9df56f85a49ef769e277ee744ca}{sprite\+Methods\+Render\+Bullet\+Sprite}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, \mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, Vector render\+Offset)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_aeeb638f491479788f7fc1973890bf6f5}{sprite\+Methods\+Process\+Velocity}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\item 
+Vector \mbox{\hyperlink{_sprite_methods_8h_a7bd12ba2a61a229814542d103d51d167}{sprite\+Methods\+Update\+Location\+By\+Velocity}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a6adf1851604be38e134395dcece4683e}{sprite\+Methods\+Handle\+Rear\+Collision}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, float multiply\+Reaction\+Speed\+By, float multiply\+Vector\+By)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_a3e400e62b2a70fb3ad654841fb405f02}{sprite\+Methods\+Set\+Location}} (Vector \&location, \mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\item 
+void \mbox{\hyperlink{_sprite_methods_8h_ad494e3324d70980d013c6a7c1b3032da}{sprite\+Methods\+Handle\+Jump}} (\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info, float jump\+Force)
+\item 
+bool \mbox{\hyperlink{_sprite_methods_8h_a4c291061d24f26554c604d991e1caf99}{sprite\+Methods\+Lock\+On\+Target}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&target, \mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$sprite\+Info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_sprite_methods_8h_a9703dd9e8e7a8c45051c0d6b687824e7}\label{_sprite_methods_8h_a9703dd9e8e7a8c45051c0d6b687824e7}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spirteMethodsInitSpriteInfo@{spirteMethodsInitSpriteInfo}}
+\index{spirteMethodsInitSpriteInfo@{spirteMethodsInitSpriteInfo}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spirteMethodsInitSpriteInfo()}{spirteMethodsInitSpriteInfo()}}
+{\footnotesize\ttfamily void spirte\+Methods\+Init\+Sprite\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+
+
+Initializes some of our default values ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Returns true if the timer has expired, else false /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_sprite_methods_8h_a0353a1f314bbaac068a68198e616962a}\label{_sprite_methods_8h_a0353a1f314bbaac068a68198e616962a}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsAssignModel@{spriteMethodsAssignModel}}
+\index{spriteMethodsAssignModel@{spriteMethodsAssignModel}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsAssignModel()}{spriteMethodsAssignModel()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Assign\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{class_i_model}{IModel}} $\ast$}]{model }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Checks the direction of a sprite and returns true/false if the sprite is facing that direction... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{_sprite_methods_8h_a473abee9f84727912dab71aa48bdfe64}\label{_sprite_methods_8h_a473abee9f84727912dab71aa48bdfe64}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsCheckDirection@{spriteMethodsCheckDirection}}
+\index{spriteMethodsCheckDirection@{spriteMethodsCheckDirection}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsCheckDirection()}{spriteMethodsCheckDirection()}}
+{\footnotesize\ttfamily bool sprite\+Methods\+Check\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Modifies velocity based upon direction to handle a wall style collision.. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00126}{126}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{_sprite_methods_8h_ada2450ce26a424a516216fe6592c48d3}\label{_sprite_methods_8h_ada2450ce26a424a516216fe6592c48d3}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsGetBoundingCircle@{spriteMethodsGetBoundingCircle}}
+\index{spriteMethodsGetBoundingCircle@{spriteMethodsGetBoundingCircle}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsGetBoundingCircle()}{spriteMethodsGetBoundingCircle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}{Bounding\+Circle}} sprite\+Methods\+Get\+Bounding\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{int}]{number\+Of\+Points }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Sets the speeds at which the sprite travels based on direction... max\+Normal\+Velocity is the maximum normal speed the sprite can go max\+Burst\+Velocity is the maximum burst speed the sprite can go (burst is a special speed increase) drag\+Velocity is how much speed is reduced when the sprite isn\textquotesingle{}t moving in a direction (until speed is 0) ~\newline
+ /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00350}{350}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{_sprite_methods_8h_ad9d10bdfc75a2c1db8d1bc929a0b6db3}\label{_sprite_methods_8h_ad9d10bdfc75a2c1db8d1bc929a0b6db3}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsGetBoundingTriangle@{spriteMethodsGetBoundingTriangle}}
+\index{spriteMethodsGetBoundingTriangle@{spriteMethodsGetBoundingTriangle}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsGetBoundingTriangle()}{spriteMethodsGetBoundingTriangle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}{Bounding\+Triangle}} sprite\+Methods\+Get\+Bounding\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns a bounding circle of points (specified by number\+Of\+Points) in a circle based on the current angle of the sprite info struct specified... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00327}{327}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{_sprite_methods_8h_a771d26785a516650e09230082cbd1cf3}\label{_sprite_methods_8h_a771d26785a516650e09230082cbd1cf3}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsHandleCollision@{spriteMethodsHandleCollision}}
+\index{spriteMethodsHandleCollision@{spriteMethodsHandleCollision}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsHandleCollision()}{spriteMethodsHandleCollision()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Handle\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}}}]{type,  }\item[{float}]{collision\+Force }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Modifies velocity as if the player is sliding in a particular direction /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{_sprite_methods_8h_ad494e3324d70980d013c6a7c1b3032da}\label{_sprite_methods_8h_ad494e3324d70980d013c6a7c1b3032da}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsHandleJump@{spriteMethodsHandleJump}}
+\index{spriteMethodsHandleJump@{spriteMethodsHandleJump}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsHandleJump()}{spriteMethodsHandleJump()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Handle\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{float}]{jump\+Force }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Locks onto the closest target by changing the angle of the sprite... returns true if target is in range, otherwise false... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Updates the current location of the sprite, and accounts for any jumps needed... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l01088}{1088}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{_sprite_methods_8h_a6adf1851604be38e134395dcece4683e}\label{_sprite_methods_8h_a6adf1851604be38e134395dcece4683e}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsHandleRearCollision@{spriteMethodsHandleRearCollision}}
+\index{spriteMethodsHandleRearCollision@{spriteMethodsHandleRearCollision}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsHandleRearCollision()}{spriteMethodsHandleRearCollision()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Handle\+Rear\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{float}]{multiply\+Reaction\+Speed\+By,  }\item[{float}]{multiply\+Vector\+By }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Updates the current location of the sprite, and accounts for any jumps needed... /summary\texorpdfstring{$>$}{>} ~\newline
+ \mbox{\Hypertarget{_sprite_methods_8h_a6bfdc270d6c5c1b5fa1144a98e8f27d8}\label{_sprite_methods_8h_a6bfdc270d6c5c1b5fa1144a98e8f27d8}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsHandleSlideCollision@{spriteMethodsHandleSlideCollision}}
+\index{spriteMethodsHandleSlideCollision@{spriteMethodsHandleSlideCollision}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsHandleSlideCollision()}{spriteMethodsHandleSlideCollision()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Handle\+Slide\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}}}]{type,  }\item[{float}]{collision\+Force }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Control magnitude can affect the maximum speed of the sprite. This can be used with analog joysticks or maybe adjusted if a sprite is damaged in some way (e.\+g. can only move at .75 of it\textquotesingle{}s maximum velocity) another example might be traveling through a stick substance can reduce it\textquotesingle{}s control magnitude /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00212}{212}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{_sprite_methods_8h_afe69b086977244e7b27fbc2c5635d679}\label{_sprite_methods_8h_afe69b086977244e7b27fbc2c5635d679}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsHasTimerExpired@{spriteMethodsHasTimerExpired}}
+\index{spriteMethodsHasTimerExpired@{spriteMethodsHasTimerExpired}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsHasTimerExpired()}{spriteMethodsHasTimerExpired()}}
+{\footnotesize\ttfamily bool sprite\+Methods\+Has\+Timer\+Expired (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{float}]{max\+Value }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Assigns an \mbox{\hyperlink{class_i_model}{IModel}} instances to a sprite /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>}f Assigns an \mbox{\hyperlink{class_i_model}{IModel}} instances to a sprite /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{_sprite_methods_8h_a5a16bdcb12d4b50018959afac7014568}\label{_sprite_methods_8h_a5a16bdcb12d4b50018959afac7014568}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsIncreaseAcceleration@{spriteMethodsIncreaseAcceleration}}
+\index{spriteMethodsIncreaseAcceleration@{spriteMethodsIncreaseAcceleration}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsIncreaseAcceleration()}{spriteMethodsIncreaseAcceleration()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Increase\+Acceleration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Sets the direction of a sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 16
+\mbox{\Hypertarget{_sprite_methods_8h_a4c291061d24f26554c604d991e1caf99}\label{_sprite_methods_8h_a4c291061d24f26554c604d991e1caf99}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsLockOnTarget@{spriteMethodsLockOnTarget}}
+\index{spriteMethodsLockOnTarget@{spriteMethodsLockOnTarget}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsLockOnTarget()}{spriteMethodsLockOnTarget()}}
+{\footnotesize\ttfamily bool sprite\+Methods\+Lock\+On\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{target,  }\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l01136}{1136}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 17
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{_sprite_methods_8h_a115e89f458f763005e03f2042976b4b9}\label{_sprite_methods_8h_a115e89f458f763005e03f2042976b4b9}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsProcessAnimation@{spriteMethodsProcessAnimation}}
+\index{spriteMethodsProcessAnimation@{spriteMethodsProcessAnimation}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsProcessAnimation()}{spriteMethodsProcessAnimation()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Process\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Processes animation frames (usually before rendering) for bullet models... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00485}{485}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 19
+Here is the caller graph for this function\+:
+% FIG 20
+\mbox{\Hypertarget{_sprite_methods_8h_a47691f146f3e5e93aebc3d7391f268e7}\label{_sprite_methods_8h_a47691f146f3e5e93aebc3d7391f268e7}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsProcessBulletAnimation@{spriteMethodsProcessBulletAnimation}}
+\index{spriteMethodsProcessBulletAnimation@{spriteMethodsProcessBulletAnimation}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsProcessBulletAnimation()}{spriteMethodsProcessBulletAnimation()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Process\+Bullet\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Renders the sprite using an \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00534}{534}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 21
+Here is the caller graph for this function\+:
+% FIG 22
+\mbox{\Hypertarget{_sprite_methods_8h_aeeb638f491479788f7fc1973890bf6f5}\label{_sprite_methods_8h_aeeb638f491479788f7fc1973890bf6f5}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsProcessVelocity@{spriteMethodsProcessVelocity}}
+\index{spriteMethodsProcessVelocity@{spriteMethodsProcessVelocity}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsProcessVelocity()}{spriteMethodsProcessVelocity()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Process\+Velocity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Update the current location of the sprite by velocity and returns any affect that may have on the map... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Handles Velocity /summary\texorpdfstring{$>$}{>} ~\newline
+ our velocity by our vector length. Otherwise we\textquotesingle{}ll process the drag value down below...
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00707}{707}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 23
+Here is the caller graph for this function\+:
+% FIG 24
+\mbox{\Hypertarget{_sprite_methods_8h_a3898b9df56f85a49ef769e277ee744ca}\label{_sprite_methods_8h_a3898b9df56f85a49ef769e277ee744ca}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsRenderBulletSprite@{spriteMethodsRenderBulletSprite}}
+\index{spriteMethodsRenderBulletSprite@{spriteMethodsRenderBulletSprite}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsRenderBulletSprite()}{spriteMethodsRenderBulletSprite()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Render\+Bullet\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{Vector}]{render\+Offset }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles Velocity /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} Handles Velocity... TOTALLY GROSS -\/ PLEASE EAGAN, REFACTOR ME! /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00671}{671}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 25
+Here is the caller graph for this function\+:
+% FIG 26
+\mbox{\Hypertarget{_sprite_methods_8h_ab809974f3a01fee347b7328cac94bfad}\label{_sprite_methods_8h_ab809974f3a01fee347b7328cac94bfad}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsRenderExperienceBar@{spriteMethodsRenderExperienceBar}}
+\index{spriteMethodsRenderExperienceBar@{spriteMethodsRenderExperienceBar}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsRenderExperienceBar()}{spriteMethodsRenderExperienceBar()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Render\+Experience\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{Vector}]{render\+Offset,  }\item[{float}]{percentage }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Renders the sprite using an \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00646}{646}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 27
+\mbox{\Hypertarget{_sprite_methods_8h_ac5aa6115d522e815ddc30282080e6396}\label{_sprite_methods_8h_ac5aa6115d522e815ddc30282080e6396}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsRenderHealthBar@{spriteMethodsRenderHealthBar}}
+\index{spriteMethodsRenderHealthBar@{spriteMethodsRenderHealthBar}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsRenderHealthBar()}{spriteMethodsRenderHealthBar()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Render\+Health\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{Vector}]{render\+Offset }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Renders the experience bar used to track to current experience level of our towers... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00616}{616}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 28
+\mbox{\Hypertarget{_sprite_methods_8h_a35ce33b222b696259af008c64d0d1ebe}\label{_sprite_methods_8h_a35ce33b222b696259af008c64d0d1ebe}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsRenderSprite@{spriteMethodsRenderSprite}}
+\index{spriteMethodsRenderSprite@{spriteMethodsRenderSprite}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsRenderSprite()}{spriteMethodsRenderSprite()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Render\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{Vector}]{render\+Offset,  }\item[{bool}]{interpolate }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Renders the health bar for the specified spriteinfo object /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00576}{576}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 29
+Here is the caller graph for this function\+:
+% FIG 30
+\mbox{\Hypertarget{_sprite_methods_8h_a2614b4b9eef76a54c374fae551197335}\label{_sprite_methods_8h_a2614b4b9eef76a54c374fae551197335}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsSetAngle@{spriteMethodsSetAngle}}
+\index{spriteMethodsSetAngle@{spriteMethodsSetAngle}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsSetAngle()}{spriteMethodsSetAngle()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Set\+Angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Processes animation frames (usually before rendering) /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} A static local method use the render the health bar of the sprite... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00398}{398}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 31
+\mbox{\Hypertarget{_sprite_methods_8h_a9edbed78645deb6d2e2e90dcf6737412}\label{_sprite_methods_8h_a9edbed78645deb6d2e2e90dcf6737412}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsSetControlMagnitude@{spriteMethodsSetControlMagnitude}}
+\index{spriteMethodsSetControlMagnitude@{spriteMethodsSetControlMagnitude}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsSetControlMagnitude()}{spriteMethodsSetControlMagnitude()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Set\+Control\+Magnitude (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{float}]{control\+Magnitude }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Increases the speed vector length by the acceleration velocity specified /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00261}{261}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 32
+\mbox{\Hypertarget{_sprite_methods_8h_a4c96beb223e046f6218f0c1f20146363}\label{_sprite_methods_8h_a4c96beb223e046f6218f0c1f20146363}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsSetDirection@{spriteMethodsSetDirection}}
+\index{spriteMethodsSetDirection@{spriteMethodsSetDirection}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsSetDirection()}{spriteMethodsSetDirection()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Unsets the direction of a sprite /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00278}{278}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 33
+Here is the caller graph for this function\+:
+% FIG 34
+\mbox{\Hypertarget{_sprite_methods_8h_a3e400e62b2a70fb3ad654841fb405f02}\label{_sprite_methods_8h_a3e400e62b2a70fb3ad654841fb405f02}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsSetLocation@{spriteMethodsSetLocation}}
+\index{spriteMethodsSetLocation@{spriteMethodsSetLocation}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsSetLocation()}{spriteMethodsSetLocation()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Set\+Location (\begin{DoxyParamCaption}\item[{Vector \&}]{location,  }\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles a jump animation for a sprite as required... /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Locks onto the closest target by changing the angle of the sprite... returns true if target is in range, otherwise false... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l01105}{1105}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 35
+\mbox{\Hypertarget{_sprite_methods_8h_a23cdae259828a109013da3c57a2b669e}\label{_sprite_methods_8h_a23cdae259828a109013da3c57a2b669e}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsSetVelocities@{spriteMethodsSetVelocities}}
+\index{spriteMethodsSetVelocities@{spriteMethodsSetVelocities}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsSetVelocities()}{spriteMethodsSetVelocities()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Set\+Velocities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{float}]{max\+Normal\+Velocity,  }\item[{float}]{drag\+Velocity,  }\item[{float}]{acceleration\+Velocity }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Sets the angle at which our velocity will modify sprite movement... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00387}{387}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 36
+\mbox{\Hypertarget{_sprite_methods_8h_af8b26da7debce38238aa454f2b76f94f}\label{_sprite_methods_8h_af8b26da7debce38238aa454f2b76f94f}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsTranslateSprite@{spriteMethodsTranslateSprite}}
+\index{spriteMethodsTranslateSprite@{spriteMethodsTranslateSprite}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsTranslateSprite()}{spriteMethodsTranslateSprite()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Translate\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{Vector}]{sprite\+Location }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns three sets of x/y/z coordinates indicating a bounding triangle for a sprite implementation... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00315}{315}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 37
+\mbox{\Hypertarget{_sprite_methods_8h_a78a2d01eb0f24769d841a1f62b1f465d}\label{_sprite_methods_8h_a78a2d01eb0f24769d841a1f62b1f465d}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsUnsetDirection@{spriteMethodsUnsetDirection}}
+\index{spriteMethodsUnsetDirection@{spriteMethodsUnsetDirection}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsUnsetDirection()}{spriteMethodsUnsetDirection()}}
+{\footnotesize\ttfamily void sprite\+Methods\+Unset\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info,  }\item[{\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}]{direction }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Translates the location of a sprite ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 38
+\mbox{\Hypertarget{_sprite_methods_8h_a7bd12ba2a61a229814542d103d51d167}\label{_sprite_methods_8h_a7bd12ba2a61a229814542d103d51d167}} 
+\index{SpriteMethods.h@{SpriteMethods.h}!spriteMethodsUpdateLocationByVelocity@{spriteMethodsUpdateLocationByVelocity}}
+\index{spriteMethodsUpdateLocationByVelocity@{spriteMethodsUpdateLocationByVelocity}!SpriteMethods.h@{SpriteMethods.h}}
+\doxysubsubsection{\texorpdfstring{spriteMethodsUpdateLocationByVelocity()}{spriteMethodsUpdateLocationByVelocity()}}
+{\footnotesize\ttfamily Vector sprite\+Methods\+Update\+Location\+By\+Velocity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}} $\ast$}]{sprite\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles a collision event in the case of a fish ramming us from the front... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_sprite_methods_8cpp_source_l00953}{953}} of file \mbox{\hyperlink{_sprite_methods_8cpp_source}{Sprite\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 39
+Here is the caller graph for this function\+:
+% FIG 40

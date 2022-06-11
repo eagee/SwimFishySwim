@@ -1,0 +1,64 @@
+\hypertarget{_simple_wii_heap_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Simple\+Wii\+Heap.cpp}
+\mbox{\hyperlink{_simple_wii_heap_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00001}00001 \textcolor{comment}{// SimpleWiiHeap.h}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00002}00002 \textcolor{comment}{// Defines a very simple heap for the MEM2 area}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00003}00003 \textcolor{comment}{// This will be for preallocated data, so *nothing* will ever get freed, you can just *add* to it until}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00004}00004 \textcolor{comment}{// the toolchain supports the extra 64MB correctly...}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00005}00005 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#ifdef PLATFORM\_IS\_WII}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00012}00012 \textcolor{comment}{// Everything will need to be aligned by 32 since this is where we're keeping our images ...}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00013}\mbox{\hyperlink{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}{00013}} \textcolor{preprocessor}{\#define MEMORY\_ALIGNMENT\_SIZE 32}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00015}\mbox{\hyperlink{structtag_memory_block}{00015}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_memory_block}{tagMemoryBlock}}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00017}\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{00017}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}};}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00018}\mbox{\hyperlink{structtag_memory_block_a6dfcbd52fa2dcde010eacac3034d1bfa}{00018}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{structtag_memory_block_a6dfcbd52fa2dcde010eacac3034d1bfa}{endAddress}};}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00019}\mbox{\hyperlink{_simple_wii_heap_8cpp_ae9fb037d0f3b7933c844fd87300ade1b}{00019}} \} \mbox{\hyperlink{_simple_wii_heap_8cpp_ae9fb037d0f3b7933c844fd87300ade1b}{MemoryBlock}};}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00021}\mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{00021}} \mbox{\hyperlink{structtag_memory_block}{MemoryBlock}} \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}};}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00026}\mbox{\hyperlink{_simple_wii_heap_8cpp_a894fd4387f79b47b697e2e781b7021ab}{00026}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_simple_wii_heap_8cpp_a894fd4387f79b47b697e2e781b7021ab}{simpleWiiHeapInit}}()}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00028}00028     \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}} = (\textcolor{keywordtype}{unsigned} long)SYS\_GetArena2Lo();}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00029}00029     \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a6dfcbd52fa2dcde010eacac3034d1bfa}{endAddress}} = (\textcolor{keywordtype}{unsigned} long)SYS\_GetArena2Hi();}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00031}00031     \textcolor{comment}{// Let's (if possible) only use 1/2 of the available Arena2 memory...}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00032}00032     \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}} += abs((\mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a6dfcbd52fa2dcde010eacac3034d1bfa}{endAddress}} -\/ \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}})/2);}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00034}00034     \textcolor{comment}{// Make sure our starting address stays alligned...}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00035}00035     \textcolor{keywordflow}{if}(\mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}} \% \mbox{\hyperlink{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}{MEMORY\_ALIGNMENT\_SIZE}} != 0)}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00036}00036     \{}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00037}00037         \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}} += (\mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}} \% \mbox{\hyperlink{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}{MEMORY\_ALIGNMENT\_SIZE}});}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00039}00039 \}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00045}00045 \textcolor{comment}{// of room.}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00047}\mbox{\hyperlink{_simple_wii_heap_8cpp_a804518549d7f6c8af348513b73c81c1f}{00047}} \textcolor{comment}{}\textcolor{keywordtype}{void} *\mbox{\hyperlink{_simple_wii_heap_8cpp_a804518549d7f6c8af348513b73c81c1f}{simpleWiiHeapAllocatePersistentMemory}}(\textcolor{keywordtype}{size\_t} memorySize)}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00048}00048 \{       }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00049}00049     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} returnValue = \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}};}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00050}00050     }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00051}00051     \textcolor{keywordflow}{if}((returnValue + memorySize) >= \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a6dfcbd52fa2dcde010eacac3034d1bfa}{endAddress}})}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00052}00052     \{}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00053}00053         ASSERT(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00054}00054         \textcolor{keywordflow}{throw} std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00056}00056     }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00057}00057     \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}} += memorySize;}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00059}00059     \textcolor{comment}{// Figure out how many bytes we need to pad the memory by to keep it aligned...}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00060}00060     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} paddingBytes = (\mbox{\hyperlink{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}{MEMORY\_ALIGNMENT\_SIZE}} -\/ (\mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}} \% \mbox{\hyperlink{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}{MEMORY\_ALIGNMENT\_SIZE}})) \% \mbox{\hyperlink{_simple_wii_heap_8cpp_acac2fafea455ee30125ff3479bd913b7}{MEMORY\_ALIGNMENT\_SIZE}};}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00061}00061     }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00062}00062     \mbox{\hyperlink{_simple_wii_heap_8cpp_a383377f4c634b63d5e311f03097616f5}{gMemoryAvailable}}.\mbox{\hyperlink{structtag_memory_block_a71cbb43c1389c2a0f0fc4039dfcb391e}{startAddress}} += paddingBytes;}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00063}00063         }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00064}00064     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)returnValue;}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_simple_wii_heap_8cpp_source_l00067}00067 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

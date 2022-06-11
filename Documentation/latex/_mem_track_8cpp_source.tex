@@ -1,0 +1,611 @@
+\hypertarget{_mem_track_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Mem\+Track.cpp}
+\mbox{\hyperlink{_mem_track_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00002}00002 \textcolor{comment}{Copyright (c) 2002, 2008 Curtis Bartley}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00003}00003 \textcolor{comment}{All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00004}00004 \textcolor{comment}{Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00005}00005 \textcolor{comment}{modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00006}00006 \textcolor{comment}{are met:}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00007}00007 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00008}00008 \textcolor{comment}{-\/ Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00009}00009 \textcolor{comment}{notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00010}00010 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00011}00011 \textcolor{comment}{-\/ Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00012}00012 \textcolor{comment}{notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00013}00013 \textcolor{comment}{documentation and/or other materials provided with the}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00014}00014 \textcolor{comment}{distribution.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00015}00015 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00016}00016 \textcolor{comment}{-\/ Neither the name of Curtis Bartley nor the names of any other}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00017}00017 \textcolor{comment}{contributors may be used to endorse or promote products derived}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00018}00018 \textcolor{comment}{from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00019}00019 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00020}00020 \textcolor{comment}{THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00021}00021 \textcolor{comment}{"{}AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00022}00022 \textcolor{comment}{LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00023}00023 \textcolor{comment}{FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00024}00024 \textcolor{comment}{COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00025}00025 \textcolor{comment}{INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00026}00026 \textcolor{comment}{(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00027}00027 \textcolor{comment}{SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00028}00028 \textcolor{comment}{HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00029}00029 \textcolor{comment}{STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00030}00030 \textcolor{comment}{ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00031}00031 \textcolor{comment}{OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00032}00032 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00034}00034 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ includes */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00036}00036 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00037}00037 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00038}00038 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00039}00039 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00040}00040 \textcolor{preprocessor}{\#include <new>}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00042}00042 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_debug_stuffs_8h}{DebugStuffs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00043}00043 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mem_track_8h}{MemTrack.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00044}00044 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_tracing_8h}{Tracing.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00046}00046 \textcolor{preprocessor}{\#undef new    }\textcolor{comment}{// IMPORTANT!}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00048}00048 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00049}00049 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ namespace MemTrack -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00050}00050 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00052}\mbox{\hyperlink{namespace_mem_track}{00052}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_mem_track}{MemTrack}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00053}00053 \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00055}00055     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00056}00056     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ class BlockHeader -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00057}00057     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00059}\mbox{\hyperlink{class_mem_track_1_1_block_header}{00059}}     \textcolor{keyword}{class }\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00060}00060     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00061}00061         \textcolor{keyword}{private}:    \textcolor{comment}{// static member variables}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00062}00062             \textcolor{keyword}{static} \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *ourFirstNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00063}00063     }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00064}00064         \textcolor{keyword}{private}:    \textcolor{comment}{// member variables}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00065}00065             \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *myPrevNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00066}00066             \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *myNextNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00067}00067             \textcolor{keywordtype}{size\_t} myRequestedSize;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00068}00068             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *myFilename;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00069}00069             \textcolor{keywordtype}{int} myLineNum;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00070}00070             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *myTypeName;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00072}00072         \textcolor{keyword}{public}:     \textcolor{comment}{// members}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00073}00073             \mbox{\hyperlink{class_mem_track_1_1_block_header_a507547abeb72420ccc1e15ca2d2979f1}{BlockHeader}}(\textcolor{keywordtype}{size\_t} requestedSize);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00074}00074             \mbox{\hyperlink{class_mem_track_1_1_block_header_ae272b50428a9a2c28124c0fecf851915}{\string~BlockHeader}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00075}00075         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00076}\mbox{\hyperlink{class_mem_track_1_1_block_header_ac8b53e3cfe9fc103f8fef91fb9c822ea}{00076}}             \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_mem_track_1_1_block_header_ac8b53e3cfe9fc103f8fef91fb9c822ea}{GetRequestedSize}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} myRequestedSize; \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00077}\mbox{\hyperlink{class_mem_track_1_1_block_header_abf9a779a9b8e82e8028341fc513c4c39}{00077}}             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *\mbox{\hyperlink{class_mem_track_1_1_block_header_abf9a779a9b8e82e8028341fc513c4c39}{GetFilename}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} myFilename; \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00078}\mbox{\hyperlink{class_mem_track_1_1_block_header_a817f74fc613479915f3e50c3b83e1463}{00078}}             \textcolor{keywordtype}{int} \mbox{\hyperlink{class_mem_track_1_1_block_header_a817f74fc613479915f3e50c3b83e1463}{GetLineNum}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} myLineNum; \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00079}\mbox{\hyperlink{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}{00079}}             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *\mbox{\hyperlink{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}{GetTypeName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} myTypeName; \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00080}00080         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00081}00081             \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mem_track_1_1_block_header_a08ad6bf3f97cffae3b78012d35d5154c}{Stamp}}(\textcolor{keywordtype}{char} \textcolor{keyword}{const} *filename, \textcolor{keywordtype}{int} lineNum, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *typeName);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00082}00082         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00083}00083             \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mem_track_1_1_block_header_af1e99faac9730ba834bf0cc5d7ec0106}{AddNode}}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *node);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00084}00084             \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mem_track_1_1_block_header_a3980e372d46c2b50fc58104cdc88f037}{RemoveNode}}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *node);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00085}00085             \textcolor{keyword}{static} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_mem_track_1_1_block_header_ae57e5e9fcbc414cc37b05c49d2424c39}{CountBlocks}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00086}00086             \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mem_track_1_1_block_header_a66b917e29ed5fe282e93cada27a4d8f8}{GetBlocks}}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} **blockHeaderPP);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00087}00087             \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_mem_track_1_1_block_header_a8e817ac9a699b5bc7b9f0ea93cd48984}{TypeGreaterThan}}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *header1, \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *header2);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00088}00088     \};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00090}00090     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader static member variables */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00092}00092     BlockHeader *BlockHeader::ourFirstNode = NULL;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00094}00094     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader constructor */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00096}\mbox{\hyperlink{class_mem_track_1_1_block_header_a507547abeb72420ccc1e15ca2d2979f1}{00096}}     \mbox{\hyperlink{class_mem_track_1_1_block_header_a507547abeb72420ccc1e15ca2d2979f1}{BlockHeader::BlockHeader}}(\textcolor{keywordtype}{size\_t} requestedSize)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00097}00097     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00098}00098         myPrevNode = NULL;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00099}00099         myNextNode = NULL;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00100}00100         myRequestedSize = requestedSize;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00101}00101         myFilename = \textcolor{stringliteral}{"{}[unknown]"{}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00102}00102         myLineNum = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00103}00103         myTypeName = \textcolor{stringliteral}{"{}[unknown]"{}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00106}00106     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader destructor */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00108}\mbox{\hyperlink{class_mem_track_1_1_block_header_ae272b50428a9a2c28124c0fecf851915}{00108}}     \mbox{\hyperlink{class_mem_track_1_1_block_header_ae272b50428a9a2c28124c0fecf851915}{BlockHeader::\string~BlockHeader}}()}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00109}00109     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00110}00110     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00111}00111         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00112}00112     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader Stamp */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00114}\mbox{\hyperlink{class_mem_track_1_1_block_header_a08ad6bf3f97cffae3b78012d35d5154c}{00114}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mem_track_1_1_block_header_a08ad6bf3f97cffae3b78012d35d5154c}{BlockHeader::Stamp}}(\textcolor{keywordtype}{char} \textcolor{keyword}{const} *filename, \textcolor{keywordtype}{int} lineNum, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *typeName)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00115}00115     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00116}00116         myFilename = filename;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00117}00117         myLineNum = lineNum;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00118}00118         myTypeName = typeName;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00119}00119     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00121}00121     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader AddNode */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00123}\mbox{\hyperlink{class_mem_track_1_1_block_header_af1e99faac9730ba834bf0cc5d7ec0106}{00123}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mem_track_1_1_block_header_af1e99faac9730ba834bf0cc5d7ec0106}{BlockHeader::AddNode}}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *node)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00124}00124     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00125}00125         ASSERT(node != NULL);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00126}00126         ASSERT(node-\/>myPrevNode == NULL);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00127}00127         ASSERT(node-\/>myNextNode == NULL);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00129}00129         \textcolor{comment}{// If we have at least one node in the list ...        }}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00130}00130         \textcolor{keywordflow}{if} (ourFirstNode != NULL)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00131}00131         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00132}00132             \textcolor{comment}{// ... make the new node the first node's predecessor.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00133}00133             ASSERT(ourFirstNode-\/>myPrevNode == NULL);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00134}00134             ourFirstNode-\/>myPrevNode = node;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00135}00135         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00137}00137         \textcolor{comment}{// Make the first node the new node's succesor.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00138}00138         node-\/>myNextNode = ourFirstNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00140}00140         \textcolor{comment}{// Make the new node the first node.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00141}00141         ourFirstNode = node;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00142}00142     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00144}00144     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader RemoveNode */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00146}\mbox{\hyperlink{class_mem_track_1_1_block_header_a3980e372d46c2b50fc58104cdc88f037}{00146}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mem_track_1_1_block_header_a3980e372d46c2b50fc58104cdc88f037}{BlockHeader::RemoveNode}}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *node)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00147}00147     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00148}00148         ASSERT(node != NULL);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00149}00149         ASSERT(ourFirstNode != NULL);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00151}00151         \textcolor{comment}{// If target node is the first node in the list...}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00152}00152         \textcolor{keywordflow}{if} (ourFirstNode == node)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00153}00153         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00154}00154             \textcolor{comment}{// ... make the target node's successor the first node.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00155}00155             ASSERT(ourFirstNode-\/>myPrevNode == NULL);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00156}00156             ourFirstNode = node-\/>myNextNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00157}00157         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00158}00158         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00159}00159         \textcolor{comment}{// Link target node's predecessor, if any, to its successor.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00160}00160         \textcolor{keywordflow}{if} (node-\/>myPrevNode != NULL)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00161}00161         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00162}00162             node-\/>myPrevNode-\/>myNextNode = node-\/>myNextNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00163}00163         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00164}00164         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00165}00165         \textcolor{comment}{// Link target node's successor, if any, to its predecessor.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00166}00166         \textcolor{keywordflow}{if} (node-\/>myNextNode != NULL)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00167}00167         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00168}00168             node-\/>myNextNode-\/>myPrevNode = node-\/>myPrevNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00169}00169         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00171}00171         \textcolor{comment}{// Clear target node's previous and next pointers.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00172}00172         node-\/>myPrevNode = NULL;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00173}00173         node-\/>myNextNode = NULL;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00174}00174     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00176}00176     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader CountBlocks */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00178}\mbox{\hyperlink{class_mem_track_1_1_block_header_ae57e5e9fcbc414cc37b05c49d2424c39}{00178}}     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_mem_track_1_1_block_header_ae57e5e9fcbc414cc37b05c49d2424c39}{BlockHeader::CountBlocks}}()}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00179}00179     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00180}00180         \textcolor{keywordtype}{size\_t} count = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00181}00181         \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *currNode = ourFirstNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00182}00182         \textcolor{keywordflow}{while} (currNode != NULL)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00183}00183         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00184}00184             count++;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00185}00185             currNode = currNode-\/>myNextNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00186}00186         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00187}00187         \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00188}00188     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00190}00190     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader GetBlocks */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00192}\mbox{\hyperlink{class_mem_track_1_1_block_header_a66b917e29ed5fe282e93cada27a4d8f8}{00192}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mem_track_1_1_block_header_a66b917e29ed5fe282e93cada27a4d8f8}{BlockHeader::GetBlocks}}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} **blockHeaderPP)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00193}00193     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00194}00194         \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *currNode = ourFirstNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00195}00195         \textcolor{keywordflow}{while} (currNode != NULL)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00196}00196         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00197}00197             *blockHeaderPP = currNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00198}00198             blockHeaderPP++;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00199}00199             currNode = currNode-\/>myNextNode;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00200}00200         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00201}00201     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00203}00203     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ BlockHeader TypeGreaterThan */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00205}\mbox{\hyperlink{class_mem_track_1_1_block_header_a8e817ac9a699b5bc7b9f0ea93cd48984}{00205}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_mem_track_1_1_block_header_a8e817ac9a699b5bc7b9f0ea93cd48984}{BlockHeader::TypeGreaterThan}}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *header1, \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *header2)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00206}00206     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00207}00207         \textcolor{keywordflow}{return} (strcmp(header1-\/>myTypeName, header2-\/>myTypeName) > 0);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00208}00208     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00210}00210     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00211}00211     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ class Signature -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00212}00212     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00214}\mbox{\hyperlink{class_mem_track_1_1_signature}{00214}}     \textcolor{keyword}{class }\mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00215}00215     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00216}00216         \textcolor{keyword}{private}:    \textcolor{comment}{// constants}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00217}00217             \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} SIGNATURE1 = 0xCAFEBABE;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00218}00218             \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} SIGNATURE2 = 0xFACEFACE;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00219}00219         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00220}00220         \textcolor{keyword}{private}:    \textcolor{comment}{// member variables}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00221}00221             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mySignature1;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00222}00222             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mySignature2;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00223}00223             }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00224}00224         \textcolor{keyword}{public}:        \textcolor{comment}{// construction/destruction}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00225}\mbox{\hyperlink{class_mem_track_1_1_signature_a80ce661660e320dbe99f12f9b7cbf82a}{00225}}             \mbox{\hyperlink{class_mem_track_1_1_signature_a80ce661660e320dbe99f12f9b7cbf82a}{Signature}}() : mySignature1(SIGNATURE1), mySignature2(SIGNATURE2) \{\};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00226}\mbox{\hyperlink{class_mem_track_1_1_signature_adf3988302235629bea2df1a8e125c4e6}{00226}}             \mbox{\hyperlink{class_mem_track_1_1_signature_adf3988302235629bea2df1a8e125c4e6}{\string~Signature}}() \{ mySignature1 = 0; mySignature2 = 0; \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00227}00227             }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00228}00228         \textcolor{keyword}{public}:        \textcolor{comment}{// static member functions}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00229}\mbox{\hyperlink{class_mem_track_1_1_signature_ac80b7fcb07b8928cecabb04b3faae55b}{00229}}             \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_mem_track_1_1_signature_ac80b7fcb07b8928cecabb04b3faae55b}{IsValidSignature}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}} *pProspectiveSignature)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00230}00230             \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00231}00231                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00232}00232                 \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00233}00233                     \textcolor{keywordflow}{if} (pProspectiveSignature-\/>mySignature1 != SIGNATURE1) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00234}00234                     \textcolor{keywordflow}{if} (pProspectiveSignature-\/>mySignature2 != SIGNATURE2) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00235}00235                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00236}00236                 \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00237}00237                 \textcolor{keywordflow}{catch} (...)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00238}00238                 \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00239}00239                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00240}00240                 \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00241}00241             \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00242}00242     \};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00243}00243 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00244}00244     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00245}00245     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ address conversion -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00246}00246     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00248}00248     \textcolor{comment}{/* We divide the memory blocks we allocate into two "{}chunks"{}, the}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00249}00249 \textcolor{comment}{     * "{}prolog chunk"{} where we store information about the allocation,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00250}00250 \textcolor{comment}{     * and the "{}user chunk"{} which we return to the caller to use.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00251}00251 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00252}00252 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00253}00253     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ alignment */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00254}00254 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00255}\mbox{\hyperlink{namespace_mem_track_a2283199082893e4916679370998529cf}{00255}}     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_mem_track_a2283199082893e4916679370998529cf}{ALIGNMENT}} = 4;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00256}00256 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00257}00257     \textcolor{comment}{/* If "{}value"{} (a memory size or offset) falls on an alignment boundary,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00258}00258 \textcolor{comment}{     * then just return it.  Otherwise return the smallest number larger}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00259}00259 \textcolor{comment}{     * than "{}value"{} that falls on an alignment boundary.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00260}00260 \textcolor{comment}{     */}    }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00261}00261 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00262}\mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{00262}} \textcolor{preprocessor}{    \#define PAD\_TO\_ALIGNMENT\_BOUNDARY(value) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00263}00263 \textcolor{preprocessor}{        ((value) + ((ALIGNMENT -\/ ((value) \% ALIGNMENT)) \% ALIGNMENT))}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00265}00265     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ chunk structs */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00266}00266     }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00267}00267     \textcolor{comment}{/* We declare incomplete structures for each chunk, just to }}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00268}00268 \textcolor{comment}{     * provide type safety.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00269}00269 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00271}00271     \textcolor{keyword}{struct }PrologChunk;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00272}00272     \textcolor{keyword}{struct }UserChunk;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00273}00273 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00274}00274     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ chunk sizes and offsets */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00275}00275 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00276}\mbox{\hyperlink{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}{00276}}     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}{SIZE\_BlockHeader}} = \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\_TO\_ALIGNMENT\_BOUNDARY}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}}));}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00277}\mbox{\hyperlink{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}{00277}}     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}{SIZE\_Signature}} = \mbox{\hyperlink{_mem_track_8cpp_a59433e84760650c41d37bae64b608955}{PAD\_TO\_ALIGNMENT\_BOUNDARY}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}}));}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00278}00278 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00279}\mbox{\hyperlink{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}{00279}}     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}{OFFSET\_BlockHeader}} = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00280}\mbox{\hyperlink{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}{00280}}     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}{OFFSET\_Signature}} = \mbox{\hyperlink{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}{OFFSET\_BlockHeader}} + \mbox{\hyperlink{namespace_mem_track_a8d887b3493e119d9925a59d21c936c7f}{SIZE\_BlockHeader}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00281}\mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{00281}}     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{OFFSET\_UserChunk}} = \mbox{\hyperlink{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}{OFFSET\_Signature}} + \mbox{\hyperlink{namespace_mem_track_a960e4337d7a4a0a820160e24af851b32}{SIZE\_Signature}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00282}00282     }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00283}\mbox{\hyperlink{namespace_mem_track_a1833ed4e31c20e02bc6e238b26b63a5e}{00283}}     \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{namespace_mem_track_a1833ed4e31c20e02bc6e238b26b63a5e}{SIZE\_PrologChunk}} = \mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{OFFSET\_UserChunk}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00284}00284 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00285}00285     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ GetUserAddress */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00286}00286 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00287}00287     \textcolor{keyword}{static} UserChunk *GetUserAddress(PrologChunk *pProlog)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00288}00288     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00289}00289         \textcolor{keywordtype}{char} *pchProlog = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00290}00290         \textcolor{keywordtype}{char} *pchUser = pchProlog + \mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{OFFSET\_UserChunk}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00291}00291         UserChunk *pUser = \textcolor{keyword}{reinterpret\_cast<}UserChunk *\textcolor{keyword}{>}(pchUser);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00292}00292         \textcolor{keywordflow}{return} pUser;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00293}00293     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00295}00295     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ GetPrologAddress */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00296}00296 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00297}00297     \textcolor{keyword}{static} PrologChunk *GetPrologAddress(UserChunk *pUser)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00298}00298     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00299}00299         \textcolor{keywordtype}{char} *pchUser = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(pUser);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00300}00300         \textcolor{keywordtype}{char} *pchProlog = pchUser -\/ \mbox{\hyperlink{namespace_mem_track_a39fdae49013b58abcd9c76db5ec3045d}{OFFSET\_UserChunk}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00301}00301         PrologChunk *pProlog = \textcolor{keyword}{reinterpret\_cast<}PrologChunk *\textcolor{keyword}{>}(pchProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00302}00302         \textcolor{keywordflow}{return} pProlog;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00303}00303     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00304}00304 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00305}00305     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ GetHeaderAddress */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00306}00306 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00307}00307     \textcolor{keyword}{static} BlockHeader *GetHeaderAddress(PrologChunk *pProlog)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00308}00308     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00309}00309         \textcolor{keywordtype}{char} *pchProlog = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00310}00310         \textcolor{keywordtype}{char} *pchHeader = pchProlog + \mbox{\hyperlink{namespace_mem_track_a0d3bf38ebd76a3255b5e5ee788e7e556}{OFFSET\_BlockHeader}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00311}00311         BlockHeader *pHeader = \textcolor{keyword}{reinterpret\_cast<}BlockHeader *\textcolor{keyword}{>}(pchHeader);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00312}00312         \textcolor{keywordflow}{return} pHeader;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00313}00313     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00314}00314 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00315}00315     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ GetSignatureAddress */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00316}00316 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00317}00317     \textcolor{keyword}{static} Signature *GetSignatureAddress(PrologChunk *pProlog)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00318}00318     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00319}00319         \textcolor{keywordtype}{char} *pchProlog = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00320}00320         \textcolor{keywordtype}{char} *pchSignature = pchProlog + \mbox{\hyperlink{namespace_mem_track_a3b8e2bf9a850494dcbaa0ed578524847}{OFFSET\_Signature}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00321}00321         Signature *pSignature = \textcolor{keyword}{reinterpret\_cast<}Signature *\textcolor{keyword}{>}(pchSignature);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00322}00322         \textcolor{keywordflow}{return} pSignature;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00323}00323     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00324}00324 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00325}00325     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00326}00326     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ memory allocation and stamping -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00327}00327     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00328}00328 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00329}00329     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ TrackMalloc */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00330}00330     }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00331}\mbox{\hyperlink{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}{00331}}     \textcolor{keywordtype}{void} *\mbox{\hyperlink{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}{TrackMalloc}}(\textcolor{keywordtype}{size\_t} size)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00332}00332     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00333}00333         \textcolor{comment}{// Allocate the memory, including space for the prolog.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00334}00334         PrologChunk *pProlog = (PrologChunk *)malloc(\mbox{\hyperlink{namespace_mem_track_a1833ed4e31c20e02bc6e238b26b63a5e}{SIZE\_PrologChunk}} + size);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00335}00335         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00336}00336         \textcolor{comment}{// If the allocation failed, then return NULL.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00337}00337         \textcolor{keywordflow}{if} (pProlog == NULL) \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00338}00338         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00339}00339         \textcolor{comment}{// Use placement new to construct the block header in place.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00340}00340         \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *pBlockHeader = \textcolor{keyword}{new} (pProlog) \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}}(size);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00341}00341         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00342}00342         \textcolor{comment}{// Link the block header into the list of extant block headers.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00343}00343         \mbox{\hyperlink{class_mem_track_1_1_block_header_af1e99faac9730ba834bf0cc5d7ec0106}{BlockHeader::AddNode}}(pBlockHeader);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00344}00344         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00345}00345         \textcolor{comment}{// Use placement new to construct the signature in place.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00346}00346         \mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}} *pSignature = \textcolor{keyword}{new} (GetSignatureAddress(pProlog)) \mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00347}00347         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00348}00348         \textcolor{comment}{// Get the offset to the user chunk and return it.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00349}00349         UserChunk *pUser = GetUserAddress(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00350}00350         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00351}00351         \textcolor{keywordflow}{return} pUser;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00352}00352     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00353}00353 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00354}00354     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ TrackFree */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00355}00355     }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00356}\mbox{\hyperlink{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}{00356}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}{TrackFree}}(\textcolor{keywordtype}{void} *p)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00357}00357     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00358}00358         \textcolor{comment}{// It's perfectly valid for "{}p"{} to be null; return if it is.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00359}00359         \textcolor{keywordflow}{if} (p == NULL) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00360}00360     }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00361}00361         \textcolor{comment}{// Get the prolog address for this memory block.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00362}00362         UserChunk *pUser = \textcolor{keyword}{reinterpret\_cast<}UserChunk *\textcolor{keyword}{>}(p);    }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00363}00363         PrologChunk *pProlog = GetPrologAddress(pUser);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00364}00364        }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00365}00365         \textcolor{comment}{// Check the signature, and if it's invalid, return immediately.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00366}00366         \mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}} *pSignature = GetSignatureAddress(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00367}00367         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_mem_track_1_1_signature_ac80b7fcb07b8928cecabb04b3faae55b}{Signature::IsValidSignature}}(pSignature)) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00368}00368         }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00369}00369         \textcolor{comment}{// Destroy the signature.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00370}00370         pSignature-\/>\mbox{\hyperlink{class_mem_track_1_1_signature_adf3988302235629bea2df1a8e125c4e6}{\string~Signature}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00371}00371         pSignature = NULL;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00372}00372 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00373}00373         \textcolor{comment}{// Unlink the block header from the list and destroy it.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00374}00374         \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *pBlockHeader = GetHeaderAddress(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00375}00375         \mbox{\hyperlink{class_mem_track_1_1_block_header_a3980e372d46c2b50fc58104cdc88f037}{BlockHeader::RemoveNode}}(pBlockHeader);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00376}00376         pBlockHeader-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_ae272b50428a9a2c28124c0fecf851915}{\string~BlockHeader}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00377}00377         pBlockHeader = NULL;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00378}00378 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00379}00379         \textcolor{comment}{// Free the memory block.    }}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00380}00380         free(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00381}00381     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00382}00382 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00383}00383     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ TrackStamp */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00384}00384 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00385}\mbox{\hyperlink{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}{00385}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_mem_track_aa093f31788d38e3f0eb70284695ea0ee}{TrackStamp}}(\textcolor{keywordtype}{void} *p, \textcolor{keyword}{const} \mbox{\hyperlink{class_mem_track_1_1_mem_stamp}{MemStamp}} \&stamp, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *typeName)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00386}00386     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00387}00387         \textcolor{comment}{// Get the header and signature address for this pointer.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00388}00388         UserChunk *pUser = \textcolor{keyword}{reinterpret\_cast<}UserChunk *\textcolor{keyword}{>}(p);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00389}00389         PrologChunk *pProlog = GetPrologAddress(pUser);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00390}00390         \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *pHeader = GetHeaderAddress(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00391}00391         \mbox{\hyperlink{class_mem_track_1_1_signature}{Signature}} *pSignature = GetSignatureAddress(pProlog);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00392}00392 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00393}00393         \textcolor{comment}{// If the signature is not valid, then return immediately.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00394}00394         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_mem_track_1_1_signature_ac80b7fcb07b8928cecabb04b3faae55b}{Signature::IsValidSignature}}(pSignature)) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00395}00395 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00396}00396         \textcolor{comment}{// "{}Stamp"{} the information onto the header.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00397}00397         pHeader-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_a08ad6bf3f97cffae3b78012d35d5154c}{Stamp}}(stamp.\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_a12324901fd8119722fe070e10f4d2821}{filename}}, stamp.\mbox{\hyperlink{class_mem_track_1_1_mem_stamp_ae2f108bf5f2537651222789817b8f53f}{lineNum}}, typeName);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00398}00398     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00399}00399 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00400}00400     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ TrackDumpBlocks */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00401}00401 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00402}\mbox{\hyperlink{namespace_mem_track_ab97b33af33d0255feeecde45606f26e5}{00402}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_mem_track_ab97b33af33d0255feeecde45606f26e5}{TrackDumpBlocks}}()}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00403}00403     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00404}00404         \textcolor{comment}{// Get an array of pointers to all extant blocks.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00405}00405         \textcolor{keywordtype}{size\_t} numBlocks = \mbox{\hyperlink{class_mem_track_1_1_block_header_ae57e5e9fcbc414cc37b05c49d2424c39}{BlockHeader::CountBlocks}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00406}00406         \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} **ppBlockHeader =}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00407}00407             (\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} **)calloc(numBlocks, \textcolor{keyword}{sizeof}(*ppBlockHeader));}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00408}00408         \mbox{\hyperlink{class_mem_track_1_1_block_header_a66b917e29ed5fe282e93cada27a4d8f8}{BlockHeader::GetBlocks}}(ppBlockHeader);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00409}00409 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00410}00410         \textcolor{comment}{// Dump information about the memory blocks.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00411}00411         \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00412}00412         \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{stringliteral}{"{}=====================\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00413}00413         \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{stringliteral}{"{}Current Memory Blocks\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00414}00414         \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{stringliteral}{"{}=====================\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00415}00415         \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00416}00416         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < numBlocks; i++)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00417}00417         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00418}00418             \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} *pBlockHeader = ppBlockHeader[i];}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00419}00419             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *typeName = pBlockHeader-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}{GetTypeName}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00420}00420             \textcolor{keywordtype}{size\_t} size = pBlockHeader-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_ac8b53e3cfe9fc103f8fef91fb9c822ea}{GetRequestedSize}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00421}00421             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *fileName = pBlockHeader-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_abf9a779a9b8e82e8028341fc513c4c39}{GetFilename}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00422}00422             \textcolor{keywordtype}{int} lineNum = pBlockHeader-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_a817f74fc613479915f3e50c3b83e1463}{GetLineNum}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00423}00423             \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{stringliteral}{"{}*** \#\%-\/6d \%5d bytes \%-\/50s\(\backslash\)n"{}}, i, size, typeName);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00424}00424             \mbox{\hyperlink{_tracing_8cpp_ac940487afa646b167f2df0fe20a42294}{trace}}(\textcolor{stringliteral}{"{}... \%s:\%d\(\backslash\)n"{}}, fileName, lineNum);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00425}00425         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00426}00426 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00427}00427         \textcolor{comment}{// Clean up.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00428}00428         free(ppBlockHeader);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00429}00429     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00430}00430 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00431}00431     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ struct MemDigest */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00432}00432 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00433}\mbox{\hyperlink{struct_mem_track_1_1_mem_digest}{00433}}     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_mem_track_1_1_mem_digest}{MemDigest}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00434}00434     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00435}\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_aa75fd6e0b1cf692867ac52a53df91789}{00435}}         \textcolor{keywordtype}{char} \textcolor{keyword}{const} *\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_aa75fd6e0b1cf692867ac52a53df91789}{typeName}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00436}\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a919a903829031937e92d8c239802fa12}{00436}}         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a919a903829031937e92d8c239802fa12}{blockCount}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00437}\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a39a6d1830d7a6b34f85a2784b7c40602}{00437}}         \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a39a6d1830d7a6b34f85a2784b7c40602}{totalSize}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00438}00438 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00439}\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a9691440567cbac820e9e1631b5a3531d}{00439}}         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a9691440567cbac820e9e1631b5a3531d}{TotalSizeGreaterThan}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_mem_track_1_1_mem_digest}{MemDigest}} \&md1, \textcolor{keyword}{const} \mbox{\hyperlink{struct_mem_track_1_1_mem_digest}{MemDigest}} \&md2)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00440}00440             \{ \textcolor{keywordflow}{return} md1.\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a39a6d1830d7a6b34f85a2784b7c40602}{totalSize}} > md2.\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a39a6d1830d7a6b34f85a2784b7c40602}{totalSize}}; \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00441}00441     \};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00442}00442 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00443}00443 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00444}00444     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ SummarizeMemoryUsageForType */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00445}00445 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00446}00446     \textcolor{keyword}{static} \textcolor{keywordtype}{void} SummarizeMemoryUsageForType(}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00447}00447         MemDigest *pMemDigest,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00448}00448         BlockHeader **ppBlockHeader,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00449}00449         \textcolor{keywordtype}{size\_t} startPost,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00450}00450         \textcolor{keywordtype}{size\_t} endPost}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00451}00451     )}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00452}00452     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00453}00453         pMemDigest-\/>typeName = ppBlockHeader[startPost]-\/>GetTypeName();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00454}00454         pMemDigest-\/>blockCount = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00455}00455         pMemDigest-\/>totalSize = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00456}00456         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = startPost; i < endPost; i++)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00457}00457         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00458}00458             pMemDigest-\/>blockCount++;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00459}00459             pMemDigest-\/>totalSize += ppBlockHeader[i]-\/>GetRequestedSize();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00460}00460             ASSERT(strcmp(ppBlockHeader[i]-\/>GetTypeName(), pMemDigest-\/>typeName) == 0);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00461}00461         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00462}00462     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00463}00463 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00464}00464     \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ TrackListMemoryUsage */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00465}00465 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00466}\mbox{\hyperlink{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}{00466}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_mem_track_a7745e0f9bd319b8f0785fc879b24b02e}{TrackListMemoryUsage}}()}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00467}00467     \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00468}00468         \textcolor{comment}{// If there are no allocated blocks, then return now.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00469}00469         \textcolor{keywordtype}{size\_t} numBlocks = \mbox{\hyperlink{class_mem_track_1_1_block_header_ae57e5e9fcbc414cc37b05c49d2424c39}{BlockHeader::CountBlocks}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00470}00470         \textcolor{keywordflow}{if} (numBlocks == 0) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00471}00471 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00472}00472         \textcolor{comment}{// Get an array of pointers to all extant blocks.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00473}00473         \mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} **ppBlockHeader =}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00474}00474             (\mbox{\hyperlink{class_mem_track_1_1_block_header}{BlockHeader}} **)calloc(numBlocks, \textcolor{keyword}{sizeof}(*ppBlockHeader));}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00475}00475         \mbox{\hyperlink{class_mem_track_1_1_block_header_a66b917e29ed5fe282e93cada27a4d8f8}{BlockHeader::GetBlocks}}(ppBlockHeader);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00476}00476 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00477}00477         \textcolor{comment}{// Sort the blocks by type name.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00478}00478         std::sort(}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00479}00479             ppBlockHeader,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00480}00480             ppBlockHeader + numBlocks,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00481}00481             \mbox{\hyperlink{class_mem_track_1_1_block_header_a8e817ac9a699b5bc7b9f0ea93cd48984}{BlockHeader::TypeGreaterThan}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00482}00482         );}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00483}00483 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00484}00484         \textcolor{comment}{// Find out how many unique types we have.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00485}00485         \textcolor{keywordtype}{size\_t} numUniqueTypes = 1;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00486}00486         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 1; i < numBlocks; i++)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00487}00487         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00488}00488             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *prevTypeName = ppBlockHeader[i -\/ 1]-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}{GetTypeName}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00489}00489             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *currTypeName = ppBlockHeader[i]-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}{GetTypeName}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00490}00490             \textcolor{keywordflow}{if} (strcmp(prevTypeName, currTypeName) != 0) numUniqueTypes++;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00491}00491         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00492}00492 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00493}00493         \textcolor{comment}{// Create an array of "{}digests"{} summarizing memory usage by type.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00494}00494         \textcolor{keywordtype}{size\_t} startPost = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00495}00495         \textcolor{keywordtype}{size\_t} uniqueTypeIndex = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00496}00496         \mbox{\hyperlink{struct_mem_track_1_1_mem_digest}{MemDigest}} *pMemDigestArray =}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00497}00497             (\mbox{\hyperlink{struct_mem_track_1_1_mem_digest}{MemDigest}} *)calloc(numUniqueTypes, \textcolor{keyword}{sizeof}(*pMemDigestArray));}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00498}00498         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 1; i <= numBlocks; i++)    \textcolor{comment}{// yes, less than or *equal* to}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00499}00499         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00500}00500             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *prevTypeName = ppBlockHeader[i -\/ 1]-\/>\mbox{\hyperlink{class_mem_track_1_1_block_header_af44bf935fa81fe16dcbe3956a1b4031f}{GetTypeName}}();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00501}00501             \textcolor{keywordtype}{char} \textcolor{keyword}{const} *currTypeName = (i < numBlocks) ? ppBlockHeader[i]-\/>GetTypeName() : \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00502}00502             \textcolor{keywordflow}{if} (strcmp(prevTypeName, currTypeName) != 0)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00503}00503             \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00504}00504                 \textcolor{keywordtype}{size\_t} endPost = i;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00505}00505                 SummarizeMemoryUsageForType(}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00506}00506                     pMemDigestArray + uniqueTypeIndex,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00507}00507                     ppBlockHeader,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00508}00508                     startPost,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00509}00509                     endPost}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00510}00510                 );}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00511}00511                 startPost = endPost;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00512}00512                 uniqueTypeIndex++;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00513}00513             \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00514}00514         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00515}00515         ASSERT(uniqueTypeIndex = numUniqueTypes);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00516}00516 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00517}00517         \textcolor{comment}{// Sort the digests by total memory usage.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00518}00518         std::sort(}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00519}00519             pMemDigestArray,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00520}00520             pMemDigestArray + numUniqueTypes,}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00521}00521             \mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a9691440567cbac820e9e1631b5a3531d}{MemDigest::TotalSizeGreaterThan}}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00522}00522         );}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00523}00523 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00524}00524         \textcolor{comment}{// Compute the grand total memory usage.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00525}00525         \textcolor{keywordtype}{size\_t} grandTotalNumBlocks = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00526}00526         \textcolor{keywordtype}{size\_t} grandTotalSize = 0;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00527}00527         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < numUniqueTypes; i++)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00528}00528         \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00529}00529             grandTotalNumBlocks += pMemDigestArray[i].\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a919a903829031937e92d8c239802fa12}{blockCount}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00530}00530             grandTotalSize += pMemDigestArray[i].\mbox{\hyperlink{struct_mem_track_1_1_mem_digest_a39a6d1830d7a6b34f85a2784b7c40602}{totalSize}};}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00531}00531         \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00532}00532 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00533}00533         printf(\textcolor{stringliteral}{"{}\(\backslash\)x1b[2;0H"{}}); }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00534}00534 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00535}00535         \textcolor{comment}{// Dump the memory usage statistics.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00536}00536         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00537}00537         printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00538}00538         printf(\textcolor{stringliteral}{"{}Memory Usage Statistics\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00539}00539         printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00540}00540         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00541}00541         printf(\textcolor{stringliteral}{"{}\%-\/50s\%5s  \%5s \%7s \%s \(\backslash\)n"{}}, \textcolor{stringliteral}{"{}allocated type"{}}, \textcolor{stringliteral}{"{}blocks"{}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}bytes"{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00542}00542         printf(\textcolor{stringliteral}{"{}\%-\/50s\%5s  \%5s \%7s \%s \(\backslash\)n"{}}, \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}, \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/"{}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/"{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00543}00543 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00544}00544         \textcolor{comment}{/*for (size\_t i = 0; i < numUniqueTypes; i++)}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00545}00545 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00546}00546 \textcolor{comment}{            MemDigest *pMD = pMemDigestArray + i;}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00547}00547 \textcolor{comment}{            size\_t blockCount = pMD-\/>blockCount;}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00548}00548 \textcolor{comment}{            double blockCountPct = 100.0 * blockCount / grandTotalNumBlocks;}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00549}00549 \textcolor{comment}{            size\_t totalSize = pMD-\/>totalSize;}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00550}00550 \textcolor{comment}{            double totalSizePct = 100.0 * totalSize / grandTotalSize;}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00551}00551 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00552}00552 \textcolor{comment}{            trace(}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00553}00553 \textcolor{comment}{                "{}\%-\/50s \%5d \%5.1f\%\% \%7d \%5.1f\%\%\(\backslash\)n"{},}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00554}00554 \textcolor{comment}{                pMD-\/>typeName,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00555}00555 \textcolor{comment}{                blockCount,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00556}00556 \textcolor{comment}{                blockCountPct,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00557}00557 \textcolor{comment}{                totalSize,}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00558}00558 \textcolor{comment}{                totalSizePct}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00559}00559 \textcolor{comment}{            );}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00560}00560 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00561}00561         printf(\textcolor{stringliteral}{"{}\%-\/50s \%5s \%5s  \%7s \%s \(\backslash\)n"{}}, \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/"{}}, \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/"{}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/"{}}, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00562}00562         printf(\textcolor{stringliteral}{"{}\%-\/50s \%5d \%5s  \%7d \%s \(\backslash\)n"{}}, \textcolor{stringliteral}{"{}[totals]"{}}, grandTotalNumBlocks, \textcolor{stringliteral}{"{}"{}}, grandTotalSize, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00563}00563 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00564}00564         \textcolor{comment}{// Clean up.}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00565}00565         free(ppBlockHeader);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00566}00566         free(pMemDigestArray);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00567}00567     \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00568}00568 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00569}00569 \}    \textcolor{comment}{// namespace MemTrack}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00570}00570 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00571}00571 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00572}00572 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ new and delete -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00573}00573 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00574}00574 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00575}00575 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00576}00576 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ operator new }}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00577}00577 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00578}\mbox{\hyperlink{_mem_track_8cpp_a160dcabc54bbecfc69484678cafadb81}{00578}} \textcolor{keywordtype}{void} *\textcolor{keyword}{operator} \textcolor{keyword}{new}(\textcolor{keywordtype}{size\_t} size)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00579}00579 \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00580}00580     \textcolor{keywordtype}{void} *p = \mbox{\hyperlink{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}{MemTrack::TrackMalloc}}(size);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00581}00581     \textcolor{keywordflow}{if} (p == NULL) \textcolor{keywordflow}{throw} std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00582}00582     \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00583}00583 \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00584}00584 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00585}00585 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ operator delete }}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00586}00586 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00587}\mbox{\hyperlink{_mem_track_8cpp_a86107594327f3a001230df9802cd4422}{00587}} \textcolor{keywordtype}{void} \textcolor{keyword}{operator} \textcolor{keyword}{delete}(\textcolor{keywordtype}{void} *p)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00588}00588 \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00589}00589     \mbox{\hyperlink{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}{MemTrack::TrackFree}}(p);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00590}00590 \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00591}00591 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00592}00592 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ operator new[]}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00593}00593 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00594}\mbox{\hyperlink{_mem_track_8cpp_af2243bb4c2126b7b2b393e06090fbe59}{00594}} \textcolor{keywordtype}{void} *\textcolor{keyword}{operator} \textcolor{keyword}{new}[](\textcolor{keywordtype}{size\_t} size)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00595}00595 \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00596}00596     \textcolor{keywordtype}{void} *p = \mbox{\hyperlink{namespace_mem_track_a5ba36a69f55067f4fd578ff772c07176}{MemTrack::TrackMalloc}}(size);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00597}00597     \textcolor{keywordflow}{if} (p == NULL) \textcolor{keywordflow}{throw} std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00598}00598     \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00599}00599 \}}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00600}00600 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00601}00601 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ operator delete[] }}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00602}00602 }
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00603}\mbox{\hyperlink{_mem_track_8cpp_aaa8d8403dca7d813a59dd1f07728349d}{00603}} \textcolor{keywordtype}{void} \textcolor{keyword}{operator} \textcolor{keyword}{delete}[](\textcolor{keywordtype}{void} *p)}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00604}00604 \{}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00605}00605     \mbox{\hyperlink{namespace_mem_track_a5be4afcb4d1ce7dc688d001ce51b8b9f}{MemTrack::TrackFree}}(p);}
+\DoxyCodeLine{\Hypertarget{_mem_track_8cpp_source_l00606}00606 \}}
+
+\end{DoxyCode}

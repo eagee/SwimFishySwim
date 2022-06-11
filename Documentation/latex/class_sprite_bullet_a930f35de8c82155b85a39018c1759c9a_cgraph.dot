@@ -1,0 +1,26 @@
+digraph "SpriteBullet::renderSprite"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SpriteBullet::renderSprite",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="IGraphics::rotateNextObject\lInScene",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_graphics.html#abf2eedb8adf18344b39db9aaac5ddc6d",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="spriteMethodsProcessBullet\lAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#a47691f146f3e5e93aebc3d7391f268e7",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="IModel::handleAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_model.html#ab987f81128faba7427d2eb087ce790d1",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="IModel::setAnimationType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_model.html#af95a96f345d05c3283940872e6a3fc74",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="spriteMethodsRenderBullet\lSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#a3898b9df56f85a49ef769e277ee744ca",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="adjustAngleRotation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$angles_8cpp.html#a7f7e2685ab71efefb9d176543e4fa599",tooltip="Routine for adjusting a sprite rotation to reflect it's target rotation over a period of time ...."];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="IGraphics::isLocationWithin\lViewingRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_graphics.html#ad2595b6c33fb3b6f5f792a6d5f9b9ef9",tooltip=" "];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="IModel::renderModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_model.html#a95736b5188fe7e8eb5de22420e76b8a2",tooltip=" "];
+  Node6 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="IModel::translateModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_model.html#a74b0a19c9700370e4f856ec7a4e0a8d4",tooltip=" "];
+}

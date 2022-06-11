@@ -1,0 +1,54 @@
+\hypertarget{_profiler_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Profiler.h File Reference}
+\label{_profiler_8h}\index{C:/TeamSheeps/SwimFishySwim/Profiler.h@{C:/TeamSheeps/SwimFishySwim/Profiler.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_profiler_8h_abdc024add1c98743eb6be93ee3177d8d}{profile\+Start}} (std\+::string method\+Name)
+\begin{DoxyCompactList}\small\item\em Starts profiling a routine, calls the routine, then stops profiling the routine... /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_profiler_8h_a57be468575124d3e2b72fdc7e405b806}{profile\+Stop}} (std\+::string method\+Name)
+\item 
+void \mbox{\hyperlink{_profiler_8h_af6f4d8d9d59f722dbabada97519b0d52}{output\+Profiling\+Information}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_profiler_8h_af6f4d8d9d59f722dbabada97519b0d52}\label{_profiler_8h_af6f4d8d9d59f722dbabada97519b0d52}} 
+\index{Profiler.h@{Profiler.h}!outputProfilingInformation@{outputProfilingInformation}}
+\index{outputProfilingInformation@{outputProfilingInformation}!Profiler.h@{Profiler.h}}
+\doxysubsubsection{\texorpdfstring{outputProfilingInformation()}{outputProfilingInformation()}}
+{\footnotesize\ttfamily void output\+Profiling\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{_profiler_8h_abdc024add1c98743eb6be93ee3177d8d}\label{_profiler_8h_abdc024add1c98743eb6be93ee3177d8d}} 
+\index{Profiler.h@{Profiler.h}!profileStart@{profileStart}}
+\index{profileStart@{profileStart}!Profiler.h@{Profiler.h}}
+\doxysubsubsection{\texorpdfstring{profileStart()}{profileStart()}}
+{\footnotesize\ttfamily void profile\+Start (\begin{DoxyParamCaption}\item[{std\+::string}]{method\+Name }\end{DoxyParamCaption})}
+
+
+
+Starts profiling a routine, calls the routine, then stops profiling the routine... /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} Records the time the profiler was stopped, and adds the total time elapsed to a total for that function /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+
+\mbox{\Hypertarget{_profiler_8h_a57be468575124d3e2b72fdc7e405b806}\label{_profiler_8h_a57be468575124d3e2b72fdc7e405b806}} 
+\index{Profiler.h@{Profiler.h}!profileStop@{profileStop}}
+\index{profileStop@{profileStop}!Profiler.h@{Profiler.h}}
+\doxysubsubsection{\texorpdfstring{profileStop()}{profileStop()}}
+{\footnotesize\ttfamily void profile\+Stop (\begin{DoxyParamCaption}\item[{std\+::string}]{method\+Name }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Writes output from the profiler to the display /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_profiler_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_profiler_8cpp_source}{Profiler.\+cpp}}.
+

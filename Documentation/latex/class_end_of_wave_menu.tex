@@ -1,0 +1,107 @@
+\hypertarget{class_end_of_wave_menu}{}\doxysection{End\+Of\+Wave\+Menu Class Reference}
+\label{class_end_of_wave_menu}\index{EndOfWaveMenu@{EndOfWaveMenu}}
+
+
+Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary\texorpdfstring{$>$}{>}  
+
+
+
+
+{\ttfamily \#include $<$Endof\+Wave\+Menu.\+h$>$}
+
+
+
+Inheritance diagram for End\+Of\+Wave\+Menu\+:
+% FIG 0
+
+
+Collaboration diagram for End\+Of\+Wave\+Menu\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_end_of_wave_menu_a95745803c00195bb238a859f5832535b}{End\+Of\+Wave\+Menu}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\begin{DoxyCompactList}\small\item\em Constructor that requires user to specify a texture handle for both the button and background images /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_end_of_wave_menu_ac830a05af6ca15be563dd13fe1fefe61}{$\sim$\+End\+Of\+Wave\+Menu}} ()
+\item 
+virtual void \mbox{\hyperlink{class_end_of_wave_menu_a892fa309419fa827727efda474dc834b}{execute\+Menu}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+virtual void \mbox{\hyperlink{class_end_of_wave_menu_a529fe3ecf2e2cec57540c3c9cd678049}{click\+Button}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, int button\+ID)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_endof_wave_menu_8h_source_l00013}{13}} of file \mbox{\hyperlink{_endof_wave_menu_8h_source}{Endof\+Wave\+Menu.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_end_of_wave_menu_a95745803c00195bb238a859f5832535b}\label{class_end_of_wave_menu_a95745803c00195bb238a859f5832535b}} 
+\index{EndOfWaveMenu@{EndOfWaveMenu}!EndOfWaveMenu@{EndOfWaveMenu}}
+\index{EndOfWaveMenu@{EndOfWaveMenu}!EndOfWaveMenu@{EndOfWaveMenu}}
+\doxysubsubsection{\texorpdfstring{EndOfWaveMenu()}{EndOfWaveMenu()}}
+{\footnotesize\ttfamily End\+Of\+Wave\+Menu\+::\+End\+Of\+Wave\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+Constructor that requires user to specify a texture handle for both the button and background images /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Destructor, here we clean up our buttons \+:) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_end_of_wave_menu_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_end_of_wave_menu_8cpp_source}{End\+Of\+Wave\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{class_end_of_wave_menu_ac830a05af6ca15be563dd13fe1fefe61}\label{class_end_of_wave_menu_ac830a05af6ca15be563dd13fe1fefe61}} 
+\index{EndOfWaveMenu@{EndOfWaveMenu}!````~EndOfWaveMenu@{$\sim$EndOfWaveMenu}}
+\index{````~EndOfWaveMenu@{$\sim$EndOfWaveMenu}!EndOfWaveMenu@{EndOfWaveMenu}}
+\doxysubsubsection{\texorpdfstring{$\sim$EndOfWaveMenu()}{~EndOfWaveMenu()}}
+{\footnotesize\ttfamily End\+Of\+Wave\+Menu\+::$\sim$\+End\+Of\+Wave\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Runs a menu, and makes changes to the Level\+Info struct based on the menu selection... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_end_of_wave_menu_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{_end_of_wave_menu_8cpp_source}{End\+Of\+Wave\+Menu.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_end_of_wave_menu_a529fe3ecf2e2cec57540c3c9cd678049}\label{class_end_of_wave_menu_a529fe3ecf2e2cec57540c3c9cd678049}} 
+\index{EndOfWaveMenu@{EndOfWaveMenu}!clickButton@{clickButton}}
+\index{clickButton@{clickButton}!EndOfWaveMenu@{EndOfWaveMenu}}
+\doxysubsubsection{\texorpdfstring{clickButton()}{clickButton()}}
+{\footnotesize\ttfamily void End\+Of\+Wave\+Menu\+::click\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{int}]{button\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_menu_a0f720c2d82a421065a83265948df86e1}{IGame\+Menu}}.
+
+
+
+Definition at line \mbox{\hyperlink{_end_of_wave_menu_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{_end_of_wave_menu_8cpp_source}{End\+Of\+Wave\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{class_end_of_wave_menu_a892fa309419fa827727efda474dc834b}\label{class_end_of_wave_menu_a892fa309419fa827727efda474dc834b}} 
+\index{EndOfWaveMenu@{EndOfWaveMenu}!executeMenu@{executeMenu}}
+\index{executeMenu@{executeMenu}!EndOfWaveMenu@{EndOfWaveMenu}}
+\doxysubsubsection{\texorpdfstring{executeMenu()}{executeMenu()}}
+{\footnotesize\ttfamily void End\+Of\+Wave\+Menu\+::execute\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Allows a particular button in a menu to be executed /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_game_menu_abff3300e8f56ef0c73520a9ba479f750}{IGame\+Menu}}.
+
+
+
+Definition at line \mbox{\hyperlink{_end_of_wave_menu_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{_end_of_wave_menu_8cpp_source}{End\+Of\+Wave\+Menu.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_endof_wave_menu_8h}{Endof\+Wave\+Menu.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_end_of_wave_menu_8cpp}{End\+Of\+Wave\+Menu.\+cpp}}\end{DoxyCompactItemize}

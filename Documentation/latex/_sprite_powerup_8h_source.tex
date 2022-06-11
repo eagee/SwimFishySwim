@@ -1,0 +1,143 @@
+\hypertarget{_sprite_powerup_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Sprite\+Powerup.h}
+\mbox{\hyperlink{_sprite_powerup_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00001}00001 \textcolor{comment}{// SpritePowerup.h}}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00002}00002 \textcolor{comment}{// Defines implementation for a common interface for dealing with multiple sprite behaviors...}}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef POWER\_UP\_SPRITE\_H}}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00005}00005 \textcolor{preprocessor}{\#define POWER\_UP\_SPRITE\_H}}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_sprite_8h}{ISprite.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sprite_info_8h}{SpriteInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00014}\mbox{\hyperlink{class_sprite_powerup}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{class_sprite_powerup}{SpritePowerup}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_sprite}{ISprite}}}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00015}00015 \{ }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00016}00016     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00017}00017         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00018}00018         \mbox{\hyperlink{class_sprite_powerup_a4708f818df15fde48a03bba991ae521d}{SpritePowerup}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00019}00019         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00020}00020         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_sprite_powerup_a43f3938f5b8dd5d07db0f3b3a1916483}{\string~SpritePowerup}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00025}00025         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a4a4ee0852b37e2fac93d98d1a68d71f6}{setID}}(\textcolor{keywordtype}{int} ID);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00026}00026         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00030}00030         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_powerup_ab34451b62b520539ee2665c44b3eab7d}{getID}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00031}00031         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00035}00035         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_powerup_a4017f916b32dca5e2d306bf36b037ba8}{isDead}}();        }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00040}00040         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a117e42754f375bda4ebd72d233dd2f46}{assignModel}}(\mbox{\hyperlink{class_i_model}{IModel}} *model);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00045}00045         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_aa5b6a6c9980d3d64fe31825356596fa2}{assignWeapon}}(\mbox{\hyperlink{class_i_projectile_weapon}{IProjectileWeapon}} *weapon);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00050}00050         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a53ec0aa9b65533113298845de8cdc58f}{lockOnTarget}}(\mbox{\hyperlink{class_i_sprite}{ISprite}} \&target);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00051}00051         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00055}00055         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_powerup_ada2d58bb8e95b756fca6f5009a98a3c0}{checkDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00056}00056         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00060}00060         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_ac789945b1a0990271bc0ca3c342c0c9b}{handleCollision}}(\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\_TYPE}} type, \textcolor{keywordtype}{float} collisionForce);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00061}00061         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00065}00065         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_ae31b08e2177d31b2c3911e35afb344e5}{handleJump}}(\textcolor{keywordtype}{float} jumpForce);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00066}00066         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00070}00070         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a64f158a81d7617777975a5afdc960986}{setDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);        }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00071}00071         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00075}00075         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_ab0b52d1f5176621d660f271bc9d1ad78}{unsetDirection}}(\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction);                }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00076}00076         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00080}00080         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a392616c14141773698da6b808c28d065}{translateSprite}}(Vector spriteLocation);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00081}00081         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00085}00085         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_powerup_a4e3e5795029538a98d4a6ff03743d34a}{updateLocationByVelocity}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00086}00086         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00090}00090         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_powerup_a97b1039ecc2f1fb8852b8914ba4e97c5}{getLocation}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00091}00091         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00095}00095         \mbox{\hyperlink{structtag_sprite_bounding_triangle}{BoundingTriangle}} \mbox{\hyperlink{class_sprite_powerup_a212462837c2d69eddc3d0a3f27c34bc8}{getBoundingTriangle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00104}00104         \textcolor{keyword}{virtual} \mbox{\hyperlink{structtag_bounding_circle}{BoundingCircle}} \mbox{\hyperlink{class_sprite_powerup_a5cf1b9d44d40a7d174a109f864d24488}{getBoundingCircle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00109}00109         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_ab41ae10bd8881e9875ab1028346ae645}{setBoundingTriangleSize}}(\textcolor{keywordtype}{float} size);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00114}00114         \mbox{\hyperlink{structtag_sprite_bounding_box}{BoundingBox}} \mbox{\hyperlink{class_sprite_powerup_ad9044197424e423e06a818c626ff5cc3}{getBoundingBox}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00115}00115         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00119}00119         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_af26500fa1cf1c51a25a54fd228308215}{setLocation}}(Vector location);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00120}00120         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00124}00124         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a56daf85eb8d45bdff5032fe2ce1428f1}{setOffset}}(Vector offset);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00129}00129         Vector \mbox{\hyperlink{class_sprite_powerup_ac4b86f4d8371c567e79ebb3900c0fc3f}{getOffset}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00130}00130         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00134}00134         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_powerup_a1359b117eead58a9f693f77fe87ee51c}{spriteWidth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00135}00135         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00139}00139         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_powerup_a943795bf6782af98792db99bf712ce45}{spriteHeight}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00140}00140         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00147}00147         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_ace8f8322cb2a6efead42fa0253720eae}{setVelocities}}(\textcolor{keywordtype}{float} maxNormalVelocity, \textcolor{keywordtype}{float} dragVelocity, \textcolor{keywordtype}{float} accelerationVelocity);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00148}00148         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00152}00152         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_ae35ec54c413230cd9ae6e5bb9dd396b6}{increaseAcceleration}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00159}00159         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a7a1b712edf62b41219eab4c0dc127786}{setControlMagnitude}}(\textcolor{keywordtype}{float} controlMagnitude);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00164}00164         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a8070efe9869b37352b2b20abc91f7504}{setAngle}}(\textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00165}00165         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00169}00169         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_powerup_a15e6aea8d1d25d7b579f19ad15f0f9e0}{getAngle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00174}00174         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_powerup_a62c2660a6eb1d8bb5080fccf98e5cd74}{getControlAngle}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00175}00175         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00176}00176         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00180}00180         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_af6eda6fdcff9052038ca0a7007bf1c21}{renderSprite}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);        }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00185}00185         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a22b0c6dcf5b6d20477635c0a809f1306}{renderHealthBar}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00186}00186         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00190}00190         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\_TYPE}} \mbox{\hyperlink{class_sprite_powerup_a169f2d4d81bb4de34422cf0d37f1ed72}{spriteType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00191}00191         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00195}00195         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a214106b274f9c06bc4fe18cbf240a13f}{setAnimation}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} animation);        }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00200}00200         \textcolor{keyword}{virtual} \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} \mbox{\hyperlink{class_sprite_powerup_a8165ae7ad581ded22d7de7daa2e6ac5a}{getCurrentAnimation}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00205}00205         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_aa6aea588ba92e6a04f98ef339a62295d}{setHealth}}(\textcolor{keywordtype}{float} health);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00210}00210         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_aba2f7c8d95862b53b9ce347c9a2bfa71}{modifyHealthBy}}(\textcolor{keywordtype}{float} healthModifier);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00215}00215         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_powerup_afacbf5add120c8254473598938d8f5de}{getHealth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00216}00216 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00220}00220         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_powerup_aa27f5f47b043187a956467ad6de5e69d}{getMaxHealth}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00221}00221 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00225}00225         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_powerup_af2afa56f6ae023674f65eaf73b74224c}{getPointValue}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00230}00230         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a32e225e8e33083f375225c2c0759ee57}{setPointValue}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00235}00235         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a508fd8b3313800862a8ffabe2d6299fc}{setLevel}}(\textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00236}00236 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00240}00240         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sprite_powerup_a4f453334fef61c4b06d3f977db69969b}{getLevel}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00241}00241 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00245}00245         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a91f00d9d5cfc2e7a88969de3044f2d8b}{setPowerUpType}}(\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\_POWER\_UP}} powerUpType);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00246}00246 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00250}00250         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\_POWER\_UP}} \mbox{\hyperlink{class_sprite_powerup_aec0b31957ddb8c5ce25e9c3e5100a63b}{getPowerUpType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00256}00256         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_powerup_a1e9708e992fc4d005ffb1aa64fe7025b}{getWaterLevel}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00261}00261         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a5aa5c44f55ed9a2221822f95aa9a5783}{setWaterLevel}}(\textcolor{keywordtype}{float} waterLevel);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00266}00266         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a7ad1e645c79ce954054c16eb999ca507}{setJump}}(\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\_STATE}} jumpState);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00271}00271         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\_STATE}} \mbox{\hyperlink{class_sprite_powerup_ab2e13024799ebfe13c22fe76ed43d006}{getJump}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00276}00276         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_sprite_powerup_ae02c4eab87e751da4b34ba641217f441}{getSpeed}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00277}00277 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00281}00281         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_ad50a791dd8aee52566e1137b7297f035}{setAttackType}}(\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\_TYPE}} type);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00282}00282         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00286}00286         \textcolor{keyword}{virtual} \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\_TYPE}} \mbox{\hyperlink{class_sprite_powerup_ab1aa50e0f3ef703f5a9e0c425087a224}{getAttackType}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00291}00291         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sprite_powerup_a473294c9d2399a24571960ab8b88acba}{modifyRotationBy}}(\textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00292}00292         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00296}00296         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sprite_powerup_ac5144549c530b8854106b14118008b31}{hasPeriodicTimerExpired}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00297}00297 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00301}00301         \textcolor{keyword}{virtual} Vector \mbox{\hyperlink{class_sprite_powerup_ad5a738895340c6e26456e3a1f2393d89}{getVelocity}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00302}00302 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00303}00303     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00304}00304     }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00308}00308         \textcolor{keywordtype}{void} processVelocity();     }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00309}00309         }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00310}00310         \textcolor{comment}{// Attributes       }}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00311}00311         \mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} mySpriteInfo;}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00312}00312         Vector myOffsetValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00313}00313         \textcolor{keywordtype}{float} myPowerupSize;}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00314}00314 \};}
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00315}00315 }
+\DoxyCodeLine{\Hypertarget{_sprite_powerup_8h_source_l00316}00316 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

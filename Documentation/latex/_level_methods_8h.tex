@@ -1,0 +1,897 @@
+\hypertarget{_level_methods_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Level\+Methods.h File Reference}
+\label{_level_methods_8h}\index{C:/TeamSheeps/SwimFishySwim/LevelMethods.h@{C:/TeamSheeps/SwimFishySwim/LevelMethods.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_collision_sets}{tag\+Collision\+Sets}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structtag_collision_sets}{tag\+Collision\+Sets}} \mbox{\hyperlink{_level_methods_8h_a22414d8a52db0d1fdea3cbba5656687b}{Level\+Method\+Collision\+Set}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a157b8751c6de3d8790ab45e0d5403150}{Level\+Methods\+Pre\+Allocate\+Tilemap\+Graphic}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, const char $\ast$texture\+Map)
+\begin{DoxyCompactList}\small\item\em Allocates the graphic used with tilemaps \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_a89d4a279b4cefe306ae03daaa95297f0}{Level\+Methods\+Pre\+Allocate\+Skybox\+Texture}} (\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics, const char $\ast$skybox\+File, const char $\ast$scenebox\+File)
+\begin{DoxyCompactList}\small\item\em Allocates the graphic used for drawing a level skybox... \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_ab121e2c053573e45522907db814a9821}{Level\+Methods\+Render\+Skybox}} (\mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}{PROJECTION\+\_\+\+TYPE}} projection\+Type, \mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$graphics)
+\begin{DoxyCompactList}\small\item\em Renders a skybox to the scene using the preallocated skybox texture. Will assert if the texture has not been loaded ... \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_level_methods_8h_a2fce9a81c47e8df6492f4b3de193229c}{Level\+Methods\+Setup\+Tile\+Map}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, const char $\ast$file\+Name, float translateX, float translateY, float translateZ)
+\begin{DoxyCompactList}\small\item\em Takes a null tilemap reference and turns it into something {\itshape beautiful} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_level_methods_8h_ae92598e0dde05102475e73bb7a161602}{Level\+Methods\+Handle\+Input}} (int controller\+ID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\+\_\+\+STATUS}} \&status, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\begin{DoxyCompactList}\small\item\em // Updates the controller state and modifies actions based on controller state, returns true if home is pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_level_methods_8h_a4ee75dc3a03cd1186669bd6a76f346c9}{Level\+Methods\+Pre\+Allocate\+Model\+Md2}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, float scale, const char $\ast$model\+File, const char $\ast$graphic\+File, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}} model\+Type, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{Animation\+Format}} animation\+Format, bool cull\+Backfaces)
+\item 
+bool \mbox{\hyperlink{_level_methods_8h_a94272d665ef06f178ea2cd539be24569}{Level\+Methods\+Pre\+Allocate\+Model\+Md2}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, float scale, const char $\ast$model\+File, const char $\ast$graphic\+File, const char $\ast$bump\+File, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}} model\+Type, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{Animation\+Format}} animation\+Format, bool cull\+Backfaces)
+\item 
+bool \mbox{\hyperlink{_level_methods_8h_a5f7801fd216b55fae108781c859002b8}{Level\+Methods\+Pre\+Allocate\+Sprite\+Model}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, float scale, const char $\ast$graphic\+File, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}} model\+Type)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a5a27f4b1ecd2fb58693b787739a45697}{Level\+Methods\+De\+Allocate\+Model}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}} model\+Type)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a401d1e8b9ca756d47ceabc972779ef38}{Level\+Methods\+Setup\+Sprite}} (\mbox{\hyperlink{class_i_model}{IModel}} $\ast$model, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite, \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}} attack\+Type, float x, float y, float z, float bounding\+Triangle\+Size)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_ae36552f0fda1d15060566206e64d996f}{Level\+Methods\+Handle\+Tilemap\+Collision}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&sprite, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a1ca62a71a244e3819851c39a31bc1a95}{Level\+Methods\+Find\+Sprite\+Path}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&sprite, Vector from\+Location, Vector to\+Location, \mbox{\hyperlink{class_tiled_maps}{Tiled\+Maps}} \&map)
+\item 
+\mbox{\hyperlink{_level_methods_8h_a22414d8a52db0d1fdea3cbba5656687b}{Level\+Method\+Collision\+Set}} \mbox{\hyperlink{_level_methods_8h_a5319580ed95da1ff1d0e4312ea879c66}{Level\+Methods\+Check\+Collision\+Set}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&main\+Sprite, \mbox{\hyperlink{class_i_sprite}{ISprite}} \&other\+Sprite)
+\item 
+bool \mbox{\hyperlink{_level_methods_8h_af17deb75104f88694410fe98a83b997f}{Level\+Methods\+Handle\+Sprite\+Collision}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&main\+Sprite, \mbox{\hyperlink{class_i_sprite}{ISprite}} \&other\+Sprite, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a4a87a2ae92d1a856c52400fbf21c28dc}{Level\+Methods\+Render\+Heads\+Up\+Display}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a0c967512aa86647b2f124bc5522a5539}{Level\+Methods\+Display\+Pickle\+Heath}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a5e54f4d97aa68c3ea67edf714ea1dbc1}{Level\+Methods\+Display\+Radar\+Image}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}} $>$ radar\+Points, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}} radar\+Texture)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a6d369950fdf186510fa7c6d6d946c22f}{Level\+Methods\+Activate\+Powerup}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$baddie\+Sprite, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}} power\+Up\+Level)
+\begin{DoxyCompactList}\small\item\em Activates an available powerup sprite so that the player can pick up a little extra power \+:) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} \mbox{\hyperlink{_level_methods_8h_af96fb4e7aaa3caa200b62bd498477223}{Level\+Methods\+Get\+Angle\+Direction}} (float angle, float magnitude)
+\begin{DoxyCompactList}\small\item\em Indicates one of six directions an angle is facing ... \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_acae7b302e214753decd3d72c11ac804a}{Level\+Methods\+Pre\+Allocate\+Level\+Music}} (\mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544}{SONG\+\_\+\+NAME}} song\+Name, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Pre allocates music for a level /summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_a655a69138ededc60e9710787ea96798d}{Level\+Methods\+De\+Allocate\+Level\+Music}} (\mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544}{SONG\+\_\+\+NAME}} song\+Name, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_afefc791375115cf8227b091f3d1cd9eb}{Level\+Methods\+Pre\+Allocate\+Level\+Sound}} (\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392}{SOUND\+\_\+\+NAME}} sound\+Name, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, const char $\ast$file\+Name)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a96de317bddad23a5a4ea37d95849fb11}{Level\+Methods\+De\+Allocate\+Level\+Sound}} (\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392}{SOUND\+\_\+\+NAME}} sound\+Name, \mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_af8f4af3124ca423e34c8f0ae15ed4eb5}{Level\+Methods\+Setup\+Temp\+Collision}} (\mbox{\hyperlink{class_i_sprite}{ISprite}} \&sprite, \mbox{\hyperlink{class_tiled_maps}{Tiled\+Maps}} \&map)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a9c2f89b8dc2574620d46faa2ed3ea60d}{Level\+Methods\+Update\+Baddies}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_aacb1cb682e1884f9eb06dd2c551d1184}{Level\+Methods\+Render\+Active\+Baddies}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\begin{DoxyCompactList}\small\item\em Updates the baddies that have been activated \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_afe52e52e8aee44e00039c8adb963bba4}{Level\+Methods\+Render\+Baddie\+Status}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\begin{DoxyCompactList}\small\item\em Updates the baddies that have been activated \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_a435e5a3b871d8c29ed957a69a3534c7f}{Level\+Methods\+Render\+Tower\+Status}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\begin{DoxyCompactList}\small\item\em Updates the towers that have been activated \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_a94f03471d110d1c9d184b8a79db47fd5}{Level\+Methods\+Render\+Active\+Powerups}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\begin{DoxyCompactList}\small\item\em Animates and renders the power ups to the screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_a5d24eae14bebfb100a9135e8112b0d08}{Level\+Methods\+Update\+Active\+Powerups}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\begin{DoxyCompactList}\small\item\em Updates the power up sprites that have been activated \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_level_methods_8h_a78df23158dab846c42a9663db54e4d29}{Level\+Methods\+Begin\+Rendering}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a53f46cd3796a7bd739d59cf92eb906ad}{Level\+Methods\+Begin2d\+Camera\+Mode}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a522aa62afa5c807c0c4d154c2e44264e}{Level\+Methods\+End2\+DCamera\+Mode}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a759fa21e465af0632333783a0e7795b7}{Level\+Methods\+End\+Rendering}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a7a102291413a726c2494ebf50428e6e3}{Level\+Methods\+Update\+Map\+Velocity}} (\mbox{\hyperlink{class_tiled_maps}{Tiled\+Maps}} \&map, Vector \&map\+Velocity)
+\item 
+\mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}} \mbox{\hyperlink{_level_methods_8h_af3ded92a4a5630cb2261cccb65976ca4}{Level\+Methods\+Get\+Player\+Radar\+Point}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+\mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}} \mbox{\hyperlink{_level_methods_8h_afe5c1522fa33626b3a2365153a56122d}{Level\+Methods\+Get\+Pickle\+Radar\+Point}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a7cd0d5d2483f84a1fb2bfc1b5e1c86a4}{Level\+Methods\+Pre\+Allocate\+Menu\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, const char $\ast$button\+Texture, const char $\ast$focused\+Button\+Texture, const char $\ast$background\+Texture)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a41f008f80d6ba7c70e965d58d77ef0ea}{Level\+Methods\+De\+Allocate\+Menu\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a286be2a11182b53124b2235eb01ffaf1}{Level\+Methods\+Add\+Floating\+Text}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, Vector location, Vector velocity, float life, const char $\ast$text)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a057fbb906627ee897a657c3f23bcb530}{Level\+Methods\+Update\+Floating\+Text\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a5f43441f617bdc711844cbd824659344}{Level\+Methods\+Render\+Floating\+Text\+Data}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_aab7b05fbcbb3c6c7d9874e59dd04b164}{Level\+Methods\+Update\+Towers}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a3ece1ab69989b76b232f8d7ff7cba274}{Level\+Methods\+Update\+Scenery}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a37a267e53e2cdf732e156d46abbd6dff}{Level\+Methods\+Render\+Towers}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a260c21162757193e9380653d1721b703}{Level\+Methods\+Render\+Scenery}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a0556f478cfc969683261d2b8a1743981}{Level\+Methods\+Prepare\+Splash\+Screen}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, float progress\+Increment)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a3dd9a7c289fa589abd413d66ef4dca2b}{Level\+Methods\+Display\+Splash\+Screen}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a9e822f8872a600a0e3f234a923b2b917}{Level\+Methods\+De\+Allocate\+Splash\+Screen}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_abd61dfe68f73958d52c6281f759ed6b5}{Level\+Methods\+Handle\+Ripple\+Effects}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_af16bef6eff74338e7aa735a7b95116ba}{Level\+Methods\+Handle\+Repel\+Effects}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a833287ebfb2d984d5136cf3182ad57cf}{Level\+Methods\+Handle\+Warp\+Effects}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_a46dc78dd9e8134cfff0ce3efa6f96efc}{Level\+Methods\+Handle\+Spark\+Effects}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite, int number)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_ab1aa958de1a8fc83d2c96975a85e746a}{Level\+Methods\+Handle\+Splash\+Effects}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite, int number)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_ac41eea5c12e84275dc61b75d0eadb33e}{Level\+Methods\+Handle\+Ripple\+Splash\+Effects}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, \mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$sprite)
+\item 
+void \mbox{\hyperlink{_level_methods_8h_ae2b42fb2944936dcc6a5683cd4ca52a7}{Level\+Methods\+Modify\+Energy}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, float value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_level_methods_8h_a22414d8a52db0d1fdea3cbba5656687b}\label{_level_methods_8h_a22414d8a52db0d1fdea3cbba5656687b}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodCollisionSet@{LevelMethodCollisionSet}}
+\index{LevelMethodCollisionSet@{LevelMethodCollisionSet}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodCollisionSet}{LevelMethodCollisionSet}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_collision_sets}{tag\+Collision\+Sets}} \mbox{\hyperlink{_level_methods_8h_a22414d8a52db0d1fdea3cbba5656687b}{Level\+Method\+Collision\+Set}}}
+
+summary\texorpdfstring{$>$}{>} Allocates the graphic used with tilemaps /summary\texorpdfstring{$>$}{>} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_level_methods_8h_a6d369950fdf186510fa7c6d6d946c22f}\label{_level_methods_8h_a6d369950fdf186510fa7c6d6d946c22f}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsActivatePowerup@{LevelMethodsActivatePowerup}}
+\index{LevelMethodsActivatePowerup@{LevelMethodsActivatePowerup}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsActivatePowerup()}{LevelMethodsActivatePowerup()}}
+{\footnotesize\ttfamily void Level\+Methods\+Activate\+Powerup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{baddie\+Sprite,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}}}]{power\+Up\+Level }\end{DoxyParamCaption})}
+
+
+
+Activates an available powerup sprite so that the player can pick up a little extra power \+:) 
+
+
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00351}{351}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{_level_methods_8h_a286be2a11182b53124b2235eb01ffaf1}\label{_level_methods_8h_a286be2a11182b53124b2235eb01ffaf1}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsAddFloatingText@{LevelMethodsAddFloatingText}}
+\index{LevelMethodsAddFloatingText@{LevelMethodsAddFloatingText}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsAddFloatingText()}{LevelMethodsAddFloatingText()}}
+{\footnotesize\ttfamily void Level\+Methods\+Add\+Floating\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{Vector}]{location,  }\item[{Vector}]{velocity,  }\item[{float}]{life,  }\item[{const char $\ast$}]{text }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Updates the position of any floating text data alive in the game world... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01043}{1043}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a53f46cd3796a7bd739d59cf92eb906ad}\label{_level_methods_8h_a53f46cd3796a7bd739d59cf92eb906ad}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsBegin2dCameraMode@{LevelMethodsBegin2dCameraMode}}
+\index{LevelMethodsBegin2dCameraMode@{LevelMethodsBegin2dCameraMode}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsBegin2dCameraMode()}{LevelMethodsBegin2dCameraMode()}}
+{\footnotesize\ttfamily void Level\+Methods\+Begin2d\+Camera\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Ends display of 2d information /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01843}{1843}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a78df23158dab846c42a9663db54e4d29}\label{_level_methods_8h_a78df23158dab846c42a9663db54e4d29}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsBeginRendering@{LevelMethodsBeginRendering}}
+\index{LevelMethodsBeginRendering@{LevelMethodsBeginRendering}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsBeginRendering()}{LevelMethodsBeginRendering()}}
+{\footnotesize\ttfamily void Level\+Methods\+Begin\+Rendering (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles universal display of 2d information /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01749}{1749}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a5319580ed95da1ff1d0e4312ea879c66}\label{_level_methods_8h_a5319580ed95da1ff1d0e4312ea879c66}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsCheckCollisionSet@{LevelMethodsCheckCollisionSet}}
+\index{LevelMethodsCheckCollisionSet@{LevelMethodsCheckCollisionSet}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsCheckCollisionSet()}{LevelMethodsCheckCollisionSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_level_methods_8h_a22414d8a52db0d1fdea3cbba5656687b}{Level\+Method\+Collision\+Set}} Level\+Methods\+Check\+Collision\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{main\+Sprite,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{other\+Sprite }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Checks collision points and handles updates accordingly with sprites summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Checks collision points and handles updates accordingly with sprites Returns true if a collision occurred! summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01202}{1202}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{_level_methods_8h_a655a69138ededc60e9710787ea96798d}\label{_level_methods_8h_a655a69138ededc60e9710787ea96798d}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsDeAllocateLevelMusic@{LevelMethodsDeAllocateLevelMusic}}
+\index{LevelMethodsDeAllocateLevelMusic@{LevelMethodsDeAllocateLevelMusic}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsDeAllocateLevelMusic()}{LevelMethodsDeAllocateLevelMusic()}}
+{\footnotesize\ttfamily void Level\+Methods\+De\+Allocate\+Level\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544}{SONG\+\_\+\+NAME}}}]{song\+Name,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Pre allocates sound for a level /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00622}{622}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{_level_methods_8h_a96de317bddad23a5a4ea37d95849fb11}\label{_level_methods_8h_a96de317bddad23a5a4ea37d95849fb11}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsDeAllocateLevelSound@{LevelMethodsDeAllocateLevelSound}}
+\index{LevelMethodsDeAllocateLevelSound@{LevelMethodsDeAllocateLevelSound}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsDeAllocateLevelSound()}{LevelMethodsDeAllocateLevelSound()}}
+{\footnotesize\ttfamily void Level\+Methods\+De\+Allocate\+Level\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392}{SOUND\+\_\+\+NAME}}}]{sound\+Name,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Updates temporary collision points for a sprite (assigns to ID + 4) summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Pre allocate model and texture information from a file ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00645}{645}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{_level_methods_8h_a41f008f80d6ba7c70e965d58d77ef0ea}\label{_level_methods_8h_a41f008f80d6ba7c70e965d58d77ef0ea}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsDeAllocateMenuData@{LevelMethodsDeAllocateMenuData}}
+\index{LevelMethodsDeAllocateMenuData@{LevelMethodsDeAllocateMenuData}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsDeAllocateMenuData()}{LevelMethodsDeAllocateMenuData()}}
+{\footnotesize\ttfamily void Level\+Methods\+De\+Allocate\+Menu\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Adds floating text data to the game world ... summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Allocates the data required to display the title screen summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01917}{1917}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{_level_methods_8h_a5a27f4b1ecd2fb58693b787739a45697}\label{_level_methods_8h_a5a27f4b1ecd2fb58693b787739a45697}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsDeAllocateModel@{LevelMethodsDeAllocateModel}}
+\index{LevelMethodsDeAllocateModel@{LevelMethodsDeAllocateModel}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsDeAllocateModel()}{LevelMethodsDeAllocateModel()}}
+{\footnotesize\ttfamily void Level\+Methods\+De\+Allocate\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}}}]{model\+Type }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Assigns a model to one of our sprite characters and instantiates the sprite to it\textquotesingle{}s new location... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00671}{671}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{_level_methods_8h_a9e822f8872a600a0e3f234a923b2b917}\label{_level_methods_8h_a9e822f8872a600a0e3f234a923b2b917}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsDeAllocateSplashScreen@{LevelMethodsDeAllocateSplashScreen}}
+\index{LevelMethodsDeAllocateSplashScreen@{LevelMethodsDeAllocateSplashScreen}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsDeAllocateSplashScreen()}{LevelMethodsDeAllocateSplashScreen()}}
+{\footnotesize\ttfamily void Level\+Methods\+De\+Allocate\+Splash\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles the generation of ripple effects for the specified sprite summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l02015}{2015}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{_level_methods_8h_a0c967512aa86647b2f124bc5522a5539}\label{_level_methods_8h_a0c967512aa86647b2f124bc5522a5539}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsDisplayPickleHeath@{LevelMethodsDisplayPickleHeath}}
+\index{LevelMethodsDisplayPickleHeath@{LevelMethodsDisplayPickleHeath}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsDisplayPickleHeath()}{LevelMethodsDisplayPickleHeath()}}
+{\footnotesize\ttfamily void Level\+Methods\+Display\+Pickle\+Heath (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Displays a specified radar image in the radar location on the screen ... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01091}{1091}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a5e54f4d97aa68c3ea67edf714ea1dbc1}\label{_level_methods_8h_a5e54f4d97aa68c3ea67edf714ea1dbc1}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsDisplayRadarImage@{LevelMethodsDisplayRadarImage}}
+\index{LevelMethodsDisplayRadarImage@{LevelMethodsDisplayRadarImage}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsDisplayRadarImage()}{LevelMethodsDisplayRadarImage()}}
+{\footnotesize\ttfamily void Level\+Methods\+Display\+Radar\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{std\+::vector$<$ \mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}} $>$}]{radar\+Points,  }\item[{\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}]{radar\+Texture }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Local method that generates a pseudo random number representing the type of power up, and assigns that value to a sprite summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01111}{1111}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a3dd9a7c289fa589abd413d66ef4dca2b}\label{_level_methods_8h_a3dd9a7c289fa589abd413d66ef4dca2b}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsDisplaySplashScreen@{LevelMethodsDisplaySplashScreen}}
+\index{LevelMethodsDisplaySplashScreen@{LevelMethodsDisplaySplashScreen}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsDisplaySplashScreen()}{LevelMethodsDisplaySplashScreen()}}
+{\footnotesize\ttfamily void Level\+Methods\+Display\+Splash\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Frees the resources used for the title screen summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01950}{1950}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{_level_methods_8h_a522aa62afa5c807c0c4d154c2e44264e}\label{_level_methods_8h_a522aa62afa5c807c0c4d154c2e44264e}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsEnd2DCameraMode@{LevelMethodsEnd2DCameraMode}}
+\index{LevelMethodsEnd2DCameraMode@{LevelMethodsEnd2DCameraMode}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsEnd2DCameraMode()}{LevelMethodsEnd2DCameraMode()}}
+{\footnotesize\ttfamily void Level\+Methods\+End2\+DCamera\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Ends the rendering process /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01860}{1860}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a759fa21e465af0632333783a0e7795b7}\label{_level_methods_8h_a759fa21e465af0632333783a0e7795b7}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsEndRendering@{LevelMethodsEndRendering}}
+\index{LevelMethodsEndRendering@{LevelMethodsEndRendering}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsEndRendering()}{LevelMethodsEndRendering()}}
+{\footnotesize\ttfamily void Level\+Methods\+End\+Rendering (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Updates the velocity settings of the tilemap summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01870}{1870}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a1ca62a71a244e3819851c39a31bc1a95}\label{_level_methods_8h_a1ca62a71a244e3819851c39a31bc1a95}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsFindSpritePath@{LevelMethodsFindSpritePath}}
+\index{LevelMethodsFindSpritePath@{LevelMethodsFindSpritePath}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsFindSpritePath()}{LevelMethodsFindSpritePath()}}
+{\footnotesize\ttfamily void Level\+Methods\+Find\+Sprite\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{sprite,  }\item[{Vector}]{from\+Location,  }\item[{Vector}]{to\+Location,  }\item[{\mbox{\hyperlink{class_tiled_maps}{Tiled\+Maps}} \&}]{map }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Checks collision points for both sprites and returns a collision set; summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Called by several separate procedures to render a precentage status bar to the display summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00867}{867}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{_level_methods_8h_af96fb4e7aaa3caa200b62bd498477223}\label{_level_methods_8h_af96fb4e7aaa3caa200b62bd498477223}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsGetAngleDirection@{LevelMethodsGetAngleDirection}}
+\index{LevelMethodsGetAngleDirection@{LevelMethodsGetAngleDirection}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsGetAngleDirection()}{LevelMethodsGetAngleDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} Level\+Methods\+Get\+Angle\+Direction (\begin{DoxyParamCaption}\item[{float}]{angle,  }\item[{float}]{magnitude }\end{DoxyParamCaption})}
+
+
+
+Indicates one of six directions an angle is facing ... 
+
+summary\texorpdfstring{$>$}{>} Pre allocates music for a level /summary\texorpdfstring{$>$}{>}
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{_level_methods_8h_afe5c1522fa33626b3a2365153a56122d}\label{_level_methods_8h_afe5c1522fa33626b3a2365153a56122d}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsGetPickleRadarPoint@{LevelMethodsGetPickleRadarPoint}}
+\index{LevelMethodsGetPickleRadarPoint@{LevelMethodsGetPickleRadarPoint}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsGetPickleRadarPoint()}{LevelMethodsGetPickleRadarPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}} Level\+Methods\+Get\+Pickle\+Radar\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Pre\+Allocates texture data required for menus summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Returns a point for displaying a radar image a baddie summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01414}{1414}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_af3ded92a4a5630cb2261cccb65976ca4}\label{_level_methods_8h_af3ded92a4a5630cb2261cccb65976ca4}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsGetPlayerRadarPoint@{LevelMethodsGetPlayerRadarPoint}}
+\index{LevelMethodsGetPlayerRadarPoint@{LevelMethodsGetPlayerRadarPoint}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsGetPlayerRadarPoint()}{LevelMethodsGetPlayerRadarPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}} Level\+Methods\+Get\+Player\+Radar\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns a point for displaying a radar image of the pickle summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01402}{1402}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_ae92598e0dde05102475e73bb7a161602}\label{_level_methods_8h_ae92598e0dde05102475e73bb7a161602}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleInput@{LevelMethodsHandleInput}}
+\index{LevelMethodsHandleInput@{LevelMethodsHandleInput}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleInput()}{LevelMethodsHandleInput()}}
+{\footnotesize\ttfamily bool Level\+Methods\+Handle\+Input (\begin{DoxyParamCaption}\item[{int}]{controller\+ID,  }\item[{\mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\+\_\+\+STATUS}} \&}]{status,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+// Updates the controller state and modifies actions based on controller state, returns true if home is pressed. 
+
+summary\texorpdfstring{$>$}{>} Pre allocate model and texture information from a file ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00409}{409}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{_level_methods_8h_af16bef6eff74338e7aa735a7b95116ba}\label{_level_methods_8h_af16bef6eff74338e7aa735a7b95116ba}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleRepelEffects@{LevelMethodsHandleRepelEffects}}
+\index{LevelMethodsHandleRepelEffects@{LevelMethodsHandleRepelEffects}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleRepelEffects()}{LevelMethodsHandleRepelEffects()}}
+{\footnotesize\ttfamily void Level\+Methods\+Handle\+Repel\+Effects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles the generation of repel effects for the specified sprite summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00314}{314}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 16
+\mbox{\Hypertarget{_level_methods_8h_abd61dfe68f73958d52c6281f759ed6b5}\label{_level_methods_8h_abd61dfe68f73958d52c6281f759ed6b5}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleRippleEffects@{LevelMethodsHandleRippleEffects}}
+\index{LevelMethodsHandleRippleEffects@{LevelMethodsHandleRippleEffects}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleRippleEffects()}{LevelMethodsHandleRippleEffects()}}
+{\footnotesize\ttfamily void Level\+Methods\+Handle\+Ripple\+Effects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles the generation of repel effects for the specified sprite summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Handles the generation of ripple effects for the specified sprite summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00285}{285}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 17
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{_level_methods_8h_ac41eea5c12e84275dc61b75d0eadb33e}\label{_level_methods_8h_ac41eea5c12e84275dc61b75d0eadb33e}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleRippleSplashEffects@{LevelMethodsHandleRippleSplashEffects}}
+\index{LevelMethodsHandleRippleSplashEffects@{LevelMethodsHandleRippleSplashEffects}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleRippleSplashEffects()}{LevelMethodsHandleRippleSplashEffects()}}
+{\footnotesize\ttfamily void Level\+Methods\+Handle\+Ripple\+Splash\+Effects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Increments the counter used to display the current energy level summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Handles the generation of repel effects for the specified sprite summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00299}{299}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 19
+Here is the caller graph for this function\+:
+% FIG 20
+\mbox{\Hypertarget{_level_methods_8h_a46dc78dd9e8134cfff0ce3efa6f96efc}\label{_level_methods_8h_a46dc78dd9e8134cfff0ce3efa6f96efc}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleSparkEffects@{LevelMethodsHandleSparkEffects}}
+\index{LevelMethodsHandleSparkEffects@{LevelMethodsHandleSparkEffects}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleSparkEffects()}{LevelMethodsHandleSparkEffects()}}
+{\footnotesize\ttfamily void Level\+Methods\+Handle\+Spark\+Effects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles the generation of splash effects for the specified sprite summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00334}{334}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 21
+Here is the caller graph for this function\+:
+% FIG 22
+\mbox{\Hypertarget{_level_methods_8h_ab1aa958de1a8fc83d2c96975a85e746a}\label{_level_methods_8h_ab1aa958de1a8fc83d2c96975a85e746a}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleSplashEffects@{LevelMethodsHandleSplashEffects}}
+\index{LevelMethodsHandleSplashEffects@{LevelMethodsHandleSplashEffects}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleSplashEffects()}{LevelMethodsHandleSplashEffects()}}
+{\footnotesize\ttfamily void Level\+Methods\+Handle\+Splash\+Effects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles the generation of ripple and splash effects for the specified sprite on a timer summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 23
+Here is the caller graph for this function\+:
+% FIG 24
+\mbox{\Hypertarget{_level_methods_8h_af17deb75104f88694410fe98a83b997f}\label{_level_methods_8h_af17deb75104f88694410fe98a83b997f}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleSpriteCollision@{LevelMethodsHandleSpriteCollision}}
+\index{LevelMethodsHandleSpriteCollision@{LevelMethodsHandleSpriteCollision}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleSpriteCollision()}{LevelMethodsHandleSpriteCollision()}}
+{\footnotesize\ttfamily bool Level\+Methods\+Handle\+Sprite\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{main\+Sprite,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{other\+Sprite,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Displays the update points the player currently has and adjusts them as they increase or decrease... summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Iterate through and update our tower sprites... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01248}{1248}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 25
+Here is the caller graph for this function\+:
+% FIG 26
+\mbox{\Hypertarget{_level_methods_8h_ae36552f0fda1d15060566206e64d996f}\label{_level_methods_8h_ae36552f0fda1d15060566206e64d996f}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleTilemapCollision@{LevelMethodsHandleTilemapCollision}}
+\index{LevelMethodsHandleTilemapCollision@{LevelMethodsHandleTilemapCollision}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleTilemapCollision()}{LevelMethodsHandleTilemapCollision()}}
+{\footnotesize\ttfamily void Level\+Methods\+Handle\+Tilemap\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{sprite,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Perform pathfinding operations for a sprite -\/ creating angle and movement information summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Updates temporary collision points for a sprite (assigns to ID + 4) summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00716}{716}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 27
+Here is the caller graph for this function\+:
+% FIG 28
+\mbox{\Hypertarget{_level_methods_8h_a833287ebfb2d984d5136cf3182ad57cf}\label{_level_methods_8h_a833287ebfb2d984d5136cf3182ad57cf}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsHandleWarpEffects@{LevelMethodsHandleWarpEffects}}
+\index{LevelMethodsHandleWarpEffects@{LevelMethodsHandleWarpEffects}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsHandleWarpEffects()}{LevelMethodsHandleWarpEffects()}}
+{\footnotesize\ttfamily void Level\+Methods\+Handle\+Warp\+Effects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Handles the generation of spark effects for the specified sprite summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00324}{324}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 29
+\mbox{\Hypertarget{_level_methods_8h_ae2b42fb2944936dcc6a5683cd4ca52a7}\label{_level_methods_8h_ae2b42fb2944936dcc6a5683cd4ca52a7}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsModifyEnergy@{LevelMethodsModifyEnergy}}
+\index{LevelMethodsModifyEnergy@{LevelMethodsModifyEnergy}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsModifyEnergy()}{LevelMethodsModifyEnergy()}}
+{\footnotesize\ttfamily void Level\+Methods\+Modify\+Energy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Renders the bar displaying current attack level and experience points summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00992}{992}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 30
+\mbox{\Hypertarget{_level_methods_8h_acae7b302e214753decd3d72c11ac804a}\label{_level_methods_8h_acae7b302e214753decd3d72c11ac804a}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPreAllocateLevelMusic@{LevelMethodsPreAllocateLevelMusic}}
+\index{LevelMethodsPreAllocateLevelMusic@{LevelMethodsPreAllocateLevelMusic}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPreAllocateLevelMusic()}{LevelMethodsPreAllocateLevelMusic()}}
+{\footnotesize\ttfamily void Level\+Methods\+Pre\+Allocate\+Level\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a37a82e21e58a99f0c4feb1ff77cbb544}{SONG\+\_\+\+NAME}}}]{song\+Name,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Pre allocates music for a level /summary\texorpdfstring{$>$}{>} 
+
+summary\texorpdfstring{$>$}{>} De allocates music for a level /summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} De allocates music object for level /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00606}{606}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 31
+\mbox{\Hypertarget{_level_methods_8h_afefc791375115cf8227b091f3d1cd9eb}\label{_level_methods_8h_afefc791375115cf8227b091f3d1cd9eb}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPreAllocateLevelSound@{LevelMethodsPreAllocateLevelSound}}
+\index{LevelMethodsPreAllocateLevelSound@{LevelMethodsPreAllocateLevelSound}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPreAllocateLevelSound()}{LevelMethodsPreAllocateLevelSound()}}
+{\footnotesize\ttfamily void Level\+Methods\+Pre\+Allocate\+Level\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a58cf46cb15fd35add35542a6ee70a392}{SOUND\+\_\+\+NAME}}}]{sound\+Name,  }\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} De allocates sound object for level WARNING\+: DOES NOT DEALLOCATE SOUND DATA!!!!! /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00630}{630}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 32
+Here is the caller graph for this function\+:
+% FIG 33
+\mbox{\Hypertarget{_level_methods_8h_a7cd0d5d2483f84a1fb2bfc1b5e1c86a4}\label{_level_methods_8h_a7cd0d5d2483f84a1fb2bfc1b5e1c86a4}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPreAllocateMenuData@{LevelMethodsPreAllocateMenuData}}
+\index{LevelMethodsPreAllocateMenuData@{LevelMethodsPreAllocateMenuData}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPreAllocateMenuData()}{LevelMethodsPreAllocateMenuData()}}
+{\footnotesize\ttfamily void Level\+Methods\+Pre\+Allocate\+Menu\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{const char $\ast$}]{button\+Texture,  }\item[{const char $\ast$}]{focused\+Button\+Texture,  }\item[{const char $\ast$}]{background\+Texture }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Deallocates texture data required for menus summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01893}{1893}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 34
+\mbox{\Hypertarget{_level_methods_8h_a94272d665ef06f178ea2cd539be24569}\label{_level_methods_8h_a94272d665ef06f178ea2cd539be24569}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPreAllocateModelMd2@{LevelMethodsPreAllocateModelMd2}}
+\index{LevelMethodsPreAllocateModelMd2@{LevelMethodsPreAllocateModelMd2}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPreAllocateModelMd2()}{LevelMethodsPreAllocateModelMd2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Level\+Methods\+Pre\+Allocate\+Model\+Md2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{float}]{scale,  }\item[{const char $\ast$}]{model\+File,  }\item[{const char $\ast$}]{graphic\+File,  }\item[{const char $\ast$}]{bump\+File,  }\item[{\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}}}]{model\+Type,  }\item[{\mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{Animation\+Format}}}]{animation\+Format,  }\item[{bool}]{cull\+Backfaces }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Pre allocate model and texture information from a file ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00577}{577}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a4ee75dc3a03cd1186669bd6a76f346c9}\label{_level_methods_8h_a4ee75dc3a03cd1186669bd6a76f346c9}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPreAllocateModelMd2@{LevelMethodsPreAllocateModelMd2}}
+\index{LevelMethodsPreAllocateModelMd2@{LevelMethodsPreAllocateModelMd2}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPreAllocateModelMd2()}{LevelMethodsPreAllocateModelMd2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Level\+Methods\+Pre\+Allocate\+Model\+Md2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{float}]{scale,  }\item[{const char $\ast$}]{model\+File,  }\item[{const char $\ast$}]{graphic\+File,  }\item[{\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}}}]{model\+Type,  }\item[{\mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{Animation\+Format}}}]{animation\+Format,  }\item[{bool}]{cull\+Backfaces }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Overloaded version that allows user to specify bump to apply to the model texture ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00552}{552}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 35
+Here is the caller graph for this function\+:
+% FIG 36
+\mbox{\Hypertarget{_level_methods_8h_a89d4a279b4cefe306ae03daaa95297f0}\label{_level_methods_8h_a89d4a279b4cefe306ae03daaa95297f0}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPreAllocateSkyboxTexture@{LevelMethodsPreAllocateSkyboxTexture}}
+\index{LevelMethodsPreAllocateSkyboxTexture@{LevelMethodsPreAllocateSkyboxTexture}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPreAllocateSkyboxTexture()}{LevelMethodsPreAllocateSkyboxTexture()}}
+{\footnotesize\ttfamily void Level\+Methods\+Pre\+Allocate\+Skybox\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{const char $\ast$}]{skybox\+File,  }\item[{const char $\ast$}]{scenebox\+File }\end{DoxyParamCaption})}
+
+
+
+Allocates the graphic used for drawing a level skybox... 
+
+Allocates the graphic used for drawing a level skybox... 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00197}{197}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 37
+\mbox{\Hypertarget{_level_methods_8h_a5f7801fd216b55fae108781c859002b8}\label{_level_methods_8h_a5f7801fd216b55fae108781c859002b8}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPreAllocateSpriteModel@{LevelMethodsPreAllocateSpriteModel}}
+\index{LevelMethodsPreAllocateSpriteModel@{LevelMethodsPreAllocateSpriteModel}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPreAllocateSpriteModel()}{LevelMethodsPreAllocateSpriteModel()}}
+{\footnotesize\ttfamily bool Level\+Methods\+Pre\+Allocate\+Sprite\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{float}]{scale,  }\item[{const char $\ast$}]{graphic\+File,  }\item[{\mbox{\hyperlink{_level_info_8h_a04534293e3157cccde859fe44b3acfef}{MODEL\+\_\+\+TYPE}}}]{model\+Type }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} De allocate model information before we shut down ... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00653}{653}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 38
+\mbox{\Hypertarget{_level_methods_8h_a157b8751c6de3d8790ab45e0d5403150}\label{_level_methods_8h_a157b8751c6de3d8790ab45e0d5403150}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPreAllocateTilemapGraphic@{LevelMethodsPreAllocateTilemapGraphic}}
+\index{LevelMethodsPreAllocateTilemapGraphic@{LevelMethodsPreAllocateTilemapGraphic}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPreAllocateTilemapGraphic()}{LevelMethodsPreAllocateTilemapGraphic()}}
+{\footnotesize\ttfamily void Level\+Methods\+Pre\+Allocate\+Tilemap\+Graphic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics,  }\item[{const char $\ast$}]{texture\+Map }\end{DoxyParamCaption})}
+
+
+
+Allocates the graphic used with tilemaps 
+
+
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 39
+\mbox{\Hypertarget{_level_methods_8h_a0556f478cfc969683261d2b8a1743981}\label{_level_methods_8h_a0556f478cfc969683261d2b8a1743981}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsPrepareSplashScreen@{LevelMethodsPrepareSplashScreen}}
+\index{LevelMethodsPrepareSplashScreen@{LevelMethodsPrepareSplashScreen}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsPrepareSplashScreen()}{LevelMethodsPrepareSplashScreen()}}
+{\footnotesize\ttfamily void Level\+Methods\+Prepare\+Splash\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{float}]{progress\+Increment }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Displays the title screen with a loading progress bar summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01927}{1927}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 40
+\mbox{\Hypertarget{_level_methods_8h_aacb1cb682e1884f9eb06dd2c551d1184}\label{_level_methods_8h_aacb1cb682e1884f9eb06dd2c551d1184}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderActiveBaddies@{LevelMethodsRenderActiveBaddies}}
+\index{LevelMethodsRenderActiveBaddies@{LevelMethodsRenderActiveBaddies}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderActiveBaddies()}{LevelMethodsRenderActiveBaddies()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Active\+Baddies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+Updates the baddies that have been activated 
+
+
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01675}{1675}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 41
+Here is the caller graph for this function\+:
+% FIG 42
+\mbox{\Hypertarget{_level_methods_8h_a94f03471d110d1c9d184b8a79db47fd5}\label{_level_methods_8h_a94f03471d110d1c9d184b8a79db47fd5}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderActivePowerups@{LevelMethodsRenderActivePowerups}}
+\index{LevelMethodsRenderActivePowerups@{LevelMethodsRenderActivePowerups}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderActivePowerups()}{LevelMethodsRenderActivePowerups()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Active\+Powerups (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+Animates and renders the power ups to the screen 
+
+
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01659}{1659}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 43
+Here is the caller graph for this function\+:
+% FIG 44
+\mbox{\Hypertarget{_level_methods_8h_afe52e52e8aee44e00039c8adb963bba4}\label{_level_methods_8h_afe52e52e8aee44e00039c8adb963bba4}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderBaddieStatus@{LevelMethodsRenderBaddieStatus}}
+\index{LevelMethodsRenderBaddieStatus@{LevelMethodsRenderBaddieStatus}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderBaddieStatus()}{LevelMethodsRenderBaddieStatus()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Baddie\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+Updates the baddies that have been activated 
+
+
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01713}{1713}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a5f43441f617bdc711844cbd824659344}\label{_level_methods_8h_a5f43441f617bdc711844cbd824659344}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderFloatingTextData@{LevelMethodsRenderFloatingTextData}}
+\index{LevelMethodsRenderFloatingTextData@{LevelMethodsRenderFloatingTextData}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderFloatingTextData()}{LevelMethodsRenderFloatingTextData()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Floating\+Text\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Iterate through and update our tower sprites... summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Displays the update points the player currently has and adjusts them as they increase or decrease... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01076}{1076}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 45
+\mbox{\Hypertarget{_level_methods_8h_a4a87a2ae92d1a856c52400fbf21c28dc}\label{_level_methods_8h_a4a87a2ae92d1a856c52400fbf21c28dc}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderHeadsUpDisplay@{LevelMethodsRenderHeadsUpDisplay}}
+\index{LevelMethodsRenderHeadsUpDisplay@{LevelMethodsRenderHeadsUpDisplay}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderHeadsUpDisplay()}{LevelMethodsRenderHeadsUpDisplay()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Heads\+Up\+Display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Displays the update points the player currently has and adjusts them as they increase or decrease... summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Adds floating text data to the game world ... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01017}{1017}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a260c21162757193e9380653d1721b703}\label{_level_methods_8h_a260c21162757193e9380653d1721b703}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderScenery@{LevelMethodsRenderScenery}}
+\index{LevelMethodsRenderScenery@{LevelMethodsRenderScenery}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderScenery()}{LevelMethodsRenderScenery()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Scenery (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Allocates the data required to display the title screen summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Iterate through our towers and have them attempt to lock onto a particular target... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01542}{1542}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_ab121e2c053573e45522907db814a9821}\label{_level_methods_8h_ab121e2c053573e45522907db814a9821}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderSkybox@{LevelMethodsRenderSkybox}}
+\index{LevelMethodsRenderSkybox@{LevelMethodsRenderSkybox}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderSkybox()}{LevelMethodsRenderSkybox()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Skybox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}{PROJECTION\+\_\+\+TYPE}}}]{projection\+Type,  }\item[{\mbox{\hyperlink{class_i_graphics}{IGraphics}} $\ast$}]{graphics }\end{DoxyParamCaption})}
+
+
+
+Renders a skybox to the scene using the preallocated skybox texture. Will assert if the texture has not been loaded ... 
+
+summary\texorpdfstring{$>$}{>} Delegate proc. that will load a tilemap specified by file name and use texture data specified by texture\+Name /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00221}{221}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 46
+\mbox{\Hypertarget{_level_methods_8h_a37a267e53e2cdf732e156d46abbd6dff}\label{_level_methods_8h_a37a267e53e2cdf732e156d46abbd6dff}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderTowers@{LevelMethodsRenderTowers}}
+\index{LevelMethodsRenderTowers@{LevelMethodsRenderTowers}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderTowers()}{LevelMethodsRenderTowers()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Towers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Draw all our wild ass scenery \+:) summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01521}{1521}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 47
+\mbox{\Hypertarget{_level_methods_8h_a435e5a3b871d8c29ed957a69a3534c7f}\label{_level_methods_8h_a435e5a3b871d8c29ed957a69a3534c7f}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsRenderTowerStatus@{LevelMethodsRenderTowerStatus}}
+\index{LevelMethodsRenderTowerStatus@{LevelMethodsRenderTowerStatus}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsRenderTowerStatus()}{LevelMethodsRenderTowerStatus()}}
+{\footnotesize\ttfamily void Level\+Methods\+Render\+Tower\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+Updates the towers that have been activated 
+
+summary\texorpdfstring{$>$}{>} Static method that renders a triangle around a sprite to help understand the collision a sprite uses... /summary\texorpdfstring{$>$}{>} summary\texorpdfstring{$>$}{>} Handles the first universal steps of the rendering process /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01731}{1731}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a401d1e8b9ca756d47ceabc972779ef38}\label{_level_methods_8h_a401d1e8b9ca756d47ceabc972779ef38}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsSetupSprite@{LevelMethodsSetupSprite}}
+\index{LevelMethodsSetupSprite@{LevelMethodsSetupSprite}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsSetupSprite()}{LevelMethodsSetupSprite()}}
+{\footnotesize\ttfamily void Level\+Methods\+Setup\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_model}{IModel}} $\ast$}]{model,  }\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} $\ast$}]{sprite,  }\item[{\mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}}}]{attack\+Type,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{bounding\+Triangle\+Size }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Checks collision points and handles updates accordingly with map summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Returns a single Z value based on the location of a vector in the tilemap summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00683}{683}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 48
+Here is the caller graph for this function\+:
+% FIG 49
+\mbox{\Hypertarget{_level_methods_8h_af8f4af3124ca423e34c8f0ae15ed4eb5}\label{_level_methods_8h_af8f4af3124ca423e34c8f0ae15ed4eb5}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsSetupTempCollision@{LevelMethodsSetupTempCollision}}
+\index{LevelMethodsSetupTempCollision@{LevelMethodsSetupTempCollision}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsSetupTempCollision()}{LevelMethodsSetupTempCollision()}}
+{\footnotesize\ttfamily void Level\+Methods\+Setup\+Temp\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_sprite}{ISprite}} \&}]{sprite,  }\item[{\mbox{\hyperlink{class_tiled_maps}{Tiled\+Maps}} \&}]{map }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Updates baddie locations and handles collision details summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Perform pathfinding operations for a sprite -\/ creating angle and movement information summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00825}{825}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 50
+\mbox{\Hypertarget{_level_methods_8h_a2fce9a81c47e8df6492f4b3de193229c}\label{_level_methods_8h_a2fce9a81c47e8df6492f4b3de193229c}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsSetupTileMap@{LevelMethodsSetupTileMap}}
+\index{LevelMethodsSetupTileMap@{LevelMethodsSetupTileMap}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsSetupTileMap()}{LevelMethodsSetupTileMap()}}
+{\footnotesize\ttfamily bool Level\+Methods\+Setup\+Tile\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{const char $\ast$}]{file\+Name,  }\item[{float}]{translateX,  }\item[{float}]{translateY,  }\item[{float}]{translateZ }\end{DoxyParamCaption})}
+
+
+
+Takes a null tilemap reference and turns it into something {\itshape beautiful} 
+
+summary\texorpdfstring{$>$}{>} Handles the generation of ripple effects for the specified sprite summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l00234}{234}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 51
+Here is the caller graph for this function\+:
+% FIG 52
+\mbox{\Hypertarget{_level_methods_8h_a5d24eae14bebfb100a9135e8112b0d08}\label{_level_methods_8h_a5d24eae14bebfb100a9135e8112b0d08}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsUpdateActivePowerups@{LevelMethodsUpdateActivePowerups}}
+\index{LevelMethodsUpdateActivePowerups@{LevelMethodsUpdateActivePowerups}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsUpdateActivePowerups()}{LevelMethodsUpdateActivePowerups()}}
+{\footnotesize\ttfamily void Level\+Methods\+Update\+Active\+Powerups (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+Updates the power up sprites that have been activated 
+
+summary\texorpdfstring{$>$}{>} Handles the first universal steps of the rendering process /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01638}{1638}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 53
+\mbox{\Hypertarget{_level_methods_8h_a9c2f89b8dc2574620d46faa2ed3ea60d}\label{_level_methods_8h_a9c2f89b8dc2574620d46faa2ed3ea60d}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsUpdateBaddies@{LevelMethodsUpdateBaddies}}
+\index{LevelMethodsUpdateBaddies@{LevelMethodsUpdateBaddies}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsUpdateBaddies()}{LevelMethodsUpdateBaddies()}}
+{\footnotesize\ttfamily void Level\+Methods\+Update\+Baddies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01575}{1575}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 54
+\mbox{\Hypertarget{_level_methods_8h_a057fbb906627ee897a657c3f23bcb530}\label{_level_methods_8h_a057fbb906627ee897a657c3f23bcb530}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsUpdateFloatingTextData@{LevelMethodsUpdateFloatingTextData}}
+\index{LevelMethodsUpdateFloatingTextData@{LevelMethodsUpdateFloatingTextData}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsUpdateFloatingTextData()}{LevelMethodsUpdateFloatingTextData()}}
+{\footnotesize\ttfamily void Level\+Methods\+Update\+Floating\+Text\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Renders any floating text info that is alive in the game world ... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01060}{1060}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a7a102291413a726c2494ebf50428e6e3}\label{_level_methods_8h_a7a102291413a726c2494ebf50428e6e3}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsUpdateMapVelocity@{LevelMethodsUpdateMapVelocity}}
+\index{LevelMethodsUpdateMapVelocity@{LevelMethodsUpdateMapVelocity}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsUpdateMapVelocity()}{LevelMethodsUpdateMapVelocity()}}
+{\footnotesize\ttfamily void Level\+Methods\+Update\+Map\+Velocity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tiled_maps}{Tiled\+Maps}} \&}]{map,  }\item[{Vector \&}]{map\+Velocity }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Returns a point for displaying a radar image of the player summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Pre\+Allocates texture data required for menus summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01879}{1879}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_a3ece1ab69989b76b232f8d7ff7cba274}\label{_level_methods_8h_a3ece1ab69989b76b232f8d7ff7cba274}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsUpdateScenery@{LevelMethodsUpdateScenery}}
+\index{LevelMethodsUpdateScenery@{LevelMethodsUpdateScenery}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsUpdateScenery()}{LevelMethodsUpdateScenery()}}
+{\footnotesize\ttfamily void Level\+Methods\+Update\+Scenery (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Iterate through and update our tower sprites... summary\texorpdfstring{$>$}{>}
+
+summary\texorpdfstring{$>$}{>} Handles common steps for setting up a radar point... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01374}{1374}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+\mbox{\Hypertarget{_level_methods_8h_aab7b05fbcbb3c6c7d9874e59dd04b164}\label{_level_methods_8h_aab7b05fbcbb3c6c7d9874e59dd04b164}} 
+\index{LevelMethods.h@{LevelMethods.h}!LevelMethodsUpdateTowers@{LevelMethodsUpdateTowers}}
+\index{LevelMethodsUpdateTowers@{LevelMethodsUpdateTowers}!LevelMethods.h@{LevelMethods.h}}
+\doxysubsubsection{\texorpdfstring{LevelMethodsUpdateTowers()}{LevelMethodsUpdateTowers()}}
+{\footnotesize\ttfamily void Level\+Methods\+Update\+Towers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Iterate through and update our scenery sprites... summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_level_methods_8cpp_source_l01359}{1359}} of file \mbox{\hyperlink{_level_methods_8cpp_source}{Level\+Methods.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 55

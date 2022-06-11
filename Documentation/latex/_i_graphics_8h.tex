@@ -1,0 +1,455 @@
+\hypertarget{_i_graphics_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+IGraphics.h File Reference}
+\label{_i_graphics_8h}\index{C:/TeamSheeps/SwimFishySwim/IGraphics.h@{C:/TeamSheeps/SwimFishySwim/IGraphics.h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+Include dependency graph for IGraphics.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_fixed_vector}{tag\+Fixed\+Vector}}
+\begin{DoxyCompactList}\small\item\em Defines a vector for fractional 8bit fixed numbers \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_frustum_plane}{tag\+Frustum\+Plane}}
+\begin{DoxyCompactList}\small\item\em Defines four points of a frustum plane \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_color}{tag\+Color}}
+\begin{DoxyCompactList}\small\item\em Defines an rgb color that can be associated with a Vector \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_point}{tag\+Point}}
+\begin{DoxyCompactList}\small\item\em Defines what constitutes the definition of a point (this is a square that can be textured but always faces forward) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_triangle}{tag\+Triangle}}
+\begin{DoxyCompactList}\small\item\em Defines what constitutes the definition of a triangle \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_quad}{tag\+Quad}}
+\begin{DoxyCompactList}\small\item\em Defines what constitutes the definition of a Quad \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_quad_vertex_array_properties}{tag\+Quad\+Vertex\+Array\+Properties}}
+\begin{DoxyCompactList}\small\item\em Defines a set of properties used to allocate a vertex array for accessing quad data... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_vertex_array}{tag\+Vertex\+Array}}
+\begin{DoxyCompactList}\small\item\em Defines a vertex array we can use for rendering our quad ... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_triangle_vertex_array}{tag\+Triangle\+Vertex\+Array}}
+\begin{DoxyCompactList}\small\item\em Defines a vertex array we can use for rendering our quad ... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_vertex_array_offsets}{tag\+Vertex\+Array\+Offsets}}
+\begin{DoxyCompactList}\small\item\em Defines the offsets required when rendering a vertex array ... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtag_camera}{tag\+Camera}}
+\item 
+struct \mbox{\hyperlink{structtag_rotate}{tag\+Rotate}}
+\item 
+class \mbox{\hyperlink{class_i_graphics}{IGraphics}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_i_graphics_8h_a3fbd514833c6f052c266b9f06c76a9f9}{UNDEFINED\+\_\+\+TEXTURE\+\_\+\+HANDLE}}~0x\+FFFFFFFF
+\item 
+\#define \mbox{\hyperlink{_i_graphics_8h_a62164409f5b2158f3c151d193bb7595f}{NUMBER\+\_\+\+OF\+\_\+\+TEXTURE\+\_\+\+STYLES}}~2
+\begin{DoxyCompactList}\small\item\em Defines how textures are displayed on a point ... \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structtag_fixed_vector}{tag\+Fixed\+Vector}} \mbox{\hyperlink{_i_graphics_8h_a6e1e69acdae7d8f2a2d8e25ccf3283a5}{fixed\+Vector}}
+\begin{DoxyCompactList}\small\item\em Defines a vector for fractional 8bit fixed numbers \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_frustum_plane}{tag\+Frustum\+Plane}} \mbox{\hyperlink{_i_graphics_8h_a1c8fead3a8c0053c10b5675e9a1313be}{Frustum\+Plane}}
+\begin{DoxyCompactList}\small\item\em Defines four points of a frustum plane \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_color}{tag\+Color}} \mbox{\hyperlink{_i_graphics_8h_a1eddc82e9cbe70e094d81c6359fa537e}{Color}}
+\begin{DoxyCompactList}\small\item\em Defines an rgb color that can be associated with a Vector \end{DoxyCompactList}\item 
+typedef unsigned int \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}
+\item 
+typedef \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}} \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}
+\begin{DoxyCompactList}\small\item\em Defines a handle for reference at texture in the graphics interface \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}} \mbox{\hyperlink{_i_graphics_8h_a4725bd308dcba2d22eea2f0df4d4d6cf}{Display\+List\+Handle}}
+\begin{DoxyCompactList}\small\item\em Defines a handle for reference to a display list graphics interface. Each display list is associated with a model name so that Multiple models can reuse the exact same frames as needed as they are interpolated \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_point}{tag\+Point}} \mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}}
+\begin{DoxyCompactList}\small\item\em Defines what constitutes the definition of a point (this is a square that can be textured but always faces forward) \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_triangle}{tag\+Triangle}} \mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}}
+\begin{DoxyCompactList}\small\item\em Defines what constitutes the definition of a triangle \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_quad}{tag\+Quad}} \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}}
+\begin{DoxyCompactList}\small\item\em Defines what constitutes the definition of a Quad \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_quad_vertex_array_properties}{tag\+Quad\+Vertex\+Array\+Properties}} \mbox{\hyperlink{_i_graphics_8h_a41c857d32229eb3d9f334a5de8792b62}{Quad\+Vertex\+Array\+Properties}}
+\begin{DoxyCompactList}\small\item\em Defines a set of properties used to allocate a vertex array for accessing quad data... \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_vertex_array}{tag\+Vertex\+Array}} \mbox{\hyperlink{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}{Quad\+Vertex\+Array}}
+\begin{DoxyCompactList}\small\item\em Defines a vertex array we can use for rendering our quad ... \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_triangle_vertex_array}{tag\+Triangle\+Vertex\+Array}} \mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}}
+\begin{DoxyCompactList}\small\item\em Defines a vertex array we can use for rendering our quad ... \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_vertex_array_offsets}{tag\+Vertex\+Array\+Offsets}} \mbox{\hyperlink{_i_graphics_8h_a2080f09fcada49c4d87f13a3c14569ce}{Vertex\+Array\+Offsets}}
+\begin{DoxyCompactList}\small\item\em Defines the offsets required when rendering a vertex array ... \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structtag_camera}{tag\+Camera}} \mbox{\hyperlink{_i_graphics_8h_af4ed7468cd9a27d91d2ae4a69f947c5f}{Camera}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_rotate}{tag\+Rotate}} \mbox{\hyperlink{_i_graphics_8h_ad1dbca27d29805fd2e5971fea516ebc5}{Rotate}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894d}{POINT\+\_\+\+TEXTURE\+\_\+\+STYLE}} \{ \mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894dacd251eaf7817f16d22e64e36bfc2c90d}{USE\+\_\+\+WHOLE\+\_\+\+TEXTURE}} = 0x001
+, \mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da55050f54e14a6720734f161ebc910ff3}{USE\+\_\+\+HALF\+\_\+\+TEXTURE}} = 0x002
+, \mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da444da8002047ae3f7dbb8be175f1929e}{USE\+\_\+\+QUARTER\+\_\+\+TEXTURE}} = 0x003
+, \mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da463246631789dd7658c9d6ab8e12b46c}{USE\+\_\+\+EIGHTH\+\_\+\+TEXTURE}} = 0x004
+ \}
+\begin{DoxyCompactList}\small\item\em Defines how point textures are displayed using the graphics engine \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187}{SEEN\+\_\+\+BY\+\_\+\+CAMERA}} \{ \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187ae3edf58d66516602010343561306c082}{SEEN\+\_\+\+BY\+\_\+\+CAMERA\+\_\+\+NEAR}}
+, \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a45da7f3671d1ad4e6bd7cd157710a679}{SEEN\+\_\+\+BY\+\_\+\+CAMERA\+\_\+\+MEDIUM}}
+, \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a0e0c22c838b5c86206a7ef9985131b16}{SEEN\+\_\+\+BY\+\_\+\+CAMERA\+\_\+\+FAR}}
+, \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a68a804f94f8a3a05cc8a1b1b2622f43d}{SEEN\+\_\+\+BY\+\_\+\+CAMERA\+\_\+\+NO}}
+ \}
+\item 
+enum \mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}{BUMP\+\_\+\+TYPE}} \{ \mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246a2572ff7b8b62e62daa58a766b94d20a6}{BUMP\+\_\+\+TYPE\+\_\+\+EMBOSS\+\_\+\+MAP}}
+, \mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246a4e4dcb80d9864ea02b5c377e426328ab}{BUMP\+\_\+\+TYPE\+\_\+\+NORMAL\+\_\+\+MAP}}
+, \mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246adb4c61fa891cd1ebf34a91dabe7bde91}{BUMP\+\_\+\+TYPE\+\_\+\+XYZ\+\_\+\+MAP}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the types of bump mapping supported by the system ... \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}{PROJECTION\+\_\+\+TYPE}} \{ \mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937aafd0f74115125e8825c410f359bc642a4}{PROJECTION\+\_\+\+NORMAL}}
+, \mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937aa26eb4cfb83979ba67acf370a664ba2f2}{PROJECTION\+\_\+\+REFLECTION}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the type of projection matrix we want to use for a scene... \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987df}{TEXTURE\+\_\+\+FORMAT}} \{ \newline
+\mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\+\_\+\+TEXTURE}} = 0x001
+, \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfaa929e3b100e5173da656d2472393017c}{HEIGHT\+\_\+\+TEXTURE}} = 0x002
+, \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacbc1f592ec6026003d293df63281cb64}{LIGHT\+\_\+\+MAP\+\_\+\+TEXTURE}} = 0x003
+, \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfab49e571fc3399c2da7a3d67c32f46936}{NORMAL\+\_\+\+MAP\+\_\+\+TEXTURE}} = 0x004
+, \newline
+\mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfa86758475920bec806723df2a913732f5}{REFLECTION\+\_\+\+TEXTURE}} = 0x005
+, \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfaecd97f67b1b9017344f8a750403c081b}{MULTIPASS\+\_\+\+IMAGE\+\_\+\+TEXTURE}} = 0x006
+, \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfa5bb03fd3bc564f656d350e84e39a4bb0}{LIGHT\+\_\+\+MAP\+\_\+\+TEXTURE\+\_\+\+TEMP}} = 0x007
+ \}
+\begin{DoxyCompactList}\small\item\em Defines how a texture will be used by an \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_i_graphics_8h_a62164409f5b2158f3c151d193bb7595f}\label{_i_graphics_8h_a62164409f5b2158f3c151d193bb7595f}} 
+\index{IGraphics.h@{IGraphics.h}!NUMBER\_OF\_TEXTURE\_STYLES@{NUMBER\_OF\_TEXTURE\_STYLES}}
+\index{NUMBER\_OF\_TEXTURE\_STYLES@{NUMBER\_OF\_TEXTURE\_STYLES}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_OF\_TEXTURE\_STYLES}{NUMBER\_OF\_TEXTURE\_STYLES}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+OF\+\_\+\+TEXTURE\+\_\+\+STYLES~2}
+
+
+
+Defines how textures are displayed on a point ... 
+
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00062}{62}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+\mbox{\Hypertarget{_i_graphics_8h_a3fbd514833c6f052c266b9f06c76a9f9}\label{_i_graphics_8h_a3fbd514833c6f052c266b9f06c76a9f9}} 
+\index{IGraphics.h@{IGraphics.h}!UNDEFINED\_TEXTURE\_HANDLE@{UNDEFINED\_TEXTURE\_HANDLE}}
+\index{UNDEFINED\_TEXTURE\_HANDLE@{UNDEFINED\_TEXTURE\_HANDLE}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{UNDEFINED\_TEXTURE\_HANDLE}{UNDEFINED\_TEXTURE\_HANDLE}}
+{\footnotesize\ttfamily \#define UNDEFINED\+\_\+\+TEXTURE\+\_\+\+HANDLE~0x\+FFFFFFFF}
+
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00011}{11}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_i_graphics_8h_af4ed7468cd9a27d91d2ae4a69f947c5f}\label{_i_graphics_8h_af4ed7468cd9a27d91d2ae4a69f947c5f}} 
+\index{IGraphics.h@{IGraphics.h}!Camera@{Camera}}
+\index{Camera@{Camera}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{Camera}{Camera}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_camera}{tag\+Camera}} \mbox{\hyperlink{_i_graphics_8h_af4ed7468cd9a27d91d2ae4a69f947c5f}{Camera}}}
+
+summary\texorpdfstring{$>$}{>} Defines the axis used and the value used to perform a rotate transform on a rendered object.. /summary\texorpdfstring{$>$}{>} ~\newline
+ \mbox{\Hypertarget{_i_graphics_8h_a1eddc82e9cbe70e094d81c6359fa537e}\label{_i_graphics_8h_a1eddc82e9cbe70e094d81c6359fa537e}} 
+\index{IGraphics.h@{IGraphics.h}!Color@{Color}}
+\index{Color@{Color}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{Color}{Color}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_color}{tag\+Color}} \mbox{\hyperlink{_i_graphics_8h_a1eddc82e9cbe70e094d81c6359fa537e}{Color}}}
+
+
+
+Defines an rgb color that can be associated with a Vector 
+
+\mbox{\Hypertarget{_i_graphics_8h_a4725bd308dcba2d22eea2f0df4d4d6cf}\label{_i_graphics_8h_a4725bd308dcba2d22eea2f0df4d4d6cf}} 
+\index{IGraphics.h@{IGraphics.h}!DisplayListHandle@{DisplayListHandle}}
+\index{DisplayListHandle@{DisplayListHandle}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{DisplayListHandle}{DisplayListHandle}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}} \mbox{\hyperlink{_i_graphics_8h_a4725bd308dcba2d22eea2f0df4d4d6cf}{Display\+List\+Handle}}}
+
+
+
+Defines a handle for reference to a display list graphics interface. Each display list is associated with a model name so that Multiple models can reuse the exact same frames as needed as they are interpolated 
+
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00057}{57}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+\mbox{\Hypertarget{_i_graphics_8h_a6e1e69acdae7d8f2a2d8e25ccf3283a5}\label{_i_graphics_8h_a6e1e69acdae7d8f2a2d8e25ccf3283a5}} 
+\index{IGraphics.h@{IGraphics.h}!fixedVector@{fixedVector}}
+\index{fixedVector@{fixedVector}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{fixedVector}{fixedVector}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_fixed_vector}{tag\+Fixed\+Vector}} \mbox{\hyperlink{_i_graphics_8h_a6e1e69acdae7d8f2a2d8e25ccf3283a5}{fixed\+Vector}}}
+
+
+
+Defines a vector for fractional 8bit fixed numbers 
+
+\mbox{\Hypertarget{_i_graphics_8h_a1c8fead3a8c0053c10b5675e9a1313be}\label{_i_graphics_8h_a1c8fead3a8c0053c10b5675e9a1313be}} 
+\index{IGraphics.h@{IGraphics.h}!FrustumPlane@{FrustumPlane}}
+\index{FrustumPlane@{FrustumPlane}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{FrustumPlane}{FrustumPlane}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_frustum_plane}{tag\+Frustum\+Plane}} \mbox{\hyperlink{_i_graphics_8h_a1c8fead3a8c0053c10b5675e9a1313be}{Frustum\+Plane}}}
+
+
+
+Defines four points of a frustum plane 
+
+\mbox{\Hypertarget{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}\label{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}} 
+\index{IGraphics.h@{IGraphics.h}!Point@{Point}}
+\index{Point@{Point}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{Point}{Point}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_point}{tag\+Point}} \mbox{\hyperlink{_i_graphics_8h_a81b04f21b40cc4a3daff4db7c6e2197a}{Point}}}
+
+
+
+Defines what constitutes the definition of a point (this is a square that can be textured but always faces forward) 
+
+\mbox{\Hypertarget{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}\label{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}} 
+\index{IGraphics.h@{IGraphics.h}!Quad@{Quad}}
+\index{Quad@{Quad}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{Quad}{Quad}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_quad}{tag\+Quad}} \mbox{\hyperlink{_i_graphics_8h_a76b9e54b1067de456a64491cddb8f830}{Quad}}}
+
+
+
+Defines what constitutes the definition of a Quad 
+
+\mbox{\Hypertarget{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}\label{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}} 
+\index{IGraphics.h@{IGraphics.h}!QuadVertexArray@{QuadVertexArray}}
+\index{QuadVertexArray@{QuadVertexArray}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{QuadVertexArray}{QuadVertexArray}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_vertex_array}{tag\+Vertex\+Array}} \mbox{\hyperlink{_i_graphics_8h_a0bbb7b1fab9dbf104c495627260cf721}{Quad\+Vertex\+Array}}}
+
+
+
+Defines a vertex array we can use for rendering our quad ... 
+
+\mbox{\Hypertarget{_i_graphics_8h_a41c857d32229eb3d9f334a5de8792b62}\label{_i_graphics_8h_a41c857d32229eb3d9f334a5de8792b62}} 
+\index{IGraphics.h@{IGraphics.h}!QuadVertexArrayProperties@{QuadVertexArrayProperties}}
+\index{QuadVertexArrayProperties@{QuadVertexArrayProperties}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{QuadVertexArrayProperties}{QuadVertexArrayProperties}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_quad_vertex_array_properties}{tag\+Quad\+Vertex\+Array\+Properties}} \mbox{\hyperlink{_i_graphics_8h_a41c857d32229eb3d9f334a5de8792b62}{Quad\+Vertex\+Array\+Properties}}}
+
+
+
+Defines a set of properties used to allocate a vertex array for accessing quad data... 
+
+\mbox{\Hypertarget{_i_graphics_8h_ad1dbca27d29805fd2e5971fea516ebc5}\label{_i_graphics_8h_ad1dbca27d29805fd2e5971fea516ebc5}} 
+\index{IGraphics.h@{IGraphics.h}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{Rotate}{Rotate}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_rotate}{tag\+Rotate}} \mbox{\hyperlink{_i_graphics_8h_ad1dbca27d29805fd2e5971fea516ebc5}{Rotate}}}
+
+\mbox{\Hypertarget{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}\label{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}} 
+\index{IGraphics.h@{IGraphics.h}!TextureHandle@{TextureHandle}}
+\index{TextureHandle@{TextureHandle}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{TextureHandle}{TextureHandle}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}} \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{Texture\+Handle}}}
+
+
+
+Defines a handle for reference at texture in the graphics interface 
+
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00049}{49}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+\mbox{\Hypertarget{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}\label{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}} 
+\index{IGraphics.h@{IGraphics.h}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{Triangle}{Triangle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_triangle}{tag\+Triangle}} \mbox{\hyperlink{_i_graphics_8h_ab96136b87479647c5b54087d09e7d516}{Triangle}}}
+
+
+
+Defines what constitutes the definition of a triangle 
+
+\mbox{\Hypertarget{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}\label{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}} 
+\index{IGraphics.h@{IGraphics.h}!TriangleVertexArray@{TriangleVertexArray}}
+\index{TriangleVertexArray@{TriangleVertexArray}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{TriangleVertexArray}{TriangleVertexArray}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_triangle_vertex_array}{tag\+Triangle\+Vertex\+Array}} \mbox{\hyperlink{_i_graphics_8h_a5427c19b913c81cc4e3756ef783bbff5}{Triangle\+Vertex\+Array}}}
+
+
+
+Defines a vertex array we can use for rendering our quad ... 
+
+\mbox{\Hypertarget{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}\label{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}} 
+\index{IGraphics.h@{IGraphics.h}!u32@{u32}}
+\index{u32@{u32}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{u32}{u32}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}}
+
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00044}{44}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+\mbox{\Hypertarget{_i_graphics_8h_a2080f09fcada49c4d87f13a3c14569ce}\label{_i_graphics_8h_a2080f09fcada49c4d87f13a3c14569ce}} 
+\index{IGraphics.h@{IGraphics.h}!VertexArrayOffsets@{VertexArrayOffsets}}
+\index{VertexArrayOffsets@{VertexArrayOffsets}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{VertexArrayOffsets}{VertexArrayOffsets}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_vertex_array_offsets}{tag\+Vertex\+Array\+Offsets}} \mbox{\hyperlink{_i_graphics_8h_a2080f09fcada49c4d87f13a3c14569ce}{Vertex\+Array\+Offsets}}}
+
+
+
+Defines the offsets required when rendering a vertex array ... 
+
+summary\texorpdfstring{$>$}{>} Defines vectors for the camera position, view, and which axis is up... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}\label{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}} 
+\index{IGraphics.h@{IGraphics.h}!BUMP\_TYPE@{BUMP\_TYPE}}
+\index{BUMP\_TYPE@{BUMP\_TYPE}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{BUMP\_TYPE}{BUMP\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246}{BUMP\+\_\+\+TYPE}}}
+
+
+
+Defines the types of bump mapping supported by the system ... 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUMP\_TYPE\_EMBOSS\_MAP@{BUMP\_TYPE\_EMBOSS\_MAP}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!BUMP\_TYPE\_EMBOSS\_MAP@{BUMP\_TYPE\_EMBOSS\_MAP}}}\mbox{\Hypertarget{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246a2572ff7b8b62e62daa58a766b94d20a6}\label{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246a2572ff7b8b62e62daa58a766b94d20a6}} 
+BUMP\+\_\+\+TYPE\+\_\+\+EMBOSS\+\_\+\+MAP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUMP\_TYPE\_NORMAL\_MAP@{BUMP\_TYPE\_NORMAL\_MAP}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!BUMP\_TYPE\_NORMAL\_MAP@{BUMP\_TYPE\_NORMAL\_MAP}}}\mbox{\Hypertarget{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246a4e4dcb80d9864ea02b5c377e426328ab}\label{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246a4e4dcb80d9864ea02b5c377e426328ab}} 
+BUMP\+\_\+\+TYPE\+\_\+\+NORMAL\+\_\+\+MAP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUMP\_TYPE\_XYZ\_MAP@{BUMP\_TYPE\_XYZ\_MAP}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!BUMP\_TYPE\_XYZ\_MAP@{BUMP\_TYPE\_XYZ\_MAP}}}\mbox{\Hypertarget{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246adb4c61fa891cd1ebf34a91dabe7bde91}\label{_i_graphics_8h_a80e216b4f9edffd43cddf398acc06246adb4c61fa891cd1ebf34a91dabe7bde91}} 
+BUMP\+\_\+\+TYPE\+\_\+\+XYZ\+\_\+\+MAP&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00090}{90}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+\mbox{\Hypertarget{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894d}\label{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894d}} 
+\index{IGraphics.h@{IGraphics.h}!POINT\_TEXTURE\_STYLE@{POINT\_TEXTURE\_STYLE}}
+\index{POINT\_TEXTURE\_STYLE@{POINT\_TEXTURE\_STYLE}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{POINT\_TEXTURE\_STYLE}{POINT\_TEXTURE\_STYLE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894d}{POINT\+\_\+\+TEXTURE\+\_\+\+STYLE}}}
+
+
+
+Defines how point textures are displayed using the graphics engine 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_WHOLE\_TEXTURE@{USE\_WHOLE\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!USE\_WHOLE\_TEXTURE@{USE\_WHOLE\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894dacd251eaf7817f16d22e64e36bfc2c90d}\label{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894dacd251eaf7817f16d22e64e36bfc2c90d}} 
+USE\+\_\+\+WHOLE\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_HALF\_TEXTURE@{USE\_HALF\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!USE\_HALF\_TEXTURE@{USE\_HALF\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da55050f54e14a6720734f161ebc910ff3}\label{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da55050f54e14a6720734f161ebc910ff3}} 
+USE\+\_\+\+HALF\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_QUARTER\_TEXTURE@{USE\_QUARTER\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!USE\_QUARTER\_TEXTURE@{USE\_QUARTER\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da444da8002047ae3f7dbb8be175f1929e}\label{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da444da8002047ae3f7dbb8be175f1929e}} 
+USE\+\_\+\+QUARTER\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USE\_EIGHTH\_TEXTURE@{USE\_EIGHTH\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!USE\_EIGHTH\_TEXTURE@{USE\_EIGHTH\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da463246631789dd7658c9d6ab8e12b46c}\label{_i_graphics_8h_a1d6164d2751bce721cbdd05b4423894da463246631789dd7658c9d6ab8e12b46c}} 
+USE\+\_\+\+EIGHTH\+\_\+\+TEXTURE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00067}{67}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+\mbox{\Hypertarget{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}\label{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}} 
+\index{IGraphics.h@{IGraphics.h}!PROJECTION\_TYPE@{PROJECTION\_TYPE}}
+\index{PROJECTION\_TYPE@{PROJECTION\_TYPE}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{PROJECTION\_TYPE}{PROJECTION\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_i_graphics_8h_ade38d72056e3db967852ce7654ea937a}{PROJECTION\+\_\+\+TYPE}}}
+
+
+
+Defines the type of projection matrix we want to use for a scene... 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROJECTION\_NORMAL@{PROJECTION\_NORMAL}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!PROJECTION\_NORMAL@{PROJECTION\_NORMAL}}}\mbox{\Hypertarget{_i_graphics_8h_ade38d72056e3db967852ce7654ea937aafd0f74115125e8825c410f359bc642a4}\label{_i_graphics_8h_ade38d72056e3db967852ce7654ea937aafd0f74115125e8825c410f359bc642a4}} 
+PROJECTION\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROJECTION\_REFLECTION@{PROJECTION\_REFLECTION}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!PROJECTION\_REFLECTION@{PROJECTION\_REFLECTION}}}\mbox{\Hypertarget{_i_graphics_8h_ade38d72056e3db967852ce7654ea937aa26eb4cfb83979ba67acf370a664ba2f2}\label{_i_graphics_8h_ade38d72056e3db967852ce7654ea937aa26eb4cfb83979ba67acf370a664ba2f2}} 
+PROJECTION\+\_\+\+REFLECTION&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00100}{100}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+\mbox{\Hypertarget{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187}\label{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187}} 
+\index{IGraphics.h@{IGraphics.h}!SEEN\_BY\_CAMERA@{SEEN\_BY\_CAMERA}}
+\index{SEEN\_BY\_CAMERA@{SEEN\_BY\_CAMERA}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{SEEN\_BY\_CAMERA}{SEEN\_BY\_CAMERA}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187}{SEEN\+\_\+\+BY\+\_\+\+CAMERA}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEEN\_BY\_CAMERA\_NEAR@{SEEN\_BY\_CAMERA\_NEAR}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!SEEN\_BY\_CAMERA\_NEAR@{SEEN\_BY\_CAMERA\_NEAR}}}\mbox{\Hypertarget{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187ae3edf58d66516602010343561306c082}\label{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187ae3edf58d66516602010343561306c082}} 
+SEEN\+\_\+\+BY\+\_\+\+CAMERA\+\_\+\+NEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEEN\_BY\_CAMERA\_MEDIUM@{SEEN\_BY\_CAMERA\_MEDIUM}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!SEEN\_BY\_CAMERA\_MEDIUM@{SEEN\_BY\_CAMERA\_MEDIUM}}}\mbox{\Hypertarget{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a45da7f3671d1ad4e6bd7cd157710a679}\label{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a45da7f3671d1ad4e6bd7cd157710a679}} 
+SEEN\+\_\+\+BY\+\_\+\+CAMERA\+\_\+\+MEDIUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEEN\_BY\_CAMERA\_FAR@{SEEN\_BY\_CAMERA\_FAR}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!SEEN\_BY\_CAMERA\_FAR@{SEEN\_BY\_CAMERA\_FAR}}}\mbox{\Hypertarget{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a0e0c22c838b5c86206a7ef9985131b16}\label{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a0e0c22c838b5c86206a7ef9985131b16}} 
+SEEN\+\_\+\+BY\+\_\+\+CAMERA\+\_\+\+FAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEEN\_BY\_CAMERA\_NO@{SEEN\_BY\_CAMERA\_NO}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!SEEN\_BY\_CAMERA\_NO@{SEEN\_BY\_CAMERA\_NO}}}\mbox{\Hypertarget{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a68a804f94f8a3a05cc8a1b1b2622f43d}\label{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187a68a804f94f8a3a05cc8a1b1b2622f43d}} 
+SEEN\+\_\+\+BY\+\_\+\+CAMERA\+\_\+\+NO&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00078}{78}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+
+\mbox{\Hypertarget{_i_graphics_8h_a13a817e55f869c0103485f59621987df}\label{_i_graphics_8h_a13a817e55f869c0103485f59621987df}} 
+\index{IGraphics.h@{IGraphics.h}!TEXTURE\_FORMAT@{TEXTURE\_FORMAT}}
+\index{TEXTURE\_FORMAT@{TEXTURE\_FORMAT}!IGraphics.h@{IGraphics.h}}
+\doxysubsubsection{\texorpdfstring{TEXTURE\_FORMAT}{TEXTURE\_FORMAT}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987df}{TEXTURE\+\_\+\+FORMAT}}}
+
+
+
+Defines how a texture will be used by an \mbox{\hyperlink{class_i_graphics}{IGraphics}} implementation 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMAGE\_TEXTURE@{IMAGE\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!IMAGE\_TEXTURE@{IMAGE\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}\label{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}} 
+IMAGE\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HEIGHT\_TEXTURE@{HEIGHT\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!HEIGHT\_TEXTURE@{HEIGHT\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a13a817e55f869c0103485f59621987dfaa929e3b100e5173da656d2472393017c}\label{_i_graphics_8h_a13a817e55f869c0103485f59621987dfaa929e3b100e5173da656d2472393017c}} 
+HEIGHT\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LIGHT\_MAP\_TEXTURE@{LIGHT\_MAP\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!LIGHT\_MAP\_TEXTURE@{LIGHT\_MAP\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacbc1f592ec6026003d293df63281cb64}\label{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacbc1f592ec6026003d293df63281cb64}} 
+LIGHT\+\_\+\+MAP\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL\_MAP\_TEXTURE@{NORMAL\_MAP\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!NORMAL\_MAP\_TEXTURE@{NORMAL\_MAP\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a13a817e55f869c0103485f59621987dfab49e571fc3399c2da7a3d67c32f46936}\label{_i_graphics_8h_a13a817e55f869c0103485f59621987dfab49e571fc3399c2da7a3d67c32f46936}} 
+NORMAL\+\_\+\+MAP\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFLECTION\_TEXTURE@{REFLECTION\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!REFLECTION\_TEXTURE@{REFLECTION\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a13a817e55f869c0103485f59621987dfa86758475920bec806723df2a913732f5}\label{_i_graphics_8h_a13a817e55f869c0103485f59621987dfa86758475920bec806723df2a913732f5}} 
+REFLECTION\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MULTIPASS\_IMAGE\_TEXTURE@{MULTIPASS\_IMAGE\_TEXTURE}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!MULTIPASS\_IMAGE\_TEXTURE@{MULTIPASS\_IMAGE\_TEXTURE}}}\mbox{\Hypertarget{_i_graphics_8h_a13a817e55f869c0103485f59621987dfaecd97f67b1b9017344f8a750403c081b}\label{_i_graphics_8h_a13a817e55f869c0103485f59621987dfaecd97f67b1b9017344f8a750403c081b}} 
+MULTIPASS\+\_\+\+IMAGE\+\_\+\+TEXTURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LIGHT\_MAP\_TEXTURE\_TEMP@{LIGHT\_MAP\_TEXTURE\_TEMP}!IGraphics.h@{IGraphics.h}}\index{IGraphics.h@{IGraphics.h}!LIGHT\_MAP\_TEXTURE\_TEMP@{LIGHT\_MAP\_TEXTURE\_TEMP}}}\mbox{\Hypertarget{_i_graphics_8h_a13a817e55f869c0103485f59621987dfa5bb03fd3bc564f656d350e84e39a4bb0}\label{_i_graphics_8h_a13a817e55f869c0103485f59621987dfa5bb03fd3bc564f656d350e84e39a4bb0}} 
+LIGHT\+\_\+\+MAP\+\_\+\+TEXTURE\+\_\+\+TEMP&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_i_graphics_8h_source_l00109}{109}} of file \mbox{\hyperlink{_i_graphics_8h_source}{IGraphics.\+h}}.
+

@@ -1,0 +1,14 @@
+digraph "preAllocateAudioData"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="preAllocateAudioData",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="LevelMethodsDisplaySplash\lScreen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#a3dd9a7c289fa589abd413d66ef4dca2b",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="LevelMethodsPreAllocateLevel\lSound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#afefc791375115cf8227b091f3d1cd9eb",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="IAudio::loadFromFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_audio.html#aad468d4ec06ff983ba35ef2e9a50d9e9",tooltip=" "];
+}

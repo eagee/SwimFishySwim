@@ -1,0 +1,1088 @@
+\hypertarget{_sprite_methods_8cpp_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Sprite\+Methods.cpp}
+\mbox{\hyperlink{_sprite_methods_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00001}00001 \textcolor{comment}{// SpriteMethods.cpp}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00002}00002 \textcolor{comment}{// Provides delegate implementation details for SpriteMethods header -\/> Incorporated by all ISprite implementations}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_f_s_headers_8h}{SFSHeaders.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_sprite_8h}{ISprite.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sprite_info_8h}{SpriteInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sprite_methods_8h}{SpriteMethods.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00010}\mbox{\hyperlink{_sprite_methods_8cpp_a97a682221408cea9fac0ae25d13c2bde}{00010}} \textcolor{preprocessor}{\#define ROTATION\_SPEED 360.0f}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00012}00012 \textcolor{comment}{// Minumum and Maximum X/Y Values for moving the player sprite around the screen...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00013}\mbox{\hyperlink{_sprite_methods_8cpp_ac7583b7ad8cecb60bcdab9e91c02fa55}{00013}} \textcolor{preprocessor}{\#define MAXIMUM\_NORTH -\/2.5f}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00014}\mbox{\hyperlink{_sprite_methods_8cpp_aa4e9170cd57e8ba5a471df747d04c1bd}{00014}} \textcolor{preprocessor}{\#define MAXIMUM\_EAST 2.5f}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00015}\mbox{\hyperlink{_sprite_methods_8cpp_a0940917eb282a5d2301ad6170da5f5b3}{00015}} \textcolor{preprocessor}{\#define MAXIMUM\_SOUTH 2.5f}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00016}\mbox{\hyperlink{_sprite_methods_8cpp_a490b79c0ff037bf7b1cc600b11247551}{00016}} \textcolor{preprocessor}{\#define MAXIMUM\_WEST -\/2.5f}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00018}\mbox{\hyperlink{_sprite_methods_8cpp_a5371fa61eecffe1dff44782d7958d7b8}{00018}} \textcolor{preprocessor}{\#define MAXIMUM\_TARGET\_DISTANCE 64.0f}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00020}00020 \textcolor{comment}{// This will be used to display health on any sprite that needs us to do it...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00021}00021 \textcolor{keyword}{static} \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} gHealthTexture = \mbox{\hyperlink{_i_graphics_8h_a3fbd514833c6f052c266b9f06c76a9f9}{UNDEFINED\_TEXTURE\_HANDLE}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00023}00023 \textcolor{comment}{// This will be used to display experience on any sprite that needs us to do it... (e.g. towers)}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00024}00024 \textcolor{keyword}{static} \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} gExperienceTexture = \mbox{\hyperlink{_i_graphics_8h_a3fbd514833c6f052c266b9f06c76a9f9}{UNDEFINED\_TEXTURE\_HANDLE}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00030}\mbox{\hyperlink{_sprite_methods_8cpp_a9703dd9e8e7a8c45051c0d6b687824e7}{00030}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a9703dd9e8e7a8c45051c0d6b687824e7}{spirteMethodsInitSpriteInfo}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00032}00032     \textcolor{comment}{// Directions Details}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00033}00033     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a9fd7fbd1d272c510c6786969e0a1b14d}{Direction}} = \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00034}00034     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} = \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}};    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00036}00036     \textcolor{comment}{// Attack options}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00037}00037     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ac776b2834507c99c590254461a1f0ca3}{AttackType}} = \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfaa4f98e2f044fd203f2d829a7bdf48b57}{ATTACK\_TYPE\_NONE}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00039}00039     \textcolor{comment}{// Location / Speed / Control Details}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00040}00040     Vector zeroVector = \{0.0f, 0.0f, 0.0f\};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00041}00041     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}} = zeroVector;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00042}00042     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4c60943bcec0a6d3170d1ae11b0b3871}{CurrentTargetDistance}} = \mbox{\hyperlink{_sprite_methods_8cpp_a5371fa61eecffe1dff44782d7958d7b8}{MAXIMUM\_TARGET\_DISTANCE}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00043}00043     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}} = zeroVector;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00044}00044     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8a16a5133abdd8629b94dfa5d9308311}{MaxVelocity}} = 10.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00045}00045     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a6ee5ab6656099b952251f40cf21ff0f0}{UnmodifiedMaxVelocity}} = 10.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00046}00046     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}} = 0.1f;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00047}00047     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}} = 0.2f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00048}00048     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a92ee862961e0d4f3b95fc21f65cd29a8}{ControlMagnitude}} = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00049}00049     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00050}00050     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00051}00051     \textcolor{comment}{// Rotation Details     }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00052}00052     \mbox{\hyperlink{structtag_rotate}{Rotate}} baseRotation = \{\{0.0f, 1.0f, 0.0f\}, -\/180.0f\};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00053}00053     \mbox{\hyperlink{structtag_rotate}{Rotate}} currentRotation = \{\{0.0f, 0.0f, 1.0f\}, -\/180.0f\};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00054}00054     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8d98233cf05f3f7244fa1749c00f83d1}{BaseRotation}} = baseRotation;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00055}00055     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7c9d9d7041b0a49fd3600c00ad700d71}{CurrentRotation}} = currentRotation;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00056}00056     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}} = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00057}00057     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_add45d1d184449121d8e46a251e75a465}{AngleRads}} = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00058}00058     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00059}00059         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00060}00060     \textcolor{comment}{// Health Details}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00061}00061     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00062}00062     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00063}00063     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1e96353a5d55a8723ed598e321fb9a47}{MaxHealth}} = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00064}00064     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00065}00065     \textcolor{comment}{// Size / Collision Details}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00066}00066     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad061e704e35f7437da98b51f5ef619e3}{Width}} = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00067}00067     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a925f9f3d697561ee6855e1bd89ad298d}{Height}} = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00068}00068     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a03913b7e463949651a5dd486650f2c1a}{BoundingTriangleSize}} = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00069}00069         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00070}00070     \textcolor{comment}{// Behavior Details}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00071}00071     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a652164ff2530ad3f20a1db18eb3a2c26}{PowerUpType}} = \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a13e2c47a471a41fbdb6326027c67eb37}{POWER\_UP\_NONE}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00072}00072     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a14878884096f2f627108a647ed5ace88}{SpriteLevel}} = 0; }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00073}00073     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a862cde9c672906c5a26d8fa33d435558}{WaterLevel}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00074}00074     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3ad11ca9453a011466846144ae3bf4100d}{JUMP\_STATE\_NOT\_READY}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00075}00075     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2b79162c1cd2dc13a856dbb19d9a0a7e}{spriteWeapon}} = NULL;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00076}00076     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00077}00077     \textcolor{comment}{// Animation Details}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00078}00078     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}{STAND}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00079}00079     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae4670530fcc0497d6863bb2cdf4c451d}{LastAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}{STAND}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00080}00080     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_a6d7432616463b5b129d68f04ef69e008}{lastTime}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00081}00081     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_af7454d5194d0ab77d077d56b759dfd48}{currentTime}} = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00082}00082     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_aa1c66bd66c9a13ae704aa253f4c70520}{currFrame}} = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00083}00083     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_ac4c233b5a6d2b687efaf40d10cb8b8af}{endFrame}} = 1;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00084}00084     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_af7fcd23b24820373ef3e1f03d0cab53c}{nextFrame}} = 1;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00085}00085     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_ac9f5174ef07567f826a56d5b35e66340}{frameIncrement}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00086}00086     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_a5e35cd8190031034faee29098b3ca551}{frameLoopCount}} = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00087}00087     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_a60da1538a79aa2743550ceeac37d6b13}{frameSkip}} = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00089}00089     \mbox{\hyperlink{structtag_rotate}{Rotate}} spriteRotation = \{\{0.0f, 0.0f, 1.0f\}, 0.0f\};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00090}00090     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a70ff5bcbe2fcd7448bbaefb2ab33cb96}{spriteRotationValue}} = spriteRotation;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00092}00092     \textcolor{comment}{// Set up the periodic timeout counter used for external animation activites (e.g. ripple effects in water)}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00093}00093     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ab2db6c2bc389cb7a57ad75ff9162ddd4}{periodicCounter}} = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00099}\mbox{\hyperlink{_sprite_methods_8cpp_afe69b086977244e7b27fbc2c5635d679}{00099}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{_sprite_methods_8cpp_afe69b086977244e7b27fbc2c5635d679}{spriteMethodsHasTimerExpired}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \textcolor{keywordtype}{float} maxValue)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00100}00100 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00101}00101     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ab2db6c2bc389cb7a57ad75ff9162ddd4}{periodicCounter}} += (\mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}} * (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}}/8)) + \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00102}00102     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ab2db6c2bc389cb7a57ad75ff9162ddd4}{periodicCounter}} >= maxValue)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00103}00103     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00104}00104         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ab2db6c2bc389cb7a57ad75ff9162ddd4}{periodicCounter}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00105}00105         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00106}00106     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00107}00107     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00108}00108     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00109}00109         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00110}00110     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00111}00111 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00116}\mbox{\hyperlink{_sprite_methods_8cpp_a0353a1f314bbaac068a68198e616962a}{00116}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a0353a1f314bbaac068a68198e616962a}{spriteMethodsAssignModel}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{class_i_model}{IModel}} *model)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00117}00117 \{   }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00118}00118     ASSERT(model != NULL);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00119}00119     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}} = model;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00120}00120     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_af95a96f345d05c3283940872e6a3fc74}{setAnimationType}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}}, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}});               }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00126}\mbox{\hyperlink{_sprite_methods_8cpp_a473abee9f84727912dab71aa48bdfe64}{00126}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{_sprite_methods_8cpp_a473abee9f84727912dab71aa48bdfe64}{spriteMethodsCheckDirection}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00127}00127 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00128}00128     \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a9fd7fbd1d272c510c6786969e0a1b14d}{Direction}} \& direction) == direction)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00129}00129     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00130}00130         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00131}00131     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00132}00132     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00133}00133     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00134}00134         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00135}00135     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00136}00136 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00142}\mbox{\hyperlink{_sprite_methods_8cpp_a771d26785a516650e09230082cbd1cf3}{00142}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a771d26785a516650e09230082cbd1cf3}{spriteMethodsHandleCollision}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\_TYPE}} type, \textcolor{keywordtype}{float} collisionForce)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00143}00143 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00144}00144     \textcolor{keywordtype}{float} angleModification = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00145}00145     \textcolor{keywordtype}{float} forceOfCollision = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} * 0.7f);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00147}00147     \textcolor{keywordflow}{switch}(type)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00148}00148     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00149}00149     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a8d45a3acb24c037864536d866c1567a5}{FRONT\_COLLISION}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00150}00150         angleModification = 180.0f;     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00151}00151         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00152}00152     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91ad76c7b1e40426818fb64fe2b32c7d6fa}{FRONT\_ATTACK}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00153}00153         angleModification = 180.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00154}00154         forceOfCollision = collisionForce;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00155}00155         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00156}00156     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a97d7d3a62cc3b6a790bc7c389aff20f1}{FRONT\_LEFT\_COLLISION}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00157}00157         angleModification = 225.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00158}00158         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00159}00159     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a20517c05e99468edb307921712338383}{FRONT\_RIGHT\_COLLISION}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00160}00160         angleModification = 135.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00161}00161         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00162}00162     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a44cf519830c85c6152c29720b2429fc1}{LEFT\_SIDE\_COLLISION}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00163}00163         angleModification = 270.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00164}00164         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00165}00165     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a8c2205266a256343f14d20fc79d34c03}{RIGHT\_SIDE\_COLLISION}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00166}00166         angleModification = 90.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00167}00167         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00168}00168     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a9e51c8d41a057674391713f11e72ee65}{LEFT\_SIDE\_ATTACK}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00169}00169         angleModification = 270.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00170}00170         forceOfCollision = collisionForce;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00171}00171         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00172}00172     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a37db16d16e6e3bbf0a9d9d0b0ae92ca6}{RIGHT\_SIDE\_ATTACK}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00173}00173         angleModification = 90.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00174}00174         forceOfCollision = collisionForce;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00175}00175         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00176}00176     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a81cf3efb6e53652400c38cac4269e9af}{REAR\_COLLISION}}:      }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00177}00177         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7cbcabe023f05d3acf0437aa749f37bc}{Type}} == \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a8f8c2be8b58aa68142d99133395ff6b6}{BULLET\_SPRITE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00178}00178         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00179}00179             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00180}00180         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00181}00181         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00182}00182         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00183}00183             forceOfCollision = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} * 0.7f);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00184}00184         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00185}00185         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00186}00186     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00187}00187         ASSERT(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00188}00188         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00189}00189     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00191}00191     \textcolor{comment}{// Whatever our current angle is, we modify it by the type of collision that occurred...    }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00192}00192     \textcolor{keywordtype}{float} modifiedAngle = \mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{modifyAngleByDegrees}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}}, angleModification);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00193}00193     \textcolor{keywordtype}{float} angleInRads = \mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{getRadiansForAngle}}(modifiedAngle);            }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00194}00194     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x = (forceOfCollision * cos(angleInRads));}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00195}00195     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y = (forceOfCollision * sin(angleInRads)); }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00196}00196     \textcolor{comment}{// If this is a bullet sprite, then we'll modify the control angle, too, so that it goes the other way}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00197}00197     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7cbcabe023f05d3acf0437aa749f37bc}{Type}} == \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a8f8c2be8b58aa68142d99133395ff6b6}{BULLET\_SPRITE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00198}00198     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00199}00199         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}} = modifiedAngle;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00200}00200         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}} = modifiedAngle -\/ 90.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00201}00201         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}} = modifiedAngle;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00202}00202         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}} < 0.0f) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}} += 360.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00203}00203         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} *= 2.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00204}00204         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} > spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8a16a5133abdd8629b94dfa5d9308311}{MaxVelocity}}) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8a16a5133abdd8629b94dfa5d9308311}{MaxVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00205}00205     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00206}00206     \mbox{\hyperlink{_sprite_methods_8cpp_a7bd12ba2a61a229814542d103d51d167}{spriteMethodsUpdateLocationByVelocity}}(spriteInfo); }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00207}00207 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00212}\mbox{\hyperlink{_sprite_methods_8cpp_a6bfdc270d6c5c1b5fa1144a98e8f27d8}{00212}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a6bfdc270d6c5c1b5fa1144a98e8f27d8}{spriteMethodsHandleSlideCollision}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\_TYPE}} type, \textcolor{keywordtype}{float} collisionForce)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00213}00213 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00214}00214     \textcolor{keywordtype}{float} angleModification = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00216}00216     \textcolor{comment}{//ASSERT(spriteInfo-\/>Type != BULLET\_SPRITE);}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00218}00218     \textcolor{comment}{// Determine the angle for this type of slide collision..}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00219}00219     \textcolor{keywordflow}{switch} (type)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00220}00220     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00221}00221     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aada4c363debf20bc4dc65f7f9e3b18ce}{FRONT\_LEFT\_SLIDE}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00222}00222         angleModification = 90.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00223}00223         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00224}00224     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a722bd0ac44f758a2790ce1f786468112}{FRONT\_RIGHT\_SLIDE}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00225}00225         angleModification = 270.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00226}00226         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00227}00227     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aab0f94731b6a7beae4534ed1a0a51129}{REAR\_SLIDE}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00228}00228         angleModification = 180.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00229}00229         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00230}00230     \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aa4403178a802cc71c3d2bc0bea82cb99}{FRONT\_SLIDE}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00231}00231         angleModification = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00232}00232         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00233}00233     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00234}00234         ASSERT(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00235}00235         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00236}00236     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00238}00238     \textcolor{comment}{// Increase our vector length...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00239}00239     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} < (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8a16a5133abdd8629b94dfa5d9308311}{MaxVelocity}})) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00240}00240     \textcolor{keywordflow}{else} spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8a16a5133abdd8629b94dfa5d9308311}{MaxVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00241}00241 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00242}00242     \textcolor{comment}{// Whatever our current angle is, we modify it by the type of collision that occurred and apply the increased vector to the new direction}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00243}00243     \textcolor{keywordtype}{float} modifiedAngle = \mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{modifyAngleByDegrees}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}}, angleModification);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00244}00244     \textcolor{keywordtype}{float} angleInRads = \mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{getRadiansForAngle}}(modifiedAngle);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00245}00245 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00246}00246     \textcolor{comment}{//spriteInfo-\/>Velocity.x = (spriteInfo-\/>VectorLength * cos(angleInRads));}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00248}00248     \textcolor{comment}{// Apply these values to our velocity}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00249}00249     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} * cos(angleInRads));}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00250}00250     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} * sin(angleInRads));}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00252}00252     \textcolor{comment}{// And update our position accordingly...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00253}00253     \mbox{\hyperlink{_sprite_methods_8cpp_a7bd12ba2a61a229814542d103d51d167}{spriteMethodsUpdateLocationByVelocity}}(spriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00254}00254 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00261}\mbox{\hyperlink{_sprite_methods_8cpp_a9edbed78645deb6d2e2e90dcf6737412}{00261}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a9edbed78645deb6d2e2e90dcf6737412}{spriteMethodsSetControlMagnitude}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \textcolor{keywordtype}{float} controlMagnitude)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00262}00262 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00263}00263     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a92ee862961e0d4f3b95fc21f65cd29a8}{ControlMagnitude}} = controlMagnitude;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00264}00264     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8a16a5133abdd8629b94dfa5d9308311}{MaxVelocity}} = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a6ee5ab6656099b952251f40cf21ff0f0}{UnmodifiedMaxVelocity}} * spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a92ee862961e0d4f3b95fc21f65cd29a8}{ControlMagnitude}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00265}00265 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00266}00266 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00270}\mbox{\hyperlink{_sprite_methods_8cpp_a5a16bdcb12d4b50018959afac7014568}{00270}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a5a16bdcb12d4b50018959afac7014568}{spriteMethodsIncreaseAcceleration}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00271}00271 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00272}00272     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} < spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8a16a5133abdd8629b94dfa5d9308311}{MaxVelocity}}) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00273}00273 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00278}\mbox{\hyperlink{_sprite_methods_8cpp_a4c96beb223e046f6218f0c1f20146363}{00278}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a4c96beb223e046f6218f0c1f20146363}{spriteMethodsSetDirection}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00279}00279 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00280}00280     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a9fd7fbd1d272c510c6786969e0a1b14d}{Direction}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a9fd7fbd1d272c510c6786969e0a1b14d}{Direction}} | direction;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00281}00281     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00282}00282     \textcolor{comment}{// Set our rotation value based on the new direction...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00283}00283     \textcolor{keywordflow}{switch}(direction)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00284}00284     \{       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00285}00285         \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\_EAST}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00286}00286             \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\_WEST}});                       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00287}00287         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00288}00288         \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\_WEST}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00289}00289             \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\_EAST}});           }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00290}00290         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00291}00291         \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\_NORTH}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00292}00292             \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00293}00293         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00294}00294         \textcolor{keywordflow}{case} \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00295}00295             \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\_NORTH}});         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00296}00296         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00297}00297         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00298}00298         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00299}00299     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00300}00300     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00301}00301     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a9fd7fbd1d272c510c6786969e0a1b14d}{Direction}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00302}00302 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00303}00303 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00307}\mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{00307}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}} direction)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00308}00308 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00309}00309     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a9fd7fbd1d272c510c6786969e0a1b14d}{Direction}} \&= !(direction);         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00310}00310 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00311}00311 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00315}\mbox{\hyperlink{_sprite_methods_8cpp_af8b26da7debce38238aa454f2b76f94f}{00315}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_af8b26da7debce38238aa454f2b76f94f}{spriteMethodsTranslateSprite}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, Vector spriteLocation)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00316}00316 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00317}00317     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}} = spriteLocation;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00318}00318     Vector zeroVector = \{0.0f, 0.0f, 0.0f\}; }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00319}00319     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}} = zeroVector;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00320}00320     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} = 0.0f;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00321}00321     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a862cde9c672906c5a26d8fa33d435558}{WaterLevel}} = spriteLocation.z;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00322}00322 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00323}00323 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00327}\mbox{\hyperlink{_sprite_methods_8cpp_ad9d10bdfc75a2c1db8d1bc929a0b6db3}{00327}} \mbox{\hyperlink{structtag_sprite_bounding_triangle}{BoundingTriangle}} \mbox{\hyperlink{_sprite_methods_8cpp_ad9d10bdfc75a2c1db8d1bc929a0b6db3}{spriteMethodsGetBoundingTriangle}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00328}00328 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00329}00329     \mbox{\hyperlink{structtag_sprite_bounding_triangle}{BoundingTriangle}} returnValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00330}00330     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00331}00331     \textcolor{keywordtype}{float} collisionAngleA = \mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{modifyAngleByDegrees}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}}, 200);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00332}00332     \textcolor{keywordtype}{float} collisionAngleB = \mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{modifyAngleByDegrees}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}}, 160);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00333}00333     \textcolor{keywordtype}{float} collisionAngleC = \mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{modifyAngleByDegrees}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}}, 0);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00334}00334     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00335}00335     \textcolor{comment}{// CollisionAngles A to C define a trianged based on our current angle modified by a certain number of degrees.}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00336}00336     \textcolor{comment}{// We will then use the value in spriteInfo-\/>BoundingTriangleVector to convert these angels into cartesian coordinates}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00337}00337     \textcolor{comment}{// that we can then use for collision detection.}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00338}00338     Vector zeroVector = \{0.0f, 0.0f, 0.0f\};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00339}00339     returnValue.\mbox{\hyperlink{structtag_sprite_bounding_triangle_a617a8ce06bedb4630411abf9cd36559b}{collisionA}} = \mbox{\hyperlink{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}{modifyVectorByAngle}}(zeroVector, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a03913b7e463949651a5dd486650f2c1a}{BoundingTriangleSize}} * 1.5f, collisionAngleA);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00340}00340     returnValue.\mbox{\hyperlink{structtag_sprite_bounding_triangle_a4b01f5f954b2d84facda227421cd75d2}{collisionB}} = \mbox{\hyperlink{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}{modifyVectorByAngle}}(zeroVector, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a03913b7e463949651a5dd486650f2c1a}{BoundingTriangleSize}} * 1.5f, collisionAngleB);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00341}00341     returnValue.\mbox{\hyperlink{structtag_sprite_bounding_triangle_a529f11926373ae9c96c978d0c282113f}{collisionC}} = \mbox{\hyperlink{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}{modifyVectorByAngle}}(zeroVector, (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a03913b7e463949651a5dd486650f2c1a}{BoundingTriangleSize}} * 1.5f), collisionAngleC);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00342}00342             }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00343}00343     \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00344}00344 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00345}00345 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00350}\mbox{\hyperlink{_sprite_methods_8cpp_ada2450ce26a424a516216fe6592c48d3}{00350}} \mbox{\hyperlink{structtag_bounding_circle}{BoundingCircle}} \mbox{\hyperlink{_sprite_methods_8cpp_ada2450ce26a424a516216fe6592c48d3}{spriteMethodsGetBoundingCircle}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \textcolor{keywordtype}{int} numberOfPoints)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00351}00351 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00352}00352     \mbox{\hyperlink{structtag_bounding_circle}{BoundingCircle}} returnValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00353}00353 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00354}00354     \textcolor{keywordtype}{float} boundingAngle = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00355}00355     \textcolor{keywordtype}{float} angleIncrement = (360.0f / numberOfPoints);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00356}00356 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00357}00357     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} idx = 0; idx < numberOfPoints; idx++)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00358}00358     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00359}00359         \mbox{\hyperlink{structtag_bounding_point}{BoundingVertex}} newBoundingVert;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00361}00361         newBoundingVert.\mbox{\hyperlink{structtag_bounding_point_a2c6026c0bdb8a632da5044da0b679ef5}{angle}} = \mbox{\hyperlink{angles_8cpp_af9d7486016974d2bf6bf337b007bbccc}{modifyAngleByDegrees}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}}, boundingAngle);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00362}00362 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00363}00363         \textcolor{comment}{// Front and back of circle should be larger than sides (since all our sprites are generally fish) (yes I know it's not really a circle now)}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00364}00364         Vector zeroVector = \{0.0f, 0.0f, 0.0f\};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00365}00365         newBoundingVert.\mbox{\hyperlink{structtag_bounding_point_a7bc6ee012fc69937d09b30b7eacc8aee}{vertex}} = \mbox{\hyperlink{angles_8cpp_a54b5da6c7486a0a224fd34341c0dc065}{modifyVectorByAngle}}(zeroVector, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a03913b7e463949651a5dd486650f2c1a}{BoundingTriangleSize}}, newBoundingVert.\mbox{\hyperlink{structtag_bounding_point_a2c6026c0bdb8a632da5044da0b679ef5}{angle}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00366}00366 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00367}00367         returnValue.\mbox{\hyperlink{structtag_bounding_circle_ae32cc40a7c5bfdca882c05d84043f5c9}{verticies}}.push\_back(newBoundingVert);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00368}00368 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00369}00369         \textcolor{comment}{// Increment angle by increment degrees (8 points would be 45.0f between each) and adjust for rollover...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00370}00370         boundingAngle += angleIncrement;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00371}00371         \textcolor{keywordflow}{if}(boundingAngle > 360.0f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00372}00372         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00373}00373             boundingAngle -\/= 360;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00374}00374         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00375}00375     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00376}00376 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00377}00377 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00378}00378     \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00379}00379 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00380}00380 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00387}\mbox{\hyperlink{_sprite_methods_8cpp_a23cdae259828a109013da3c57a2b669e}{00387}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a23cdae259828a109013da3c57a2b669e}{spriteMethodsSetVelocities}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \textcolor{keywordtype}{float} maxNormalVelocity, \textcolor{keywordtype}{float} dragVelocity, \textcolor{keywordtype}{float} accelerationVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00388}00388 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00389}00389     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a6ee5ab6656099b952251f40cf21ff0f0}{UnmodifiedMaxVelocity}} = maxNormalVelocity;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00390}00390     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8a16a5133abdd8629b94dfa5d9308311}{MaxVelocity}} = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a6ee5ab6656099b952251f40cf21ff0f0}{UnmodifiedMaxVelocity}} * spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a92ee862961e0d4f3b95fc21f65cd29a8}{ControlMagnitude}});   }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00391}00391     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}} = dragVelocity;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00392}00392     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}} = accelerationVelocity;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00393}00393 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00394}00394 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00398}\mbox{\hyperlink{_sprite_methods_8cpp_a2614b4b9eef76a54c374fae551197335}{00398}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a2614b4b9eef76a54c374fae551197335}{spriteMethodsSetAngle}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \textcolor{keywordtype}{float} angle)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00399}00399 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00400}00400     \textcolor{keywordflow}{if}(angle != NAN)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00401}00401     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00402}00402         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}} = angle;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00403}00403         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}} = angle + 90.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00404}00404         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}} > 360.0f) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}} -\/= 360.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00405}00405     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00406}00406 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00407}00407 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00411}\mbox{\hyperlink{_sprite_methods_8cpp_af3845204c4bfbe2073ff777468012fdc}{00411}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_af3845204c4bfbe2073ff777468012fdc}{renderSpriteHealth}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, Vector renderLocation, \mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureHandle, \textcolor{keywordtype}{float} percentage)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00412}00412 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00413}00413     ASSERT(gHealthTexture != \mbox{\hyperlink{_i_graphics_8h_a3fbd514833c6f052c266b9f06c76a9f9}{UNDEFINED\_TEXTURE\_HANDLE}}); }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00414}00414     \mbox{\hyperlink{structtag_quad}{Quad}} quad, quadBorder;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00415}00415     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00416}00416 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00417}00417     \textcolor{keywordtype}{float} healthBarSize = (percentage);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00418}00418 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00419}00419     \textcolor{comment}{// Set up the verticies for quad so that we're drawing a health bar on top of the sprite}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00420}00420     \textcolor{comment}{// and in the center...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00421}00421     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[0].x = -\/0.75f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00422}00422     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[0].y =  0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00423}00423     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[0].z = -\/2.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00424}00424     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00425}00425     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1].x = -\/0.75f + healthBarSize;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00426}00426     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1].y =  0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00427}00427     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1].z = -\/2.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00428}00428     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00429}00429     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2].x = -\/0.75f + healthBarSize;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00430}00430     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2].y =  0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00431}00431     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2].z = -\/1.6f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00432}00432     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00433}00433     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[3].x = -\/0.75f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00434}00434     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[3].y =  0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00435}00435     quad.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[3].z = -\/1.6f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00436}00436     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00437}00437     \textcolor{comment}{// TopLeft, TopRight, BottomRight, BottomLeft tex coords for the health meter}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00438}00438     quad.\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[0] = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00439}00439     quad.\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[0] = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00440}00440 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00441}00441     quad.\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[1] = 0.5f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00442}00442     quad.\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[1] = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00443}00443     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00444}00444     quad.\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[2] = 0.5f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00445}00445     quad.\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[2] = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00446}00446 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00447}00447     quad.\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[3] = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00448}00448     quad.\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[3] = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00449}00449     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00450}00450     \textcolor{comment}{// Set up the border around the quad drawing our health display}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00451}00451     quadBorder = quad;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00452}00452     quadBorder.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[0].y -\/= 0.001f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00453}00453     quadBorder.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1].y -\/= 0.001f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00454}00454     quadBorder.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2].y -\/= 0.001f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00455}00455     quadBorder.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[1].x = 0.75f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00456}00456     quadBorder.\mbox{\hyperlink{structtag_quad_a0ecce3871fe5b400efb5fc558cca1eee}{verticies}}[2].x = 0.75f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00457}00457 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00458}00458     \textcolor{comment}{// TopLeft, TopRight, BottomRight, BottomLeft tex coords for the health meter border}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00459}00459     quadBorder.\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[0] = 0.5f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00460}00460     quadBorder.\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[0] = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00461}00461 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00462}00462     quadBorder.\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[1] = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00463}00463     quadBorder.\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[1] = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00464}00464     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00465}00465     quadBorder.\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[2] = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00466}00466     quadBorder.\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[2] = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00467}00467 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00468}00468     quadBorder.\mbox{\hyperlink{structtag_quad_a45a8ba2b98bdd90f7ec970751ad0d60a}{texture\_S}}[3] = 0.5f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00469}00469     quadBorder.\mbox{\hyperlink{structtag_quad_abe6f35df6c9d7126ce692bdcf00bf7cf}{texture\_T}}[3] = 1.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00470}00470         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00471}00471     std::map<int, Quad> quads;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00472}00472     quads[0] = quad;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00473}00473     quads[1] = quadBorder;  }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00474}00474     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00475}00475     \mbox{\hyperlink{structtag_rotate}{Rotate}} rotation = \{\{0.0f, 0.0f, 1.0f\}, graphics-\/>\mbox{\hyperlink{class_i_graphics_a80b78928592312622c0b6c78217dd403}{getCameraAngle}}() \};    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00476}00476     graphics-\/>\mbox{\hyperlink{class_i_graphics_abf2eedb8adf18344b39db9aaac5ddc6d}{rotateNextObjectInScene}}(\&rotation);        }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00477}00477 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00478}00478     graphics-\/>\mbox{\hyperlink{class_i_graphics_afb3f16ee08cd60d5b09ef4c7df51876a}{addQuadsToScene}}(renderLocation, quads, quads.size(), textureHandle);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00479}00479     quads.clear();  }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00480}00480 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00481}00481 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00485}\mbox{\hyperlink{_sprite_methods_8cpp_a115e89f458f763005e03f2042976b4b9}{00485}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a115e89f458f763005e03f2042976b4b9}{spriteMethodsProcessAnimation}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00486}00486 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00487}00487     \textcolor{comment}{// Change our animation if needed}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00488}00488     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae4670530fcc0497d6863bb2cdf4c451d}{LastAnimation}} != spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00489}00489     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00490}00490         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae4670530fcc0497d6863bb2cdf4c451d}{LastAnimation}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00491}00491         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_af95a96f345d05c3283940872e6a3fc74}{setAnimationType}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}}, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}});               }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00492}00492     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00493}00493 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00494}00494     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_aa1c66bd66c9a13ae704aa253f4c70520}{currFrame}} == spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_ac4c233b5a6d2b687efaf40d10cb8b8af}{endFrame}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00495}00495     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00496}00496         \textcolor{keywordflow}{if}(((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a1f28d4392b1c1e7da2af2283632d81e1}{JUMP}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aff46bb914b1051cbe1b3a5e48cf7da48}{CROUCH\_STAND}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00497}00497             || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a97744c5570e743b377f5fb63b9aa3587}{FLIP}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa12627bba14516046ff6bf3d759b170}{CROUCH\_ATTACK}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00498}00498             || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a126cee880a60e98bde4f048afce5fe02}{ATTACK\_A}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a15d05c2cec19bb436a9b2ff70e5ba388}{REVERSE\_ATTACK}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00499}00499             || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}{PAIN\_A}})   || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ae029d966a4919e6e59344c845c973fc1}{PAIN\_B}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00500}00500             || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab6814ebbfa14333d1c500452549f6294}{PAIN\_C}})   || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a1f28d4392b1c1e7da2af2283632d81e1}{JUMP}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a4025728e15f4cee76a85d2cc65ccb565}{WAVE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00501}00501             || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ac7db2ebf82ea932f70d47d5013ea01d1}{SALUTE}})))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00502}00502         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00503}00503             \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} <= 0.0f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00504}00504             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00505}00505                 \textcolor{keywordtype}{int} deathAnim = (rand() \% 3);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00506}00506                 \textcolor{keywordflow}{if}(deathAnim == 0) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\_FALLBACK}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00507}00507                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(deathAnim == 1) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\_FALLFORWARD}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00508}00508                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(deathAnim == 2) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\_FALLBACKSLOW}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00509}00509             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00510}00510             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00511}00511             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00512}00512                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}{STAND}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00513}00513             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00514}00514         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00515}00515     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00516}00516     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_af7fcd23b24820373ef3e1f03d0cab53c}{nextFrame}} == spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_ac4c233b5a6d2b687efaf40d10cb8b8af}{endFrame}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00517}00517     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00518}00518         \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\_FALLBACKSLOW}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00519}00519             || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\_FALLFORWARD}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00520}00520             || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\_FALLBACK}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00521}00521             || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a7c75ea5c4f28b309f35622ea455f368c}{CROUCH\_DEATH}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00522}00522         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00523}00523             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} = \textcolor{keyword}{true};        }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00524}00524         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00525}00525     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00526}00526 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00527}00527     \textcolor{comment}{// Handle animation here ..}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00528}00528     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_ab987f81128faba7427d2eb087ce790d1}{handleAnimation}}(\mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}}, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00529}00529 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00530}00530 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00534}\mbox{\hyperlink{_sprite_methods_8cpp_a47691f146f3e5e93aebc3d7391f268e7}{00534}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a47691f146f3e5e93aebc3d7391f268e7}{spriteMethodsProcessBulletAnimation}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00535}00535 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00536}00536     \textcolor{comment}{// Change our animation if needed}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00537}00537     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae4670530fcc0497d6863bb2cdf4c451d}{LastAnimation}} != spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00538}00538     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00539}00539         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae4670530fcc0497d6863bb2cdf4c451d}{LastAnimation}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00540}00540         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_af95a96f345d05c3283940872e6a3fc74}{setAnimationType}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}}, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}});               }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00541}00541     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00542}00542 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00543}00543     \textcolor{comment}{// Handle the bullet startup animation...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00544}00544 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00545}00545     \textcolor{comment}{// Handle the bullet ending animation}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00546}00546     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a14878884096f2f627108a647ed5ace88}{SpriteLevel}} == 4)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00547}00547     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00548}00548         \textcolor{comment}{// Handle how the bullet dies, and when it is dead make sure that we set our sprite to the first frame...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00549}00549         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_aa1c66bd66c9a13ae704aa253f4c70520}{currFrame}} == spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_ac4c233b5a6d2b687efaf40d10cb8b8af}{endFrame}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00550}00550             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00551}00551                 \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\_FALLBACKSLOW}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00552}00552                     || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\_FALLFORWARD}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00553}00553                     || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\_FALLBACK}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00554}00554                     || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a7c75ea5c4f28b309f35622ea455f368c}{CROUCH\_DEATH}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00555}00555                 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00556}00556                     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00557}00557                     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00558}00558                     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}{PAIN\_A}};                                    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00559}00559                     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_af95a96f345d05c3283940872e6a3fc74}{setAnimationType}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}{PAIN\_A}}, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}});                   }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00560}00560                     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_aa1c66bd66c9a13ae704aa253f4c70520}{currFrame}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}.\mbox{\hyperlink{struct_model_anim_state_ac67c78703a6a21aa7efd014b5bee0460}{startFrame}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00561}00561                 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00562}00562             \}       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00563}00563     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00564}00564     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} <= 0.0f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00565}00565     \{       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00566}00566         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} = \textcolor{keyword}{true};        }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00567}00567     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00568}00568 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00569}00569     \textcolor{comment}{// Handle animation here ..}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00570}00570     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_ab987f81128faba7427d2eb087ce790d1}{handleAnimation}}(\mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}}, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00571}00571 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00572}00572 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00576}\mbox{\hyperlink{_sprite_methods_8cpp_a35ce33b222b696259af008c64d0d1ebe}{00576}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a35ce33b222b696259af008c64d0d1ebe}{spriteMethodsRenderSprite}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, Vector renderOffset, \textcolor{keywordtype}{bool} interpolate)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00577}00577 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00578}00578     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00579}00579     \{                       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00580}00580         \textcolor{comment}{// If we're not dying then handle turns}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00581}00581         \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\_FALLBACKSLOW}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00582}00582                 \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\_FALLFORWARD}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00583}00583                 \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\_FALLBACK}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00584}00584         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00585}00585             \textcolor{comment}{// Adjust our rotation so that currentAngle moves appropriately when targetAngle moves...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00586}00586             \mbox{\hyperlink{angles_8cpp_a7f7e2685ab71efefb9d176543e4fa599}{adjustAngleRotation}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}}, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}}, (\mbox{\hyperlink{_sprite_methods_8cpp_a97a682221408cea9fac0ae25d13c2bde}{ROTATION\_SPEED}} * spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a92ee862961e0d4f3b95fc21f65cd29a8}{ControlMagnitude}}));    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00587}00587 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00588}00588             \textcolor{comment}{// Assign this to our current rotation value...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00589}00589             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7c9d9d7041b0a49fd3600c00ad700d71}{CurrentRotation}}.\mbox{\hyperlink{structtag_rotate_a655a69d0e9da6f47b0d49aac590186d3}{value}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00590}00590         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00591}00591         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00592}00592         \textcolor{comment}{// Reset our target distance value on render so that we can accept a new target if a close one dies ...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00593}00593         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4c60943bcec0a6d3170d1ae11b0b3871}{CurrentTargetDistance}} = \mbox{\hyperlink{_sprite_methods_8cpp_a5371fa61eecffe1dff44782d7958d7b8}{MAXIMUM\_TARGET\_DISTANCE}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00594}00594 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00595}00595         \textcolor{comment}{// Translate and render our sprites model}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00596}00596         Vector renderLocation = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00597}00597         renderLocation.x += renderOffset.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00598}00598         renderLocation.y += renderOffset.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00599}00599         renderLocation.z += renderOffset.z;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00600}00600 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00601}00601         \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187}{SEEN\_BY\_CAMERA}} cameraSight = graphics-\/>\mbox{\hyperlink{class_i_graphics_ad2595b6c33fb3b6f5f792a6d5f9b9ef9}{isLocationWithinViewingRange}}(renderLocation);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00602}00602         \textcolor{keywordflow}{if}(cameraSight == \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187ae3edf58d66516602010343561306c082}{SEEN\_BY\_CAMERA\_NEAR}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00603}00603         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00604}00604             \textcolor{comment}{// and render our model}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00605}00605             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_a74b0a19c9700370e4f856ec7a4e0a8d4}{translateModel}}(renderLocation);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00606}00606             graphics-\/>\mbox{\hyperlink{class_i_graphics_abf2eedb8adf18344b39db9aaac5ddc6d}{rotateNextObjectInScene}}(\&spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a8d98233cf05f3f7244fa1749c00f83d1}{BaseRotation}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00607}00607             graphics-\/>\mbox{\hyperlink{class_i_graphics_abf2eedb8adf18344b39db9aaac5ddc6d}{rotateNextObjectInScene}}(\&spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7c9d9d7041b0a49fd3600c00ad700d71}{CurrentRotation}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00608}00608             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_a95736b5188fe7e8eb5de22420e76b8a2}{renderModel}}(graphics, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}, interpolate);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00609}00609         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00610}00610     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00611}00611 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00612}00612 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00616}\mbox{\hyperlink{_sprite_methods_8cpp_ac5aa6115d522e815ddc30282080e6396}{00616}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_ac5aa6115d522e815ddc30282080e6396}{spriteMethodsRenderHealthBar}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, Vector renderOffset)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00617}00617 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00618}00618     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00619}00619     \{       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00620}00620         \textcolor{comment}{// If our texture handle is still undefined we should load our health meter texture here ...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00621}00621         \textcolor{keywordflow}{if}(gHealthTexture == \mbox{\hyperlink{_i_graphics_8h_a3fbd514833c6f052c266b9f06c76a9f9}{UNDEFINED\_TEXTURE\_HANDLE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00622}00622         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00623}00623             \textcolor{comment}{//TODO: Load our texture handle up in this joint!!!}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00624}00624             gHealthTexture = graphics-\/>\mbox{\hyperlink{class_i_graphics_a7c38b073633f06fbc3cd80b71d1b74e8}{addTextureData}}(\textcolor{stringliteral}{"{}//assets//texOther//baddieHealth.png"{}}, \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\_TEXTURE}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00625}00625         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00626}00626         \textcolor{comment}{// Translate and render our fish model}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00627}00627         Vector renderLocation = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00628}00628         renderLocation.x += renderOffset.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00629}00629         renderLocation.y += renderOffset.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00630}00630         renderLocation.z += renderOffset.z;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00631}00631         \textcolor{keywordflow}{if}(graphics-\/>\mbox{\hyperlink{class_i_graphics_ad2595b6c33fb3b6f5f792a6d5f9b9ef9}{isLocationWithinViewingRange}}(renderLocation) >= \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187ae3edf58d66516602010343561306c082}{SEEN\_BY\_CAMERA\_NEAR}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00632}00632         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00633}00633             \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} < spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1e96353a5d55a8723ed598e321fb9a47}{MaxHealth}}) \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} > 0.0f))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00634}00634             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00635}00635                 \textcolor{keywordtype}{float} percentage = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a75e15035d6e0fa93ff3e36df73b32b33}{Health}} / spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1e96353a5d55a8723ed598e321fb9a47}{MaxHealth}}) * 1.5f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00636}00636                 \mbox{\hyperlink{_sprite_methods_8cpp_af3845204c4bfbe2073ff777468012fdc}{renderSpriteHealth}}(spriteInfo, renderLocation, graphics, gHealthTexture, percentage);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00637}00637             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00638}00638 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00639}00639         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00640}00640     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00641}00641 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00642}00642 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00646}\mbox{\hyperlink{_sprite_methods_8cpp_ab809974f3a01fee347b7328cac94bfad}{00646}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_ab809974f3a01fee347b7328cac94bfad}{spriteMethodsRenderExperienceBar}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, Vector renderOffset, \textcolor{keywordtype}{float} percentage)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00647}00647 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00648}00648     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00649}00649     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00650}00650         \textcolor{comment}{// If our texture handle is still undefined we should load our health meter texture here ...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00651}00651         \textcolor{keywordflow}{if}(gExperienceTexture == \mbox{\hyperlink{_i_graphics_8h_a3fbd514833c6f052c266b9f06c76a9f9}{UNDEFINED\_TEXTURE\_HANDLE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00652}00652         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00653}00653             gExperienceTexture = graphics-\/>\mbox{\hyperlink{class_i_graphics_a7c38b073633f06fbc3cd80b71d1b74e8}{addTextureData}}(\textcolor{stringliteral}{"{}//assets//texOther//gunExperience.png"{}}, \mbox{\hyperlink{_i_graphics_8h_a13a817e55f869c0103485f59621987dfacc7ae7df7e470ea0aae979ddc98a24d4}{IMAGE\_TEXTURE}}, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00654}00654         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00655}00655         \textcolor{comment}{// Translate and render our fish model}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00656}00656         Vector renderLocation = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00657}00657         renderLocation.x += renderOffset.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00658}00658         renderLocation.y += renderOffset.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00659}00659         renderLocation.z += renderOffset.z;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00660}00660         \textcolor{keywordflow}{if}(graphics-\/>\mbox{\hyperlink{class_i_graphics_ad2595b6c33fb3b6f5f792a6d5f9b9ef9}{isLocationWithinViewingRange}}(renderLocation) >= \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187ae3edf58d66516602010343561306c082}{SEEN\_BY\_CAMERA\_NEAR}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00661}00661         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00662}00662             \mbox{\hyperlink{_sprite_methods_8cpp_af3845204c4bfbe2073ff777468012fdc}{renderSpriteHealth}}(spriteInfo, renderLocation, graphics, gExperienceTexture, percentage);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00663}00663         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00664}00664     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00665}00665 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00666}00666 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00667}00667 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00671}\mbox{\hyperlink{_sprite_methods_8cpp_a3898b9df56f85a49ef769e277ee744ca}{00671}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a3898b9df56f85a49ef769e277ee744ca}{spriteMethodsRenderBulletSprite}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, Vector renderOffset)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00672}00672 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00673}00673     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00674}00674     \{               }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00675}00675         \textcolor{comment}{// Adjust our rotation so that currentAngle moves appropriately when targetAngle moves...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00676}00676         \mbox{\hyperlink{angles_8cpp_a7f7e2685ab71efefb9d176543e4fa599}{adjustAngleRotation}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}}, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}}, \mbox{\hyperlink{_sprite_methods_8cpp_a97a682221408cea9fac0ae25d13c2bde}{ROTATION\_SPEED}}); }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00677}00677 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00678}00678         \textcolor{comment}{// Assign this to our current rotation value...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00679}00679         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7c9d9d7041b0a49fd3600c00ad700d71}{CurrentRotation}}.\mbox{\hyperlink{structtag_rotate_a655a69d0e9da6f47b0d49aac590186d3}{value}} = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00680}00680         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00681}00681         \textcolor{comment}{// Translate and render our bullet model...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00682}00682         Vector renderLocation = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00683}00683         renderLocation.x += renderOffset.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00684}00684         renderLocation.y += renderOffset.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00685}00685         renderLocation.z += renderOffset.z;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00686}00686         \textcolor{keywordflow}{if}(graphics-\/>\mbox{\hyperlink{class_i_graphics_ad2595b6c33fb3b6f5f792a6d5f9b9ef9}{isLocationWithinViewingRange}}(renderLocation) >= \mbox{\hyperlink{_i_graphics_8h_a1cdce16a2ed8fb1874fc6932ca99e187ae3edf58d66516602010343561306c082}{SEEN\_BY\_CAMERA\_NEAR}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00687}00687         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00688}00688             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_a74b0a19c9700370e4f856ec7a4e0a8d4}{translateModel}}(renderLocation);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00689}00689             \textcolor{comment}{//graphics-\/>rotateNextObjectInScene(\&spriteInfo-\/>BaseRotation);             }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00690}00690             \textcolor{comment}{//graphics-\/>rotateNextObjectInScene(\&spriteInfo-\/>CurrentRotation);              }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00691}00691             \textcolor{comment}{// and render our model}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00692}00692             \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a14878884096f2f627108a647ed5ace88}{SpriteLevel}} <= 3)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00693}00693             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00694}00694                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_a95736b5188fe7e8eb5de22420e76b8a2}{renderModel}}(graphics, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}, \textcolor{keyword}{false});  }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00695}00695             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00696}00696             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00697}00697             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00698}00698                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_afcc8e060b84e64bb15ef60a86ca932e9}{sprite3dModel}}-\/>\mbox{\hyperlink{class_i_model_a95736b5188fe7e8eb5de22420e76b8a2}{renderModel}}(graphics, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a2654404017a0732e58c8cb9ceab08dc1}{animationState}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00699}00699             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00700}00700         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00701}00701     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00702}00702 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00703}00703 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00707}\mbox{\hyperlink{_sprite_methods_8cpp_aeeb638f491479788f7fc1973890bf6f5}{00707}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_aeeb638f491479788f7fc1973890bf6f5}{spriteMethodsProcessVelocity}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00708}00708 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00709}00709     \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a126cee880a60e98bde4f048afce5fe02}{ATTACK\_A}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00710}00710         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a15d05c2cec19bb436a9b2ff70e5ba388}{REVERSE\_ATTACK}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00711}00711         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}{PAIN\_A}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00712}00712         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ae029d966a4919e6e59344c845c973fc1}{PAIN\_B}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00713}00713         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab6814ebbfa14333d1c500452549f6294}{PAIN\_C}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00714}00714         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa12627bba14516046ff6bf3d759b170}{CROUCH\_ATTACK}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00715}00715         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\_FALLBACKSLOW}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00716}00716         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\_FALLBACK}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00717}00717         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\_FALLFORWARD}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00718}00718         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a97744c5570e743b377f5fb63b9aa3587}{FLIP}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00719}00719         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a4025728e15f4cee76a85d2cc65ccb565}{WAVE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00720}00720         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ac7db2ebf82ea932f70d47d5013ea01d1}{SALUTE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00721}00721         \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} == \textcolor{keyword}{false}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00722}00722     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00723}00723         \textcolor{comment}{// Always subtract our drag velocity so that if we're }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00724}00724         \textcolor{comment}{// not pressing a key, the fish is slowing down...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00725}00725         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} > 0.0f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00726}00726         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00727}00727             \textcolor{keywordflow}{if} (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a1f28d4392b1c1e7da2af2283632d81e1}{JUMP}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00728}00728             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00729}00729                 \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} <= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00730}00730                 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00731}00731                     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}{STAND}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00732}00732                 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00733}00733                 \textcolor{keywordflow}{else} }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00734}00734                 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00735}00735                     spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a439c688a4e9ed31638d5922a50680a8e}{RUN}};  }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00736}00736                 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00737}00737             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00738}00738                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};           }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00739}00739         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00740}00740         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00741}00741         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00742}00742             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00743}00743             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}{STAND}};      }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00744}00744         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00745}00745     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00746}00746     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a126cee880a60e98bde4f048afce5fe02}{ATTACK\_A}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a15d05c2cec19bb436a9b2ff70e5ba388}{REVERSE\_ATTACK}}) ||(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\_FALLBACKSLOW}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00747}00747         || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\_FALLBACK}})|| (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\_FALLFORWARD}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00748}00748         || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aaa12627bba14516046ff6bf3d759b170}{CROUCH\_ATTACK}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} == \textcolor{keyword}{true}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00749}00749     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00750}00750         \textcolor{comment}{// Quickly slow down during an attack animation}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00751}00751         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} / 1.5f);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00752}00752     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00753}00753     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} == \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}{PAIN\_A}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00754}00754     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00755}00755         \textcolor{comment}{// TODO: We should only implement this in the case of a repel attack!}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00756}00756         \textcolor{comment}{// An attack will cause an enemy to pause slightly...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00757}00757         \textcolor{comment}{//spriteInfo-\/>VectorLength = (spriteInfo-\/>VectorLength / 1.2);}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00758}00758     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00759}00759         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00760}00760     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00761}00761     \textcolor{comment}{// If the control magnitude (usually of a joystick) is significant, then we should adjust }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00763}00763 \textcolor{comment}{}    \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a92ee862961e0d4f3b95fc21f65cd29a8}{ControlMagnitude}} >= 0.15f) \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\_FALLBACKSLOW}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00764}00764             \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\_FALLBACK}}) \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\_FALLFORWARD}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00765}00765     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00766}00766         \textcolor{comment}{// adjust our angle in radians so that we can change our movement...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00767}00767         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_add45d1d184449121d8e46a251e75a465}{AngleRads}} = \mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{getRadiansForAngle}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00768}00768         \textcolor{keywordtype}{float} targetXVelocity = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} * cos(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_add45d1d184449121d8e46a251e75a465}{AngleRads}}));}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00769}00769         \textcolor{keywordtype}{float} targetYVelocity = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} * sin(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_add45d1d184449121d8e46a251e75a465}{AngleRads}}));}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00770}00770         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00771}00771         \textcolor{comment}{// If we're going e/w but not n/s modify x by accel, and y by drag}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00772}00772         \textcolor{keywordflow}{if}( (((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} \& \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\_EAST}}) == \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\_EAST}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00773}00773          || ((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} \& \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\_WEST}}) == \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\_WEST}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00774}00774          \&\& (((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} \& \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\_NORTH}}) != \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\_NORTH}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00775}00775          \&\& ((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} \& \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}}) != \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}})))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00776}00776         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00777}00777             \textcolor{comment}{// Change our y velocity based on the target y for our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00778}00778             \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y < targetYVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00779}00779             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00780}00780                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00781}00781             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00782}00782             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y > targetYVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00783}00783             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00784}00784                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00785}00785             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00786}00786     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00787}00787             \textcolor{comment}{// Change our x velocity based on the target x for our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00788}00788             \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x < targetXVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00789}00789             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00790}00790                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00791}00791             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00792}00792             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x > targetXVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00793}00793             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00794}00794                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00795}00795             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00796}00796         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00797}00797         \textcolor{comment}{// If we're going n/S but not e/w modify y by accel, and x by drag      }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00798}00798         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} \& \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\_NORTH}}) == \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\_NORTH}}) }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00799}00799          || ((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} \& \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}}) == \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00800}00800          \&\& (((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} \& \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\_EAST}}) != \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\_EAST}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00801}00801          \&\& ((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a436c6a105f201ebcd77cfa3c9b9e06c2}{LastDirection}} \& \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\_WEST}}) != \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\_WEST}})))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00802}00802         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00803}00803             \textcolor{comment}{// Change our y velocity based on the target y for our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00804}00804             \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y < targetYVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00805}00805             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00806}00806                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00807}00807             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00808}00808             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y > targetYVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00809}00809             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00810}00810                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00811}00811             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00812}00812     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00813}00813             \textcolor{comment}{// Change our x velocity based on the target x for our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00814}00814             \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x < targetXVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00815}00815             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00816}00816                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00817}00817             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00818}00818             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x > targetXVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00819}00819             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00820}00820                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00821}00821             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00822}00822         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00823}00823         \textcolor{comment}{// If we're going in a combination of n/s or e/w then modify both x and y by accel}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00824}00824         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00825}00825         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00826}00826             \textcolor{comment}{// Change our y velocity based on the target y for our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00827}00827             \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y < targetYVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00828}00828             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00829}00829                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00830}00830             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00831}00831             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y > targetYVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00832}00832             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00833}00833                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00834}00834             \}           }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00835}00835     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00836}00836             \textcolor{comment}{// Change our x velocity based on the target x for our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00837}00837             \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x < targetXVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00838}00838             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00839}00839                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00840}00840             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00841}00841             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x > targetXVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00842}00842             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00843}00843                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00844}00844             \}           }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00845}00845         \}       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00846}00846     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00847}00847     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00848}00848     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00849}00849         \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\_NORTH}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00850}00850         \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00851}00851         \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\_EAST}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00852}00852         \mbox{\hyperlink{_sprite_methods_8cpp_a78a2d01eb0f24769d841a1f62b1f465d}{spriteMethodsUnsetDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\_WEST}});                       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00853}00853         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00854}00854         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00855}00855     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00856}00856     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00857}00857     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00858}00858     \textcolor{comment}{// Deal with our E/W movement}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00859}00859     \textcolor{keywordflow}{if}((\mbox{\hyperlink{_sprite_methods_8cpp_a473abee9f84727912dab71aa48bdfe64}{spriteMethodsCheckDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\_EAST}}) == \textcolor{keyword}{false}) \&\& (\mbox{\hyperlink{_sprite_methods_8cpp_a473abee9f84727912dab71aa48bdfe64}{spriteMethodsCheckDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\_WEST}}) == \textcolor{keyword}{false}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00860}00860     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00861}00861         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x > spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00862}00862         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00863}00863             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00864}00864         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00865}00865         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x < -\/spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00866}00866         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00867}00867             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00868}00868         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00869}00869         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00870}00870         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00871}00871             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00872}00872         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00873}00873                 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00874}00874     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00875}00875     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00876}00876     \textcolor{comment}{// Now deal with our N/S movement}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00877}00877     \textcolor{keywordflow}{if}((\mbox{\hyperlink{_sprite_methods_8cpp_a473abee9f84727912dab71aa48bdfe64}{spriteMethodsCheckDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\_NORTH}}) == \textcolor{keyword}{false}) \&\& (\mbox{\hyperlink{_sprite_methods_8cpp_a473abee9f84727912dab71aa48bdfe64}{spriteMethodsCheckDirection}}(spriteInfo, \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\_SOUTH}}) == \textcolor{keyword}{false}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00878}00878     \{       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00879}00879         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y > spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00880}00880         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00881}00881             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00882}00882         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00883}00883         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y < -\/spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00884}00884         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00885}00885             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00886}00886         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00887}00887         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00888}00888         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00889}00889             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y = 0.0f;          }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00890}00890         \}               }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00891}00891     \}   }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00892}00892 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00893}00893 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00897}\mbox{\hyperlink{_sprite_methods_8cpp_a8b76d4c18de028f8b6b5a7b590f0738e}{00897}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a8b76d4c18de028f8b6b5a7b590f0738e}{spriteMethodsProcessBulletVelocity}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00898}00898 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00899}00899     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7f2bb6bef3c20926e1d4484552a0baeb}{Dead}} == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00900}00900     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00901}00901         \textcolor{comment}{// Always subtract our drag velocity so that if we're }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00902}00902         \textcolor{comment}{// not pressing a key, the fish is slowing down...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00903}00903         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} > 0.0f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00904}00904         \{                       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00905}00905             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00906}00906         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00907}00907         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00908}00908         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00909}00909             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00910}00910             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af422fb81d42ecd479de08e64b6533d18}{STAND}};      }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00911}00911         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00912}00912     \}       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00913}00913     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00914}00914     \textcolor{comment}{// If the control magnitude (usually of a joystick) is significant, then we should adjust }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00916}00916 \textcolor{comment}{}    \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a92ee862961e0d4f3b95fc21f65cd29a8}{ControlMagnitude}} >= 0.15f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00917}00917     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00918}00918         \textcolor{comment}{// adjust our angle in radians so that we can change our movement...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00919}00919         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_add45d1d184449121d8e46a251e75a465}{AngleRads}} = \mbox{\hyperlink{angles_8cpp_afd678569a928773e3637374773ada97e}{getRadiansForAngle}}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a1729f48ab453ef3a7ac7b5a153dfcf33}{AngleDegrees}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00920}00920         \textcolor{keywordtype}{float} targetXVelocity = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} * cos(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_add45d1d184449121d8e46a251e75a465}{AngleRads}}));}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00921}00921         \textcolor{keywordtype}{float} targetYVelocity = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} * sin(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_add45d1d184449121d8e46a251e75a465}{AngleRads}}));}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00922}00922         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00923}00923         \textcolor{comment}{// Change our x velocity based on the target x for our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00924}00924         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x < targetXVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00925}00925         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00926}00926             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00927}00927         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00928}00928         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x > targetXVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00929}00929         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00930}00930             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00931}00931         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00932}00932 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00933}00933         \textcolor{comment}{// Change our y velocity based on the target y for our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00934}00934         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y < targetYVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00935}00935         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00936}00936             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y += spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00937}00937         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00938}00938         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y > targetYVelocity)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00939}00939         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00940}00940             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y -\/= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a5509e556db210dd1903ef680ab781c00}{AccelerationVelocity}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00941}00941         \}           }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00942}00942     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00943}00943     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00944}00944     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00945}00945         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00946}00946         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00947}00947     \}   }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00948}00948 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00949}00949 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00953}\mbox{\hyperlink{_sprite_methods_8cpp_a7bd12ba2a61a229814542d103d51d167}{00953}} Vector \mbox{\hyperlink{_sprite_methods_8cpp_a7bd12ba2a61a229814542d103d51d167}{spriteMethodsUpdateLocationByVelocity}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00954}00954 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00955}00955     Vector returnVelocity = \{0.0f, 0.0f, 0.0f\};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00956}00956     \textcolor{keywordtype}{float} xVelocity = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x * \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00957}00957     \textcolor{keywordtype}{float} yVelocity = (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y * \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00958}00958 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00959}00959     \textcolor{comment}{//text.renderText((Vector)\{-\/4.0f,  0.0f, 9.0f\}, "{}Velocity Z: \%f"{}, mapVelocity.z);   }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00960}00960     \textcolor{comment}{//text.renderText((Vector)\{-\/4.0f,  0.0f, 9.0f\}, "{}Velocity Z: \%f"{}, mapVelocity.z);   }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00961}00961     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00962}00962     \textcolor{comment}{//ASSERT(gTimeScale <= 1.0f);}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00963}00963     \textcolor{comment}{//ASSERT(abs(xVelocity) <= 30.0f);}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00964}00964     \textcolor{comment}{//ASSERT(abs(yVelocity) <= 30.0f);}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00965}00965         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00966}00966     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7cbcabe023f05d3acf0437aa749f37bc}{Type}} == \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a9c770be04e56f440c1224d24dbc8ef90}{BADDIE\_SPRITE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00967}00967     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00968}00968         \mbox{\hyperlink{_sprite_methods_8cpp_aeeb638f491479788f7fc1973890bf6f5}{spriteMethodsProcessVelocity}}(spriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00969}00969         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x -\/= xVelocity;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00970}00970         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y -\/= yVelocity;        }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00971}00971     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00972}00972     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7cbcabe023f05d3acf0437aa749f37bc}{Type}} == \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a8f8c2be8b58aa68142d99133395ff6b6}{BULLET\_SPRITE}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7cbcabe023f05d3acf0437aa749f37bc}{Type}} == \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a14e319b4c2b34312b20022598f9c3575}{POWER\_UP\_SPRITE}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00973}00973     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00974}00974         \mbox{\hyperlink{_sprite_methods_8cpp_a8b76d4c18de028f8b6b5a7b590f0738e}{spriteMethodsProcessBulletVelocity}}(spriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00975}00975         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x -\/= xVelocity;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00976}00976         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y -\/= yVelocity;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00977}00977     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00978}00978     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a7cbcabe023f05d3acf0437aa749f37bc}{Type}} == \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0abc71fed3787821e7799b7038d22d740c}{PLAYER\_SPRITE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00979}00979     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00980}00980         \mbox{\hyperlink{_sprite_methods_8cpp_aeeb638f491479788f7fc1973890bf6f5}{spriteMethodsProcessVelocity}}(spriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00981}00981         \textcolor{comment}{// Figure out if we're within x boundaries. If we are, then move the sprite. Otherwise return our velocity...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00982}00982         \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x < spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}}) \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x <= \mbox{\hyperlink{_sprite_methods_8cpp_aa4e9170cd57e8ba5a471df747d04c1bd}{MAXIMUM\_EAST}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00983}00983         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00984}00984             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x -\/= xVelocity;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00985}00985         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00986}00986         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x > spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}}) \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x >= \mbox{\hyperlink{_sprite_methods_8cpp_a490b79c0ff037bf7b1cc600b11247551}{MAXIMUM\_WEST}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00987}00987         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00988}00988             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x -\/= xVelocity;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00989}00989         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00990}00990         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00991}00991         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00992}00992             returnVelocity.x = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00993}00993         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00994}00994 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00995}00995         \textcolor{comment}{// Figure out if we're within x boundaries. If we are, then move the sprite. Otherwise return our velocity...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00996}00996         \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y < spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}}) \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y <= \mbox{\hyperlink{_sprite_methods_8cpp_a0940917eb282a5d2301ad6170da5f5b3}{MAXIMUM\_SOUTH}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00997}00997         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00998}00998             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y -\/= yVelocity;    }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l00999}00999         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01000}01000         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y > spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ad056f423ecf0400c5ecd2c7920b992e3}{DragVelocity}}) \&\& (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y >= \mbox{\hyperlink{_sprite_methods_8cpp_ac7583b7ad8cecb60bcdab9e91c02fa55}{MAXIMUM\_NORTH}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01001}01001         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01002}01002             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y -\/= yVelocity;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01003}01003         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01004}01004         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01005}01005         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01006}01006             returnVelocity.y = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01007}01007         \}   }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01008}01008     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01009}01009     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01010}01010     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01011}01011         ASSERT(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01012}01012     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01013}01013 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01014}01014     \textcolor{comment}{//printf("{}\(\backslash\)x1b[2;0H"{}); printf("{}Jump State: \%d"{}, spriteInfo-\/>JumpState);                 }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01015}01015     \textcolor{comment}{// If the sprite is jump state ready, then make el jumpo happeno}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01016}01016     \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a32c08a93fab334ad36e2251722d1e047}{JUMP\_STATE\_READY}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01017}01017     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01018}01018         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a96276f9bf6800694fe0074470d408ee0}{JUMP\_STATE\_JUMPING}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01019}01019         \textcolor{comment}{//spriteInfo-\/>CurrentAnimation = JUMP;                      }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01020}01020         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z = (fabs(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}}) * -\/1.0f)/3.0f;     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01021}01021     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01022}01022     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a96276f9bf6800694fe0074470d408ee0}{JUMP\_STATE\_JUMPING}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01023}01023     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01024}01024         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z += 40.8f * \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01025}01025         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.z += (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z * \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01026}01026         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z > 0.0f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01027}01027         \{           }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01028}01028             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a0b4f3db917533e4ccfe9c4bb473cd82c}{JUMP\_STATE\_LANDING}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01029}01029         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01030}01030     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01031}01031     \textcolor{comment}{// if Jump state is jumping, then handle gravity ...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01032}01032     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a0b4f3db917533e4ccfe9c4bb473cd82c}{JUMP\_STATE\_LANDING}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01033}01033     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01034}01034         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z += 40.8f* \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01035}01035         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.z += (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z * \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01036}01036         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.z > spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a862cde9c672906c5a26d8fa33d435558}{WaterLevel}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01037}01037         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01038}01038             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z /= 2;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01039}01039             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3acdf6e375fd4b95d42c1a30c8116c4e7e}{JUMP\_STATE\_RECOVERING}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01040}01040         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01041}01041     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01042}01042     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3acdf6e375fd4b95d42c1a30c8116c4e7e}{JUMP\_STATE\_RECOVERING}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01043}01043     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01044}01044         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z -\/= 31.2f* \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01045}01045         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.z += (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z * \mbox{\hyperlink{globals_8cpp_a073429ea11c010aebf656df58cd7aebb}{gTimeScale}});}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01046}01046         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01047}01047         \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.z <= spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a862cde9c672906c5a26d8fa33d435558}{WaterLevel}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01048}01048         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01049}01049             \textcolor{keywordflow}{if}(fabs(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z) <= 0.65f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01050}01050             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01051}01051                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01052}01052                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.z = spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a862cde9c672906c5a26d8fa33d435558}{WaterLevel}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01053}01053                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3ad11ca9453a011466846144ae3bf4100d}{JUMP\_STATE\_NOT\_READY}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01054}01054             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01055}01055             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01056}01056             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01057}01057                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a0b4f3db917533e4ccfe9c4bb473cd82c}{JUMP\_STATE\_LANDING}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01058}01058             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01059}01059             }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01060}01060         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01061}01061     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01062}01062         }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01063}01063     returnVelocity.z = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01064}01064     }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01065}01065     \textcolor{keywordflow}{return} returnVelocity;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01066}01066 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01067}01067 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01068}01068 \textcolor{keyword}{static} \textcolor{keywordtype}{void} spriteMethodsSetJumpAnim(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01069}01069 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01070}01070     \textcolor{keywordtype}{int} anim = (rand() \% 3);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01071}01071     \textcolor{keywordflow}{if} (anim == 0)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01072}01072     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01073}01073         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a136c8d078c8bd11ed96ac057441ff007}{PAIN\_A}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01074}01074     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01075}01075     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (anim == 1)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01076}01076     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01077}01077         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ae029d966a4919e6e59344c845c973fc1}{PAIN\_B}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01078}01078     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01079}01079     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (anim == 2)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01080}01080     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01081}01081         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a440e1b9c396e2c3e873527f543a5cd83}{CurrentAnimation}} = \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95ab6814ebbfa14333d1c500452549f6294}{PAIN\_C}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01082}01082     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01083}01083 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01084}01084 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01088}\mbox{\hyperlink{_sprite_methods_8cpp_ad494e3324d70980d013c6a7c1b3032da}{01088}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_ad494e3324d70980d013c6a7c1b3032da}{spriteMethodsHandleJump}}(\mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo, \textcolor{keywordtype}{float} jumpForce)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01089}01089 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01090}01090     \textcolor{keywordflow}{if}((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3ad11ca9453a011466846144ae3bf4100d}{JUMP\_STATE\_NOT\_READY}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3acdf6e375fd4b95d42c1a30c8116c4e7e}{JUMP\_STATE\_RECOVERING}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01091}01091     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01092}01092             \textcolor{comment}{// This will move the sprite up from down below...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01093}01093         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z = jumpForce;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01094}01094         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a96276f9bf6800694fe0074470d408ee0}{JUMP\_STATE\_JUMPING}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01095}01095         \textcolor{keywordflow}{if}(jumpForce < -\/0.25f)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01096}01096         \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01097}01097             spriteMethodsSetJumpAnim(spriteInfo);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01098}01098         \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01099}01099     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01100}01100 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01101}01101 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01105}\mbox{\hyperlink{_sprite_methods_8cpp_a3e400e62b2a70fb3ad654841fb405f02}{01105}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_sprite_methods_8cpp_a3e400e62b2a70fb3ad654841fb405f02}{spriteMethodsSetLocation}}(Vector \&location, \mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01106}01106 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01107}01107     \textcolor{comment}{//printf("{}\(\backslash\)x1b[2;0H"{}); printf("{}PZ: \%4.4f, LZ: \%4.4f, WL: \%4.4f, State: \%d"{}, mySpriteInfo.Location.z, }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01108}01108     \textcolor{comment}{//  location.z, mySpriteInfo.WaterLevel, mySpriteInfo.JumpState);}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01109}01109 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01110}01110     \textcolor{keywordflow}{if}((location.z < spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a862cde9c672906c5a26d8fa33d435558}{WaterLevel}}) \&\& spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3ad11ca9453a011466846144ae3bf4100d}{JUMP\_STATE\_NOT\_READY}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01111}01111     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01112}01112         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}} = location;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01113}01113     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01114}01114     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.z  >= location.z) \&\& ((spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a0b4f3db917533e4ccfe9c4bb473cd82c}{JUMP\_STATE\_LANDING}}) || (spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} == \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3acdf6e375fd4b95d42c1a30c8116c4e7e}{JUMP\_STATE\_RECOVERING}})))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01115}01115     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01116}01116         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a3293b7f64423da70fe408fabf590e547}{VectorLength}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01117}01117         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.x = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01118}01118         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.y = 0;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01119}01119         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.z  = location.z;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01120}01120         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4b69a91b5ec894e37b27febc829a93a3}{Velocity}}.z = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01121}01121         \textcolor{comment}{//spriteInfo-\/>Velocity.z = -\/(spriteInfo-\/>Velocity.z/1.9);}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01122}01122         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_aecdd674847c3573689254e22acce3b86}{JumpState}} = \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3acdf6e375fd4b95d42c1a30c8116c4e7e}{JUMP\_STATE\_RECOVERING}};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01123}01123 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01124}01124     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01125}01125     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01126}01126     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01127}01127         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x = location.x;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01128}01128         spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y = location.y;        }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01129}01129     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01130}01130 \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01131}01131 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01136}\mbox{\hyperlink{_sprite_methods_8cpp_a4c291061d24f26554c604d991e1caf99}{01136}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{_sprite_methods_8cpp_a4c291061d24f26554c604d991e1caf99}{spriteMethodsLockOnTarget}}(\mbox{\hyperlink{class_i_sprite}{ISprite}} \&target, \mbox{\hyperlink{structtag_sprite_info}{SpriteInfo}} *spriteInfo)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01137}01137 \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01138}01138     \textcolor{keywordtype}{bool} baddieInRange = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01139}01139     \textcolor{comment}{// Add up the number of units away a sprite is...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01140}01140     Vector targetLocation = target.\mbox{\hyperlink{class_i_sprite_a04e5809c871ecfe7caeab6d6886e2bbd}{getLocation}}();}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01141}01141     targetLocation.x -\/= target.\mbox{\hyperlink{class_i_sprite_aa2d94c367130a4696991c59efed7681c}{getOffset}}().x;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01142}01142     targetLocation.y -\/= target.\mbox{\hyperlink{class_i_sprite_aa2d94c367130a4696991c59efed7681c}{getOffset}}().y;  }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01143}01143 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01144}01144     \textcolor{keywordtype}{float} targetDistance = fabs(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x -\/ targetLocation.x) + fabs(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y -\/ targetLocation.y);}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01145}01145     \textcolor{comment}{//printf("{}\(\backslash\)x1b[2;0H"{}); printf("{}dist: \%4.4f"{}, targetDistance);   }}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01146}01146     \textcolor{keywordflow}{if}(targetDistance <= \mbox{\hyperlink{_sprite_methods_8cpp_a5371fa61eecffe1dff44782d7958d7b8}{MAXIMUM\_TARGET\_DISTANCE}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01147}01147     \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01148}01148         \textcolor{comment}{// If the total distance is less than the current target distance then we should adjust our angle}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01149}01149         \textcolor{comment}{// so that it's pointing at the new target...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01150}01150         \textcolor{keywordflow}{if} ((targetDistance < spriteInfo-\/>CurrentTargetDistance)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01151}01151                 \&\& (target.\mbox{\hyperlink{class_i_sprite_a6e1e6556de6db54749ad3926c0c1720b}{getCurrentAnimation}}() != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95aa1bd02ac1e0517359f9ab02e55002da5}{DEATH\_FALLBACK}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01152}01152                 \&\& (target.\mbox{\hyperlink{class_i_sprite_a6e1e6556de6db54749ad3926c0c1720b}{getCurrentAnimation}}() != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95af876397886438a366546b493bfece3a2}{DEATH\_FALLFORWARD}})}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01153}01153                 \&\& (target.\mbox{\hyperlink{class_i_sprite_a6e1e6556de6db54749ad3926c0c1720b}{getCurrentAnimation}}() != \mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95a2d9771097b174b0cdbe1090b2c1c631a}{DEATH\_FALLBACKSLOW}}))}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01154}01154         \{       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01155}01155             \textcolor{comment}{// Only return true if we're ready to fire (that should be closer than max distance...)}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01156}01156             \textcolor{keywordflow}{if}(targetDistance < \mbox{\hyperlink{_sprite_methods_8cpp_a5371fa61eecffe1dff44782d7958d7b8}{MAXIMUM\_TARGET\_DISTANCE}}/2)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01157}01157             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01158}01158                 baddieInRange = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01159}01159             \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01160}01160 }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01161}01161             \textcolor{comment}{// Find the angle between the new target}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01162}01162             spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a4c60943bcec0a6d3170d1ae11b0b3871}{CurrentTargetDistance}} = targetDistance;            }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01163}01163             }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01164}01164             \textcolor{comment}{// Find the angle between the sprite and the target, and change the angle of this sprite to point toward it...}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01165}01165             \textcolor{keywordtype}{float} newAngle = \mbox{\hyperlink{angles_8cpp_a30d6878d81e316089e36122cc281edc3}{getAngleBetweenTwoPoints}}(targetLocation.x, targetLocation.y, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.x, spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_ae0543eb8fb77ca484416e8df985f0803}{Location}}.y);      }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01166}01166             }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01167}01167             \textcolor{keywordflow}{if}(newAngle != NAN)}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01168}01168             \{}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01169}01169                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}} = newAngle -\/ 90.0f;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01170}01170                 \textcolor{keywordflow}{if}(spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}} < 0.0f) spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a94e53e13217fd4bcd35080713cd052d9}{ControlAngle}} += 360.0f;             }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01171}01171                 spriteInfo-\/>\mbox{\hyperlink{structtag_sprite_info_a027a0d3fb6f4c2c2a796ac3159034baf}{TargetDegrees}} = newAngle;              }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01172}01172             \}                       }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01173}01173         \}   }
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01174}01174     \}}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01175}01175     \textcolor{keywordflow}{return} baddieInRange;}
+\DoxyCodeLine{\Hypertarget{_sprite_methods_8cpp_source_l01176}01176 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,24 @@
+digraph "spriteMethodsIncreaseAcceleration"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="spriteMethodsIncreaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="SpriteBaddie::increaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html#ae3897a21ac5c06e03aa29f5262435bd0",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="SpriteBullet::increaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_bullet.html#a4146e3c902618ca0baddb7ee62266e83",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="SpriteEffect::increaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_effect.html#a09e644e8c51f641a56fe24872b55af5d",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="SpritePlayer::increaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_player.html#a6b857ef4734caebc35b52e972ed7a7ab",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="SpritePowerup::increaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_powerup.html#ae35ec54c413230cd9ae6e5bb9dd396b6",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="SpriteScenery::increaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_scenery.html#a09af58d68eb616daea73fbb752d99524",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="SpriteTarget::increaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_target.html#aebdb2c115eeed9257ab57076c72b0cb5",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="SpriteTower::increaseAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_tower.html#a5a85c3ca1d2627a0c292f7f4cca5af8f",tooltip=" "];
+}

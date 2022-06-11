@@ -1,0 +1,60 @@
+\hypertarget{_i_controllers_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+IControllers.h}
+\mbox{\hyperlink{_i_controllers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00001}00001 \textcolor{comment}{// IControllers.h}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00002}00002 \textcolor{comment}{// Defines a common interface for controller support. I'm just not smart enough}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00003}00003 \textcolor{comment}{// to define an interface that would work with any controller, but this should still}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00004}00004 \textcolor{comment}{// help reduce the dificulties associated with porting.}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00005}00005 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00006}00006 \textcolor{preprocessor}{\#ifndef ICONTROLLERS\_H}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00007}00007 \textcolor{preprocessor}{\#define ICONTROLLERS\_H}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_subject_8h}{ISubject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_disposeable_8h}{IDisposeable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h}{controller\_codes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00017}\mbox{\hyperlink{structtag_accel_data}{00017}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_accel_data}{tagAccelData}}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00019}\mbox{\hyperlink{structtag_accel_data_a03a772baff1e18b0a2e0ea67b0c21717}{00019}}     ushort \mbox{\hyperlink{structtag_accel_data_a03a772baff1e18b0a2e0ea67b0c21717}{x}};}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00020}\mbox{\hyperlink{structtag_accel_data_a44453991b30993b815865ac87d6f2b60}{00020}}     ushort \mbox{\hyperlink{structtag_accel_data_a44453991b30993b815865ac87d6f2b60}{y}};}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00021}\mbox{\hyperlink{structtag_accel_data_a420cf7c6c1b9b35655078615b88bc493}{00021}}     ushort \mbox{\hyperlink{structtag_accel_data_a420cf7c6c1b9b35655078615b88bc493}{z}};}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00022}00022 \} \mbox{\hyperlink{_i_controllers_8h_a455bbd97e50a56951e3784414deeee5d}{AccelerometerData}};}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00027}\mbox{\hyperlink{class_i_controllers}{00027}} \textcolor{keyword}{class }\mbox{\hyperlink{class_i_controllers}{IControllers}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_subject}{ISubject}}, \mbox{\hyperlink{class_i_disposeable}{IDisposeable}}}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00028}00028    \{}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00029}00029 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00030}00030                 }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00034}\mbox{\hyperlink{class_i_controllers_a899274bf83719f120b82c612e60fe31b}{00034}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_controllers_a899274bf83719f120b82c612e60fe31b}{updateControllerStates}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00035}00035         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00039}\mbox{\hyperlink{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}{00039}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_i_controllers_a0c094e58f5eef47724341c44279f6b3a}{checkButtonPress}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\_BUTTONS}} code) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00044}\mbox{\hyperlink{class_i_controllers_aad5e10e6a32daffc9537152f29229d68}{00044}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_i_controllers_aad5e10e6a32daffc9537152f29229d68}{checkButtonRelease}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\_BUTTONS}} code) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00045}00045         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00049}\mbox{\hyperlink{class_i_controllers_aafb39b53c40219613979fd8c7e38ddb3}{00049}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_i_controllers_aafb39b53c40219613979fd8c7e38ddb3}{getStatusOfAllButtons}}(\textcolor{keywordtype}{int} controllerID) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00050}00050         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00054}\mbox{\hyperlink{class_i_controllers_a3b48a4c38334614b878dc3a5dc0e3340}{00054}}         \textcolor{keyword}{virtual} \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a20e1ac52caaf7a2bba27e68811a17281}{CONTROLLER\_STATUS}} \mbox{\hyperlink{class_i_controllers_a3b48a4c38334614b878dc3a5dc0e3340}{checkControllerStatus}}(\textcolor{keywordtype}{int} controllerID) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00055}00055         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00059}\mbox{\hyperlink{class_i_controllers_af539bc2356271605f30d2983e8699e26}{00059}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_i_controllers_af539bc2356271605f30d2983e8699e26}{numberOfConnectedDevices}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00060}00060         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00064}\mbox{\hyperlink{class_i_controllers_afe73b0df07ed499b7ad486a5770b39f5}{00064}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_i_controllers_afe73b0df07ed499b7ad486a5770b39f5}{checkPointer}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_a6b990e2e89908296b4d8980255acc578}{CONTROLLER\_POINTER}} pointerData) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00065}00065         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00069}\mbox{\hyperlink{class_i_controllers_a67d2e070b2d910bbab0cbc79fe2f6430}{00069}}         \textcolor{keyword}{virtual} \mbox{\hyperlink{structtag_accel_data}{AccelerometerData}} \mbox{\hyperlink{class_i_controllers_a67d2e070b2d910bbab0cbc79fe2f6430}{checkMotion}}(\textcolor{keywordtype}{int} controllerID) = 0;        }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00070}00070         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00074}\mbox{\hyperlink{class_i_controllers_add583028b8b630a809f3c48d80dc175c}{00074}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_i_controllers_add583028b8b630a809f3c48d80dc175c}{checkOrientation}}(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_ab29701098659a5e97984c4e4827a2842}{CONTROLLER\_ORIENTATION}} orientData) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00075}00075         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00079}\mbox{\hyperlink{class_i_controllers_a890908debb0932bbf3c72f6ba4b7441f}{00079}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_i_controllers_a890908debb0932bbf3c72f6ba4b7441f}{checkJoystickAngle}}(\textcolor{keywordtype}{int} controllerID) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00080}00080         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00084}\mbox{\hyperlink{class_i_controllers_aeaaa310c560e88ef9190afeabd99235f}{00084}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_i_controllers_aeaaa310c560e88ef9190afeabd99235f}{checkJoystickMagnitude}}(\textcolor{keywordtype}{int} controllerID) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00085}00085         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00089}\mbox{\hyperlink{class_i_controllers_a4efebcb5a21d6996bba2b2cad8aea265}{00089}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_controllers_a4efebcb5a21d6996bba2b2cad8aea265}{stopRumblePack}}(\textcolor{keywordtype}{int} controllerID) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00090}00090         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00094}\mbox{\hyperlink{class_i_controllers_ad57d47bfa33b8b8ba604963c19347b46}{00094}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_controllers_ad57d47bfa33b8b8ba604963c19347b46}{startRumblePack}}(\textcolor{keywordtype}{int} controllerID) = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00095}00095         }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00099}\mbox{\hyperlink{class_i_controllers_a21e434babec3ad87783808fdecbfd1d7}{00099}}         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_controllers_a21e434babec3ad87783808fdecbfd1d7}{dispose}}() = 0;}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00100}00100                 }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00101}00101    \};}
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_i_controllers_8h_source_l00103}00103 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

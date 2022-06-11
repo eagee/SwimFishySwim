@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['radar_5fbottom_0',['RADAR_BOTTOM',['../_level_methods_8cpp.html#a7785a441c02c99a66f020b4bb4a0e07b',1,'LevelMethods.cpp']]],
+  ['radar_5fdot_5fpixel_5fsize_1',['RADAR_DOT_PIXEL_SIZE',['../_level_methods_8cpp.html#a1dcd21e83fb92d577031c43f7ca74e0d',1,'LevelMethods.cpp']]],
+  ['radar_5fleft_2',['RADAR_LEFT',['../_level_methods_8cpp.html#af83a1bee18486d22cb2f1bf3bc714433',1,'LevelMethods.cpp']]],
+  ['radar_5flocation_3',['RADAR_LOCATION',['../_level_methods_8cpp.html#a41d08b9ca198d93bbb0928b636f6c4ae',1,'LevelMethods.cpp']]],
+  ['radar_5fright_4',['RADAR_RIGHT',['../_level_methods_8cpp.html#af5c7fd52946beaec35ac5ac3a53e3076',1,'LevelMethods.cpp']]],
+  ['radar_5ftop_5',['RADAR_TOP',['../_level_methods_8cpp.html#a6cf9a042e83433c8fd58ca5d96c98a40',1,'LevelMethods.cpp']]],
+  ['radar_5fx_5fmultiplier_6',['RADAR_X_MULTIPLIER',['../_level_methods_8cpp.html#ad8452c9418d8f42d8956c02831ec8581',1,'LevelMethods.cpp']]],
+  ['radar_5fy_5fmultiplier_7',['RADAR_Y_MULTIPLIER',['../_level_methods_8cpp.html#ab40244454dd1846ba82fb120eb72b551',1,'LevelMethods.cpp']]],
+  ['reduce_5fheight_5fby_8',['REDUCE_HEIGHT_BY',['../_tiled_maps_8cpp.html#af105dda42df6caec26cbd337b93ffeaf',1,'TiledMaps.cpp']]],
+  ['render_5fx_5fmax_9',['RENDER_X_MAX',['../_sprite_info_8h.html#ae3a4567fac5fa41bbcdc9f91cf836779',1,'SpriteInfo.h']]],
+  ['render_5fx_5fmin_10',['RENDER_X_MIN',['../_sprite_info_8h.html#a89f1dfbe8bd14e222dfc1ebd21b1d5e0',1,'SpriteInfo.h']]],
+  ['render_5fy_5fmax_11',['RENDER_Y_MAX',['../_sprite_info_8h.html#a3f4c1ec66ce879e09f332f5cb7a3127d',1,'SpriteInfo.h']]],
+  ['render_5fy_5fmin_12',['RENDER_Y_MIN',['../_sprite_info_8h.html#a4be19947a62bb8ffab5c6fc05bac3386',1,'SpriteInfo.h']]],
+  ['repel_5flife_5fspan_13',['REPEL_LIFE_SPAN',['../_particle_effect_8cpp.html#aec2e981ed4c664b70dfbe63990e0ce5b',1,'ParticleEffect.cpp']]],
+  ['right_5fplane_14',['RIGHT_PLANE',['../_gl_graphics_8h.html#a91264b4c3a4de5c8df4e78875794bb00',1,'RIGHT_PLANE():&#160;GlGraphics.h'],['../_gx_graphics_8h.html#a91264b4c3a4de5c8df4e78875794bb00',1,'RIGHT_PLANE():&#160;GxGraphics.h']]],
+  ['ripple_5flife_5fspan_15',['RIPPLE_LIFE_SPAN',['../_particle_effect_8cpp.html#a33da41b700646f430f7381259d56d9bf',1,'ParticleEffect.cpp']]],
+  ['rock_16',['ROCK',['../main_8cpp.html#ac5cc41d68017af4d6facb861094b07d4',1,'main.cpp']]],
+  ['rotation_5fspeed_17',['ROTATION_SPEED',['../_sprite_methods_8cpp.html#a97a682221408cea9fac0ae25d13c2bde',1,'SpriteMethods.cpp']]]
+];

@@ -1,0 +1,28 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="INodeWaypoints",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_node_waypoints.html",tooltip=" "];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="SpriteBaddie",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_baddie.html",tooltip=" "];
+  Node2 [label="ISprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="OverSprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_over_sprite.html",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SpriteBullet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_bullet.html",tooltip="Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ...."];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SpriteEffect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_effect.html",tooltip="Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ...."];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SpritePlayer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_player.html",tooltip="Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ...."];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SpritePowerup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_powerup.html",tooltip="Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ...."];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="SpriteScenery",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_scenery.html",tooltip="Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ...."];
+  Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="SpriteTarget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_target.html",tooltip="Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ...."];
+  Node2 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="SpriteTower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sprite_tower.html",tooltip="Provides an interface for sprite behavior, whether that is a player sprite, or an NPC of some sort ...."];
+}

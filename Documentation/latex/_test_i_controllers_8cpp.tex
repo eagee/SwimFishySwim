@@ -1,0 +1,52 @@
+\hypertarget{_test_i_controllers_8cpp}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Test\+IControllers.cpp File Reference}
+\label{_test_i_controllers_8cpp}\index{C:/TeamSheeps/SwimFishySwim/TestIControllers.cpp@{C:/TeamSheeps/SwimFishySwim/TestIControllers.cpp}}
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SFSHeaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IControllers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Controller\+Wii.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ITest.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Test\+IControllers.\+h\char`\"{}}\newline
+Include dependency graph for Test\+IControllers.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_test_i_controllers_8cpp_a2828d7426bed368b7ea3ae916b92c46d}{move\+Coords\+By\+Pitch\+Angle}} (float \&x, float \&y, float pitch)
+\item 
+void \mbox{\hyperlink{_test_i_controllers_8cpp_a65c6795c8ce68bf42167bfaf1f5cf471}{clear\+And\+Count\+Down}} ()
+\item 
+int \mbox{\hyperlink{_test_i_controllers_8cpp_a63fc738704e91f00448654f96157acce}{evaluate\+Swing}} (int $\ast$last\+Motion, int motion, int swing)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_test_i_controllers_8cpp_a65c6795c8ce68bf42167bfaf1f5cf471}\label{_test_i_controllers_8cpp_a65c6795c8ce68bf42167bfaf1f5cf471}} 
+\index{TestIControllers.cpp@{TestIControllers.cpp}!clearAndCountDown@{clearAndCountDown}}
+\index{clearAndCountDown@{clearAndCountDown}!TestIControllers.cpp@{TestIControllers.cpp}}
+\doxysubsubsection{\texorpdfstring{clearAndCountDown()}{clearAndCountDown()}}
+{\footnotesize\ttfamily void clear\+And\+Count\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} If a player goes left, increment swing, if he goes right after that, increment swing. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_test_i_controllers_8cpp_source_l00263}{263}} of file \mbox{\hyperlink{_test_i_controllers_8cpp_source}{Test\+IControllers.\+cpp}}.
+
+\mbox{\Hypertarget{_test_i_controllers_8cpp_a63fc738704e91f00448654f96157acce}\label{_test_i_controllers_8cpp_a63fc738704e91f00448654f96157acce}} 
+\index{TestIControllers.cpp@{TestIControllers.cpp}!evaluateSwing@{evaluateSwing}}
+\index{evaluateSwing@{evaluateSwing}!TestIControllers.cpp@{TestIControllers.cpp}}
+\doxysubsubsection{\texorpdfstring{evaluateSwing()}{evaluateSwing()}}
+{\footnotesize\ttfamily int evaluate\+Swing (\begin{DoxyParamCaption}\item[{int $\ast$}]{last\+Motion,  }\item[{int}]{motion,  }\item[{int}]{swing }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Simulates a race between controller one and controller two /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_test_i_controllers_8cpp_source_l00287}{287}} of file \mbox{\hyperlink{_test_i_controllers_8cpp_source}{Test\+IControllers.\+cpp}}.
+
+\mbox{\Hypertarget{_test_i_controllers_8cpp_a2828d7426bed368b7ea3ae916b92c46d}\label{_test_i_controllers_8cpp_a2828d7426bed368b7ea3ae916b92c46d}} 
+\index{TestIControllers.cpp@{TestIControllers.cpp}!moveCoordsByPitchAngle@{moveCoordsByPitchAngle}}
+\index{moveCoordsByPitchAngle@{moveCoordsByPitchAngle}!TestIControllers.cpp@{TestIControllers.cpp}}
+\doxysubsubsection{\texorpdfstring{moveCoordsByPitchAngle()}{moveCoordsByPitchAngle()}}
+{\footnotesize\ttfamily void move\+Coords\+By\+Pitch\+Angle (\begin{DoxyParamCaption}\item[{float \&}]{x,  }\item[{float \&}]{y,  }\item[{float}]{pitch }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Displays accelerometer data until the user presses The + button /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_test_i_controllers_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{_test_i_controllers_8cpp_source}{Test\+IControllers.\+cpp}}.
+

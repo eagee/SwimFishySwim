@@ -1,0 +1,9 @@
+digraph "NewTowerMenu"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{NewTowerMenu\n||+ NewTowerMenu()\l+ ~NewTowerMenu()\l+ executeMenu()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary>"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{IGameMenu\n||+ IGameMenu()\l+ ~IGameMenu()\l+ executeMenu()\l+ clickButton()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_game_menu.html",tooltip="Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary>"];
+}

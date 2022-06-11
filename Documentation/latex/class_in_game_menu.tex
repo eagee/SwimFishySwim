@@ -1,0 +1,111 @@
+\hypertarget{class_in_game_menu}{}\doxysection{In\+Game\+Menu Class Reference}
+\label{class_in_game_menu}\index{InGameMenu@{InGameMenu}}
+
+
+Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary\texorpdfstring{$>$}{>}  
+
+
+
+
+{\ttfamily \#include $<$In\+Game\+Menu.\+h$>$}
+
+
+
+Inheritance diagram for In\+Game\+Menu\+:
+% FIG 0
+
+
+Collaboration diagram for In\+Game\+Menu\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_in_game_menu_ab3882907f2d99c7195ad32ca04a85a21}{In\+Game\+Menu}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\begin{DoxyCompactList}\small\item\em Constructor that requires user to specify a texture handle for both the button and background images /summary\texorpdfstring{$>$}{>} ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_in_game_menu_afe83efb63a3ddd1ab538c66f8bb3ed5a}{$\sim$\+In\+Game\+Menu}} ()
+\item 
+virtual void \mbox{\hyperlink{class_in_game_menu_a2d958ef77bea39424bc7c47be759034b}{execute\+Menu}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info)
+\item 
+virtual void \mbox{\hyperlink{class_in_game_menu_ad0aa7f83ca035064356d2df735bb73fb}{click\+Button}} (\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$level\+Info, int button\+ID)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_in_game_menu_8h_source_l00013}{13}} of file \mbox{\hyperlink{_in_game_menu_8h_source}{In\+Game\+Menu.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_in_game_menu_ab3882907f2d99c7195ad32ca04a85a21}\label{class_in_game_menu_ab3882907f2d99c7195ad32ca04a85a21}} 
+\index{InGameMenu@{InGameMenu}!InGameMenu@{InGameMenu}}
+\index{InGameMenu@{InGameMenu}!InGameMenu@{InGameMenu}}
+\doxysubsubsection{\texorpdfstring{InGameMenu()}{InGameMenu()}}
+{\footnotesize\ttfamily In\+Game\+Menu\+::\+In\+Game\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})}
+
+
+
+Constructor that requires user to specify a texture handle for both the button and background images /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+summary\texorpdfstring{$>$}{>} Destructor, here we clean up our buttons \+:) /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_in_game_menu_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{_in_game_menu_8cpp_source}{In\+Game\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{class_in_game_menu_afe83efb63a3ddd1ab538c66f8bb3ed5a}\label{class_in_game_menu_afe83efb63a3ddd1ab538c66f8bb3ed5a}} 
+\index{InGameMenu@{InGameMenu}!````~InGameMenu@{$\sim$InGameMenu}}
+\index{````~InGameMenu@{$\sim$InGameMenu}!InGameMenu@{InGameMenu}}
+\doxysubsubsection{\texorpdfstring{$\sim$InGameMenu()}{~InGameMenu()}}
+{\footnotesize\ttfamily In\+Game\+Menu\+::$\sim$\+In\+Game\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+summary\texorpdfstring{$>$}{>} Runs a menu, and makes changes to the Level\+Info struct based on the menu selection... /summary\texorpdfstring{$>$}{>} ~\newline
+
+
+summary\texorpdfstring{$>$}{>} When a button is selected, all buttons are temporarily disabled before becoming available again... /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_in_game_menu_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{_in_game_menu_8cpp_source}{In\+Game\+Menu.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_in_game_menu_ad0aa7f83ca035064356d2df735bb73fb}\label{class_in_game_menu_ad0aa7f83ca035064356d2df735bb73fb}} 
+\index{InGameMenu@{InGameMenu}!clickButton@{clickButton}}
+\index{clickButton@{clickButton}!InGameMenu@{InGameMenu}}
+\doxysubsubsection{\texorpdfstring{clickButton()}{clickButton()}}
+{\footnotesize\ttfamily void In\+Game\+Menu\+::click\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info,  }\item[{int}]{button\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_menu_a0f720c2d82a421065a83265948df86e1}{IGame\+Menu}}.
+
+
+
+Definition at line \mbox{\hyperlink{_in_game_menu_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{_in_game_menu_8cpp_source}{In\+Game\+Menu.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_in_game_menu_a2d958ef77bea39424bc7c47be759034b}\label{class_in_game_menu_a2d958ef77bea39424bc7c47be759034b}} 
+\index{InGameMenu@{InGameMenu}!executeMenu@{executeMenu}}
+\index{executeMenu@{executeMenu}!InGameMenu@{InGameMenu}}
+\doxysubsubsection{\texorpdfstring{executeMenu()}{executeMenu()}}
+{\footnotesize\ttfamily void In\+Game\+Menu\+::execute\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_level_info_8h_a32f7014cdf556cdb895f2e40fb7c413b}{Level\+Info}} $\ast$}]{level\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Allows a particular button in a menu to be executed /summary\texorpdfstring{$>$}{>} 
+
+Implements \mbox{\hyperlink{class_i_game_menu_abff3300e8f56ef0c73520a9ba479f750}{IGame\+Menu}}.
+
+
+
+Definition at line \mbox{\hyperlink{_in_game_menu_8cpp_source_l00271}{271}} of file \mbox{\hyperlink{_in_game_menu_8cpp_source}{In\+Game\+Menu.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_in_game_menu_8h}{In\+Game\+Menu.\+h}}\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_in_game_menu_8cpp}{In\+Game\+Menu.\+cpp}}\end{DoxyCompactItemize}

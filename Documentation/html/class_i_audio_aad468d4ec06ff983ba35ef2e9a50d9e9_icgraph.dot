@@ -1,0 +1,18 @@
+digraph "IAudio::loadFromFile"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="IAudio::loadFromFile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="LevelMethodsPreAllocateLevel\lMusic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#acae7b302e214753decd3d72c11ac804a",tooltip="Pre allocates music for a level /summary>"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="LevelMethodsPreAllocateLevel\lSound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_level_methods_8cpp.html#afefc791375115cf8227b091f3d1cd9eb",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="preAllocateAudioData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a3a5882239f9423748288463243d502c4",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="RunGameMain",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#aa4173368a267598f9c3c83944e79a303",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

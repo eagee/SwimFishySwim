@@ -1,0 +1,47 @@
+\hypertarget{_test_i_controllers_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Test\+IControllers.h}
+\mbox{\hyperlink{_test_i_controllers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00001}00001 \textcolor{comment}{// TestIControllers.h}}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00002}00002 \textcolor{comment}{// Definest a concrete implementation of the ITest interface for testing the controllers ...}}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00005}00005 \textcolor{preprocessor}{\#ifndef TESTICONTROLLERS\_H}}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00006}00006 \textcolor{preprocessor}{\#define TESTICONTROLLERS\_H}}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_controllers_8h}{IControllers.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00010}00010 \textcolor{preprocessor}{\#define TOTAL\_CONTROLLER\_TESTS 3}}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00015}\mbox{\hyperlink{class_test_i_controllers}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{class_test_i_controllers}{TestIControllers}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_test}{ITest}}}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00017}00017     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00021}00021       \mbox{\hyperlink{class_test_i_controllers_aaa504cffa4522c06dd85b6669cef925b}{TestIControllers}}();}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00022}00022       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00026}00026       \mbox{\hyperlink{class_test_i_controllers_a68ab31ec5e750341cb76169ea79c1a57}{\string~TestIControllers}}();}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00027}00027       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00031}00031       \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_test_i_controllers_a9e17c6690a336840103f692efd112158}{executeTest}}();   }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00032}00032           }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00033}00033     }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00034}00034     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00035}00035       \mbox{\hyperlink{class_i_controllers}{IControllers}} *myControllers;  }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00036}00036       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00037}00037       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00041}00041       \textcolor{keywordtype}{bool} runAllTestsForController(\textcolor{keywordtype}{int} controllerID);    }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00046}00046       \textcolor{keywordtype}{bool} testControllerState(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00047}00047       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00051}00051       \textcolor{keywordtype}{bool} testRumblePack(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00052}00052       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00056}00056       \textcolor{keywordtype}{bool} testAccelData(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00057}00057       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00061}00061       \textcolor{keywordtype}{bool} testIRData(\textcolor{keywordtype}{int} controllerID);}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00063}00063       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00067}00067       \textcolor{keywordtype}{bool} twoPlayerRacingTest();}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00068}00068       }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00072}00072       \textcolor{keywordtype}{bool} WaitForAButton(\textcolor{keywordtype}{int} controllerID, \mbox{\hyperlink{_c_o_n_t_r_o_l_l_e_r___c_o_d_e_s_8h_acd084ac302bdb6e2338f7bc446ae771e}{CONTROLLER\_BUTTONS}} button);}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00073}00073 \};}
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_test_i_controllers_8h_source_l00075}00075 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

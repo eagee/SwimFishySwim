@@ -1,0 +1,18 @@
+digraph "ProjectileMethodsModifyExperienceBy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="ProjectileMethodsModifyExperienceBy",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ProjectileBomb::modifyWeapon\lExperienceBy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_bomb.html#a799e67155a991c5a2004fa99aedfba2f",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ProjectileMine::modifyWeapon\lExperienceBy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_mine.html#ad1540d0769243356f5bdc47eb64f534c",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ProjectileShot::modifyWeapon\lExperienceBy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_shot.html#a1b1dd0cd4272550d21b31dfc9fe93e60",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ProjectileSpit::modifyWeapon\lExperienceBy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_spit.html#a5ce5c3465fd092ddb9b9e62ec6ec8252",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ProjectileToss::modifyWeapon\lExperienceBy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_projectile_toss.html#a5a57f3ba505782b2aeba9086ba4db877",tooltip=" "];
+}

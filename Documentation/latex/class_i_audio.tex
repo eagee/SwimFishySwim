@@ -1,0 +1,148 @@
+\hypertarget{class_i_audio}{}\doxysection{IAudio Class Reference}
+\label{class_i_audio}\index{IAudio@{IAudio}}
+
+
+// Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary\texorpdfstring{$>$}{>}  
+
+
+
+
+{\ttfamily \#include $<$IAudio.\+h$>$}
+
+
+
+Inheritance diagram for IAudio\+:
+% FIG 0
+
+
+Collaboration diagram for IAudio\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_audio_ab7e238098abead1806823bf83d0469e6}{IAudio}} ()
+\item 
+virtual \mbox{\hyperlink{class_i_audio_ad4b5eb3f5185218d91404dcc876652bc}{$\sim$\+IAudio}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_audio_aad468d4ec06ff983ba35ef2e9a50d9e9}{load\+From\+File}} (const char $\ast$file\+Name)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}{play\+Once}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_audio_a4ea93e56b833889d205848503159aeaf}{play\+Looped}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_audio_a5a54139dee0343d10b3ffa712adc503f}{stop}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_audio_ab757774e61ff61a7d7ce94bb25a52c4a}{pause}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_audio_aa99dc012d2cbeb0771cf1bb8627343d7}{is\+Playing}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+// Defines the simple interface for all audio protocols (midi, mp3, pcm, controller) /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_i_audio_8h_source_l00010}{10}} of file \mbox{\hyperlink{_i_audio_8h_source}{IAudio.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_audio_ab7e238098abead1806823bf83d0469e6}\label{class_i_audio_ab7e238098abead1806823bf83d0469e6}} 
+\index{IAudio@{IAudio}!IAudio@{IAudio}}
+\index{IAudio@{IAudio}!IAudio@{IAudio}}
+\doxysubsubsection{\texorpdfstring{IAudio()}{IAudio()}}
+{\footnotesize\ttfamily IAudio\+::\+IAudio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_i_audio_8h_source_l00013}{13}} of file \mbox{\hyperlink{_i_audio_8h_source}{IAudio.\+h}}.
+
+\mbox{\Hypertarget{class_i_audio_ad4b5eb3f5185218d91404dcc876652bc}\label{class_i_audio_ad4b5eb3f5185218d91404dcc876652bc}} 
+\index{IAudio@{IAudio}!````~IAudio@{$\sim$IAudio}}
+\index{````~IAudio@{$\sim$IAudio}!IAudio@{IAudio}}
+\doxysubsubsection{\texorpdfstring{$\sim$IAudio()}{~IAudio()}}
+{\footnotesize\ttfamily virtual IAudio\+::$\sim$\+IAudio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+summary\texorpdfstring{$>$}{>} Loads data into memory from a file ... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_i_audio_8h_source_l00015}{15}} of file \mbox{\hyperlink{_i_audio_8h_source}{IAudio.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_audio_aa99dc012d2cbeb0771cf1bb8627343d7}\label{class_i_audio_aa99dc012d2cbeb0771cf1bb8627343d7}} 
+\index{IAudio@{IAudio}!isPlaying@{isPlaying}}
+\index{isPlaying@{isPlaying}!IAudio@{IAudio}}
+\doxysubsubsection{\texorpdfstring{isPlaying()}{isPlaying()}}
+{\footnotesize\ttfamily virtual bool IAudio\+::is\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_wii_audio_mp3_a8d9c0636673ffe00383dd5264b25c659}{Wii\+Audio\+Mp3}}, and \mbox{\hyperlink{class_wii_audio_pcm_a88327c606d5654b8d56dec13a25d2403}{Wii\+Audio\+Pcm}}.
+
+\mbox{\Hypertarget{class_i_audio_aad468d4ec06ff983ba35ef2e9a50d9e9}\label{class_i_audio_aad468d4ec06ff983ba35ef2e9a50d9e9}} 
+\index{IAudio@{IAudio}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!IAudio@{IAudio}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily virtual void IAudio\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Plays the audio once then stops. /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_wii_audio_mp3_acda92d4a2e8ff55493edb841c8f95cb4}{Wii\+Audio\+Mp3}}, and \mbox{\hyperlink{class_wii_audio_pcm_acb83f6e5ddae076b4cc663278ed6081e}{Wii\+Audio\+Pcm}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_i_audio_ab757774e61ff61a7d7ce94bb25a52c4a}\label{class_i_audio_ab757774e61ff61a7d7ce94bb25a52c4a}} 
+\index{IAudio@{IAudio}!pause@{pause}}
+\index{pause@{pause}!IAudio@{IAudio}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily virtual void IAudio\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Returns true if the audio is currently being played, otherwise false... /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_wii_audio_mp3_afc1ebca506b9ea70b544b52114ea48a7}{Wii\+Audio\+Mp3}}, and \mbox{\hyperlink{class_wii_audio_pcm_ad52f58cac15d4ddb46ba5bbbc40163a1}{Wii\+Audio\+Pcm}}.
+
+\mbox{\Hypertarget{class_i_audio_a4ea93e56b833889d205848503159aeaf}\label{class_i_audio_a4ea93e56b833889d205848503159aeaf}} 
+\index{IAudio@{IAudio}!playLooped@{playLooped}}
+\index{playLooped@{playLooped}!IAudio@{IAudio}}
+\doxysubsubsection{\texorpdfstring{playLooped()}{playLooped()}}
+{\footnotesize\ttfamily virtual void IAudio\+::play\+Looped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Stops playing the audio and resets all counters. /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_wii_audio_mp3_aa741e06eb637612fcb4b34f034b3e78c}{Wii\+Audio\+Mp3}}, and \mbox{\hyperlink{class_wii_audio_pcm_a436c9b74baaa36c8bbe76811953775c5}{Wii\+Audio\+Pcm}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}\label{class_i_audio_ab7b06473770e6eb5f1d65e63f0853862}} 
+\index{IAudio@{IAudio}!playOnce@{playOnce}}
+\index{playOnce@{playOnce}!IAudio@{IAudio}}
+\doxysubsubsection{\texorpdfstring{playOnce()}{playOnce()}}
+{\footnotesize\ttfamily virtual void IAudio\+::play\+Once (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Plays the audio over and over again ad infinitium. /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_wii_audio_mp3_a1e7bd15d9e21442ffacafa970cdf0426}{Wii\+Audio\+Mp3}}, and \mbox{\hyperlink{class_wii_audio_pcm_a825fa3baa438df9d34c668bd0459f04b}{Wii\+Audio\+Pcm}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_i_audio_a5a54139dee0343d10b3ffa712adc503f}\label{class_i_audio_a5a54139dee0343d10b3ffa712adc503f}} 
+\index{IAudio@{IAudio}!stop@{stop}}
+\index{stop@{stop}!IAudio@{IAudio}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily virtual void IAudio\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+summary\texorpdfstring{$>$}{>} Pauses the audio where it is so that playing can resume from the same point. /summary\texorpdfstring{$>$}{>} ~\newline
+ 
+
+Implemented in \mbox{\hyperlink{class_wii_audio_mp3_afff5d54d70e0dfa35af3433e513135b3}{Wii\+Audio\+Mp3}}, and \mbox{\hyperlink{class_wii_audio_pcm_ac767781e1a63018cef49b92897e5803e}{Wii\+Audio\+Pcm}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\mbox{\hyperlink{_i_audio_8h}{IAudio.\+h}}\end{DoxyCompactItemize}

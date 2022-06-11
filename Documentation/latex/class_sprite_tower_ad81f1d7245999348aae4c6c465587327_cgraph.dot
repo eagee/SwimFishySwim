@@ -1,0 +1,20 @@
+digraph "SpriteTower::lockOnTarget"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SpriteTower::lockOnTarget",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="IProjectileWeapon::\lhandleTriggerState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_projectile_weapon.html#afd1e6fbba4e3721639c0ca999be8e8d3",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="spriteMethodsLockOnTarget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sprite_methods_8cpp.html#a4c291061d24f26554c604d991e1caf99",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="getAngleBetweenTwoPoints",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$angles_8cpp.html#a30d6878d81e316089e36122cc281edc3",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ISprite::getCurrentAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a6e1e6556de6db54749ad3926c0c1720b",tooltip=" "];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ISprite::getLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#a04e5809c871ecfe7caeab6d6886e2bbd",tooltip=" "];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ISprite::getOffset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_i_sprite.html#aa2d94c367130a4696991c59efed7681c",tooltip=" "];
+}

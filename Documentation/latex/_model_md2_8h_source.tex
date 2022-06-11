@@ -1,0 +1,244 @@
+\hypertarget{_model_md2_8h_source}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Model\+Md2.h}
+\mbox{\hyperlink{_model_md2_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00001}00001 \textcolor{comment}{// Model.h}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00002}00002 \textcolor{comment}{// Defines Interface for loading and displaying 3d model information...}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00003}00003 \textcolor{comment}{// Author(s): Eagan Rackley}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00004}00004 \textcolor{preprocessor}{\#ifndef ModelMd2\_H}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00005}00005 \textcolor{preprocessor}{\#define ModelMd2\_H}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_graphics_8h}{IGraphics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_model_8h}{IModel.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00013}\mbox{\hyperlink{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}{00013}} \textcolor{preprocessor}{\#define TOTAL\_MD2\_ANIMATIONS 25}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00014}\mbox{\hyperlink{_model_md2_8h_a1cbf85403c0730662ea233c622428197}{00014}} \textcolor{preprocessor}{\#define NUMBER\_OF\_NORMALS       162}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00015}\mbox{\hyperlink{_model_md2_8h_ad2ad42be75db15c49272cf6f6dca0da7}{00015}} \textcolor{preprocessor}{\#define NUMBER\_OF\_DOT\_PRODUCTS  16}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00018}\mbox{\hyperlink{structmd2_header_data}{00018}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00020}00020     \textcolor{comment}{// magic number. must be equal to "{}IDP2"{}}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00021}\mbox{\hyperlink{structmd2_header_data_a7c91b3f13252efb2086ce2daa8085930}{00021}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a7c91b3f13252efb2086ce2daa8085930}{magicNumber}};              }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00022}00022     \textcolor{comment}{// md2 version. must be equal to 8}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00023}\mbox{\hyperlink{structmd2_header_data_a54719a6cdf5432b00f065ec49328f795}{00023}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a54719a6cdf5432b00f065ec49328f795}{md2Version}};            }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00024}00024     \textcolor{comment}{// width of the texture}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00025}\mbox{\hyperlink{structmd2_header_data_aefd06dc689df419d1bb6c823910ee67e}{00025}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_aefd06dc689df419d1bb6c823910ee67e}{skinwidth}};          }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00026}00026     \textcolor{comment}{// height of the texture}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00027}\mbox{\hyperlink{structmd2_header_data_a724429a13854b8f6d4272ac600eca4f7}{00027}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a724429a13854b8f6d4272ac600eca4f7}{skinheight}};         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00028}00028     \textcolor{comment}{// size of one frame in bytes}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00029}\mbox{\hyperlink{structmd2_header_data_a57357e32a4a4ba60cd8fa5de97a87324}{00029}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a57357e32a4a4ba60cd8fa5de97a87324}{framesize}};          }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00030}00030     \textcolor{comment}{// number of textures}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00031}\mbox{\hyperlink{structmd2_header_data_a52afc5aa3079504c32dc732443348cae}{00031}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a52afc5aa3079504c32dc732443348cae}{numSkins}};          }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00032}00032     \textcolor{comment}{// number of vertices in a frame}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00033}\mbox{\hyperlink{structmd2_header_data_a2f0d78d037e8a0bf0ea94d34ce853509}{00033}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a2f0d78d037e8a0bf0ea94d34ce853509}{numVertices}};            }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00034}00034     \textcolor{comment}{// number of texture coordinates}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00035}\mbox{\hyperlink{structmd2_header_data_a5eb641513d7eb4436cb83a4d5ae08665}{00035}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a5eb641513d7eb4436cb83a4d5ae08665}{numTexCoords}};             }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00036}00036     \textcolor{comment}{// number of triangles in the file}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00037}\mbox{\hyperlink{structmd2_header_data_a95fb91e3f3d1e47182dfbc177c80e2be}{00037}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a95fb91e3f3d1e47182dfbc177c80e2be}{numTriangles}};           }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00038}00038     \textcolor{comment}{// number of opengl commands}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00039}\mbox{\hyperlink{structmd2_header_data_ae52394718dbd9d03959c13fa8ec6a784}{00039}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_ae52394718dbd9d03959c13fa8ec6a784}{numGlCommands}};         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00040}00040     \textcolor{comment}{// total number of frames in the file}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00041}\mbox{\hyperlink{structmd2_header_data_ae91de0fdb065c5d8fdb200ac9b0abd8f}{00041}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_ae91de0fdb065c5d8fdb200ac9b0abd8f}{numFrames}};         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00042}00042     \textcolor{comment}{// offset to skin names (64 bytes each)}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00043}\mbox{\hyperlink{structmd2_header_data_adc625942f28a2b7c5a115363d3fe8c9e}{00043}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_adc625942f28a2b7c5a115363d3fe8c9e}{skinOffset}};          }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00044}00044     \textcolor{comment}{// offset to s-\/t texture coordinates}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00045}\mbox{\hyperlink{structmd2_header_data_a4dfe2636d8ecb2c155a32606edfb10ac}{00045}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a4dfe2636d8ecb2c155a32606edfb10ac}{texCoordsDataOffset}};             }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00046}00046     \textcolor{comment}{// offset to triangles}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00047}\mbox{\hyperlink{structmd2_header_data_a3bf9e8c1edfaddba8b2eb7af552a4c35}{00047}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a3bf9e8c1edfaddba8b2eb7af552a4c35}{triangleDataOffset}};           }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00048}00048     \textcolor{comment}{// offset to frame data}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00049}\mbox{\hyperlink{structmd2_header_data_ac149b2d134912bb7e005c5e598c6bdd4}{00049}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_ac149b2d134912bb7e005c5e598c6bdd4}{frameDataOffset}};         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00050}00050     \textcolor{comment}{// offset to opengl commands}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00051}\mbox{\hyperlink{structmd2_header_data_a8097351800c9788ab9ca5a5ab41b4505}{00051}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_a8097351800c9788ab9ca5a5ab41b4505}{glCommandDataOffset}};         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00052}00052     \textcolor{comment}{// offset to end of file}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00053}\mbox{\hyperlink{structmd2_header_data_ac08e5d61047e8bfa38121b140a3a3a04}{00053}}     \mbox{\hyperlink{_i_graphics_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}}     \mbox{\hyperlink{structmd2_header_data_ac08e5d61047e8bfa38121b140a3a3a04}{EOFoffset}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00054}00054 \} \mbox{\hyperlink{structmd2_header_data}{md2HeaderData}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00059}\mbox{\hyperlink{structmd2_vertex}{00059}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00060}00060 \{}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00061}\mbox{\hyperlink{structmd2_vertex_ac7b3a0175c092b84d4a0792ea138805e}{00061}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}   v[3];                \textcolor{comment}{// compressed vertex (x, y, z) coordinates}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00062}\mbox{\hyperlink{structmd2_vertex_a970851e63d21b792e971074f3bd1ef2f}{00062}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}   \mbox{\hyperlink{structmd2_vertex_a970851e63d21b792e971074f3bd1ef2f}{lightnormalindex}};    \textcolor{comment}{// index to a normal vector for the lighting}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00064}00064 \} \mbox{\hyperlink{structmd2_vertex}{md2Vertex}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00066}00066 \textcolor{comment}{/* Triangle info */}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00067}\mbox{\hyperlink{structmd2_triangle}{00067}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00068}00068 \{}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00069}\mbox{\hyperlink{structmd2_triangle_a567270af6736a3aff09d46edcb09df1a}{00069}}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} vertex[3];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00070}\mbox{\hyperlink{structmd2_triangle_a50836ed19e53749ef9d064c4514e7e19}{00070}}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} st[3];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00071}00071 \} \mbox{\hyperlink{structmd2_triangle}{md2Triangle}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00077}\mbox{\hyperlink{structmd2_tex_coord}{00077}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00078}00078 \{}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00079}\mbox{\hyperlink{structmd2_tex_coord_a4b7b89498e67619b6df61b39ab10721d}{00079}}     \textcolor{keywordtype}{short}    \mbox{\hyperlink{structmd2_tex_coord_a4b7b89498e67619b6df61b39ab10721d}{s}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00080}\mbox{\hyperlink{structmd2_tex_coord_a06e8c46e0efadeeee351958360f6cbde}{00080}}     \textcolor{keywordtype}{short}    \mbox{\hyperlink{structmd2_tex_coord_a06e8c46e0efadeeee351958360f6cbde}{t}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00081}00081 \} \mbox{\hyperlink{structmd2_tex_coord}{md2TexCoord}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00083}\mbox{\hyperlink{_model_md2_8h_ae5dccff48c8a942309f5ed8d55ae6f82}{00083}} \textcolor{preprocessor}{\#define NUMBER\_OF\_SCALES\_IN\_FRAME 3}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00084}\mbox{\hyperlink{_model_md2_8h_a497b9fbf99a9181efdd94022f9385177}{00084}} \textcolor{preprocessor}{\#define NUMBER\_OF\_TRANSLATES\_IN\_FRAME 3}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00085}00085 \textcolor{preprocessor}{\#define NUMBER\_OF\_CHARS\_IN\_FRAME 16}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00090}\mbox{\hyperlink{structmd2_frame}{00090}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00091}00091 \{}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00092}00092     \textcolor{comment}{// scale values}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00093}\mbox{\hyperlink{structmd2_frame_af9e570e9524368061cafb891b24de366}{00093}}     \textcolor{keywordtype}{float}       scale[\mbox{\hyperlink{_model_md2_8h_ae5dccff48c8a942309f5ed8d55ae6f82}{NUMBER\_OF\_SCALES\_IN\_FRAME}}];      }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00094}00094     \textcolor{comment}{// translation vector}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00095}\mbox{\hyperlink{structmd2_frame_a3bda18da4c4c538343345fe3d6e9859b}{00095}}     \textcolor{keywordtype}{float}       translate[\mbox{\hyperlink{_model_md2_8h_a497b9fbf99a9181efdd94022f9385177}{NUMBER\_OF\_TRANSLATES\_IN\_FRAME}}];  }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00096}00096     \textcolor{comment}{// frame name}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00097}\mbox{\hyperlink{structmd2_frame_a81f6b2282273e9125fa468b9ecb8b7bc}{00097}}     \textcolor{keywordtype}{char}        name[\mbox{\hyperlink{_model_md2_8h_a379f3cc545c378aee137a12df1f8ba24}{NUMBER\_OF\_CHARS\_IN\_FRAME}}];     }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00098}00098     \textcolor{comment}{// List of verticies in this frame}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00099}\mbox{\hyperlink{structmd2_frame_ad7f399a14b01c590dea63c42dc36394c}{00099}}     std::vector<md2Vertex>  \mbox{\hyperlink{structmd2_frame_ad7f399a14b01c590dea63c42dc36394c}{verts}};                 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00100}00100 \} \mbox{\hyperlink{structmd2_frame}{md2Frame}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00105}\mbox{\hyperlink{structmd2_animation}{00105}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00106}00106 \{}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00107}\mbox{\hyperlink{structmd2_animation_a29d82614dedec8a8ccd200b2ce7e626f}{00107}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{structmd2_animation_a29d82614dedec8a8ccd200b2ce7e626f}{firstFrame}};           \textcolor{comment}{// first frame of the animation}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00108}\mbox{\hyperlink{structmd2_animation_a56d02309fe2d8421e6881b8c1cdb581c}{00108}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{structmd2_animation_a56d02309fe2d8421e6881b8c1cdb581c}{lastFrame}};             \textcolor{comment}{// number of frames}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00109}\mbox{\hyperlink{structmd2_animation_abf79e45d098b4257352c44448756c6e7}{00109}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{structmd2_animation_abf79e45d098b4257352c44448756c6e7}{fps}};                 \textcolor{comment}{// number of frames per second}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00111}00111 \} \mbox{\hyperlink{structmd2_animation}{md2Animation}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00116}\mbox{\hyperlink{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}{00116}} \textcolor{keyword}{typedef} std::vector<Triangle> \mbox{\hyperlink{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}{ScaledFrame}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00117}\mbox{\hyperlink{_model_md2_8h_acae273cfe1459f059d7a65a862d5d48f}{00117}} \textcolor{keyword}{typedef} std::vector<ScaledFrame> \mbox{\hyperlink{_model_md2_8h_acae273cfe1459f059d7a65a862d5d48f}{ScaledMd2Frames}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00118}\mbox{\hyperlink{_model_md2_8h_aa7715584f7081547970249e91fd1907d}{00118}} \textcolor{keyword}{typedef} std::vector<TriangleVertexArray> \mbox{\hyperlink{_model_md2_8h_aa7715584f7081547970249e91fd1907d}{VertexFrame}};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00125}\mbox{\hyperlink{class_model_md2}{00125}} \textcolor{keyword}{class }\mbox{\hyperlink{class_model_md2}{ModelMd2}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_i_model}{IModel}}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00126}00126    \{}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00127}00127    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00131}00131         \mbox{\hyperlink{class_model_md2_aa98ca52bea6a7090cf9c50790a68f3be}{ModelMd2}}();}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00132}00132       }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00136}00136         \mbox{\hyperlink{class_model_md2_a1d5d2dfeea2f67aa48d0446552873dc1}{\string~ModelMd2}}();}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00137}00137       }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00141}00141         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_model_md2_a11c491d1f4e2b2edb385adbfbf6966af}{loadFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{AnimationFormat}} animationFormat);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00142}00142         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00146}00146         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_ab578f1b63633526733604f13f02c8b32}{translateModel}}(Vector translation);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00147}00147         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00151}00151         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_a8a8be3f0f4658bea81639257f8729fd2}{setAnimationType}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} type);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00156}00156         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_a8a8be3f0f4658bea81639257f8729fd2}{setAnimationType}}(\mbox{\hyperlink{_i_model_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}} type, \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}} \&modelAnim);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00157}00157         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00161}00161         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_ac814e4d54b63cb8fd972436360ddc14a}{setModelScale}}(\textcolor{keywordtype}{float} scale);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00166}00166         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_ac6d16ddd19d466ff2f1476bc6ae98aba}{buildVertexArrays}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \textcolor{keywordtype}{bool} cullBacks);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00171}00171         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_adf6fd2920491a6c96078a93f6d8027d5}{freeVertexArrays}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00176}00176         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_afe66a3c9cee535b1ea297afc29138f64}{renderModel}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}} \&animation, \textcolor{keywordtype}{bool} interpolate);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00181}00181         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_afe66a3c9cee535b1ea297afc29138f64}{renderModel}}(\mbox{\hyperlink{class_i_graphics}{IGraphics}} *graphics, \textcolor{keywordtype}{bool} interpolate);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00186}00186         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_md2_a7fe0847aa62531e17d88fdb2eb83789f}{handleAnimation}}(\textcolor{keywordtype}{float} time, \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}} \&modelAnim);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00187}00187         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00188}00188     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00189}00189     }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00194}00194         \textcolor{keywordtype}{bool} openMyFileHandle(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00195}00195         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00200}00200         \textcolor{keywordtype}{bool} openMyTextureFileHandle(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00201}00201         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00206}00206         \textcolor{keywordtype}{bool} loadMd2HeaderDataFromFile();}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00207}00207         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00212}00212         \textcolor{keywordtype}{bool} loadMd2FrameDataFromFile();        }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00213}00213         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00218}00218         \textcolor{keywordtype}{bool} loadMd2TriangleDataFromFile();     }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00219}00219         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00224}00224         \textcolor{keywordtype}{bool} loadMd2TextureCoordinatesFromFile();       }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00229}00229         \mbox{\hyperlink{structtag_triangle}{Triangle}} getCurrentTriangle(\textcolor{keywordtype}{int} triangleIndex);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00230}00230         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00234}00234         \mbox{\hyperlink{structtag_triangle}{Triangle}} getCurrentScaledTriangle(\textcolor{keywordtype}{int} triangleIndex);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00235}00235         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00239}00239         \mbox{\hyperlink{structtag_triangle}{Triangle}} getNextTriangle(\textcolor{keywordtype}{int} triangleIndex);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00240}00240         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00244}00244         \mbox{\hyperlink{structtag_triangle}{Triangle}} getInterpolatedTriangle(\textcolor{keywordtype}{int} triangleIndex);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00245}00245         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00249}00249         \textcolor{keywordtype}{void} assignTexture(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} textureID);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00250}00250 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00254}00254         \textcolor{keywordtype}{void} assignBumpTexture(\mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} bumpTextureID, \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} lightTextureID);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00255}00255         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00259}00259         \textcolor{keywordtype}{void} buildScaledFrame(\mbox{\hyperlink{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}{ScaledFrame}} \&triangles, \textcolor{keywordtype}{bool} interpolate);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00260}00260         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00264}00264         \textcolor{keywordtype}{void} buildInterpolatedFrame(\mbox{\hyperlink{structtag_triangle_vertex_array}{TriangleVertexArray}} \&currentFrame, \mbox{\hyperlink{structtag_triangle_vertex_array}{TriangleVertexArray}} \&nextFrame, \mbox{\hyperlink{structtag_triangle_vertex_array}{TriangleVertexArray}} \&interpolatedFrame);}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00265}00265 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00269}00269         \textcolor{keywordtype}{bool} loadMd2CommandsFromFile();}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00272}00272         \textcolor{comment}{// animation list}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00273}00273         \textcolor{keyword}{static} \mbox{\hyperlink{structmd2_animation}{md2Animation}} animlist[21];       }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00274}00274         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00275}00275         \textcolor{comment}{// keeps track of the current time every time a frame is rendered ...}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00276}00276         time\_t myCurrentTime;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00277}00277         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00278}00278         \textcolor{comment}{// Temporarily holds frame data ...     }}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00279}00279         \textcolor{keyword}{typedef} std::vector<md2Frame>  FrameList;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00280}00280         \textcolor{keyword}{typedef} FrameList::iterator FrameIterator;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00281}00281         FrameList myFrames;             }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00282}00282         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00283}00283         \textcolor{comment}{// This is a list of all the triangles in the durned thingy}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00284}00284         \textcolor{keyword}{typedef} std::vector<md2Triangle> TriangleList;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00285}00285         \textcolor{keyword}{typedef} TriangleList::iterator TriangleIterator;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00286}00286         TriangleList myTriangles;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00287}00287         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00288}00288         \textcolor{comment}{// This is a list of all the Texture Coordinates in the md2 file}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00289}00289         \textcolor{keyword}{typedef} std::vector<md2TexCoord> TexCoordList;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00290}00290         \textcolor{keyword}{typedef} TexCoordList::iterator TexCoordListIterator;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00291}00291         TexCoordList myTexCoords;       }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00292}00292         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00294}00294         FILE* myFileHandle;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00295}00295             }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00296}00296         \textcolor{comment}{// This identifies the current x,y,z position of the model}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00297}00297         Vector myLocation;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00298}00298         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00299}00299         \textcolor{comment}{// Indicates our current animation state ...}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00300}00300         \mbox{\hyperlink{struct_model_anim_state}{ModelAnimState}}    myAnim;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00301}00301         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00302}00302         \textcolor{comment}{// Indicates the current scale we're drawing our model at ...}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00303}00303         \textcolor{keywordtype}{float}   myScale;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00304}00304          }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00305}00305         \textcolor{comment}{// Defines the data that contains our md2 header ...}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00306}00306         \mbox{\hyperlink{structmd2_header_data}{md2HeaderData}} myMd2HeaderData;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00307}00307         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00308}00308         \textcolor{comment}{// Defines a list of animations that we define as the default animations for each model ...}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00309}00309         \textcolor{keyword}{static} \mbox{\hyperlink{structmd2_animation}{md2Animation}} myTraditionalAnimations[\mbox{\hyperlink{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}{TOTAL\_MD2\_ANIMATIONS}}];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00310}00310         \textcolor{keyword}{static} \mbox{\hyperlink{structmd2_animation}{md2Animation}} myTraditionalFastAnimations[\mbox{\hyperlink{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}{TOTAL\_MD2\_ANIMATIONS}}];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00311}00311         \textcolor{keyword}{static} \mbox{\hyperlink{structmd2_animation}{md2Animation}} myFullAnimations[\mbox{\hyperlink{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}{TOTAL\_MD2\_ANIMATIONS}}];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00312}00312         \textcolor{keyword}{static} \mbox{\hyperlink{structmd2_animation}{md2Animation}} myStaticAnimations[\mbox{\hyperlink{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}{TOTAL\_MD2\_ANIMATIONS}}];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00313}00313         \textcolor{keyword}{static} \mbox{\hyperlink{structmd2_animation}{md2Animation}} myFullBaddieAnims[\mbox{\hyperlink{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}{TOTAL\_MD2\_ANIMATIONS}}];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00314}00314         \textcolor{keyword}{static} \mbox{\hyperlink{structmd2_animation}{md2Animation}} myInterpolatedBaddieAnims[\mbox{\hyperlink{_model_md2_8h_adadf48a9ea5a30cf5ee0ba95a0454c81}{TOTAL\_MD2\_ANIMATIONS}}];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00315}00315 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00316}00316         }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00317}00317         \textcolor{comment}{// Defines the texture handle the graphics subsystem has indicated for us to use ...}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00318}00318         \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myTextureHandle;             }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00319}00319 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00320}00320         \textcolor{comment}{// Defines the texture handle to apply a bump map to the model texture...}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00321}00321         \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myBumpTextureHandle;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00322}00322         \mbox{\hyperlink{_i_graphics_8h_ab30c04df1feec3f3deae8c3ab38622c2}{TextureHandle}} myLightmapTextureHandle;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00323}00323 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00324}00324         \textcolor{comment}{// A vector that contains a list of ScaledFrame objects which can be used to either build an interpolated}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00325}00325         \textcolor{comment}{// ScaledFrame faster than using the original md2 data, or simply pass to the graphics engine as a list }}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00326}00326         \textcolor{comment}{// of triangle data. A third option would be to create vertex arrays, but that would make interpolation}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00327}00327         \textcolor{comment}{// impossible, and memory is a commodity on the Wii.}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00328}00328         \mbox{\hyperlink{_model_md2_8h_acae273cfe1459f059d7a65a862d5d48f}{ScaledMd2Frames}} myScaledMd2Frames;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00329}00329         \mbox{\hyperlink{_model_md2_8h_a28731e1a52293499af40b5b8f40581e2}{ScaledFrame}} myInterpolatedFrame;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00330}00330         \mbox{\hyperlink{_model_md2_8h_aa7715584f7081547970249e91fd1907d}{VertexFrame}} myMd2VertexArrays;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00331}00331         \mbox{\hyperlink{structtag_triangle_vertex_array}{TriangleVertexArray}} myInterpolatedVertexArray;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00332}00332         \textcolor{keywordtype}{bool} myVertexArraysConstructed;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00333}00333         std::vector<int> myGLCommands;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00334}00334 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00335}00335         \textcolor{comment}{// member variables}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00336}00336         \textcolor{keyword}{static} Vector   myPreCalculatedNormals[\mbox{\hyperlink{_model_md2_8h_a1cbf85403c0730662ea233c622428197}{NUMBER\_OF\_NORMALS}}];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00337}00337         \textcolor{keyword}{static} \textcolor{keywordtype}{float}    preCalculatedDotProdcuts[\mbox{\hyperlink{_model_md2_8h_ad2ad42be75db15c49272cf6f6dca0da7}{NUMBER\_OF\_DOT\_PRODUCTS}}][256];}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00338}00338 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00339}00339         \textcolor{comment}{// Defines what type of animation format we're using to render our frames.}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00340}00340         \textcolor{comment}{// In this case it would be traditional md2, or pre rendered md2}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00341}00341         \mbox{\hyperlink{_i_model_8h_a502a511e581d56345c9ffe4d7ae2280f}{AnimationFormat}} myAnimationFormat;}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00342}00342    \};}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00343}00343 }
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00344}00344 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_model_md2_8h_source_l00345}00345 }
+
+\end{DoxyCode}

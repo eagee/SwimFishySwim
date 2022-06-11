@@ -1,0 +1,462 @@
+\hypertarget{_sprite_info_8h}{}\doxysection{C\+:/\+Team\+Sheeps/\+Swim\+Fishy\+Swim/\+Sprite\+Info.h File Reference}
+\label{_sprite_info_8h}\index{C:/TeamSheeps/SwimFishySwim/SpriteInfo.h@{C:/TeamSheeps/SwimFishySwim/SpriteInfo.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_sprite_bounding_triangle}{tag\+Sprite\+Bounding\+Triangle}}
+\item 
+struct \mbox{\hyperlink{structtag_bounding_point}{tag\+Bounding\+Point}}
+\item 
+struct \mbox{\hyperlink{structtag_bounding_circle}{tag\+Bounding\+Circle}}
+\item 
+struct \mbox{\hyperlink{structtag_sprite_bounding_box}{tag\+Sprite\+Bounding\+Box}}
+\item 
+struct \mbox{\hyperlink{structtag_sprite_info}{tag\+Sprite\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_a89f1dfbe8bd14e222dfc1ebd21b1d5e0}{RENDER\+\_\+\+X\+\_\+\+MIN}}~-\/43.\+0f
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_ae3a4567fac5fa41bbcdc9f91cf836779}{RENDER\+\_\+\+X\+\_\+\+MAX}}~43.\+0f
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_a4be19947a62bb8ffab5c6fc05bac3386}{RENDER\+\_\+\+Y\+\_\+\+MIN}}~-\/40.\+0f
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_a3f4c1ec66ce879e09f332f5cb7a3127d}{RENDER\+\_\+\+Y\+\_\+\+MAX}}~40.\+0f
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_a2ba6ab07497b37c18b1bfc01396d840f}{DIRECTION\+\_\+\+NONE}}~0
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}{DIRECTION\+\_\+\+NORTH}}~1
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}{DIRECTION\+\_\+\+SOUTH}}~2
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}{DIRECTION\+\_\+\+EAST}}~4
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}{DIRECTION\+\_\+\+WEST}}~8
+\item 
+\#define \mbox{\hyperlink{_sprite_info_8h_a8b942cf2e5fe316ee817de8d7028ed03}{DEFAULT\+\_\+\+PERIODIC\+\_\+\+TIMER}}~0.\+65f
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_sprite_bounding_triangle}{tag\+Sprite\+Bounding\+Triangle}} \mbox{\hyperlink{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}{Bounding\+Triangle}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_bounding_point}{tag\+Bounding\+Point}} \mbox{\hyperlink{_sprite_info_8h_a2fc45dc839df14281b819b6815927830}{Bounding\+Vertex}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_bounding_circle}{tag\+Bounding\+Circle}} \mbox{\hyperlink{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}{Bounding\+Circle}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_sprite_bounding_box}{tag\+Sprite\+Bounding\+Box}} \mbox{\hyperlink{_sprite_info_8h_af09622c9d9505474ece2da58841f3ab2}{Bounding\+Box}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_sprite_info}{tag\+Sprite\+Info}} \mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\+\_\+\+TYPE}} \{ \newline
+\mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0abc71fed3787821e7799b7038d22d740c}{PLAYER\+\_\+\+SPRITE}}
+, \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a08dd73480d4a2f334e1a0bd3da7fab53}{ENEMY\+\_\+\+TARGET\+\_\+\+SPRITE}}
+, \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a9c770be04e56f440c1224d24dbc8ef90}{BADDIE\+\_\+\+SPRITE}}
+, \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0af4711344c2334453d7930b3a83a64ce4}{EFFECT\+\_\+\+SPRITE}}
+, \newline
+\mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a8f8c2be8b58aa68142d99133395ff6b6}{BULLET\+\_\+\+SPRITE}}
+, \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a14e319b4c2b34312b20022598f9c3575}{POWER\+\_\+\+UP\+\_\+\+SPRITE}}
+, \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a1d68269cce8b62f65354582ac1f181ca}{TOWER\+\_\+\+SPRITE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}} \{ \newline
+\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a13e2c47a471a41fbdb6326027c67eb37}{POWER\+\_\+\+UP\+\_\+\+NONE}}
+, \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a3997f83abb8a3c203be17005713eda9a}{POWER\+\_\+\+UP\+\_\+\+GUN\+\_\+\+TINY}}
+, \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30ac1605aa74606476d7edfd16950002b1a}{POWER\+\_\+\+UP\+\_\+\+GUN\+\_\+\+SMALL}}
+, \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a99fd331f0bc2e6f525356252275b8299}{POWER\+\_\+\+UP\+\_\+\+GUN\+\_\+\+MEDIUM}}
+, \newline
+\mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30ad65c3c93894ef7fb133ed5afc324ec91}{POWER\+\_\+\+UP\+\_\+\+GUN\+\_\+\+LARGE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}} \{ \newline
+\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a8d45a3acb24c037864536d866c1567a5}{FRONT\+\_\+\+COLLISION}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a97d7d3a62cc3b6a790bc7c389aff20f1}{FRONT\+\_\+\+LEFT\+\_\+\+COLLISION}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a20517c05e99468edb307921712338383}{FRONT\+\_\+\+RIGHT\+\_\+\+COLLISION}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a8c2205266a256343f14d20fc79d34c03}{RIGHT\+\_\+\+SIDE\+\_\+\+COLLISION}}
+, \newline
+\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a44cf519830c85c6152c29720b2429fc1}{LEFT\+\_\+\+SIDE\+\_\+\+COLLISION}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a37db16d16e6e3bbf0a9d9d0b0ae92ca6}{RIGHT\+\_\+\+SIDE\+\_\+\+ATTACK}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a9e51c8d41a057674391713f11e72ee65}{LEFT\+\_\+\+SIDE\+\_\+\+ATTACK}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a81cf3efb6e53652400c38cac4269e9af}{REAR\+\_\+\+COLLISION}}
+, \newline
+\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91ad76c7b1e40426818fb64fe2b32c7d6fa}{FRONT\+\_\+\+ATTACK}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aada4c363debf20bc4dc65f7f9e3b18ce}{FRONT\+\_\+\+LEFT\+\_\+\+SLIDE}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a722bd0ac44f758a2790ce1f786468112}{FRONT\+\_\+\+RIGHT\+\_\+\+SLIDE}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aab0f94731b6a7beae4534ed1a0a51129}{REAR\+\_\+\+SLIDE}}
+, \newline
+\mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aa4403178a802cc71c3d2bc0bea82cb99}{FRONT\+\_\+\+SLIDE}}
+, \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a868ee56966a8f7a04aa7e1b937f0a00e}{SLIDE\+\_\+\+ANGLE\+\_\+\+BY\+\_\+\+FORCE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}} \{ \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfaa4f98e2f044fd203f2d829a7bdf48b57}{ATTACK\+\_\+\+TYPE\+\_\+\+NONE}}
+, \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa3c39ea2df427ce5fb59f5af17a506c5d}{ATTACK\+\_\+\+TYPE\+\_\+\+PHYSICAL}}
+, \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa1d0414a35e310ff5336661633d4a425c}{ATTACK\+\_\+\+TYPE\+\_\+\+GUN}}
+, \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa58e0de7529a7546244bc9ec5e762f171}{ATTACK\+\_\+\+TYPE\+\_\+\+BOTH}}
+ \}
+\item 
+enum \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}} \{ \newline
+\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3ad11ca9453a011466846144ae3bf4100d}{JUMP\+\_\+\+STATE\+\_\+\+NOT\+\_\+\+READY}}
+, \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a32c08a93fab334ad36e2251722d1e047}{JUMP\+\_\+\+STATE\+\_\+\+READY}}
+, \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a96276f9bf6800694fe0074470d408ee0}{JUMP\+\_\+\+STATE\+\_\+\+JUMPING}}
+, \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a0b4f3db917533e4ccfe9c4bb473cd82c}{JUMP\+\_\+\+STATE\+\_\+\+LANDING}}
+, \newline
+\mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3acdf6e375fd4b95d42c1a30c8116c4e7e}{JUMP\+\_\+\+STATE\+\_\+\+RECOVERING}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_sprite_info_8h_a8b942cf2e5fe316ee817de8d7028ed03}\label{_sprite_info_8h_a8b942cf2e5fe316ee817de8d7028ed03}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!DEFAULT\_PERIODIC\_TIMER@{DEFAULT\_PERIODIC\_TIMER}}
+\index{DEFAULT\_PERIODIC\_TIMER@{DEFAULT\_PERIODIC\_TIMER}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PERIODIC\_TIMER}{DEFAULT\_PERIODIC\_TIMER}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+PERIODIC\+\_\+\+TIMER~0.\+65f}
+
+summary\texorpdfstring{$>$}{>} Defines the possible sprite behaviors available /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00028}{28}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}\label{_sprite_info_8h_a973293d395eafb3ac8599dc6a054f59d}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!DIRECTION\_EAST@{DIRECTION\_EAST}}
+\index{DIRECTION\_EAST@{DIRECTION\_EAST}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTION\_EAST}{DIRECTION\_EAST}}
+{\footnotesize\ttfamily \#define DIRECTION\+\_\+\+EAST~4}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00021}{21}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a2ba6ab07497b37c18b1bfc01396d840f}\label{_sprite_info_8h_a2ba6ab07497b37c18b1bfc01396d840f}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!DIRECTION\_NONE@{DIRECTION\_NONE}}
+\index{DIRECTION\_NONE@{DIRECTION\_NONE}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTION\_NONE}{DIRECTION\_NONE}}
+{\footnotesize\ttfamily \#define DIRECTION\+\_\+\+NONE~0}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00018}{18}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}\label{_sprite_info_8h_a274e8a13ed667ee8d74b59faebbf4234}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!DIRECTION\_NORTH@{DIRECTION\_NORTH}}
+\index{DIRECTION\_NORTH@{DIRECTION\_NORTH}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTION\_NORTH}{DIRECTION\_NORTH}}
+{\footnotesize\ttfamily \#define DIRECTION\+\_\+\+NORTH~1}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00019}{19}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}\label{_sprite_info_8h_a1cc9468dbba1e434a05bf447df3e759e}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!DIRECTION\_SOUTH@{DIRECTION\_SOUTH}}
+\index{DIRECTION\_SOUTH@{DIRECTION\_SOUTH}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTION\_SOUTH}{DIRECTION\_SOUTH}}
+{\footnotesize\ttfamily \#define DIRECTION\+\_\+\+SOUTH~2}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00020}{20}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}\label{_sprite_info_8h_ad68c71e9114dbd1ecd99e471ac96b9c8}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!DIRECTION\_WEST@{DIRECTION\_WEST}}
+\index{DIRECTION\_WEST@{DIRECTION\_WEST}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTION\_WEST}{DIRECTION\_WEST}}
+{\footnotesize\ttfamily \#define DIRECTION\+\_\+\+WEST~8}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00022}{22}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_ae3a4567fac5fa41bbcdc9f91cf836779}\label{_sprite_info_8h_ae3a4567fac5fa41bbcdc9f91cf836779}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!RENDER\_X\_MAX@{RENDER\_X\_MAX}}
+\index{RENDER\_X\_MAX@{RENDER\_X\_MAX}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{RENDER\_X\_MAX}{RENDER\_X\_MAX}}
+{\footnotesize\ttfamily \#define RENDER\+\_\+\+X\+\_\+\+MAX~43.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00013}{13}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a89f1dfbe8bd14e222dfc1ebd21b1d5e0}\label{_sprite_info_8h_a89f1dfbe8bd14e222dfc1ebd21b1d5e0}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!RENDER\_X\_MIN@{RENDER\_X\_MIN}}
+\index{RENDER\_X\_MIN@{RENDER\_X\_MIN}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{RENDER\_X\_MIN}{RENDER\_X\_MIN}}
+{\footnotesize\ttfamily \#define RENDER\+\_\+\+X\+\_\+\+MIN~-\/43.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00012}{12}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a3f4c1ec66ce879e09f332f5cb7a3127d}\label{_sprite_info_8h_a3f4c1ec66ce879e09f332f5cb7a3127d}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!RENDER\_Y\_MAX@{RENDER\_Y\_MAX}}
+\index{RENDER\_Y\_MAX@{RENDER\_Y\_MAX}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{RENDER\_Y\_MAX}{RENDER\_Y\_MAX}}
+{\footnotesize\ttfamily \#define RENDER\+\_\+\+Y\+\_\+\+MAX~40.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00015}{15}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a4be19947a62bb8ffab5c6fc05bac3386}\label{_sprite_info_8h_a4be19947a62bb8ffab5c6fc05bac3386}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!RENDER\_Y\_MIN@{RENDER\_Y\_MIN}}
+\index{RENDER\_Y\_MIN@{RENDER\_Y\_MIN}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{RENDER\_Y\_MIN}{RENDER\_Y\_MIN}}
+{\footnotesize\ttfamily \#define RENDER\+\_\+\+Y\+\_\+\+MIN~-\/40.\+0f}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00014}{14}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_sprite_info_8h_af09622c9d9505474ece2da58841f3ab2}\label{_sprite_info_8h_af09622c9d9505474ece2da58841f3ab2}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!BoundingBox@{BoundingBox}}
+\index{BoundingBox@{BoundingBox}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{BoundingBox}{BoundingBox}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_sprite_bounding_box}{tag\+Sprite\+Bounding\+Box}} \mbox{\hyperlink{_sprite_info_8h_af09622c9d9505474ece2da58841f3ab2}{Bounding\+Box}}}
+
+summary\texorpdfstring{$>$}{>} Defines a common set of data that can be shared by all \mbox{\hyperlink{class_i_sprite}{ISprite}} implementations /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}\label{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!BoundingCircle@{BoundingCircle}}
+\index{BoundingCircle@{BoundingCircle}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{BoundingCircle}{BoundingCircle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_bounding_circle}{tag\+Bounding\+Circle}} \mbox{\hyperlink{_sprite_info_8h_abfce1c0c9bf21eaafbcac2092a67a576}{Bounding\+Circle}}}
+
+summary\texorpdfstring{$>$}{>} Defines four corners of a rectangle which is always sorted from top to bottom, left to right. However one key thing to keep in mind is that our top and bottom zero out in the middle of the screen. So going up is a negative value, and going down is positive... This kind of bounding box is specifically desinged to simplify collision with other sprite objects and it\textquotesingle{}s values can be generated by obtaining the bounding triangle object used in the tilemap collision routines... /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}\label{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!BoundingTriangle@{BoundingTriangle}}
+\index{BoundingTriangle@{BoundingTriangle}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{BoundingTriangle}{BoundingTriangle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_sprite_bounding_triangle}{tag\+Sprite\+Bounding\+Triangle}} \mbox{\hyperlink{_sprite_info_8h_ac9973aa90859352fd63ecabafe251d43}{Bounding\+Triangle}}}
+
+\mbox{\Hypertarget{_sprite_info_8h_a2fc45dc839df14281b819b6815927830}\label{_sprite_info_8h_a2fc45dc839df14281b819b6815927830}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!BoundingVertex@{BoundingVertex}}
+\index{BoundingVertex@{BoundingVertex}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{BoundingVertex}{BoundingVertex}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_bounding_point}{tag\+Bounding\+Point}} \mbox{\hyperlink{_sprite_info_8h_a2fc45dc839df14281b819b6815927830}{Bounding\+Vertex}}}
+
+summary\texorpdfstring{$>$}{>} The points of the bounding circle are set from the center of the model by the bounding size of a sprite. The circle will be offset from the angle of the sprite and contain eight points \mbox{[}0\mbox{]} -\/ \mbox{[}7\mbox{]}. Element \mbox{[}0\mbox{]} will represent degree 0 based on the current angle of the fish. Elements \mbox{[}1\mbox{]} to \mbox{[}7\mbox{]} will represent 45 degree increments from element \mbox{[}0\mbox{]} (e.\+g. 0, 45, 90, 135, 180, 225, 270, 315). The value stored in each element will be vertex coordinates at the specified bounding size / angle away from the center of the sprite... /summary\texorpdfstring{$>$}{>} \mbox{\Hypertarget{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}\label{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!DIRECTION@{DIRECTION}}
+\index{DIRECTION@{DIRECTION}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTION}{DIRECTION}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{_sprite_info_8h_a28b4289b95abbeb7a422178cfa43525f}{DIRECTION}}}
+
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00017}{17}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_af881a06b951f6e7f031679c309299301}\label{_sprite_info_8h_af881a06b951f6e7f031679c309299301}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!SpriteInfo@{SpriteInfo}}
+\index{SpriteInfo@{SpriteInfo}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{SpriteInfo}{SpriteInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_sprite_info}{tag\+Sprite\+Info}} \mbox{\hyperlink{_sprite_info_8h_af881a06b951f6e7f031679c309299301}{Sprite\+Info}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}\label{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!ATTACK\_TYPE@{ATTACK\_TYPE}}
+\index{ATTACK\_TYPE@{ATTACK\_TYPE}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{ATTACK\_TYPE}{ATTACK\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_sprite_info_8h_aec69048c999a50e578b449758a9a76df}{ATTACK\+\_\+\+TYPE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_TYPE\_NONE@{ATTACK\_TYPE\_NONE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!ATTACK\_TYPE\_NONE@{ATTACK\_TYPE\_NONE}}}\mbox{\Hypertarget{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfaa4f98e2f044fd203f2d829a7bdf48b57}\label{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfaa4f98e2f044fd203f2d829a7bdf48b57}} 
+ATTACK\+\_\+\+TYPE\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_TYPE\_PHYSICAL@{ATTACK\_TYPE\_PHYSICAL}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!ATTACK\_TYPE\_PHYSICAL@{ATTACK\_TYPE\_PHYSICAL}}}\mbox{\Hypertarget{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa3c39ea2df427ce5fb59f5af17a506c5d}\label{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa3c39ea2df427ce5fb59f5af17a506c5d}} 
+ATTACK\+\_\+\+TYPE\+\_\+\+PHYSICAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_TYPE\_GUN@{ATTACK\_TYPE\_GUN}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!ATTACK\_TYPE\_GUN@{ATTACK\_TYPE\_GUN}}}\mbox{\Hypertarget{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa1d0414a35e310ff5336661633d4a425c}\label{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa1d0414a35e310ff5336661633d4a425c}} 
+ATTACK\+\_\+\+TYPE\+\_\+\+GUN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_TYPE\_BOTH@{ATTACK\_TYPE\_BOTH}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!ATTACK\_TYPE\_BOTH@{ATTACK\_TYPE\_BOTH}}}\mbox{\Hypertarget{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa58e0de7529a7546244bc9ec5e762f171}\label{_sprite_info_8h_aec69048c999a50e578b449758a9a76dfa58e0de7529a7546244bc9ec5e762f171}} 
+ATTACK\+\_\+\+TYPE\+\_\+\+BOTH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00077}{77}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!COLLISION\_TYPE@{COLLISION\_TYPE}}
+\index{COLLISION\_TYPE@{COLLISION\_TYPE}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{COLLISION\_TYPE}{COLLISION\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91}{COLLISION\+\_\+\+TYPE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRONT\_COLLISION@{FRONT\_COLLISION}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!FRONT\_COLLISION@{FRONT\_COLLISION}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a8d45a3acb24c037864536d866c1567a5}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a8d45a3acb24c037864536d866c1567a5}} 
+FRONT\+\_\+\+COLLISION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRONT\_LEFT\_COLLISION@{FRONT\_LEFT\_COLLISION}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!FRONT\_LEFT\_COLLISION@{FRONT\_LEFT\_COLLISION}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a97d7d3a62cc3b6a790bc7c389aff20f1}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a97d7d3a62cc3b6a790bc7c389aff20f1}} 
+FRONT\+\_\+\+LEFT\+\_\+\+COLLISION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRONT\_RIGHT\_COLLISION@{FRONT\_RIGHT\_COLLISION}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!FRONT\_RIGHT\_COLLISION@{FRONT\_RIGHT\_COLLISION}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a20517c05e99468edb307921712338383}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a20517c05e99468edb307921712338383}} 
+FRONT\+\_\+\+RIGHT\+\_\+\+COLLISION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_SIDE\_COLLISION@{RIGHT\_SIDE\_COLLISION}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!RIGHT\_SIDE\_COLLISION@{RIGHT\_SIDE\_COLLISION}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a8c2205266a256343f14d20fc79d34c03}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a8c2205266a256343f14d20fc79d34c03}} 
+RIGHT\+\_\+\+SIDE\+\_\+\+COLLISION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_SIDE\_COLLISION@{LEFT\_SIDE\_COLLISION}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!LEFT\_SIDE\_COLLISION@{LEFT\_SIDE\_COLLISION}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a44cf519830c85c6152c29720b2429fc1}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a44cf519830c85c6152c29720b2429fc1}} 
+LEFT\+\_\+\+SIDE\+\_\+\+COLLISION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT\_SIDE\_ATTACK@{RIGHT\_SIDE\_ATTACK}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!RIGHT\_SIDE\_ATTACK@{RIGHT\_SIDE\_ATTACK}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a37db16d16e6e3bbf0a9d9d0b0ae92ca6}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a37db16d16e6e3bbf0a9d9d0b0ae92ca6}} 
+RIGHT\+\_\+\+SIDE\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT\_SIDE\_ATTACK@{LEFT\_SIDE\_ATTACK}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!LEFT\_SIDE\_ATTACK@{LEFT\_SIDE\_ATTACK}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a9e51c8d41a057674391713f11e72ee65}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a9e51c8d41a057674391713f11e72ee65}} 
+LEFT\+\_\+\+SIDE\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REAR\_COLLISION@{REAR\_COLLISION}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!REAR\_COLLISION@{REAR\_COLLISION}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a81cf3efb6e53652400c38cac4269e9af}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a81cf3efb6e53652400c38cac4269e9af}} 
+REAR\+\_\+\+COLLISION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRONT\_ATTACK@{FRONT\_ATTACK}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!FRONT\_ATTACK@{FRONT\_ATTACK}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91ad76c7b1e40426818fb64fe2b32c7d6fa}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91ad76c7b1e40426818fb64fe2b32c7d6fa}} 
+FRONT\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRONT\_LEFT\_SLIDE@{FRONT\_LEFT\_SLIDE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!FRONT\_LEFT\_SLIDE@{FRONT\_LEFT\_SLIDE}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aada4c363debf20bc4dc65f7f9e3b18ce}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aada4c363debf20bc4dc65f7f9e3b18ce}} 
+FRONT\+\_\+\+LEFT\+\_\+\+SLIDE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRONT\_RIGHT\_SLIDE@{FRONT\_RIGHT\_SLIDE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!FRONT\_RIGHT\_SLIDE@{FRONT\_RIGHT\_SLIDE}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a722bd0ac44f758a2790ce1f786468112}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a722bd0ac44f758a2790ce1f786468112}} 
+FRONT\+\_\+\+RIGHT\+\_\+\+SLIDE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REAR\_SLIDE@{REAR\_SLIDE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!REAR\_SLIDE@{REAR\_SLIDE}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aab0f94731b6a7beae4534ed1a0a51129}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aab0f94731b6a7beae4534ed1a0a51129}} 
+REAR\+\_\+\+SLIDE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRONT\_SLIDE@{FRONT\_SLIDE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!FRONT\_SLIDE@{FRONT\_SLIDE}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aa4403178a802cc71c3d2bc0bea82cb99}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91aa4403178a802cc71c3d2bc0bea82cb99}} 
+FRONT\+\_\+\+SLIDE&summary\texorpdfstring{$>$}{>}Works differently than and may replace other options. This turns the sprite to the angle specified in the foce param...\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SLIDE\_ANGLE\_BY\_FORCE@{SLIDE\_ANGLE\_BY\_FORCE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!SLIDE\_ANGLE\_BY\_FORCE@{SLIDE\_ANGLE\_BY\_FORCE}}}\mbox{\Hypertarget{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a868ee56966a8f7a04aa7e1b937f0a00e}\label{_sprite_info_8h_a5cab28c2df44ae17990326824a20ad91a868ee56966a8f7a04aa7e1b937f0a00e}} 
+SLIDE\+\_\+\+ANGLE\+\_\+\+BY\+\_\+\+FORCE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00055}{55}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}\label{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!JUMP\_STATE@{JUMP\_STATE}}
+\index{JUMP\_STATE@{JUMP\_STATE}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{JUMP\_STATE}{JUMP\_STATE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3}{JUMP\+\_\+\+STATE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUMP\_STATE\_NOT\_READY@{JUMP\_STATE\_NOT\_READY}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!JUMP\_STATE\_NOT\_READY@{JUMP\_STATE\_NOT\_READY}}}\mbox{\Hypertarget{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3ad11ca9453a011466846144ae3bf4100d}\label{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3ad11ca9453a011466846144ae3bf4100d}} 
+JUMP\+\_\+\+STATE\+\_\+\+NOT\+\_\+\+READY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUMP\_STATE\_READY@{JUMP\_STATE\_READY}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!JUMP\_STATE\_READY@{JUMP\_STATE\_READY}}}\mbox{\Hypertarget{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a32c08a93fab334ad36e2251722d1e047}\label{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a32c08a93fab334ad36e2251722d1e047}} 
+JUMP\+\_\+\+STATE\+\_\+\+READY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUMP\_STATE\_JUMPING@{JUMP\_STATE\_JUMPING}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!JUMP\_STATE\_JUMPING@{JUMP\_STATE\_JUMPING}}}\mbox{\Hypertarget{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a96276f9bf6800694fe0074470d408ee0}\label{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a96276f9bf6800694fe0074470d408ee0}} 
+JUMP\+\_\+\+STATE\+\_\+\+JUMPING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUMP\_STATE\_LANDING@{JUMP\_STATE\_LANDING}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!JUMP\_STATE\_LANDING@{JUMP\_STATE\_LANDING}}}\mbox{\Hypertarget{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a0b4f3db917533e4ccfe9c4bb473cd82c}\label{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3a0b4f3db917533e4ccfe9c4bb473cd82c}} 
+JUMP\+\_\+\+STATE\+\_\+\+LANDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUMP\_STATE\_RECOVERING@{JUMP\_STATE\_RECOVERING}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!JUMP\_STATE\_RECOVERING@{JUMP\_STATE\_RECOVERING}}}\mbox{\Hypertarget{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3acdf6e375fd4b95d42c1a30c8116c4e7e}\label{_sprite_info_8h_ad83e8f352235db3ad6dc75c1cbd674e3acdf6e375fd4b95d42c1a30c8116c4e7e}} 
+JUMP\+\_\+\+STATE\+\_\+\+RECOVERING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00089}{89}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}\label{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!SPRITE\_POWER\_UP@{SPRITE\_POWER\_UP}}
+\index{SPRITE\_POWER\_UP@{SPRITE\_POWER\_UP}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{SPRITE\_POWER\_UP}{SPRITE\_POWER\_UP}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30}{SPRITE\+\_\+\+POWER\+\_\+\+UP}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POWER\_UP\_NONE@{POWER\_UP\_NONE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!POWER\_UP\_NONE@{POWER\_UP\_NONE}}}\mbox{\Hypertarget{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a13e2c47a471a41fbdb6326027c67eb37}\label{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a13e2c47a471a41fbdb6326027c67eb37}} 
+POWER\+\_\+\+UP\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POWER\_UP\_GUN\_TINY@{POWER\_UP\_GUN\_TINY}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!POWER\_UP\_GUN\_TINY@{POWER\_UP\_GUN\_TINY}}}\mbox{\Hypertarget{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a3997f83abb8a3c203be17005713eda9a}\label{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a3997f83abb8a3c203be17005713eda9a}} 
+POWER\+\_\+\+UP\+\_\+\+GUN\+\_\+\+TINY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POWER\_UP\_GUN\_SMALL@{POWER\_UP\_GUN\_SMALL}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!POWER\_UP\_GUN\_SMALL@{POWER\_UP\_GUN\_SMALL}}}\mbox{\Hypertarget{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30ac1605aa74606476d7edfd16950002b1a}\label{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30ac1605aa74606476d7edfd16950002b1a}} 
+POWER\+\_\+\+UP\+\_\+\+GUN\+\_\+\+SMALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POWER\_UP\_GUN\_MEDIUM@{POWER\_UP\_GUN\_MEDIUM}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!POWER\_UP\_GUN\_MEDIUM@{POWER\_UP\_GUN\_MEDIUM}}}\mbox{\Hypertarget{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a99fd331f0bc2e6f525356252275b8299}\label{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30a99fd331f0bc2e6f525356252275b8299}} 
+POWER\+\_\+\+UP\+\_\+\+GUN\+\_\+\+MEDIUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POWER\_UP\_GUN\_LARGE@{POWER\_UP\_GUN\_LARGE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!POWER\_UP\_GUN\_LARGE@{POWER\_UP\_GUN\_LARGE}}}\mbox{\Hypertarget{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30ad65c3c93894ef7fb133ed5afc324ec91}\label{_sprite_info_8h_af1673fc03e3b861b6bf6f20af28aca30ad65c3c93894ef7fb133ed5afc324ec91}} 
+POWER\+\_\+\+UP\+\_\+\+GUN\+\_\+\+LARGE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00043}{43}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
+\mbox{\Hypertarget{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}\label{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}} 
+\index{SpriteInfo.h@{SpriteInfo.h}!SPRITE\_TYPE@{SPRITE\_TYPE}}
+\index{SPRITE\_TYPE@{SPRITE\_TYPE}!SpriteInfo.h@{SpriteInfo.h}}
+\doxysubsubsection{\texorpdfstring{SPRITE\_TYPE}{SPRITE\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0}{SPRITE\+\_\+\+TYPE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYER\_SPRITE@{PLAYER\_SPRITE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!PLAYER\_SPRITE@{PLAYER\_SPRITE}}}\mbox{\Hypertarget{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0abc71fed3787821e7799b7038d22d740c}\label{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0abc71fed3787821e7799b7038d22d740c}} 
+PLAYER\+\_\+\+SPRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENEMY\_TARGET\_SPRITE@{ENEMY\_TARGET\_SPRITE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!ENEMY\_TARGET\_SPRITE@{ENEMY\_TARGET\_SPRITE}}}\mbox{\Hypertarget{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a08dd73480d4a2f334e1a0bd3da7fab53}\label{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a08dd73480d4a2f334e1a0bd3da7fab53}} 
+ENEMY\+\_\+\+TARGET\+\_\+\+SPRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BADDIE\_SPRITE@{BADDIE\_SPRITE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!BADDIE\_SPRITE@{BADDIE\_SPRITE}}}\mbox{\Hypertarget{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a9c770be04e56f440c1224d24dbc8ef90}\label{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a9c770be04e56f440c1224d24dbc8ef90}} 
+BADDIE\+\_\+\+SPRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EFFECT\_SPRITE@{EFFECT\_SPRITE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!EFFECT\_SPRITE@{EFFECT\_SPRITE}}}\mbox{\Hypertarget{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0af4711344c2334453d7930b3a83a64ce4}\label{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0af4711344c2334453d7930b3a83a64ce4}} 
+EFFECT\+\_\+\+SPRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BULLET\_SPRITE@{BULLET\_SPRITE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!BULLET\_SPRITE@{BULLET\_SPRITE}}}\mbox{\Hypertarget{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a8f8c2be8b58aa68142d99133395ff6b6}\label{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a8f8c2be8b58aa68142d99133395ff6b6}} 
+BULLET\+\_\+\+SPRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POWER\_UP\_SPRITE@{POWER\_UP\_SPRITE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!POWER\_UP\_SPRITE@{POWER\_UP\_SPRITE}}}\mbox{\Hypertarget{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a14e319b4c2b34312b20022598f9c3575}\label{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a14e319b4c2b34312b20022598f9c3575}} 
+POWER\+\_\+\+UP\+\_\+\+SPRITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOWER\_SPRITE@{TOWER\_SPRITE}!SpriteInfo.h@{SpriteInfo.h}}\index{SpriteInfo.h@{SpriteInfo.h}!TOWER\_SPRITE@{TOWER\_SPRITE}}}\mbox{\Hypertarget{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a1d68269cce8b62f65354582ac1f181ca}\label{_sprite_info_8h_a1316bb984c5421b36818b6ba70593df0a1d68269cce8b62f65354582ac1f181ca}} 
+TOWER\+\_\+\+SPRITE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_sprite_info_8h_source_l00029}{29}} of file \mbox{\hyperlink{_sprite_info_8h_source}{Sprite\+Info.\+h}}.
+
